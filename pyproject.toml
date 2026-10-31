@@ -1,0 +1,15 @@
+[project]
+name = "scartissue-window"
+version = "0.1.0"
+description = "Lexsi Track 2: circuit-restricted repair of abliterated Cohere checkpoints"
+readme = "README.md"
+authors = [
+    { name = "amugoodbad229", email = "ayman.khan1971@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "modal>=1.6.3",
+]
+
+[tool.uv]
+package = false
