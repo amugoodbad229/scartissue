@@ -1,0 +1,207 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-dz1DEQHQgmiLhLCLRy3XB5
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue-window\ex
+│   periments\p1_grid.py
+├── ✓ Uploaded experiments\patching.py
+└── ✓ Created Function grid.
+[data] loading StrongREJECT + XSTest + gsm8k
+[data] StrongREJECT columns=['prompt', 'category', 'source'] n=313
+[data] XSTest columns=['id', 'prompt', 'type', 'label', 'focus', 'note'] n=450
+[data] malicious=40 fit_mal=20 benign=20 fit_ben=16 gsm=64
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:01<06:11,  1.29s/it]
+[1ALoading weights:  10%|▉         | 28/290 [00:01<00:09, 26.79it/s]
+[1ALoading weights:  20%|██        | 59/290 [00:01<00:04, 51.84it/s]
+[1ALoading weights:  32%|███▏      | 93/290 [00:01<00:02, 83.55it/s]
+[1ALoading weights:  38%|███▊      | 110/290 [00:01<00:01, 91.50it/s]
+[1ALoading weights:  43%|████▎     | 126/290 [00:02<00:01, 98.06it/s]
+[1ALoading weights:  50%|█████     | 145/290 [00:02<00:01, 114.65it/s]
+[1ALoading weights:  56%|█████▌    | 161/290 [00:02<00:01, 119.24it/s]
+[1ALoading weights:  61%|██████    | 176/290 [00:02<00:00, 118.38it/s]
+[1ALoading weights:  66%|██████▌   | 190/290 [00:02<00:00, 122.63it/s]
+[1ALoading weights:  72%|███████▏  | 208/290 [00:02<00:00, 135.67it/s]
+[1ALoading weights:  77%|███████▋  | 223/290 [00:02<00:00, 107.63it/s]
+[1ALoading weights:  81%|████████▏ | 236/290 [00:02<00:00, 111.81it/s]
+[1ALoading weights:  90%|█████████ | 261/290 [00:03<00:00, 141.80it/s]
+[1ALoading weights:  96%|█████████▌| 277/290 [00:03<00:00, 144.38it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 90.29it/s] 
+[load] CohereLabs/tiny-aya-global cuda=6.81 GB chat_template=yes
+[gen] 8/40
+[gen] 16/40
+[gen] 24/40
+[gen] 32/40
+[gen] 40/40
+[gen] 8/20
+[gen] 16/20
+[gen] 20/20
+[gen] 4/64
+[gen] 8/64
+[gen] 12/64
+[gen] 16/64
+[gen] 20/64
+[gen] 24/64
+[gen] 28/64
+[gen] 32/64
+[gen] 36/64
+[gen] 40/64
+[gen] 44/64
+[gen] 48/64
+[gen] 52/64
+[gen] 56/64
+[gen] 60/64
+[gen] 64/64
+[base] refusal_regex=0.725 gsm8k=0.438
+[save] /hf/results/p1_grid.json keys=['_updated', 'dir_layer', 'direction', 'drift', 'model', 'n', 'stages']
+[acts] layer 15 shape (20, 2048) model=cohere2
+[acts] layer 15 shape (16, 2048) model=cohere2
+[dir] d at layer 15, fit on 20+16 prompts
+[matrices] 72 write matrices, num_heads=16
+[drift] 72 matrices, 962592768 scalars
+[gen] 8/40
+[gen] 16/40
+[gen] 24/40
+[gen] 32/40
+[gen] 40/40
+[gen] 8/20
+[gen] 16/20
+[gen] 20/20
+[gen] 4/64
+[gen] 8/64
+[gen] 12/64
+[gen] 16/64
+[gen] 20/64
+[gen] 24/64
+[gen] 28/64
+[gen] 32/64
+[gen] 36/64
+[gen] 40/64
+[gen] 44/64
+[gen] 48/64
+[gen] 52/64
+[gen] 56/64
+[gen] 60/64
+[gen] 64/64
+[drift] refusal_regex=0.250 gsm8k=0.516
+[save] /hf/results/p1_grid.json keys=['_updated', 'dir_layer', 'direction', 'drift', 'model', 'n', 'stages']
+[matrices] 72 write matrices, num_heads=16
+[acts] layer 15 shape (20, 2048) model=cohere2
+[acts] layer 15 shape (16, 2048) model=cohere2
+[dir'] cos(d, d') = -0.0000
+[arm] blind/global: 962592768 scalars (100.000% of global), alpha=+1.000
+[gen] 8/40
+[gen] 16/40
+[gen] 24/40
+[gen] 32/40
+[gen] 40/40
+[gen] 8/20
+[gen] 16/20
+[gen] 20/20
+[gen] 4/64
+[gen] 8/64
+[gen] 12/64
+[gen] 16/64
+[gen] 20/64
+[gen] 24/64
+[gen] 28/64
+[gen] 32/64
+[gen] 36/64
+[gen] 40/64
+[gen] 44/64
+[gen] 48/64
+[gen] 52/64
+[gen] 56/64
+[gen] 60/64
+[gen] 64/64
+[blind/global] refusal_regex=0.325 gsm8k=0.469
+[save] /hf/results/p1_grid.json keys=['_updated', 'arms', 'dir_layer', 'direction', 'drift', 'model', 'n', 'repair_direction', 'stages']
+[arm] circuit/heads: 96206848 scalars (9.995% of global), alpha=+1.000
+[gen] 8/40
+[gen] 16/40
+[gen] 24/40
+[gen] 32/40
+[gen] 40/40
+[gen] 8/20
+[gen] 16/20
+[gen] 20/20
+[gen] 4/64
+[gen] 8/64
+[gen] 12/64
+[gen] 16/64
+[gen] 20/64
+[gen] 24/64
+[gen] 28/64
+[gen] 32/64
+[gen] 36/64
+[gen] 40/64
+[gen] 44/64
+[gen] 48/64
+[gen] 52/64
+[gen] 56/64
+[gen] 60/64
+[gen] 64/64
+[circuit/heads] refusal_regex=0.250 gsm8k=0.453
+[save] /hf/results/p1_grid.json keys=['_updated', 'arms', 'dir_layer', 'direction', 'drift', 'model', 'n', 'repair_direction', 'stages']
+[arm] blind/random-heads: 96206848 scalars (9.995% of global), alpha=+1.000
+[gen] 8/40
+[gen] 16/40
+[gen] 24/40
+[gen] 32/40
+[gen] 40/40
+[gen] 8/20
+[gen] 16/20
+[gen] 20/20
+[gen] 4/64
+[gen] 8/64
+[gen] 12/64
+[gen] 16/64
+[gen] 20/64
+[gen] 24/64
+[gen] 28/64
+[gen] 32/64
+[gen] 36/64
+[gen] 40/64
+[gen] 44/64
+[gen] 48/64
+[gen] 52/64
+[gen] 56/64
+[gen] 60/64
+[gen] 64/64
+[blind/random-heads] refusal_regex=0.250 gsm8k=0.484
+[save] /hf/results/p1_grid.json keys=['_updated', 'arms', 'dir_layer', 'direction', 'drift', 'model', 'n', 'repair_direction', 'stages']
+[arm] blind/matched-cols: 96141312 scalars (9.988% of global), alpha=+1.000
+[gen] 8/40
+[gen] 16/40
+[gen] 24/40
+[gen] 32/40
+[gen] 40/40
+[gen] 8/20
+[gen] 16/20
+[gen] 20/20
+[gen] 4/64
+[gen] 8/64
+[gen] 12/64
+[gen] 16/64
+[gen] 20/64
+[gen] 24/64
+[gen] 28/64
+[gen] 32/64
+[gen] 36/64
+[gen] 40/64
+[gen] 44/64
+[gen] 48/64
+[gen] 52/64
+[gen] 56/64
+[gen] 60/64
+[gen] 64/64
+[blind/matched-cols] refusal_regex=0.250 gsm8k=0.500
+[save] /hf/results/p1_grid.json keys=['_updated', 'arms', 'dir_layer', 'direction', 'drift', 'model', 'n', 'repair_direction', 'stages']
+[save] /hf/results/p1_grid.json keys=['_updated', 'arms', 'dir_layer', 'direction', 'drift', 'gpu', 'model', 'n', 'repair_direction', 'stages', 'wall_s']
+[done] {"ok": true, "keys": ["base", "blind/global", "blind/matched-cols", "blind/random-heads", "circuit/heads", "drift"], "wall_s": 1114.8}
+[local] could not fetch results from the volume: a bytes-like object is required, not 'generator'
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-dz1DEQHQgmiLhLCLRy3XB5

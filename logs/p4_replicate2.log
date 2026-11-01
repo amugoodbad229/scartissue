@@ -1,0 +1,104 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-rli8Qvl717dZn7JTJGpM1A
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p4_replicate.py
+├── ✓ Uploaded experiments\patching.py
+└── ✓ Created Function dose.
+[data] mal=120 safe=40 gsm=120
+[data] mal=120 safe=40 gsm=120
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<02:53,  1.66it/s]
+[1ALoading weights:   4%|▍         | 13/290 [00:00<00:12, 22.19it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<02:18,  2.09it/s]
+[1ALoading weights:   7%|▋         | 20/290 [00:00<00:08, 30.40it/s]
+[1ALoading weights:   4%|▍         | 13/290 [00:00<00:09, 28.32it/s]
+[1ALoading weights:  13%|█▎        | 37/290 [00:00<00:04, 58.35it/s]
+[1ALoading weights:   8%|▊         | 24/290 [00:00<00:05, 47.38it/s]
+[1ALoading weights:  17%|█▋        | 49/290 [00:01<00:03, 70.32it/s]
+[1ALoading weights:  11%|█▏        | 33/290 [00:00<00:04, 56.79it/s]
+[1ALoading weights:  21%|██        | 61/290 [00:01<00:02, 80.68it/s]
+[1ALoading weights:  16%|█▌        | 45/290 [00:00<00:03, 73.19it/s]
+[1ALoading weights:  25%|██▌       | 73/290 [00:01<00:02, 88.90it/s]
+[1ALoading weights:  20%|█▉        | 57/290 [00:01<00:02, 81.85it/s]
+[1ALoading weights:  30%|███       | 88/290 [00:01<00:01, 103.34it/s]
+[1ALoading weights:  24%|██▍       | 70/290 [00:01<00:02, 89.72it/s]
+[1ALoading weights:  34%|███▍      | 100/290 [00:01<00:01, 107.19it/s]
+[1ALoading weights:  29%|██▉       | 84/290 [00:01<00:02, 97.88it/s]
+[1ALoading weights:  39%|███▊      | 112/290 [00:01<00:01, 101.77it/s]
+[1ALoading weights:  33%|███▎      | 97/290 [00:01<00:01, 100.86it/s]
+[1ALoading weights:  43%|████▎     | 124/290 [00:01<00:01, 102.95it/s]
+[1ALoading weights:  38%|███▊      | 109/290 [00:01<00:01, 102.96it/s]
+[1ALoading weights:  47%|████▋     | 137/290 [00:01<00:01, 107.07it/s]
+[1ALoading weights:  42%|████▏     | 121/290 [00:01<00:01, 106.67it/s]
+[1ALoading weights:  51%|█████▏    | 149/290 [00:01<00:01, 108.38it/s]
+[1ALoading weights:  46%|████▌     | 132/290 [00:01<00:01, 105.93it/s]
+[1ALoading weights:  57%|█████▋    | 165/290 [00:02<00:01, 113.82it/s]
+[1ALoading weights:  50%|█████     | 145/290 [00:01<00:01, 108.31it/s]
+[1ALoading weights:  62%|██████▏   | 181/290 [00:02<00:00, 119.41it/s]
+[1ALoading weights:  56%|█████▌    | 161/290 [00:01<00:01, 116.33it/s]
+[1ALoading weights:  67%|██████▋   | 194/290 [00:02<00:00, 118.66it/s]
+[1ALoading weights:  60%|██████    | 175/290 [00:02<00:00, 122.51it/s]
+[1ALoading weights:  71%|███████▏  | 207/290 [00:02<00:00, 118.07it/s]
+[1ALoading weights:  65%|██████▍   | 188/290 [00:02<00:00, 122.68it/s]
+[1ALoading weights:  76%|███████▌  | 221/290 [00:02<00:00, 122.79it/s]
+[1ALoading weights:  69%|██████▉   | 201/290 [00:02<00:00, 121.05it/s]
+[1ALoading weights:  82%|████████▏ | 237/290 [00:02<00:00, 126.48it/s]
+[1ALoading weights:  74%|███████▍  | 214/290 [00:02<00:00, 112.66it/s]
+[1ALoading weights:  86%|████████▌ | 250/290 [00:02<00:00, 122.03it/s]
+[1ALoading weights:  79%|███████▉  | 229/290 [00:02<00:00, 119.36it/s]
+[1ALoading weights:  91%|█████████ | 264/290 [00:02<00:00, 120.97it/s]
+[1ALoading weights:  83%|████████▎ | 242/290 [00:02<00:00, 121.27it/s]
+[1ALoading weights:  96%|█████████▌| 277/290 [00:03<00:00, 120.20it/s]
+[1ALoading weights:  88%|████████▊ | 256/290 [00:02<00:00, 118.28it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 94.02it/s] 
+
+[1ALoading weights:  94%|█████████▍| 272/290 [00:02<00:00, 126.23it/s]
+[1ALoading weights:  98%|█████████▊| 285/290 [00:02<00:00, 124.30it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:02<00:00, 98.21it/s] 
+[load] vram=6.70 GB
+[load] vram=6.70 GB
+[gen] 8/120
+[gen] 8/120
+[data] mal=120 safe=40 gsm=120
+[gen] 16/120
+[gen] 16/120
+[gen] 24/120
+[gen] 24/120
+
+[gen] 32/120
+[gen] 32/120
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:02<11:12,  2.33s/it]
+[1ALoading weights:   4%|▍         | 12/290 [00:02<00:41,  6.62it/s]
+[1ALoading weights:   7%|▋         | 21/290 [00:02<00:21, 12.78it/s]
+[1ALoading weights:  11%|█         | 32/290 [00:02<00:11, 22.08it/s]
+[1ALoading weights:  14%|█▍        | 41/290 [00:02<00:08, 29.85it/s]
+[1ALoading weights:  18%|█▊        | 53/290 [00:02<00:05, 41.89it/s]
+[1ALoading weights:  22%|██▏       | 64/290 [00:03<00:04, 52.76it/s]
+[1ALoading weights:  26%|██▌       | 74/290 [00:03<00:03, 59.09it/s]
+[1ALoading weights:  30%|███       | 87/290 [00:03<00:02, 72.51it/s]
+[1ALoading weights:  34%|███▍      | 98/290 [00:03<00:02, 76.57it/s]
+[1ALoading weights:  38%|███▊      | 109/290 [00:03<00:02, 83.68it/s]
+[1ALoading weights:  41%|████      | 119/290 [00:03<00:02, 84.78it/s]
+[1ALoading weights:  44%|████▍     | 129/290 [00:03<00:01, 84.48it/s]
+[1ALoading weights:  49%|████▊     | 141/290 [00:03<00:01, 91.22it/s]
+[1ALoading weights:  53%|█████▎    | 153/290 [00:03<00:01, 92.68it/s]
+[gen] 40/120
+[1ALoading weights:  58%|█████▊    | 167/290 [00:04<00:01, 103.51it/s]
+[1ALoading weights:  61%|██████▏   | 178/290 [00:04<00:01, 100.81it/s]
+[1ALoading weights:  65%|██████▌   | 189/290 [00:04<00:01, 98.14it/s] 
+[1ALoading weights:  69%|██████▉   | 200/290 [00:04<00:00, 98.24it/s]
+[1ALoading weights:  72%|███████▏  | 210/290 [00:04<00:00, 91.93it/s]
+[1ALoading weights:  77%|███████▋  | 222/290 [00:04<00:00, 97.45it/s]
+[gen] 40/120
+[1ALoading weights:  80%|████████  | 233/290 [00:04<00:00, 95.96it/s]
+[1ALoading weights:  84%|████████▍ | 245/290 [00:04<00:00, 97.89it/s]
+[1ALoading weights:  88%|████████▊ | 256/290 [00:04<00:00, 100.93it/s]
+[1ALoading weights:  92%|█████████▏| 267/290 [00:05<00:00, 101.65it/s]
+[1ALoading weights:  96%|█████████▌| 278/290 [00:05<00:00, 99.40it/s] Loading weights: 100%|██████████| 290/290 [00:05<00:00, 55.06it/s]
+[load] vram=6.70 GB
+[gen] 48/120

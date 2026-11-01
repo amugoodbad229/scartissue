@@ -178,8 +178,14 @@ def _restore(snapshot: dict, params: dict) -> None:
             param.copy_(torch.as_tensor(w, dtype=param.dtype, device=param.device))
 
 
-def _head_plan(model, weights, d, budget_fraction=1.0):
-    """Score each (matrix, head) by how much it writes along `d`; keep the top ones within the budget."""
+def _head_plan(model, weights, d, budget_all: int, fraction: float = 0.10):
+    """Score each (matrix, head) by how much it writes along `d`; keep the top ones inside the budget.
+
+    The budget is a fraction of `budget_all` (the scalar count of *all* write matrices), not of the
+    attention modules alone — that is what makes this arm comparable to `blind/global`, which edits
+    everything. Only `o_proj` is planned here: heads live on its column axis, and `down_proj` neurons are a
+    separate arm.
+    """
     import numpy as np
 
     head_dim = model.config.hidden_size // model.config.num_attention_heads
@@ -188,12 +194,10 @@ def _head_plan(model, weights, d, budget_fraction=1.0):
         if not name.endswith("o_proj.weight"):
             continue
         proj = np.abs(d @ w)                       # |dᵀ W[:, j]| per input column
-        out_features = w.shape[0]
-        widths[name] = (out_features, w.shape[1])
+        widths[name] = (w.shape[0], w.shape[1])
         for h in range(w.shape[1] // head_dim):
-            block = proj[h * head_dim : (h + 1) * head_dim]
-            scores[(name, h)] = float(block.sum())
-    budget = int(sum(widths[n][0] * widths[n][1] for n in weights) * budget_fraction)
+            scores[(name, h)] = float(proj[h * head_dim : (h + 1) * head_dim].sum())
+    budget = int(budget_all * fraction)
     from patching import head_plan_for_scores
     return head_plan_for_scores(scores, widths, head_dim, budget)
 
@@ -304,7 +308,7 @@ def grid(only: str = "") -> dict:
     # budget-matched (~10 % of the global scalar count each). Otherwise "restricted" would quietly mean
     # "smaller edit" and the comparison would be meaningless.
     ALPHA = 1.0
-    head_plan, head_spent = _head_plan(model, drifted, d2, budget_fraction=0.10)
+    head_plan, head_spent = _head_plan(model, drifted, d2, budget_all, fraction=0.10)
     arms: dict[str, dict] = {"blind/global": {n: np.arange(w.shape[1]) for n, w in drifted.items()}}
     arms["circuit/heads"] = head_plan
     rng = np.random.default_rng(0)
