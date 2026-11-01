@@ -1,0 +1,26 @@
+Downloading hf-xet (3.7MiB)
+Downloading pydantic-core (2.1MiB)
+ Downloaded pydantic-core
+ Downloaded hf-xet
+Installed 45 packages in 2.31s
+Generating train split:   0%|          | 0/313 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 313/313 [00:00<00:00, 4942.17 examples/s]
+[raw] strongreject: 313 rows -> 1-curate\corpus\raw\strongreject.jsonl sha256=246dd1877ca941e1…
+Generating train split:   0%|          | 0/450 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 450/450 [00:00<00:00, 26213.31 examples/s]
+[raw] xstest: 450 rows -> 1-curate\corpus\raw\xstest.jsonl sha256=59d80da0205abeb3…
+SchemaGate: 0sample [00:00, ?sample/s]SchemaGate: 0sample [00:00, ?sample/s]
+[export] 1-curate\corpus\strongreject\corpus.jsonl: 0 rows, 0 skipped
+SchemaGate: 0sample [00:00, ?sample/s]SchemaGate: 0sample [00:00, ?sample/s]
+[export] 1-curate\corpus\xstest\corpus.jsonl: 0 rows, 0 skipped
+[merge] 1-curate\corpus\corpus.jsonl: 0 rows
+[verify] {
+ "rows": 0,
+ "expected_rows": 763,
+ "rows_match_input": false,
+ "unique_ids": true,
+ "every_row_has_id": true,
+ "every_row_has_chain": true,
+ "join_examples": [],
+ "label_counts": {},
+ "sha256_corpus": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
+[verify] FAILED — the published file does not carry the provenance it claims

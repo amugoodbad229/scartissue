@@ -1,0 +1,15 @@
+{
+ "JSONLReader": {
+  "output_count": 450,
+  "rejected_count": 0
+ },
+ "SchemaGate": {
+  "input_count": 450,
+  "output_count": 450,
+  "probe_recovered": 0,
+  "rejected_count": 0
+ },
+ "ProvenancedCorpusExporter": {
+  "exported_count": 450
+ }
+}

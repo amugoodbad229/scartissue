@@ -1,0 +1,17 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-pW761lvz4zuR5pE90QhFpS
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p9_publish_corpus.py
+└── ✓ Created Function push.
+[publish] https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-safety-corpus
+[publish]   README.md                    2,118 B
+[publish]   corpus.jsonl               425,702 B
+[publish]   corpus_split.json           26,647 B
+[publish]   lexsi_provenance.json          995 B
+[publish]   manifest.json                2,127 B
+[publish] remote files: .gitattributes, README.md, corpus.jsonl, corpus_split.json, lexsi_provenance.json, manifest.json
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-pW761lvz4zuR5pE90QhFpS

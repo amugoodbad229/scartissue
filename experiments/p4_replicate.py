@@ -68,31 +68,24 @@ def _tag(model_name: str) -> str:
     return model_name.replace("/", "__")
 
 
-def _merge(results: dict, model_name: str) -> None:
-    path = f"/hf/results/p4_replicate_{_tag(model_name)}.json"
-    os.makedirs("/hf/results", exist_ok=True)
+RESULT_DIR = "results"
 
-    def _write(payload: dict) -> None:
-        with open(path, "w") as fh:
-            json.dump(payload, fh, indent=1)
 
-    for attempt in range(6):
-        try:
-            hf_volume.reload()            # pick up files other containers committed meanwhile
-            prev = {}
-            if os.path.exists(path):
-                with open(path) as fh:
-                    prev = json.load(fh)
-            prev.update(results)
-            prev["_updated"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-            _write(prev)
-            hf_volume.commit()
-            print(f"[save] {path} keys={sorted(prev)}", flush=True)
-            return
-        except Exception as exc:          # concurrent commit: reload discards our write, so redo it
-            print(f"[save-retry {attempt}] {type(exc).__name__}: {exc}", flush=True)
-            time.sleep(2.0 * (attempt + 1))
-    raise RuntimeError(f"could not commit {path} after 6 attempts")
+def _save(results: dict, model_name: str) -> str:
+    """Write the model's whole result file LOCALLY — this machine is the only writer.
+
+    Three containers cannot commit to one Modal Volume concurrently: measured 2026-11-01, the retry loop
+    logged 12 `[save-retry]` lines and then two hard `could not commit ... after 6 attempts` failures,
+    because `reload()` discards the write the other container is about to commit. So the containers only
+    compute and return; the local entrypoint does the writing. Every stage also prints its numbers as it
+    is measured, so a container that dies mid-run still leaves its measurements in the log.
+    """
+    os.makedirs(RESULT_DIR, exist_ok=True)
+    path = os.path.join(RESULT_DIR, f"p4_replicate_{_tag(model_name)}.json")
+    results["_updated"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    with open(path, "w") as fh:
+        json.dump(results, fh, indent=1)
+    return path
 
 
 @app.function(image=image, gpu="A100-40GB", volumes={"/hf": hf_volume}, secrets=secrets,
@@ -215,7 +208,6 @@ def dose(model_name: str) -> dict:
     weights = {n: p.detach().float().cpu().numpy() for n, p in model.named_parameters()
                if n.endswith(("o_proj.weight", "down_proj.weight"))}
     results["stages"]["base"] = evaluate("base", model, d)
-    _merge(results, model_name)
 
     full_plan = {n: np.arange(w.shape[1]) for n, w in weights.items()}
     drift_patch, drift_edits = build_patch(weights, d, full_plan, alpha=-1.0)
@@ -237,12 +229,10 @@ def dose(model_name: str) -> dict:
             apply_to_torch(model, patch)
             print(f"[dose] alpha={alpha} edited={edited}", flush=True)
         results["stages"][f"alpha={alpha:g}"] = evaluate(f"alpha={alpha:g}", model, d2)
-        _merge(results, model_name)
 
     results["wall_s"] = round(time.time() - t0, 1)
     results["gpu"] = torch.cuda.get_device_name(0)
-    _merge(results, model_name)
-    return {"ok": True, "wall_s": results["wall_s"]}
+    return results
 
 
 MODELS = ["CohereLabs/tiny-aya-global", "CohereLabs/tiny-aya-earth", "CohereLabs/tiny-aya-water"]
@@ -250,11 +240,15 @@ MODELS = ["CohereLabs/tiny-aya-global", "CohereLabs/tiny-aya-earth", "CohereLabs
 
 @app.local_entrypoint()
 def main(only: str = ""):
-    """Spawn one job per model in parallel; each writes its own result file and log prefix."""
+    """Spawn one job per model in parallel; this process is the only writer of results/*.json."""
     picked = [m for m in MODELS if not only or only in m]
+    print(f"[launch] {len(picked)} models in parallel: {picked}", flush=True)
     handles = [(m, dose.spawn(m)) for m in picked]
     for m, h in handles:
         try:
-            print(f"[done] {m} {json.dumps(h.get())}", flush=True)
-        except Exception as exc:                      # one model failing must not hide the other
+            r = h.get()
+            path = _save(r, m)
+            got = {k: round(v["refusal_rate_regex"], 3) for k, v in r["stages"].items()}
+            print(f"[done] {m} -> {path} wall={r['wall_s']}s refusal={got}", flush=True)
+        except Exception as exc:                      # one model failing must not hide the others
             print(f"[fail] {m} {type(exc).__name__}: {exc}", flush=True)

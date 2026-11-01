@@ -1,0 +1,59 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-bx6inkHAwGH4fTYvSPi1zJ
+Building image im-n5TLwMPrrgAnyyco1HthaZ
+
+=> Step 0: FROM base
+
+=> Step 1: ENV HF_HOME=/hf/hf
+
+=> Step 2: ENV HF_HUB_CACHE=/hf/hf/hub
+
+=> Step 3: ENV HF_XET_HIGH_PERFORMANCE=1
+
+=> Step 4: ENV TRANSFORMERS_VERBOSITY=error
+
+=> Step 5: ENV TOKENIZERS_PARALLELISM=false
+Saving image...
+Image saved, took 1.70s
+
+Built image im-n5TLwMPrrgAnyyco1HthaZ in 2.11s
+
+
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p7_artifacts.py
+├── ✓ Uploaded experiments\patching.py
+└── ✓ Created Function export.
+
+[1AGenerating train split:   0%|          | 0/313 [00:00<?, ? examples/s]
+[1AGenerating train split: 100%|██████████| 313/313 [00:00<00:00, 40569.13 examples/s]
+
+[1AGenerating train split:   0%|          | 0/450 [00:00<?, ? examples/s]
+[1AGenerating train split: 100%|██████████| 450/450 [00:00<00:00, 55141.45 examples/s]
+
+[1AFetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+[1AFetching 2 files:  50%|█████     | 1/2 [00:20<00:20, 20.05s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:35<00:00, 17.25s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:35<00:00, 17.67s/it]
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   1%|          | 2/290 [00:00<00:14, 19.71it/s]
+[1ALoading weights:  15%|█▍        | 43/290 [00:00<00:01, 242.65it/s]
+[1ALoading weights:  26%|██▌       | 76/290 [00:00<00:00, 278.88it/s]
+[1ALoading weights:  40%|████      | 116/290 [00:00<00:00, 323.37it/s]
+[1ALoading weights:  54%|█████▍    | 156/290 [00:00<00:00, 345.08it/s]
+[1ALoading weights:  67%|██████▋   | 194/290 [00:00<00:00, 341.79it/s]
+[1ALoading weights:  79%|███████▉  | 229/290 [00:00<00:00, 342.78it/s]
+[1ALoading weights:  92%|█████████▏| 268/290 [00:00<00:00, 356.81it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:00<00:00, 329.38it/s]
+[drift] 962592768 scalars, cos(d,d')=+1.942e-04
+[arm] abliteration_tiny-aya-global_layer15: 962592768 scalars (100.0000%), 72 matrices, 7.58 MB
+[arm] repair_global_a4: 962592768 scalars (100.0000%), 72 matrices, 7.58 MB
+[arm] repair_harm10_a4: 96258048 scalars (9.9999%), 72 matrices, 0.82 MB
+[arm] repair_harm2_a4: 19251200 scalars (1.9999%), 72 matrices, 0.21 MB
+[done] {"arms": ["abliteration_tiny-aya-global_layer15", "repair_global_a4", "repair_harm10_a4", "repair_harm2_a4"], "wall_s": 111.5, "sizes": {"abliteration_tiny-aya-global_layer15": 7584296, "repair_global_a4": 7584296, "repair_harm10_a4": 816056, "repair_harm2_a4": 214440}}
+[done] /hf/artifacts wall=111.5s
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-bx6inkHAwGH4fTYvSPi1zJ

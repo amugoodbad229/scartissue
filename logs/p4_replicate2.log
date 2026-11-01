@@ -102,3 +102,186 @@ https://modal.com/apps/amugoodbad229/main/ap-rli8Qvl717dZn7JTJGpM1A
 [1ALoading weights:  96%|█████████▌| 278/290 [00:05<00:00, 99.40it/s] Loading weights: 100%|██████████| 290/290 [00:05<00:00, 55.06it/s]
 [load] vram=6.70 GB
 [gen] 48/120
+[gen] 48/120
+[gen] 56/120
+[gen] 56/120
+[gen] 64/120
+[gen] 8/120
+[gen] 64/120
+[gen] 72/120
+[gen] 72/120
+[gen] 16/120
+[gen] 80/120
+[gen] 80/120
+[gen] 88/120
+[gen] 24/120
+[gen] 88/120
+[gen] 96/120
+[gen] 96/120
+[gen] 32/120
+[gen] 104/120
+[gen] 104/120
+[gen] 112/120
+[gen] 40/120
+[gen] 112/120
+[gen] 120/120
+[gen] 120/120
+[gen] 8/40[gen] 48/120
+
+[gen] 8/40
+[gen] 16/40
+[gen] 16/40
+[gen] 24/40
+[gen] 56/120
+[gen] 24/40
+[gen] 32/40
+[gen] 32/40
+[gen] 40/40
+[gen] 64/120
+[gen] 4/120
+[gen] 40/40
+[gen] 8/120
+[gen] 4/120
+[gen] 72/120
+[gen] 12/120
+[gen] 8/120
+[gen] 16/120
+[gen] 12/120
+[gen] 20/120
+[gen] 16/120
+[gen] 80/120
+[gen] 24/120
+[gen] 20/120
+[gen] 28/120
+[gen] 24/120
+[gen] 88/120
+[gen] 32/120
+[gen] 28/120
+[gen] 36/120
+[gen] 32/120
+[gen] 96/120
+[gen] 40/120
+[gen] 36/120
+[gen] 44/120
+[gen] 40/120
+[gen] 48/120
+[gen] 104/120
+[gen] 44/120
+[gen] 52/120
+[gen] 48/120
+[gen] 56/120
+[gen] 52/120
+[gen] 112/120
+[gen] 60/120
+[gen] 56/120
+[gen] 64/120
+[gen] 60/120
+[gen] 120/120
+[gen] 68/120
+[gen] 64/120
+[gen] 72/120
+[gen] 68/120
+[gen] 8/40
+[gen] 76/120
+[gen] 72/120
+[gen] 80/120
+[gen] 16/40
+[gen] 76/120
+[gen] 84/120
+[gen] 80/120
+[gen] 88/120
+[gen] 24/40
+[gen] 84/120
+[gen] 92/120
+[gen] 88/120
+[gen] 32/40[gen] 96/120
+
+[gen] 92/120
+[gen] 100/120
+[gen] 96/120
+[gen] 40/40
+[gen] 104/120
+[gen] 100/120
+[gen] 108/120
+[gen] 4/120
+[gen] 104/120
+[gen] 112/120
+[gen] 108/120
+[gen] 8/120
+[gen] 116/120
+[gen] 112/120
+[gen] 120/120
+[gen] 12/120
+[gen] 116/120
+[gen] 120/120
+[gen] 16/120
+[base] refusal=0.758 benign_ref=0.050 gsm8k=0.117 auc(d')=0.999
+[save-retry 0] RuntimeError: there are open files preventing the operation
+[gen] 20/120
+[save-retry 1] RuntimeError: there are open files preventing the operation
+[base] refusal=0.733 benign_ref=0.050 gsm8k=0.108 auc(d')=0.999
+[save-retry 0] RuntimeError: there are open files preventing the operation
+[gen] 24/120
+[save-retry 2] RuntimeError: there are open files preventing the operation
+[save-retry 1] RuntimeError: there are open files preventing the operation
+[gen] 28/120
+[save-retry 2] RuntimeError: there are open files preventing the operation
+[save-retry 3] RuntimeError: there are open files preventing the operation
+[gen] 32/120
+[gen] 36/120
+[save-retry 3] RuntimeError: there are open files preventing the operation
+[gen] 40/120
+[save-retry 4] RuntimeError: there are open files preventing the operation
+[gen] 44/120
+[save-retry 4] RuntimeError: there are open files preventing the operation
+[gen] 48/120
+[save-retry 5] RuntimeError: there are open files preventing the operation[gen] 52/120
+
+[gen] 56/120
+[save-retry 5] RuntimeError: there are open files preventing the operation
+[gen] 60/120
+[gen] 64/120
+Traceback (most recent call last):
+[fail] CohereLabs/tiny-aya-global RuntimeError: could not commit /hf/results/p4_replicate_CohereLabs__tiny-aya-global.json after 6 attempts
+  File "/pkg/modal/_runtime/container_io_manager.py", line 987, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 189, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 266, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/p4_replicate.py", line 218, in dose
+    _merge(results, model_name)
+  File "/root/p4_replicate.py", line 95, in _merge
+    raise RuntimeError(f"could not commit {path} after 6 attempts")
+RuntimeError: could not commit /hf/results/p4_replicate_CohereLabs__tiny-aya-global.json after 6 attempts
+[gen] 68/120
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 987, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 189, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 266, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/p4_replicate.py", line 218, in dose
+    _merge(results, model_name)
+  File "/root/p4_replicate.py", line 95, in _merge
+    raise RuntimeError(f"could not commit {path} after 6 attempts")
+RuntimeError: could not commit /hf/results/p4_replicate_CohereLabs__tiny-aya-earth.json after 6 attempts
+[fail] CohereLabs/tiny-aya-earth RuntimeError: could not commit /hf/results/p4_replicate_CohereLabs__tiny-aya-earth.json after 6 attempts
+[gen] 72/120
+[gen] 76/120
+[gen] 80/120
+[gen] 84/120
+[gen] 88/120
+[gen] 92/120
+[gen] 96/120
+[gen] 100/120
+[gen] 104/120
+[gen] 108/120
+[gen] 112/120
+[gen] 116/120
+[gen] 120/120

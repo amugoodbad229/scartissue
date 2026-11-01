@@ -1,0 +1,28 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-2cyA9QpiYPrZ2RB6kWEIkF
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p12_deploy_space.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\space-st
+│   atic
+└── ✓ Created Function deploy.
+No files have been modified since last commit. Skipping to prevent empty commit.
+No files have been modified since last commit. Skipping to prevent empty commit.
+No files have been modified since last commit. Skipping to prevent empty commit.
+No files have been modified since last commit. Skipping to prevent empty commit.
+No files have been modified since last commit. Skipping to prevent empty commit.
+No files have been modified since last commit. Skipping to prevent empty commit.
+No files have been modified since last commit. Skipping to prevent empty commit.
+[deploy] https://huggingface.co/spaces/amugoodbad229/scartissue | stage: RUNNING
+[deploy]   README.md                 2,631 B
+[deploy]   app.js                    7,945 B
+[deploy]   completions.json        512,991 B
+[deploy]   frontier.csv                607 B
+[deploy]   index.html                4,334 B
+[deploy]   prompts.json             38,378 B
+[deploy]   style.css                 3,227 B
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-2cyA9QpiYPrZ2RB6kWEIkF

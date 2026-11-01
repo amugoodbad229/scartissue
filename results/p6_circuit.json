@@ -1,0 +1,20 @@
+{
+ "model": "CohereLabs/tiny-aya-global",
+ "layer": 15,
+ "cos_d_dprime": 0.0034670308232307434,
+ "drift_scalars": 962592768,
+ "n_pairs": 24,
+ "algorithm": "eap-ig",
+ "level": "node",
+ "n_nodes_scored": 0,
+ "n_circuitkit_scores": 0,
+ "mass_total_abs": 1.0,
+ "mass_top40_abs": 0.0,
+ "mass_concentration_top40": 0.0,
+ "signed_nodes": {},
+ "circuitkit_abs_scores": {},
+ "top_signed": [],
+ "layer_histogram_top200": {},
+ "wall_s": 64.8,
+ "note": "signed = graph.nodes_scores via Node.score, taken before circuit_kit_adapter.py:77 applies abs(); circuitkit_abs_scores is what the library exposes."
+}

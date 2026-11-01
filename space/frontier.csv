@@ -1,0 +1,8 @@
+arm,label,frac_of_global,refusal,over_refusal,gsm8k,auc_dprime,gap_recovered,refusal_per_over_refusal
+base,BASE,,0.7583,0.05,0.1167,0.9988,1.0,15.167
+drift,DRIFTED,,0.2167,0.0,0.1167,0.8306,0.0,
+repair_global_a4,REPAIRED · global@a4 (100%),1.0,0.7417,0.5,0.2167,0.7885,0.9692,1.483
+repair_harm25_a4,REPAIRED · harm@25%,0.25,0.7083,0.4,0.275,0.8208,0.9077,1.771
+repair_harm10_a4,REPAIRED · harm@10%,0.1,0.6083,0.3,0.2667,0.7898,0.7231,2.028
+repair_harm4_a4,REPAIRED · harm@4%,0.04,0.5167,0.225,0.2833,0.7956,0.5538,2.296
+repair_harm2_a4,REPAIRED · harm@2%,0.02,0.5083,0.2,0.3,0.795,0.5385,2.542

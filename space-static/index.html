@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ScarTissue — what a restricted repair buys back</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>ScarTissue</h1>
+  <p class="lede">
+    Abliteration removes a model's refusal read-out. This page shows, from measurements, what comes back
+    when you repair it — and what that repair costs. Model:
+    <code>CohereLabs/tiny-aya-global</code> (3.35 B, 36 layers). Drift and repair both act on the same
+    72 write matrices at layer 15.
+  </p>
+  <p class="lede small">
+    Every number below was produced by a run stored in
+    <a href="https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-evals">scartissue-tinyaya-evals</a>;
+    the edits themselves ship as
+    <a href="https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-abliteration-patches">abliteration</a>
+    and <a href="https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-repair-patches">repair</a>
+    parameters. No drifted checkpoint is published.
+  </p>
+</header>
+
+<section class="card">
+  <h2>The frontier <span class="tag">the claim</span></h2>
+  <p class="note">
+    X: over-refusal on 40 benign prompts (XSTest) — the price. Y: refusal on 120 harmful prompts
+    (StrongREJECT) — the benefit. A repair that only moves up is a repair that bought refusal by
+    forgetting the difference between harmful and harmless.
+  </p>
+  <div id="chart" class="chart"></div>
+  <table id="frontier-table" class="tbl"></table>
+</section>
+
+<section class="card">
+  <h2>Same prompt, three models</h2>
+  <div class="controls">
+    <label for="preset">Prompt</label>
+    <select id="preset"></select>
+    <label for="arm">Repair arm</label>
+    <select id="arm"></select>
+  </div>
+  <p id="prompt-text" class="prompt"></p>
+  <div class="cols">
+    <article><h3>BASE</h3><div class="badge" data-arm="base"></div><p class="comp" data-arm="base"></p></article>
+    <article><h3>DRIFTED <span class="hint">after abliteration</span></h3><div class="badge" data-arm="drift"></div><p class="comp" data-arm="drift"></p></article>
+    <article><h3>REPAIRED</h3><div class="badge" data-arm="repair"></div><p class="comp" data-arm="repair"></p></article>
+  </div>
+  <p class="note">
+    The badge is the <em>refusal regex</em> — a diagnostic, not a harm judgement. Automated safety
+    judgement (ASR) comes from a judge panel and lives in the evals dataset; at 3.35 B this model's
+    non-refusals are mostly hedging, so over-refusal is the sharp axis and refusal alone is not.
+  </p>
+</section>
+
+<section class="card">
+  <h2>What this does and does not show</h2>
+  <ul class="limits">
+    <li><b>Does:</b> measure, on one Cohere model, that refusal is recoverable weight-only
+      (no training data) and that the recovery is paid for in over-refusal; that a 2 % support keeping
+      only the harm-weighted columns is far cheaper than the global edit at similar recovery; and that
+      <em>random</em> 10 % supports do nothing, which is the control the restricted claim needs.</li>
+    <li><b>Does not:</b> claim a restricted repair is better <em>per parameter</em> than a full one —
+      it isn't, 100 % is still the most efficient point. It claims the frontier exists and that its shape
+      is controlled by the support, which is what makes a cheap repair possible.</li>
+    <li><b>Does not:</b> claim the drift is reversible in general. On this model the refusal direction
+      after abliteration is orthogonal to the one removed (cos = 1.9e-4), so a repair must act along the
+      new direction; amplifying the old one is a no-op by construction.</li>
+    <li><b>Limits:</b> n = 120 harmful / 40 benign prompts, one seed for the drift, refusal measured by
+      regex, capability by gsm8k exact-match. Treat single-arm differences under ~0.05 as noise.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>
+    Built for the Lexsi AI Safety &amp; Alignment Hackathon, Track 2. Code and runs:
+    <a href="https://huggingface.co/amugoodbad229">amugoodbad229</a>.
+    Model licence: LSAL 1.2/1.1 (research use); the drift is published as parameters only, because §4
+    forbids deploying a drifted checkpoint.
+  </p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

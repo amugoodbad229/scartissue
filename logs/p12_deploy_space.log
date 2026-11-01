@@ -1,0 +1,169 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-jg93O8b3z3L5Qn6pfqd26m
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p12_deploy_space.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\space
+└── ✓ Created Function deploy.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 836, in hf_raise_for_status
+    response.raise_for_status()
+  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://huggingface.co/api/repos/create'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 987, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 189, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 266, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/p12_deploy_space.py", line 37, in deploy
+    api.create_repo(repo_id, repo_type="space", space_sdk="gradio", exist_ok=True)
+  File "/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 4858, in create_repo
+    raise err
+  File "/usr/local/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 4842, in create_repo
+    hf_raise_for_status(r)
+  File "/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 966, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://huggingface.co/api/repos/create' (Request ID: Root=1-6ae6c232-7d43500f6afabbc6664711b8;aee9298b-97fb-4db3-ad47-7dfb1982979d)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+Static Spaces are free for everyone, but hosting Gradio and Docker Spaces on free cpu-basic requires a PRO subscription. Subscribe at https://huggingface.co/pro
+Stopping app - uncaught exception raised locally: ExecutionError('Could not deserialize remote exception due to local error:\nDeserialization failed because the \'httpx\' module is not available in the local environment.\nThis can happen if your local environment does not have the remote exception definitions.\nHere is the remote traceback:\nTraceback (most recent call last):\n  File "/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 836, in hf_raise_for_status\n    response.raise_for_status()\n  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status\n    raise HTTPStatusError(message, request=request, response=self)\nhttpx.HTTPStatusError: Client error \'402 Payment Required\' for url \'https://huggingface.co/api/repos/create\'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File "/pkg/modal/_runtime/container_io_m.
+┌───────────────────── Traceback (most recent call last) ─────────────────────┐
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_serialization.py:117 in deserialize                  │
+│                                                                             │
+│   116 │   try:                                                              │
+│ > 117 │   │   return Unpickler(client, io.BytesIO(s)).load()                │
+│   118 │   except AttributeError as exc:                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+ModuleNotFoundError: No module named 'httpx'
+
+The above exception was the direct cause of the following exception:
+
+┌───────────────────── Traceback (most recent call last) ─────────────────────┐
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime │
+│ nts/p12_deploy_space.py:61 in main                                          │
+│                                                                             │
+│   60 def main() -> None:                                                    │
+│ > 61 │   out = deploy.remote()                                              │
+│   62 │   print("[deploy]", out["url"], "| stage:", out["stage"])            │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_object.py:49 in wrapped                              │
+│                                                                             │
+│    48 │   │   await self.hydrate()                                          │
+│ >  49 │   │   return await method(self, *args, **kwargs)                    │
+│    50                                                                       │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_functions.py:2081 in remote                          │
+│                                                                             │
+│   2080 │   │                                                                │
+│ > 2081 │   │   return await self._call_function(args, kwargs)               │
+│   2082                                                                      │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_functions.py:2018 in _call_function                  │
+│                                                                             │
+│   2017 │   │                                                                │
+│ > 2018 │   │   return await invocation.run_function()                       │
+│   2019                                                                      │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_functions.py:517 in run_function                     │
+│                                                                             │
+│    516 │   │   │   # No more retries left.                                  │
+│ >  517 │   │   │   return await _process_result(                            │
+│    518 │   │   │   │   await_response.output.result, await_response.output. │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_utils\function_utils.py:547 in _process_result       │
+│                                                                             │
+│   546 │   │   │   except DeserializationError as deser_exc:                 │
+│ > 547 │   │   │   │   raise ExecutionError(                                 │
+│   548 │   │   │   │   │   "Could not deserialize remote exception due to lo │
+└─────────────────────────────────────────────────────────────────────────────┘
+ExecutionError: Could not deserialize remote exception due to local error:
+Deserialization failed because the 'httpx' module is not available in the local
+environment.
+This can happen if your local environment does not have the remote exception 
+definitions.
+Here is the remote traceback:
+Traceback (most recent call last):
+  File 
+"/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 
+836, in hf_raise_for_status
+    response.raise_for_status()
+  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 829, in
+raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 
+'https://huggingface.co/api/repos/create'
+For more information check: 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 987, in 
+handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 189, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 266, in 
+call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, 
+**kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^
+  File "/root/p12_deploy_space.py", line 37, in deploy
+    api.create_repo(repo_id, repo_type="space", space_sdk="gradio", 
+exist_ok=True)
+  File 
+"/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_deprecation.py"
+, line 101, in inner_f
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File 
+"/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py",
+line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/huggingface_hub/hf_api.py", 
+line 4858, in create_repo
+    raise err
+  File "/usr/local/lib/python3.12/site-packages/huggingface_hub/hf_api.py", 
+line 4842, in create_repo
+    hf_raise_for_status(r)
+  File 
+"/usr/local/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 
+966, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for 
+url 'https://huggingface.co/api/repos/create' (Request ID: 
+Root=1-6ae6c232-7d43500f6afabbc6664711b8;aee9298b-97fb-4db3-ad47-7dfb1982979d)
+For more information check: 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+Static Spaces are free for everyone, but hosting Gradio and Docker Spaces on 
+free cpu-basic requires a PRO subscription. Subscribe at 
+https://huggingface.co/pro
+

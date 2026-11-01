@@ -1,0 +1,343 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-W3gsfHn3dUbJRzYlO6uBjm
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p9b_publish_artifacts_evals.py
+├── ✓ Uploaded artifacts\load_patch.py
+├── ✓ Created Function push_patches.
+└── ✓ Created Function push_evals.
+/usr/local/lib/python3.12/site-packages/huggingface_hub/hf_api.py:11779: UserWarning: Warnings while validating metadata in README.md:
+- empty or missing yaml metadata in repo card
+  warnings.warn(f"Warnings while validating metadata in README.md:\n{message}")
+No files have been modified since last commit. Skipping to prevent empty commit.
+[amugoodbad229/scartissue-tinyaya-abliteration-patches]   manifest.json                                 102,936 B
+No files have been modified since last commit. Skipping to prevent empty commit.
+[amugoodbad229/scartissue-tinyaya-abliteration-patches]   load_patch.py                                   2,428 B
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1A
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A
+[1A  ...ny-aya-global_layer15.npz: 100%|██████████| 7.58MB / 7.58MB            [A[A
+
+
+[1A
+[1A  ...ny-aya-global_layer15.npz: 100%|██████████| 7.58MB / 7.58MB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████| 7.58MB / 7.58MB,  751kB/s  
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A  ...ny-aya-global_layer15.npz: 100%|██████████| 7.58MB / 7.58MB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...ny-aya-global_layer15.npz: 100%|██████████| 7.58MB / 7.58MB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A  ...ny-aya-global_layer15.npz: 100%|██████████| 7.58MB / 7.58MB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[AProcessing Files (1 / 1)      : 100%|██████████| 7.58MB / 7.58MB,  732kB/s  
+
+[1ANew Data Upload               : |          |  0.00B /  0.00B,  0.00B/s  
+
+[1AValidating                    : ██████████| 100%            
+
+[1A  ...ny-aya-global_layer15.npz: 100%|██████████| 7.58MB / 7.58MB            
+No files have been modified since last commit. Skipping to prevent empty commit.
+[amugoodbad229/scartissue-tinyaya-abliteration-patches]   abliteration_tiny-aya-global_layer15.npz    7,584,296 B
+No files have been modified since last commit. Skipping to prevent empty commit.
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1A
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A
+[1A  ...acts/repair_global_a4.npz: 100%|██████████| 7.58MB / 7.58MB            [A[A
+
+
+[1A
+[1A  ...acts/repair_global_a4.npz: 100%|██████████| 7.58MB / 7.58MB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████| 7.58MB / 7.58MB,  751kB/s  
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A  ...acts/repair_global_a4.npz: 100%|██████████| 7.58MB / 7.58MB            [A[A
+
+
+
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...acts/repair_global_a4.npz: 100%|██████████| 7.58MB / 7.58MB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  ...acts/repair_global_a4.npz: 100%|██████████| 7.58MB / 7.58MB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████| 7.58MB / 7.58MB,  733kB/s  
+
+[1ANew Data Upload               : |          |  0.00B /  0.00B,  0.00B/s  
+
+[1AValidating                    : ██████████| 100%            
+  ...acts/repair_global_a4.npz: 100%|██████████| 7.58MB / 7.58MB            
+No files have been modified since last commit. Skipping to prevent empty commit.
+[amugoodbad229/scartissue-tinyaya-repair-patches]   repair_global_a4.npz                        7,584,296 B
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1A
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A
+[1A  ...acts/repair_harm10_a4.npz: 100%|██████████|  816kB /  816kB            [A[A
+
+
+[1A
+[1A  ...acts/repair_harm10_a4.npz: 100%|██████████|  816kB /  816kB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  816kB /  816kB, 80.9kB/s  
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A  ...acts/repair_harm10_a4.npz: 100%|██████████|  816kB /  816kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...acts/repair_harm10_a4.npz: 100%|██████████|  816kB /  816kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  ...acts/repair_harm10_a4.npz: 100%|██████████|  816kB /  816kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  816kB /  816kB, 79.1kB/s  
+
+[1ANew Data Upload               : |          |  0.00B /  0.00B,  0.00B/s  
+
+[1AValidating                    : ██████████| 100%            
+
+[1A  ...acts/repair_harm10_a4.npz: 100%|██████████|  816kB /  816kB            
+No files have been modified since last commit. Skipping to prevent empty commit.
+[amugoodbad229/scartissue-tinyaya-repair-patches]   repair_harm10_a4.npz                          816,056 B
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1A
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A
+[1A  ...facts/repair_harm2_a4.npz: 100%|██████████|  214kB /  214kB            [A[A
+
+
+[1A
+[1A  ...facts/repair_harm2_a4.npz: 100%|██████████|  214kB /  214kB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  214kB /  214kB, 21.2kB/s  
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...facts/repair_harm2_a4.npz: 100%|██████████|  214kB /  214kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...facts/repair_harm2_a4.npz: 100%|██████████|  214kB /  214kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  ...facts/repair_harm2_a4.npz: 100%|██████████|  214kB /  214kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  214kB /  214kB, 20.8kB/s  
+New Data Upload               : |          |  0.00B /  0.00B,  0.00B/s  
+
+[1AValidating                    : ██████████| 100%            
+
+[1A  ...facts/repair_harm2_a4.npz: 100%|██████████|  214kB /  214kB            
+No files have been modified since last commit. Skipping to prevent empty commit.
+[amugoodbad229/scartissue-tinyaya-repair-patches]   repair_harm2_a4.npz                           214,440 B
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1A
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A  ...facts/repair_harm4_a4.npz: 100%|██████████|  365kB /  365kB            [A[A
+
+
+[1A
+[1A  ...facts/repair_harm4_a4.npz: 100%|██████████|  365kB /  365kB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  365kB /  365kB, 36.0kB/s  
+
+[1A
+[1ANew Data Upload               : 100%|██████████|  365kB /  365kB, 36.0kB/s  [A
+
+
+[1A
+[1A  ...facts/repair_harm4_a4.npz: 100%|██████████|  365kB /  365kB            [A[A
+
+
+[1A
+[1A  ...facts/repair_harm4_a4.npz: 100%|██████████|  365kB /  365kB            [A[A
+
+
+[1A  ...facts/repair_harm4_a4.npz: 100%|██████████|  365kB /  365kB            [A[A
+
+
+[1A  ...facts/repair_harm4_a4.npz: 100%|██████████|  365kB /  365kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...facts/repair_harm4_a4.npz: 100%|██████████|  365kB /  365kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...facts/repair_harm4_a4.npz: 100%|██████████|  365kB /  365kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  ...facts/repair_harm4_a4.npz: 100%|██████████|  365kB /  365kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  365kB /  365kB, 33.9kB/s  
+
+[1ANew Data Upload               : 100%|██████████|  365kB /  365kB, 33.9kB/s  
+
+[1AValidating                    : ██████████| 100%            
+
+[1A  ...facts/repair_harm4_a4.npz: 100%|██████████|  365kB /  365kB            
+[amugoodbad229/scartissue-tinyaya-repair-patches]   repair_harm4_a4.npz                           364,840 B
+[amugoodbad229/scartissue-tinyaya-repair-patches]   manifest.json                                 102,936 B
+/usr/local/lib/python3.12/site-packages/huggingface_hub/hf_api.py:11779: UserWarning: Warnings while validating metadata in README.md:
+- empty or missing yaml metadata in repo card
+  warnings.warn(f"Warnings while validating metadata in README.md:\n{message}")
+No files have been modified since last commit. Skipping to prevent empty commit.
+No files have been modified since last commit. Skipping to prevent empty commit.
+[amugoodbad229/scartissue-tinyaya-evals]   completions.json                              512,991 B
+No files have been modified since last commit. Skipping to prevent empty commit.
+[amugoodbad229/scartissue-tinyaya-evals]   evals_manifest.json                             1,997 B
+No files have been modified since last commit. Skipping to prevent empty commit.
+[amugoodbad229/scartissue-tinyaya-evals]   frontier.csv                                      607 B
+No files have been modified since last commit. Skipping to prevent empty commit.
+[amugoodbad229/scartissue-tinyaya-evals]   prompts.json                                   38,378 B
+[patches] drift=['.gitattributes', 'README.md', 'abliteration_tiny-aya-global_layer15.npz', 'load_patch.py', 'manifest.json']
+[patches] repair=['.gitattributes', 'README.md', 'manifest.json', 'repair_global_a4.npz', 'repair_harm10_a4.npz', 'repair_harm2_a4.npz', 'repair_harm4_a4.npz']
+[evals] {'repo': 'amugoodbad229/scartissue-tinyaya-evals', 'files': ['.gitattributes', 'README.md', 'completions.json', 'evals_manifest.json', 'frontier.csv', 'prompts.json']}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-W3gsfHn3dUbJRzYlO6uBjm
