@@ -211,6 +211,13 @@
       "gpu": null,
       "reserved_at": "2026-11-06T11:17:19+00:00",
       "purpose": "Validate the judge-facing Dockerfile, README run instructions and updated Space card"
+    },
+    {
+      "job": "dockerfile_build_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": null,
+      "reserved_at": "2026-11-06T11:19:47+00:00",
+      "purpose": "Build the judge-facing Dockerfile on Modal and probe the served workbench"
     }
   ],
   "realized_provider_charge_usd": null

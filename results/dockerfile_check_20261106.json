@@ -1,0 +1,33 @@
+{
+  "workdir_files": [
+    "space-static"
+  ],
+  "whoami": "root",
+  "requests": {
+    "index.html": {
+      "status": 200,
+      "bytes": 7123
+    },
+    "app.js": {
+      "status": 200,
+      "bytes": 11557
+    },
+    "evidence.js": {
+      "status": 200,
+      "bytes": 7610
+    },
+    "style.css": {
+      "status": 200,
+      "bytes": 5732
+    },
+    "data/evidence.json": {
+      "status": 200,
+      "bytes": 1609492
+    },
+    "data/readiness.json": {
+      "status": 200,
+      "bytes": 12633
+    }
+  },
+  "status": "passed"
+}

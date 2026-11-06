@@ -24,10 +24,10 @@ docker run --rm -p 8000:8000 scartissue
 
 The image is twelve lines on `python:3.12-slim`: it copies `space-static/` and serves it. No model weights,
 no CUDA, no API key, no build step, nothing fetched at runtime. Everything it shows is a precomputed evidence
-bundle committed at `space-static/data/evidence.json` (1.6 MB). This machine has no Docker daemon, so the image
-was not built here — but the exact directory it serves is exercised by real-Chromium tests, and a plain
-`http.server` over the same folder renders the full workbench with **zero** page errors (4 arms, 6 cards,
-export enabled).
+bundle committed at `space-static/data/evidence.json` (1.6 MB). This machine has no Docker daemon, so the build was verified
+elsewhere: the same `Dockerfile` was built by `modal.Image.from_dockerfile` and its container served all six
+workbench paths with HTTP 200 and byte-exact sizes (`results/dockerfile_check_20261106.json`). Modal runs
+containers as root, so the image's `USER judge` line is the one thing that build did not exercise.
 
 **Without Docker** (any OS with Python 3):
 
