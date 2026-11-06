@@ -1,0 +1,385 @@
+✓ Initialized. View run at 
+https://modal.com/apps/ayman-cool1971/main/ap-GYXMGoeAsBujjuo4eKTCdy
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p30_circuit_arm_eval.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus_split.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus.jsonl
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\judge_protocols.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\corpus_fit.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\safety_core.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\generation_checks.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\eval_runtime.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s\load_patch.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\src
+├── ✓ Created Function generate.
+└── ✓ Created Function judge.
+
+[1AFetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+[1AFetching 2 files:  50%|█████     | 1/2 [00:19<00:19, 19.26s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:21<00:00,  9.44s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:21<00:00, 10.92s/it]
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<00:37,  7.62it/s]
+[1ALoading weights:  12%|█▏        | 35/290 [00:00<00:01, 180.57it/s]
+[1ALoading weights:  23%|██▎       | 68/290 [00:00<00:00, 242.26it/s]
+[1ALoading weights:  37%|███▋      | 107/290 [00:00<00:00, 290.52it/s]
+[1ALoading weights:  48%|████▊     | 140/290 [00:00<00:00, 301.75it/s]
+[1ALoading weights:  60%|█████▉    | 173/290 [00:00<00:00, 308.89it/s]
+[1ALoading weights:  73%|███████▎  | 212/290 [00:00<00:00, 332.50it/s]
+[1ALoading weights:  86%|████████▌ | 250/290 [00:00<00:00, 341.35it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:00<00:00, 306.80it/s]
+
+[1AFetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]
+[1AFetching 1 files: 100%|██████████| 1/1 [00:00<00:00, 936.44it/s]
+circuit_a4: 4/160 answers retained
+circuit_a4: 8/160 answers retained
+circuit_a4: 12/160 answers retained
+circuit_a4: 16/160 answers retained
+circuit_a4: 20/160 answers retained
+circuit_a4: 24/160 answers retained
+circuit_a4: 28/160 answers retained
+circuit_a4: 32/160 answers retained
+circuit_a4: 36/160 answers retained
+circuit_a4: 40/160 answers retained
+circuit_a4: 44/160 answers retained
+circuit_a4: 48/160 answers retained
+circuit_a4: 52/160 answers retained
+circuit_a4: 56/160 answers retained
+circuit_a4: 60/160 answers retained
+circuit_a4: 64/160 answers retained
+circuit_a4: 68/160 answers retained
+circuit_a4: 72/160 answers retained
+circuit_a4: 76/160 answers retained
+circuit_a4: 80/160 answers retained
+circuit_a4: 84/160 answers retained
+circuit_a4: 88/160 answers retained
+circuit_a4: 92/160 answers retained
+circuit_a4: 96/160 answers retained
+circuit_a4: 100/160 answers retained
+circuit_a4: 104/160 answers retained
+circuit_a4: 108/160 answers retained
+circuit_a4: 112/160 answers retained
+circuit_a4: 116/160 answers retained
+circuit_a4: 120/160 answers retained
+circuit_a4: 124/160 answers retained
+circuit_a4: 128/160 answers retained
+circuit_a4: 132/160 answers retained
+circuit_a4: 136/160 answers retained
+circuit_a4: 140/160 answers retained
+circuit_a4: 144/160 answers retained
+circuit_a4: 148/160 answers retained
+circuit_a4: 152/160 answers retained
+circuit_a4: 156/160 answers retained
+circuit_a4: 160/160 answers retained
+
+[1AFetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]
+[1AFetching 3 files:  33%|███▎      | 1/3 [00:41<01:22, 41.08s/it]
+[1AFetching 3 files:  67%|██████▋   | 2/3 [00:44<00:18, 18.97s/it]
+[1AFetching 3 files: 100%|██████████| 3/3 [00:45<00:00, 10.51s/it]Fetching 3 files: 100%|██████████| 3/3 [00:45<00:00, 15.00s/it]
+
+[1ALoading weights:   0%|          | 0/291 [00:00<?, ?it/s]
+[1ALoading weights:   3%|▎         | 9/291 [00:00<00:03, 89.62it/s]
+[1ALoading weights:   8%|▊         | 23/291 [00:00<00:02, 114.55it/s]
+[1ALoading weights:  14%|█▎        | 40/291 [00:00<00:01, 134.93it/s]
+[1ALoading weights:  19%|█▊        | 54/291 [00:00<00:01, 133.19it/s]
+[1ALoading weights:  23%|██▎       | 68/291 [00:00<00:01, 134.02it/s]
+[1ALoading weights:  29%|██▉       | 85/291 [00:00<00:01, 138.58it/s]
+[1ALoading weights:  34%|███▍      | 99/291 [00:00<00:01, 136.92it/s]
+[1ALoading weights:  39%|███▉      | 113/291 [00:00<00:01, 137.25it/s]
+[1ALoading weights:  45%|████▍     | 130/291 [00:00<00:01, 145.76it/s]
+[1ALoading weights:  50%|████▉     | 145/291 [00:01<00:01, 143.71it/s]
+[1ALoading weights:  55%|█████▍    | 160/291 [00:01<00:00, 143.98it/s]
+[1ALoading weights:  60%|██████    | 176/291 [00:01<00:00, 145.68it/s]
+[1ALoading weights:  66%|██████▋   | 193/291 [00:01<00:00, 151.13it/s]
+[1ALoading weights:  72%|███████▏  | 209/291 [00:01<00:00, 149.31it/s]
+[1ALoading weights:  77%|███████▋  | 224/291 [00:01<00:00, 144.47it/s]
+[1ALoading weights:  82%|████████▏ | 239/291 [00:01<00:00, 142.26it/s]
+[1ALoading weights:  88%|████████▊ | 256/291 [00:01<00:00, 145.43it/s]
+[1ALoading weights:  94%|█████████▍| 274/291 [00:01<00:00, 149.18it/s]
+[1ALoading weights:  99%|█████████▉| 289/291 [00:02<00:00, 147.45it/s]
+[1ALoading weights: 100%|██████████| 291/291 [00:02<00:00, 142.93it/s]
+harmbench: 160/160 verdicts retained
+
+[1AFetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]
+[1AFetching 5 files:  20%|██        | 1/5 [00:49<03:16, 49.05s/it]
+[1AFetching 5 files:  40%|████      | 2/5 [00:50<01:03, 21.04s/it]
+[1AFetching 5 files:  60%|██████    | 3/5 [00:52<00:24, 12.36s/it]
+[1AFetching 5 files:  80%|████████  | 4/5 [00:53<00:07,  7.84s/it]
+[1AFetching 5 files: 100%|██████████| 5/5 [00:53<00:00,  5.05s/it]
+[1AFetching 5 files: 100%|██████████| 5/5 [00:53<00:00, 10.71s/it]
+
+[1ALoading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/399 [00:00<01:56,  3.42it/s]
+[1ALoading weights:   4%|▍         | 17/399 [00:00<00:07, 53.62it/s]
+[1ALoading weights:  10%|▉         | 39/399 [00:00<00:03, 103.47it/s]
+[1ALoading weights:  15%|█▌        | 61/399 [00:00<00:02, 134.98it/s]
+[1ALoading weights:  21%|██        | 83/399 [00:00<00:02, 153.45it/s]
+[1ALoading weights:  26%|██▋       | 105/399 [00:00<00:01, 168.12it/s]
+[1ALoading weights:  32%|███▏      | 127/399 [00:00<00:01, 182.46it/s]
+[1ALoading weights:  37%|███▋      | 149/399 [00:01<00:01, 189.96it/s]
+[1ALoading weights:  43%|████▎     | 171/399 [00:01<00:01, 191.64it/s]
+[1ALoading weights:  48%|████▊     | 193/399 [00:01<00:01, 193.20it/s]
+[1ALoading weights:  54%|█████▍    | 215/399 [00:01<00:00, 197.27it/s]
+[1ALoading weights:  59%|█████▉    | 237/399 [00:01<00:00, 201.79it/s]
+[1ALoading weights:  65%|██████▍   | 259/399 [00:01<00:00, 200.82it/s]
+[1ALoading weights:  70%|███████   | 281/399 [00:01<00:00, 203.32it/s]
+[1ALoading weights:  76%|███████▌  | 303/399 [00:01<00:00, 205.20it/s]
+[1ALoading weights:  81%|████████▏ | 325/399 [00:01<00:00, 207.79it/s]
+[1ALoading weights:  87%|████████▋ | 347/399 [00:02<00:00, 209.77it/s]
+[1ALoading weights:  92%|█████████▏| 369/399 [00:02<00:00, 211.43it/s]
+[1ALoading weights:  98%|█████████▊| 393/399 [00:02<00:00, 219.68it/s]Loading weights: 100%|██████████| 399/399 [00:02<00:00, 179.55it/s]
+qwen3guard: 320/160 verdicts retained
+
+[1AFetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]
+[1AFetching 3 files:  33%|███▎      | 1/3 [00:37<01:14, 37.33s/it]
+[1AFetching 3 files: 100%|██████████| 3/3 [00:38<00:00, 10.19s/it]
+[1AFetching 3 files: 100%|██████████| 3/3 [00:38<00:00, 12.90s/it]
+
+[1ALoading weights:   0%|          | 0/254 [00:00<?, ?it/s]
+[1ALoading weights:   2%|▏         | 5/254 [00:00<00:05, 48.03it/s]
+[1ALoading weights:   9%|▊         | 22/254 [00:00<00:02, 111.99it/s]
+[1ALoading weights:  15%|█▌        | 39/254 [00:00<00:01, 135.60it/s]
+[1ALoading weights:  21%|██▏       | 54/254 [00:00<00:01, 139.12it/s]
+[1ALoading weights:  27%|██▋       | 68/254 [00:00<00:01, 134.78it/s]
+[1ALoading weights:  33%|███▎      | 85/254 [00:00<00:01, 143.77it/s]
+[1ALoading weights:  40%|████      | 102/254 [00:00<00:01, 149.86it/s]
+[1ALoading weights:  46%|████▋     | 118/254 [00:00<00:00, 151.26it/s]
+[1ALoading weights:  53%|█████▎    | 134/254 [00:00<00:00, 148.83it/s]
+[1ALoading weights:  59%|█████▊    | 149/254 [00:01<00:00, 144.05it/s]
+[1ALoading weights:  65%|██████▌   | 166/254 [00:01<00:00, 146.54it/s]
+[1ALoading weights:  72%|███████▏  | 183/254 [00:01<00:00, 150.90it/s]
+[1ALoading weights:  79%|███████▉  | 201/254 [00:01<00:00, 152.78it/s]
+[1ALoading weights:  85%|████████▌ | 217/254 [00:01<00:00, 153.13it/s]
+[1ALoading weights:  92%|█████████▏| 233/254 [00:01<00:00, 149.79it/s]
+[1ALoading weights:  98%|█████████▊| 248/254 [00:01<00:00, 143.70it/s]Loading weights: 100%|██████████| 254/254 [00:01<00:00, 145.65it/s]
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+granite: 480/160 verdicts retained
+
+[1ALoading weights:   0%|          | 0/291 [00:00<?, ?it/s]
+[1ALoading weights:   1%|          | 2/291 [00:00<00:17, 16.80it/s]
+[1ALoading weights:   5%|▍         | 14/291 [00:00<00:04, 65.92it/s]
+[1ALoading weights:   8%|▊         | 23/291 [00:00<00:03, 73.23it/s]
+[1ALoading weights:  11%|█         | 32/291 [00:00<00:03, 76.17it/s]
+[1ALoading weights:  14%|█▍        | 41/291 [00:00<00:03, 78.82it/s]
+[1ALoading weights:  17%|█▋        | 50/291 [00:00<00:02, 81.41it/s]
+[1ALoading weights:  20%|██        | 59/291 [00:00<00:02, 81.32it/s]
+[1ALoading weights:  23%|██▎       | 68/291 [00:00<00:02, 79.95it/s]
+[1ALoading weights:  26%|██▋       | 77/291 [00:00<00:02, 82.43it/s]
+[1ALoading weights:  30%|██▉       | 87/291 [00:01<00:02, 81.35it/s]
+[1ALoading weights:  33%|███▎      | 96/291 [00:01<00:02, 81.26it/s]
+[1ALoading weights:  36%|███▌      | 105/291 [00:01<00:02, 79.14it/s]
+[1ALoading weights:  39%|███▉      | 114/291 [00:01<00:02, 82.06it/s]
+[1ALoading weights:  43%|████▎     | 124/291 [00:01<00:01, 87.09it/s]
+[1ALoading weights:  46%|████▌     | 133/291 [00:01<00:02, 77.62it/s]
+[1ALoading weights:  48%|████▊     | 141/291 [00:01<00:02, 73.56it/s]
+[1ALoading weights:  52%|█████▏    | 150/291 [00:01<00:01, 74.04it/s]
+[1ALoading weights:  55%|█████▍    | 159/291 [00:02<00:01, 74.43it/s]
+[1ALoading weights:  58%|█████▊    | 168/291 [00:02<00:01, 74.67it/s]
+[1ALoading weights:  61%|██████    | 177/291 [00:02<00:01, 72.65it/s]
+[1ALoading weights:  64%|██████▍   | 186/291 [00:02<00:01, 76.06it/s]
+[1ALoading weights:  67%|██████▋   | 195/291 [00:02<00:01, 74.05it/s]
+[1ALoading weights:  70%|██████▉   | 203/291 [00:02<00:01, 75.45it/s]
+[1ALoading weights:  73%|███████▎  | 212/291 [00:02<00:01, 69.47it/s]
+[1ALoading weights:  76%|███████▋  | 222/291 [00:02<00:00, 76.41it/s]
+[1ALoading weights:  79%|███████▉  | 231/291 [00:03<00:00, 79.79it/s]
+[1ALoading weights:  84%|████████▍ | 244/291 [00:03<00:00, 91.27it/s]
+[1ALoading weights:  88%|████████▊ | 256/291 [00:03<00:00, 95.38it/s]
+[1ALoading weights:  91%|█████████▏| 266/291 [00:03<00:00, 91.76it/s]
+[1ALoading weights:  95%|█████████▍| 276/291 [00:03<00:00, 88.08it/s]
+[1ALoading weights:  98%|█████████▊| 285/291 [00:03<00:00, 87.22it/s]Loading weights: 100%|██████████| 291/291 [00:03<00:00, 80.73it/s]
+harmbench: 160/160 verdicts retained
+
+[1ALoading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/399 [00:00<01:53,  3.49it/s]
+[1ALoading weights:   1%|          | 2/399 [00:00<01:57,  3.39it/s]
+[1ALoading weights:   4%|▍         | 15/399 [00:00<00:12, 30.44it/s]
+[1ALoading weights:   7%|▋         | 27/399 [00:00<00:07, 49.67it/s]
+[1ALoading weights:  10%|▉         | 39/399 [00:00<00:05, 63.24it/s]
+[1ALoading weights:  13%|█▎        | 53/399 [00:01<00:04, 82.21it/s]
+[1ALoading weights:  16%|█▋        | 65/399 [00:01<00:03, 88.75it/s]
+[1ALoading weights:  20%|██        | 81/399 [00:01<00:03, 100.59it/s]
+[1ALoading weights:  23%|██▎       | 93/399 [00:01<00:03, 99.07it/s] 
+[1ALoading weights:  26%|██▋       | 105/399 [00:01<00:02, 98.26it/s]
+[1ALoading weights:  29%|██▉       | 116/399 [00:01<00:02, 98.63it/s]
+[1ALoading weights:  32%|███▏      | 127/399 [00:01<00:02, 99.52it/s]
+[1ALoading weights:  35%|███▍      | 138/399 [00:01<00:02, 101.76it/s]
+[1ALoading weights:  37%|███▋      | 149/399 [00:01<00:02, 102.00it/s]
+[1ALoading weights:  40%|████      | 160/399 [00:02<00:02, 101.96it/s]
+[1ALoading weights:  43%|████▎     | 171/399 [00:02<00:02, 101.15it/s]
+[1ALoading weights:  46%|████▌     | 182/399 [00:02<00:02, 99.88it/s] 
+[1ALoading weights:  48%|████▊     | 193/399 [00:02<00:02, 100.50it/s]
+[1ALoading weights:  51%|█████     | 204/399 [00:02<00:01, 100.83it/s]
+[1ALoading weights:  55%|█████▍    | 219/399 [00:02<00:01, 110.87it/s]
+[1ALoading weights:  58%|█████▊    | 233/399 [00:02<00:01, 118.90it/s]
+[1ALoading weights:  61%|██████▏   | 245/399 [00:02<00:01, 118.22it/s]
+[1ALoading weights:  64%|██████▍   | 257/399 [00:02<00:01, 110.92it/s]
+[1ALoading weights:  67%|██████▋   | 269/399 [00:03<00:01, 106.37it/s]
+[1ALoading weights:  70%|███████   | 281/399 [00:03<00:01, 102.81it/s]
+[1ALoading weights:  73%|███████▎  | 292/399 [00:03<00:01, 104.05it/s]
+[1ALoading weights:  76%|███████▌  | 304/399 [00:03<00:00, 108.15it/s]
+[1ALoading weights:  80%|███████▉  | 319/399 [00:03<00:00, 116.52it/s]
+[1ALoading weights:  84%|████████▎ | 334/399 [00:03<00:00, 113.27it/s]
+[1ALoading weights:  87%|████████▋ | 346/399 [00:03<00:00, 114.87it/s]
+[1ALoading weights:  90%|████████▉ | 358/399 [00:03<00:00, 108.25it/s]
+[1ALoading weights:  93%|█████████▎| 373/399 [00:03<00:00, 117.04it/s]
+[1ALoading weights:  96%|█████████▋| 385/399 [00:04<00:00, 116.81it/s]
+[1ALoading weights:  99%|█████████▉| 397/399 [00:04<00:00, 113.91it/s]
+[1ALoading weights: 100%|██████████| 399/399 [00:04<00:00, 94.90it/s] 
+qwen3guard: 320/160 verdicts retained
+
+[1ALoading weights:   0%|          | 0/254 [00:00<?, ?it/s]
+[1ALoading weights:   1%|          | 3/254 [00:00<00:09, 27.51it/s]
+[1ALoading weights:   7%|▋         | 17/254 [00:00<00:02, 87.56it/s]
+[1ALoading weights:  10%|█         | 26/254 [00:00<00:03, 75.37it/s]
+[1ALoading weights:  13%|█▎        | 34/254 [00:00<00:02, 76.85it/s]
+[1ALoading weights:  17%|█▋        | 42/254 [00:00<00:02, 74.19it/s]
+[1ALoading weights:  20%|█▉        | 50/254 [00:00<00:02, 72.34it/s]
+[1ALoading weights:  23%|██▎       | 59/254 [00:00<00:02, 74.21it/s]
+[1ALoading weights:  27%|██▋       | 68/254 [00:00<00:02, 74.92it/s]
+[1ALoading weights:  30%|███       | 77/254 [00:01<00:02, 75.21it/s]
+[1ALoading weights:  34%|███▍      | 86/254 [00:01<00:02, 75.85it/s]
+[1ALoading weights:  37%|███▋      | 95/254 [00:01<00:02, 76.74it/s]
+[1ALoading weights:  41%|████      | 104/254 [00:01<00:01, 78.82it/s]
+[1ALoading weights:  44%|████▍     | 113/254 [00:01<00:01, 80.33it/s]
+[1ALoading weights:  48%|████▊     | 122/254 [00:01<00:01, 82.43it/s]
+[1ALoading weights:  53%|█████▎    | 134/254 [00:01<00:01, 91.80it/s]
+[1ALoading weights:  57%|█████▋    | 144/254 [00:01<00:01, 88.42it/s]
+[1ALoading weights:  60%|██████    | 153/254 [00:01<00:01, 85.89it/s]
+[1ALoading weights:  64%|██████▍   | 162/254 [00:02<00:01, 83.96it/s]
+[1ALoading weights:  69%|██████▊   | 174/254 [00:02<00:00, 92.01it/s]
+[1ALoading weights:  72%|███████▏  | 184/254 [00:02<00:00, 91.14it/s]
+[1ALoading weights:  76%|███████▋  | 194/254 [00:02<00:00, 83.83it/s]
+[1ALoading weights:  80%|███████▉  | 203/254 [00:02<00:00, 84.15it/s]
+[1ALoading weights:  85%|████████▍ | 215/254 [00:02<00:00, 92.93it/s]
+[1ALoading weights:  89%|████████▊ | 225/254 [00:02<00:00, 91.28it/s]
+[1ALoading weights:  93%|█████████▎| 235/254 [00:02<00:00, 91.25it/s]
+[1ALoading weights:  96%|█████████▋| 245/254 [00:02<00:00, 87.21it/s]
+[1ALoading weights: 100%|██████████| 254/254 [00:03<00:00, 86.63it/s]
+[1ALoading weights: 100%|██████████| 254/254 [00:03<00:00, 82.76it/s]
+granite: 480/160 verdicts retained
+
+[1ALoading weights:   0%|          | 0/291 [00:00<?, ?it/s]
+[1ALoading weights:   1%|          | 2/291 [00:00<00:18, 15.80it/s]
+[1ALoading weights:   3%|▎         | 8/291 [00:00<00:07, 39.07it/s]
+[1ALoading weights:   5%|▌         | 15/291 [00:00<00:06, 45.88it/s]
+[1ALoading weights:   8%|▊         | 24/291 [00:00<00:04, 57.52it/s]
+[1ALoading weights:  11%|█▏        | 33/291 [00:00<00:03, 64.50it/s]
+[1ALoading weights:  14%|█▍        | 42/291 [00:00<00:03, 67.49it/s]
+[1ALoading weights:  18%|█▊        | 51/291 [00:00<00:03, 67.75it/s]
+[1ALoading weights:  21%|██        | 60/291 [00:00<00:03, 71.01it/s]
+[1ALoading weights:  24%|██▎       | 69/291 [00:01<00:02, 76.08it/s]
+[1ALoading weights:  30%|██▉       | 86/291 [00:01<00:02, 97.38it/s]
+[1ALoading weights:  33%|███▎      | 96/291 [00:01<00:02, 91.37it/s]
+[1ALoading weights:  36%|███▋      | 106/291 [00:01<00:02, 91.27it/s]
+[1ALoading weights:  40%|███▉      | 116/291 [00:01<00:02, 86.59it/s]
+[1ALoading weights:  43%|████▎     | 125/291 [00:01<00:02, 82.09it/s]
+[1ALoading weights:  46%|████▌     | 134/291 [00:01<00:01, 84.03it/s]
+[1ALoading weights:  49%|████▉     | 143/291 [00:01<00:01, 81.60it/s]
+[1ALoading weights:  52%|█████▏    | 152/291 [00:02<00:01, 80.93it/s]
+[1ALoading weights:  55%|█████▌    | 161/291 [00:02<00:01, 81.97it/s]
+[1ALoading weights:  58%|█████▊    | 170/291 [00:02<00:01, 82.44it/s]
+[1ALoading weights:  62%|██████▏   | 179/291 [00:02<00:01, 78.27it/s]
+[1ALoading weights:  64%|██████▍   | 187/291 [00:02<00:01, 74.23it/s]
+[1ALoading weights:  67%|██████▋   | 195/291 [00:02<00:01, 70.42it/s]
+[1ALoading weights:  70%|███████   | 204/291 [00:02<00:01, 71.18it/s]
+[1ALoading weights:  73%|███████▎  | 213/291 [00:02<00:01, 71.73it/s]
+[1ALoading weights:  76%|███████▋  | 222/291 [00:02<00:00, 72.61it/s]
+[1ALoading weights:  79%|███████▉  | 231/291 [00:03<00:00, 73.74it/s]
+[1ALoading weights:  82%|████████▏ | 240/291 [00:03<00:00, 75.39it/s]
+[1ALoading weights:  86%|████████▌ | 249/291 [00:03<00:00, 75.47it/s]
+[1ALoading weights:  89%|████████▊ | 258/291 [00:03<00:00, 75.16it/s]
+[1ALoading weights:  92%|█████████▏| 267/291 [00:03<00:00, 75.22it/s]
+[1ALoading weights:  95%|█████████▍| 276/291 [00:03<00:00, 75.01it/s]
+[1ALoading weights:  98%|█████████▊| 285/291 [00:03<00:00, 74.76it/s]Loading weights: 100%|██████████| 291/291 [00:03<00:00, 76.12it/s]
+harmbench: 160/160 verdicts retained
+
+[1ALoading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/399 [00:00<02:13,  2.99it/s]
+[1ALoading weights:   1%|          | 2/399 [00:00<02:12,  3.00it/s]
+[1ALoading weights:   3%|▎         | 10/399 [00:00<00:21, 18.41it/s]
+[1ALoading weights:   7%|▋         | 26/399 [00:00<00:07, 48.02it/s]
+[1ALoading weights:  10%|▉         | 38/399 [00:01<00:05, 62.58it/s]
+[1ALoading weights:  13%|█▎        | 50/399 [00:01<00:04, 73.29it/s]
+[1ALoading weights:  16%|█▌        | 64/399 [00:01<00:03, 88.68it/s]
+[1ALoading weights:  20%|█▉        | 78/399 [00:01<00:03, 100.89it/s]
+[1ALoading weights:  23%|██▎       | 90/399 [00:01<00:02, 104.34it/s]
+[1ALoading weights:  26%|██▌       | 103/399 [00:01<00:02, 108.00it/s]
+[1ALoading weights:  29%|██▉       | 115/399 [00:01<00:02, 104.31it/s]
+[1ALoading weights:  32%|███▏      | 126/399 [00:01<00:02, 105.07it/s]
+[1ALoading weights:  34%|███▍      | 137/399 [00:01<00:02, 105.32it/s]
+[1ALoading weights:  37%|███▋      | 148/399 [00:01<00:02, 104.93it/s]
+[1ALoading weights:  40%|███▉      | 159/399 [00:02<00:02, 103.76it/s]
+[1ALoading weights:  43%|████▎     | 170/399 [00:02<00:02, 104.89it/s]
+[1ALoading weights:  45%|████▌     | 181/399 [00:02<00:02, 104.85it/s]
+[1ALoading weights:  48%|████▊     | 193/399 [00:02<00:02, 102.40it/s]
+[1ALoading weights:  51%|█████     | 204/399 [00:02<00:01, 104.40it/s]
+[1ALoading weights:  55%|█████▍    | 218/399 [00:02<00:01, 114.38it/s]
+[1ALoading weights:  58%|█████▊    | 232/399 [00:02<00:01, 120.47it/s]
+[1ALoading weights:  62%|██████▏   | 246/399 [00:02<00:01, 124.17it/s]
+[1ALoading weights:  65%|██████▍   | 259/399 [00:02<00:01, 116.63it/s]
+[1ALoading weights:  69%|██████▊   | 274/399 [00:03<00:00, 125.59it/s]
+[1ALoading weights:  73%|███████▎  | 290/399 [00:03<00:00, 129.40it/s]
+[1ALoading weights:  76%|███████▌  | 304/399 [00:03<00:00, 120.46it/s]
+[1ALoading weights:  80%|███████▉  | 318/399 [00:03<00:00, 125.44it/s]
+[1ALoading weights:  84%|████████▎ | 334/399 [00:03<00:00, 131.82it/s]
+[1ALoading weights:  89%|████████▉ | 356/399 [00:03<00:00, 152.79it/s]
+[1ALoading weights:  95%|█████████▍| 378/399 [00:03<00:00, 168.94it/s]Loading weights: 100%|██████████| 399/399 [00:03<00:00, 104.13it/s]
+qwen3guard: 320/160 verdicts retained
+
+[1ALoading weights:   0%|          | 0/254 [00:00<?, ?it/s]
+[1ALoading weights:   1%|          | 3/254 [00:00<00:09, 26.27it/s]
+[1ALoading weights:   5%|▍         | 12/254 [00:00<00:04, 57.38it/s]
+[1ALoading weights:   8%|▊         | 21/254 [00:00<00:03, 60.29it/s]
+[1ALoading weights:  11%|█         | 28/254 [00:00<00:03, 62.36it/s]
+[1ALoading weights:  14%|█▍        | 36/254 [00:00<00:03, 65.78it/s]
+[1ALoading weights:  17%|█▋        | 44/254 [00:00<00:03, 69.03it/s]
+[1ALoading weights:  21%|██        | 53/254 [00:00<00:02, 74.97it/s]
+[1ALoading weights:  24%|██▍       | 62/254 [00:00<00:02, 79.22it/s]
+[1ALoading weights:  28%|██▊       | 71/254 [00:00<00:02, 81.90it/s]
+[1ALoading weights:  31%|███▏      | 80/254 [00:01<00:02, 83.43it/s]
+[1ALoading weights:  35%|███▌      | 89/254 [00:01<00:01, 84.40it/s]
+[1ALoading weights:  39%|███▊      | 98/254 [00:01<00:01, 84.12it/s]
+[1ALoading weights:  43%|████▎     | 108/254 [00:01<00:01, 87.79it/s]
+[1ALoading weights:  47%|████▋     | 120/254 [00:01<00:01, 91.98it/s]
+[1ALoading weights:  51%|█████     | 130/254 [00:01<00:01, 79.09it/s]
+[1ALoading weights:  55%|█████▌    | 140/254 [00:01<00:01, 83.86it/s]
+[1ALoading weights:  59%|█████▊    | 149/254 [00:01<00:01, 84.80it/s]
+[1ALoading weights:  63%|██████▎   | 161/254 [00:02<00:00, 93.61it/s]
+[1ALoading weights:  67%|██████▋   | 171/254 [00:02<00:00, 91.28it/s]
+[1ALoading weights:  71%|███████▏  | 181/254 [00:02<00:00, 91.75it/s]
+[1ALoading weights:  76%|███████▌  | 192/254 [00:02<00:00, 93.35it/s]
+[1ALoading weights:  80%|███████▉  | 202/254 [00:02<00:00, 88.61it/s]
+[1ALoading weights:  83%|████████▎ | 211/254 [00:02<00:00, 87.66it/s]
+[1ALoading weights:  87%|████████▋ | 221/254 [00:02<00:00, 86.11it/s]
+[1ALoading weights:  91%|█████████ | 230/254 [00:02<00:00, 85.88it/s]
+[1ALoading weights:  94%|█████████▍| 239/254 [00:02<00:00, 84.49it/s]
+[1ALoading weights:  98%|█████████▊| 248/254 [00:03<00:00, 82.98it/s]Loading weights: 100%|██████████| 254/254 [00:03<00:00, 83.12it/s]
+granite: 480/160 verdicts retained
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p30_circuit_arm_eval_20261106_224618.json: failed
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/ayman-cool1971/main/ap-GYXMGoeAsBujjuo4eKTCdy

@@ -81,6 +81,26 @@ def _update(patch: dict, module: str, parameter, sign: int):
     return torch.from_numpy(block).to(parameter.device, parameter.dtype)
 
 
+def loaded_revision(model) -> str | None:
+    """The commit of the weights actually in memory.
+
+    transformers 5 does not always set `config._commit_hash`; the snapshot directory name is the same
+    commit and is present whenever the model came from the Hub. Both are checked, stdlib only.
+    """
+    commit = getattr(getattr(model, "config", None), "_commit_hash", None)
+    if commit:
+        return commit
+    # Attested by the loader after it resolved the on-disk commit itself (see experiments/safety_core.py);
+    # transformers 5 sets neither _commit_hash nor a snapshot path on the model object.
+    attested = getattr(model, "_scartissue_verified_revision", None)
+    if attested:
+        return attested
+    name = Path(str(getattr(model, "name_or_path", ""))).name
+    if len(name) == 40 and all(c in "0123456789abcdef" for c in name):
+        return name
+    return None
+
+
 def _preflight(patches: list[dict], model, sign: int, expected_revision: str | None):
     import torch
     if isinstance(sign, bool) or sign not in (-1, 1):
@@ -88,8 +108,9 @@ def _preflight(patches: list[dict], model, sign: int, expected_revision: str | N
     if expected_revision is not None:
         if (len(expected_revision) != 40
                 or any(c not in "0123456789abcdef" for c in expected_revision)
-                or getattr(getattr(model, "config", None), "_commit_hash", None) != expected_revision):
-            raise ValueError("loaded model revision missing or mismatched")
+                or loaded_revision(model) != expected_revision):
+            raise ValueError(f"loaded model revision missing or mismatched: "
+                             f"{loaded_revision(model)!r} != {expected_revision!r}")
     for patch in patches:
         validate(patch)
     params = dict(model.named_parameters())

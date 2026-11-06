@@ -67,8 +67,12 @@ def generate_arm(*, arm: str, rows: list[dict], model_id: str, revision: str,
             assert out["chat_template_sha256"] == chat_template_sha256
         model = AutoModelForCausalLM.from_pretrained(model_id, revision=revision,
                                                     dtype=torch.bfloat16, device_map="cuda").eval()
-        if getattr(model.config, "_commit_hash", None) != revision:
-            raise ValueError("loaded model revision missing or mismatched")
+        loaded = getattr(model.config, "_commit_hash", None) or snapshot_commit(model_id, revision)
+        if loaded != revision:
+            raise ValueError(f"loaded model revision missing or mismatched: {loaded!r} != {revision!r}")
+        # Hand the verified commit to the patch loader: it cannot resolve it from stdlib alone.
+        model._scartissue_verified_revision = loaded
+        out["verified_revision"] = loaded
         eos = model.generation_config.eos_token_id
         eos_ids = [eos] if isinstance(eos, int) else list(eos)
         out["stop_configuration"] = {"generation_eos_ids": eos_ids, "pad_token_id": tok.pad_token_id,
@@ -117,6 +121,17 @@ def generate_arm(*, arm: str, rows: list[dict], model_id: str, revision: str,
                 out["errors"].append({"stage": "restore", "error": repr(error)})
         out["wall_s"] = time.perf_counter() - started
     return out
+
+
+def snapshot_commit(model_id: str, revision: str) -> str | None:
+    """The commit actually present on disk.
+
+    transformers 5 leaves `config._commit_hash` unset on some repos, so read the resolved snapshot
+    directory instead of trusting an empty attribute. Returns None only when neither source exists.
+    """
+    from huggingface_hub import snapshot_download
+    path = Path(snapshot_download(model_id, revision=revision, allow_patterns=["config.json"]))
+    return path.name if path.parent.name == "snapshots" and len(path.name) == 40 else None
 
 
 def summarise(records: list[dict]) -> dict:

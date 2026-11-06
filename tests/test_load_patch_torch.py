@@ -138,6 +138,33 @@ def test_revision_gate_rejects_missing_or_mismatched_commit_hash():
         load_patch.apply(_patch(), model, expected_revision="b" * 40)
 
 
+def test_revision_gate_accepts_the_snapshot_commit_when_config_hash_is_unset():
+    """transformers 5 leaves _commit_hash empty; the Hub snapshot directory names the same commit."""
+    commit = "af89d219b53ed9b13b8a4645f9c8028973510324"
+    model = Toy()
+    model.config = type("Config", (), {"_commit_hash": None})()
+    model.name_or_path = f"/hf/hf/hub/models--CohereLabs--tiny-aya-global/snapshots/{commit}"
+    assert load_patch.loaded_revision(model) == commit
+    assert load_patch.apply(_patch(), model, expected_revision=commit) == 4
+    with pytest.raises(ValueError, match="revision"):
+        load_patch.apply(_patch(), model, expected_revision="b" * 40)
+    model.name_or_path = "/tmp/not-a-commit"
+    with pytest.raises(ValueError, match="revision"):
+        load_patch.apply(_patch(), model, expected_revision=commit)
+
+
+def test_revision_gate_trusts_only_an_attested_commit():
+    commit = "af89d219b53ed9b13b8a4645f9c8028973510324"
+    model = Toy()
+    model.config = type("Config", (), {"_commit_hash": None})()
+    model._scartissue_verified_revision = commit
+    assert load_patch.loaded_revision(model) == commit
+    assert load_patch.apply(_patch(), model, expected_revision=commit) == 4
+    model._scartissue_verified_revision = "b" * 40
+    with pytest.raises(ValueError, match="revision"):
+        load_patch.apply(_patch(), model, expected_revision=commit)
+
+
 def test_load_hash_checks_the_same_decoded_bytes(tmp_path):
     patch = _patch()
     path = tmp_path / "patch.npz"

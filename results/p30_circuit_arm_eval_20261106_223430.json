@@ -1,0 +1,69 @@
+{
+  "status": "generation_failed",
+  "mode": "discovered_circuit_arm_evaluated",
+  "arm": "circuit_a4",
+  "budget": 512,
+  "rows": 160,
+  "patches": [
+    {
+      "path": "/root/artifacts/abliteration_tiny-aya-global_layer15.npz",
+      "sha256": "505b243a23c0e4e17ecd08e5644c5c9b43e7c933f03a808cc91ab61b8977ac24"
+    },
+    {
+      "path": "/root/artifacts/tiny-aya-global/repair_circuit_a4.npz",
+      "sha256": "96c659a056648c3cf1c076e880ad426f10b2a9dd07d5d6912233cd00f0ff3a82"
+    }
+  ],
+  "workers": [],
+  "errors": [
+    {
+      "stage": "generation",
+      "errors": [
+        {
+          "error": "ValueError('loaded model revision missing or mismatched')",
+          "traceback": "Traceback (most recent call last):\n  File \"/root/safety_core.py\", line 71, in generate_arm\n    raise ValueError(\"loaded model revision missing or mismatched\")\nValueError: loaded model revision missing or mismatched\n"
+        }
+      ]
+    }
+  ],
+  "headline_eligible": false,
+  "calibration_status": "failed",
+  "comparison": {
+    "base_drift_harm2_global": "results/p19_safety_judges_20261103_002850.json",
+    "circuit_source": "results/p23_circuit_20261103_022433.json",
+    "body_recovery": "results/circuit_body_recovery_20261106.json"
+  },
+  "source_sha256": {
+    "experiments/p30_circuit_arm_eval.py": "8810d4c583c4e691729c8043e5aa4d0a0e718ae77ed03edc77cc300d905050de",
+    "experiments/safety_core.py": "2b8ea50915a90008adc41dfbb9c9daed51a9162a3979ffa6cb5af57fe4bb2b8a",
+    "experiments/judge_protocols.py": "70efe440f7f9a65f3af4776c3d276bbfe03b5546327b1dc280efb4cb80136fea",
+    "artifacts/abliteration_tiny-aya-global_layer15.npz": "505b243a23c0e4e17ecd08e5644c5c9b43e7c933f03a808cc91ab61b8977ac24",
+    "artifacts/tiny-aya-global/repair_circuit_a4.npz": "96c659a056648c3cf1c076e880ad426f10b2a9dd07d5d6912233cd00f0ff3a82"
+  },
+  "generation": {
+    "arm": "circuit_a4",
+    "status": "failed",
+    "records": [],
+    "errors": [
+      {
+        "error": "ValueError('loaded model revision missing or mismatched')",
+        "traceback": "Traceback (most recent call last):\n  File \"/root/safety_core.py\", line 71, in generate_arm\n    raise ValueError(\"loaded model revision missing or mismatched\")\nValueError: loaded model revision missing or mismatched\n"
+      }
+    ],
+    "model": "CohereLabs/tiny-aya-global",
+    "model_revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+    "generation": {
+      "do_sample": false,
+      "max_new_tokens": 512
+    },
+    "batch_size": 4,
+    "headline_eligible": false,
+    "patches": [
+      "/root/artifacts/abliteration_tiny-aya-global_layer15.npz",
+      "/root/artifacts/tiny-aya-global/repair_circuit_a4.npz"
+    ],
+    "hardware": "NVIDIA A10",
+    "chat_template_sha256": "2147c474f41b522b7296f74692b9f31e45f49a31465960576a9d321339c5915a",
+    "wall_s": 34.306638756
+  }
+}

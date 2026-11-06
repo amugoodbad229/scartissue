@@ -88,9 +88,9 @@ is a robustness measurement (2a) *and* a retraining-free repair (2b).
 | 2b #7 — unlearning | no | Not what this does. |
 | 2b #8 — inference-time steering | no | Steering vectors were used to *find* directions, not deployed as a guard. |
 | **2b #9 — locating where safety lives** | **yes, with a negative half** | Direction level is measured: AUC 0.9988 → 0.8306 after removing one direction at layer 15. Node level fails its own test: the discovered circuit's 36 output matrices change the refusal marker by **0.000** relative to two blind controls editing the same scalars. Both halves are in `results/localisation_analysis_20261106.json`. |
-| 2b #10 — circuit-level interventions | no | The circuit patch body is recovered and hash-verified but never generated, judged or capability-tested, so no circuit effect is claimed. |
+| **2b #10 — circuit-level interventions** | **yes, as a negative result** | CircuitKIT located the heads carrying the refusal write; a repair restricted to their write columns (150,994,944 scalars) was generated and judged under the same protocol. Harm **0.283 vs drift 0.217** (paired +0.067 [0.008, 0.125]) and over-refusal 0.125 vs 0.050: restricting the edit to the discovered circuit made things slightly worse, not better. `results/circuit_arm_analysis_20261106.json`. |
 | **2b #12 — tamper resistance** | **yes, measured as weak** | One direction cuts the refusal marker by 0.542 at no measured GSM8K cost. Detection needs the direction: aligned tampering at 10 % support is visible (+0.317), a blind edit of the same size moves nothing. `results/tamper_analysis_20261106.json`. |
-| 2b #11–13 | no | Not attempted. |
+| 2b #11 | no | Not attempted. |
 
 Claimed outcome, stated so it cannot be misread: the repairs restore the refusal marker at a support-dependent
 over-refusal price, and the shipped workbench returns `insufficient evidence` for all four arms because the

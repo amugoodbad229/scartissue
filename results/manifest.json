@@ -1,104 +1,110 @@
 {
- "schema": "scartissue.manifest/1",
- "title": "ScarTissue \u2014 exploratory trade-offs in weight-space repair",
- "track": "Lexsi AI Safety & Alignment Hackathon \u2014 Track 2a (problem statements 1, 2) and Track 2b (problem statement 6)",
- "date": "2026-11-06",
- "claim": "Stored restricted/global repair comparisons show exploratory safety and task-specific utility trade-offs. They do not establish loss of all harm discrimination, safety equivalence or production readiness.",
- "readiness": "not_submission_ready",
- "headline_eligible": false,
- "calibration_status": "failed",
- "publication_status": "local claim corrections only; linked public release and PDF are historical",
- "model": "CohereLabs/tiny-aya-global @ af89d219",
- "track_repos": [
-  "CuratorKIT",
-  "CircuitKIT",
-  "AuditKIT"
- ],
- "datasets": {
-  "corpus": "amugoodbad229/scartissue-tinyaya-safety-corpus",
-  "results": "amugoodbad229/scartissue-tinyaya-results",
-  "drift": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
-  "repair": "amugoodbad229/scartissue-tinyaya-repair-patches"
- },
- "deployment": "https://huggingface.co/spaces/amugoodbad229/scartissue",
- "metrics": [
-  "refusal restoration",
-  "benign over-refusal",
-  "harm-ASR (judge majority-3)",
-  "GSM8K exact match (lm-eval)"
- ],
- "headline_numbers": {
-  "base": {
-   "refusal": 0.842,
-   "over_refusal": 0.075,
-   "harm_asr": 0.058,
-   "gsm8k": 0.59
+  "schema": "scartissue.manifest/1",
+  "title": "ScarTissue \u2014 exploratory trade-offs in weight-space repair",
+  "track": "Lexsi AI Safety & Alignment Hackathon \u2014 Track 2a (problem statements 1, 2) and Track 2b (problem statement 6)",
+  "date": "2026-11-06",
+  "claim": "Stored restricted/global repair comparisons show exploratory safety and task-specific utility trade-offs. They do not establish loss of all harm discrimination, safety equivalence or production readiness.",
+  "readiness": "not_submission_ready",
+  "headline_eligible": false,
+  "calibration_status": "failed",
+  "publication_status": "local claim corrections only; linked public release and PDF are historical",
+  "model": "CohereLabs/tiny-aya-global @ af89d219",
+  "track_repos": [
+    "CuratorKIT",
+    "CircuitKIT",
+    "AuditKIT"
+  ],
+  "datasets": {
+    "corpus": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+    "results": "amugoodbad229/scartissue-tinyaya-results",
+    "drift": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+    "repair": "amugoodbad229/scartissue-tinyaya-repair-patches"
   },
-  "drifted": {
-   "refusal": 0.5,
-   "over_refusal": 0.05,
-   "harm_asr": 0.217,
-   "gsm8k": 0.56
+  "deployment": "https://huggingface.co/spaces/amugoodbad229/scartissue",
+  "metrics": [
+    "refusal restoration",
+    "benign over-refusal",
+    "harm-ASR (judge majority-3)",
+    "GSM8K exact match (lm-eval)"
+  ],
+  "headline_numbers": {
+    "base": {
+      "refusal": 0.842,
+      "over_refusal": 0.075,
+      "harm_asr": 0.058,
+      "gsm8k": 0.59
+    },
+    "drifted": {
+      "refusal": 0.5,
+      "over_refusal": 0.05,
+      "harm_asr": 0.217,
+      "gsm8k": 0.56
+    },
+    "harm2_a4": {
+      "refusal": 0.883,
+      "over_refusal": 0.175,
+      "harm_asr": 0.05,
+      "gsm8k": 0.518
+    },
+    "global_a4": {
+      "refusal": 0.883,
+      "over_refusal": 0.275,
+      "harm_asr": 0.042,
+      "gsm8k": 0.438
+    },
+    "capability_gap_harm2_minus_global": {
+      "delta": 0.08,
+      "ci95": [
+        0.038,
+        0.122
+      ]
+    }
   },
-  "harm2_a4": {
-   "refusal": 0.883,
-   "over_refusal": 0.175,
-   "harm_asr": 0.05,
-   "gsm8k": 0.518
+  "evidence": {
+    "corpus": "1-curate/corpus/corpus.jsonl",
+    "split": "1-curate/corpus/corpus_split.json",
+    "patches": "results/patch_checksums.json",
+    "capability": "results/p16_capability_analysis_20261102.json",
+    "safety_generations": "results/p21_safety_length_full_20261103_001722.json",
+    "judge_verdicts": "results/p19_safety_judges_20261103_002850.json",
+    "safety_analysis": "results/p21_length_analysis_20261103.json",
+    "judge_validation": "results/p22_judge_validation_20261103_020927.json",
+    "circuit": "results/p23_circuit_20261103_022433.json",
+    "toolkits": "results/toolkit_provenance.json",
+    "parquet": "results/parquet_publish_manifest.json",
+    "heldout_generations": "results/p24_heldout_20261103_021508.json",
+    "heldout_judges": "results/p19_safety_judges_20261103_023754.json",
+    "heldout_analysis": "results/heldout_analysis_20261106.json",
+    "circuit_body_recovery": "results/circuit_body_recovery_20261106.json",
+    "confirmatory_spec": "results/confirmatory_spec_20261106.json",
+    "circuit_arm_eval": "results/p30_circuit_arm_eval_20261106_232321.json",
+    "circuit_arm_analysis": "results/circuit_arm_analysis_20261106.json",
+    "circuit_arm_run_note": "results/p30_circuit_arm_eval_note_20261106.json",
+    "localisation_analysis": "results/localisation_analysis_20261106.json",
+    "tamper_analysis": "results/tamper_analysis_20261106.json"
   },
-  "global_a4": {
-   "refusal": 0.883,
-   "over_refusal": 0.275,
-   "harm_asr": 0.042,
-   "gsm8k": 0.438
+  "judge_calibration": {
+    "n": 500,
+    "source": "nvidia/Aegis-AI-Content-Safety-Dataset-1.0",
+    "majority": {
+      "accuracy": 0.782,
+      "sensitivity": 0.58,
+      "specificity": 0.984
+    }
   },
-  "capability_gap_harm2_minus_global": {
-   "delta": 0.08,
-   "ci95": [
-    0.038,
-    0.122
-   ]
-  }
- },
- "evidence": {
-  "corpus": "1-curate/corpus/corpus.jsonl",
-  "split": "1-curate/corpus/corpus_split.json",
-  "patches": "results/patch_checksums.json",
-  "capability": "results/p16_capability_analysis_20261102.json",
-  "safety_generations": "results/p21_safety_length_full_20261103_001722.json",
-  "judge_verdicts": "results/p19_safety_judges_20261103_002850.json",
-  "safety_analysis": "results/p21_length_analysis_20261103.json",
-  "judge_validation": "results/p22_judge_validation_20261103_020927.json",
-  "circuit": "results/p23_circuit_20261103_022433.json",
-  "toolkits": "results/toolkit_provenance.json",
-  "parquet": "results/parquet_publish_manifest.json",
-  "heldout_generations": "results/p24_heldout_20261103_021508.json",
-  "heldout_judges": "results/p19_safety_judges_20261103_023754.json",
-  "heldout_analysis": "results/heldout_analysis_20261106.json",
-  "circuit_body_recovery": "results/circuit_body_recovery_20261106.json",
-  "confirmatory_spec": "results/confirmatory_spec_20261106.json"
- },
- "judge_calibration": {
-  "n": 500,
-  "source": "nvidia/Aegis-AI-Content-Safety-Dataset-1.0",
-  "majority": {
-   "accuracy": 0.782,
-   "sensitivity": 0.58,
-   "specificity": 0.984
-  }
- },
- "limitations": [
-  "one model, one seed, one capability task carry the headline",
-  "Aegis sensitivity/specificity do not prove lower-bound harm rates or eliminate arm-dependent bias under distribution shift",
-  "original judge controls failed; project-distribution human audit pending",
-  "multilingual run is invalid and is not used for any claim",
-  "circuit patch body recovered and hash-verified but never evaluated; no effect is claimed",
-  "held-out analysis is exploratory: the judge panel failed calibration on the project distribution",
-  "confirmatory comparison is frozen but unexecuted (only 57 untouched harmful prompts remain)",
-  "Interpretation corrections (refusal marker vs ASR, Aegis lower-bound, orthogonality, circuit wording) are recorded in _research/APPRAISAL-20261106.md; historical findings text is retained and annotated"
- ],
- "licence": "Cohere LSAL 1.2/1.1, research use; parameters published, no drifted checkpoint",
- "provenance": "results/provenance_final.json",
- "report": "report/report.pdf",
- "submission_form": "_research/SUBMISSION-FORM-20261106.md"
+  "limitations": [
+    "one model, one seed, one capability task carry the headline",
+    "Aegis sensitivity/specificity do not prove lower-bound harm rates or eliminate arm-dependent bias under distribution shift",
+    "original judge controls failed; project-distribution human audit pending",
+    "multilingual run is invalid and is not used for any claim",
+    "circuit patch body recovered and hash-verified but never evaluated; no effect is claimed",
+    "held-out analysis is exploratory: the judge panel failed calibration on the project distribution",
+    "confirmatory comparison is frozen but unexecuted (only 57 untouched harmful prompts remain)",
+    "Interpretation corrections (refusal marker vs ASR, Aegis lower-bound, orthogonality, circuit wording) are recorded in _research/APPRAISAL-20261106.md; historical findings text is retained and annotated",
+    "Circuit-level repair is measured and negative: harm 0.283 vs drift 0.217 (paired +0.067 [0.008, 0.125]), over-refusal 0.125 vs 0.050, so the circuit restriction buys nothing (results/circuit_arm_analysis_20261106.json, exploratory)"
+  ],
+  "licence": "Cohere LSAL 1.2/1.1, research use; parameters published, no drifted checkpoint",
+  "provenance": "results/provenance_final.json",
+  "report": "report/report.pdf",
+  "submission_form": "_research/SUBMISSION-FORM-20261106.md"
 }

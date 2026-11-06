@@ -1,8 +1,8 @@
 {
   "schema": "scartissue.verification/2",
-  "checked_at": "2026-11-06T11:44:37.364610+00:00",
+  "checked_at": "2026-11-06T14:55:01.031742+00:00",
   "execution": "offline; no network or model inference",
-  "n_checks": 26,
+  "n_checks": 31,
   "n_failed": 0,
   "status": "passed",
   "submission_ready": false,
@@ -12,7 +12,7 @@
     "Project-distribution human audit is pending",
     "In-domain judge calibration has not been measured on human labels",
     "Comparison is exploratory, not confirmatory",
-    "Circuit-body evaluation, report rebuild and publication require separate sign-off"
+    "Report rebuild and publication require separate sign-off"
   ],
   "checks": [
     {
@@ -99,6 +99,31 @@
       "check": "manifest artifact: confirmatory_spec",
       "passed": true,
       "detail": "results/confirmatory_spec_20261106.json"
+    },
+    {
+      "check": "manifest artifact: circuit_arm_eval",
+      "passed": true,
+      "detail": "results/p30_circuit_arm_eval_20261106_232321.json"
+    },
+    {
+      "check": "manifest artifact: circuit_arm_analysis",
+      "passed": true,
+      "detail": "results/circuit_arm_analysis_20261106.json"
+    },
+    {
+      "check": "manifest artifact: circuit_arm_run_note",
+      "passed": true,
+      "detail": "results/p30_circuit_arm_eval_note_20261106.json"
+    },
+    {
+      "check": "manifest artifact: localisation_analysis",
+      "passed": true,
+      "detail": "results/localisation_analysis_20261106.json"
+    },
+    {
+      "check": "manifest artifact: tamper_analysis",
+      "passed": true,
+      "detail": "results/tamper_analysis_20261106.json"
     },
     {
       "check": "manifest source coverage",
@@ -263,6 +288,41 @@
       "path": "results/confirmatory_spec_20261106.json",
       "sha256": "7cf5b1c44eb5636a4993a47431a9ae58c6818ad3032b34a26713ec1a30418df5",
       "bytes": 7293,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "circuit_arm_eval",
+      "path": "results/p30_circuit_arm_eval_20261106_232321.json",
+      "sha256": "c80fd10ae8f3b0e30d4cc5d0d96bc5d6dc2dc8bb915dbac64415b2be02900994",
+      "bytes": 8682278,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "circuit_arm_analysis",
+      "path": "results/circuit_arm_analysis_20261106.json",
+      "sha256": "cda0b4c49f3eec4fcf84d94fa09bc568936cc797fd0b99741e6b9b7ee77dd6f0",
+      "bytes": 5589,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "circuit_arm_run_note",
+      "path": "results/p30_circuit_arm_eval_note_20261106.json",
+      "sha256": "3abc8be8fecccd3106f3765dca7a6aa3c1723292b775194c0d0db120c07c3079",
+      "bytes": 2089,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "localisation_analysis",
+      "path": "results/localisation_analysis_20261106.json",
+      "sha256": "7a6a1197da9418c339de3bf7b307ddd44827f542007f2e963aacb23098e1e5a2",
+      "bytes": 4025,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "tamper_analysis",
+      "path": "results/tamper_analysis_20261106.json",
+      "sha256": "71f3b40b858e5e91f1d8d7ebca099f7ca043cc633c9fe32df12652da9e82773f",
+      "bytes": 7514,
       "status": "present_not_independently_validated"
     }
   ],

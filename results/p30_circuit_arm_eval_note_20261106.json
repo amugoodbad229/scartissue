@@ -1,0 +1,17 @@
+{
+  "schema": "scartissue.run-note/1",
+  "run": "results/p30_circuit_arm_eval_20261106_232321.json",
+  "purpose": "Record what changed between the failing attempts and the stored run, and one cost defect in the stored run.",
+  "revision_gate": {
+    "problem": "transformers 5 leaves model.config._commit_hash unset for CohereLabs/tiny-aya-global, so both the loader and artifacts/load_patch.py raised 'loaded model revision missing or mismatched' on a correctly pinned checkpoint.",
+    "fix": "experiments/safety_core.py resolves the commit from the Hugging Face snapshot directory (snapshot_commit) and attests it on the model object; artifacts/load_patch.py accepts that attestation or the snapshot directory name, and still raises on any mismatch.",
+    "tests": ["tests/test_load_patch_torch.py::test_revision_gate_accepts_the_snapshot_commit_when_config_hash_is_unset",
+              "tests/test_load_patch_torch.py::test_revision_gate_trusts_only_an_attested_commit"],
+    "not_a_weakening": "Every path still requires the 40-hex commit to equal the pinned revision; the gate proves provenance of the weights on disk, which is what it did before."
+  },
+  "stored_run_defect": "judge() looped over all three judge families inside each call while the entrypoint called it once per family, so each family was scored three times and only the first container's payload was used. All three families passed with complete coverage; the extra work cost roughly one hour of A10G time (~$1.10). The function now takes one family per call.",
+  "source_hash_caveat": "source_sha256 inside the stored run was taken before these two edits, so it describes the code that produced the numbers, not the current file.",
+  "cost": {"generation_wall_s": 534, "judge_wall_s": {"harmbench": 484, "qwen3guard": 349, "granite": 349},
+           "gpu": "A10G", "retries": 0, "wasted_rejudging_estimate_usd": 1.1},
+  "result_summary": "Circuit arm: harm 0.283, over-refusal 0.125 on the 120/40 evaluation prompts; the four reference arms reproduce their published rates exactly, which validates the join."
+}

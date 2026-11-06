@@ -86,9 +86,16 @@ Do **not** tick multi-turn audits or multilingual safety — we measured neither
    of the refusal marker at no measured GSM8K cost; detection needs the direction (aligned tampering at
    10 % support +0.317, blind edit of the same size ±0.000). `results/tamper_analysis_20261106.json`.
 
-Do **not** tick circuit-level interventions (#10: the patch body is recovered and hash-verified but has
-never been generated, judged or capability-tested), safety-preserving fine-tuning, unlearning,
-inference-time steering, compression, or hallucination detection.
+4. **Circuit-level interventions** ← tick it as a negative result. The repaired arm is restricted to the
+   write columns of the heads CircuitKIT identified (36 `o_proj` matrices, 150,994,944 scalars) and was
+   generated and judged under the same frozen protocol: harm 0.283 vs drift 0.217 (paired +0.067
+   [0.008, 0.125]), over-refusal 0.125 vs 0.050. Restricting the edit to the discovered circuit did not
+   remove harm — the matched-budget repairs did (0.050, 0.042). Exploratory: panel uncalibrated, no
+   capability run for this arm. `results/circuit_arm_analysis_20261106.json`.
+
+Do **not** tick safety-preserving fine-tuning, unlearning, inference-time steering, compression, or
+hallucination detection. Keep a note for the panel: #10's answer is "we tried it and it does not work",
+which is a measurement, not a claim of a working intervention.
 
 ## Repos used — tick three
 

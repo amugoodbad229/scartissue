@@ -1,7 +1,8 @@
 # Would you ship this repair? A decision workbench for weight-space safety edits
 
 **Track 2a (#1 red-teaming / robustness, #2 adversarial and safety evaluation sets) and Track 2b (#6 repairing
-safety drift without retraining).**
+safety drift without retraining, #9 locating where safety lives, #10 circuit-level interventions, #12 tamper
+resistance).**
 
 Abliteration removes the direction a refusal is written along. It does not remove refusals: re-extracting the
 direction on the edited model and amplifying it brings the refusal marker back within a percent of the aligned
@@ -60,8 +61,14 @@ fresh sampling argument.
 - **Human audit** — a gate registered before any label existed, applied to a blind 180-item sample from this
   project's own generations. Until it passes, nothing here is a headline result.
 
-Track 2b is deliberately **not** claimed: the circuit-restricted patch body was recovered and hash-verified
-(150,994,944 scalars over 36 `o_proj` modules) but never generated, judged or capability-tested, so no circuit
-effect is asserted.
+Two of the 2b answers are negative, and both are reported as such. Localisation holds at the direction level
+(one layer-15 direction carries AUC 0.9988 of the refusal separation, 0.8306 after it is removed) but not at the
+node level: at a matched edit budget the discovered circuit's 36 output matrices move the refusal marker by 0.000
+against two blind controls. Circuit-level repair (2b #10) was then actually run: restricted to those write columns
+(150,994,944 scalars), generated and judged under the frozen protocol, it leaves harm at 0.283 against the drifted
+model's 0.217 (paired +0.067 [0.008, 0.125]) and over-refusal at 0.125 against 0.050. Restricting the edit to the
+discovered circuit does not remove harm — the matched-budget repairs do (0.050 and 0.042). Tamper resistance (2b
+#12) is a measured weakness, not a protection: one direction removes 0.542 of the refusal marker at no measured
+GSM8K cost, and detection needs the direction.
 
 Nothing here is production-safety certification, and no drifted checkpoint is hosted.

@@ -87,10 +87,12 @@ def build_readiness(root: Path, bundle: dict, verification: dict) -> dict:
         {"id": "heldout-comparison", "status": "evaluated",
          "sources": [heldout, heldout_judges, state_checks, "results/heldout_analysis_20261106.json"],
          "reason": "Untouched prompts, already-judged completions, split disjointness and paired estimates are recorded in experiments/analyse_heldout.py. Still exploratory: the judge panel failed calibration, so this cannot confirm a repair claim."},
-        {"id": "circuit-intervention", "status": "pending",
+        {"id": "circuit-intervention", "status": "evaluated",
          "sources": ["results/circuit_body_recovery_20261106.json",
-                     "results/p23_circuit_20261103_022433.json", "results/p26_circuit_arm_20261103_025214.json"],
-         "reason": "The patch body is now recovered from the historical volume and hashes to the recorded value (150,994,944 scalars, 36 o_proj modules); no generation, judging or capability evaluation has been run on it, so the intervention claim stays pending."},
+                     "results/p23_circuit_20261103_022433.json",
+                     "results/p30_circuit_arm_eval_20261106_232321.json",
+                     "results/circuit_arm_analysis_20261106.json"],
+         "reason": "The recovered circuit patch was generated and judged under the same protocol: harm 0.283 vs drift 0.217 (paired +0.067 [0.008, 0.125]) and over-refusal 0.125 vs 0.050, so restricting the repair to the discovered circuit did NOT remove harm — it did slightly worse than the unrestricted drift arm and far worse than the matched-budget repairs. Exploratory (panel uncalibrated); no capability run for this arm."},
         {"id": "localisation-result", "status": "evaluated",
          "sources": ["results/localisation_analysis_20261106.json",
                      "results/p23_circuit_20261103_022433.json", "results/p1_grid.json",
@@ -223,7 +225,7 @@ def verify(root: Path = ROOT, bundle: dict | None = None) -> dict:
         blockers.append("Bundle integrity or reconstruction is unresolved")
 
     # Release readiness requires separate evaluated-artifact and publication sign-off.
-    blockers.append("Circuit-body evaluation, report rebuild and publication require separate sign-off")
+    blockers.append("Report rebuild and publication require separate sign-off")
     failed = sum(not item["passed"] for item in checks)
     return {"schema": "scartissue.verification/2", "checked_at": datetime.now(timezone.utc).isoformat(),
             "execution": "offline; no network or model inference", "n_checks": len(checks), "n_failed": failed,

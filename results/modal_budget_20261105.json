@@ -1,8 +1,8 @@
 {
   "status": "approved",
-  "authorization": "User selected CPU and GPU work, up to $25",
+  "authorization": "$29 of prepaid credit on the replacement workspace (user statement, 2026-11-06); the earlier $25 figure was a self-imposed cap, not the account balance",
   "currency": "USD",
-  "total_ceiling": 25,
+  "total_ceiling": 29.0,
   "scope": [
     "bounded Modal CPU test and browser validation",
     "prioritize scoring existing held-out generations if affordable"
@@ -225,6 +225,20 @@
       "gpu": null,
       "reserved_at": "2026-11-06T11:44:21+00:00",
       "purpose": "Validate the localisation and tamper analyses and regenerate the claim ledger"
+    },
+    {
+      "job": "p30_circuit_arm_gpu_20261106",
+      "reserved_usd": 2.0,
+      "gpu": "A10G",
+      "reserved_at": "2026-11-06T13:32:01+00:00",
+      "purpose": "Generate and judge the recovered circuit arm (2b #10): one generation pass + three judges"
+    },
+    {
+      "job": "circuit_arm_validation_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": null,
+      "reserved_at": "2026-11-06T14:49:07+00:00",
+      "purpose": "CPU validation after the revision-gate fix and the circuit-arm claims"
     }
   ],
   "realized_provider_charge_usd": null

@@ -18,6 +18,10 @@ The official submission deadline is **November 14, AoE**; the later refinement p
 
 ## Measured blockers
 
+- Circuit-level repair (2b #10) is now measured and **negative**: harm 0.283 vs drift 0.217 (paired
+  +0.067 [0.008, 0.125]), over-refusal 0.125 vs 0.050 — `results/circuit_arm_analysis_20261106.json`,
+  run `results/p30_circuit_arm_eval_20261106_232321.json`, cost note
+  `results/p30_circuit_arm_eval_note_20261106.json`. Exploratory: panel uncalibrated, no capability run.
 - Historical local failures in `results/readiness_baseline_20261105.json` and `results/readiness_module_baseline_20261105.json` were diagnosed and fixed. `results/modal_validation_20261105T155145197754Z.json` records the passing Modal baseline: both invocation forms pass, with native AuditKIT source (no mock). This validates software, not safety claims.
 - The bundle/browser workflow passed both test invocations on Modal; see `results/modal_validation_20261105T162314579344Z.json`. No new model evaluation or safety-calibration clearance is claimed.
 - Pending judgments, missing/remote-only patch bodies, invalid multilingual outputs and misleading public copy must not be described as confirmed results.
