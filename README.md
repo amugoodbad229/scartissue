@@ -87,7 +87,9 @@ is a robustness measurement (2a) *and* a retraining-free repair (2b).
 | **2b #6 — repairing safety drift without retraining** | **yes** | Rank-one repairs fitted from direction extraction; zero gradient steps; four arms compared. |
 | 2b #7 — unlearning | no | Not what this does. |
 | 2b #8 — inference-time steering | no | Steering vectors were used to *find* directions, not deployed as a guard. |
-| 2b #9 — locating where safety lives / 2b #10 circuit-level interventions | **no** | The circuit-restricted patch body was recovered and hash-verified but never generated, judged or capability-tested, so no circuit effect is claimed. |
+| **2b #9 — locating where safety lives** | **yes, with a negative half** | Direction level is measured: AUC 0.9988 → 0.8306 after removing one direction at layer 15. Node level fails its own test: the discovered circuit's 36 output matrices change the refusal marker by **0.000** relative to two blind controls editing the same scalars. Both halves are in `results/localisation_analysis_20261106.json`. |
+| 2b #10 — circuit-level interventions | no | The circuit patch body is recovered and hash-verified but never generated, judged or capability-tested, so no circuit effect is claimed. |
+| **2b #12 — tamper resistance** | **yes, measured as weak** | One direction cuts the refusal marker by 0.542 at no measured GSM8K cost. Detection needs the direction: aligned tampering at 10 % support is visible (+0.317), a blind edit of the same size moves nothing. `results/tamper_analysis_20261106.json`. |
 | 2b #11–13 | no | Not attempted. |
 
 Claimed outcome, stated so it cannot be misread: the repairs restore the refusal marker at a support-dependent
@@ -102,6 +104,9 @@ judge panel failed its calibration audit. That is the finding so far.
 - Refusal-marker rates are diagnostics, never ASR estimates.
 - Near-orthogonality of the re-extracted direction shows the ablation direction was removed; it does **not**
   show that harm-relevant representation survives elsewhere.
+- Circuit-node selection is **not** shown to localise anything: at a matched edit budget it is indistinguishable
+  from random module choice. The localisation claim is about the direction, not the circuit.
+- "Tamper resistance" is a measured **weakness** of the model, not a protection we built.
 - No circuit-arm effect, no multilingual result, no claim that a repair "restores safety".
 
 | artifact | where |

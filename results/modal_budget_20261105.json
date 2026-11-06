@@ -218,6 +218,13 @@
       "gpu": null,
       "reserved_at": "2026-11-06T11:19:47+00:00",
       "purpose": "Build the judge-facing Dockerfile on Modal and probe the served workbench"
+    },
+    {
+      "job": "localisation_tamper_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": null,
+      "reserved_at": "2026-11-06T11:44:21+00:00",
+      "purpose": "Validate the localisation and tamper analyses and regenerate the claim ledger"
     }
   ],
   "realized_provider_charge_usd": null

@@ -1,6 +1,6 @@
 {
   "schema": "scartissue.verification/2",
-  "checked_at": "2026-11-06T11:17:37.030305+00:00",
+  "checked_at": "2026-11-06T11:44:37.364610+00:00",
   "execution": "offline; no network or model inference",
   "n_checks": 26,
   "n_failed": 0,

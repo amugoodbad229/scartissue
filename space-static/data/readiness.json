@@ -1,6 +1,6 @@
 {
   "schema": "scartissue.readiness/1",
-  "checked_at": "2026-11-06T11:17:37.030305+00:00",
+  "checked_at": "2026-11-06T11:44:37.364610+00:00",
   "status": "not_submission_ready",
   "submission_ready": false,
   "integrity_status": "passed",
@@ -63,6 +63,28 @@
         "results/p26_circuit_arm_20261103_025214.json"
       ],
       "reason": "The patch body is now recovered from the historical volume and hashes to the recorded value (150,994,944 scalars, 36 o_proj modules); no generation, judging or capability evaluation has been run on it, so the intervention claim stays pending."
+    },
+    {
+      "id": "localisation-result",
+      "status": "evaluated",
+      "sources": [
+        "results/localisation_analysis_20261106.json",
+        "results/p23_circuit_20261103_022433.json",
+        "results/p1_grid.json",
+        "results/p2_dose.json"
+      ],
+      "reason": "Direction-level localisation is measured (AUC 0.9988 to 0.8306 after ablation); the same analysis reports that circuit-node selection is NOT selective at a matched edit budget (0.000 difference against both blind controls). Exploratory re-analysis, reported as such."
+    },
+    {
+      "id": "tamper-result",
+      "status": "evaluated",
+      "sources": [
+        "results/tamper_analysis_20261106.json",
+        "results/p2_dose.json",
+        "results/p3b_sweep.json",
+        "results/p3c_blind.json"
+      ],
+      "reason": "Removal and detection are measured on stored runs: a single direction cuts the refusal marker by 0.542 at no measured GSM8K cost, direction-aligned tampering at 10 % support is visible (+0.317 over its blind control) while blind tampering of the same size is not. Exploratory: refusal marker, uncalibrated panel."
     },
     {
       "id": "multilingual-confirmation",
@@ -161,6 +183,17 @@
       "recorded": {}
     },
     {
+      "path": "results/localisation_analysis_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "7a6a1197da9418c339de3bf7b307ddd44827f542007f2e963aacb23098e1e5a2",
+      "bytes": 4025,
+      "available": true,
+      "recorded": {
+        "headline_eligible": false
+      }
+    },
+    {
       "path": "results/manifest.json",
       "status": "pending",
       "evaluation": "not independently validated",
@@ -206,6 +239,15 @@
         "calibration_status": "failed",
         "headline_eligible": false
       }
+    },
+    {
+      "path": "results/p1_grid.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "167d8750ab5bc233fc616edf10629642e0b2314551489cd3c879891c1d279ed7",
+      "bytes": 101681,
+      "available": true,
+      "recorded": {}
     },
     {
       "path": "results/p21_length_analysis_20261103.json",
@@ -299,6 +341,33 @@
       }
     },
     {
+      "path": "results/p2_dose.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "2e5aa04a94f8f05be5ca8bdf7541cda090d7a68a62b205bf13d64372f7d4ff67",
+      "bytes": 14495,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/p3b_sweep.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "dadd20f2200032ec2e695b38c8b352a5a0912cc2124e4b456f2b8a0a209927a7",
+      "bytes": 431206,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/p3c_blind.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "83923097dfd34b439f7bd99b78b031804472b1fcfc5904935d112eda7d5c48d2",
+      "bytes": 286148,
+      "available": true,
+      "recorded": {}
+    },
+    {
       "path": "results/parquet_publish_manifest.json",
       "status": "pending",
       "evaluation": "not independently validated",
@@ -315,6 +384,17 @@
       "bytes": 1973,
       "available": true,
       "recorded": {}
+    },
+    {
+      "path": "results/tamper_analysis_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "71f3b40b858e5e91f1d8d7ebca099f7ca043cc633c9fe32df12652da9e82773f",
+      "bytes": 7514,
+      "available": true,
+      "recorded": {
+        "headline_eligible": false
+      }
     },
     {
       "path": "results/toolkit_provenance.json",

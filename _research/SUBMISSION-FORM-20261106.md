@@ -77,15 +77,18 @@ Do **not** tick multi-turn audits or multilingual safety — we measured neither
 
 1. **Repairing safety drift without retraining** ← primary. Weight-space repair of an abliterated
    model (rank-one projection onto a sparse or global subspace), with task performance measured
-   before and after.
-2. **Locating where safety lives** ← only if you are willing to defend it. The circuit discovery run
-   exists (182 pruned nodes, 612 signed scores) and the circuit-restricted parameters are recovered
-   and hash-verified, but **no effect was measured**, so the problem statement's "use them to make a
-   targeted fix" is not evidenced. Recommendation: tick **only** #6 and say in the abstract that the
-   circuit leg is published unevaluated.
+   before and after: harm 0.217 → 0.050 / 0.042, GSM8K 0.560 → 0.518 / 0.438.
+2. **Locating where safety lives** ← tick it, and let the negative half be visible. Direction level is
+   measured (AUC 0.9988 → 0.8306 after removing one direction at layer 15). Node level was tested and
+   **failed**: at a matched edit budget the discovered circuit's 36 output matrices change the refusal
+   marker by 0.000 against two blind controls. `results/localisation_analysis_20261106.json`.
+3. **Tamper resistance** ← tick it as a measured weakness, not a protection. One direction removes 0.542
+   of the refusal marker at no measured GSM8K cost; detection needs the direction (aligned tampering at
+   10 % support +0.317, blind edit of the same size ±0.000). `results/tamper_analysis_20261106.json`.
 
-Do **not** tick circuit-level interventions, safety-preserving fine-tuning, unlearning, inference-time
-steering, compression, tamper resistance or hallucination detection.
+Do **not** tick circuit-level interventions (#10: the patch body is recovered and hash-verified but has
+never been generated, judged or capability-tested), safety-preserving fine-tuning, unlearning,
+inference-time steering, compression, or hallucination detection.
 
 ## Repos used — tick three
 
