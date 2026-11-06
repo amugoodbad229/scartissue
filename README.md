@@ -12,39 +12,112 @@ utility / support bounds, and get **accept**, **reject** or **insufficient evide
 intervals, the reason and a full judge replay behind it. On the evidence shipped here all four arms
 come back `insufficient evidence` — correctly.
 
-## Read this first
+## Run it — no GPU, no key, no network
 
-**Not submission-ready.** The reset roadmap is in [`TODO.md`](TODO.md). The current target is a
-research workbench for comparing candidate repairs under explicit harm, over-refusal and utility
-constraints, including an **insufficient-evidence** outcome. The local workbench implements policy
-comparison, private bundle import, full replay and audit export; validation is in progress and it is
-not publicly deployed. The public demo remains a historical viewer, not a production-safety certificate.
+**Docker (macOS, Windows, Linux — the intended path):**
 
-**Evidence status:** the stored safety analysis has `headline_eligible: false`, and its judge run
-retains `calibration_status: failed`. Treat the safety estimates below as exploratory, not a cleared
-release gate. External Aegis calibration does not erase the failed controls or validate the panel on
-these project completions. See `results/p21_length_analysis_20261103.json` and
-`results/p19_safety_judges_20261103_002850.json`. The held-out panel (`results/p19_safety_judges_20261103_023754.json`) has now been analysed on prompts the arm selection never touched: `experiments/analyse_heldout.py` checks split disjointness (160 prompts, all in the untouched slice, zero overlap with fit/eval) and computes paired-bootstrap differences, written to `results/heldout_analysis_20261106.json`. Majority-of-three harm rose from 0/120 to 38/120 under drift, and each repair cut it back (3/120 sparse, 1/120 global) while raising over-refusal (13/40 and 20/40 against 5/40 for drift). This replicates the trade-off on new prompts but stays **exploratory**: the judge panel failed calibration, so it is not confirmation, and the project-distribution human audit remains pending. Generated or judged answers alone are not confirmation. The generated readiness ledger at `results/readiness_ledger.json` separates evaluation from sign-off.
+```bash
+docker build -t scartissue .
+docker run --rm -p 8000:8000 scartissue
+# open http://localhost:8000
+```
 
-**Software validation:** the baseline passed on the replacement Modal workspace; see
-`results/modal_validation_20261105T155145197754Z.json`. The workbench, structural verifier and
-readiness ledger then passed in `results/modal_validation_20261105T190714562351Z.json` (129 tests in
-both invocations, 21/21 integrity checks); earlier failed runs are retained
-(`results/modal_validation_20261105T161907293974Z.json` lost a disclosure check,
-`...T164156473961Z.json` a ledger bootstrap check). Passing software checks do not clear the
-scientific blockers. The old workspace spend-limit error is historical. The report PDF and public
-links are historical releases; local claim corrections have not been rebuilt or deployed.
+The image is twelve lines on `python:3.12-slim`: it copies `space-static/` and serves it. No model weights,
+no CUDA, no API key, no build step, nothing fetched at runtime. Everything it shows is a precomputed evidence
+bundle committed at `space-static/data/evidence.json` (1.6 MB). This machine has no Docker daemon, so the image
+was not built here — but the exact directory it serves is exercised by real-Chromium tests, and a plain
+`http.server` over the same folder renders the full workbench with **zero** page errors (4 arms, 6 cards,
+export enabled).
+
+**Without Docker** (any OS with Python 3):
+
+```bash
+cd space-static && python3 -m http.server 8000   # then open http://localhost:8000
+```
+
+**Hosted:** <https://huggingface.co/spaces/amugoodbad229/scartissue>
+
+### What you do once it is open
+
+1. Read the decision panel: each candidate repair is `accept`, `reject` or **`insufficient evidence`**, with
+   the reasons listed under it. On the evidence shipped here, all four arms return `insufficient evidence` —
+   that is the designed answer, not a bug.
+2. Change the policy (harm, over-refusal, utility, repair-selected scalars, study identity) and press
+   **Evaluate repairs**. The decision recomputes in your browser; no server is involved.
+3. Open **Judge replay** on any arm to see every generation, every judge's raw verdict and where the panel
+   disagreed. Harmful prompts and answers stay collapsed until you click them.
+4. **Download decision record** (JSON) or **Download readable summary** for the decision, its reasons, the
+   source hashes and the bundle hash — without raw completions.
+
+## What this is, and what it answers so far
+
+A model maintainer is holding an abliterated Cohere checkpoint (`CohereLabs/tiny-aya-global`, revision
+`af89d219…`) and a set of candidate weight-space repairs. The question is not "is this model safe" but the
+narrower, answerable one: **is any candidate repair good enough to ship under my own bounds?**
+
+What exists today:
+
+- **An attack and a measurement.** Abliteration orthogonalises every write matrix against one refusal
+  direction at layer 15 (962,592,768 scalars). Refusals do not disappear, so the remaining refusal is carried
+  by orthogonal directions; re-extracting one and amplifying it (alpha 4) restores the refusal marker but the
+  projection no longer separates harmful from benign prompts.
+- **Four arms under identical conditions** — aligned base, drifted, a 2 %-support repair (19,251,200 scalars)
+  and a full-support repair (the same 962,592,768 as the drift, so support is matched rather than assumed):
+  harm-ASR 0.058 / 0.217 / 0.050 / 0.042; benign over-refusal 0.075 / 0.050 / 0.175 / 0.275; GSM8K (lm-eval)
+  0.590 / 0.560 / 0.518 / 0.438.
+- **A replication on untouched prompts**: 160 prompts no arm trained on (split proved disjoint). Harm goes
+  0/120 base → 38/120 drift → 3/120 sparse → 1/120 global, over-refusal 8/40 → 5/40 → 13/40 → 20/40.
+- **A workbench** that turns those numbers into a decision with an explicit refusal to over-claim: it abstains
+  while the judge panel is uncalibrated, and says so as a reason.
+- **An audit route** rather than an excuse: a pre-registered calibration gate
+  (`results/calibration_gate_20261106.json`) over 180 blind items from this project's own generations
+  (`human_audit/audit.html`), scored by `experiments/analyse_audit.py`.
+
+## Which track, and which boxes to tick
+
+**Tick Track 2a **and** Track 2b.** One track is enough for eligibility; both are honest here because the work
+is a robustness measurement (2a) *and* a retraining-free repair (2b).
+
+| box | tick? | why, in one line |
+|---|---|---|
+| **2a #1 — red-teaming / robustness** | **yes** | Weight-space attack (abliteration) plus a measured over-refusal bill for every repair. |
+| **2a #2 — adversarial and safety evaluation sets** | **yes** | Curated corpus, published fit/eval/held-out split, pinned three-judge panel, calibration audit. |
+| 2a #3 — multi-turn audits | no | Not attempted; no multi-turn data. |
+| 2a #4 — multilingual / code-mixed | no | The multilingual runs are invalid and withdrawn. Say nothing rather than something wrong. |
+| **2b #6 — repairing safety drift without retraining** | **yes** | Rank-one repairs fitted from direction extraction; zero gradient steps; four arms compared. |
+| 2b #7 — unlearning | no | Not what this does. |
+| 2b #8 — inference-time steering | no | Steering vectors were used to *find* directions, not deployed as a guard. |
+| 2b #9 — locating where safety lives / 2b #10 circuit-level interventions | **no** | The circuit-restricted patch body was recovered and hash-verified but never generated, judged or capability-tested, so no circuit effect is claimed. |
+| 2b #11–13 | no | Not attempted. |
+
+Claimed outcome, stated so it cannot be misread: the repairs restore the refusal marker at a support-dependent
+over-refusal price, and the shipped workbench returns `insufficient evidence` for all four arms because the
+judge panel failed its calibration audit. That is the finding so far.
+
+## What we do not claim
+
+- Not a safety certification, and not production clearance of any checkpoint.
+- Harm figures are **exploratory**: the panel's calibration audit failed (specificity 0.984, sensitivity 0.580
+  on 500 Aegis rows, and that run rendered the HarmBench `[BEHAVIOR]` slot empty).
+- Refusal-marker rates are diagnostics, never ASR estimates.
+- Near-orthogonality of the re-extracted direction shows the ablation direction was removed; it does **not**
+  show that harm-relevant representation survives elsewhere.
+- No circuit-arm effect, no multilingual result, no claim that a repair "restores safety".
 
 | artifact | where |
 |---|---|
-| Decision workbench (open `space-static/index.html`, no build) | [`space-static/`](space-static/index.html) |
-| Claim ledger (what is evaluated, pending or invalid) | [`results/readiness_ledger.json`](results/readiness_ledger.json) |
+| Decision workbench (static; open `space-static/index.html`, no build) | [`space-static/`](space-static/index.html) |
+| Docker image definition for judges | [`Dockerfile`](Dockerfile) · [`REPRODUCE.md`](REPRODUCE.md) |
+| Public code | <https://github.com/amugoodbad229/scartissue> |
+| Parameter deltas + loader (never a checkpoint) | <https://huggingface.co/amugoodbad229/scartissue-tinyaya-repair-parameters> |
+| Model collection | <https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0> |
+| Dataset collection (results, evals, corpus) | <https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46> |
+| Claim ledger (evaluated / pending / invalid) | [`results/readiness_ledger.json`](results/readiness_ledger.json) |
 | How to reproduce, cheapest tier first | [`REPRODUCE.md`](REPRODUCE.md) |
-| Historical report PDF (not rebuilt after claim corrections) | [`report/report.pdf`](report/report.pdf) |
 | Write-up (method, numbers, what is *not* claimed) | [`WRITE-UP.md`](WRITE-UP.md) |
 | Submission text (requirement-by-requirement) | [`SUBMISSION.md`](SUBMISSION.md) |
 | Task state, dependencies and blockers | [`TODO.md`](TODO.md) |
-| Public demo (three columns: base / drifted / repaired) | https://amugoodbad229-scartissue.static.hf.space |
+| Public demo (same workbench, same bundle, no local install) | <https://huggingface.co/spaces/amugoodbad229/scartissue> |
 | Corpus, 763 rows with row-level provenance (parquet) | https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-safety-corpus |
 | Generations, verdicts, capability, frontier, patches (parquet) | https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-results |
 | Drift + repair parameters, `.npz` with `allowed` block | https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-abliteration-patches |

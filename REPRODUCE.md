@@ -7,7 +7,19 @@ remembered.
 
 The decision workbench is static HTML/JS with a precomputed evidence bundle. No build step.
 
-1. Open `space-static/index.html` in a browser (or serve the folder: `uv run python -m http.server -d space-static 8000`).
+1. Run it however you like — all three need no Python packages, no GPU and no key:
+
+   ```bash
+   docker build -t scartissue . && docker run --rm -p 8000:8000 scartissue   # macOS / Windows / Linux
+   ```
+
+   ```bash
+   cd space-static && python3 -m http.server 8000                            # any Python 3
+   ```
+
+   ```text
+   or just open space-static/index.html directly (the bundle is a same-origin file, so file:// works)
+   ```
 2. Leave the default bundle in place, or import your own copy of `space-static/data/evidence.json`.
    Imports are verified against the SHA-256 of every prompt and answer before anything is committed to
    the page; a mismatch leaves the previous study loaded and says why.

@@ -1,210 +1,217 @@
 {
- "status": "approved",
- "authorization": "User selected CPU and GPU work, up to $25",
- "currency": "USD",
- "total_ceiling": 25,
- "scope": [
-  "bounded Modal CPU test and browser validation",
-  "prioritize scoring existing held-out generations if affordable"
- ],
- "not_authorized": [
-  "raising workspace limits",
-  "new unrelated training or unbounded parameter sweeps"
- ],
- "launch_rules": {
-  "max_concurrent_cpu_jobs": 1,
-  "max_concurrent_gpu_jobs": 1,
-  "cpu_timeout_seconds": 600,
-  "gpu_timeout_seconds": 1800,
-  "max_cpu_memory_mib": 4096,
-  "max_gpu_model": "A10G",
-  "max_gpu_invocations_before_review": 3,
-  "automatic_retries": 0
- },
- "stop_conditions": [
-  "workspace spend limit or quota error",
-  "failed controls or input/hash validation",
-  "cost reserve would exceed remaining ceiling",
-  "new job needs unapproved hardware or runtime"
- ],
- "account_check": {
-  "command": "uv run python -m modal app list --json",
-  "output": [],
-  "authenticated": true,
-  "workspace_quota": "unknown until bounded execution",
-  "billing": "No billing amount inferred from elapsed time. Record conservative reserve before launch; actual billing remains provider-side."
- },
- "reservations": [
-  {
-   "job": "replacement_cpu_baseline_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T15:51:09.479468+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_replacement_baseline_20261106.log",
-   "note": "Reserved before Modal image initialization; not actual provider billing"
+  "status": "approved",
+  "authorization": "User selected CPU and GPU work, up to $25",
+  "currency": "USD",
+  "total_ceiling": 25,
+  "scope": [
+    "bounded Modal CPU test and browser validation",
+    "prioritize scoring existing held-out generations if affordable"
+  ],
+  "not_authorized": [
+    "raising workspace limits",
+    "new unrelated training or unbounded parameter sweeps"
+  ],
+  "launch_rules": {
+    "max_concurrent_cpu_jobs": 1,
+    "max_concurrent_gpu_jobs": 1,
+    "cpu_timeout_seconds": 600,
+    "gpu_timeout_seconds": 1800,
+    "max_cpu_memory_mib": 4096,
+    "max_gpu_model": "A10G",
+    "max_gpu_invocations_before_review": 3,
+    "automatic_retries": 0
   },
-  {
-   "job": "workbench_cpu_validation_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T16:13:27.703178+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_workbench_20261106.log",
-   "note": "Reserved before image build, not actual provider charge"
+  "stop_conditions": [
+    "workspace spend limit or quota error",
+    "failed controls or input/hash validation",
+    "cost reserve would exceed remaining ceiling",
+    "new job needs unapproved hardware or runtime"
+  ],
+  "account_check": {
+    "command": "uv run python -m modal app list --json",
+    "output": [],
+    "authenticated": true,
+    "workspace_quota": "unknown until bounded execution",
+    "billing": "No billing amount inferred from elapsed time. Record conservative reserve before launch; actual billing remains provider-side."
   },
-  {
-   "job": "workbench_cpu_fixed_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T16:18:59.868960+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_workbench_fixed_20261106.log",
-   "note": "New validation after fixing missing report upload; no automatic retry; reserve before image build, not actual charge"
-  },
-  {
-   "job": "workbench_cpu_claimfix_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T16:23:07.067482+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_workbench_claimfix_20261106.log",
-   "note": "New validation after disclosure fix; no automatic retry; reserve before image build, not actual charge"
-  },
-  {
-   "job": "verifier_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T16:29:01.584096+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_verifier_20261106.log",
-   "note": "Bounded structural verifier tests; reserve before image build, not actual billing"
-  },
-  {
-   "job": "verifier_paths_and_accessibility_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T16:35:02.122547+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_verifier_paths_accessibility_20261106.log",
-   "note": "Correct manifest paths and computed contrast/browser QA; reserve before image build, not actual charge"
-  },
-  {
-   "job": "readiness_ledger_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T16:41:47.969426+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_readiness_ledger_20261106.log",
-   "note": "Readiness ledger and corrected held-out status; reserve before image initialization, not actual billing"
-  },
-  {
-   "job": "readiness_ledger_bootstrap_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T16:44:23.890783+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_readiness_bootstrap_20261106.log",
-   "note": "New validation after generated-ledger bootstrap fix; no automatic retry; not actual billing"
-  },
-  {
-   "job": "loader_hardening_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T16:51:00+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_loader_hardening_20261106.log",
-   "note": "Patch-loader preflight/atomicity tests plus guided walkthrough QA; CPU torch dev dependency added via uv; reserve before image build, not actual billing"
-  },
-  {
-   "job": "loader_hardening_fix_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T17:10:00+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_loader_hardening_fix_20261106.log",
-   "note": "Re-run after correcting two test fixtures (bf16 tie case, float32 overflow magnitude) found by the previous run; loader code unchanged by those fixes; not actual billing"
-  },
-  {
-   "job": "loader_hardening_fix2_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T17:15:00+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_loader_hardening_fix2_20261106.log",
-   "note": "Replace a rounding-dependent inverse-fixture with a column-scope assertion; loader unchanged; not actual billing"
-  },
-  {
-   "job": "heldout_analysis_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T17:21:25+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_heldout_analysis_20261106.log",
-   "note": "Validate the new held-out analysis, its tests and the updated readiness claim; not actual billing"
-  },
-  {
-   "job": "submission_story_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T18:59:35+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_submission_story_20261106.log",
-   "note": "Validate confirmatory-spec tests, the user-value submission rewrite and the circuit claim update; not actual billing"
-  },
-  {
-   "job": "submission_story_fix_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T19:02:24+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_submission_story_fix_20261106.log",
-   "note": "Image now carries the parameter .npz files the confirmatory spec hashes, plus REPRODUCE.md; not actual billing"
-  },
-  {
-   "job": "final_story_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": false,
-   "created_at": "2026-11-05T19:07:06+00:00",
-   "profile": "scartissue-replacement",
-   "log": "logs/modal_validation_final_story_20261106.log",
-   "note": "Snapshot after the story/reproduction/claim reconciliation edits; not actual billing"
-  },
-  {
-   "job": "audit_page_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": null,
-   "reserved_at": "2026-11-06T05:50:26+00:00",
-   "purpose": "Full suite incl. blind-audit page and analyser in the clean pinned image"
-  },
-  {
-   "job": "audit_page_mount_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": null,
-   "reserved_at": "2026-11-06T05:50:49+00:00",
-   "purpose": "Retry after mounting human_audit/ into the image"
-  },
-  {
-   "job": "appraisal_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": null,
-   "reserved_at": "2026-11-06T08:38:48+00:00",
-   "purpose": "Validate the corrected narrative layer and updated sources"
-  },
-  {
-   "job": "queue_close_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": null,
-   "reserved_at": "2026-11-06T10:18:44+00:00",
-   "purpose": "Validate the closed queue, demo artifacts and article draft"
-  },
-  {
-   "job": "publication_cpu_20261106",
-   "reserved_usd": 1.0,
-   "gpu": null,
-   "reserved_at": "2026-11-06T10:58:05+00:00",
-   "purpose": "Validate the publication record and updated queue/form"
-  }
- ],
- "realized_provider_charge_usd": null
+  "reservations": [
+    {
+      "job": "replacement_cpu_baseline_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T15:51:09.479468+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_replacement_baseline_20261106.log",
+      "note": "Reserved before Modal image initialization; not actual provider billing"
+    },
+    {
+      "job": "workbench_cpu_validation_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T16:13:27.703178+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_workbench_20261106.log",
+      "note": "Reserved before image build, not actual provider charge"
+    },
+    {
+      "job": "workbench_cpu_fixed_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T16:18:59.868960+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_workbench_fixed_20261106.log",
+      "note": "New validation after fixing missing report upload; no automatic retry; reserve before image build, not actual charge"
+    },
+    {
+      "job": "workbench_cpu_claimfix_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T16:23:07.067482+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_workbench_claimfix_20261106.log",
+      "note": "New validation after disclosure fix; no automatic retry; reserve before image build, not actual charge"
+    },
+    {
+      "job": "verifier_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T16:29:01.584096+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_verifier_20261106.log",
+      "note": "Bounded structural verifier tests; reserve before image build, not actual billing"
+    },
+    {
+      "job": "verifier_paths_and_accessibility_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T16:35:02.122547+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_verifier_paths_accessibility_20261106.log",
+      "note": "Correct manifest paths and computed contrast/browser QA; reserve before image build, not actual charge"
+    },
+    {
+      "job": "readiness_ledger_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T16:41:47.969426+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_readiness_ledger_20261106.log",
+      "note": "Readiness ledger and corrected held-out status; reserve before image initialization, not actual billing"
+    },
+    {
+      "job": "readiness_ledger_bootstrap_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T16:44:23.890783+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_readiness_bootstrap_20261106.log",
+      "note": "New validation after generated-ledger bootstrap fix; no automatic retry; not actual billing"
+    },
+    {
+      "job": "loader_hardening_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T16:51:00+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_loader_hardening_20261106.log",
+      "note": "Patch-loader preflight/atomicity tests plus guided walkthrough QA; CPU torch dev dependency added via uv; reserve before image build, not actual billing"
+    },
+    {
+      "job": "loader_hardening_fix_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T17:10:00+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_loader_hardening_fix_20261106.log",
+      "note": "Re-run after correcting two test fixtures (bf16 tie case, float32 overflow magnitude) found by the previous run; loader code unchanged by those fixes; not actual billing"
+    },
+    {
+      "job": "loader_hardening_fix2_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T17:15:00+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_loader_hardening_fix2_20261106.log",
+      "note": "Replace a rounding-dependent inverse-fixture with a column-scope assertion; loader unchanged; not actual billing"
+    },
+    {
+      "job": "heldout_analysis_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T17:21:25+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_heldout_analysis_20261106.log",
+      "note": "Validate the new held-out analysis, its tests and the updated readiness claim; not actual billing"
+    },
+    {
+      "job": "submission_story_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T18:59:35+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_submission_story_20261106.log",
+      "note": "Validate confirmatory-spec tests, the user-value submission rewrite and the circuit claim update; not actual billing"
+    },
+    {
+      "job": "submission_story_fix_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T19:02:24+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_submission_story_fix_20261106.log",
+      "note": "Image now carries the parameter .npz files the confirmatory spec hashes, plus REPRODUCE.md; not actual billing"
+    },
+    {
+      "job": "final_story_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": false,
+      "created_at": "2026-11-05T19:07:06+00:00",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_final_story_20261106.log",
+      "note": "Snapshot after the story/reproduction/claim reconciliation edits; not actual billing"
+    },
+    {
+      "job": "audit_page_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": null,
+      "reserved_at": "2026-11-06T05:50:26+00:00",
+      "purpose": "Full suite incl. blind-audit page and analyser in the clean pinned image"
+    },
+    {
+      "job": "audit_page_mount_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": null,
+      "reserved_at": "2026-11-06T05:50:49+00:00",
+      "purpose": "Retry after mounting human_audit/ into the image"
+    },
+    {
+      "job": "appraisal_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": null,
+      "reserved_at": "2026-11-06T08:38:48+00:00",
+      "purpose": "Validate the corrected narrative layer and updated sources"
+    },
+    {
+      "job": "queue_close_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": null,
+      "reserved_at": "2026-11-06T10:18:44+00:00",
+      "purpose": "Validate the closed queue, demo artifacts and article draft"
+    },
+    {
+      "job": "publication_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": null,
+      "reserved_at": "2026-11-06T10:58:05+00:00",
+      "purpose": "Validate the publication record and updated queue/form"
+    },
+    {
+      "job": "judge_quickstart_cpu_20261106",
+      "reserved_usd": 1.0,
+      "gpu": null,
+      "reserved_at": "2026-11-06T11:17:19+00:00",
+      "purpose": "Validate the judge-facing Dockerfile, README run instructions and updated Space card"
+    }
+  ],
+  "realized_provider_charge_usd": null
 }
