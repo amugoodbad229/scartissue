@@ -1,0 +1,25 @@
+{
+  "status": "frozen_for_execution",
+  "primary_track": "2a",
+  "problem_statement": "Red-teaming and robustness evaluation",
+  "conditional_secondary": [
+    "2b: Locating where safety lives",
+    "2b: Circuit-level interventions"
+  ],
+  "user": "model maintainer comparing safety repairs",
+  "workflow": [
+    "load sample or local evidence bundle",
+    "compare compatible runs across harm-ASR, over-refusal, lm-eval utility and edit support",
+    "inspect uncertainty and per-prompt judge disagreement",
+    "apply explicit user constraints",
+    "export accept/reject/insufficient-evidence report"
+  ],
+  "limitations": [
+    "research decision aid, not production certification",
+    "no live drifted inference",
+    "no claim that missing/inconclusive evidence is safe",
+    "no Track 2b superiority claim before actual intervention validation"
+  ],
+  "validation_execution": "Modal",
+  "gpu_budget": "not approved"
+}

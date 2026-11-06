@@ -1,0 +1,77 @@
+{
+  "schema": "scartissue.competition-source-check/2",
+  "checked_on": "2026-11-05",
+  "method": "TinyFish fetch_content, ttl=0; official homepage contains complete track sections; dedicated routes returned page_not_found",
+  "source_url": "https://hackathon.lexsi.ai/",
+  "track_2_title": "AI Red Teaming, Safety and Alignment",
+  "subtrack_count": 2,
+  "problem_statement_count": 13,
+  "subtracks": [
+    {
+      "id": "2a",
+      "title": "AI Safety and Red Teaming",
+      "count": 4,
+      "problem_statements": [
+        "Red-teaming and robustness evaluation: Attack a hardened model with jailbreaks, prompt injection, encoding tricks, best-of-N sampling and weight-space attacks such as abliteration, and report robustness alongside over-refusal.",
+        "Adversarial and safety evaluation sets: Build an adversarial or safety benchmark for a specific domain, language or risk area, with clear labels and scoring, and use it to measure how current open models hold up. The deliverable can be the dataset and a report.",
+        "Multi-turn audits: Audit a model or agent across long, multi-turn conversations for attacks a single prompt would not catch, such as prompt injection hidden in tools or documents, gradual jailbreaks and requests for cyber-attack help. Report what broke and in which turn, with reproducible transcripts.",
+        "Multilingual and code-mixed safety: Test whether safety holds across languages and mixed-language prompts, then close the gaps you find."
+      ]
+    },
+    {
+      "id": "2b",
+      "title": "AI Safety and Correction",
+      "count": 9,
+      "problem_statements": [
+        "Safety-preserving fine-tuning: Fine-tune a model for a useful domain task with a safety-hardening method, and show safety holds compared with plain fine-tuning.",
+        "Repairing safety drift without retraining: Take a model whose safety degraded after fine-tuning and restore it with weight-space methods (safety patching, merging, projection) while keeping task performance.",
+        "Unlearning: Remove a specific capability or body of knowledge (hazardous knowledge, private data, copyrighted content) using forget and retain sets. Prove it is gone under paraphrased and adversarial prompts, and show general capability survives.",
+        "Inference-time safety steering: Block harmful requests with activation steering (refusal directions, contrastive or conditional steering) or safety-aware decoding, with no retraining, while keeping over-refusal of harmless requests low.",
+        "Locating where safety lives: Find the circuits, neurons or directions responsible for refusal or for a harmful behaviour, and use them to make a targeted fix.",
+        "Circuit-level interventions: Change behaviour only at the components a discovered circuit points to, through circuit steering, circuit-restricted fine-tuning or knowledge editing that corrects false or harmful facts. Verify nothing else broke.",
+        "Safety-aware compression: Compress a model with circuit-aware mixed-precision quantization or pruning, and show its safety behaviour survives the compression.",
+        "Tamper resistance: Make safety survive later harmful fine-tuning by someone else, and demonstrate it with attack fine-tunes.",
+        "Hallucination detection and abstention: Train probes on the model's internal activations to flag likely hallucinations, and wire them in so the model abstains or triggers retrieval when a probe fires. Show fewer wrong answers while it still answers most questions."
+      ]
+    }
+  ],
+  "track_1": {
+    "title": "Fine-tuning and Data Curation",
+    "problem_statements": [
+      "Domain assistants for regulated industries: Adapt a model to a regulated domain such as banking, insurance, legal or healthcare, where answers must follow policy and stay accurate.",
+      "Replacing a closed-model API: Take a high-volume business task that is usually sent to a large closed model (classification, extraction, summarisation, drafting) and fine-tune a small open model to match it at a fraction of the cost.",
+      "Grounded answers and fewer hallucinations: Build a training set from an organisation's own documents (manuals, policies, contracts, research) and train a model that answers only from them. It should say so when the answer is not there and make measurably fewer unsupported or false claims.",
+      "Low-resource and multilingual languages: Improve a model for underserved languages, dialects or code-mixed text in a public-facing setting such as education, public services, agriculture or healthcare.",
+      "Structured output and extraction: Turn unstructured text (forms, invoices, reports, clinical notes, support tickets) into reliable structured data that passes schema validation.",
+      "Reasoning with verifiable answers: Improve step-by-step reasoning in areas where answers can be checked automatically, such as maths, financial calculations, code or logic, using reward-based training.",
+      "Preference and style alignment: Align a model with an organisation's quality bar or house style (customer communication, technical writing, feedback on student work) using preference data.",
+      "Data-scarce domains: Where little real data exists, generate, verify and filter synthetic training data, and show that curation measurably beats training on raw generated data.",
+      "Long documents: Fine-tune for summarising and reasoning over long documents such as filings, contracts, transcripts or research papers through multi-stage fine tuning."
+    ]
+  },
+  "track_3": {
+    "title": "Agentic Fine-tuning",
+    "problem_statements": [
+      "Reliable tool calling: Train an agent with reinforcement learning on real tool-calling rollouts to choose the right tool, pass well-formed arguments and call tools in the right order.",
+      "Efficient trajectories: Cut redundant, looping or failed tool calls and the number of steps per task, without lowering the success rate.",
+      "Agentic distillation: Distill a stronger teacher's agent trajectories into a small student model that is cheap to run or runs locally.",
+      "Fine-tuning for retrieval-augmented generation: Train a model that decides when and what to retrieve, grounds its answers in the retrieved text and ignores distracting documents.",
+      "Synthetic multi-hop training data: Turn a document corpus into grounded, difficulty-graded multi-hop questions and use them to train a research or search agent.",
+      "Data and database agents: Train an agent that answers business questions by querying databases or APIs (finance, operations, analytics), rewarded on verified results.",
+      "Business workflow and decision agents: Automate a multi-step process with rules and approvals, such as claims handling, KYC checks, ticket triage or compliance review, with a full audit trail.",
+      "Self-healing agents: Detect failing runs, classify why they failed, generate corrective training examples, retrain, and gate redeployment on measured accuracy.",
+      "Reward design and reward-hacking defences: Design rewards (process rewards, LLM judges, groundedness checks) that raise real task success without being gamed."
+    ]
+  },
+  "deadline": {
+    "date": "2026-11-14",
+    "timezone": "AoE",
+    "quote": "Submissions are due by end of day on Nov 14 (AoE). You can submit more than once; your latest submission counts."
+  },
+  "public_rubric": "Homepage says fixed numerical scale but does not expose criterion weights; do not claim a winning probability.",
+  "recommendation": {
+    "primary": "Track 2a, red-teaming and robustness evaluation",
+    "conditional_extension": "Track 2b locating where safety lives / circuit-level interventions only after a valid targeted behavioural comparison",
+    "reason": "Existing data and experiments fit weight-space red-teaming; make them a truthful, reproducible model-repair decision workflow, not just a chart. Sunk cost alone is not evidence of competitiveness."
+  }
+}

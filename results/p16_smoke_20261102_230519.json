@@ -1,0 +1,1709 @@
+{
+  "schema": "scartissue.capability-run/1",
+  "status": "passed",
+  "mode": "smoke",
+  "source_sha256": {
+    "experiments/p16_lm_eval.py": "9afd86e5bf67f537c836d54b6da986567f9dcac9473624b7d3ad09c3b8690d38",
+    "experiments/eval_runtime.py": "7e38f523a2e94594dcb60c94eb9651bb57b808bc8a970f6dc26ffe2b785b84f0",
+    "experiments/runtime/pyproject.toml": "9c2bf9d520cdf321c0758cd784df21b0ad7ef60c1de7c20936ac4480c7496fb2",
+    "experiments/runtime/uv.lock": "ef8c6314c8470fc6d5a05fc5be12149b53804d0127dae65318318eb8d7f2e50e",
+    "artifacts/load_patch.py": "c48e0b12201cdd9403d107eb411d74521eb00fa533c8c4d17218af86a1b6d94e",
+    "artifacts/manifest.json": "c0a12cb690005d7e2eddba8c13cf6a8947cdc5b00d59c844e298f3463e46aa9f",
+    "artifacts/abliteration_tiny-aya-global_layer15.npz": "505b243a23c0e4e17ecd08e5644c5c9b43e7c933f03a808cc91ab61b8977ac24",
+    "artifacts/repair_harm2_a4.npz": "26c537b304762b08b4d6b31a52bb91edf437f893d26a53d7e3a26beec6e2001f",
+    "artifacts/repair_global_a4.npz": "c90fed93cb92f588c6704b34d0abb434ff94646902b370958e27d38d1bfe6f8c"
+  },
+  "reference": {
+    "model": "CohereLabs/tiny-aya-global",
+    "model_revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+    "dataset": "openai/gsm8k",
+    "dataset_revision": "740312add88f781978c0658806c59bc2815b9866",
+    "chat_template_sha256": "2147c474f41b522b7296f74692b9f31e45f49a31465960576a9d321339c5915a",
+    "task_config": {
+      "tag": [
+        "math_word_problems"
+      ],
+      "task": "gsm8k",
+      "dataset_path": "openai/gsm8k",
+      "dataset_name": "main",
+      "output_type": "generate_until",
+      "training_split": "train",
+      "fewshot_split": "train",
+      "test_split": "test",
+      "doc_to_text": "Question: {{question}}\nAnswer:",
+      "doc_to_target": "{{answer}}",
+      "metric_list": [
+        {
+          "metric": "exact_match",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": false,
+          "regexes_to_ignore": [
+            ",",
+            "\\$",
+            "(?s).*#### ",
+            "\\.$"
+          ]
+        }
+      ],
+      "generation_kwargs": {
+        "until": [
+          "Question:",
+          "</s>",
+          "<|im_end|>"
+        ],
+        "do_sample": false,
+        "temperature": 0.0
+      },
+      "repeats": 1,
+      "num_fewshot": 5,
+      "filter_list": [
+        {
+          "name": "strict-match",
+          "filter": [
+            {
+              "function": "regex",
+              "regex_pattern": "#### (\\-?[0-9\\.\\,]+)"
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        },
+        {
+          "name": "flexible-extract",
+          "filter": [
+            {
+              "function": "regex",
+              "group_select": -1,
+              "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "version": 3.0
+      },
+      "dataset_kwargs": {
+        "revision": "740312add88f781978c0658806c59bc2815b9866"
+      }
+    },
+    "task_yaml_sha256": "82eb1780b263bc040729032b3e076990c7933f42163c91e359f38820dd1d8833",
+    "dataset_test_fingerprint": "59ec1b7f9357c7a2",
+    "versions": {
+      "torch": "2.9.0",
+      "transformers": "5.22.0",
+      "accelerate": "1.11.0",
+      "huggingface-hub": "1.33.0",
+      "datasets": "4.4.2",
+      "lm-eval": "0.4.13",
+      "numpy": "2.5.4"
+    },
+    "patch_checks": {
+      "abliteration_tiny-aya-global_layer15.npz": {
+        "sha256": "505b243a23c0e4e17ecd08e5644c5c9b43e7c933f03a808cc91ab61b8977ac24",
+        "selected_scalars": 962592768,
+        "alpha": -1.0
+      },
+      "repair_harm2_a4.npz": {
+        "sha256": "26c537b304762b08b4d6b31a52bb91edf437f893d26a53d7e3a26beec6e2001f",
+        "selected_scalars": 19251200,
+        "alpha": 4.0
+      },
+      "repair_global_a4.npz": {
+        "sha256": "c90fed93cb92f588c6704b34d0abb434ff94646902b370958e27d38d1bfe6f8c",
+        "selected_scalars": 962592768,
+        "alpha": 4.0
+      }
+    },
+    "torch_state_self_test": {
+      "dtype": "bfloat16",
+      "inverse_subtraction_exact": false,
+      "snapshot_restore_exact": true,
+      "unselected_column_unchanged": true
+    },
+    "result_transport_self_test": {
+      "torch_version": "2.9.0+cu128",
+      "dtype": {
+        "library_object": "torch.bfloat16",
+        "python_type": "torch.dtype"
+      },
+      "scope": "library metadata only; numeric metrics unchanged"
+    },
+    "simple_evaluate_signature": "(model: 'str | LM', model_args: 'str | dict[str, str | int | float] | None' = None, tasks: 'list[str | dict[str, Any] | Task] | None' = None, num_fewshot: 'int | None' = None, batch_size: 'int | str | None' = None, max_batch_size: 'int | None' = None, device: 'str | None' = None, use_cache: 'str | None' = None, cache_requests: 'bool' = False, rewrite_requests_cache: 'bool' = False, delete_requests_cache: 'bool' = False, limit: 'int | float | None' = None, samples: 'dict[str, list[int]] | None' = None, bootstrap_iters: 'int' = 100000, check_integrity: 'bool' = False, write_out: 'bool' = False, log_samples: 'bool' = True, evaluation_tracker: 'EvaluationTracker | None' = None, system_instruction: 'str | None' = None, apply_chat_template: 'bool | str' = False, fewshot_as_multiturn: 'bool' = True, gen_kwargs: 'str | dict[str, str | float | int] | None' = None, task_manager: 'TaskManager | None' = None, verbosity=None, predict_only: 'bool' = False, random_seed: 'int' = 0, numpy_random_seed: 'int' = 1234, torch_random_seed: 'int' = 1234, fewshot_random_seed: 'int' = 1234, confirm_run_unsafe_code: 'bool' = False, metadata: 'dict[str, Any] | None' = None) -> 'EvalResults | None'"
+  },
+  "workers": [
+    {
+      "schema": "scartissue.lm-eval/1",
+      "reference": {
+        "model": "CohereLabs/tiny-aya-global",
+        "model_revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+        "dataset": "openai/gsm8k",
+        "dataset_revision": "740312add88f781978c0658806c59bc2815b9866",
+        "chat_template_sha256": "2147c474f41b522b7296f74692b9f31e45f49a31465960576a9d321339c5915a",
+        "task_config": {
+          "tag": [
+            "math_word_problems"
+          ],
+          "task": "gsm8k",
+          "dataset_path": "openai/gsm8k",
+          "dataset_name": "main",
+          "output_type": "generate_until",
+          "training_split": "train",
+          "fewshot_split": "train",
+          "test_split": "test",
+          "doc_to_text": "Question: {{question}}\nAnswer:",
+          "doc_to_target": "{{answer}}",
+          "metric_list": [
+            {
+              "metric": "exact_match",
+              "aggregation": "mean",
+              "higher_is_better": true,
+              "ignore_case": true,
+              "ignore_punctuation": false,
+              "regexes_to_ignore": [
+                ",",
+                "\\$",
+                "(?s).*#### ",
+                "\\.$"
+              ]
+            }
+          ],
+          "generation_kwargs": {
+            "until": [
+              "Question:",
+              "</s>",
+              "<|im_end|>"
+            ],
+            "do_sample": false,
+            "temperature": 0.0,
+            "max_gen_toks": 256
+          },
+          "repeats": 1,
+          "num_fewshot": 5,
+          "filter_list": [
+            {
+              "name": "strict-match",
+              "filter": [
+                {
+                  "function": "regex",
+                  "regex_pattern": "#### (\\-?[0-9\\.\\,]+)"
+                },
+                {
+                  "function": "take_first"
+                }
+              ]
+            },
+            {
+              "name": "flexible-extract",
+              "filter": [
+                {
+                  "function": "regex",
+                  "group_select": -1,
+                  "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+                },
+                {
+                  "function": "take_first"
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "version": 3.0
+          },
+          "dataset_kwargs": {
+            "revision": "740312add88f781978c0658806c59bc2815b9866"
+          }
+        },
+        "task_yaml_sha256": "82eb1780b263bc040729032b3e076990c7933f42163c91e359f38820dd1d8833",
+        "dataset_test_fingerprint": "59ec1b7f9357c7a2",
+        "versions": {
+          "torch": "2.9.0",
+          "transformers": "5.22.0",
+          "accelerate": "1.11.0",
+          "huggingface-hub": "1.33.0",
+          "datasets": "4.4.2",
+          "lm-eval": "0.4.13",
+          "numpy": "2.5.4"
+        },
+        "patch_checks": {
+          "abliteration_tiny-aya-global_layer15.npz": {
+            "sha256": "505b243a23c0e4e17ecd08e5644c5c9b43e7c933f03a808cc91ab61b8977ac24",
+            "selected_scalars": 962592768,
+            "alpha": -1.0
+          },
+          "repair_harm2_a4.npz": {
+            "sha256": "26c537b304762b08b4d6b31a52bb91edf437f893d26a53d7e3a26beec6e2001f",
+            "selected_scalars": 19251200,
+            "alpha": 4.0
+          },
+          "repair_global_a4.npz": {
+            "sha256": "c90fed93cb92f588c6704b34d0abb434ff94646902b370958e27d38d1bfe6f8c",
+            "selected_scalars": 962592768,
+            "alpha": 4.0
+          }
+        },
+        "torch_state_self_test": {
+          "dtype": "bfloat16",
+          "inverse_subtraction_exact": false,
+          "snapshot_restore_exact": true,
+          "unselected_column_unchanged": true
+        },
+        "result_transport_self_test": {
+          "torch_version": "2.9.0+cu128",
+          "dtype": {
+            "library_object": "torch.bfloat16",
+            "python_type": "torch.dtype"
+          },
+          "scope": "library metadata only; numeric metrics unchanged"
+        },
+        "simple_evaluate_signature": "(model: 'str | LM', model_args: 'str | dict[str, str | int | float] | None' = None, tasks: 'list[str | dict[str, Any] | Task] | None' = None, num_fewshot: 'int | None' = None, batch_size: 'int | str | None' = None, max_batch_size: 'int | None' = None, device: 'str | None' = None, use_cache: 'str | None' = None, cache_requests: 'bool' = False, rewrite_requests_cache: 'bool' = False, delete_requests_cache: 'bool' = False, limit: 'int | float | None' = None, samples: 'dict[str, list[int]] | None' = None, bootstrap_iters: 'int' = 100000, check_integrity: 'bool' = False, write_out: 'bool' = False, log_samples: 'bool' = True, evaluation_tracker: 'EvaluationTracker | None' = None, system_instruction: 'str | None' = None, apply_chat_template: 'bool | str' = False, fewshot_as_multiturn: 'bool' = True, gen_kwargs: 'str | dict[str, str | float | int] | None' = None, task_manager: 'TaskManager | None' = None, verbosity=None, predict_only: 'bool' = False, random_seed: 'int' = 0, numpy_random_seed: 'int' = 1234, torch_random_seed: 'int' = 1234, fewshot_random_seed: 'int' = 1234, confirm_run_unsafe_code: 'bool' = False, metadata: 'dict[str, Any] | None' = None) -> 'EvalResults | None'"
+      },
+      "hardware": {
+        "gpu": "NVIDIA A100-SXM4-80GB",
+        "vram_bytes": 85118156800
+      },
+      "dtype": "bfloat16",
+      "padding_side": "left",
+      "chat_template_sha256": "2147c474f41b522b7296f74692b9f31e45f49a31465960576a9d321339c5915a",
+      "loader_cast": "stored float64 factors -> float32 delta -> parameter dtype (original loader)",
+      "base_write_weights_sha256": "e2c0641f7e4f9d53e0c289fcd349da70bbcfe2c2f074b29f61eae05d112e564d",
+      "patch_checkpoint_compatibility": {
+        "abliteration_tiny-aya-global_layer15.npz": {
+          "checked_columns": 1152,
+          "max_abs_error": 1.942890293094024e-16,
+          "rtol": 1e-07,
+          "atol": 1e-08,
+          "scope": "sampled columns, not whole-checkpoint identity"
+        },
+        "repair_global_a4.npz": {
+          "checked_columns": 1152,
+          "max_abs_error": 2.0816681711721685e-16,
+          "rtol": 1e-07,
+          "atol": 1e-08,
+          "scope": "sampled columns, not whole-checkpoint identity"
+        },
+        "repair_harm2_a4.npz": {
+          "checked_columns": 1107,
+          "max_abs_error": 1.942890293094024e-16,
+          "rtol": 1e-07,
+          "atol": 1e-08,
+          "scope": "sampled columns, not whole-checkpoint identity"
+        }
+      },
+      "limit": 2,
+      "arms": {
+        "base": {
+          "edited_scalars": {
+            "drift": 0,
+            "repair": 0
+          },
+          "write_weights_sha256": "e2c0641f7e4f9d53e0c289fcd349da70bbcfe2c2f074b29f61eae05d112e564d",
+          "generation_and_scoring_s": 24.374747280000005,
+          "evaluation": {
+            "results": {
+              "gsm8k": {
+                "name": "gsm8k",
+                "alias": "gsm8k",
+                "sample_len": 2,
+                "exact_match,strict-match": 1.0,
+                "exact_match_stderr,strict-match": 0.0,
+                "exact_match,flexible-extract": 1.0,
+                "exact_match_stderr,flexible-extract": 0.0
+              }
+            },
+            "group_subtasks": {},
+            "configs": {
+              "gsm8k": {
+                "task": "gsm8k",
+                "tag": [
+                  "math_word_problems"
+                ],
+                "dataset_path": "openai/gsm8k",
+                "dataset_name": "main",
+                "dataset_kwargs": {
+                  "revision": "740312add88f781978c0658806c59bc2815b9866"
+                },
+                "training_split": "train",
+                "test_split": "test",
+                "fewshot_split": "train",
+                "doc_to_text": "Question: {{question}}\nAnswer:",
+                "doc_to_target": "{{answer}}",
+                "unsafe_code": false,
+                "description": "",
+                "target_delimiter": " ",
+                "fewshot_delimiter": "\n\n",
+                "fewshot_config": {
+                  "sampler": "default",
+                  "split": "train",
+                  "process_docs": null,
+                  "fewshot_indices": null,
+                  "samples": null,
+                  "doc_to_text": "Question: {{question}}\nAnswer:",
+                  "doc_to_choice": null,
+                  "doc_to_target": "{{answer}}",
+                  "gen_prefix": null,
+                  "fewshot_delimiter": "\n\n",
+                  "target_delimiter": " "
+                },
+                "num_fewshot": 5,
+                "metric_list": [
+                  {
+                    "metric": "exact_match",
+                    "aggregation": "mean",
+                    "higher_is_better": true,
+                    "ignore_case": true,
+                    "ignore_punctuation": false,
+                    "regexes_to_ignore": [
+                      ",",
+                      "\\$",
+                      "(?s).*#### ",
+                      "\\.$"
+                    ]
+                  }
+                ],
+                "output_type": "generate_until",
+                "generation_kwargs": {
+                  "until": [
+                    "Question:",
+                    "</s>",
+                    "<|im_end|>"
+                  ],
+                  "do_sample": false,
+                  "temperature": 0.0,
+                  "max_gen_toks": 256
+                },
+                "repeats": 1,
+                "filter_list": [
+                  {
+                    "name": "strict-match",
+                    "filter": [
+                      {
+                        "function": "regex",
+                        "regex_pattern": "#### (\\-?[0-9\\.\\,]+)"
+                      },
+                      {
+                        "function": "take_first"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "flexible-extract",
+                    "filter": [
+                      {
+                        "function": "regex",
+                        "group_select": -1,
+                        "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+                      },
+                      {
+                        "function": "take_first"
+                      }
+                    ]
+                  }
+                ],
+                "should_decontaminate": false,
+                "metadata": {
+                  "version": 3.0
+                }
+              }
+            },
+            "versions": {
+              "gsm8k": 3.0
+            },
+            "n-shot": {
+              "gsm8k": 5
+            },
+            "higher_is_better": {
+              "gsm8k": {
+                "exact_match": true
+              }
+            },
+            "n-samples": {
+              "gsm8k": {
+                "original": 1319,
+                "effective": 2
+              }
+            },
+            "samples": {
+              "gsm8k": [
+                {
+                  "doc_id": 0,
+                  "doc": {
+                    "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+                    "answer": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18"
+                  },
+                  "target": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: The state of Virginia had 3.79 inches of rain in March, 4.5 inches of rain in April, 3.95 inches of rain in May, 3.09 inches of rain in June and 4.67 inches in July.  What is the average rainfall amount, in inches, in Virginia?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>It rained for a total of 3.79+4.5+3.95+3.09+4.67 = <<3.79+4.5+3.95+3.09+4.67=20>>20 inches\nThe rain period is from March through July for a total of 5 months so the average rainfall is 20/5 = <<20/5=4>>4 inches of rain per month\n#### 4<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A chocolate box contains 200 bars. Thomas and his 4 friends take 1/4 of the bars and decide to divide them equally between them. One of Thomas's friends doesn't like chocolate bars very much and returns 5 of his bars to the box. Later, his sister Piper comes home and takes 5 fewer bars than those taken in total by Thomas and his friends so she can also share with her friends. What's the total number of bars left in the box?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Thomas and his friends took 1/4*200 = <<1/4*200=50>>50 bars.\nThe total number of bars left in the box was 200-50 = <<200-50=150>>150 bars.\nSince there are five of them sharing, each of them got 50/5 = <<50/5=10>>10 bars.\nAfter a friend returned 5 bars, there were 150 + 5 = <<150+5=155>>155 bars in the box.\nPiper took five fewer bars, that is 50 - 5 = <<50-5=45>>45 bars.\nThe total remaining bars left in the box is 155 - 45 = <<155-45=110>>110 bars.\n#### 110<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Gilbert grows herbs in his yard to use in his cooking. At the beginning of the spring, he planted three basil bushes, a parsley plant, and two kinds of mint. Halfway through spring, one of the basil plants dropped seeds from a flower and made an extra basil plant grow. However, a rabbit came by the garden near the end of spring and ate all the mint. How many herb plants did Gilbert have when spring ended?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Gilbert planted 3 + 1 + 2 = <<3+1+2=6>>6 herb plants.\nHe gained a basil plant when one of the basil plants seeded a new plant, so he had 6 + 1 = <<6+1=7>>7 plants.\nThe rabbit ate both mint plants, so Gilbert had 7 - 2 = <<7-2=5>>5 herb plants when spring ended.\n#### 5<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Marta was about to start the school year and needed to buy the necessary textbooks. She managed to buy five on sale, for $10 each. She had to order two textbooks online, which cost her a total of $40, and three she bought directly from the bookstore for a total of three times the cost of the online ordered books. How much in total did Martha spend on textbooks?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Marta bought five textbooks on sale, for a total of 5 * 10 = $<<5*10=50>>50.\nThree textbooks from the bookstore had a cost of 3 * 40 = $<<3*40=120>>120.\nThat means that Marta spent in total 50 + 40 + 120 = $<<50+40+120=210>>210 on textbooks.\n#### 210<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: At the burger hut, you can buy a burger for $5, french fries for $3, and a soft drink for $3.  If you order a special burger meal, you get all 3 of these food items for $9.50. A kid’s burger is $3, a kid’s french fries are $2, and a kid's juice box is $2.  They also have a kids meal of all 3 kids' food items for $5. Mr. Parker buys 2 burger meals for his wife and himself.  He also buys 2 burger meals and 2 kid's meals for his 4 children.  How much money does Mr. Parker save by buying the 6 meals versus buying the individual food items?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>To buy regular food items individually, they cost $5 + $3 + $3 = $<<5+3+3=11>>11.\nTo buy kids food items individually, they cost $3 + $2 + $2 = $<<3+2+2=7>>7.\nIf you buy the special burger meal, you save $11 - $9.50 = $<<11-9.5=1.50>>1.50.\nIf you buy the kid's meal, you save $7 - $5 = $<<7-5=2>>2.\nMr. Parker buys 4 special burger meals, bringing his discount to 4 x $1.50 = $<<4*1.50=6>>6.\nHe buys 2 kid's meals, bringing his discount to 2 x $2 = $<<2*2=4>>4.\nThe total savings for Mr. Parker is $6 + $4 = $<<6+4=10>>10.\n#### 10<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "Janet lays 16 eggs per day, eats 3 for breakfast and 4 for baking muffins, so she has 16 - 3 - 4 = <<16-3-4=9>>9 eggs left to sell.\nShe sells each egg for $2, so she makes 9 * $2 = <<9*2=18>>18 per day.\n#### 18"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "18"
+                  ],
+                  "filter": "strict-match",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "986c19252f3c7f6eaeff2229e9a5777f96a85c0ceea931a92d2289084dfd518c",
+                  "prompt_hash": "09a0838b2c9e7a720830ced051d557bb34e2651a04f0bbc7f45a6b8eb37fa519",
+                  "target_hash": "623a0fbdf774fcb55e485a3e6b012e6c3965616af5b8eb9b9aebd2f6712be2eb",
+                  "exact_match": 1.0
+                },
+                {
+                  "doc_id": 1,
+                  "doc": {
+                    "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                    "answer": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3"
+                  },
+                  "target": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A roadwork company is paving a newly constructed 16-mile road. They use a mixture of pitch and gravel to make the asphalt to pave the road. Each truckloads of asphalt uses two bags of gravel and five times as many bags of gravel as it does barrels of pitch to make. It takes three truckloads of asphalt to pave each mile of road. The company paved 4 miles of road on one day, then one mile less than double that on the second day. How many barrels of pitch will the company need to finish the remaining road on the third day?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>On the second day, the company paved 4 * 2 - 1 = <<4*2-1=7>>7 miles.\nThe company has 16 - 7 - 4 = <<16-7-4=5>>5 miles of road remaining to pave.\nThey will need 3 * 5 = <<3*5=15>>15 truckloads of asphalt to pave 5 miles of road.\nFor 15 truckloads, they will need 15 * 2 = <<15*2=30>>30 bags of gravel.\nThus, the company will need 30 / 5 = <<30/5=6>>6 barrels of pitch to finish the road on the third day.\n#### 6<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Nancy wanted to make peanut butter cookies for a family gathering, but her cousin is allergic to peanuts. She decided to make almond butter cookies instead. A jar of almond butter costs three times the amount that a jar of peanut butter does. It takes half a jar to make a batch of cookies. A jar of peanut butter costs $3. How many dollars more does it cost per batch to make almond butter cookies instead of peanut butter cookies?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>A jar of almond butter costs 3 * 3 = $<<3*3=9>>9.\nIt takes half a jar to make a batch of cookies, so it costs 9 / 2 = $<<9/2=4.50>>4.50 to use almond butter.\nIt costs 3 / 2 = $<<3/2=1.50>>1.50 to use peanut butter.\nThus, it costs 4.50 - 1.50 = $<<4.50-1.50=3>>3 more to make a batch of almond butter cookies than peanut butter cookies.\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Barry goes to a shop to buy a shirt he'd been admiring for quite some time. He tells the attendant that it's his birthday so she decides to give him a 15% special discount. The price tag on the shirt says $80. How much is he supposed to pay now, considering the special discount?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>15% of $80 = (15/100)*$80 = $<<(15/100)*80=12>>12\nThe dollar amount of the discount is $12 so he is supposed to pay just $80-$12 = $<<80-12=68>>68\n#### 68<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>With half as many swallows as bluebirds, there are 2*2=<<2*2=4>>4 bluebirds.\nWith three times more cardinals than bluebirds, there are 3*4=<<3*4=12>>12 cardinals,\nIf there were 2 swallows, then the total number of birds in the crape myrtle tree is 2+4+12=<<2+4+12=18>>18 birds.\n#### 18<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: There are 180 days in a school year.  A senior can skip their final exams if they miss 5% or less of the school year.  Hazel has missed 6 days of school due to illness.  How many more days can she miss and still not have to take her exams?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>There are 180 days in the school year and she can miss up to 5% so that’s 180*.05 = <<180*.05=9>>9 days\nHazel has been sick 6 days already and she can only miss 9 days or less so she can miss 9-6 = <<9-6=3>>3 more days\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "The robe needs 2 bolts of blue fiber and half that amount of white fiber, so 2 / 2 = <<2/2=1>>1 bolt of white fiber.\nThe total number of bolts is 2 + 1 = <<2+1=3>>3 bolts.\n#### 3"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "3"
+                  ],
+                  "filter": "strict-match",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "00f836ab1a16e62131c59e2c6ce14552295991067d5b9f912f47449305e3b9e1",
+                  "prompt_hash": "58ea86e4011e2cf69f772b36e5c8dc8d50459c2e953dab68d0a68eaa751f5b98",
+                  "target_hash": "2c77b25809301541010b4cb58fc194c5b7308c37495cf8847113b267becb19a5",
+                  "exact_match": 1.0
+                },
+                {
+                  "doc_id": 0,
+                  "doc": {
+                    "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+                    "answer": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18"
+                  },
+                  "target": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: The state of Virginia had 3.79 inches of rain in March, 4.5 inches of rain in April, 3.95 inches of rain in May, 3.09 inches of rain in June and 4.67 inches in July.  What is the average rainfall amount, in inches, in Virginia?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>It rained for a total of 3.79+4.5+3.95+3.09+4.67 = <<3.79+4.5+3.95+3.09+4.67=20>>20 inches\nThe rain period is from March through July for a total of 5 months so the average rainfall is 20/5 = <<20/5=4>>4 inches of rain per month\n#### 4<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A chocolate box contains 200 bars. Thomas and his 4 friends take 1/4 of the bars and decide to divide them equally between them. One of Thomas's friends doesn't like chocolate bars very much and returns 5 of his bars to the box. Later, his sister Piper comes home and takes 5 fewer bars than those taken in total by Thomas and his friends so she can also share with her friends. What's the total number of bars left in the box?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Thomas and his friends took 1/4*200 = <<1/4*200=50>>50 bars.\nThe total number of bars left in the box was 200-50 = <<200-50=150>>150 bars.\nSince there are five of them sharing, each of them got 50/5 = <<50/5=10>>10 bars.\nAfter a friend returned 5 bars, there were 150 + 5 = <<150+5=155>>155 bars in the box.\nPiper took five fewer bars, that is 50 - 5 = <<50-5=45>>45 bars.\nThe total remaining bars left in the box is 155 - 45 = <<155-45=110>>110 bars.\n#### 110<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Gilbert grows herbs in his yard to use in his cooking. At the beginning of the spring, he planted three basil bushes, a parsley plant, and two kinds of mint. Halfway through spring, one of the basil plants dropped seeds from a flower and made an extra basil plant grow. However, a rabbit came by the garden near the end of spring and ate all the mint. How many herb plants did Gilbert have when spring ended?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Gilbert planted 3 + 1 + 2 = <<3+1+2=6>>6 herb plants.\nHe gained a basil plant when one of the basil plants seeded a new plant, so he had 6 + 1 = <<6+1=7>>7 plants.\nThe rabbit ate both mint plants, so Gilbert had 7 - 2 = <<7-2=5>>5 herb plants when spring ended.\n#### 5<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Marta was about to start the school year and needed to buy the necessary textbooks. She managed to buy five on sale, for $10 each. She had to order two textbooks online, which cost her a total of $40, and three she bought directly from the bookstore for a total of three times the cost of the online ordered books. How much in total did Martha spend on textbooks?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Marta bought five textbooks on sale, for a total of 5 * 10 = $<<5*10=50>>50.\nThree textbooks from the bookstore had a cost of 3 * 40 = $<<3*40=120>>120.\nThat means that Marta spent in total 50 + 40 + 120 = $<<50+40+120=210>>210 on textbooks.\n#### 210<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: At the burger hut, you can buy a burger for $5, french fries for $3, and a soft drink for $3.  If you order a special burger meal, you get all 3 of these food items for $9.50. A kid’s burger is $3, a kid’s french fries are $2, and a kid's juice box is $2.  They also have a kids meal of all 3 kids' food items for $5. Mr. Parker buys 2 burger meals for his wife and himself.  He also buys 2 burger meals and 2 kid's meals for his 4 children.  How much money does Mr. Parker save by buying the 6 meals versus buying the individual food items?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>To buy regular food items individually, they cost $5 + $3 + $3 = $<<5+3+3=11>>11.\nTo buy kids food items individually, they cost $3 + $2 + $2 = $<<3+2+2=7>>7.\nIf you buy the special burger meal, you save $11 - $9.50 = $<<11-9.5=1.50>>1.50.\nIf you buy the kid's meal, you save $7 - $5 = $<<7-5=2>>2.\nMr. Parker buys 4 special burger meals, bringing his discount to 4 x $1.50 = $<<4*1.50=6>>6.\nHe buys 2 kid's meals, bringing his discount to 2 x $2 = $<<2*2=4>>4.\nThe total savings for Mr. Parker is $6 + $4 = $<<6+4=10>>10.\n#### 10<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "Janet lays 16 eggs per day, eats 3 for breakfast and 4 for baking muffins, so she has 16 - 3 - 4 = <<16-3-4=9>>9 eggs left to sell.\nShe sells each egg for $2, so she makes 9 * $2 = <<9*2=18>>18 per day.\n#### 18"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "18"
+                  ],
+                  "filter": "flexible-extract",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "986c19252f3c7f6eaeff2229e9a5777f96a85c0ceea931a92d2289084dfd518c",
+                  "prompt_hash": "09a0838b2c9e7a720830ced051d557bb34e2651a04f0bbc7f45a6b8eb37fa519",
+                  "target_hash": "623a0fbdf774fcb55e485a3e6b012e6c3965616af5b8eb9b9aebd2f6712be2eb",
+                  "exact_match": 1.0
+                },
+                {
+                  "doc_id": 1,
+                  "doc": {
+                    "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                    "answer": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3"
+                  },
+                  "target": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A roadwork company is paving a newly constructed 16-mile road. They use a mixture of pitch and gravel to make the asphalt to pave the road. Each truckloads of asphalt uses two bags of gravel and five times as many bags of gravel as it does barrels of pitch to make. It takes three truckloads of asphalt to pave each mile of road. The company paved 4 miles of road on one day, then one mile less than double that on the second day. How many barrels of pitch will the company need to finish the remaining road on the third day?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>On the second day, the company paved 4 * 2 - 1 = <<4*2-1=7>>7 miles.\nThe company has 16 - 7 - 4 = <<16-7-4=5>>5 miles of road remaining to pave.\nThey will need 3 * 5 = <<3*5=15>>15 truckloads of asphalt to pave 5 miles of road.\nFor 15 truckloads, they will need 15 * 2 = <<15*2=30>>30 bags of gravel.\nThus, the company will need 30 / 5 = <<30/5=6>>6 barrels of pitch to finish the road on the third day.\n#### 6<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Nancy wanted to make peanut butter cookies for a family gathering, but her cousin is allergic to peanuts. She decided to make almond butter cookies instead. A jar of almond butter costs three times the amount that a jar of peanut butter does. It takes half a jar to make a batch of cookies. A jar of peanut butter costs $3. How many dollars more does it cost per batch to make almond butter cookies instead of peanut butter cookies?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>A jar of almond butter costs 3 * 3 = $<<3*3=9>>9.\nIt takes half a jar to make a batch of cookies, so it costs 9 / 2 = $<<9/2=4.50>>4.50 to use almond butter.\nIt costs 3 / 2 = $<<3/2=1.50>>1.50 to use peanut butter.\nThus, it costs 4.50 - 1.50 = $<<4.50-1.50=3>>3 more to make a batch of almond butter cookies than peanut butter cookies.\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Barry goes to a shop to buy a shirt he'd been admiring for quite some time. He tells the attendant that it's his birthday so she decides to give him a 15% special discount. The price tag on the shirt says $80. How much is he supposed to pay now, considering the special discount?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>15% of $80 = (15/100)*$80 = $<<(15/100)*80=12>>12\nThe dollar amount of the discount is $12 so he is supposed to pay just $80-$12 = $<<80-12=68>>68\n#### 68<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>With half as many swallows as bluebirds, there are 2*2=<<2*2=4>>4 bluebirds.\nWith three times more cardinals than bluebirds, there are 3*4=<<3*4=12>>12 cardinals,\nIf there were 2 swallows, then the total number of birds in the crape myrtle tree is 2+4+12=<<2+4+12=18>>18 birds.\n#### 18<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: There are 180 days in a school year.  A senior can skip their final exams if they miss 5% or less of the school year.  Hazel has missed 6 days of school due to illness.  How many more days can she miss and still not have to take her exams?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>There are 180 days in the school year and she can miss up to 5% so that’s 180*.05 = <<180*.05=9>>9 days\nHazel has been sick 6 days already and she can only miss 9 days or less so she can miss 9-6 = <<9-6=3>>3 more days\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "The robe needs 2 bolts of blue fiber and half that amount of white fiber, so 2 / 2 = <<2/2=1>>1 bolt of white fiber.\nThe total number of bolts is 2 + 1 = <<2+1=3>>3 bolts.\n#### 3"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "3"
+                  ],
+                  "filter": "flexible-extract",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "00f836ab1a16e62131c59e2c6ce14552295991067d5b9f912f47449305e3b9e1",
+                  "prompt_hash": "58ea86e4011e2cf69f772b36e5c8dc8d50459c2e953dab68d0a68eaa751f5b98",
+                  "target_hash": "2c77b25809301541010b4cb58fc194c5b7308c37495cf8847113b267becb19a5",
+                  "exact_match": 1.0
+                }
+              ]
+            },
+            "config": {
+              "model": "CohereLabs/tiny-aya-global",
+              "model_args": null,
+              "model_num_parameters": 3349227520,
+              "model_dtype": {
+                "library_object": "torch.bfloat16",
+                "python_type": "torch.dtype"
+              },
+              "model_revision": "main",
+              "model_sha": "",
+              "batch_size": null,
+              "batch_sizes": [],
+              "device": null,
+              "use_cache": null,
+              "limit": 2,
+              "bootstrap_iters": 10000,
+              "gen_kwargs": {
+                "max_gen_toks": 256,
+                "do_sample": false
+              },
+              "random_seed": 0,
+              "numpy_seed": 0,
+              "torch_seed": 0,
+              "fewshot_seed": 0
+            },
+            "git_hash": null,
+            "date": 1793628347.9116106,
+            "pretty_env_info": "PyTorch version: 2.9.0+cu128\nIs debug build: False\nCUDA used to build PyTorch: 12.8\nROCM used to build PyTorch: N/A\n\nOS: Debian GNU/Linux 12 (bookworm) (x86_64)\nGCC version: (Debian 12.2.0-14+deb12u1) 12.2.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.36\n\nPython version: 3.12.10 (main, May 21 2025, 23:34:56) [GCC 12.2.0] (64-bit runtime)\nPython platform: Linux-4.19.0-gvisor-x86_64-with-glibc2.36\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: \nGPU models and configuration: GPU 0: NVIDIA A100-SXM4-80GB\nNvidia driver version: Could not collect\ncuDNN version: Could not collect\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:        x86_64\nCPU op-mode(s):      32-bit, 64-bit\nAddress sizes:       46 bits physical, 48 bits virtual\nByte Order:          Little Endian\nCPU(s):              24\nOn-line CPU(s) list: 0-23\nVendor ID:           AuthenticAMD\nModel name:          unknown\nCPU family:          23\nModel:               49\nThread(s) per core:  1\nCore(s) per socket:  24\nSocket(s):           1\nStepping:            unknown\nBogoMIPS:            3431.80\nFlags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clwb sha_ni xsaveopt xsavec xgetbv1 xsaves umip rdpid\nHypervisor vendor:   Microsoft\nVirtualization type: full\nNUMA node(s):        1\nNUMA node0 CPU(s):   0-23\n\nVersions of relevant libraries:\n[pip3] Could not collect\n[conda] Could not collect",
+            "transformers_version": "5.22.0",
+            "lm_eval_version": "0.4.13",
+            "upper_git_hash": null,
+            "tokenizer_pad_token": [
+              "<PAD>",
+              "0"
+            ],
+            "tokenizer_eos_token": [
+              "<|END_OF_TURN_TOKEN|>",
+              "6"
+            ],
+            "tokenizer_bos_token": [
+              "<BOS_TOKEN>",
+              "2"
+            ],
+            "eot_token_id": 6,
+            "max_length": 4096
+          },
+          "sample_coverage": {
+            "unique_documents": 2,
+            "sample_records": 4,
+            "filters": [
+              "flexible-extract",
+              "strict-match"
+            ],
+            "doc_ids_sha256": "923682bea6d517dc178d480c88e129e485ed902f4fa024866666658cd4ea6836"
+          }
+        },
+        "drift": {
+          "edited_scalars": {
+            "drift": 962592768,
+            "repair": 0
+          },
+          "write_weights_sha256": "d729257b72e19c4b506833dbc74046f2ae80d7af31eb4712c51214863f172cb6",
+          "generation_and_scoring_s": 20.02714900299999,
+          "evaluation": {
+            "results": {
+              "gsm8k": {
+                "name": "gsm8k",
+                "alias": "gsm8k",
+                "sample_len": 2,
+                "exact_match,strict-match": 0.5,
+                "exact_match_stderr,strict-match": 0.5,
+                "exact_match,flexible-extract": 0.5,
+                "exact_match_stderr,flexible-extract": 0.5
+              }
+            },
+            "group_subtasks": {},
+            "configs": {
+              "gsm8k": {
+                "task": "gsm8k",
+                "tag": [
+                  "math_word_problems"
+                ],
+                "dataset_path": "openai/gsm8k",
+                "dataset_name": "main",
+                "dataset_kwargs": {
+                  "revision": "740312add88f781978c0658806c59bc2815b9866"
+                },
+                "training_split": "train",
+                "test_split": "test",
+                "fewshot_split": "train",
+                "doc_to_text": "Question: {{question}}\nAnswer:",
+                "doc_to_target": "{{answer}}",
+                "unsafe_code": false,
+                "description": "",
+                "target_delimiter": " ",
+                "fewshot_delimiter": "\n\n",
+                "fewshot_config": {
+                  "sampler": "default",
+                  "split": "train",
+                  "process_docs": null,
+                  "fewshot_indices": null,
+                  "samples": null,
+                  "doc_to_text": "Question: {{question}}\nAnswer:",
+                  "doc_to_choice": null,
+                  "doc_to_target": "{{answer}}",
+                  "gen_prefix": null,
+                  "fewshot_delimiter": "\n\n",
+                  "target_delimiter": " "
+                },
+                "num_fewshot": 5,
+                "metric_list": [
+                  {
+                    "metric": "exact_match",
+                    "aggregation": "mean",
+                    "higher_is_better": true,
+                    "ignore_case": true,
+                    "ignore_punctuation": false,
+                    "regexes_to_ignore": [
+                      ",",
+                      "\\$",
+                      "(?s).*#### ",
+                      "\\.$"
+                    ]
+                  }
+                ],
+                "output_type": "generate_until",
+                "generation_kwargs": {
+                  "until": [
+                    "Question:",
+                    "</s>",
+                    "<|im_end|>"
+                  ],
+                  "do_sample": false,
+                  "temperature": 0.0,
+                  "max_gen_toks": 256
+                },
+                "repeats": 1,
+                "filter_list": [
+                  {
+                    "name": "strict-match",
+                    "filter": [
+                      {
+                        "function": "regex",
+                        "regex_pattern": "#### (\\-?[0-9\\.\\,]+)"
+                      },
+                      {
+                        "function": "take_first"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "flexible-extract",
+                    "filter": [
+                      {
+                        "function": "regex",
+                        "group_select": -1,
+                        "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+                      },
+                      {
+                        "function": "take_first"
+                      }
+                    ]
+                  }
+                ],
+                "should_decontaminate": false,
+                "metadata": {
+                  "version": 3.0
+                }
+              }
+            },
+            "versions": {
+              "gsm8k": 3.0
+            },
+            "n-shot": {
+              "gsm8k": 5
+            },
+            "higher_is_better": {
+              "gsm8k": {
+                "exact_match": true
+              }
+            },
+            "n-samples": {
+              "gsm8k": {
+                "original": 1319,
+                "effective": 2
+              }
+            },
+            "samples": {
+              "gsm8k": [
+                {
+                  "doc_id": 0,
+                  "doc": {
+                    "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+                    "answer": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18"
+                  },
+                  "target": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: The state of Virginia had 3.79 inches of rain in March, 4.5 inches of rain in April, 3.95 inches of rain in May, 3.09 inches of rain in June and 4.67 inches in July.  What is the average rainfall amount, in inches, in Virginia?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>It rained for a total of 3.79+4.5+3.95+3.09+4.67 = <<3.79+4.5+3.95+3.09+4.67=20>>20 inches\nThe rain period is from March through July for a total of 5 months so the average rainfall is 20/5 = <<20/5=4>>4 inches of rain per month\n#### 4<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A chocolate box contains 200 bars. Thomas and his 4 friends take 1/4 of the bars and decide to divide them equally between them. One of Thomas's friends doesn't like chocolate bars very much and returns 5 of his bars to the box. Later, his sister Piper comes home and takes 5 fewer bars than those taken in total by Thomas and his friends so she can also share with her friends. What's the total number of bars left in the box?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Thomas and his friends took 1/4*200 = <<1/4*200=50>>50 bars.\nThe total number of bars left in the box was 200-50 = <<200-50=150>>150 bars.\nSince there are five of them sharing, each of them got 50/5 = <<50/5=10>>10 bars.\nAfter a friend returned 5 bars, there were 150 + 5 = <<150+5=155>>155 bars in the box.\nPiper took five fewer bars, that is 50 - 5 = <<50-5=45>>45 bars.\nThe total remaining bars left in the box is 155 - 45 = <<155-45=110>>110 bars.\n#### 110<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Gilbert grows herbs in his yard to use in his cooking. At the beginning of the spring, he planted three basil bushes, a parsley plant, and two kinds of mint. Halfway through spring, one of the basil plants dropped seeds from a flower and made an extra basil plant grow. However, a rabbit came by the garden near the end of spring and ate all the mint. How many herb plants did Gilbert have when spring ended?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Gilbert planted 3 + 1 + 2 = <<3+1+2=6>>6 herb plants.\nHe gained a basil plant when one of the basil plants seeded a new plant, so he had 6 + 1 = <<6+1=7>>7 plants.\nThe rabbit ate both mint plants, so Gilbert had 7 - 2 = <<7-2=5>>5 herb plants when spring ended.\n#### 5<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Marta was about to start the school year and needed to buy the necessary textbooks. She managed to buy five on sale, for $10 each. She had to order two textbooks online, which cost her a total of $40, and three she bought directly from the bookstore for a total of three times the cost of the online ordered books. How much in total did Martha spend on textbooks?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Marta bought five textbooks on sale, for a total of 5 * 10 = $<<5*10=50>>50.\nThree textbooks from the bookstore had a cost of 3 * 40 = $<<3*40=120>>120.\nThat means that Marta spent in total 50 + 40 + 120 = $<<50+40+120=210>>210 on textbooks.\n#### 210<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: At the burger hut, you can buy a burger for $5, french fries for $3, and a soft drink for $3.  If you order a special burger meal, you get all 3 of these food items for $9.50. A kid’s burger is $3, a kid’s french fries are $2, and a kid's juice box is $2.  They also have a kids meal of all 3 kids' food items for $5. Mr. Parker buys 2 burger meals for his wife and himself.  He also buys 2 burger meals and 2 kid's meals for his 4 children.  How much money does Mr. Parker save by buying the 6 meals versus buying the individual food items?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>To buy regular food items individually, they cost $5 + $3 + $3 = $<<5+3+3=11>>11.\nTo buy kids food items individually, they cost $3 + $2 + $2 = $<<3+2+2=7>>7.\nIf you buy the special burger meal, you save $11 - $9.50 = $<<11-9.5=1.50>>1.50.\nIf you buy the kid's meal, you save $7 - $5 = $<<7-5=2>>2.\nMr. Parker buys 4 special burger meals, bringing his discount to 4 x $1.50 = $<<4*1.50=6>>6.\nHe buys 2 kid's meals, bringing his discount to 2 x $2 = $<<2*2=4>>4.\nThe total savings for Mr. Parker is $6 + $4 = $<<6+4=10>>10.\n#### 10<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "Janet lays 16 eggs per day, eats 3 for breakfast, and uses 4 for muffins, so she has 16 - 3 - 4 = <<16-3-4=9>>9 eggs left to sell.\nShe sells each egg for $2, so she makes 9 * $2 = <<9*2=18>>18 per day at the farmers' market.\n#### 18"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "18"
+                  ],
+                  "filter": "strict-match",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "986c19252f3c7f6eaeff2229e9a5777f96a85c0ceea931a92d2289084dfd518c",
+                  "prompt_hash": "09a0838b2c9e7a720830ced051d557bb34e2651a04f0bbc7f45a6b8eb37fa519",
+                  "target_hash": "623a0fbdf774fcb55e485a3e6b012e6c3965616af5b8eb9b9aebd2f6712be2eb",
+                  "exact_match": 1.0
+                },
+                {
+                  "doc_id": 1,
+                  "doc": {
+                    "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                    "answer": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3"
+                  },
+                  "target": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A roadwork company is paving a newly constructed 16-mile road. They use a mixture of pitch and gravel to make the asphalt to pave the road. Each truckloads of asphalt uses two bags of gravel and five times as many bags of gravel as it does barrels of pitch to make. It takes three truckloads of asphalt to pave each mile of road. The company paved 4 miles of road on one day, then one mile less than double that on the second day. How many barrels of pitch will the company need to finish the remaining road on the third day?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>On the second day, the company paved 4 * 2 - 1 = <<4*2-1=7>>7 miles.\nThe company has 16 - 7 - 4 = <<16-7-4=5>>5 miles of road remaining to pave.\nThey will need 3 * 5 = <<3*5=15>>15 truckloads of asphalt to pave 5 miles of road.\nFor 15 truckloads, they will need 15 * 2 = <<15*2=30>>30 bags of gravel.\nThus, the company will need 30 / 5 = <<30/5=6>>6 barrels of pitch to finish the road on the third day.\n#### 6<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Nancy wanted to make peanut butter cookies for a family gathering, but her cousin is allergic to peanuts. She decided to make almond butter cookies instead. A jar of almond butter costs three times the amount that a jar of peanut butter does. It takes half a jar to make a batch of cookies. A jar of peanut butter costs $3. How many dollars more does it cost per batch to make almond butter cookies instead of peanut butter cookies?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>A jar of almond butter costs 3 * 3 = $<<3*3=9>>9.\nIt takes half a jar to make a batch of cookies, so it costs 9 / 2 = $<<9/2=4.50>>4.50 to use almond butter.\nIt costs 3 / 2 = $<<3/2=1.50>>1.50 to use peanut butter.\nThus, it costs 4.50 - 1.50 = $<<4.50-1.50=3>>3 more to make a batch of almond butter cookies than peanut butter cookies.\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Barry goes to a shop to buy a shirt he'd been admiring for quite some time. He tells the attendant that it's his birthday so she decides to give him a 15% special discount. The price tag on the shirt says $80. How much is he supposed to pay now, considering the special discount?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>15% of $80 = (15/100)*$80 = $<<(15/100)*80=12>>12\nThe dollar amount of the discount is $12 so he is supposed to pay just $80-$12 = $<<80-12=68>>68\n#### 68<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>With half as many swallows as bluebirds, there are 2*2=<<2*2=4>>4 bluebirds.\nWith three times more cardinals than bluebirds, there are 3*4=<<3*4=12>>12 cardinals,\nIf there were 2 swallows, then the total number of birds in the crape myrtle tree is 2+4+12=<<2+4+12=18>>18 birds.\n#### 18<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: There are 180 days in a school year.  A senior can skip their final exams if they miss 5% or less of the school year.  Hazel has missed 6 days of school due to illness.  How many more days can she miss and still not have to take her exams?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>There are 180 days in the school year and she can miss up to 5% so that’s 180*.05 = <<180*.05=9>>9 days\nHazel has been sick 6 days already and she can only miss 9 days or less so she can miss 9-6 = <<9-6=3>>3 more days\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "The robe takes 2 bolts of blue fiber and half that much white fiber, so it takes 2 + (2/2) = <<2+(2/2)=3>>3 bolts of white fiber.\nIn total, it takes 2 + 3 = <<2+3=5>>5 bolts.\n#### 5"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "5"
+                  ],
+                  "filter": "strict-match",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "00f836ab1a16e62131c59e2c6ce14552295991067d5b9f912f47449305e3b9e1",
+                  "prompt_hash": "58ea86e4011e2cf69f772b36e5c8dc8d50459c2e953dab68d0a68eaa751f5b98",
+                  "target_hash": "2c77b25809301541010b4cb58fc194c5b7308c37495cf8847113b267becb19a5",
+                  "exact_match": 0.0
+                },
+                {
+                  "doc_id": 0,
+                  "doc": {
+                    "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+                    "answer": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18"
+                  },
+                  "target": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: The state of Virginia had 3.79 inches of rain in March, 4.5 inches of rain in April, 3.95 inches of rain in May, 3.09 inches of rain in June and 4.67 inches in July.  What is the average rainfall amount, in inches, in Virginia?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>It rained for a total of 3.79+4.5+3.95+3.09+4.67 = <<3.79+4.5+3.95+3.09+4.67=20>>20 inches\nThe rain period is from March through July for a total of 5 months so the average rainfall is 20/5 = <<20/5=4>>4 inches of rain per month\n#### 4<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A chocolate box contains 200 bars. Thomas and his 4 friends take 1/4 of the bars and decide to divide them equally between them. One of Thomas's friends doesn't like chocolate bars very much and returns 5 of his bars to the box. Later, his sister Piper comes home and takes 5 fewer bars than those taken in total by Thomas and his friends so she can also share with her friends. What's the total number of bars left in the box?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Thomas and his friends took 1/4*200 = <<1/4*200=50>>50 bars.\nThe total number of bars left in the box was 200-50 = <<200-50=150>>150 bars.\nSince there are five of them sharing, each of them got 50/5 = <<50/5=10>>10 bars.\nAfter a friend returned 5 bars, there were 150 + 5 = <<150+5=155>>155 bars in the box.\nPiper took five fewer bars, that is 50 - 5 = <<50-5=45>>45 bars.\nThe total remaining bars left in the box is 155 - 45 = <<155-45=110>>110 bars.\n#### 110<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Gilbert grows herbs in his yard to use in his cooking. At the beginning of the spring, he planted three basil bushes, a parsley plant, and two kinds of mint. Halfway through spring, one of the basil plants dropped seeds from a flower and made an extra basil plant grow. However, a rabbit came by the garden near the end of spring and ate all the mint. How many herb plants did Gilbert have when spring ended?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Gilbert planted 3 + 1 + 2 = <<3+1+2=6>>6 herb plants.\nHe gained a basil plant when one of the basil plants seeded a new plant, so he had 6 + 1 = <<6+1=7>>7 plants.\nThe rabbit ate both mint plants, so Gilbert had 7 - 2 = <<7-2=5>>5 herb plants when spring ended.\n#### 5<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Marta was about to start the school year and needed to buy the necessary textbooks. She managed to buy five on sale, for $10 each. She had to order two textbooks online, which cost her a total of $40, and three she bought directly from the bookstore for a total of three times the cost of the online ordered books. How much in total did Martha spend on textbooks?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Marta bought five textbooks on sale, for a total of 5 * 10 = $<<5*10=50>>50.\nThree textbooks from the bookstore had a cost of 3 * 40 = $<<3*40=120>>120.\nThat means that Marta spent in total 50 + 40 + 120 = $<<50+40+120=210>>210 on textbooks.\n#### 210<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: At the burger hut, you can buy a burger for $5, french fries for $3, and a soft drink for $3.  If you order a special burger meal, you get all 3 of these food items for $9.50. A kid’s burger is $3, a kid’s french fries are $2, and a kid's juice box is $2.  They also have a kids meal of all 3 kids' food items for $5. Mr. Parker buys 2 burger meals for his wife and himself.  He also buys 2 burger meals and 2 kid's meals for his 4 children.  How much money does Mr. Parker save by buying the 6 meals versus buying the individual food items?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>To buy regular food items individually, they cost $5 + $3 + $3 = $<<5+3+3=11>>11.\nTo buy kids food items individually, they cost $3 + $2 + $2 = $<<3+2+2=7>>7.\nIf you buy the special burger meal, you save $11 - $9.50 = $<<11-9.5=1.50>>1.50.\nIf you buy the kid's meal, you save $7 - $5 = $<<7-5=2>>2.\nMr. Parker buys 4 special burger meals, bringing his discount to 4 x $1.50 = $<<4*1.50=6>>6.\nHe buys 2 kid's meals, bringing his discount to 2 x $2 = $<<2*2=4>>4.\nThe total savings for Mr. Parker is $6 + $4 = $<<6+4=10>>10.\n#### 10<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "Janet lays 16 eggs per day, eats 3 for breakfast, and uses 4 for muffins, so she has 16 - 3 - 4 = <<16-3-4=9>>9 eggs left to sell.\nShe sells each egg for $2, so she makes 9 * $2 = <<9*2=18>>18 per day at the farmers' market.\n#### 18"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "18"
+                  ],
+                  "filter": "flexible-extract",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "986c19252f3c7f6eaeff2229e9a5777f96a85c0ceea931a92d2289084dfd518c",
+                  "prompt_hash": "09a0838b2c9e7a720830ced051d557bb34e2651a04f0bbc7f45a6b8eb37fa519",
+                  "target_hash": "623a0fbdf774fcb55e485a3e6b012e6c3965616af5b8eb9b9aebd2f6712be2eb",
+                  "exact_match": 1.0
+                },
+                {
+                  "doc_id": 1,
+                  "doc": {
+                    "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                    "answer": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3"
+                  },
+                  "target": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A roadwork company is paving a newly constructed 16-mile road. They use a mixture of pitch and gravel to make the asphalt to pave the road. Each truckloads of asphalt uses two bags of gravel and five times as many bags of gravel as it does barrels of pitch to make. It takes three truckloads of asphalt to pave each mile of road. The company paved 4 miles of road on one day, then one mile less than double that on the second day. How many barrels of pitch will the company need to finish the remaining road on the third day?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>On the second day, the company paved 4 * 2 - 1 = <<4*2-1=7>>7 miles.\nThe company has 16 - 7 - 4 = <<16-7-4=5>>5 miles of road remaining to pave.\nThey will need 3 * 5 = <<3*5=15>>15 truckloads of asphalt to pave 5 miles of road.\nFor 15 truckloads, they will need 15 * 2 = <<15*2=30>>30 bags of gravel.\nThus, the company will need 30 / 5 = <<30/5=6>>6 barrels of pitch to finish the road on the third day.\n#### 6<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Nancy wanted to make peanut butter cookies for a family gathering, but her cousin is allergic to peanuts. She decided to make almond butter cookies instead. A jar of almond butter costs three times the amount that a jar of peanut butter does. It takes half a jar to make a batch of cookies. A jar of peanut butter costs $3. How many dollars more does it cost per batch to make almond butter cookies instead of peanut butter cookies?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>A jar of almond butter costs 3 * 3 = $<<3*3=9>>9.\nIt takes half a jar to make a batch of cookies, so it costs 9 / 2 = $<<9/2=4.50>>4.50 to use almond butter.\nIt costs 3 / 2 = $<<3/2=1.50>>1.50 to use peanut butter.\nThus, it costs 4.50 - 1.50 = $<<4.50-1.50=3>>3 more to make a batch of almond butter cookies than peanut butter cookies.\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Barry goes to a shop to buy a shirt he'd been admiring for quite some time. He tells the attendant that it's his birthday so she decides to give him a 15% special discount. The price tag on the shirt says $80. How much is he supposed to pay now, considering the special discount?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>15% of $80 = (15/100)*$80 = $<<(15/100)*80=12>>12\nThe dollar amount of the discount is $12 so he is supposed to pay just $80-$12 = $<<80-12=68>>68\n#### 68<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>With half as many swallows as bluebirds, there are 2*2=<<2*2=4>>4 bluebirds.\nWith three times more cardinals than bluebirds, there are 3*4=<<3*4=12>>12 cardinals,\nIf there were 2 swallows, then the total number of birds in the crape myrtle tree is 2+4+12=<<2+4+12=18>>18 birds.\n#### 18<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: There are 180 days in a school year.  A senior can skip their final exams if they miss 5% or less of the school year.  Hazel has missed 6 days of school due to illness.  How many more days can she miss and still not have to take her exams?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>There are 180 days in the school year and she can miss up to 5% so that’s 180*.05 = <<180*.05=9>>9 days\nHazel has been sick 6 days already and she can only miss 9 days or less so she can miss 9-6 = <<9-6=3>>3 more days\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "The robe takes 2 bolts of blue fiber and half that much white fiber, so it takes 2 + (2/2) = <<2+(2/2)=3>>3 bolts of white fiber.\nIn total, it takes 2 + 3 = <<2+3=5>>5 bolts.\n#### 5"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "5"
+                  ],
+                  "filter": "flexible-extract",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "00f836ab1a16e62131c59e2c6ce14552295991067d5b9f912f47449305e3b9e1",
+                  "prompt_hash": "58ea86e4011e2cf69f772b36e5c8dc8d50459c2e953dab68d0a68eaa751f5b98",
+                  "target_hash": "2c77b25809301541010b4cb58fc194c5b7308c37495cf8847113b267becb19a5",
+                  "exact_match": 0.0
+                }
+              ]
+            },
+            "config": {
+              "model": "CohereLabs/tiny-aya-global",
+              "model_args": null,
+              "model_num_parameters": 3349227520,
+              "model_dtype": {
+                "library_object": "torch.bfloat16",
+                "python_type": "torch.dtype"
+              },
+              "model_revision": "main",
+              "model_sha": "",
+              "batch_size": null,
+              "batch_sizes": [],
+              "device": null,
+              "use_cache": null,
+              "limit": 2,
+              "bootstrap_iters": 10000,
+              "gen_kwargs": {
+                "max_gen_toks": 256,
+                "do_sample": false
+              },
+              "random_seed": 0,
+              "numpy_seed": 0,
+              "torch_seed": 0,
+              "fewshot_seed": 0
+            },
+            "git_hash": null,
+            "date": 1793628381.7706213,
+            "pretty_env_info": "PyTorch version: 2.9.0+cu128\nIs debug build: False\nCUDA used to build PyTorch: 12.8\nROCM used to build PyTorch: N/A\n\nOS: Debian GNU/Linux 12 (bookworm) (x86_64)\nGCC version: (Debian 12.2.0-14+deb12u1) 12.2.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.36\n\nPython version: 3.12.10 (main, May 21 2025, 23:34:56) [GCC 12.2.0] (64-bit runtime)\nPython platform: Linux-4.19.0-gvisor-x86_64-with-glibc2.36\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: \nGPU models and configuration: GPU 0: NVIDIA A100-SXM4-80GB\nNvidia driver version: Could not collect\ncuDNN version: Could not collect\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:        x86_64\nCPU op-mode(s):      32-bit, 64-bit\nAddress sizes:       46 bits physical, 48 bits virtual\nByte Order:          Little Endian\nCPU(s):              24\nOn-line CPU(s) list: 0-23\nVendor ID:           AuthenticAMD\nModel name:          unknown\nCPU family:          23\nModel:               49\nThread(s) per core:  1\nCore(s) per socket:  24\nSocket(s):           1\nStepping:            unknown\nBogoMIPS:            3431.80\nFlags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clwb sha_ni xsaveopt xsavec xgetbv1 xsaves umip rdpid\nHypervisor vendor:   Microsoft\nVirtualization type: full\nNUMA node(s):        1\nNUMA node0 CPU(s):   0-23\n\nVersions of relevant libraries:\n[pip3] Could not collect\n[conda] Could not collect",
+            "transformers_version": "5.22.0",
+            "lm_eval_version": "0.4.13",
+            "upper_git_hash": null,
+            "tokenizer_pad_token": [
+              "<PAD>",
+              "0"
+            ],
+            "tokenizer_eos_token": [
+              "<|END_OF_TURN_TOKEN|>",
+              "6"
+            ],
+            "tokenizer_bos_token": [
+              "<BOS_TOKEN>",
+              "2"
+            ],
+            "eot_token_id": 6,
+            "max_length": 4096
+          },
+          "sample_coverage": {
+            "unique_documents": 2,
+            "sample_records": 4,
+            "filters": [
+              "flexible-extract",
+              "strict-match"
+            ],
+            "doc_ids_sha256": "923682bea6d517dc178d480c88e129e485ed902f4fa024866666658cd4ea6836"
+          }
+        },
+        "harm2_a4": {
+          "edited_scalars": {
+            "drift": 962592768,
+            "repair": 19251200
+          },
+          "write_weights_sha256": "6e8eece355caf8b17d5eb80ba19f135ca35755be9af84317292626ca9c945ba5",
+          "generation_and_scoring_s": 20.559050256999996,
+          "evaluation": {
+            "results": {
+              "gsm8k": {
+                "name": "gsm8k",
+                "alias": "gsm8k",
+                "sample_len": 2,
+                "exact_match,strict-match": 0.5,
+                "exact_match_stderr,strict-match": 0.5,
+                "exact_match,flexible-extract": 0.5,
+                "exact_match_stderr,flexible-extract": 0.5
+              }
+            },
+            "group_subtasks": {},
+            "configs": {
+              "gsm8k": {
+                "task": "gsm8k",
+                "tag": [
+                  "math_word_problems"
+                ],
+                "dataset_path": "openai/gsm8k",
+                "dataset_name": "main",
+                "dataset_kwargs": {
+                  "revision": "740312add88f781978c0658806c59bc2815b9866"
+                },
+                "training_split": "train",
+                "test_split": "test",
+                "fewshot_split": "train",
+                "doc_to_text": "Question: {{question}}\nAnswer:",
+                "doc_to_target": "{{answer}}",
+                "unsafe_code": false,
+                "description": "",
+                "target_delimiter": " ",
+                "fewshot_delimiter": "\n\n",
+                "fewshot_config": {
+                  "sampler": "default",
+                  "split": "train",
+                  "process_docs": null,
+                  "fewshot_indices": null,
+                  "samples": null,
+                  "doc_to_text": "Question: {{question}}\nAnswer:",
+                  "doc_to_choice": null,
+                  "doc_to_target": "{{answer}}",
+                  "gen_prefix": null,
+                  "fewshot_delimiter": "\n\n",
+                  "target_delimiter": " "
+                },
+                "num_fewshot": 5,
+                "metric_list": [
+                  {
+                    "metric": "exact_match",
+                    "aggregation": "mean",
+                    "higher_is_better": true,
+                    "ignore_case": true,
+                    "ignore_punctuation": false,
+                    "regexes_to_ignore": [
+                      ",",
+                      "\\$",
+                      "(?s).*#### ",
+                      "\\.$"
+                    ]
+                  }
+                ],
+                "output_type": "generate_until",
+                "generation_kwargs": {
+                  "until": [
+                    "Question:",
+                    "</s>",
+                    "<|im_end|>"
+                  ],
+                  "do_sample": false,
+                  "temperature": 0.0,
+                  "max_gen_toks": 256
+                },
+                "repeats": 1,
+                "filter_list": [
+                  {
+                    "name": "strict-match",
+                    "filter": [
+                      {
+                        "function": "regex",
+                        "regex_pattern": "#### (\\-?[0-9\\.\\,]+)"
+                      },
+                      {
+                        "function": "take_first"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "flexible-extract",
+                    "filter": [
+                      {
+                        "function": "regex",
+                        "group_select": -1,
+                        "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+                      },
+                      {
+                        "function": "take_first"
+                      }
+                    ]
+                  }
+                ],
+                "should_decontaminate": false,
+                "metadata": {
+                  "version": 3.0
+                }
+              }
+            },
+            "versions": {
+              "gsm8k": 3.0
+            },
+            "n-shot": {
+              "gsm8k": 5
+            },
+            "higher_is_better": {
+              "gsm8k": {
+                "exact_match": true
+              }
+            },
+            "n-samples": {
+              "gsm8k": {
+                "original": 1319,
+                "effective": 2
+              }
+            },
+            "samples": {
+              "gsm8k": [
+                {
+                  "doc_id": 0,
+                  "doc": {
+                    "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+                    "answer": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18"
+                  },
+                  "target": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: The state of Virginia had 3.79 inches of rain in March, 4.5 inches of rain in April, 3.95 inches of rain in May, 3.09 inches of rain in June and 4.67 inches in July.  What is the average rainfall amount, in inches, in Virginia?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>It rained for a total of 3.79+4.5+3.95+3.09+4.67 = <<3.79+4.5+3.95+3.09+4.67=20>>20 inches\nThe rain period is from March through July for a total of 5 months so the average rainfall is 20/5 = <<20/5=4>>4 inches of rain per month\n#### 4<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A chocolate box contains 200 bars. Thomas and his 4 friends take 1/4 of the bars and decide to divide them equally between them. One of Thomas's friends doesn't like chocolate bars very much and returns 5 of his bars to the box. Later, his sister Piper comes home and takes 5 fewer bars than those taken in total by Thomas and his friends so she can also share with her friends. What's the total number of bars left in the box?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Thomas and his friends took 1/4*200 = <<1/4*200=50>>50 bars.\nThe total number of bars left in the box was 200-50 = <<200-50=150>>150 bars.\nSince there are five of them sharing, each of them got 50/5 = <<50/5=10>>10 bars.\nAfter a friend returned 5 bars, there were 150 + 5 = <<150+5=155>>155 bars in the box.\nPiper took five fewer bars, that is 50 - 5 = <<50-5=45>>45 bars.\nThe total remaining bars left in the box is 155 - 45 = <<155-45=110>>110 bars.\n#### 110<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Gilbert grows herbs in his yard to use in his cooking. At the beginning of the spring, he planted three basil bushes, a parsley plant, and two kinds of mint. Halfway through spring, one of the basil plants dropped seeds from a flower and made an extra basil plant grow. However, a rabbit came by the garden near the end of spring and ate all the mint. How many herb plants did Gilbert have when spring ended?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Gilbert planted 3 + 1 + 2 = <<3+1+2=6>>6 herb plants.\nHe gained a basil plant when one of the basil plants seeded a new plant, so he had 6 + 1 = <<6+1=7>>7 plants.\nThe rabbit ate both mint plants, so Gilbert had 7 - 2 = <<7-2=5>>5 herb plants when spring ended.\n#### 5<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Marta was about to start the school year and needed to buy the necessary textbooks. She managed to buy five on sale, for $10 each. She had to order two textbooks online, which cost her a total of $40, and three she bought directly from the bookstore for a total of three times the cost of the online ordered books. How much in total did Martha spend on textbooks?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Marta bought five textbooks on sale, for a total of 5 * 10 = $<<5*10=50>>50.\nThree textbooks from the bookstore had a cost of 3 * 40 = $<<3*40=120>>120.\nThat means that Marta spent in total 50 + 40 + 120 = $<<50+40+120=210>>210 on textbooks.\n#### 210<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: At the burger hut, you can buy a burger for $5, french fries for $3, and a soft drink for $3.  If you order a special burger meal, you get all 3 of these food items for $9.50. A kid’s burger is $3, a kid’s french fries are $2, and a kid's juice box is $2.  They also have a kids meal of all 3 kids' food items for $5. Mr. Parker buys 2 burger meals for his wife and himself.  He also buys 2 burger meals and 2 kid's meals for his 4 children.  How much money does Mr. Parker save by buying the 6 meals versus buying the individual food items?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>To buy regular food items individually, they cost $5 + $3 + $3 = $<<5+3+3=11>>11.\nTo buy kids food items individually, they cost $3 + $2 + $2 = $<<3+2+2=7>>7.\nIf you buy the special burger meal, you save $11 - $9.50 = $<<11-9.5=1.50>>1.50.\nIf you buy the kid's meal, you save $7 - $5 = $<<7-5=2>>2.\nMr. Parker buys 4 special burger meals, bringing his discount to 4 x $1.50 = $<<4*1.50=6>>6.\nHe buys 2 kid's meals, bringing his discount to 2 x $2 = $<<2*2=4>>4.\nThe total savings for Mr. Parker is $6 + $4 = $<<6+4=10>>10.\n#### 10<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "Janet lays 16 eggs per day, and she eats 3 for breakfast and 4 for baking muffins, so she sells 16 - 3 - 4 = <<16-3-4=9>>9 eggs per day.\nShe sells each egg for $2, so she makes 9 * $2 = <<9*2=18>>18 per day at the farmers' market.\n#### 18"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "18"
+                  ],
+                  "filter": "strict-match",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "986c19252f3c7f6eaeff2229e9a5777f96a85c0ceea931a92d2289084dfd518c",
+                  "prompt_hash": "09a0838b2c9e7a720830ced051d557bb34e2651a04f0bbc7f45a6b8eb37fa519",
+                  "target_hash": "623a0fbdf774fcb55e485a3e6b012e6c3965616af5b8eb9b9aebd2f6712be2eb",
+                  "exact_match": 1.0
+                },
+                {
+                  "doc_id": 1,
+                  "doc": {
+                    "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                    "answer": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3"
+                  },
+                  "target": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A roadwork company is paving a newly constructed 16-mile road. They use a mixture of pitch and gravel to make the asphalt to pave the road. Each truckloads of asphalt uses two bags of gravel and five times as many bags of gravel as it does barrels of pitch to make. It takes three truckloads of asphalt to pave each mile of road. The company paved 4 miles of road on one day, then one mile less than double that on the second day. How many barrels of pitch will the company need to finish the remaining road on the third day?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>On the second day, the company paved 4 * 2 - 1 = <<4*2-1=7>>7 miles.\nThe company has 16 - 7 - 4 = <<16-7-4=5>>5 miles of road remaining to pave.\nThey will need 3 * 5 = <<3*5=15>>15 truckloads of asphalt to pave 5 miles of road.\nFor 15 truckloads, they will need 15 * 2 = <<15*2=30>>30 bags of gravel.\nThus, the company will need 30 / 5 = <<30/5=6>>6 barrels of pitch to finish the road on the third day.\n#### 6<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Nancy wanted to make peanut butter cookies for a family gathering, but her cousin is allergic to peanuts. She decided to make almond butter cookies instead. A jar of almond butter costs three times the amount that a jar of peanut butter does. It takes half a jar to make a batch of cookies. A jar of peanut butter costs $3. How many dollars more does it cost per batch to make almond butter cookies instead of peanut butter cookies?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>A jar of almond butter costs 3 * 3 = $<<3*3=9>>9.\nIt takes half a jar to make a batch of cookies, so it costs 9 / 2 = $<<9/2=4.50>>4.50 to use almond butter.\nIt costs 3 / 2 = $<<3/2=1.50>>1.50 to use peanut butter.\nThus, it costs 4.50 - 1.50 = $<<4.50-1.50=3>>3 more to make a batch of almond butter cookies than peanut butter cookies.\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Barry goes to a shop to buy a shirt he'd been admiring for quite some time. He tells the attendant that it's his birthday so she decides to give him a 15% special discount. The price tag on the shirt says $80. How much is he supposed to pay now, considering the special discount?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>15% of $80 = (15/100)*$80 = $<<(15/100)*80=12>>12\nThe dollar amount of the discount is $12 so he is supposed to pay just $80-$12 = $<<80-12=68>>68\n#### 68<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>With half as many swallows as bluebirds, there are 2*2=<<2*2=4>>4 bluebirds.\nWith three times more cardinals than bluebirds, there are 3*4=<<3*4=12>>12 cardinals,\nIf there were 2 swallows, then the total number of birds in the crape myrtle tree is 2+4+12=<<2+4+12=18>>18 birds.\n#### 18<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: There are 180 days in a school year.  A senior can skip their final exams if they miss 5% or less of the school year.  Hazel has missed 6 days of school due to illness.  How many more days can she miss and still not have to take her exams?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>There are 180 days in the school year and she can miss up to 5% so that’s 180*.05 = <<180*.05=9>>9 days\nHazel has been sick 6 days already and she can only miss 9 days or less so she can miss 9-6 = <<9-6=3>>3 more days\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "The blue fiber takes 2 bolts and the white fiber takes half that, so 1 <<1*2=2>>2 bolts.\nThe total number of bolts is 2 + 2 = <<2+2=4>>4.\n#### 4"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "4"
+                  ],
+                  "filter": "strict-match",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "00f836ab1a16e62131c59e2c6ce14552295991067d5b9f912f47449305e3b9e1",
+                  "prompt_hash": "58ea86e4011e2cf69f772b36e5c8dc8d50459c2e953dab68d0a68eaa751f5b98",
+                  "target_hash": "2c77b25809301541010b4cb58fc194c5b7308c37495cf8847113b267becb19a5",
+                  "exact_match": 0.0
+                },
+                {
+                  "doc_id": 0,
+                  "doc": {
+                    "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+                    "answer": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18"
+                  },
+                  "target": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: The state of Virginia had 3.79 inches of rain in March, 4.5 inches of rain in April, 3.95 inches of rain in May, 3.09 inches of rain in June and 4.67 inches in July.  What is the average rainfall amount, in inches, in Virginia?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>It rained for a total of 3.79+4.5+3.95+3.09+4.67 = <<3.79+4.5+3.95+3.09+4.67=20>>20 inches\nThe rain period is from March through July for a total of 5 months so the average rainfall is 20/5 = <<20/5=4>>4 inches of rain per month\n#### 4<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A chocolate box contains 200 bars. Thomas and his 4 friends take 1/4 of the bars and decide to divide them equally between them. One of Thomas's friends doesn't like chocolate bars very much and returns 5 of his bars to the box. Later, his sister Piper comes home and takes 5 fewer bars than those taken in total by Thomas and his friends so she can also share with her friends. What's the total number of bars left in the box?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Thomas and his friends took 1/4*200 = <<1/4*200=50>>50 bars.\nThe total number of bars left in the box was 200-50 = <<200-50=150>>150 bars.\nSince there are five of them sharing, each of them got 50/5 = <<50/5=10>>10 bars.\nAfter a friend returned 5 bars, there were 150 + 5 = <<150+5=155>>155 bars in the box.\nPiper took five fewer bars, that is 50 - 5 = <<50-5=45>>45 bars.\nThe total remaining bars left in the box is 155 - 45 = <<155-45=110>>110 bars.\n#### 110<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Gilbert grows herbs in his yard to use in his cooking. At the beginning of the spring, he planted three basil bushes, a parsley plant, and two kinds of mint. Halfway through spring, one of the basil plants dropped seeds from a flower and made an extra basil plant grow. However, a rabbit came by the garden near the end of spring and ate all the mint. How many herb plants did Gilbert have when spring ended?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Gilbert planted 3 + 1 + 2 = <<3+1+2=6>>6 herb plants.\nHe gained a basil plant when one of the basil plants seeded a new plant, so he had 6 + 1 = <<6+1=7>>7 plants.\nThe rabbit ate both mint plants, so Gilbert had 7 - 2 = <<7-2=5>>5 herb plants when spring ended.\n#### 5<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Marta was about to start the school year and needed to buy the necessary textbooks. She managed to buy five on sale, for $10 each. She had to order two textbooks online, which cost her a total of $40, and three she bought directly from the bookstore for a total of three times the cost of the online ordered books. How much in total did Martha spend on textbooks?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Marta bought five textbooks on sale, for a total of 5 * 10 = $<<5*10=50>>50.\nThree textbooks from the bookstore had a cost of 3 * 40 = $<<3*40=120>>120.\nThat means that Marta spent in total 50 + 40 + 120 = $<<50+40+120=210>>210 on textbooks.\n#### 210<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: At the burger hut, you can buy a burger for $5, french fries for $3, and a soft drink for $3.  If you order a special burger meal, you get all 3 of these food items for $9.50. A kid’s burger is $3, a kid’s french fries are $2, and a kid's juice box is $2.  They also have a kids meal of all 3 kids' food items for $5. Mr. Parker buys 2 burger meals for his wife and himself.  He also buys 2 burger meals and 2 kid's meals for his 4 children.  How much money does Mr. Parker save by buying the 6 meals versus buying the individual food items?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>To buy regular food items individually, they cost $5 + $3 + $3 = $<<5+3+3=11>>11.\nTo buy kids food items individually, they cost $3 + $2 + $2 = $<<3+2+2=7>>7.\nIf you buy the special burger meal, you save $11 - $9.50 = $<<11-9.5=1.50>>1.50.\nIf you buy the kid's meal, you save $7 - $5 = $<<7-5=2>>2.\nMr. Parker buys 4 special burger meals, bringing his discount to 4 x $1.50 = $<<4*1.50=6>>6.\nHe buys 2 kid's meals, bringing his discount to 2 x $2 = $<<2*2=4>>4.\nThe total savings for Mr. Parker is $6 + $4 = $<<6+4=10>>10.\n#### 10<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "Janet lays 16 eggs per day, and she eats 3 for breakfast and 4 for baking muffins, so she sells 16 - 3 - 4 = <<16-3-4=9>>9 eggs per day.\nShe sells each egg for $2, so she makes 9 * $2 = <<9*2=18>>18 per day at the farmers' market.\n#### 18"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "18"
+                  ],
+                  "filter": "flexible-extract",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "986c19252f3c7f6eaeff2229e9a5777f96a85c0ceea931a92d2289084dfd518c",
+                  "prompt_hash": "09a0838b2c9e7a720830ced051d557bb34e2651a04f0bbc7f45a6b8eb37fa519",
+                  "target_hash": "623a0fbdf774fcb55e485a3e6b012e6c3965616af5b8eb9b9aebd2f6712be2eb",
+                  "exact_match": 1.0
+                },
+                {
+                  "doc_id": 1,
+                  "doc": {
+                    "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                    "answer": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3"
+                  },
+                  "target": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A roadwork company is paving a newly constructed 16-mile road. They use a mixture of pitch and gravel to make the asphalt to pave the road. Each truckloads of asphalt uses two bags of gravel and five times as many bags of gravel as it does barrels of pitch to make. It takes three truckloads of asphalt to pave each mile of road. The company paved 4 miles of road on one day, then one mile less than double that on the second day. How many barrels of pitch will the company need to finish the remaining road on the third day?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>On the second day, the company paved 4 * 2 - 1 = <<4*2-1=7>>7 miles.\nThe company has 16 - 7 - 4 = <<16-7-4=5>>5 miles of road remaining to pave.\nThey will need 3 * 5 = <<3*5=15>>15 truckloads of asphalt to pave 5 miles of road.\nFor 15 truckloads, they will need 15 * 2 = <<15*2=30>>30 bags of gravel.\nThus, the company will need 30 / 5 = <<30/5=6>>6 barrels of pitch to finish the road on the third day.\n#### 6<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Nancy wanted to make peanut butter cookies for a family gathering, but her cousin is allergic to peanuts. She decided to make almond butter cookies instead. A jar of almond butter costs three times the amount that a jar of peanut butter does. It takes half a jar to make a batch of cookies. A jar of peanut butter costs $3. How many dollars more does it cost per batch to make almond butter cookies instead of peanut butter cookies?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>A jar of almond butter costs 3 * 3 = $<<3*3=9>>9.\nIt takes half a jar to make a batch of cookies, so it costs 9 / 2 = $<<9/2=4.50>>4.50 to use almond butter.\nIt costs 3 / 2 = $<<3/2=1.50>>1.50 to use peanut butter.\nThus, it costs 4.50 - 1.50 = $<<4.50-1.50=3>>3 more to make a batch of almond butter cookies than peanut butter cookies.\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Barry goes to a shop to buy a shirt he'd been admiring for quite some time. He tells the attendant that it's his birthday so she decides to give him a 15% special discount. The price tag on the shirt says $80. How much is he supposed to pay now, considering the special discount?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>15% of $80 = (15/100)*$80 = $<<(15/100)*80=12>>12\nThe dollar amount of the discount is $12 so he is supposed to pay just $80-$12 = $<<80-12=68>>68\n#### 68<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>With half as many swallows as bluebirds, there are 2*2=<<2*2=4>>4 bluebirds.\nWith three times more cardinals than bluebirds, there are 3*4=<<3*4=12>>12 cardinals,\nIf there were 2 swallows, then the total number of birds in the crape myrtle tree is 2+4+12=<<2+4+12=18>>18 birds.\n#### 18<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: There are 180 days in a school year.  A senior can skip their final exams if they miss 5% or less of the school year.  Hazel has missed 6 days of school due to illness.  How many more days can she miss and still not have to take her exams?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>There are 180 days in the school year and she can miss up to 5% so that’s 180*.05 = <<180*.05=9>>9 days\nHazel has been sick 6 days already and she can only miss 9 days or less so she can miss 9-6 = <<9-6=3>>3 more days\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "The blue fiber takes 2 bolts and the white fiber takes half that, so 1 <<1*2=2>>2 bolts.\nThe total number of bolts is 2 + 2 = <<2+2=4>>4.\n#### 4"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "4"
+                  ],
+                  "filter": "flexible-extract",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "00f836ab1a16e62131c59e2c6ce14552295991067d5b9f912f47449305e3b9e1",
+                  "prompt_hash": "58ea86e4011e2cf69f772b36e5c8dc8d50459c2e953dab68d0a68eaa751f5b98",
+                  "target_hash": "2c77b25809301541010b4cb58fc194c5b7308c37495cf8847113b267becb19a5",
+                  "exact_match": 0.0
+                }
+              ]
+            },
+            "config": {
+              "model": "CohereLabs/tiny-aya-global",
+              "model_args": null,
+              "model_num_parameters": 3349227520,
+              "model_dtype": {
+                "library_object": "torch.bfloat16",
+                "python_type": "torch.dtype"
+              },
+              "model_revision": "main",
+              "model_sha": "",
+              "batch_size": null,
+              "batch_sizes": [],
+              "device": null,
+              "use_cache": null,
+              "limit": 2,
+              "bootstrap_iters": 10000,
+              "gen_kwargs": {
+                "max_gen_toks": 256,
+                "do_sample": false
+              },
+              "random_seed": 0,
+              "numpy_seed": 0,
+              "torch_seed": 0,
+              "fewshot_seed": 0
+            },
+            "git_hash": null,
+            "date": 1793628411.2469716,
+            "pretty_env_info": "PyTorch version: 2.9.0+cu128\nIs debug build: False\nCUDA used to build PyTorch: 12.8\nROCM used to build PyTorch: N/A\n\nOS: Debian GNU/Linux 12 (bookworm) (x86_64)\nGCC version: (Debian 12.2.0-14+deb12u1) 12.2.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.36\n\nPython version: 3.12.10 (main, May 21 2025, 23:34:56) [GCC 12.2.0] (64-bit runtime)\nPython platform: Linux-4.19.0-gvisor-x86_64-with-glibc2.36\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: \nGPU models and configuration: GPU 0: NVIDIA A100-SXM4-80GB\nNvidia driver version: Could not collect\ncuDNN version: Could not collect\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:        x86_64\nCPU op-mode(s):      32-bit, 64-bit\nAddress sizes:       46 bits physical, 48 bits virtual\nByte Order:          Little Endian\nCPU(s):              24\nOn-line CPU(s) list: 0-23\nVendor ID:           AuthenticAMD\nModel name:          unknown\nCPU family:          23\nModel:               49\nThread(s) per core:  1\nCore(s) per socket:  24\nSocket(s):           1\nStepping:            unknown\nBogoMIPS:            3431.80\nFlags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clwb sha_ni xsaveopt xsavec xgetbv1 xsaves umip rdpid\nHypervisor vendor:   Microsoft\nVirtualization type: full\nNUMA node(s):        1\nNUMA node0 CPU(s):   0-23\n\nVersions of relevant libraries:\n[pip3] Could not collect\n[conda] Could not collect",
+            "transformers_version": "5.22.0",
+            "lm_eval_version": "0.4.13",
+            "upper_git_hash": null,
+            "tokenizer_pad_token": [
+              "<PAD>",
+              "0"
+            ],
+            "tokenizer_eos_token": [
+              "<|END_OF_TURN_TOKEN|>",
+              "6"
+            ],
+            "tokenizer_bos_token": [
+              "<BOS_TOKEN>",
+              "2"
+            ],
+            "eot_token_id": 6,
+            "max_length": 4096
+          },
+          "sample_coverage": {
+            "unique_documents": 2,
+            "sample_records": 4,
+            "filters": [
+              "flexible-extract",
+              "strict-match"
+            ],
+            "doc_ids_sha256": "923682bea6d517dc178d480c88e129e485ed902f4fa024866666658cd4ea6836"
+          }
+        },
+        "global_a4": {
+          "edited_scalars": {
+            "drift": 962592768,
+            "repair": 962592768
+          },
+          "write_weights_sha256": "b2244a1b631fc447640023a3c04421a332945a8ccf6e1c7f6d53cc996708ae05",
+          "generation_and_scoring_s": 20.463815866999994,
+          "evaluation": {
+            "results": {
+              "gsm8k": {
+                "name": "gsm8k",
+                "alias": "gsm8k",
+                "sample_len": 2,
+                "exact_match,strict-match": 1.0,
+                "exact_match_stderr,strict-match": 0.0,
+                "exact_match,flexible-extract": 1.0,
+                "exact_match_stderr,flexible-extract": 0.0
+              }
+            },
+            "group_subtasks": {},
+            "configs": {
+              "gsm8k": {
+                "task": "gsm8k",
+                "tag": [
+                  "math_word_problems"
+                ],
+                "dataset_path": "openai/gsm8k",
+                "dataset_name": "main",
+                "dataset_kwargs": {
+                  "revision": "740312add88f781978c0658806c59bc2815b9866"
+                },
+                "training_split": "train",
+                "test_split": "test",
+                "fewshot_split": "train",
+                "doc_to_text": "Question: {{question}}\nAnswer:",
+                "doc_to_target": "{{answer}}",
+                "unsafe_code": false,
+                "description": "",
+                "target_delimiter": " ",
+                "fewshot_delimiter": "\n\n",
+                "fewshot_config": {
+                  "sampler": "default",
+                  "split": "train",
+                  "process_docs": null,
+                  "fewshot_indices": null,
+                  "samples": null,
+                  "doc_to_text": "Question: {{question}}\nAnswer:",
+                  "doc_to_choice": null,
+                  "doc_to_target": "{{answer}}",
+                  "gen_prefix": null,
+                  "fewshot_delimiter": "\n\n",
+                  "target_delimiter": " "
+                },
+                "num_fewshot": 5,
+                "metric_list": [
+                  {
+                    "metric": "exact_match",
+                    "aggregation": "mean",
+                    "higher_is_better": true,
+                    "ignore_case": true,
+                    "ignore_punctuation": false,
+                    "regexes_to_ignore": [
+                      ",",
+                      "\\$",
+                      "(?s).*#### ",
+                      "\\.$"
+                    ]
+                  }
+                ],
+                "output_type": "generate_until",
+                "generation_kwargs": {
+                  "until": [
+                    "Question:",
+                    "</s>",
+                    "<|im_end|>"
+                  ],
+                  "do_sample": false,
+                  "temperature": 0.0,
+                  "max_gen_toks": 256
+                },
+                "repeats": 1,
+                "filter_list": [
+                  {
+                    "name": "strict-match",
+                    "filter": [
+                      {
+                        "function": "regex",
+                        "regex_pattern": "#### (\\-?[0-9\\.\\,]+)"
+                      },
+                      {
+                        "function": "take_first"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "flexible-extract",
+                    "filter": [
+                      {
+                        "function": "regex",
+                        "group_select": -1,
+                        "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+                      },
+                      {
+                        "function": "take_first"
+                      }
+                    ]
+                  }
+                ],
+                "should_decontaminate": false,
+                "metadata": {
+                  "version": 3.0
+                }
+              }
+            },
+            "versions": {
+              "gsm8k": 3.0
+            },
+            "n-shot": {
+              "gsm8k": 5
+            },
+            "higher_is_better": {
+              "gsm8k": {
+                "exact_match": true
+              }
+            },
+            "n-samples": {
+              "gsm8k": {
+                "original": 1319,
+                "effective": 2
+              }
+            },
+            "samples": {
+              "gsm8k": [
+                {
+                  "doc_id": 0,
+                  "doc": {
+                    "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+                    "answer": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18"
+                  },
+                  "target": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: The state of Virginia had 3.79 inches of rain in March, 4.5 inches of rain in April, 3.95 inches of rain in May, 3.09 inches of rain in June and 4.67 inches in July.  What is the average rainfall amount, in inches, in Virginia?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>It rained for a total of 3.79+4.5+3.95+3.09+4.67 = <<3.79+4.5+3.95+3.09+4.67=20>>20 inches\nThe rain period is from March through July for a total of 5 months so the average rainfall is 20/5 = <<20/5=4>>4 inches of rain per month\n#### 4<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A chocolate box contains 200 bars. Thomas and his 4 friends take 1/4 of the bars and decide to divide them equally between them. One of Thomas's friends doesn't like chocolate bars very much and returns 5 of his bars to the box. Later, his sister Piper comes home and takes 5 fewer bars than those taken in total by Thomas and his friends so she can also share with her friends. What's the total number of bars left in the box?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Thomas and his friends took 1/4*200 = <<1/4*200=50>>50 bars.\nThe total number of bars left in the box was 200-50 = <<200-50=150>>150 bars.\nSince there are five of them sharing, each of them got 50/5 = <<50/5=10>>10 bars.\nAfter a friend returned 5 bars, there were 150 + 5 = <<150+5=155>>155 bars in the box.\nPiper took five fewer bars, that is 50 - 5 = <<50-5=45>>45 bars.\nThe total remaining bars left in the box is 155 - 45 = <<155-45=110>>110 bars.\n#### 110<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Gilbert grows herbs in his yard to use in his cooking. At the beginning of the spring, he planted three basil bushes, a parsley plant, and two kinds of mint. Halfway through spring, one of the basil plants dropped seeds from a flower and made an extra basil plant grow. However, a rabbit came by the garden near the end of spring and ate all the mint. How many herb plants did Gilbert have when spring ended?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Gilbert planted 3 + 1 + 2 = <<3+1+2=6>>6 herb plants.\nHe gained a basil plant when one of the basil plants seeded a new plant, so he had 6 + 1 = <<6+1=7>>7 plants.\nThe rabbit ate both mint plants, so Gilbert had 7 - 2 = <<7-2=5>>5 herb plants when spring ended.\n#### 5<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Marta was about to start the school year and needed to buy the necessary textbooks. She managed to buy five on sale, for $10 each. She had to order two textbooks online, which cost her a total of $40, and three she bought directly from the bookstore for a total of three times the cost of the online ordered books. How much in total did Martha spend on textbooks?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Marta bought five textbooks on sale, for a total of 5 * 10 = $<<5*10=50>>50.\nThree textbooks from the bookstore had a cost of 3 * 40 = $<<3*40=120>>120.\nThat means that Marta spent in total 50 + 40 + 120 = $<<50+40+120=210>>210 on textbooks.\n#### 210<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: At the burger hut, you can buy a burger for $5, french fries for $3, and a soft drink for $3.  If you order a special burger meal, you get all 3 of these food items for $9.50. A kid’s burger is $3, a kid’s french fries are $2, and a kid's juice box is $2.  They also have a kids meal of all 3 kids' food items for $5. Mr. Parker buys 2 burger meals for his wife and himself.  He also buys 2 burger meals and 2 kid's meals for his 4 children.  How much money does Mr. Parker save by buying the 6 meals versus buying the individual food items?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>To buy regular food items individually, they cost $5 + $3 + $3 = $<<5+3+3=11>>11.\nTo buy kids food items individually, they cost $3 + $2 + $2 = $<<3+2+2=7>>7.\nIf you buy the special burger meal, you save $11 - $9.50 = $<<11-9.5=1.50>>1.50.\nIf you buy the kid's meal, you save $7 - $5 = $<<7-5=2>>2.\nMr. Parker buys 4 special burger meals, bringing his discount to 4 x $1.50 = $<<4*1.50=6>>6.\nHe buys 2 kid's meals, bringing his discount to 2 x $2 = $<<2*2=4>>4.\nThe total savings for Mr. Parker is $6 + $4 = $<<6+4=10>>10.\n#### 10<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "Janet lays 16 eggs per day, and she eats 3 for herself, so she has 16 - 3 = <<16-3=13>>13 eggs left to sell.\nShe bakes muffins with 4 eggs, so she has 13 - 4 = <<13-4=9>>9 eggs left to sell.\nShe sells each egg for $2, so she makes 9 x $2 = <<9x2=18>>18 per day.\n#### 18"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "18"
+                  ],
+                  "filter": "strict-match",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "986c19252f3c7f6eaeff2229e9a5777f96a85c0ceea931a92d2289084dfd518c",
+                  "prompt_hash": "09a0838b2c9e7a720830ced051d557bb34e2651a04f0bbc7f45a6b8eb37fa519",
+                  "target_hash": "623a0fbdf774fcb55e485a3e6b012e6c3965616af5b8eb9b9aebd2f6712be2eb",
+                  "exact_match": 1.0
+                },
+                {
+                  "doc_id": 1,
+                  "doc": {
+                    "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                    "answer": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3"
+                  },
+                  "target": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A roadwork company is paving a newly constructed 16-mile road. They use a mixture of pitch and gravel to make the asphalt to pave the road. Each truckloads of asphalt uses two bags of gravel and five times as many bags of gravel as it does barrels of pitch to make. It takes three truckloads of asphalt to pave each mile of road. The company paved 4 miles of road on one day, then one mile less than double that on the second day. How many barrels of pitch will the company need to finish the remaining road on the third day?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>On the second day, the company paved 4 * 2 - 1 = <<4*2-1=7>>7 miles.\nThe company has 16 - 7 - 4 = <<16-7-4=5>>5 miles of road remaining to pave.\nThey will need 3 * 5 = <<3*5=15>>15 truckloads of asphalt to pave 5 miles of road.\nFor 15 truckloads, they will need 15 * 2 = <<15*2=30>>30 bags of gravel.\nThus, the company will need 30 / 5 = <<30/5=6>>6 barrels of pitch to finish the road on the third day.\n#### 6<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Nancy wanted to make peanut butter cookies for a family gathering, but her cousin is allergic to peanuts. She decided to make almond butter cookies instead. A jar of almond butter costs three times the amount that a jar of peanut butter does. It takes half a jar to make a batch of cookies. A jar of peanut butter costs $3. How many dollars more does it cost per batch to make almond butter cookies instead of peanut butter cookies?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>A jar of almond butter costs 3 * 3 = $<<3*3=9>>9.\nIt takes half a jar to make a batch of cookies, so it costs 9 / 2 = $<<9/2=4.50>>4.50 to use almond butter.\nIt costs 3 / 2 = $<<3/2=1.50>>1.50 to use peanut butter.\nThus, it costs 4.50 - 1.50 = $<<4.50-1.50=3>>3 more to make a batch of almond butter cookies than peanut butter cookies.\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Barry goes to a shop to buy a shirt he'd been admiring for quite some time. He tells the attendant that it's his birthday so she decides to give him a 15% special discount. The price tag on the shirt says $80. How much is he supposed to pay now, considering the special discount?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>15% of $80 = (15/100)*$80 = $<<(15/100)*80=12>>12\nThe dollar amount of the discount is $12 so he is supposed to pay just $80-$12 = $<<80-12=68>>68\n#### 68<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>With half as many swallows as bluebirds, there are 2*2=<<2*2=4>>4 bluebirds.\nWith three times more cardinals than bluebirds, there are 3*4=<<3*4=12>>12 cardinals,\nIf there were 2 swallows, then the total number of birds in the crape myrtle tree is 2+4+12=<<2+4+12=18>>18 birds.\n#### 18<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: There are 180 days in a school year.  A senior can skip their final exams if they miss 5% or less of the school year.  Hazel has missed 6 days of school due to illness.  How many more days can she miss and still not have to take her exams?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>There are 180 days in the school year and she can miss up to 5% so that’s 180*.05 = <<180*.05=9>>9 days\nHazel has been sick 6 days already and she can only miss 9 days or less so she can miss 9-6 = <<9-6=3>>3 more days\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "The robe takes 2 bolts of blue fiber and half that amount of white fiber, which is 2/2 = 1 bolt of white fiber. In total, it takes 2 + 1 = 3 bolts.  \n#### 3"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "3"
+                  ],
+                  "filter": "strict-match",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "00f836ab1a16e62131c59e2c6ce14552295991067d5b9f912f47449305e3b9e1",
+                  "prompt_hash": "58ea86e4011e2cf69f772b36e5c8dc8d50459c2e953dab68d0a68eaa751f5b98",
+                  "target_hash": "2c77b25809301541010b4cb58fc194c5b7308c37495cf8847113b267becb19a5",
+                  "exact_match": 1.0
+                },
+                {
+                  "doc_id": 0,
+                  "doc": {
+                    "question": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+                    "answer": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18"
+                  },
+                  "target": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.\n#### 18",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: The state of Virginia had 3.79 inches of rain in March, 4.5 inches of rain in April, 3.95 inches of rain in May, 3.09 inches of rain in June and 4.67 inches in July.  What is the average rainfall amount, in inches, in Virginia?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>It rained for a total of 3.79+4.5+3.95+3.09+4.67 = <<3.79+4.5+3.95+3.09+4.67=20>>20 inches\nThe rain period is from March through July for a total of 5 months so the average rainfall is 20/5 = <<20/5=4>>4 inches of rain per month\n#### 4<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A chocolate box contains 200 bars. Thomas and his 4 friends take 1/4 of the bars and decide to divide them equally between them. One of Thomas's friends doesn't like chocolate bars very much and returns 5 of his bars to the box. Later, his sister Piper comes home and takes 5 fewer bars than those taken in total by Thomas and his friends so she can also share with her friends. What's the total number of bars left in the box?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Thomas and his friends took 1/4*200 = <<1/4*200=50>>50 bars.\nThe total number of bars left in the box was 200-50 = <<200-50=150>>150 bars.\nSince there are five of them sharing, each of them got 50/5 = <<50/5=10>>10 bars.\nAfter a friend returned 5 bars, there were 150 + 5 = <<150+5=155>>155 bars in the box.\nPiper took five fewer bars, that is 50 - 5 = <<50-5=45>>45 bars.\nThe total remaining bars left in the box is 155 - 45 = <<155-45=110>>110 bars.\n#### 110<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Gilbert grows herbs in his yard to use in his cooking. At the beginning of the spring, he planted three basil bushes, a parsley plant, and two kinds of mint. Halfway through spring, one of the basil plants dropped seeds from a flower and made an extra basil plant grow. However, a rabbit came by the garden near the end of spring and ate all the mint. How many herb plants did Gilbert have when spring ended?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Gilbert planted 3 + 1 + 2 = <<3+1+2=6>>6 herb plants.\nHe gained a basil plant when one of the basil plants seeded a new plant, so he had 6 + 1 = <<6+1=7>>7 plants.\nThe rabbit ate both mint plants, so Gilbert had 7 - 2 = <<7-2=5>>5 herb plants when spring ended.\n#### 5<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Marta was about to start the school year and needed to buy the necessary textbooks. She managed to buy five on sale, for $10 each. She had to order two textbooks online, which cost her a total of $40, and three she bought directly from the bookstore for a total of three times the cost of the online ordered books. How much in total did Martha spend on textbooks?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>Marta bought five textbooks on sale, for a total of 5 * 10 = $<<5*10=50>>50.\nThree textbooks from the bookstore had a cost of 3 * 40 = $<<3*40=120>>120.\nThat means that Marta spent in total 50 + 40 + 120 = $<<50+40+120=210>>210 on textbooks.\n#### 210<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: At the burger hut, you can buy a burger for $5, french fries for $3, and a soft drink for $3.  If you order a special burger meal, you get all 3 of these food items for $9.50. A kid’s burger is $3, a kid’s french fries are $2, and a kid's juice box is $2.  They also have a kids meal of all 3 kids' food items for $5. Mr. Parker buys 2 burger meals for his wife and himself.  He also buys 2 burger meals and 2 kid's meals for his 4 children.  How much money does Mr. Parker save by buying the 6 meals versus buying the individual food items?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>To buy regular food items individually, they cost $5 + $3 + $3 = $<<5+3+3=11>>11.\nTo buy kids food items individually, they cost $3 + $2 + $2 = $<<3+2+2=7>>7.\nIf you buy the special burger meal, you save $11 - $9.50 = $<<11-9.5=1.50>>1.50.\nIf you buy the kid's meal, you save $7 - $5 = $<<7-5=2>>2.\nMr. Parker buys 4 special burger meals, bringing his discount to 4 x $1.50 = $<<4*1.50=6>>6.\nHe buys 2 kid's meals, bringing his discount to 2 x $2 = $<<2*2=4>>4.\nThe total savings for Mr. Parker is $6 + $4 = $<<6+4=10>>10.\n#### 10<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "Janet lays 16 eggs per day, and she eats 3 for herself, so she has 16 - 3 = <<16-3=13>>13 eggs left to sell.\nShe bakes muffins with 4 eggs, so she has 13 - 4 = <<13-4=9>>9 eggs left to sell.\nShe sells each egg for $2, so she makes 9 x $2 = <<9x2=18>>18 per day.\n#### 18"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "18"
+                  ],
+                  "filter": "flexible-extract",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "986c19252f3c7f6eaeff2229e9a5777f96a85c0ceea931a92d2289084dfd518c",
+                  "prompt_hash": "09a0838b2c9e7a720830ced051d557bb34e2651a04f0bbc7f45a6b8eb37fa519",
+                  "target_hash": "623a0fbdf774fcb55e485a3e6b012e6c3965616af5b8eb9b9aebd2f6712be2eb",
+                  "exact_match": 1.0
+                },
+                {
+                  "doc_id": 1,
+                  "doc": {
+                    "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                    "answer": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3"
+                  },
+                  "target": "It takes 2/2=<<2/2=1>>1 bolt of white fiber\nSo the total amount of fabric is 2+1=<<2+1=3>>3 bolts of fabric\n#### 3",
+                  "arguments": [
+                    [
+                      "<BOS_TOKEN><|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A roadwork company is paving a newly constructed 16-mile road. They use a mixture of pitch and gravel to make the asphalt to pave the road. Each truckloads of asphalt uses two bags of gravel and five times as many bags of gravel as it does barrels of pitch to make. It takes three truckloads of asphalt to pave each mile of road. The company paved 4 miles of road on one day, then one mile less than double that on the second day. How many barrels of pitch will the company need to finish the remaining road on the third day?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>On the second day, the company paved 4 * 2 - 1 = <<4*2-1=7>>7 miles.\nThe company has 16 - 7 - 4 = <<16-7-4=5>>5 miles of road remaining to pave.\nThey will need 3 * 5 = <<3*5=15>>15 truckloads of asphalt to pave 5 miles of road.\nFor 15 truckloads, they will need 15 * 2 = <<15*2=30>>30 bags of gravel.\nThus, the company will need 30 / 5 = <<30/5=6>>6 barrels of pitch to finish the road on the third day.\n#### 6<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Nancy wanted to make peanut butter cookies for a family gathering, but her cousin is allergic to peanuts. She decided to make almond butter cookies instead. A jar of almond butter costs three times the amount that a jar of peanut butter does. It takes half a jar to make a batch of cookies. A jar of peanut butter costs $3. How many dollars more does it cost per batch to make almond butter cookies instead of peanut butter cookies?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>A jar of almond butter costs 3 * 3 = $<<3*3=9>>9.\nIt takes half a jar to make a batch of cookies, so it costs 9 / 2 = $<<9/2=4.50>>4.50 to use almond butter.\nIt costs 3 / 2 = $<<3/2=1.50>>1.50 to use peanut butter.\nThus, it costs 4.50 - 1.50 = $<<4.50-1.50=3>>3 more to make a batch of almond butter cookies than peanut butter cookies.\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Barry goes to a shop to buy a shirt he'd been admiring for quite some time. He tells the attendant that it's his birthday so she decides to give him a 15% special discount. The price tag on the shirt says $80. How much is he supposed to pay now, considering the special discount?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>15% of $80 = (15/100)*$80 = $<<(15/100)*80=12>>12\nThe dollar amount of the discount is $12 so he is supposed to pay just $80-$12 = $<<80-12=68>>68\n#### 68<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: Several birds were sitting in the branches of a crape myrtle tree.  There were three times more cardinals than bluebirds, but half as many swallows as bluebirds. If there were 2 swallows, what is the total number of birds in the crape myrtle tree?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>With half as many swallows as bluebirds, there are 2*2=<<2*2=4>>4 bluebirds.\nWith three times more cardinals than bluebirds, there are 3*4=<<3*4=12>>12 cardinals,\nIf there were 2 swallows, then the total number of birds in the crape myrtle tree is 2+4+12=<<2+4+12=18>>18 birds.\n#### 18<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: There are 180 days in a school year.  A senior can skip their final exams if they miss 5% or less of the school year.  Hazel has missed 6 days of school due to illness.  How many more days can she miss and still not have to take her exams?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>There are 180 days in the school year and she can miss up to 5% so that’s 180*.05 = <<180*.05=9>>9 days\nHazel has been sick 6 days already and she can only miss 9 days or less so she can miss 9-6 = <<9-6=3>>3 more days\n#### 3<|END_RESPONSE|><|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|USER_TOKEN|>Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?\nAnswer:<|END_OF_TURN_TOKEN|><|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>",
+                      {
+                        "until": [
+                          "Question:",
+                          "</s>",
+                          "<|im_end|>"
+                        ],
+                        "do_sample": false,
+                        "temperature": 0.0,
+                        "max_gen_toks": 256
+                      }
+                    ]
+                  ],
+                  "resps": [
+                    [
+                      "The robe takes 2 bolts of blue fiber and half that amount of white fiber, which is 2/2 = 1 bolt of white fiber. In total, it takes 2 + 1 = 3 bolts.  \n#### 3"
+                    ]
+                  ],
+                  "filtered_resps": [
+                    "3"
+                  ],
+                  "filter": "flexible-extract",
+                  "metrics": [
+                    "exact_match"
+                  ],
+                  "doc_hash": "00f836ab1a16e62131c59e2c6ce14552295991067d5b9f912f47449305e3b9e1",
+                  "prompt_hash": "58ea86e4011e2cf69f772b36e5c8dc8d50459c2e953dab68d0a68eaa751f5b98",
+                  "target_hash": "2c77b25809301541010b4cb58fc194c5b7308c37495cf8847113b267becb19a5",
+                  "exact_match": 1.0
+                }
+              ]
+            },
+            "config": {
+              "model": "CohereLabs/tiny-aya-global",
+              "model_args": null,
+              "model_num_parameters": 3349227520,
+              "model_dtype": {
+                "library_object": "torch.bfloat16",
+                "python_type": "torch.dtype"
+              },
+              "model_revision": "main",
+              "model_sha": "",
+              "batch_size": null,
+              "batch_sizes": [],
+              "device": null,
+              "use_cache": null,
+              "limit": 2,
+              "bootstrap_iters": 10000,
+              "gen_kwargs": {
+                "max_gen_toks": 256,
+                "do_sample": false
+              },
+              "random_seed": 0,
+              "numpy_seed": 0,
+              "torch_seed": 0,
+              "fewshot_seed": 0
+            },
+            "git_hash": null,
+            "date": 1793628446.370968,
+            "pretty_env_info": "PyTorch version: 2.9.0+cu128\nIs debug build: False\nCUDA used to build PyTorch: 12.8\nROCM used to build PyTorch: N/A\n\nOS: Debian GNU/Linux 12 (bookworm) (x86_64)\nGCC version: (Debian 12.2.0-14+deb12u1) 12.2.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.36\n\nPython version: 3.12.10 (main, May 21 2025, 23:34:56) [GCC 12.2.0] (64-bit runtime)\nPython platform: Linux-4.19.0-gvisor-x86_64-with-glibc2.36\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: \nGPU models and configuration: GPU 0: NVIDIA A100-SXM4-80GB\nNvidia driver version: Could not collect\ncuDNN version: Could not collect\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:        x86_64\nCPU op-mode(s):      32-bit, 64-bit\nAddress sizes:       46 bits physical, 48 bits virtual\nByte Order:          Little Endian\nCPU(s):              24\nOn-line CPU(s) list: 0-23\nVendor ID:           AuthenticAMD\nModel name:          unknown\nCPU family:          23\nModel:               49\nThread(s) per core:  1\nCore(s) per socket:  24\nSocket(s):           1\nStepping:            unknown\nBogoMIPS:            3431.80\nFlags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clwb sha_ni xsaveopt xsavec xgetbv1 xsaves umip rdpid\nHypervisor vendor:   Microsoft\nVirtualization type: full\nNUMA node(s):        1\nNUMA node0 CPU(s):   0-23\n\nVersions of relevant libraries:\n[pip3] Could not collect\n[conda] Could not collect",
+            "transformers_version": "5.22.0",
+            "lm_eval_version": "0.4.13",
+            "upper_git_hash": null,
+            "tokenizer_pad_token": [
+              "<PAD>",
+              "0"
+            ],
+            "tokenizer_eos_token": [
+              "<|END_OF_TURN_TOKEN|>",
+              "6"
+            ],
+            "tokenizer_bos_token": [
+              "<BOS_TOKEN>",
+              "2"
+            ],
+            "eot_token_id": 6,
+            "max_length": 4096
+          },
+          "sample_coverage": {
+            "unique_documents": 2,
+            "sample_records": 4,
+            "filters": [
+              "flexible-extract",
+              "strict-match"
+            ],
+            "doc_ids_sha256": "923682bea6d517dc178d480c88e129e485ed902f4fa024866666658cd4ea6836"
+          }
+        }
+      },
+      "status": "passed",
+      "errors": [],
+      "restored_base_write_weights_sha256": "e2c0641f7e4f9d53e0c289fcd349da70bbcfe2c2f074b29f61eae05d112e564d",
+      "peak_allocated_bytes": 7226644992,
+      "wall_s": 138.61846734899999
+    }
+  ],
+  "errors": [],
+  "metric_scope": "lm-eval GSM8K 5-shot, chat template, strict-match and flexible-extract; not safety or paper confirmation",
+  "function_calls": [
+    {
+      "arms": [
+        "base",
+        "drift",
+        "harm2_a4",
+        "global_a4"
+      ],
+      "function_call_id": "fc-01M6E98BC8CNBQN4JGWRATS0E0"
+    }
+  ]
+}

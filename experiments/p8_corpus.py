@@ -237,6 +237,88 @@ def write_split(out_dir: Path, raw: list[dict]) -> dict:
     return counts
 
 
+def composite_manifest(raw: list[dict], out_dir: Path, corpus_rows: list[dict]) -> dict:
+    """Describe the COMPOSITE corpus honestly.
+
+    CuratorKIT writes one manifest per single-source run. Copying the last run's
+    manifest to the root made the shipped file claim the whole corpus while its
+    stage counts and `provenance.inputs` covered only the final source. This
+    composes the root manifest from every component run instead, and records each
+    component's manifest hash so the claim can be re-checked.
+    """
+    components, stage_counts = [], {}
+    for entry in raw:
+        run_dir = out_dir / entry["tag"]
+        manifest_path = run_dir / "manifest.json"
+        if not manifest_path.exists():
+            raise SystemExit(f"[manifest] missing component run manifest: {manifest_path}")
+        component = json.loads(manifest_path.read_text(encoding="utf-8"))
+        components.append({"source_tag": entry["tag"], "dataset": entry["sha256"],
+                           "rows": entry["rows"], "run_dir": str(run_dir),
+                           "manifest_sha256": _sha256(manifest_path),
+                           "stage_counts": component.get("stage_counts", {})})
+        for stage, counts in component.get("stage_counts", {}).items():
+            merged = stage_counts.setdefault(stage, {})
+            for key, value in counts.items():
+                if isinstance(value, (int, float)):
+                    merged[key] = merged.get(key, 0) + value
+
+    by_tag = {}
+    for row in corpus_rows:
+        by_tag[row.get("source_tag", "")] = by_tag.get(row.get("source_tag", ""), 0) + 1
+    shipped = sum(by_tag.values())
+    if shipped != sum(e["rows"] for e in raw):
+        raise SystemExit(f"[manifest] shipped rows {shipped} != raw rows")
+
+    existing = {}
+    root_path = out_dir / "manifest.json"
+    if root_path.exists():
+        existing = json.loads(root_path.read_text(encoding="utf-8"))
+    try:
+        sha = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True,
+                             cwd=Path(__file__).resolve().parents[1], timeout=10).stdout.strip()
+    except Exception:
+        sha = ""
+    manifest = {
+        "schema": "scartissue.composite-manifest/1",
+        "composite": True,
+        "note": ("Built by merging independent single-source CuratorKIT runs. Stage counts are "
+                 "summed across components; per-component values are retained under "
+                 "component_runs. `pipeline_config_hash` is the final component's and does NOT "
+                 "describe both runs."),
+        "corpus_rows": shipped,
+        "rows_by_source_tag": dict(sorted(by_tag.items())),
+        "source_files": [{"path": r["path"], "sha256": r["sha256"], "rows": r["rows"]} for r in raw],
+        "stage_counts": stage_counts,
+        "component_runs": components,
+        "pipeline_config_hash": existing.get("pipeline_config_hash"),
+        "tool_versions": existing.get("tool_versions"),
+        "build_repo": "scaartissue",
+        "build_git_sha": sha or None,
+        "curatorkit_git_sha": None,
+        "curatorkit_git_sha_note": ("CuratorKIT hard-codes provenance.git_sha = None "
+                                    "(curatorkit/manifest.py:66) and never sets it; the toolkit "
+                                    "commit used is recorded in README/_research notes instead."),
+        "row_provenance": {
+            "id_present": True, "provenance_chain_present": True,
+            "id_scheme": "<source_tag>:<row_index>", "stable_across_runs": True,
+            "note": ("CuratorKIT records no licence field (schema.py has none); upstream terms "
+                     "live at each row's upstream_uri and are not re-licensed here."),
+        },
+    }
+    root_path.write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8")
+
+    prov_path = out_dir / "lexsi_provenance.json"
+    prov = json.loads(prov_path.read_text(encoding="utf-8")) if prov_path.exists() else {}
+    prov.update({"schema": "lexsi.provenance/1", "library": "curatorkit", "method": "curate",
+                 "composite": True, "base_model": "CohereLabs/tiny-aya-global",
+                 "inputs": [{"kind": "dataset", "ref": s[0], "config": s[1],
+                             "provenance": {"sha256": r["sha256"], "rows": r["rows"]}}
+                            for s, r in zip(SOURCES, raw)]})
+    prov_path.write_text(json.dumps(prov, indent=2, ensure_ascii=False), encoding="utf-8")
+    return manifest
+
+
 def verify(out_dir: Path, raw: list[dict]) -> dict:
     """A provenance claim is worth nothing unless it is checked on the file that ships."""
     rows = [json.loads(line) for line in open(out_dir / "corpus.jsonl", encoding="utf-8")]
@@ -255,8 +337,17 @@ def verify(out_dir: Path, raw: list[dict]) -> dict:
         "label_counts": {lab: sum(1 for r in rows if r["label"] == lab)
                          for lab in sorted({r["label"] for r in rows})},
     }
+    manifest = json.loads((out_dir / "manifest.json").read_text(encoding="utf-8"))
+    checks["manifest_covers_all_sources"] = bool(
+        manifest.get("composite") is True
+        and {s["path"] for s in manifest.get("source_files", [])} == {r["path"] for r in raw}
+        and sum(s["rows"] for s in manifest.get("source_files", [])) == len(rows)
+        and len(manifest.get("component_runs", [])) == len(raw))
+    checks["provenance_inputs"] = [i.get("ref") for i in json.loads(
+        (out_dir / "lexsi_provenance.json").read_text(encoding="utf-8")).get("inputs", [])]
     print("[verify] " + json.dumps(checks, indent=1), flush=True)
-    if not (checks["rows_match_input"] and checks["unique_ids"] and checks["every_row_has_id"]):
+    if not (checks["rows_match_input"] and checks["unique_ids"] and checks["every_row_has_id"]
+            and checks["manifest_covers_all_sources"]):
         raise SystemExit("[verify] FAILED — the published file does not carry the provenance it claims")
     return checks
 
@@ -307,11 +398,9 @@ def main() -> dict:
     enrich_labels(OUT, raw)
     write_split(OUT, raw)
 
-    manifest = repair_manifest(raw, OUT / raw[-1]["tag"])   # any run's manifest carries the shared fields
-    import shutil
-    shutil.copy(OUT / raw[-1]["tag"] / "manifest.json", OUT / "manifest.json")
-    shutil.copy(OUT / raw[-1]["tag"] / "lexsi_provenance.json", OUT / "lexsi_provenance.json")
-    (OUT / "row_counts.json").write_text(json.dumps(manifest.get("stage_counts", {}), indent=1))
+    rows = [json.loads(line) for line in open(OUT / "corpus.jsonl", encoding="utf-8")]
+    manifest = composite_manifest(OUT, raw, rows)
+    (OUT / "row_counts.json").write_text(json.dumps(manifest["stage_counts"], indent=1))
     return verify(OUT, raw)
 
 

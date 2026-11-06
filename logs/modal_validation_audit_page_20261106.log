@@ -1,0 +1,77 @@
+✓ Initialized. View run at 
+https://modal.com/apps/ayman-cool1971/main/ap-Z9A7eUlqtQW5au2zaMyCXj
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\modal_validation.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\uv.lock
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\pyprojec
+│   t.toml
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\LICENSE.md
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\REPRODUC
+│   E.md
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\SUBMISSI
+│   ON.md
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\WRITE-UP
+│   .md
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\README.m
+│   d
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\space-st
+│   atic
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\_researc
+│   h
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\tests
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\report
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\src
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results
+└── ✓ Created Function validate.
+Traceback (most recent call last):
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\modal_validation_20261106T055037386346Z.json: failed
+  File "/pkg/modal/_runtime/container_io_manager.py", line 987, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 189, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 266, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/modal_validation.py", line 74, in validate
+    verify_snapshot(remote_root, expected)
+  File "/root/modal_validation.py", line 64, in verify_snapshot
+    raise ValueError(f"Source snapshot mismatch: {changed}")
+ValueError: Source snapshot mismatch: ['human_audit/audit.html']
+Stopping app - uncaught exception raised locally: RuntimeError('Modal validation failed; inspect C:\\Users\\Ayman\\OneDrive\\Desktop\\Projects\\SAAS_Projects\\scaartissue\\results\\modal_validation_20261106T055037386346Z.json').
+┌───────────────────── Traceback (most recent call last) ─────────────────────┐
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime │
+│ nts/modal_validation.py:191 in main                                         │
+│                                                                             │
+│   190 │   if result["status"] != "passed":                                  │
+│ > 191 │   │   raise RuntimeError(f"Modal validation failed; inspect {path}" │
+│   192                                                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+RuntimeError: Modal validation failed; inspect 
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\moda
+l_validation_20261106T055037386346Z.json

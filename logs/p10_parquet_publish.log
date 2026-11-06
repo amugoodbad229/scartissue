@@ -1,0 +1,122 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-yRayLpW9ILnWO9EEG4XOaQ
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p10_publish_parquet.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p21_length_analysis_20261103.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p16_capability_analysis_20261102.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p16_full_20261102_230915.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p19_safety_judges_20261103_002850.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p19_safety_judges_20261102_235442.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p21_safety_length_full_20261103_001722.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p17_safety_full_20261102_234450.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s\manifest.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\manifest.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus_split.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus.jsonl
+└── ✓ Created Function build_and_push.
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 987, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 189, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 266, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/p10_publish_parquet.py", line 267, in build_and_push
+    REPO_CORPUS: (ROOT / "1-curate/corpus/README.md").read_text(encoding="utf8"),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/1-curate/corpus/README.md'
+Stopping app - uncaught exception raised locally: FileNotFoundError(2, 'No such file or directory').
+┌───────────────────── Traceback (most recent call last) ─────────────────────┐
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime │
+│ nts/p10_publish_parquet.py:292 in main                                      │
+│                                                                             │
+│   291 def main(dry_run: bool = False):                                      │
+│ > 292 │   out = build_and_push.remote(dry_run)                              │
+│   293 │   path = ROOT / "results" / "parquet_publish_manifest.json"         │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_object.py:49 in wrapped                              │
+│                                                                             │
+│    48 │   │   await self.hydrate()                                          │
+│ >  49 │   │   return await method(self, *args, **kwargs)                    │
+│    50                                                                       │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_functions.py:2081 in remote                          │
+│                                                                             │
+│   2080 │   │                                                                │
+│ > 2081 │   │   return await self._call_function(args, kwargs)               │
+│   2082                                                                      │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_functions.py:2018 in _call_function                  │
+│                                                                             │
+│   2017 │   │                                                                │
+│ > 2018 │   │   return await invocation.run_function()                       │
+│   2019                                                                      │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_functions.py:517 in run_function                     │
+│                                                                             │
+│    516 │   │   │   # No more retries left.                                  │
+│ >  517 │   │   │   return await _process_result(                            │
+│    518 │   │   │   │   await_response.output.result, await_response.output. │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_utils\function_utils.py:572 in _process_result       │
+│                                                                             │
+│   571 │   │   │                                                             │
+│ > 572 │   │   │   raise exc_with_hints(exc)                                 │
+│   573                                                                       │
+│                                                                             │
+│     ...Remote call to Modal Function (ta-01M6EM775DDWMN5KWGSV9BV5CR)...     │
+│                                                                             │
+│ /root/p10_publish_parquet.py:267 in build_and_push                          │
+│                                                                             │
+│ > 267 REPO_CORPUS: (ROOT / "1-curate/corpus/README.md").read_text(encoding= │
+│                                                                             │
+│                                                                             │
+│ /usr/local/lib/python3.12/pathlib.py:1027 in read_text                      │
+│                                                                             │
+│ > 1027 with self.open(mode='r', encoding=encoding, errors=errors) as f:     │
+│                                                                             │
+│                                                                             │
+│ /usr/local/lib/python3.12/pathlib.py:1013 in open                           │
+│                                                                             │
+│ > 1013 return io.open(self, mode, buffering, encoding, errors, newline)     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+FileNotFoundError: [Errno 2] No such file or directory: 
+'/1-curate/corpus/README.md'

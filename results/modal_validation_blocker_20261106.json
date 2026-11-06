@@ -1,0 +1,11 @@
+{
+  "schema": "scartissue.modal-blocker/1",
+  "recorded_on": "2026-11-06",
+  "status": "old_workspace_blocked_replacement_capacity_unverified",
+  "log": "logs/modal_validation_baseline_portable_20261106.log",
+  "error": "Workspace ac-pBhL2P5HANn5nS1Gp9kaLl has exceeded its spend limit",
+  "remote_suite_executed": false,
+  "actual_billing": "unknown",
+  "replacement_account_evidence": "results/account_migration_20261106.json",
+  "budget_unchanged": "results/modal_budget_20261105.json"
+}

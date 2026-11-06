@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "command": "uv run python -m pytest tests -q",
+  "output": "...............................................................          [100%]\n63 passed in 5.87s\n",
+  "scope": "CPU checks, not judge/model validity",
+  "source_sha256": {
+    "experiments/p19_score_safety.py": "56b5bd8ca0fadc100aaa86e60b291099549bb665936ad01179c9473262d1334b",
+    "experiments/analyse_safety.py": "db1c2b709ebbe325a882386659307caee065fa3354d33febc5261c49f40ba8fe",
+    "experiments/generation_checks.py": "c2e649f62210cd75c1188519253a1af2cb449b910e9cb5e5aae7a3ca396caff0",
+    "tests/test_safety_scoring_input.py": "faa0fb0770d807178aa8c1450cf0acd002adc057d1dfe8d42ae0d3626c5d1f2d",
+    "tests/test_safety_analysis.py": "093076626d0745c18582a7f7f57997ced21f31a2818c9f2d63c62d96c7e96598",
+    "tests/test_generation_checks.py": "9b4650d97d5a177fe2f2731f594b7023e2def0f7e5b11b1ec73492e7b202aa7d"
+  }
+}

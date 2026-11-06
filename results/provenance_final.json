@@ -1,0 +1,128 @@
+{
+ "schema": "scartissue.provenance/1",
+ "generated_at": "2026-11-03",
+ "supersedes": "results/corpus_provenance_20261102.json (split_counts keyed by per-ID string length; corrected here, historical file retained unedited)",
+ "corpus": {
+  "rows": 763,
+  "unique_ids": 763,
+  "sources": {
+   "strongreject": 313,
+   "xstest": 450
+  },
+  "labels": {
+   "harmful": 313,
+   "safe": 250,
+   "unsafe": 200
+  },
+  "roles": {
+   "eval_malicious": 120,
+   "fit_malicious": 16,
+   "unused": 371,
+   "eval_benign": 40,
+   "xstest_contrast": 200,
+   "fit_benign": 16
+  },
+  "labels_by_role": {
+   "eval_malicious": {
+    "harmful": 120
+   },
+   "fit_malicious": {
+    "harmful": 16
+   },
+   "unused": {
+    "harmful": 177,
+    "safe": 194
+   },
+   "eval_benign": {
+    "safe": 40
+   },
+   "xstest_contrast": {
+    "unsafe": 200
+   },
+   "fit_benign": {
+    "safe": 16
+   }
+  },
+  "every_row_has_id": true,
+  "every_row_has_chain": true,
+  "frozen_split": {
+   "N_MAL": 120,
+   "N_SAFE": 40,
+   "N_FIT": 16,
+   "slicing": "experiments/p2_dose.py:95-101",
+   "is_partition": true,
+   "counts": {
+    "eval_malicious": 120,
+    "fit_malicious": 16,
+    "unused": 371,
+    "eval_benign": 40,
+    "fit_benign": 16,
+    "xstest_contrast": 200
+   }
+  },
+  "partitions_neve_reassigned_after_outcomes": true
+ },
+ "models": {
+  "headline": {
+   "id": "CohereLabs/tiny-aya-global",
+   "params_billion": 3.35,
+   "architecture": "cohere2",
+   "layers": 36,
+   "revision": "af89d219b53ed9b13b8a4645f9c8028973510324"
+  },
+  "secondary": [
+   "CohereLabs/tiny-aya-earth",
+   "CohereLabs/tiny-aya-water"
+  ],
+  "judges": [
+   {
+    "role": "harmbench",
+    "id": "cais/HarmBench-Mistral-7b-val-cls",
+    "revision": "51182c7cdaf9b2e5f05b745b81b047b67e7384a1"
+   },
+   {
+    "role": "qwen3guard",
+    "id": "Qwen/Qwen3Guard-Gen-8B"
+   },
+   {
+    "role": "granite",
+    "id": "ibm-granite/granite-guardian-3.2-5b"
+   }
+  ]
+ },
+ "patches": {
+  "files": [
+   "abliteration_tiny-aya-global_layer15",
+   "repair_global_a4",
+   "repair_harm10_a4",
+   "repair_harm2_a4"
+  ],
+  "sha256": {
+   "abliteration_tiny-aya-global_layer15": "505b243a23c0e4e17ecd08e5644c5c9b43e7c933f03a808cc91ab61b8977ac24",
+   "repair_global_a4": "c90fed93cb92f588c6704b34d0abb434ff94646902b370958e27d38d1bfe6f8c",
+   "repair_harm10_a4": "c24e4fb7603c7b40b7899a27a3ec38c285d952ee9e5f3887e1d627ffa60336db",
+   "repair_harm2_a4": "26c537b304762b08b4d6b31a52bb91edf437f893d26a53d7e3a26beec6e2001f"
+  },
+  "sha256_source": "results/patch_checksums.json (hash of the published .npz bytes); null only where the patch body is not published",
+  "note": "factorised parameters + explicit allowed{modules,layers,heads}; no drifted checkpoint is published (LSAL 1.2/1.1 \u00a74)"
+ },
+ "toolkits": [
+  "CuratorKIT",
+  "CircuitKIT",
+  "AuditKIT"
+ ],
+ "inputs_sha256": {
+  "corpus": "529bd20395810ae9ec6225a41f2795200de08bb159ac0a16b853c3a083f05d29",
+  "split": "fe0014e4c3963e053b7985b8951164b1c91ebda37abb50e75646152fc645f736",
+  "patches": "c0a12cb690005d7e2eddba8c13cf6a8947cdc5b00d59c844e298f3463e46aa9f",
+  "capability": "a38e8c0754f87b9ce4c130f9f6e0b792a7205e006068d9f2e2b6502c6587f056",
+  "safety_generations": "db249ab4ceddf23a08d7703600a795c6a1537b7e7b2b81a6660a7029c6ddca18",
+  "judge_verdicts": "781d5dfd140ed54dbd20889080f29a8c8fdd9fa93d81de517ac59dbfd552b6d6",
+  "safety_analysis": "4c14d886a35ef1eeb24f390c3bc9deccfb1f7fc77a5fa4457c8c08abce1981c7",
+  "judge_validation": "4b626822a3f7fa1b1fd79dc0a99f54665f23871d6c397fef2f45ba6ddb769699",
+  "circuit": "a974b092e9dff2efa0de00829e2c72fe5862ee1679d1db416e1613979717df06",
+  "toolkits": "b43958b1d177d6b173302737fada5b871da6026b5311dd6ac46ecbfa761dfe7a",
+  "parquet": "85b6a781a54c7df9e1d427a3e7bc61673ba2706251a65fc98ab7dcbcc3b840df"
+ },
+ "missing_inputs": []
+}

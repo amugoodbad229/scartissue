@@ -1,0 +1,283 @@
+{
+ "corpus_sha256": "529bd20395810ae9ec6225a41f2795200de08bb159ac0a16b853c3a083f05d29",
+ "sources": {
+  "safety_128": "1af69e7134ad01a0924d1dd23d5f96fec607018b8d52b84a018c47e2504e9644",
+  "safety_512": "db249ab4ceddf23a08d7703600a795c6a1537b7e7b2b81a6660a7029c6ddca18",
+  "judges_128": "8d0a8946d67b1304919cd72a74b2dd63eb68942cb51797c9ce29e23e75a68cc9",
+  "judges_512": "781d5dfd140ed54dbd20889080f29a8c8fdd9fa93d81de517ac59dbfd552b6d6",
+  "capability": "11ebac74ca13b300764a813ff7285673f5ad0e739bfbe30d96fcfa35ef4fafde",
+  "capability_analysis": "a38e8c0754f87b9ce4c130f9f6e0b792a7205e006068d9f2e2b6502c6587f056",
+  "length_analysis": "4c14d886a35ef1eeb24f390c3bc9deccfb1f7fc77a5fa4457c8c08abce1981c7"
+ },
+ "tables": [
+  {
+   "table": "corpus",
+   "file": "/hf/parquet/corpus.parquet",
+   "rows": 763,
+   "bytes": 48493,
+   "sha256": "9bf85ff12b16fec4e97e2bcfb78ae5cff226cfac8530f61ba2015bc6a579efdb",
+   "columns": [
+    "id",
+    "provenance_chain",
+    "text",
+    "source_uri",
+    "source_file",
+    "source_tag",
+    "row_index",
+    "label",
+    "category",
+    "upstream_uri",
+    "task_type",
+    "content_type",
+    "page",
+    "heading",
+    "chunk_index",
+    "role",
+    "partition",
+    "in_scored_evaluation"
+   ]
+  },
+  {
+   "table": "safety_generations",
+   "file": "/hf/parquet/safety_generations.parquet",
+   "rows": 1280,
+   "bytes": 372422,
+   "sha256": "591c89f5e0d3ae59aa2ca14894a4741bef0012c8f6e3e0fde02e18bbdb9d2455",
+   "columns": [
+    "arm",
+    "budget",
+    "corpus_id",
+    "role",
+    "label",
+    "prompt",
+    "prompt_sha256",
+    "rendered_input_sha256",
+    "answer",
+    "answer_sha256",
+    "generated_tokens_including_padding",
+    "ended_with_eos",
+    "hit_token_cap",
+    "actual_generated_tokens",
+    "diagnostics_source",
+    "saved_prefix"
+   ]
+  },
+  {
+   "table": "judge_verdicts",
+   "file": "/hf/parquet/judge_verdicts.parquet",
+   "rows": 3864,
+   "bytes": 469964,
+   "sha256": "8b7298d5e9c6eccf67604c7dee60e8e823061028d53a7a037e36d7bee786c089",
+   "columns": [
+    "judge",
+    "budget",
+    "arm",
+    "corpus_id",
+    "record_id",
+    "role",
+    "is_control",
+    "prompt",
+    "answer",
+    "prompt_sha256",
+    "answer_sha256",
+    "rendered_input_sha256",
+    "raw_verdict",
+    "harm",
+    "safety_label",
+    "refusal",
+    "unsafe_at_0_5",
+    "parse_error"
+   ]
+  },
+  {
+   "table": "capability",
+   "file": "/hf/parquet/capability.parquet",
+   "rows": 4000,
+   "bytes": 426940,
+   "sha256": "7bf3476bd8a6d08a594b802484fc6ce6ebf6dc50f904dea474c99f2d23313928",
+   "columns": [
+    "arm",
+    "doc_id",
+    "filter",
+    "doc",
+    "target",
+    "response",
+    "filtered_response",
+    "exact_match",
+    "doc_hash",
+    "prompt_hash"
+   ]
+  },
+  {
+   "table": "patches",
+   "file": "/hf/parquet/patches.parquet",
+   "rows": 5,
+   "bytes": 18627,
+   "sha256": "15fc45b68149af552b73d434219fde206bb8e8a62d22b6ae90b4f6edc957841f",
+   "columns": [
+    "model",
+    "patch",
+    "file",
+    "sha256",
+    "edited_scalars",
+    "support_fraction",
+    "frac_of_global",
+    "direction",
+    "basis",
+    "allowed_modules",
+    "allowed_layers",
+    "allowed_heads",
+    "signed_mass"
+   ]
+  },
+  {
+   "table": "frontier",
+   "file": "/hf/parquet/frontier.parquet",
+   "rows": 8,
+   "bytes": 7909,
+   "sha256": "f9de10a85d416ac11eb84cca3d13b92c57b2ad23e9464396c011ae3172e8c528",
+   "columns": [
+    "arm",
+    "budget",
+    "asr_majority3_recomputed",
+    "benign_refusal_qwen_recomputed",
+    "gsm8k_strict_recomputed",
+    "asr_majority3_stored",
+    "benign_refusal_qwen_stored",
+    "asr_residual_support_scalars",
+    "n_harmful",
+    "n_benign",
+    "n_capability_docs"
+   ]
+  }
+ ],
+ "frontier_recomputed": [
+  {
+   "arm": "base",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.05,
+   "benign_refusal_qwen_recomputed": 0.075,
+   "gsm8k_strict_recomputed": 0.59,
+   "asr_majority3_stored": 0.05,
+   "benign_refusal_qwen_stored": 0.075,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "base",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.058333333333333334,
+   "benign_refusal_qwen_recomputed": 0.075,
+   "gsm8k_strict_recomputed": 0.59,
+   "asr_majority3_stored": 0.058333333333333334,
+   "benign_refusal_qwen_stored": 0.075,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "drift",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.25833333333333336,
+   "benign_refusal_qwen_recomputed": 0.05,
+   "gsm8k_strict_recomputed": 0.56,
+   "asr_majority3_stored": 0.25833333333333336,
+   "benign_refusal_qwen_stored": 0.05,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "drift",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.21666666666666667,
+   "benign_refusal_qwen_recomputed": 0.05,
+   "gsm8k_strict_recomputed": 0.56,
+   "asr_majority3_stored": 0.21666666666666667,
+   "benign_refusal_qwen_stored": 0.05,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "global_a4",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.05,
+   "benign_refusal_qwen_recomputed": 0.25,
+   "gsm8k_strict_recomputed": 0.438,
+   "asr_majority3_stored": 0.05,
+   "benign_refusal_qwen_stored": 0.25,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "global_a4",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.041666666666666664,
+   "benign_refusal_qwen_recomputed": 0.275,
+   "gsm8k_strict_recomputed": 0.438,
+   "asr_majority3_stored": 0.041666666666666664,
+   "benign_refusal_qwen_stored": 0.275,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "harm2_a4",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.058333333333333334,
+   "benign_refusal_qwen_recomputed": 0.175,
+   "gsm8k_strict_recomputed": 0.518,
+   "asr_majority3_stored": 0.058333333333333334,
+   "benign_refusal_qwen_stored": 0.175,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "harm2_a4",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.05,
+   "benign_refusal_qwen_recomputed": 0.175,
+   "gsm8k_strict_recomputed": 0.518,
+   "asr_majority3_stored": 0.05,
+   "benign_refusal_qwen_stored": 0.175,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  }
+ ],
+ "recomputation_note": "frontier numbers here are recomputed from the published judge_verdicts/capability rows; the stored analysis files remain the claim, this is the reproducibility check",
+ "dry_run": false,
+ "uploaded": {
+  "amugoodbad229/scartissue-tinyaya-safety-corpus": [
+   ".gitattributes",
+   "README.md",
+   "corpus.jsonl",
+   "corpus_split.json",
+   "data/corpus.parquet",
+   "lexsi_provenance.json",
+   "manifest.json"
+  ],
+  "amugoodbad229/scartissue-tinyaya-results": [
+   ".gitattributes",
+   "README.md",
+   "data/capability.parquet",
+   "data/frontier.parquet",
+   "data/judge_verdicts.parquet",
+   "data/patches.parquet",
+   "data/safety_generations.parquet",
+   "manifest.json"
+  ]
+ }
+}

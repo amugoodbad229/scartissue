@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "model": "CohereLabs/tiny-aya-global",
+    "revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+    "source": "generation_config.json",
+    "generation_eos_token_ids": [
+      3
+    ],
+    "generation_eos_tokens": [
+      "<EOS_TOKEN>"
+    ],
+    "tokenizer_eos_token_id": 6,
+    "tokenizer_eos_token": "<|END_OF_TURN_TOKEN|>",
+    "pad_token_id": 0,
+    "stop_strings": null
+  },
+  "source_record": "results\\p19_safety_judges_20261102_235442.json:candidate_stop_token_metadata",
+  "producing_source_sha256": "56b5bd8ca0fadc100aaa86e60b291099549bb665936ad01179c9473262d1334b"
+}

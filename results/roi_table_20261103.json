@@ -1,0 +1,107 @@
+{
+ "schema": "scartissue.roi/1",
+ "question": "per unit of capability, which repair arm buys the most discrimination back?",
+ "sources": {
+  "safety": "results/p21_length_analysis_20261103.json",
+  "safety_generations": "results/p21_safety_length_full_20261103_001722.json",
+  "capability": "results/p16_capability_analysis_20261102.json",
+  "capability_generations": "results/p16_full_20261102_230915.json"
+ },
+ "price_assumption_usd_per_gpu_second": {
+  "A100-40GB": 0.0005833333333333334,
+  "A100-80GB": 0.0006944444444444445
+ },
+ "lost_capability_from_drift": 0.029999999999999916,
+ "arms": {
+  "base": {
+   "label": "base (unaltered)",
+   "gsm8k_strict": 0.59,
+   "gsm8k_delta_vs_drift": 0.029999999999999916,
+   "gap_recovered_vs_drift": 1.0,
+   "asr_majority3_at_128": 0.05,
+   "asr_majority3_at_512": 0.058333333333333334,
+   "asr_delta_vs_drift": -0.15833333333333333,
+   "benign_refusal_at_512": 0.075,
+   "benign_refusal_delta_vs_drift": 0.024999999999999994,
+   "harmful_refusal_diagnostic_at_512": 0.8416666666666667,
+   "gpu_seconds": {
+    "capability_s": 745.65675732,
+    "safety_s": null
+   },
+   "measured_cost_usd": 0.435
+  },
+  "drift": {
+   "label": "drifted (abliterated)",
+   "gsm8k_strict": 0.56,
+   "gsm8k_delta_vs_drift": 0.0,
+   "gap_recovered_vs_drift": 0.0,
+   "asr_majority3_at_128": 0.25833333333333336,
+   "asr_majority3_at_512": 0.21666666666666667,
+   "asr_delta_vs_drift": 0.0,
+   "benign_refusal_at_512": 0.05,
+   "benign_refusal_delta_vs_drift": 0.0,
+   "harmful_refusal_diagnostic_at_512": 0.5,
+   "gpu_seconds": {
+    "capability_s": 806.8235034070001,
+    "safety_s": null
+   },
+   "measured_cost_usd": 0.56
+  },
+  "harm2_a4": {
+   "label": "repair harm@2% alpha=4",
+   "gsm8k_strict": 0.518,
+   "gsm8k_delta_vs_drift": -0.04200000000000004,
+   "gap_recovered_vs_drift": -1.4000000000000052,
+   "asr_majority3_at_128": 0.058333333333333334,
+   "asr_majority3_at_512": 0.05,
+   "asr_delta_vs_drift": -0.16666666666666669,
+   "benign_refusal_at_512": 0.175,
+   "benign_refusal_delta_vs_drift": 0.12499999999999999,
+   "harmful_refusal_diagnostic_at_512": 0.8833333333333333,
+   "gpu_seconds": {
+    "capability_s": 491.360780108,
+    "safety_s": null
+   },
+   "measured_cost_usd": 0.341
+  },
+  "global_a4": {
+   "label": "repair global alpha=4",
+   "gsm8k_strict": 0.438,
+   "gsm8k_delta_vs_drift": -0.12200000000000005,
+   "gap_recovered_vs_drift": -4.06666666666668,
+   "asr_majority3_at_128": 0.05,
+   "asr_majority3_at_512": 0.041666666666666664,
+   "asr_delta_vs_drift": -0.17500000000000002,
+   "benign_refusal_at_512": 0.275,
+   "benign_refusal_delta_vs_drift": 0.22500000000000003,
+   "harmful_refusal_diagnostic_at_512": 0.8833333333333333,
+   "gpu_seconds": {
+    "capability_s": 724.3784595860001,
+    "safety_s": null
+   },
+   "measured_cost_usd": 0.503
+  }
+ },
+ "contrast_harm2_vs_global": {
+  "gsm8k_paired_delta": {
+   "difference": 0.08,
+   "ci95": [
+    0.038,
+    0.122
+   ],
+   "improved_documents": 80,
+   "worsened_documents": 40,
+   "unchanged_documents": 380,
+   "paired_interval_excludes_zero": true
+  },
+  "capability_per_dollar": -0.12316715542522004,
+  "global_capability_per_dollar": -0.24254473161033807
+ },
+ "reading": "The repair is a trade, and the trade is not free anywhere: every arm that moves harmful refusal back up also raises benign refusal, and the only arm that keeps capability keeps it by acting on 2 % of the write matrices. Sparse repair is cheaper in capability, not free in over-refusal \u2014 the frontier, not a win.",
+ "limitations": [
+  "Cost figures cover only the two GPU jobs quoted, not image builds, judge passes or engineering time.",
+  "Safety numbers are exploratory: the frozen judge panel failed its own calibration gate (#35 was a separate 500-row validation, not a re-certification of these 120 prompts).",
+  "Capability is one task (GSM8K, 500 docs, first 500 of the split) and not an independent random holdout.",
+  "No arm has a confirmed ASR reduction over the drifted model at n=120; the ROI table is about the shape of the trade, not about a safety win."
+ ]
+}

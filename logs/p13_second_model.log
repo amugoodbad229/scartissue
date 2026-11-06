@@ -1,0 +1,144 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-fZDsO2eu8WaQOzHCbFBuLI
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p13_second_model.py
+├── ✓ Uploaded experiments\patching.py
+└── ✓ Created Function dose.
+[data] mal=120 safe=40 gsm=120
+
+[1AFetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+[1AFetching 4 files:  25%|██▌       | 1/4 [00:37<01:53, 37.82s/it]
+[1AFetching 4 files:  50%|█████     | 2/4 [01:36<01:39, 49.94s/it]
+[1AFetching 4 files:  75%|███████▌  | 3/4 [01:40<00:29, 29.09s/it]
+[1AFetching 4 files: 100%|██████████| 4/4 [01:44<00:00, 19.20s/it]
+[1AFetching 4 files: 100%|██████████| 4/4 [01:44<00:00, 26.14s/it]
+
+[1ALoading weights:   0%|          | 0/258 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/258 [00:00<01:27,  2.93it/s]
+[1ALoading weights:  17%|█▋        | 45/258 [00:00<00:01, 129.33it/s]
+[1ALoading weights:  27%|██▋       | 70/258 [00:00<00:01, 138.72it/s]
+[1ALoading weights:  35%|███▌      | 91/258 [00:00<00:01, 144.50it/s]
+[1ALoading weights:  43%|████▎     | 110/258 [00:00<00:01, 144.69it/s]
+[1ALoading weights:  50%|████▉     | 128/258 [00:00<00:00, 149.58it/s]
+[1ALoading weights:  56%|█████▌    | 145/258 [00:01<00:00, 152.41it/s]
+[1ALoading weights:  63%|██████▎   | 162/258 [00:01<00:00, 154.80it/s]
+[1ALoading weights:  69%|██████▉   | 179/258 [00:01<00:00, 151.09it/s]
+[1ALoading weights:  76%|███████▌  | 195/258 [00:01<00:00, 148.18it/s]
+[1ALoading weights:  82%|████████▏ | 211/258 [00:01<00:00, 137.40it/s]
+[1ALoading weights:  88%|████████▊ | 227/258 [00:01<00:00, 142.27it/s]
+[1ALoading weights:  95%|█████████▍| 244/258 [00:01<00:00, 141.93it/s]
+[1ALoading weights: 100%|██████████| 258/258 [00:01<00:00, 140.21it/s]
+[load] vram=16.06 GB
+[gen] 8/120
+[gen] 16/120
+[gen] 24/120
+[gen] 32/120
+[gen] 40/120
+[gen] 48/120
+[gen] 56/120
+[gen] 64/120
+[gen] 72/120
+[gen] 80/120
+[gen] 88/120
+[gen] 96/120
+[gen] 104/120
+[gen] 112/120
+[gen] 120/120
+[gen] 8/40
+[gen] 16/40
+[gen] 24/40
+[gen] 32/40
+[gen] 40/40
+[gen] 4/120
+[gen] 8/120
+[gen] 12/120
+[gen] 16/120
+[gen] 20/120
+[gen] 24/120
+[gen] 28/120
+[gen] 32/120
+[gen] 36/120
+[gen] 40/120
+[gen] 44/120
+[gen] 48/120
+[gen] 52/120
+[gen] 56/120
+[gen] 60/120
+[gen] 64/120
+[gen] 68/120
+[gen] 72/120
+[gen] 76/120
+[gen] 80/120
+[gen] 84/120
+[gen] 88/120
+[gen] 92/120
+[gen] 96/120
+[gen] 100/120
+[gen] 104/120
+[gen] 108/120
+[gen] 112/120
+[gen] 116/120
+[gen] 120/120
+[base] refusal=0.808 benign_ref=0.025 gsm8k=0.233 auc(d')=0.988
+[save] /hf/results/p13_aya-expanse-8b.json keys=['_updated', 'alphas', 'layer', 'model', 'n', 'stages']
+[drift] 64 matrices, 2415919104 scalars
+[dir'] cos(d,d')=+0.000607
+[gen] 8/120
+[gen] 16/120
+[gen] 24/120
+[gen] 32/120
+[gen] 40/120
+[gen] 48/120
+[gen] 56/120
+[gen] 64/120
+[gen] 72/120
+[gen] 80/120
+[gen] 88/120
+[gen] 96/120
+[gen] 104/120
+[gen] 112/120
+[gen] 120/120
+[gen] 8/40
+[gen] 16/40
+[gen] 24/40
+[gen] 32/40
+[gen] 40/40
+[gen] 4/120
+[gen] 8/120
+[gen] 12/120
+[gen] 16/120
+[gen] 20/120
+[gen] 24/120
+[gen] 28/120
+[gen] 32/120
+[gen] 36/120
+[gen] 40/120
+[gen] 44/120
+[gen] 48/120
+[gen] 52/120
+[gen] 56/120
+[gen] 60/120
+[gen] 64/120
+[gen] 68/120
+[gen] 72/120
+[gen] 76/120
+[gen] 80/120
+[gen] 84/120
+[gen] 88/120
+[gen] 92/120
+[gen] 96/120
+[gen] 100/120
+[gen] 104/120
+[gen] 108/120
+[gen] 112/120
+[gen] 116/120
+[gen] 120/120
+[alpha=0] refusal=0.525 benign_ref=0.050 gsm8k=0.242 auc(d')=0.973
+[save] /hf/results/p13_aya-expanse-8b.json keys=['_updated', 'alphas', 'cos_d_dprime', 'drift_scalars', 'layer', 'model', 'n', 'stages']
+[save] /hf/results/p13_aya-expanse-8b.json keys=['_updated', 'alphas', 'cos_d_dprime', 'drift_scalars', 'gpu', 'layer', 'model', 'n', 'stages', 'wall_s']
+[done] {"ok": true, "wall_s": 449.1}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-fZDsO2eu8WaQOzHCbFBuLI

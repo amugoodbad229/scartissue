@@ -1,0 +1,111 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-Qli5UfGDC2X3wjMWPYJ2vY
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p21_safety_length.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\generation_checks.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\eval_runtime.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s
+└── ✓ Created Function generate.
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<02:57,  1.62it/s]
+[1ALoading weights:   3%|▎         | 9/290 [00:00<00:18, 15.53it/s]
+[1ALoading weights:   6%|▌         | 17/290 [00:00<00:10, 26.85it/s]
+[1ALoading weights:   9%|▊         | 25/290 [00:00<00:06, 38.15it/s]
+[1ALoading weights:  12%|█▏        | 36/290 [00:01<00:04, 54.62it/s]
+[1ALoading weights:  16%|█▌        | 47/290 [00:01<00:03, 66.22it/s]
+[1ALoading weights:  20%|█▉        | 57/290 [00:01<00:03, 72.14it/s]
+[1ALoading weights:  23%|██▎       | 68/290 [00:01<00:02, 79.09it/s]
+[1ALoading weights:  28%|██▊       | 82/290 [00:01<00:02, 95.02it/s]
+[1ALoading weights:  32%|███▏      | 93/290 [00:01<00:02, 97.33it/s]
+[1ALoading weights:  36%|███▌      | 105/290 [00:01<00:01, 96.19it/s]
+[1ALoading weights:  40%|████      | 117/290 [00:01<00:01, 98.25it/s]
+[1ALoading weights:  44%|████▍     | 129/290 [00:01<00:01, 99.39it/s]
+[1ALoading weights:  49%|████▊     | 141/290 [00:02<00:01, 101.06it/s]
+[1ALoading weights:  52%|█████▏    | 152/290 [00:02<00:01, 103.23it/s]
+[1ALoading weights:  58%|█████▊    | 168/290 [00:02<00:01, 113.55it/s]
+[1ALoading weights:  62%|██████▏   | 181/290 [00:02<00:00, 117.84it/s]
+[1ALoading weights:  67%|██████▋   | 193/290 [00:02<00:00, 114.72it/s]
+[1ALoading weights:  71%|███████   | 205/290 [00:02<00:00, 111.39it/s]
+[1ALoading weights:  75%|███████▍  | 217/290 [00:02<00:00, 110.22it/s]
+[1ALoading weights:  79%|███████▉  | 229/290 [00:02<00:00, 107.74it/s]
+[1ALoading weights:  83%|████████▎ | 241/290 [00:03<00:00, 103.52it/s]
+[1ALoading weights:  87%|████████▋ | 253/290 [00:03<00:00, 105.39it/s]
+[1ALoading weights:  91%|█████████ | 264/290 [00:03<00:00, 100.39it/s]
+[1ALoading weights:  96%|█████████▌| 277/290 [00:03<00:00, 100.42it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 84.09it/s] 
+base: 4/8 longer answers retained
+base: 8/8 longer answers retained
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<00:38,  7.51it/s]
+[1ALoading weights:   9%|▉         | 27/290 [00:00<00:02, 130.99it/s]
+[1ALoading weights:  21%|██        | 61/290 [00:00<00:01, 214.29it/s]
+[1ALoading weights:  32%|███▏      | 93/290 [00:00<00:00, 252.68it/s]
+[1ALoading weights:  43%|████▎     | 125/290 [00:00<00:00, 274.92it/s]
+[1ALoading weights:  55%|█████▌    | 160/290 [00:00<00:00, 298.11it/s]
+[1ALoading weights:  67%|██████▋   | 195/290 [00:00<00:00, 308.96it/s]
+[1ALoading weights:  78%|███████▊  | 227/290 [00:00<00:00, 309.93it/s]
+[1ALoading weights:  89%|████████▉ | 259/290 [00:00<00:00, 303.15it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:01<00:00, 274.92it/s]
+drift: 4/8 longer answers retained
+drift: 8/8 longer answers retained
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<00:49,  5.86it/s]
+[1ALoading weights:  10%|▉         | 28/290 [00:00<00:02, 125.96it/s]
+[1ALoading weights:  21%|██        | 60/290 [00:00<00:01, 198.41it/s]
+[1ALoading weights:  32%|███▏      | 92/290 [00:00<00:00, 232.94it/s]
+[1ALoading weights:  43%|████▎     | 124/290 [00:00<00:00, 258.18it/s]
+[1ALoading weights:  55%|█████▌    | 160/290 [00:00<00:00, 289.32it/s]
+[1ALoading weights:  66%|██████▌   | 191/290 [00:00<00:00, 293.27it/s]
+[1ALoading weights:  77%|███████▋  | 222/290 [00:00<00:00, 295.20it/s]
+[1ALoading weights:  87%|████████▋ | 253/290 [00:01<00:00, 297.93it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:01<00:00, 263.96it/s]
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<01:47,  2.68it/s]
+[1ALoading weights:   3%|▎         | 10/290 [00:00<00:10, 26.44it/s]
+[1ALoading weights:   6%|▌         | 17/290 [00:00<00:07, 37.57it/s]
+[1ALoading weights:   8%|▊         | 23/290 [00:00<00:06, 41.55it/s]
+[1ALoading weights:  11%|█         | 32/290 [00:00<00:04, 54.37it/s]
+[1ALoading weights:  14%|█▍        | 42/290 [00:00<00:03, 64.44it/s]
+[1ALoading weights:  18%|█▊        | 53/290 [00:01<00:03, 76.17it/s]
+[1ALoading weights:  21%|██▏       | 62/290 [00:01<00:02, 79.45it/s]
+[1ALoading weights:  25%|██▍       | 72/290 [00:01<00:02, 79.93it/s]
+[1ALoading weights:  29%|██▉       | 85/290 [00:01<00:02, 91.87it/s]
+[1ALoading weights:  33%|███▎      | 95/290 [00:01<00:02, 93.74it/s]
+harm2_a4: 4/8 longer answers retained
+[1ALoading weights:  36%|███▌      | 105/290 [00:01<00:02, 85.30it/s]
+[1ALoading weights:  39%|███▉      | 114/290 [00:01<00:02, 84.96it/s]
+[1ALoading weights:  42%|████▏     | 123/290 [00:01<00:01, 86.10it/s]
+[1ALoading weights:  46%|████▌     | 132/290 [00:01<00:01, 86.92it/s]
+[1ALoading weights:  49%|████▊     | 141/290 [00:02<00:01, 82.02it/s]
+[1ALoading weights:  52%|█████▏    | 152/290 [00:02<00:01, 81.70it/s]
+[1ALoading weights:  57%|█████▋    | 165/290 [00:02<00:01, 91.44it/s]
+[1ALoading weights:  61%|██████    | 177/290 [00:02<00:01, 98.02it/s]
+[1ALoading weights:  64%|██████▍   | 187/290 [00:02<00:01, 96.40it/s]
+[1ALoading weights:  68%|██████▊   | 197/290 [00:02<00:00, 95.14it/s]
+[1ALoading weights:  72%|███████▏  | 209/290 [00:02<00:00, 94.70it/s]
+[1ALoading weights:  76%|███████▌  | 221/290 [00:02<00:00, 98.79it/s]
+[1ALoading weights:  80%|████████  | 232/290 [00:02<00:00, 91.56it/s]
+[1ALoading weights:  84%|████████▍ | 245/290 [00:03<00:00, 97.30it/s]
+[1ALoading weights:  88%|████████▊ | 256/290 [00:03<00:00, 99.48it/s]
+[1ALoading weights:  92%|█████████▏| 267/290 [00:03<00:00, 91.96it/s]
+[1ALoading weights:  96%|█████████▌| 277/290 [00:03<00:00, 91.99it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 81.61it/s]
+harm2_a4: 8/8 longer answers retained
+global_a4: 4/8 longer answers retained
+global_a4: 8/8 longer answers retained
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p21_safety_length_smoke_20261103_001016.json: passed
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-Qli5UfGDC2X3wjMWPYJ2vY

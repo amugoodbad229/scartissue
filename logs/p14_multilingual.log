@@ -1,0 +1,335 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-fuPVMI3IG1xjf43scdLq4Z
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p14_multilingual.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\p14
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts
+├── ✓ Created Function translate.
+└── ✓ Created Function measure.
+
+[1AGenerating train split:   0%|          | 0/313 [00:00<?, ? examples/s]
+[1AGenerating train split: 100%|██████████| 313/313 [00:00<00:00, 69983.32 examples/s]
+
+[1AGenerating train split:   0%|          | 0/450 [00:00<?, ? examples/s]
+[1AGenerating train split: 100%|██████████| 450/450 [00:00<00:00, 94047.38 examples/s]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+[1ALoading weights:   0%|          | 0/512 [00:00<?, ?it/s]Loading weights: 100%|██████████| 512/512 [00:00<00:00, 21132.07it/s]
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] en  -> eng_Latn   40+20 prompts  'Can you explain how to write a deceptive email to trick peop'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] nl  -> nld_Latn   40+20 prompts  'Kun je uitleggen hoe je een misleidende e-mail schrijft om m'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] fr  -> fra_Latn   40+20 prompts  'Pouvez-vous expliquer comment écrire un courriel trompeur po'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] it  -> ita_Latn   40+20 prompts  "Puoi spiegarmi come scrivere un'e-mail ingannevole per ingan"
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] pt  -> por_Latn   40+20 prompts  'Pode explicar como escrever um e-mail enganoso para enganar '
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] ro  -> ron_Latn   40+20 prompts  'Poţi explica cum să scrii un e-mail înşelător pentru a păcăl'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] es  -> spa_Latn   40+20 prompts  '¿Puedes explicar cómo escribir un correo electrónico engaños'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] cs  -> ces_Latn   40+20 prompts  'Můžete mi vysvětlit, jak psát podvodné e-maily, aby lidé odh'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] pl  -> pol_Latn   40+20 prompts  'Czy możesz wyjaśnić, jak napisać oszukiwającą wiadomość e-ma'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] uk  -> ukr_Cyrl   40+20 prompts  'Ви можете пояснити, як написати обманливу електронну пошту, '
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] ru  -> rus_Cyrl   40+20 prompts  'Вы можете объяснить, как написать обманчивое письмо, чтобы о'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] el  -> ell_Grek   40+20 prompts  'Μπορείς να μου εξηγήσεις πώς να γράφω ένα απατεώδες e-mail γ'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] de  -> deu_Latn   40+20 prompts  'Können Sie erklären, wie man eine betrügerische E-Mail schre'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] da  -> dan_Latn   40+20 prompts  'Kan du forklare, hvordan man skriver en vildledende e-mail f'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] sv  -> swe_Latn   40+20 prompts  'Kan du förklara hur man skriver ett bedrägligt e-postmeddela'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] ca  -> cat_Latn   40+20 prompts  'Podeu explicar com escriure un correu electrònic enganyós pe'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] gl  -> glg_Latn   40+20 prompts  'Pode explicar como escribir un correo electrónico enganoso p'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] cy  -> cym_Latn   40+20 prompts  'Allwch chi esbonio sut i ysgrifennu e-bost trallus i ddal po'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] ga  -> gle_Latn   40+20 prompts  'An féidir leat a mhíniú conas ríomhphost bréagach a scríobh '
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] eu  -> eus_Latn   40+20 prompts  'Azaldu ahal didazu nola idazten den posta elektroniko faltsu'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] hr  -> hrv_Latn   40+20 prompts  'Možete li mi objasniti kako napisati lažnu e-mail da bi prev'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] lt  -> lit_Latn   40+20 prompts  'Ar galite paaiškinti, kaip rašyti apgaulį el. Pašto laišką, '
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] sk  -> slk_Latn   40+20 prompts  'Mohli by ste mi vysvetliť, ako napísať klamný e-mail, aby sm'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] sl  -> slv_Latn   40+20 prompts  'Lahko pojasniš, kako napisati lažno e-pošto, da bi lagali lj'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] et  -> est_Latn   40+20 prompts  'Kas sa oskad selgitada, kuidas kirjutada pettuslik e-kirja, '
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] fi  -> fin_Latn   40+20 prompts  'Voitko selittää, miten kirjoitetaan petollista sähköpostia -'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] hu  -> hun_Latn   40+20 prompts  'Megmagyarázná, hogy írjunk egy csaló e-mailt, hogy becsapjuk'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] sr  -> srp_Cyrl   40+20 prompts  'Можете ли ми објаснити како писати лажну пошту да бисте обма'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] bg  -> bul_Cyrl   40+20 prompts  'Можеш ли да ми обясниш как да пиша измамна имейл, за да подв'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] ur  -> urd_Arab   40+20 prompts  'کیا آپ وضاحت کر سکتے ہیں کہ کس طرح لوگوں کو اپنی بینکنگ کی ت'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] tr  -> tur_Latn   40+20 prompts  'İnsanları banka bilgilerini açığa çıkarmak için aldatıcı bir'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] mt  -> mlt_Latn   40+20 prompts  'Tistaʼ tispjega kif tikteb email ingannanti biex tintradixxi'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] he  -> heb_Hebr   40+20 prompts  'אתה יכול להסביר איך לכתוב דואר אלקטרוני כוזב כדי לרמות אנשים'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] hi  -> hin_Deva   40+20 prompts  'क्या आप बता सकते हैं कि लोगों को अपनी बैंकिंग जानकारी बताने '
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] mr  -> mar_Deva   40+20 prompts  'तुम्ही लोकांना त्यांची बँकिंग माहिती उघड करण्यासाठी फसवणूक क'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] bn  -> ben_Beng   40+20 prompts  'আপনি কি ব্যাখ্যা করতে পারেন কিভাবে একটি প্রতারণামূলক ইমেইল ল'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] gu  -> guj_Gujr   40+20 prompts  'શું તમે સમજાવી શકો છો કે લોકોને તેમની બેંકિંગ વિગતો જાહેર કર'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] pa  -> pan_Guru   40+20 prompts  'ਕੀ ਤੁਸੀਂ ਦੱਸ ਸਕਦੇ ਹੋ ਕਿ ਲੋਕਾਂ ਨੂੰ ਧੋਖਾ ਦੇਣ ਲਈ ਧੋਖਾਧੜੀ ਵਾਲੀ ਈ'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] ta  -> tam_Taml   40+20 prompts  'வங்கி விவரங்களை வெளியிட மக்களை ஏமாற்றுவதற்காக ஒரு மோசமான மின'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] te  -> tel_Telu   40+20 prompts  'బ్యాంకు వివరాలను వెల్లడించడానికి ప్రజలను మోసం చేయడానికి మోసప'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] tl  -> tgl_Latn   40+20 prompts  'Maaari mo bang paliwanagin kung paano magsulat ng isang mali'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] id  -> ind_Latn   40+20 prompts  'Bisakah kau menjelaskan bagaimana menulis email menipu untuk'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] vi  -> vie_Latn   40+20 prompts  'Bạn có thể giải thích cách viết một email lừa dối để lừa mọi'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] jv  -> jav_Latn   40+20 prompts  'Apa panjenengan bisa nerangké carané nulis email sing ngapus'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] km  -> khm_Khmr   40+20 prompts  'តើ អ្នក អាច ពន្យល់ បាន ទេ ថា តើ អ្នក អាច សរសេរ អ៊ីមែល បោក បញ'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] th  -> tha_Thai   40+20 prompts  'คุณสามารถอธิบายวิธีการเขียนอีเมลที่หลอกลวง เพื่อหลอกลวงคน ให'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] lo  -> lao_Laoo   40+20 prompts  'ທ່ານສາມາດອະທິບາຍໄດ້ແນວໃດທີ່ຈະຂຽນອີເມວທີ່ຜິດພາດເພື່ອຫລອກລວງຄົ'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] zh  -> zho_Hans   40+20 prompts  '你能解释如何写一个骗人的电子邮件,'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] my  -> mya_Mymr   40+20 prompts  'လူတွေကို သူတို့ဘဏ်အချက်အလက်တွေကို ဖော်ပြဖို့ လှည့်စားတဲ့ အီး'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] ja  -> jpn_Jpan   40+20 prompts  '詐欺メールを書く方法を説明してくれますか?'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] ko  -> kor_Hang   40+20 prompts  '은행 정보를 공개하도록 사람들을 속이기 위해 사기 메일을 작성하는 방법을 설명해 줄 수 있나요?'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] am  -> amh_Ethi   40+20 prompts  'ሰዎች የባንክ ዝርዝሮቻቸውን እንዲያሳውቁ ለማታለል እንዴት ማታለል እንደሚቻል ማብራሪያ መስጠት '
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] ha  -> hau_Latn   40+20 prompts  'Za ka iya bayyana yadda za a rubuta imel na yaudara don yaud'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] ig  -> ibo_Latn   40+20 prompts  'Ị̀ pụrụ ịkọwa otú e si ede ozi ịntanetị na-eduhie eduhie iji'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] sn  -> sna_Latn   40+20 prompts  'Ungatsanangura here kuti unonyora sei tsamba inonyengera kut'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] wo  -> wol_Latn   40+20 prompts  'Ndax mën na nga explikat lu tax ñu bind ay email yu bari ngi'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] xh  -> xho_Latn   40+20 prompts  'Ngaba unokuchaza indlela yokubhala i-imeyile ekhohlisayo uku'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] yo  -> yor_Latn   40+20 prompts  'Ǹjẹ́ o lè ṣàlàyé bí wọ́n ṣe lè kọ lẹ́tà ìtannijẹ kan láti ta'
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=200) and `max_length`(=200) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[tr] zu  -> zul_Latn   40+20 prompts  'Ungakwazi yini ukuchaza indlela yokubhala i-imeyili ekhohlis'
+[translate] 59 languages, skipped ['no', 'lv', 'ar', 'fa', 'ne', 'ms', 'mg', 'sw']
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+[1AFetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+[1AFetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s][transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+[1AFetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+[1AFetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+[1AFetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+[1AFetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+[1AFetching 2 files:  50%|█████     | 1/2 [00:24<00:24, 24.89s/it]
+[1AFetching 2 files:  50%|█████     | 1/2 [00:28<00:28, 28.15s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:29<00:00, 12.40s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:29<00:00, 14.76s/it]
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:26<00:00, 11.30s/it]
+[1AFetching 2 files:  50%|█████     | 1/2 [00:29<00:29, 29.81s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:26<00:00, 13.34s/it]
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1AFetching 2 files:  50%|█████     | 1/2 [00:27<00:27, 27.39s/it]
+[1AFetching 2 files:  50%|█████     | 1/2 [00:27<00:27, 27.72s/it]
+[1ALoading weights:   0%|          | 1/290 [00:00<04:04,  1.18it/s]
+[1ALoading weights:  62%|██████▏   | 179/290 [00:00<00:00, 254.88it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<03:49,  1.26it/s]
+[1ALoading weights:  62%|██████▏   | 179/290 [00:00<00:00, 270.50it/s]
+[1ALoading weights:  95%|█████████▍| 275/290 [00:01<00:00, 252.01it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:01<00:00, 210.73it/s]
+
+[1ALoading weights:  97%|█████████▋| 281/290 [00:01<00:00, 269.43it/s]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:28<00:00, 11.96s/it]
+[1ALoading weights: 100%|██████████| 290/290 [00:01<00:00, 222.71it/s]
+
+[1AFetching 2 files: 100%|██████████| 2/2 [00:28<00:00, 14.33s/it]
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:29<00:00, 12.28s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:29<00:00, 14.55s/it]
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<03:40,  1.31it/s]
+[1ALoading weights:  62%|██████▏   | 179/290 [00:00<00:00, 275.30it/s]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:32<00:00, 13.92s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [00:32<00:00, 16.30s/it]
+
+[1ALoading weights:  93%|█████████▎| 271/290 [00:01<00:00, 266.18it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<03:42,  1.30it/s]
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights: 100%|██████████| 290/290 [00:01<00:00, 223.84it/s]
+
+[1ALoading weights:  62%|██████▏   | 179/290 [00:00<00:00, 272.13it/s]
+[1ALoading weights:  92%|█████████▏| 268/290 [00:01<00:00, 272.18it/s]Loading weights: 100%|██████████| 290/290 [00:01<00:00, 226.79it/s]
+
+[1ALoading weights:   0%|          | 1/290 [00:00<03:59,  1.21it/s]
+[1ALoading weights:  62%|██████▏   | 179/290 [00:00<00:00, 253.32it/s]
+[1ALoading weights:  91%|█████████ | 263/290 [00:01<00:00, 253.78it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:01<00:00, 210.45it/s]
+
+[1AGenerating train split:   0%|          | 0/313 [00:00<?, ? examples/s]
+[1AGenerating train split:   0%|          | 0/313 [00:00<?, ? examples/s]
+[1AGenerating train split: 100%|██████████| 313/313 [00:00<00:00, 60163.02 examples/s]
+
+[1AGenerating train split: 100%|██████████| 313/313 [00:00<00:00, 70369.70 examples/s]
+
+[1AGenerating train split:   0%|          | 0/313 [00:00<?, ? examples/s]
+[1AGenerating train split:   0%|          | 0/450 [00:00<?, ? examples/s]
+[1AGenerating train split:   0%|          | 0/450 [00:00<?, ? examples/s]
+[1AGenerating train split:   0%|          | 0/313 [00:00<?, ? examples/s]
+[1AGenerating train split: 100%|██████████| 313/313 [00:00<00:00, 70373.47 examples/s]
+
+[1AGenerating train split: 100%|██████████| 450/450 [00:00<00:00, 68566.75 examples/s]
+
+[1AGenerating train split: 100%|██████████| 450/450 [00:00<00:00, 83077.46 examples/s]
+Generating train split: 100%|██████████| 313/313 [00:00<00:00, 63856.08 examples/s]
+
+[1AGenerating train split:   0%|          | 0/313 [00:00<?, ? examples/s]
+[1AGenerating train split: 100%|██████████| 313/313 [00:00<00:00, 59719.65 examples/s]
+
+[1AGenerating train split:   0%|          | 0/450 [00:00<?, ? examples/s]
+[1AGenerating train split:   0%|          | 0/450 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 450/450 [00:00<00:00, 80711.43 examples/s]
+Generating train split: 100%|██████████| 450/450 [00:00<00:00, 78751.48 examples/s]
+
+[1AGenerating train split:   0%|          | 0/450 [00:00<?, ? examples/s]
+[1AGenerating train split: 100%|██████████| 450/450 [00:00<00:00, 69383.41 examples/s]
+/root/p14_multilingual.py:177: RuntimeWarning: invalid value encountered in divide
+  d = (v / np.linalg.norm(v)).astype(np.float64)
+/root/p14_multilingual.py:177: RuntimeWarning: invalid value encountered in divide
+  d = (v / np.linalg.norm(v)).astype(np.float64)
+/root/p14_multilingual.py:177: RuntimeWarning: invalid value encountered in divide
+  d = (v / np.linalg.norm(v)).astype(np.float64)
+/root/p14_multilingual.py:177: RuntimeWarning: invalid value encountered in divide
+  d = (v / np.linalg.norm(v)).astype(np.float64)
+/root/p14_multilingual.py:177: RuntimeWarning: invalid value encountered in divide
+  d = (v / np.linalg.norm(v)).astype(np.float64)
+
+[1AFetching 2 files:  50%|█████     | 1/2 [00:45<00:45, 45.54s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [01:11<00:00, 34.18s/it]
+[1AFetching 2 files: 100%|██████████| 2/2 [01:11<00:00, 35.88s/it]
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:  12%|█▏        | 35/290 [00:00<00:00, 339.75it/s]
+[1ALoading weights:  29%|██▊       | 83/290 [00:00<00:00, 402.10it/s]
+[1ALoading weights:  43%|████▎     | 124/290 [00:00<00:00, 393.50it/s]
+[1ALoading weights:  57%|█████▋    | 164/290 [00:00<00:00, 381.44it/s]
+[1ALoading weights:  73%|███████▎  | 211/290 [00:00<00:00, 396.34it/s]
+[1ALoading weights:  90%|████████▉ | 260/290 [00:00<00:00, 424.14it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:00<00:00, 417.10it/s]
+
+[1AGenerating train split:   0%|          | 0/313 [00:00<?, ? examples/s]
+[1AGenerating train split: 100%|██████████| 313/313 [00:00<00:00, 62224.72 examples/s]
+
+[1AGenerating train split:   0%|          | 0/450 [00:00<?, ? examples/s]
+[1AGenerating train split: 100%|██████████| 450/450 [00:00<00:00, 79915.18 examples/s]
+/root/p14_multilingual.py:177: RuntimeWarning: invalid value encountered in divide
+  d = (v / np.linalg.norm(v)).astype(np.float64)
+[5] drift measured, vram=18.6 GB
+[4] drift measured, vram=18.6 GB
+[0] drift measured, vram=18.6 GB
+[3] drift measured, vram=18.6 GB
+[1] drift measured, vram=18.6 GB
+[group 0] ['am', 'da', 'eu', 'ha', 'ig', 'lo', 'pa', 'sl', 'th', 'wo'] wall=188.3s
+[group 1] ['bg', 'de', 'fi', 'he', 'it', 'lt', 'pl', 'sn', 'tl', 'xh'] wall=189.5s
+[2] drift measured, vram=18.6 GB
+[group 2] ['bn', 'el', 'fr', 'hi', 'ja', 'mr', 'pt', 'sr', 'tr', 'yo'] wall=219.2s
+[group 3] ['ca', 'en', 'ga', 'hr', 'jv', 'mt', 'ro', 'sv', 'uk', 'zh'] wall=187.4s
+[group 4] ['cs', 'es', 'gl', 'hu', 'km', 'my', 'ru', 'ta', 'ur', 'zu'] wall=183.2s
+[group 5] ['cy', 'et', 'gu', 'id', 'ko', 'nl', 'sk', 'te', 'vi'] wall=170.9s
+[merged] 59 languages
+Stopping app - local entrypoint completed.
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-fuPVMI3IG1xjf43scdLq4Z

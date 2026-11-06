@@ -1,0 +1,63 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-kueaJkkJgykBsdAVBs7UT7
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\build_patches.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus_split.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus.jsonl
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\corpus_fit.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\patching.py
+├── ✓ Created Function model_shape.
+└── ✓ Created Function build.
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<02:47,  1.73it/s]
+[1ALoading weights:   4%|▍         | 12/290 [00:00<00:14, 19.75it/s]
+[1ALoading weights:  10%|█         | 29/290 [00:00<00:05, 46.82it/s]
+[1ALoading weights:  13%|█▎        | 38/290 [00:01<00:04, 51.07it/s]
+[1ALoading weights:  17%|█▋        | 49/290 [00:01<00:03, 63.01it/s]
+[1ALoading weights:  21%|██        | 61/290 [00:01<00:03, 72.74it/s]
+[1ALoading weights:  25%|██▌       | 73/290 [00:01<00:02, 78.71it/s]
+[1ALoading weights:  30%|███       | 88/290 [00:01<00:02, 92.59it/s]
+[1ALoading weights:  34%|███▍      | 100/290 [00:01<00:01, 97.82it/s]
+[1ALoading weights:  38%|███▊      | 111/290 [00:01<00:01, 94.27it/s]
+[1ALoading weights:  42%|████▏     | 122/290 [00:01<00:01, 93.23it/s]
+[1ALoading weights:  46%|████▌     | 133/290 [00:01<00:01, 95.81it/s]
+[1ALoading weights:  50%|████▉     | 144/290 [00:02<00:01, 96.89it/s]
+[1ALoading weights:  54%|█████▍    | 156/290 [00:02<00:01, 101.04it/s]
+[1ALoading weights:  58%|█████▊    | 167/290 [00:02<00:01, 94.48it/s] 
+[1ALoading weights:  61%|██████    | 177/290 [00:02<00:01, 95.52it/s]
+[1ALoading weights:  64%|██████▍   | 187/290 [00:02<00:01, 95.80it/s]
+[1ALoading weights:  68%|██████▊   | 197/290 [00:02<00:00, 96.91it/s]
+[1ALoading weights:  72%|███████▏  | 208/290 [00:02<00:00, 95.87it/s]
+[1ALoading weights:  76%|███████▌  | 221/290 [00:02<00:00, 98.88it/s]
+[1ALoading weights:  80%|███████▉  | 231/290 [00:03<00:00, 89.68it/s]
+[1ALoading weights:  84%|████████▍ | 245/290 [00:03<00:00, 87.67it/s]
+[1ALoading weights:  90%|████████▉ | 260/290 [00:03<00:00, 92.83it/s]
+[1ALoading weights:  94%|█████████▍| 272/290 [00:03<00:00, 97.49it/s]
+[1ALoading weights:  97%|█████████▋| 282/290 [00:03<00:00, 95.70it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 81.36it/s]
+{
+ "model": "CohereLabs/tiny-aya-earth",
+ "dir": "/hf/artifacts/tiny-aya-earth",
+ "patches": [
+  "abliteration",
+  "repair_global_a4",
+  "repair_harm2_a4",
+  "repair_harm10_a4"
+ ],
+ "cos": -0.0008896046342598066,
+ "manifest_sha256": "0b4b898444ecb2d15bece8df9a77cd6ed5f23e98bc7529de06a4c69f2dfc629b"
+}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-kueaJkkJgykBsdAVBs7UT7

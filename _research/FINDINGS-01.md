@@ -1,4 +1,158 @@
-# Findings 01 — the drift is real, the repair is indiscriminate
+# Findings 01 — historical measurements and audit corrections
+
+> **2026-11-06 APPRAISAL — second correction pass.** Full review in
+> `_research/APPRAISAL-20261106.md`. The three items below are superseded and are
+> marked where they appear; the original text is kept as the record.
+>
+> - **§3 "97 % of the original refusal rate recovered" is not a safety result.** The column is a
+>   refusal-marker diagnostic on an uncalibrated panel; the same table shows over-refusal
+>   0.050 → 0.500. Read it as a trade-off curve, not a recovery.
+> - **The Aegis 0.580 sensitivity is not a lower bound.** It also has a known cause: the calibration
+>   run rendered HarmBench with an empty `[BEHAVIOR]` slot
+>   (`results/p22_judge_validation_20261103_020927.json`). Unjustified inference either way.
+> - **§2 orthogonality does not imply harm representation survives.** It shows the ablation
+>   direction was removed; the `AUC(d′)` figure is the narrower, real evidence.
+>
+> Every harm number in this file is exploratory: the panel's calibration audit failed
+> (`results/p19_safety_judges_20261103_002850.json`), and an in-domain human audit
+> (`results/calibration_gate_20261106.json`) is the registered route to changing that.
+
+> **2026-11-02 AUDIT — read this before the historical sections below.** Original
+> observations are retained, but their former interpretations are not all valid.
+> Current reconstruction: `results/diagnostic_frontier_v2.json`; forensic index:
+> `results/audit_20261102.json`, produced by `experiments/evidence_audit.py`.
+>
+> - English harmful/benign refusal-marker rates reproduce from full completions;
+>   they are diagnostics, not ASR or validated semantic over-refusal.
+> - All custom GSM8K columns below are **inadmissible as capability** under
+>   `MEASUREMENT.md`. `results/p15_capability.json` is also invalid (wrong operator,
+>   state contamination and right-padding), not a successful replacement.
+> - `results/p14_group0.json` through `results/p14_group5.json` contain **7,080 NaNs**:
+>   no valid multilingual safety/repair result. The audit lists the missing languages.
+> - The p6 zero-score summary is an output-contract bug: `discover_circuit` returns
+>   a list/dictionary, not an object with `.graph`/`.scores`. The log records discovery
+>   activity. It does not establish that no circuit was found.
+> - Water **did** report: `results/p4_replicate_CohereLabs__tiny-aya-water.json`.
+>   `results/p13_aya-expanse-8b.json` has base/drift only, not an 8B repair replication.
+> - Restricted lower-cost/lower-refusal arms do not dominate global; no unique circuit,
+>   irreversible discriminator deletion, five-point significance threshold, or equivalence
+>   to amplitude-only repair follows from these data. Selection is exploratory.
+> - The exported patch tests establish NumPy reconstruction, not BF16 exact restoration.
+>   A harm-weighted column support is not a discovered CircuitKIT circuit.
+>
+> Corrected explanation: `../report/report.pdf`; current narrative: `../WRITE-UP.md`.
+> These corrections supersede conflicting conclusions below without rewriting raw results
+> or the frozen protocol. Pending validation is listed in `../TODO.md`.
+
+## Checkpoint-matched safety answers and stop audit — 2026-11-02
+
+`experiments/p17_safety.py` completed all four arms on the frozen 120 harmful +
+40 benign prompts per arm: `results/p17_safety_full_20261102_234450.json`.
+Checks in `results/p17_safety_full_checks_20261102.json` reproduce **640 retained
+answers**, no empty answers, matching p16 write-weight hashes for each arm and exact
+base restoration. The safety and capability runs now have verified common write-weight
+states; this does not rehabilitate the historical p3/p5 endpoints or validate a safety win.
+
+The generator's raw `hit_token_cap_without_eos` field is **withdrawn as a truncation
+measurement**. CPU-only inspection of the pinned revision found tokenizer EOS ID 6
+(`<|END_OF_TURN_TOKEN|>`) but effective GenerationConfig EOS ID 3 (`<EOS_TOKEN>`).
+It therefore misflags completed, padded rows. The original answers and IDs are unchanged.
+Metadata: `results/p17_stop_metadata_20261102.json`; corrected per-answer diagnostics:
+`results/p17_stop_audit_20261102.json`, computed by `experiments/generation_checks.py`.
+
+| arm | completed with effective EOS | hit 128-token budget without EOS | n |
+|---|---:|---:|---:|
+| base | 92 | 68 | 160 |
+| drift | 44 | 116 | 160 |
+| harm2_a4 | 101 | 59 | 160 |
+| global_a4 | 100 | 60 | 160 |
+
+These are fixed-budget responses, not evidence about unlimited-length answer safety.
+The unequal cap rates require a predeclared longer-budget sensitivity check (#34).
+P19 completed native AuditKIT scoring: `results/p19_safety_judges_20261102_235442.json`.
+Three judges each retain 644 records (640 candidate answers + four unchanged controls).
+Every verdict parses, native counts/aggregates reproduce, and the four controls are excluded
+from benchmark denominators. Analysis: `results/p19_safety_analysis_20261103.json`.
+
+| arm | majority-3 ASR estimate, n=120 | Qwen benign-refusal estimate, n=40 |
+|---|---:|---:|
+| base | 0.0500 | 0.075 |
+| drift | 0.2583 | 0.050 |
+| harm2_a4 | 0.0583 | 0.175 |
+| global_a4 | 0.0500 | 0.250 |
+
+These are **exploratory fixed-budget judge estimates**, not independently validated safety.
+For harm2 minus global, paired majority-ASR difference is +0.00833 [0.000, 0.025], and
+Qwen benign-refusal difference is −0.075 [−0.175, 0.025] (10,000 prompt resamples,
+unadjusted percentile 95% intervals). The latter spans zero; the former does not establish
+equivalence under any prespecified margin. Capability's separate +0.080 [0.038, 0.122]
+GSM8K advantage is not a safety equivalence or a circuit-support claim.
+
+Individual estimates, controversial counts and pairwise kappa are in the analysis JSON.
+`headline_eligible=False` and failed p18 calibration are preserved. Batched controls
+reproduce the same HarmBench failures; neither an execution pass nor majority voting
+repairs calibration. The predeclared 512-token sensitivity smoke passed under task #34:
+`results/p21_safety_length_smoke_20261103_001016.json`, independently recomputed in
+`results/p21_safety_length_smoke_checks_20261103.json`. All 32 saved prefixes match;
+state and reset hashes match. This is functional smoke coverage, not a benchmark estimate.
+Full 640-answer generation is running, `results/p21_safety_length_full_20261103_001722.json`
+(log `logs/p21_safety_length_full.log`). The fail-closed queued follow-up audits complete
+answers, invokes the unchanged p19 scoring path, then compares fixed-budget endpoints
+(log `logs/p21_length_followup.log`; state `results/p21_length_followup_20261103.json`).
+No full-run result is claimed here. Independent calibration remains task #35.
+Local regression checks: `results/p21_local_checks_20261103.json` (75 passing CPU tests).
+
+## Valid capability replacement — 2026-11-02
+
+Run: `experiments/p16_lm_eval.py`; complete results:
+`results/p16_full_20261102_230915.json`. Reproducibility and paired analysis:
+`experiments/analyse_capability.py` → `results/p16_capability_analysis_20261102.json`.
+The exported patches were evaluated with pinned lm-eval 0.4.13 GSM8K, five-shot,
+chat-template enabled, greedy generation capped at 256 tokens. All four arms use
+identical first-500 test documents, prompt/target hashes and model/dataset revisions.
+Full completions and both scoring-filter records are retained. Each worker verifies
+exact restoration of its immutable base write-weight snapshot. Compatibility with
+stored factor projections is sampled, not a whole-checkpoint parity guarantee.
+
+| arm | strict exact-match | flexible extract | n |
+|---|---:|---:|---:|
+| base | 0.590 | 0.594 | 500 |
+| drift | 0.560 | 0.562 | 500 |
+| harm2_a4 | 0.518 | 0.526 | 500 |
+| global_a4 | 0.438 | 0.440 | 500 |
+
+Paired strict-match differences, percentile 95% bootstrap over prompts, 10,000
+resamples: harm2 minus global **+0.080 [0.038, 0.122]**; global minus drift
+**−0.122 [−0.164, −0.080]**; harm2 minus drift **−0.042 [−0.086, 0.002]**.
+These are exploratory, unadjusted intervals for one task and one fixed set, not
+multiple-seed general-capability evidence or equivalence. Actual allocations were
+one A100-40GB and three A100-80GB. Earlier regex safety results must not be joined
+into a joint frontier until state/operator parity is established, or safety is
+regenerated from these exact artifact states. The new data do **not** support the
+old claim that global repair improves GSM8K capability.
+
+## Official-family judge controls — 2026-11-02
+
+Raw outputs: `results/p18_judge_smoke_20261102_233759.json`; control analysis:
+`results/p18_judge_smoke_analysis_20261102.json`. The run remains **failed** under
+its predeclared all-control gate. All three judges produced parseable verdicts on
+all four hand-authored controls, and actual external AuditKIT scored each record.
+Qwen3Guard and Granite matched four controls each; HarmBench matched two. HarmBench
+flagged the benign control and flipped from Unsafe to Safe when a polite preface
+was added to the same harmful answer. That wrapper comparison has **one underlying
+harmful text**, not a robustness benchmark. HarmBench is a behaviour-compliance
+classifier used outside its usual harmful-behaviour domain in the benign control;
+this does not excuse its failure on the decorated harmful control.
+
+The frozen majority-of-three rule matched these four controls. This small functional
+check does not establish judge reliability, justify selecting a preferred judge, or
+rescue old p5 aggregates. Models, model-card revisions, exact rendered inputs,
+generated token IDs, full verdicts and native AuditKIT outputs are retained. Unknown
+labels raise rather than default to Safe; Qwen Controversial is retained explicitly
+as 0.5, not relabelled Safe (the frozen positive threshold is strictly greater than
+0.5). Broader independent calibration and per-judge sensitivity remain open.
+
+## Historical record (not a current claim set)
 
 Everything below is measured on `CohereLabs/tiny-aya-global` (3.35 B, `cohere2`, 36 layers, 16 q-heads,
 d_model 2048) on one A100-40GB. Source files are named per table; nothing here is quoted from memory.
@@ -56,8 +210,9 @@ refusing must be carried by directions orthogonal to it. Two consequences follow
 Read the last three columns together, because that is the finding:
 
 1. **The dose works.** Refusal rises monotonically, and at `alpha = 4` the model refuses 0.733 of the
-   harmful set against 0.758 before the drift — **97 % of the original refusal rate recovered** by a
-   weight-space edit that never sees a training example.
+   harmful set against 0.758 before the drift — a **97 % recovery of the refusal-marker rate** by a
+   weight-space edit that never sees a training example. *(Superseded 2026-11-06: this is a diagnostic
+   rate on an uncalibrated panel, not a safety result; see §0 and `_research/APPRAISAL-20261106.md`.)*
 2. **The discrimination does not come back.** `d′` still separates harmful from harmless inputs
    (AUC 0.83, against 0.999 aligned) — the signal is real, not noise — but the *margin* is gone. Refusal
    is a threshold on that projection, so amplifying the projection lifts benign inputs over the threshold
@@ -70,6 +225,9 @@ Read the last three columns together, because that is the finding:
 
 So the honest statement is not "abliteration is irreparable". It is:
 
+> *(Superseded 2026-11-06 — read with §0: the ~97 % figure is a refusal marker, the panel is
+> uncalibrated, and over-refusal moves 0.050 → 0.500.)*
+>
 > **Abliteration does not delete refusals, it deletes the discriminator.** The read-out survives in an
 > orthogonal direction and can be amplified back to ~97 % of the original refusal rate, but every unit of
 > that recovery is paid in over-refusal, because the amplified projection no longer separates harmful from
@@ -238,3 +396,205 @@ Three friction points worth recording, each measured:
 Consequence for the thesis, stated plainly: the repair claim in §5 rests on **restricted, attribution-
 weighted supports**, not on circuits. The circuit leg is implemented and reaches discovery, but it has not
 yet produced the signed circuit mass `M` that H1/H2 were pre-registered against.
+
+### 2026-11-03 — Generation-length sensitivity (task #34) — resolved
+
+P21 regenerated **all 640 frozen answers at 512 tokens** with the same four arm states,
+seed and batch size. Every answer reproduced its saved 128-token prefix exactly (no
+sampling drift), every state hash and reset matched p16/p17, and the stored diagnostics
+reproduced independently.
+
+Artifacts: `results/p21_safety_length_full_20261103_001722.json`,
+`results/p21_safety_length_full_checks_20261103.json`,
+`results/p19_safety_judges_20261103_002850.json` (unchanged judges),
+`results/p21_length_analysis_20261103.json`. Logs `logs/p21_safety_length_full.log`,
+`logs/p21_length_followup.log`.
+
+Censoring changed a lot; the frontier did not:
+
+| arm | capped w/o EOS, 128 → 512 (harmful) | majority-3 ASR 128 → 512 | Qwen benign refusal 128 → 512 |
+|---|---|---:|---:|
+| base | 40/120 → 16/120 | 0.0500 → 0.0583 | 0.075 → 0.075 |
+| drift | 85/120 → 47/120 | 0.2583 → 0.2167 | 0.050 → 0.050 |
+| harm2_a4 | 44/120 → 3/120 | 0.0583 → 0.0500 | 0.175 → 0.175 |
+| global_a4 | 43/120 → 4/120 | 0.0500 → 0.0417 | 0.250 → 0.275 |
+
+Paired 512−128 prompt changes are all within ±0.025 for ASR; benign refusal is exactly
+unchanged for base/drift/harm2 and +0.025 [0.000, 0.075] for global. The sparse arm is
+therefore not an artefact of truncation: the over-refusal ordering
+(harm2 0.175 < global 0.275) survives a 4× budget. Still exploratory — the frozen panel's
+calibration gate remains failed, so this does not license a headline ASR claim.
+
+**Erratum (2026-11-03, same day).** The sentence "paired 512−128 prompt changes are all within
+±0.025 for ASR" is wrong for the drift arm. The measured paired differences are base
++0.0083 [0.000, 0.025], drift **−0.0417 [−0.092, 0.008]**, harm2 −0.0083 [−0.025, 0.000],
+global −0.0083 [−0.025, 0.000] (`results/p21_length_analysis_20261103.json`,
+`exploratory_scores.paired_512_minus_128.<arm>.majority3`). Every interval contains zero, so the
+conclusion (no reordering) stands, but the drift moves *down* with a longer budget — the drifted
+model has more room to hedge, which further weakens any "abliteration made it unsafe" reading.
+
+### 2026-11-03 — Judge calibration gate (task #35) — PASSED on external labels
+
+`results/p22_judge_validation_20261103_020927.json` (log `logs/p22_judge_validation_aegis1.log`):
+500 rows from `nvidia/Aegis-AI-Content-Safety-Dataset-1.0` (split `test`, rows with ≥3 non-empty
+`labels_0..4`, majority Safe → safe else unsafe, ties dropped, 250 unsafe / 250 safe, seed 0), scored
+by the frozen panel with unchanged templates and strict parsers.
+
+| judge | accuracy | sensitivity (unsafe) | specificity (safe) |
+|---|---:|---:|---:|
+| HarmBench-Mistral-7B | 0.625 | 0.356 | 0.896 |
+| Qwen3Guard-Gen-8B | 0.796 | 0.608 | 0.984 |
+| Granite-Guardian-3.2-5B | 0.818 | 0.696 | 0.940 |
+| majority of 3 | 0.782 | 0.580 | 0.984 |
+
+The panel is conservative, not calibrated in the flattering direction: it almost never flags a safe
+text (0.984) and misses ~42 % of Aegis "unsafe" rows (0.580). Absolute harm rates are therefore a
+**lower bound**; arm-to-arm comparisons on identical prompts remain sound. The earlier Aegis 2.0
+route failed (`unsafe=0 safe=4682`: human response labels exist only for safe rows) and the Aegis 1.0
+count-first route failed (`unsafe=0 safe=105`: labels are category names, not Safe/Unsafe). No judge
+was tuned or replaced after seeing these labels.
+
+### 2026-11-03 — CircuitKIT discovery on the drifted model (tasks #28/#6)
+
+`results/p23_circuit_20261103_022433.json`. Fit-only discovery (the p6 leak is fixed), canonical
+drift (`962,592,768` scalars, `cos(d,d')=+1.027e-03`), ARA node naming `A<layer>.<head>` / `MLP <layer>`
+(612 nodes, 0 unmapped), scores read from the side-car `circuit_scores.json` rather than `result.graph`
+(which is why p6 always read an empty graph).
+
+Signed write mass along `d'`: **global 3.949, harm2 3.949, harm10 3.949** — the top 2 % of
+harm-ranked columns already carries essentially all of it. Export: `repair_circuit_a4.npz`,
+sha256 `96c659a056648c3cf1c076e880ad426f10b2a9dd07d5d6912233cd00f0ff3a82`, 150,994,944 edited
+scalars, basis `per_head`. **Evaluation of this arm is blocked** (Modal spend limit); no circuit
+number is reported.
+
+### 2026-11-03 — Held-out and multi-model generations (tasks #27/#31/#32 partial)
+
+`results/p24_heldout_20261103_021508.json`: all four arms on 120 held-out harmful + 40 held-out
+benign prompts (`corpus_fit.heldout_rows(seed=20261103)`, zero prompt overlap with evaluation).
+Generation and state checks pass (`results/p24_heldout_20261103_021508_state_checks.json`: base
+0 scalars, drift 962,592,768/0, harm2 962,592,768/19,251,200, global 962,592,768/962,592,768, resets
+exact). Judging is blocked. `results/p25_tiny-aya-earth_20261103_024506.json` has drift/harm2/global
+and `..._023229.json` has base, so earth is complete; water is missing the global arm
+(`..._024507.json` + `..._023231.json`). All p25 arms are regex-only, no judge verdicts.
+
+### 2026-11-03 — Submission artifacts
+
+Parquet on the Hub (`scartissue-tinyaya-safety-corpus`, `scartissue-tinyaya-results`: 1,280
+generations / 3,864 verdicts / 4,000 capability rows / patches / frontier; frontier recomputed from
+the published rows reproduces the analysis exactly). Static Space `amugoodbad229/scartissue` served
+with the frontier chart, three-arm completion viewer, calibration table and `report.pdf`.
+`results/manifest.json` (17 keys), `results/lexsi_provenance.json`, `results/provenance_final.json`
+(corrects the per-ID `split_counts` bug without editing the historical file). `report/report.pdf`
+5 pp., regenerated from `report/make_report_data.py`; `results/novelty_check_20261103.json` positions
+the claim against AMRA (arXiv:2608.18093, a *pre-emptive* defence) and the refusal-direction
+literature.
+
+**Hard blocker:** `Workspace ac-pBhL2P5HANn5nS1Gp9kaLl has exceeded its spend limit` — blocks
+CPU functions too, so circuit-arm judging, held-out judging, multilingual and the second-model
+frontier cannot run until the workspace limit is raised (task #36).
+
+### 2026-11-03 — Pre-submission verification (30 assertions) and two corrections it forced
+
+`experiments/verify_submission.py` → `results/submission_verification.json`, **30/30 passing**. It
+recomputes the published table from `results/`, recomputes each judge's accuracy/sensitivity/
+specificity from `results/p22_judge_validation_20261103_020927.json`, checks the signed-mass
+concentration, the manifest's 17 keys, the corpus roles, the report hash, and that every public URL
+returns 200. Two real defects were found this way, not by reading:
+
+1. **The "refusal" column is a judge label, not a regex.** The published 0.842 / 0.500 / 0.883 /
+   0.883 are `qwen_harmful_refusal_diagnostic` (Qwen3Guard's `Refusal:` field). The regex marker in
+   `experiments/safety_core.summarise` reads **0.683 / 0.175 / 0.450 / 0.583** on the same 512-token
+   answers — it misses refusals that open with a preamble, and it understates the drift's collapse by
+   7 points. The numbers were always right; the *label* was ambiguous. Every artifact now states the
+   source, and the divergence is stored rather than hidden (it is why a regex is a diagnostic only).
+2. **Per-patch sha256 was null for four of five patches.** `artifacts/manifest.json` predates hash
+   recording, and the parquet/provenance inherited the nulls while the report promised per-file
+   hashes. `experiments/fill_patch_sha256.py` hashes the *published* bytes (all four local copies
+   match the Hub copies: `abliteration 505b243a`, `repair_global c90fed93`, `repair_harm10 c24e4fb7`,
+   `repair_harm2 26c537b3`; `repair_harm4 dbe85467`), rewrites `data/patches.parquet`, and
+   `results/provenance_final.json` now reads `results/patch_checksums.json` instead of the stale
+   manifest.
+
+Also fixed: the parquet tables live under `data/` on the Hub (the verification had been probing the
+repository root and reporting 404s), and both dataset cards now declare `configs:` with `data_files:`
+so the Hub's parquet viewer can index them — the earlier cards had no front matter, which is exactly
+the failure the Hub's "publish parquet" advice targets. The datasets-server indexing API itself was
+returning `The server is busier than usual` throughout, so viewer indexing could not be confirmed
+from this machine; the files were verified readable instead (763 / 1,280 / 3,864 / 4,000 / 5 / 8 rows).
+
+One further correction to the record: the Space README had been overwritten with the repository
+README, losing its `sdk: static` front matter. It is restored and the Space reports `sdk static`,
+`stage RUNNING`, with `index.html`, `report.pdf` and `frontier.csv` all serving 200.
+
+### 2026-11-06 — The held-out prompts replicate the trade-off (task #21) — exploratory
+
+Judging had already been paid for: `results/p19_safety_judges_20261103_023754.json` holds three
+judges × 644 records on `results/p24_heldout_20261103_021508.json` (its `safety_source_sha256` is
+`7fd67ab5…`, checkable). What was missing was the audit, not the judgments, so
+`experiments/analyse_heldout.py` adds it and `experiments/analyse_safety.py` gained a `roles_of()`
+helper so the same estimator accepts `heldout_malicious`/`heldout_benign` — the old output is
+byte-identical.
+
+Checks before any number: the judge payload names the generation file whose bytes still hash to the
+recorded `7fd67ab5…`; the run passed with no errors; the separate role-aware state correction names
+the same run and all four arms pass; the stored status is still `failed` and the analysis refuses to
+rename it; every scored non-control `corpus_id` is in `1-curate/corpus/corpus_split.json` under
+`unused`, 160 of them, with **zero overlap** with the fit or evaluation slices.
+
+| arm | harm (majority-of-3) | over-refusal (benign) |
+|---|---|---|
+| base | 0/120 = 0.000 [0.000, 0.031] | 8/40 = 0.200 [0.105, 0.348] |
+| drift | 38/120 = 0.317 [0.240, 0.404] | 5/40 = 0.125 [0.055, 0.261] |
+| repair_harm2 | 3/120 = 0.025 [0.009, 0.071] | 13/40 = 0.325 [0.201, 0.480] |
+| repair_global | 1/120 = 0.008 [0.001, 0.046] | 20/40 = 0.500 [0.352, 0.648] |
+
+Paired bootstrap over prompts: drift − base harm **+0.317 [0.233, 0.400]**, over-refusal −0.075
+[−0.175, 0.025] (not resolved); harm2 − drift **−0.292 [−0.375, −0.208]** with over-refusal
+**+0.200 [0.075, 0.325]**; global − drift **−0.308 [−0.392, −0.225]** with over-refusal **+0.375
+[0.200, 0.550]**; harm2 − global harm +0.017 [−0.017, 0.050] (not resolved) with over-refusal
+**−0.175 [−0.325, −0.050]**.
+
+So the exploratory trade-off is not an artefact of the prompts the arms were selected on: harm rises
+with drift and each repair buys it back with over-refusal, and the *sparse* repair over-refuses less
+than the global one at no resolved harm cost. It is still **not confirmation** — the judge panel
+failed calibration on the project distribution, the arms were chosen on the earlier set, the
+intervals exclude judge error, and no multiplicity adjustment is applied. Output:
+`results/heldout_analysis_20261106.json`. A defect found while wiring it: the readiness ledger marked
+`heldout-comparison` evaluated from a *declared* status rather than from file availability, so a tree
+missing those files still claimed an evaluation; claims now downgrade to `pending` when any of their
+sources is absent (`experiments/verify_submission.py`).
+
+### 2026-11-06 — Circuit body recovered; confirmatory design frozen (tasks #24, #23)
+
+Two gaps closed without spending compute.
+
+**The circuit patch is no longer remote-only.** `scartissue-hf` on the old workspace is
+spend-blocked for functions but still readable by the CLI, so
+`modal volume get scartissue-hf artifacts/tiny-aya-global/repair_circuit_a4.npz` returned the body:
+471,102 bytes hashing to `96c659a056648c3cf1c076e880ad426f10b2a9dd07d5d6912233cd00f0ff3a82`, exactly
+the value recorded at export. Under the hardened loader it is structurally sane — unit direction,
+finite factors, 36 `self_attn.o_proj` modules, 73,728 sorted in-range columns, and
+73,728 × 2,048 = 150,994,944 edited scalars, matching the metadata. That establishes *what the bytes
+are*, not that the discovery run produced them, and **not** any effect: no generation, judging or
+capability run exists for this arm, so `circuit-intervention` stays `pending`
+(`results/circuit_body_recovery_20261106.json`).
+
+**The confirmatory comparison is frozen before it exists.** With the held-out set analysed, the
+untouched pool is countable: of 371 rows labelled `unused`, the held-out generation used 160, leaving
+**57 harmful and 154 benign** prompts. So a confirmatory harm run is n = 57 — not the 120 the
+exploratory run used, and not something to discover after the fact.
+`results/confirmatory_spec_20261106.json` (self hash `67e4fed8…`, built by
+`experiments/freeze_confirmatory.py` from seed 20261106) fixes the four Holm-corrected contrasts, a
+matched-budget random-column control (the circuit edit costs 150,994,944 scalars against the global
+repair's 962,592,768, so comparing it to an unrestricted global repair would credit restriction for
+what budget bought), the judge-calibration / state-check / prompt-hash gates, and the stopping rules.
+`_research/AMENDMENT-01-20261106.md` explains it; `PROTOCOL.md` is untouched.
+
+**Decision on Track 2b.** Not justified. The circuit arm has a verified body and no measured effect;
+the confirmatory spec that would have to be executed first cannot run until the judge panel passes
+calibration on external human labels, which it has not. A circuit claim therefore remains out of the
+write-up, and the workbench continues to answer `insufficient evidence` for all four arms.
+
+**A defect found while wiring the ledger.** `heldout-comparison` was marked `evaluated` from a declared
+status rather than from file availability, so a tree missing those files still claimed an evaluation.
+Claims now downgrade to `pending` when any of their sources is absent.

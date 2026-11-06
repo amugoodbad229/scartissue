@@ -1,0 +1,9 @@
+{
+  "pid": 8436,
+  "log": "logs/modal_validation_baseline_20261106.log",
+  "launched_at": "2026-11-05T15:36:08.190320+00:00",
+  "command": "uv run python -m modal run experiments/modal_validation.py",
+  "purpose": "bounded Modal CPU baseline; no GPU, no automatic retries",
+  "status": "failed_before_remote_execution",
+  "error": "InvalidError: image.add_local_dir() currently only supports absolute remote_path values"
+}

@@ -8,3 +8,12 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Raw multi-hundred-MB run dumps: published as HF datasets (see results/manifest.json provenance)
+results/p16_full_*.json
+results/p17_safety_full_*.json
+results/p19_safety_judges_2*.json
+results/p24_heldout_2*.json
+results/p25_*.json
+results/p26_circuit_arm_*.json
+.scratch/

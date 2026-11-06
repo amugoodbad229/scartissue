@@ -1,46 +1,58 @@
 ---
-title: ScarTissue — what a restricted repair buys back
+title: ScarTissue — abliteration, repair, and the price of each
 emoji: 🩹
-colorFrom: gray
-colorTo: blue
+colorFrom: indigo
+colorTo: purple
 sdk: static
 pinned: false
 license: other
-short_description: What abliteration removes, and what repair buys back
+short_description: Abliterate a Cohere model, repair it, and price the repair
 ---
 
-# ScarTissue
+# ScarTissue — abliteration, repair, and the price of each
 
-Abliteration removes a model's refusal read-out. This page shows — from stored measurements, not a live
-model — what comes back when the edit is repaired, and what the repair costs in over-refusal.
+Abliteration projects a refusal direction out of every write matrix of
+`CohereLabs/tiny-aya-global` (962,592,768 scalars, no gradients, no data). This demo shows what that
+edit costs and what it takes to put refusal back.
 
-Model: `CohereLabs/tiny-aya-global` (3.35 B, cohere2, 36 layers). The drift and every repair act on the
-same 72 write matrices (`o_proj`, `down_proj`) at layer 15.
+**Three columns, same prompt, same seed:** the aligned model, the drifted model, and one repair —
+plus a frontier chart and the judge-calibration table. Everything shown is precomputed JSON produced
+by the runs in the project repository; no model is served from this Space (see Licence).
 
-## What is on the page
+## What the numbers say
 
-- **The frontier** — refusal on 120 harmful prompts (benefit) against over-refusal on 40 benign prompts
-  (price), for the global repair and four restricted supports.
-- **Same prompt, three models** — 160 preset prompts, showing the base completion, the drifted completion
-  and a repaired one, side by side, with a refusal-regex badge that is explicitly labelled a diagnostic.
-- **Limitations** — what the numbers do and do not license.
+| arm | edited scalars | refusal | over-refusal | harm-ASR | GSM8K |
+|---|---:|---:|---:|---:|---:|
+| base | 0 | 0.842 | 0.075 | 0.058 | 0.590 |
+| drifted | 962,592,768 | 0.500 | 0.050 | 0.217 | 0.560 |
+| 2 % repair | 19,251,200 | 0.883 | 0.175 | 0.050 | 0.518 |
+| global repair | 962,592,768 | 0.883 | 0.275 | 0.042 | 0.438 |
 
-## Where the numbers come from
+The abliteration removes the read-out **and** the discrimination behind it: the re-extracted refusal
+direction is orthogonal to the removed one (`cos(d, d′) = 1.0×10⁻³`), so amplifying the old direction
+is a no-op. Refusal can be restored in weight space alone, but the bill — benign over-refusal and
+GSM8K — is set by **how much of the signed write the repair touches**. The 2 % support keeps +0.080
+GSM8K exact match over the global repair (95 % CI [0.038, 0.122]) at the same refusal rate, while the
+harm-ASR axis cannot separate the two repairs. The measurement is a frontier, not a number.
 
-| artifact | what it holds |
+## Files here
+
+| file | what |
 |---|---|
-| [scartissue-tinyaya-evals](https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-evals) | every completion of every arm on every prompt, the frontier CSV, the manifest |
-| [scartissue-tinyaya-safety-corpus](https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-safety-corpus) | the 763-row corpus with row-level provenance (CuratorKIT) |
-| [scartissue-tinyaya-abliteration-patches](https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-abliteration-patches) | the drift as parameters: direction `d`, `alpha = -1`, per-matrix column projections |
-| [scartissue-tinyaya-repair-patches](https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-repair-patches) | the four repair patches, each with the `allowed` block that defines its support |
+| `index.html` | the demo (frontier chart, three-column completion viewer, calibration table) |
+| `frontier.csv` | one row per arm: refusal, over-refusal, GSM8K, harm-ASR, gap recovered |
+| `completions.json` | 160 prompts × 4 arms of full stored answers |
+| `prompts.json` | the frozen evaluation prompts with their corpus ids |
+| `report.pdf` | the 5-page report |
 
-No drifted checkpoint is published: the licence (LSAL 1.2/1.1 §4) forbids deploying one, so the edit
-ships as parameters plus a 30-line loader.
+Full data (parquet) and the parameter patches:
+[`scartissue-tinyaya-results`](https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-results) ·
+[`scartissue-tinyaya-safety-corpus`](https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-safety-corpus) ·
+[`scartissue-tinyaya-repair-patches`](https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-repair-patches).
 
-## Measurement rules this page follows
+## Licence
 
-ASR comes only from the judge path, never from the regex. The refusal regex here is a *diagnostic* — it
-answers "did the model decline", not "was the answer harmful". Capability is gsm8k exact-match, measured
-in the same run as the refusal numbers so the two axes are comparable. Full completions are stored
-because a metric can read 0.000 for a model that no longer produces sentences (that is what the
-`alpha = 8` arm did), and a page without the text would hide it.
+Cohere weights are **LSAL 1.2/1.1, research use**. §2 forbids selling or hosting the model as a
+product and §4 forbids deploying drifted checkpoints, so this Space serves **precomputed JSON over
+the aligned model's published answers** — it hosts no model and no drifted weights. Individual entry;
+not an organisation.

@@ -1,0 +1,44 @@
+{
+ "schema": "scartissue.patch-checksums/1",
+ "note": "sha256 of the PUBLISHED .npz bytes; the circuit patch body lives on the Modal Volume and is not published because its evaluation is blocked",
+ "patches": {
+  "abliteration_tiny-aya-global_layer15": {
+   "file": "abliteration_tiny-aya-global_layer15.npz",
+   "repo": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+   "bytes": 7584296,
+   "sha256_published": "505b243a23c0e4e17ecd08e5644c5c9b43e7c933f03a808cc91ab61b8977ac24",
+   "sha256_local": "505b243a23c0e4e17ecd08e5644c5c9b43e7c933f03a808cc91ab61b8977ac24",
+   "local_matches_published": true
+  },
+  "repair_global_a4": {
+   "file": "repair_global_a4.npz",
+   "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+   "bytes": 7584296,
+   "sha256_published": "c90fed93cb92f588c6704b34d0abb434ff94646902b370958e27d38d1bfe6f8c",
+   "sha256_local": "c90fed93cb92f588c6704b34d0abb434ff94646902b370958e27d38d1bfe6f8c",
+   "local_matches_published": true
+  },
+  "repair_harm10_a4": {
+   "file": "repair_harm10_a4.npz",
+   "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+   "bytes": 816056,
+   "sha256_published": "c24e4fb7603c7b40b7899a27a3ec38c285d952ee9e5f3887e1d627ffa60336db",
+   "sha256_local": "c24e4fb7603c7b40b7899a27a3ec38c285d952ee9e5f3887e1d627ffa60336db",
+   "local_matches_published": true
+  },
+  "repair_harm2_a4": {
+   "file": "repair_harm2_a4.npz",
+   "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+   "bytes": 214440,
+   "sha256_published": "26c537b304762b08b4d6b31a52bb91edf437f893d26a53d7e3a26beec6e2001f",
+   "sha256_local": "26c537b304762b08b4d6b31a52bb91edf437f893d26a53d7e3a26beec6e2001f",
+   "local_matches_published": true
+  },
+  "repair_harm4_a4": {
+   "file": "repair_harm4_a4.npz",
+   "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+   "bytes": 364840,
+   "sha256_published": "dbe854671893d69c57c718018b23151fd71a3681aa47c47223a5c2d1b4d63278"
+  }
+ }
+}

@@ -1,0 +1,134 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-WAR1IMPGO5USd9JEGWzm8E
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p16_lm_eval.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\eval_runtime.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s
+├── ✓ Created Function preflight.
+└── ✓ Created Function run_arms.
+[preflight] locked runtime, dataset revision, patch manifest, actual bf16 state tests
+[spawned] [['base', 'drift', 'harm2_a4', 'global_a4']], n=2; single local writer -> C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p16_smoke_20261102_182659.json
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<02:28,  1.95it/s]
+[1ALoading weights:   4%|▍         | 13/290 [00:00<00:10, 27.46it/s]
+[1ALoading weights:   7%|▋         | 21/290 [00:00<00:06, 38.52it/s]
+[1ALoading weights:  10%|█         | 29/290 [00:00<00:05, 46.50it/s]
+[1ALoading weights:  15%|█▌        | 44/290 [00:00<00:03, 70.36it/s]
+[1ALoading weights:  19%|█▉        | 55/290 [00:01<00:03, 77.16it/s]
+[1ALoading weights:  24%|██▍       | 71/290 [00:01<00:02, 94.07it/s]
+[1ALoading weights:  30%|██▉       | 86/290 [00:01<00:01, 107.85it/s]
+[1ALoading weights:  34%|███▍      | 100/290 [00:01<00:01, 112.48it/s]
+[1ALoading weights:  39%|███▉      | 113/290 [00:01<00:01, 111.03it/s]
+[1ALoading weights:  44%|████▍     | 129/290 [00:01<00:01, 115.04it/s]
+[1ALoading weights:  50%|█████     | 145/290 [00:01<00:01, 119.49it/s]
+[1ALoading weights:  56%|█████▌    | 161/290 [00:01<00:00, 129.11it/s]
+[1ALoading weights:  60%|██████    | 175/290 [00:02<00:00, 122.16it/s]
+[1ALoading weights:  65%|██████▍   | 188/290 [00:02<00:00, 122.68it/s]
+[1ALoading weights:  69%|██████▉   | 201/290 [00:02<00:00, 119.86it/s]
+[1ALoading weights:  74%|███████▍  | 214/290 [00:02<00:00, 122.17it/s]
+[1ALoading weights:  78%|███████▊  | 227/290 [00:02<00:00, 122.24it/s]
+[1ALoading weights:  83%|████████▎ | 240/290 [00:02<00:00, 121.54it/s]
+[1ALoading weights:  87%|████████▋ | 253/290 [00:02<00:00, 106.86it/s]
+[1ALoading weights:  93%|█████████▎| 269/290 [00:02<00:00, 114.90it/s]
+[1ALoading weights:  97%|█████████▋| 282/290 [00:02<00:00, 117.45it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:02<00:00, 98.09it/s] 
+[arm] base: validated state e2c0641f7e4f9d53e0c289fcd349da70bbcfe2c2f074b29f61eae05d112e564d, selected scalars={'drift': 0, 'repair': 0}
+`pretrained` model kwarg is not of type `str`. Many other model arguments may be ignored. Please do not launch via accelerate or use `parallelize=True` if passing an existing model this way.
+Passed an already-initialized model through `pretrained`, assuming single-process call to evaluate() or custom distributed integration
+generation_kwargs: {'max_gen_toks': 256, 'do_sample': False} specified through cli, these settings will update set parameters in yaml tasks. Ensure 'do_sample=True' for non-greedy decoding!
+Overwriting default num_fewshot of gsm8k from 5 to 5
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 94.76it/s]
+
+[1ARunning generate_until requests:   0%|          | 0/2 [00:00<?, ?it/s]
+[1ARunning generate_until requests:  50%|█████     | 1/2 [00:03<00:03,  3.73s/it]
+[1ARunning generate_until requests: 100%|██████████| 2/2 [00:03<00:00,  1.86s/it]
+[done] base: {'gsm8k': {'name': 'gsm8k', 'alias': 'gsm8k', 'sample_len': 2, 'exact_match,strict-match': np.float64(1.0), 'exact_match_stderr,strict-match': 0.0, 'exact_match,flexible-extract': np.float64(1.0), 'exact_match_stderr,flexible-extract': 0.0}}
+[arm] drift: validated state d729257b72e19c4b506833dbc74046f2ae80d7af31eb4712c51214863f172cb6, selected scalars={'drift': 962592768, 'repair': 0}
+`pretrained` model kwarg is not of type `str`. Many other model arguments may be ignored. Please do not launch via accelerate or use `parallelize=True` if passing an existing model this way.
+Passed an already-initialized model through `pretrained`, assuming single-process call to evaluate() or custom distributed integration
+generation_kwargs: {'max_gen_toks': 256, 'do_sample': False} specified through cli, these settings will update set parameters in yaml tasks. Ensure 'do_sample=True' for non-greedy decoding!
+Overwriting default num_fewshot of gsm8k from 5 to 5
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 220.85it/s]
+
+[1ARunning generate_until requests:   0%|          | 0/2 [00:00<?, ?it/s]
+[1ARunning generate_until requests:  50%|█████     | 1/2 [00:03<00:03,  3.37s/it]
+[1ARunning generate_until requests: 100%|██████████| 2/2 [00:03<00:00,  1.68s/it]
+[done] drift: {'gsm8k': {'name': 'gsm8k', 'alias': 'gsm8k', 'sample_len': 2, 'exact_match,strict-match': np.float64(0.5), 'exact_match_stderr,strict-match': 0.5, 'exact_match,flexible-extract': np.float64(0.5), 'exact_match_stderr,flexible-extract': 0.5}}
+[arm] harm2_a4: validated state 6e8eece355caf8b17d5eb80ba19f135ca35755be9af84317292626ca9c945ba5, selected scalars={'drift': 962592768, 'repair': 19251200}
+`pretrained` model kwarg is not of type `str`. Many other model arguments may be ignored. Please do not launch via accelerate or use `parallelize=True` if passing an existing model this way.
+Passed an already-initialized model through `pretrained`, assuming single-process call to evaluate() or custom distributed integration
+generation_kwargs: {'max_gen_toks': 256, 'do_sample': False} specified through cli, these settings will update set parameters in yaml tasks. Ensure 'do_sample=True' for non-greedy decoding!
+Overwriting default num_fewshot of gsm8k from 5 to 5
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 219.20it/s]
+
+[1ARunning generate_until requests:   0%|          | 0/2 [00:00<?, ?it/s]
+[1ARunning generate_until requests:  50%|█████     | 1/2 [00:03<00:03,  3.30s/it]
+[1ARunning generate_until requests: 100%|██████████| 2/2 [00:03<00:00,  1.65s/it]
+[done] harm2_a4: {'gsm8k': {'name': 'gsm8k', 'alias': 'gsm8k', 'sample_len': 2, 'exact_match,strict-match': np.float64(0.5), 'exact_match_stderr,strict-match': 0.5, 'exact_match,flexible-extract': np.float64(0.5), 'exact_match_stderr,flexible-extract': 0.5}}
+[arm] global_a4: validated state b2244a1b631fc447640023a3c04421a332945a8ccf6e1c7f6d53cc996708ae05, selected scalars={'drift': 962592768, 'repair': 962592768}
+`pretrained` model kwarg is not of type `str`. Many other model arguments may be ignored. Please do not launch via accelerate or use `parallelize=True` if passing an existing model this way.
+Passed an already-initialized model through `pretrained`, assuming single-process call to evaluate() or custom distributed integration
+generation_kwargs: {'max_gen_toks': 256, 'do_sample': False} specified through cli, these settings will update set parameters in yaml tasks. Ensure 'do_sample=True' for non-greedy decoding!
+Overwriting default num_fewshot of gsm8k from 5 to 5
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 221.76it/s]
+
+[1ARunning generate_until requests:   0%|          | 0/2 [00:00<?, ?it/s]
+[1ARunning generate_until requests:  50%|█████     | 1/2 [00:03<00:03,  3.94s/it]
+[1ARunning generate_until requests: 100%|██████████| 2/2 [00:03<00:00,  1.97s/it]
+[done] global_a4: {'gsm8k': {'name': 'gsm8k', 'alias': 'gsm8k', 'sample_len': 2, 'exact_match,strict-match': np.float64(1.0), 'exact_match_stderr,strict-match': 0.0, 'exact_match,flexible-extract': np.float64(1.0), 'exact_match_stderr,flexible-extract': 0.0}}
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 987, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 189, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 266, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/p16_lm_eval.py", line 239, in run_arms
+    return encode_result(out)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/eval_runtime.py", line 45, in encode_result
+    return json.dumps(value, ensure_ascii=False, allow_nan=False, default=serialise)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/root/eval_runtime.py", line 42, in serialise
+    raise TypeError(f"Unsupported result object, not silently stringified: {type(item).__name__}")
+TypeError: Unsupported result object, not silently stringified: dtype
+[result] C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p16_smoke_20261102_182659.json status=failed
+Stopping app - uncaught exception raised locally: RuntimeError('Evaluation failed; errors preserved in C:\\Users\\Ayman\\OneDrive\\Desktop\\Projects\\SAAS_Projects\\scaartissue\\results\\p16_smoke_20261102_182659.json').
+Runner terminated.
+┌───────────────────── Traceback (most recent call last) ─────────────────────┐
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime │
+│ nts/p16_lm_eval.py:306 in main                                              │
+│                                                                             │
+│   305 │   if out["errors"]:                                                 │
+│ > 306 │   │   raise RuntimeError(f"Evaluation failed; errors preserved in { │
+│   307                                                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+RuntimeError: Evaluation failed; errors preserved in 
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p16_
+smoke_20261102_182659.json

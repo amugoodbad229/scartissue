@@ -1,0 +1,143 @@
+{
+  "schema": "scartissue.capability-run/1",
+  "status": "failed",
+  "mode": "smoke",
+  "source_sha256": {
+    "experiments/p16_lm_eval.py": "6226dc173f9f84b5e79ce01150eb78fa4fca4d225a82dd7581db1f7b929072e4",
+    "experiments/eval_runtime.py": "153ccbd08550694d3e0f2523005faebc7162a6eafd0e302f90c4618ae01e560a",
+    "experiments/runtime/pyproject.toml": "9c2bf9d520cdf321c0758cd784df21b0ad7ef60c1de7c20936ac4480c7496fb2",
+    "experiments/runtime/uv.lock": "ef8c6314c8470fc6d5a05fc5be12149b53804d0127dae65318318eb8d7f2e50e",
+    "artifacts/load_patch.py": "c48e0b12201cdd9403d107eb411d74521eb00fa533c8c4d17218af86a1b6d94e",
+    "artifacts/manifest.json": "c0a12cb690005d7e2eddba8c13cf6a8947cdc5b00d59c844e298f3463e46aa9f",
+    "artifacts/abliteration_tiny-aya-global_layer15.npz": "505b243a23c0e4e17ecd08e5644c5c9b43e7c933f03a808cc91ab61b8977ac24",
+    "artifacts/repair_harm2_a4.npz": "26c537b304762b08b4d6b31a52bb91edf437f893d26a53d7e3a26beec6e2001f",
+    "artifacts/repair_global_a4.npz": "c90fed93cb92f588c6704b34d0abb434ff94646902b370958e27d38d1bfe6f8c"
+  },
+  "reference": {
+    "model": "CohereLabs/tiny-aya-global",
+    "model_revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+    "dataset": "openai/gsm8k",
+    "dataset_revision": "740312add88f781978c0658806c59bc2815b9866",
+    "task_config": {
+      "tag": [
+        "math_word_problems"
+      ],
+      "task": "gsm8k",
+      "dataset_path": "openai/gsm8k",
+      "dataset_name": "main",
+      "output_type": "generate_until",
+      "training_split": "train",
+      "fewshot_split": "train",
+      "test_split": "test",
+      "doc_to_text": "Question: {{question}}\nAnswer:",
+      "doc_to_target": "{{answer}}",
+      "metric_list": [
+        {
+          "metric": "exact_match",
+          "aggregation": "mean",
+          "higher_is_better": true,
+          "ignore_case": true,
+          "ignore_punctuation": false,
+          "regexes_to_ignore": [
+            ",",
+            "\\$",
+            "(?s).*#### ",
+            "\\.$"
+          ]
+        }
+      ],
+      "generation_kwargs": {
+        "until": [
+          "Question:",
+          "</s>",
+          "<|im_end|>"
+        ],
+        "do_sample": false,
+        "temperature": 0.0
+      },
+      "repeats": 1,
+      "num_fewshot": 5,
+      "filter_list": [
+        {
+          "name": "strict-match",
+          "filter": [
+            {
+              "function": "regex",
+              "regex_pattern": "#### (\\-?[0-9\\.\\,]+)"
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        },
+        {
+          "name": "flexible-extract",
+          "filter": [
+            {
+              "function": "regex",
+              "group_select": -1,
+              "regex_pattern": "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+            },
+            {
+              "function": "take_first"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "version": 3.0
+      },
+      "dataset_kwargs": {
+        "revision": "740312add88f781978c0658806c59bc2815b9866"
+      }
+    },
+    "task_yaml_sha256": "82eb1780b263bc040729032b3e076990c7933f42163c91e359f38820dd1d8833",
+    "dataset_test_fingerprint": "59ec1b7f9357c7a2",
+    "versions": {
+      "torch": "2.9.0",
+      "transformers": "5.22.0",
+      "accelerate": "1.11.0",
+      "huggingface-hub": "1.33.0",
+      "datasets": "4.4.2",
+      "lm-eval": "0.4.13",
+      "numpy": "2.5.4"
+    },
+    "patch_checks": {
+      "abliteration_tiny-aya-global_layer15.npz": {
+        "sha256": "505b243a23c0e4e17ecd08e5644c5c9b43e7c933f03a808cc91ab61b8977ac24",
+        "selected_scalars": 962592768,
+        "alpha": -1.0
+      },
+      "repair_harm2_a4.npz": {
+        "sha256": "26c537b304762b08b4d6b31a52bb91edf437f893d26a53d7e3a26beec6e2001f",
+        "selected_scalars": 19251200,
+        "alpha": 4.0
+      },
+      "repair_global_a4.npz": {
+        "sha256": "c90fed93cb92f588c6704b34d0abb434ff94646902b370958e27d38d1bfe6f8c",
+        "selected_scalars": 962592768,
+        "alpha": 4.0
+      }
+    },
+    "torch_state_self_test": {
+      "dtype": "bfloat16",
+      "inverse_subtraction_exact": false,
+      "snapshot_restore_exact": true,
+      "unselected_column_unchanged": true
+    },
+    "simple_evaluate_signature": "(model: 'str | LM', model_args: 'str | dict[str, str | int | float] | None' = None, tasks: 'list[str | dict[str, Any] | Task] | None' = None, num_fewshot: 'int | None' = None, batch_size: 'int | str | None' = None, max_batch_size: 'int | None' = None, device: 'str | None' = None, use_cache: 'str | None' = None, cache_requests: 'bool' = False, rewrite_requests_cache: 'bool' = False, delete_requests_cache: 'bool' = False, limit: 'int | float | None' = None, samples: 'dict[str, list[int]] | None' = None, bootstrap_iters: 'int' = 100000, check_integrity: 'bool' = False, write_out: 'bool' = False, log_samples: 'bool' = True, evaluation_tracker: 'EvaluationTracker | None' = None, system_instruction: 'str | None' = None, apply_chat_template: 'bool | str' = False, fewshot_as_multiturn: 'bool' = True, gen_kwargs: 'str | dict[str, str | float | int] | None' = None, task_manager: 'TaskManager | None' = None, verbosity=None, predict_only: 'bool' = False, random_seed: 'int' = 0, numpy_random_seed: 'int' = 1234, torch_random_seed: 'int' = 1234, fewshot_random_seed: 'int' = 1234, confirm_run_unsafe_code: 'bool' = False, metadata: 'dict[str, Any] | None' = None) -> 'EvalResults | None'"
+  },
+  "workers": [],
+  "errors": [
+    {
+      "arms": [
+        "base",
+        "drift",
+        "harm2_a4",
+        "global_a4"
+      ],
+      "error": "AttributeError(\"'dict' object has no attribute 'encode'\")"
+    }
+  ],
+  "metric_scope": "lm-eval GSM8K 5-shot, chat template, strict-match and flexible-extract; not safety or paper confirmation"
+}

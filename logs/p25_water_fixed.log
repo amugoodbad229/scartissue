@@ -1,0 +1,963 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-sFKsqN8ig6uyb2gK1cpOHd
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p25_model_safety.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus_split.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus.jsonl
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\corpus_fit.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\safety_core.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\generation_checks.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\eval_runtime.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s\load_patch.py
+└── ✓ Created Function generate_arm.
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:01<05:49,  1.21s/it]
+[1ALoading weights:   2%|▏         | 5/290 [00:01<01:06,  4.31it/s]
+[1ALoading weights:   4%|▍         | 13/290 [00:01<00:25, 10.80it/s]
+[1ALoading weights:   7%|▋         | 20/290 [00:02<00:18, 14.83it/s]
+[1ALoading weights:   8%|▊         | 23/290 [00:02<00:16, 16.40it/s]
+[1ALoading weights:  10%|█         | 29/290 [00:02<00:12, 20.49it/s]
+[1ALoading weights:  12%|█▏        | 34/290 [00:02<00:10, 24.91it/s]
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:  14%|█▍        | 41/290 [00:02<00:08, 28.53it/s]
+[1ALoading weights:  16%|█▌        | 45/290 [00:02<00:09, 25.76it/s]
+[1ALoading weights:  17%|█▋        | 49/290 [00:02<00:09, 25.77it/s]
+[1ALoading weights:  19%|█▊        | 54/290 [00:03<00:08, 26.97it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<02:52,  1.68it/s]
+[1ALoading weights:   4%|▍         | 13/290 [00:00<00:11, 23.20it/s]
+[1ALoading weights:  21%|██        | 61/290 [00:03<00:08, 26.54it/s]
+[1ALoading weights:   8%|▊         | 22/290 [00:00<00:07, 36.95it/s]
+[1ALoading weights:  11%|█         | 31/290 [00:00<00:05, 48.83it/s]
+[1ALoading weights:  25%|██▌       | 73/290 [00:03<00:05, 41.08it/s]
+[1ALoading weights:  14%|█▍        | 41/290 [00:01<00:04, 59.18it/s]
+[1ALoading weights:  28%|██▊       | 81/290 [00:03<00:04, 42.39it/s]
+[1ALoading weights:  19%|█▉        | 55/290 [00:01<00:03, 77.80it/s]
+[1ALoading weights:  22%|██▏       | 65/290 [00:01<00:02, 77.82it/s]
+[1ALoading weights:  27%|██▋       | 77/290 [00:01<00:02, 87.81it/s]
+[1ALoading weights:  30%|███       | 87/290 [00:01<00:02, 86.59it/s]
+[1ALoading weights:  35%|███▍      | 101/290 [00:01<00:01, 100.38it/s]
+[1ALoading weights:  32%|███▏      | 93/290 [00:03<00:03, 56.20it/s]
+[1ALoading weights:  34%|███▍      | 100/290 [00:03<00:03, 54.46it/s]
+[1ALoading weights:  37%|███▋      | 107/290 [00:04<00:03, 48.86it/s]
+[1ALoading weights:  39%|███▉      | 113/290 [00:04<00:03, 46.95it/s]
+[1ALoading weights:  39%|███▊      | 112/290 [00:01<00:01, 102.84it/s]
+[1ALoading weights:  41%|████▏     | 120/290 [00:04<00:03, 50.66it/s]
+[1ALoading weights:  42%|████▏     | 123/290 [00:01<00:01, 97.07it/s] 
+[1ALoading weights:  46%|████▌     | 134/290 [00:02<00:01, 84.67it/s]
+[1ALoading weights:  43%|████▎     | 126/290 [00:04<00:04, 40.15it/s]
+[1ALoading weights:  51%|█████     | 148/290 [00:02<00:01, 96.34it/s]
+[1ALoading weights:  56%|█████▌    | 161/290 [00:02<00:01, 103.04it/s]
+[1ALoading weights:  60%|█████▉    | 173/290 [00:02<00:01, 106.65it/s]
+[1ALoading weights:  45%|████▌     | 131/290 [00:04<00:05, 30.33it/s]
+[1ALoading weights:  64%|██████▍   | 185/290 [00:02<00:01, 102.29it/s]
+[1ALoading weights:  50%|█████     | 145/290 [00:05<00:03, 42.39it/s]
+[1ALoading weights:  68%|██████▊   | 197/290 [00:02<00:00, 105.74it/s]
+[1ALoading weights:  72%|███████▏  | 208/290 [00:02<00:00, 104.23it/s]
+[1ALoading weights:  53%|█████▎    | 153/290 [00:05<00:03, 43.32it/s]
+[1ALoading weights:  76%|███████▌  | 220/290 [00:02<00:00, 104.45it/s]
+[1ALoading weights:  55%|█████▍    | 159/290 [00:05<00:03, 42.30it/s]
+[1ALoading weights:  80%|████████  | 232/290 [00:02<00:00, 103.65it/s]
+[1ALoading weights:  84%|████████▍ | 243/290 [00:03<00:00, 103.57it/s]
+[1ALoading weights:  57%|█████▋    | 165/290 [00:05<00:03, 39.53it/s]
+[1ALoading weights:  88%|████████▊ | 254/290 [00:03<00:00, 90.41it/s] 
+[1ALoading weights:  63%|██████▎   | 182/290 [00:05<00:01, 63.24it/s]
+[1ALoading weights:  68%|██████▊   | 196/290 [00:05<00:01, 79.05it/s]
+[1ALoading weights:  93%|█████████▎| 269/290 [00:03<00:00, 103.65it/s]
+[1ALoading weights:  71%|███████   | 206/290 [00:05<00:01, 81.92it/s]
+[1ALoading weights:  97%|█████████▋| 280/290 [00:03<00:00, 95.04it/s] 
+[1ALoading weights:  78%|███████▊  | 225/290 [00:06<00:00, 104.39it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 84.17it/s]
+
+[1ALoading weights:  82%|████████▏ | 237/290 [00:06<00:00, 108.26it/s]
+[1ALoading weights:  86%|████████▌ | 249/290 [00:06<00:00, 110.76it/s]
+[1ALoading weights:  90%|█████████ | 261/290 [00:06<00:00, 105.41it/s]
+[1ALoading weights:  96%|█████████▌| 277/290 [00:06<00:00, 114.19it/s]Loading weights: 100%|██████████| 290/290 [00:06<00:00, 44.20it/s] 
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<02:24,  2.00it/s]
+[1ALoading weights:   4%|▍         | 13/290 [00:00<00:09, 28.16it/s]
+[1ALoading weights:   7%|▋         | 21/290 [00:00<00:06, 39.78it/s]
+[1ALoading weights:  11%|█▏        | 33/290 [00:00<00:04, 58.91it/s]
+[1ALoading weights:  16%|█▌        | 45/290 [00:00<00:03, 74.38it/s]
+[1ALoading weights:  20%|█▉        | 57/290 [00:01<00:02, 86.41it/s]
+[1ALoading weights:  25%|██▍       | 72/290 [00:01<00:02, 100.67it/s]
+[1ALoading weights:  29%|██▉       | 85/290 [00:01<00:01, 108.12it/s]
+[1ALoading weights:  33%|███▎      | 97/290 [00:01<00:01, 107.77it/s]
+[1ALoading weights:  39%|███▉      | 113/290 [00:01<00:01, 118.44it/s]
+[1ALoading weights:  43%|████▎     | 126/290 [00:01<00:01, 120.95it/s]
+[1ALoading weights:  48%|████▊     | 139/290 [00:01<00:01, 121.71it/s]
+[1ALoading weights:  52%|█████▏    | 152/290 [00:01<00:01, 116.95it/s]
+[1ALoading weights:  58%|█████▊    | 169/290 [00:01<00:00, 125.68it/s]
+[1ALoading weights:  63%|██████▎   | 183/290 [00:02<00:00, 126.84it/s]
+[1ALoading weights:  68%|██████▊   | 196/290 [00:02<00:00, 122.30it/s]
+[1ALoading weights:  72%|███████▏  | 210/290 [00:02<00:00, 127.15it/s]
+[1ALoading weights:  77%|███████▋  | 223/290 [00:02<00:00, 127.54it/s]
+[1ALoading weights:  81%|████████▏ | 236/290 [00:02<00:00, 127.94it/s]
+[1ALoading weights:  86%|████████▌ | 249/290 [00:02<00:00, 118.89it/s]
+[1ALoading weights:  90%|█████████ | 262/290 [00:02<00:00, 121.65it/s]
+[1ALoading weights:  96%|█████████▌| 277/290 [00:02<00:00, 127.95it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:02<00:00, 102.72it/s]
+base: 4/160 answers retained
+drift: 4/160 answers retained
+base: 8/160 answers retained
+harm2_a4: 4/160 answers retained
+drift: 8/160 answers retained
+base: 12/160 answers retained
+harm2_a4: 8/160 answers retained
+base: 16/160 answers retained
+base: 20/160 answers retained
+harm2_a4: 12/160 answers retained
+drift: 12/160 answers retained
+base: 24/160 answers retained
+harm2_a4: 16/160 answers retained
+drift: 16/160 answers retained
+harm2_a4: 20/160 answers retained
+base: 28/160 answers retained
+drift: 20/160 answers retained
+harm2_a4: 24/160 answers retained
+base: 32/160 answers retained
+drift: 24/160 answers retained
+harm2_a4: 28/160 answers retained
+base: 36/160 answers retained
+harm2_a4: 32/160 answers retained
+drift: 28/160 answers retained
+base: 40/160 answers retained
+harm2_a4: 36/160 answers retained
+base: 44/160 answers retained
+drift: 32/160 answers retained
+harm2_a4: 40/160 answers retained
+drift: 36/160 answers retained
+base: 48/160 answers retained
+harm2_a4: 44/160 answers retained
+drift: 40/160 answers retained
+base: 52/160 answers retained
+harm2_a4: 48/160 answers retained
+base: 56/160 answers retained
+harm2_a4: 52/160 answers retained
+base: 60/160 answers retained
+drift: 44/160 answers retained
+base: 64/160 answers retained
+harm2_a4: 56/160 answers retained
+base: 68/160 answers retained
+drift: 48/160 answers retained
+harm2_a4: 60/160 answers retained
+base: 72/160 answers retained
+harm2_a4: 64/160 answers retained
+base: 76/160 answers retained
+drift: 52/160 answers retained
+base: 80/160 answers retained
+harm2_a4: 68/160 answers retained
+harm2_a4: 72/160 answers retained
+base: 84/160 answers retained
+drift: 56/160 answers retained
+base: 88/160 answers retained
+base: 92/160 answers retained
+harm2_a4: 76/160 answers retained
+drift: 60/160 answers retained
+harm2_a4: 80/160 answers retained
+base: 96/160 answers retained
+harm2_a4: 84/160 answers retained
+drift: 64/160 answers retained
+base: 100/160 answers retained
+harm2_a4: 88/160 answers retained
+base: 104/160 answers retained
+harm2_a4: 92/160 answers retained
+drift: 68/160 answers retained
+base: 108/160 answers retained
+harm2_a4: 96/160 answers retained
+drift: 72/160 answers retained
+base: 112/160 answers retained
+harm2_a4: 100/160 answers retained
+base: 116/160 answers retained
+harm2_a4: 104/160 answers retained
+drift: 76/160 answers retained
+base: 120/160 answers retained
+drift: 80/160 answers retained
+harm2_a4: 108/160 answers retained
+base: 124/160 answers retained
+drift: 84/160 answers retained
+harm2_a4: 112/160 answers retained
+harm2_a4: 116/160 answers retained
+base: 128/160 answers retained
+drift: 88/160 answers retained
+drift: 92/160 answers retained
+harm2_a4: 120/160 answers retained
+base: 132/160 answers retained
+harm2_a4: 124/160 answers retained
+drift: 96/160 answers retained
+base: 136/160 answers retained
+harm2_a4: 128/160 answers retained
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<02:24,  2.00it/s]
+[1ALoading weights:   4%|▍         | 13/290 [00:00<00:10, 27.31it/s]
+[1ALoading weights:   8%|▊         | 24/290 [00:00<00:06, 44.29it/s]
+[1ALoading weights:  13%|█▎        | 37/290 [00:00<00:04, 60.20it/s]
+[1ALoading weights:  17%|█▋        | 48/290 [00:00<00:03, 69.82it/s]
+[1ALoading weights:  21%|██        | 61/290 [00:01<00:02, 80.60it/s]
+[1ALoading weights:  25%|██▌       | 73/290 [00:01<00:02, 86.57it/s]
+[1ALoading weights:  29%|██▉       | 85/290 [00:01<00:02, 91.14it/s]
+[1ALoading weights:  36%|███▌      | 103/290 [00:01<00:01, 113.23it/s]
+drift: 100/160 answers retained
+[1ALoading weights:  40%|████      | 116/290 [00:01<00:01, 100.38it/s]
+[1ALoading weights:  45%|████▍     | 130/290 [00:01<00:01, 110.13it/s]
+[1ALoading weights:  49%|████▉     | 142/290 [00:01<00:01, 105.20it/s]
+[1ALoading weights:  53%|█████▎    | 154/290 [00:01<00:01, 106.77it/s]
+[1ALoading weights:  58%|█████▊    | 169/290 [00:02<00:01, 114.50it/s]
+[1ALoading weights:  62%|██████▏   | 181/290 [00:02<00:00, 112.43it/s]
+[1ALoading weights:  67%|██████▋   | 193/290 [00:02<00:00, 107.99it/s]
+[1ALoading weights:  72%|███████▏  | 209/290 [00:02<00:00, 117.26it/s]
+[1ALoading weights:  76%|███████▌  | 221/290 [00:02<00:00, 104.48it/s]
+[1ALoading weights:  82%|████████▏ | 237/290 [00:02<00:00, 116.09it/s]
+[1ALoading weights:  86%|████████▌ | 249/290 [00:02<00:00, 115.56it/s]
+[1ALoading weights:  90%|█████████ | 261/290 [00:02<00:00, 111.04it/s]
+[1ALoading weights:  94%|█████████▍| 273/290 [00:02<00:00, 113.00it/s]Loading weights: 100%|██████████| 290/290 [00:03<00:00, 94.39it/s] 
+harm2_a4: 132/160 answers retained
+base: 140/160 answers retained
+harm2_a4: 136/160 answers retained
+drift: 104/160 answers retained
+harm2_a4: 140/160 answers retained
+base: 144/160 answers retained
+harm2_a4: 144/160 answers retained
+drift: 108/160 answers retained
+base: 148/160 answers retained
+harm2_a4: 148/160 answers retained
+drift: 112/160 answers retained
+base: 152/160 answers retained
+harm2_a4: 152/160 answers retained
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+harm2_a4: 156/160 answers retained
+base: 156/160 answers retained
+drift: 116/160 answers retained
+harm2_a4: 160/160 answers retained
+
+base: 160/160 answers retained
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:01<05:30,  1.14s/it]
+[1ALoading weights:   5%|▍         | 14/290 [00:01<00:18, 14.99it/s]
+[1ALoading weights:   8%|▊         | 24/290 [00:01<00:10, 26.20it/s]
+[1ALoading weights:  13%|█▎        | 37/290 [00:01<00:06, 41.80it/s]
+drift: 120/160 answers retained
+[1ALoading weights:  17%|█▋        | 49/290 [00:02<00:12, 19.76it/s]
+[1ALoading weights:  19%|█▉        | 56/290 [00:04<00:22, 10.28it/s]
+[1ALoading weights:  22%|██▏       | 65/290 [00:04<00:15, 14.15it/s]
+[1ALoading weights:  27%|██▋       | 79/290 [00:04<00:09, 22.33it/s]
+[1ALoading weights:  31%|███       | 89/290 [00:04<00:07, 28.63it/s]
+[1ALoading weights:  34%|███▍      | 98/290 [00:04<00:05, 35.19it/s]
+[1ALoading weights:  38%|███▊      | 109/290 [00:04<00:04, 44.11it/s]
+[1ALoading weights:  42%|████▏     | 121/290 [00:04<00:03, 53.66it/s]
+[1ALoading weights:  46%|████▌     | 133/290 [00:05<00:02, 64.83it/s]
+[1ALoading weights:  50%|█████     | 145/290 [00:05<00:01, 73.00it/s]
+[1ALoading weights:  55%|█████▌    | 160/290 [00:05<00:01, 89.37it/s]
+[1ALoading weights:  59%|█████▉    | 172/290 [00:05<00:01, 94.38it/s]
+[1ALoading weights:  63%|██████▎   | 184/290 [00:05<00:01, 96.93it/s]
+[1ALoading weights:  67%|██████▋   | 195/290 [00:05<00:00, 95.40it/s]
+[1ALoading weights:  71%|███████▏  | 207/290 [00:05<00:00, 99.62it/s]
+[1ALoading weights:  76%|███████▌  | 221/290 [00:05<00:00, 102.58it/s]
+[1ALoading weights:  80%|████████  | 233/290 [00:05<00:00, 106.45it/s]
+[1ALoading weights:  84%|████████▍ | 245/290 [00:06<00:00, 104.67it/s]
+[1ALoading weights:  88%|████████▊ | 256/290 [00:06<00:00, 101.76it/s]
+[1ALoading weights:  92%|█████████▏| 268/290 [00:06<00:00, 97.65it/s] 
+[1ALoading weights:  97%|█████████▋| 281/290 [00:06<00:00, 101.19it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:06<00:00, 44.86it/s] 
+drift: 124/160 answers retained
+drift: 128/160 answers retained
+drift: 132/160 answers retained
+global_a4: 4/160 answers retained
+drift: 136/160 answers retained
+global_a4: 8/160 answers retained
+drift: 140/160 answers retained
+global_a4: 12/160 answers retained
+drift: 144/160 answers retained
+global_a4: 16/160 answers retained
+drift: 148/160 answers retained
+global_a4: 20/160 answers retained
+drift: 152/160 answers retained
+global_a4: 24/160 answers retained
+drift: 156/160 answers retained
+drift: 160/160 answers retained
+global_a4: 28/160 answers retained
+global_a4: 32/160 answers retained
+global_a4: 36/160 answers retained
+global_a4: 40/160 answers retained
+global_a4: 44/160 answers retained
+global_a4: 48/160 answers retained
+global_a4: 52/160 answers retained
+global_a4: 56/160 answers retained
+global_a4: 60/160 answers retained
+global_a4: 64/160 answers retained
+global_a4: 68/160 answers retained
+global_a4: 72/160 answers retained
+global_a4: 76/160 answers retained
+global_a4: 80/160 answers retained
+global_a4: 84/160 answers retained
+global_a4: 88/160 answers retained
+global_a4: 92/160 answers retained
+global_a4: 96/160 answers retained
+global_a4: 100/160 answers retained
+global_a4: 104/160 answers retained
+global_a4: 108/160 answers retained
+global_a4: 112/160 answers retained
+global_a4: 116/160 answers retained
+global_a4: 120/160 answers retained
+global_a4: 124/160 answers retained
+global_a4: 128/160 answers retained
+global_a4: 132/160 answers retained
+global_a4: 136/160 answers retained
+global_a4: 140/160 answers retained
+global_a4: 144/160 answers retained
+global_a4: 148/160 answers retained
+global_a4: 152/160 answers retained
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+[modal-client] 2026-11-03T19:55:59+0900 Loop attempt for _run_app.<locals>.heartbeat failed
+Traceback (most recent call last):
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\modal\_grpc_client.py", line 164, in direct
+    return await self.client._call_unary(self.wrapped_method, req, timeout=timeout, metadata=metadata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\modal\client.py", line 563, in _call_unary
+    return await self._call_safely(coro, grpclib_method.name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\modal\client.py", line 519, in _call_safely
+    return await request_task
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\grpclib\client.py", line 912, in __call__
+    await stream.send_message(message, end=True)
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\grpclib\client.py", line 242, in send_message
+    await self.send_request()
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\grpclib\client.py", line 174, in send_request
+    protocol = await self._channel.__connect__()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\modal\_utils\grpc_utils.py", line 137, in __connect__
+    return await super().__connect__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\grpclib\client.py", line 748, in __connect__
+    self._protocol = await self._create_connection()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\modal\_utils\grpc_utils.py", line 147, in _create_connection
+    protocol = await self._open_connection()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\modal\_utils\grpc_utils.py", line 169, in _open_connection
+    return await super()._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\grpclib\client.py", line 725, in _create_connection
+    _, protocol = await self._loop.create_connection(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\AppData\Roaming\uv\python\cpython-3.12.9-windows-x86_64-none\Lib\asyncio\base_events.py", line 1083, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\AppData\Roaming\uv\python\cpython-3.12.9-windows-x86_64-none\Lib\asyncio\base_events.py", line 1466, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\AppData\Roaming\uv\python\cpython-3.12.9-windows-x86_64-none\Lib\asyncio\base_events.py", line 905, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\AppData\Roaming\uv\python\cpython-3.12.9-windows-x86_64-none\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayman\AppData\Roaming\uv\python\cpython-3.12.9-windows-x86_64-none\Lib\socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\modal\_utils\async_utils.py", line 590, in loop_coro
+    await asyncio.wait_for(async_f(), timeout=timeout)
+  File "C:\Users\Ayman\AppData\Roaming\uv\python\cpython-3.12.9-windows-x86_64-none\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Lib\site-packages\modal\runner.py", line 68, in _heartbeat
+    await client._stub.AppHeartbeat(request, retry=Retry(attempt_timeout=HEARTBEAT_TIMEOUT))
+modal.exception.ConnectionError: [Errno 11001] getaddrinfo failed
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+┌─ Error ─────────────────────────────────────────────────────────────────────┐
+│ [Errno 11001] getaddrinfo failed                                            │
+└─────────────────────────────────────────────────────────────────────────────┘

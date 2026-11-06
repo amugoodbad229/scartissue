@@ -1,0 +1,546 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-CzFnB5Zrz6SwQuIVASKMEP
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p22_judge_validation.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\eval_runtime.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\judge_protocols.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\LICENSE.md
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\src
+├── ✓ Created Function score.
+└── ✓ Created Function sample.
+human-labelled rows: unsafe=408 safe=253 dropped=1
+
+[1ALoading weights:   0%|          | 0/291 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/291 [00:00<02:54,  1.66it/s]
+[1ALoading weights:   1%|          | 2/291 [00:00<01:42,  2.82it/s]
+[1ALoading weights:   2%|▏         | 6/291 [00:00<00:32,  8.76it/s]
+[1ALoading weights:   4%|▍         | 13/291 [00:01<00:13, 20.50it/s]
+[1ALoading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+[1ALoading weights:   6%|▌         | 17/291 [00:01<00:12, 21.99it/s]
+[1ALoading weights:   7%|▋         | 21/291 [00:01<00:10, 24.55it/s]
+[1ALoading weights:   9%|▊         | 25/291 [00:01<00:10, 25.05it/s]
+[1ALoading weights:  11%|█         | 32/291 [00:01<00:07, 33.36it/s]
+[1ALoading weights:  13%|█▎        | 37/291 [00:01<00:07, 32.23it/s]
+[1ALoading weights:  14%|█▍        | 42/291 [00:01<00:07, 35.28it/s]
+[1ALoading weights:  17%|█▋        | 49/291 [00:02<00:05, 42.74it/s]
+[1ALoading weights:  19%|█▊        | 54/291 [00:02<00:06, 38.78it/s]
+[1ALoading weights:  20%|██        | 59/291 [00:02<00:06, 38.63it/s]
+[1ALoading weights:  22%|██▏       | 64/291 [00:02<00:05, 40.63it/s]
+[1ALoading weights:  24%|██▎       | 69/291 [00:02<00:06, 36.05it/s]
+[1ALoading weights:   0%|          | 1/399 [00:01<10:14,  1.54s/it]
+[1ALoading weights:  26%|██▋       | 77/291 [00:02<00:04, 43.63it/s]
+[1ALoading weights:  28%|██▊       | 82/291 [00:02<00:04, 44.50it/s]
+[1ALoading weights:  30%|██▉       | 87/291 [00:02<00:05, 39.45it/s]
+[1ALoading weights:   0%|          | 0/254 [00:00<?, ?it/s]
+[1ALoading weights:  33%|███▎      | 95/291 [00:03<00:04, 45.70it/s]
+[1ALoading weights:   0%|          | 1/254 [00:00<00:46,  5.45it/s]
+[1ALoading weights:  35%|███▌      | 102/291 [00:03<00:03, 50.10it/s]
+[1ALoading weights:   2%|▏         | 5/254 [00:00<00:15, 16.15it/s]
+[1ALoading weights:  37%|███▋      | 108/291 [00:03<00:03, 46.41it/s]
+[1ALoading weights:   4%|▍         | 10/254 [00:00<00:09, 24.45it/s]
+[1ALoading weights:   1%|          | 2/399 [00:02<07:03,  1.07s/it]
+[1ALoading weights:  39%|███▉      | 113/291 [00:03<00:04, 44.35it/s]
+[1ALoading weights:   2%|▏         | 6/399 [00:02<01:45,  3.71it/s]
+[1ALoading weights:   6%|▌         | 14/254 [00:00<00:09, 26.46it/s]
+[1ALoading weights:   3%|▎         | 13/399 [00:02<00:39,  9.81it/s]
+[1ALoading weights:  41%|████      | 119/291 [00:03<00:04, 37.78it/s]
+[1ALoading weights:   8%|▊         | 21/254 [00:00<00:06, 34.70it/s]
+[1ALoading weights:  43%|████▎     | 124/291 [00:03<00:04, 40.26it/s]
+[1ALoading weights:   5%|▌         | 20/399 [00:02<00:22, 16.63it/s]
+[1ALoading weights:  11%|█         | 27/254 [00:00<00:06, 36.67it/s]
+[1ALoading weights:   7%|▋         | 28/399 [00:02<00:15, 24.72it/s]
+[1ALoading weights:  45%|████▌     | 131/291 [00:03<00:03, 40.81it/s]
+[1ALoading weights:  10%|▉         | 38/399 [00:02<00:10, 35.95it/s]
+[1ALoading weights:  13%|█▎        | 32/254 [00:01<00:06, 32.91it/s]
+[1ALoading weights:  48%|████▊     | 140/291 [00:04<00:03, 46.64it/s]
+[1ALoading weights:  12%|█▏        | 46/399 [00:02<00:08, 43.50it/s]
+[1ALoading weights:  15%|█▍        | 37/254 [00:01<00:06, 36.10it/s]
+[1ALoading weights:  51%|█████     | 147/291 [00:04<00:02, 50.33it/s]
+[1ALoading weights:  16%|█▌        | 41/254 [00:01<00:05, 35.96it/s]
+[1ALoading weights:  13%|█▎        | 53/399 [00:03<00:07, 44.49it/s]
+[1ALoading weights:  53%|█████▎    | 153/291 [00:04<00:02, 46.63it/s]
+[1ALoading weights:  15%|█▌        | 61/399 [00:03<00:07, 47.05it/s]
+[1ALoading weights:  54%|█████▍    | 158/291 [00:04<00:02, 46.34it/s]
+[1ALoading weights:  19%|█▉        | 49/254 [00:01<00:04, 44.59it/s]
+[1ALoading weights:  22%|██▏       | 55/254 [00:01<00:04, 46.90it/s]
+[1ALoading weights:  56%|█████▌    | 163/291 [00:04<00:02, 46.03it/s]
+[1ALoading weights:  18%|█▊        | 71/399 [00:03<00:06, 51.32it/s]
+[1ALoading weights:  24%|██▎       | 60/254 [00:01<00:04, 44.49it/s]
+[1ALoading weights:  20%|█▉        | 79/399 [00:03<00:05, 55.56it/s]
+[1ALoading weights:  26%|██▌       | 65/254 [00:01<00:04, 45.77it/s]
+[1ALoading weights:  58%|█████▊    | 168/291 [00:04<00:03, 40.44it/s]
+[1ALoading weights:  22%|██▏       | 88/399 [00:03<00:05, 60.86it/s]
+[1ALoading weights:  28%|██▊       | 72/254 [00:01<00:03, 49.77it/s]
+[1ALoading weights:  60%|██████    | 176/291 [00:04<00:02, 47.67it/s]
+[1ALoading weights:  24%|██▍       | 95/399 [00:03<00:05, 58.11it/s]
+[1ALoading weights:  31%|███       | 78/254 [00:02<00:03, 46.61it/s]
+[1ALoading weights:  63%|██████▎   | 182/291 [00:05<00:02, 44.68it/s]
+[1ALoading weights:  33%|███▎      | 85/254 [00:02<00:03, 50.96it/s]
+[1ALoading weights:  26%|██▌       | 102/399 [00:03<00:05, 53.52it/s]
+[1ALoading weights:  64%|██████▍   | 187/291 [00:05<00:02, 43.39it/s]
+[1ALoading weights:  36%|███▌      | 91/254 [00:02<00:03, 49.99it/s]
+[1ALoading weights:  67%|██████▋   | 194/291 [00:05<00:02, 46.48it/s]
+[1ALoading weights:  29%|██▉       | 115/399 [00:04<00:04, 60.82it/s]
+[1ALoading weights:  38%|███▊      | 97/254 [00:02<00:03, 51.90it/s]
+[1ALoading weights:  32%|███▏      | 126/399 [00:04<00:04, 66.39it/s]
+[1ALoading weights:  41%|████      | 103/254 [00:02<00:02, 52.67it/s]
+[1ALoading weights:  70%|██████▉   | 203/291 [00:05<00:02, 43.65it/s]
+[1ALoading weights:  34%|███▍      | 135/399 [00:04<00:03, 70.53it/s]
+[1ALoading weights:  43%|████▎     | 109/254 [00:02<00:02, 53.68it/s]
+[1ALoading weights:  73%|███████▎  | 212/291 [00:05<00:01, 50.16it/s]
+[1ALoading weights:  45%|████▌     | 115/254 [00:02<00:02, 50.27it/s]
+[1ALoading weights:  36%|███▌      | 143/399 [00:04<00:03, 66.79it/s]
+[1ALoading weights:  75%|███████▍  | 218/291 [00:05<00:01, 50.96it/s]
+[1ALoading weights:  38%|███▊      | 150/399 [00:04<00:03, 63.72it/s]
+[1ALoading weights:  48%|████▊     | 121/254 [00:02<00:02, 49.66it/s]
+[1ALoading weights:  77%|███████▋  | 224/291 [00:05<00:01, 45.96it/s]
+[1ALoading weights:  50%|█████     | 127/254 [00:02<00:02, 50.54it/s]
+[1ALoading weights:  40%|███▉      | 159/399 [00:04<00:04, 56.83it/s]
+[1ALoading weights:  53%|█████▎    | 134/254 [00:03<00:02, 52.34it/s]
+[1ALoading weights:  43%|████▎     | 170/399 [00:04<00:03, 68.40it/s]
+[1ALoading weights:  79%|███████▉  | 230/291 [00:06<00:01, 39.52it/s]
+[1ALoading weights:  55%|█████▌    | 140/254 [00:03<00:02, 47.73it/s]
+[1ALoading weights:  45%|████▍     | 178/399 [00:05<00:03, 67.64it/s]
+[1ALoading weights:  82%|████████▏ | 239/291 [00:06<00:01, 49.12it/s]
+[1ALoading weights:  47%|████▋     | 186/399 [00:05<00:03, 67.39it/s]
+[1ALoading weights:  84%|████████▍ | 245/291 [00:06<00:01, 45.59it/s]
+[1ALoading weights:  58%|█████▊    | 148/254 [00:03<00:02, 45.14it/s]
+[1ALoading weights:  49%|████▊     | 194/399 [00:05<00:03, 60.55it/s]
+[1ALoading weights:  86%|████████▌ | 250/291 [00:06<00:00, 43.96it/s]
+[1ALoading weights:  61%|██████    | 155/254 [00:03<00:02, 49.22it/s]
+[1ALoading weights:  88%|████████▊ | 257/291 [00:06<00:00, 48.10it/s]
+[1ALoading weights:  64%|██████▍   | 162/254 [00:03<00:01, 51.31it/s]
+[1ALoading weights:  51%|█████     | 204/399 [00:05<00:03, 60.99it/s]
+[1ALoading weights:  66%|██████▌   | 168/254 [00:03<00:01, 47.68it/s]
+[1ALoading weights:  54%|█████▎    | 214/399 [00:05<00:02, 63.14it/s]
+[1ALoading weights:  90%|█████████ | 263/291 [00:06<00:00, 42.26it/s]
+[1ALoading weights:  69%|██████▉   | 175/254 [00:03<00:01, 52.42it/s]
+[1ALoading weights:  92%|█████████▏| 269/291 [00:06<00:00, 45.69it/s]
+[1ALoading weights:  56%|█████▋    | 225/399 [00:05<00:02, 70.40it/s]
+[1ALoading weights:  71%|███████▏  | 181/254 [00:04<00:01, 52.49it/s]
+[1ALoading weights:  58%|█████▊    | 233/399 [00:05<00:02, 70.90it/s]
+[1ALoading weights:  95%|█████████▍| 275/291 [00:07<00:00, 44.01it/s]
+[1ALoading weights:  60%|██████    | 241/399 [00:06<00:02, 66.80it/s]
+[1ALoading weights:  74%|███████▎  | 187/254 [00:04<00:01, 45.05it/s]
+[1ALoading weights:  97%|█████████▋| 283/291 [00:07<00:00, 49.55it/s]
+[1ALoading weights:  99%|█████████▉| 289/291 [00:07<00:00, 49.31it/s]
+[1ALoading weights:  62%|██████▏   | 248/399 [00:06<00:02, 60.12it/s]
+[1ALoading weights:  76%|███████▋  | 194/254 [00:04<00:01, 43.37it/s]
+[1ALoading weights: 100%|██████████| 291/291 [00:07<00:00, 39.58it/s]
+
+[1ALoading weights:  65%|██████▍   | 258/399 [00:06<00:02, 59.76it/s]
+[1ALoading weights:  80%|███████▉  | 203/254 [00:04<00:01, 45.94it/s]
+[1ALoading weights:  67%|██████▋   | 267/399 [00:06<00:02, 65.80it/s]
+[1ALoading weights:  83%|████████▎ | 211/254 [00:04<00:00, 47.14it/s]
+[1ALoading weights:  69%|██████▉   | 277/399 [00:06<00:01, 64.31it/s]
+[1ALoading weights:  87%|████████▋ | 220/254 [00:04<00:00, 55.84it/s]
+[1ALoading weights:  72%|███████▏  | 287/399 [00:06<00:01, 66.13it/s]
+[1ALoading weights:  89%|████████▉ | 226/254 [00:05<00:00, 48.88it/s]
+[1ALoading weights:  74%|███████▍  | 296/399 [00:06<00:01, 71.44it/s]
+[1ALoading weights:  92%|█████████▏| 234/254 [00:05<00:00, 55.59it/s]
+[1ALoading weights:  76%|███████▌  | 304/399 [00:07<00:01, 65.27it/s]
+[1ALoading weights:  78%|███████▊  | 313/399 [00:07<00:01, 69.73it/s]
+[1ALoading weights:  95%|█████████▍| 241/254 [00:05<00:00, 48.51it/s]
+[1ALoading weights:  80%|████████  | 321/399 [00:07<00:01, 68.66it/s]
+[1ALoading weights:  98%|█████████▊| 248/254 [00:05<00:00, 48.75it/s]
+[1ALoading weights: 100%|██████████| 254/254 [00:05<00:00, 46.54it/s]
+
+[1ALoading weights:  82%|████████▏ | 329/399 [00:07<00:01, 60.88it/s]
+[1ALoading weights:  84%|████████▍ | 336/399 [00:07<00:01, 61.09it/s]
+harmbench: 4/500 verdicts
+[1ALoading weights:  87%|████████▋ | 346/399 [00:07<00:00, 67.92it/s]
+[1ALoading weights:  88%|████████▊ | 353/399 [00:07<00:00, 65.06it/s]
+harmbench: 8/500 verdicts
+[1ALoading weights:  90%|█████████ | 360/399 [00:07<00:00, 64.63it/s]
+[1ALoading weights:  92%|█████████▏| 367/399 [00:08<00:00, 56.86it/s]
+harmbench: 12/500 verdicts
+[1ALoading weights:  94%|█████████▍| 376/399 [00:08<00:00, 63.68it/s]
+harmbench: 16/500 verdicts
+[1ALoading weights:  96%|█████████▋| 385/399 [00:08<00:00, 59.39it/s]
+[1ALoading weights: 100%|██████████| 399/399 [00:08<00:00, 47.55it/s]
+harmbench: 20/500 verdicts
+harmbench: 24/500 verdicts
+harmbench: 28/500 verdicts
+harmbench: 32/500 verdicts
+harmbench: 36/500 verdicts
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+granite: 4/500 verdicts
+harmbench: 40/500 verdicts
+harmbench: 44/500 verdicts
+harmbench: 48/500 verdicts
+harmbench: 52/500 verdicts
+harmbench: 56/500 verdicts
+granite: 8/500 verdicts
+harmbench: 60/500 verdicts
+qwen3guard: 4/500 verdicts
+harmbench: 64/500 verdicts
+harmbench: 68/500 verdicts
+harmbench: 72/500 verdicts
+harmbench: 76/500 verdicts
+granite: 12/500 verdicts
+qwen3guard: 8/500 verdicts
+harmbench: 80/500 verdicts
+harmbench: 84/500 verdicts
+harmbench: 88/500 verdicts
+harmbench: 92/500 verdicts
+harmbench: 96/500 verdicts
+qwen3guard: 12/500 verdictsgranite: 16/500 verdicts
+
+harmbench: 100/500 verdicts
+harmbench: 104/500 verdicts
+harmbench: 108/500 verdicts
+harmbench: 112/500 verdicts
+qwen3guard: 16/500 verdicts
+granite: 20/500 verdictsharmbench: 116/500 verdicts
+
+harmbench: 120/500 verdicts
+harmbench: 124/500 verdicts
+harmbench: 128/500 verdicts
+qwen3guard: 20/500 verdicts
+harmbench: 132/500 verdicts
+granite: 24/500 verdictsharmbench: 136/500 verdicts
+
+harmbench: 140/500 verdicts
+harmbench: 144/500 verdicts
+qwen3guard: 24/500 verdictsharmbench: 148/500 verdicts
+
+harmbench: 152/500 verdicts
+granite: 28/500 verdicts
+harmbench: 156/500 verdicts
+harmbench: 160/500 verdicts
+harmbench: 164/500 verdictsqwen3guard: 28/500 verdicts
+
+harmbench: 168/500 verdicts
+harmbench: 172/500 verdicts
+granite: 32/500 verdicts
+harmbench: 176/500 verdicts
+harmbench: 180/500 verdicts
+qwen3guard: 32/500 verdicts
+harmbench: 184/500 verdicts
+harmbench: 188/500 verdicts
+harmbench: 192/500 verdicts
+granite: 36/500 verdicts
+harmbench: 196/500 verdicts
+qwen3guard: 36/500 verdicts
+harmbench: 200/500 verdicts
+harmbench: 204/500 verdicts
+harmbench: 208/500 verdicts
+qwen3guard: 40/500 verdicts
+harmbench: 212/500 verdicts
+granite: 40/500 verdicts
+harmbench: 216/500 verdicts
+harmbench: 220/500 verdicts
+harmbench: 224/500 verdicts
+qwen3guard: 44/500 verdictsharmbench: 228/500 verdicts
+
+granite: 44/500 verdicts
+harmbench: 232/500 verdicts
+harmbench: 236/500 verdicts
+harmbench: 240/500 verdicts
+qwen3guard: 48/500 verdicts
+harmbench: 244/500 verdicts
+harmbench: 248/500 verdicts
+granite: 48/500 verdicts
+harmbench: 252/500 verdicts
+harmbench: 256/500 verdicts
+qwen3guard: 52/500 verdicts
+harmbench: 260/500 verdicts
+harmbench: 264/500 verdicts
+harmbench: 268/500 verdicts
+granite: 52/500 verdicts
+harmbench: 272/500 verdicts
+qwen3guard: 56/500 verdicts
+harmbench: 276/500 verdicts
+harmbench: 280/500 verdicts
+harmbench: 284/500 verdicts
+harmbench: 288/500 verdicts
+granite: 56/500 verdicts
+harmbench: 292/500 verdictsqwen3guard: 60/500 verdicts
+
+harmbench: 296/500 verdicts
+harmbench: 300/500 verdicts
+harmbench: 304/500 verdicts
+harmbench: 308/500 verdicts
+granite: 60/500 verdicts
+qwen3guard: 64/500 verdicts
+harmbench: 312/500 verdicts
+harmbench: 316/500 verdicts
+harmbench: 320/500 verdicts
+harmbench: 324/500 verdicts
+qwen3guard: 68/500 verdicts
+granite: 64/500 verdicts
+harmbench: 328/500 verdicts
+harmbench: 332/500 verdicts
+harmbench: 336/500 verdicts
+harmbench: 340/500 verdicts
+qwen3guard: 72/500 verdicts
+harmbench: 344/500 verdicts
+granite: 68/500 verdictsharmbench: 348/500 verdicts
+
+harmbench: 352/500 verdicts
+harmbench: 356/500 verdicts
+harmbench: 360/500 verdicts
+qwen3guard: 76/500 verdicts
+harmbench: 364/500 verdicts
+granite: 72/500 verdicts
+harmbench: 368/500 verdicts
+harmbench: 372/500 verdicts
+harmbench: 376/500 verdicts
+qwen3guard: 80/500 verdicts
+harmbench: 380/500 verdicts
+harmbench: 384/500 verdicts
+granite: 76/500 verdicts
+harmbench: 388/500 verdicts
+harmbench: 392/500 verdicts
+qwen3guard: 84/500 verdicts
+harmbench: 396/500 verdicts
+harmbench: 400/500 verdicts
+harmbench: 404/500 verdicts
+granite: 80/500 verdicts
+harmbench: 408/500 verdicts
+qwen3guard: 88/500 verdicts
+harmbench: 412/500 verdicts
+harmbench: 416/500 verdicts
+harmbench: 420/500 verdicts
+harmbench: 424/500 verdicts
+granite: 84/500 verdicts
+qwen3guard: 92/500 verdicts
+harmbench: 428/500 verdicts
+harmbench: 432/500 verdicts
+harmbench: 436/500 verdicts
+harmbench: 440/500 verdicts
+qwen3guard: 96/500 verdicts
+harmbench: 444/500 verdicts
+granite: 88/500 verdicts
+harmbench: 448/500 verdicts
+harmbench: 452/500 verdicts
+harmbench: 456/500 verdicts
+qwen3guard: 100/500 verdicts
+harmbench: 460/500 verdicts
+harmbench: 464/500 verdicts
+granite: 92/500 verdicts
+harmbench: 468/500 verdicts
+harmbench: 472/500 verdicts
+qwen3guard: 104/500 verdicts
+harmbench: 476/500 verdicts
+harmbench: 480/500 verdicts
+harmbench: 484/500 verdicts
+granite: 96/500 verdicts
+harmbench: 488/500 verdicts
+harmbench: 492/500 verdicts
+qwen3guard: 108/500 verdicts
+harmbench: 496/500 verdicts
+harmbench: 500/500 verdicts
+granite: 100/500 verdicts
+qwen3guard: 112/500 verdicts
+granite: 104/500 verdicts
+qwen3guard: 116/500 verdicts
+qwen3guard: 120/500 verdicts
+granite: 108/500 verdicts
+qwen3guard: 124/500 verdicts
+granite: 112/500 verdicts
+qwen3guard: 128/500 verdicts
+granite: 116/500 verdicts
+qwen3guard: 132/500 verdicts
+granite: 120/500 verdicts
+qwen3guard: 136/500 verdicts
+granite: 124/500 verdicts
+qwen3guard: 140/500 verdicts
+granite: 128/500 verdicts
+qwen3guard: 144/500 verdicts
+qwen3guard: 148/500 verdictsgranite: 132/500 verdicts
+
+qwen3guard: 152/500 verdicts
+granite: 136/500 verdicts
+qwen3guard: 156/500 verdicts
+granite: 140/500 verdicts
+qwen3guard: 160/500 verdicts
+granite: 144/500 verdicts
+qwen3guard: 164/500 verdicts
+granite: 148/500 verdicts
+qwen3guard: 168/500 verdicts
+granite: 152/500 verdicts
+qwen3guard: 172/500 verdicts
+granite: 156/500 verdicts
+qwen3guard: 176/500 verdicts
+qwen3guard: 180/500 verdicts
+granite: 160/500 verdicts
+qwen3guard: 184/500 verdicts
+granite: 164/500 verdicts
+qwen3guard: 188/500 verdicts
+granite: 168/500 verdicts
+qwen3guard: 192/500 verdicts
+granite: 172/500 verdicts
+qwen3guard: 196/500 verdicts
+granite: 176/500 verdicts
+qwen3guard: 200/500 verdicts
+qwen3guard: 204/500 verdicts
+granite: 180/500 verdicts
+qwen3guard: 208/500 verdicts
+granite: 184/500 verdicts
+qwen3guard: 212/500 verdicts
+granite: 188/500 verdicts
+qwen3guard: 216/500 verdicts
+granite: 192/500 verdicts
+qwen3guard: 220/500 verdicts
+granite: 196/500 verdicts
+qwen3guard: 224/500 verdicts
+granite: 200/500 verdictsqwen3guard: 228/500 verdicts
+
+qwen3guard: 232/500 verdicts
+granite: 204/500 verdicts
+qwen3guard: 236/500 verdicts
+granite: 208/500 verdicts
+qwen3guard: 240/500 verdicts
+granite: 212/500 verdicts
+qwen3guard: 244/500 verdicts
+granite: 216/500 verdicts
+qwen3guard: 248/500 verdicts
+granite: 220/500 verdicts
+qwen3guard: 252/500 verdicts
+qwen3guard: 256/500 verdicts
+granite: 224/500 verdicts
+qwen3guard: 260/500 verdicts
+granite: 228/500 verdicts
+qwen3guard: 264/500 verdicts
+granite: 232/500 verdicts
+qwen3guard: 268/500 verdicts
+qwen3guard: 272/500 verdicts
+granite: 236/500 verdicts
+qwen3guard: 276/500 verdicts
+granite: 240/500 verdicts
+qwen3guard: 280/500 verdicts
+granite: 244/500 verdicts
+qwen3guard: 284/500 verdicts
+granite: 248/500 verdicts
+qwen3guard: 288/500 verdicts
+qwen3guard: 292/500 verdicts
+granite: 252/500 verdicts
+qwen3guard: 296/500 verdicts
+granite: 256/500 verdicts
+qwen3guard: 300/500 verdicts
+granite: 260/500 verdicts
+qwen3guard: 304/500 verdicts
+qwen3guard: 308/500 verdicts
+granite: 264/500 verdicts
+qwen3guard: 312/500 verdicts
+granite: 268/500 verdicts
+qwen3guard: 316/500 verdicts
+qwen3guard: 320/500 verdicts
+granite: 272/500 verdicts
+qwen3guard: 324/500 verdicts
+granite: 276/500 verdicts
+qwen3guard: 328/500 verdicts
+granite: 280/500 verdicts
+qwen3guard: 332/500 verdicts
+qwen3guard: 336/500 verdicts
+granite: 284/500 verdicts
+qwen3guard: 340/500 verdicts
+granite: 288/500 verdicts
+qwen3guard: 344/500 verdicts
+granite: 292/500 verdicts
+qwen3guard: 348/500 verdicts
+qwen3guard: 352/500 verdicts
+granite: 296/500 verdicts
+qwen3guard: 356/500 verdicts
+granite: 300/500 verdicts
+qwen3guard: 360/500 verdicts
+qwen3guard: 364/500 verdicts
+granite: 304/500 verdicts
+qwen3guard: 368/500 verdicts
+granite: 308/500 verdicts
+qwen3guard: 372/500 verdicts
+qwen3guard: 376/500 verdicts
+granite: 312/500 verdicts
+qwen3guard: 380/500 verdicts
+granite: 316/500 verdicts
+qwen3guard: 384/500 verdicts
+granite: 320/500 verdicts
+qwen3guard: 388/500 verdicts
+qwen3guard: 392/500 verdicts
+granite: 324/500 verdicts
+qwen3guard: 396/500 verdicts
+granite: 328/500 verdicts
+qwen3guard: 400/500 verdicts
+granite: 332/500 verdicts
+qwen3guard: 404/500 verdicts
+qwen3guard: 408/500 verdicts
+granite: 336/500 verdicts
+qwen3guard: 412/500 verdicts
+granite: 340/500 verdicts
+qwen3guard: 416/500 verdicts
+granite: 344/500 verdicts
+qwen3guard: 420/500 verdicts
+qwen3guard: 424/500 verdicts
+granite: 348/500 verdicts
+qwen3guard: 428/500 verdicts
+granite: 352/500 verdicts
+qwen3guard: 432/500 verdicts
+qwen3guard: 436/500 verdicts
+granite: 356/500 verdicts
+qwen3guard: 440/500 verdicts
+granite: 360/500 verdicts
+qwen3guard: 444/500 verdicts
+granite: 364/500 verdicts
+qwen3guard: 448/500 verdicts
+qwen3guard: 452/500 verdicts
+granite: 368/500 verdicts
+qwen3guard: 456/500 verdicts
+granite: 372/500 verdicts
+qwen3guard: 460/500 verdicts
+qwen3guard: 464/500 verdicts
+granite: 376/500 verdicts
+qwen3guard: 468/500 verdicts
+granite: 380/500 verdicts
+qwen3guard: 472/500 verdicts
+granite: 384/500 verdicts
+qwen3guard: 476/500 verdicts
+qwen3guard: 480/500 verdicts
+granite: 388/500 verdicts
+qwen3guard: 484/500 verdicts
+granite: 392/500 verdicts
+qwen3guard: 488/500 verdicts
+qwen3guard: 492/500 verdicts
+granite: 396/500 verdicts
+qwen3guard: 496/500 verdicts
+granite: 400/500 verdicts
+qwen3guard: 500/500 verdicts
+granite: 404/500 verdicts
+granite: 408/500 verdicts
+granite: 412/500 verdicts
+granite: 416/500 verdicts
+granite: 420/500 verdicts
+granite: 424/500 verdicts
+granite: 428/500 verdicts
+granite: 432/500 verdicts
+granite: 436/500 verdicts
+granite: 440/500 verdicts
+granite: 444/500 verdicts
+granite: 448/500 verdicts
+granite: 452/500 verdicts
+granite: 456/500 verdicts
+granite: 460/500 verdicts
+granite: 464/500 verdicts
+granite: 468/500 verdicts
+granite: 472/500 verdicts
+granite: 476/500 verdicts
+granite: 480/500 verdicts
+granite: 484/500 verdicts
+granite: 488/500 verdicts
+granite: 492/500 verdicts
+granite: 496/500 verdicts
+granite: 500/500 verdicts
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p22_judge_validation_20261103_020927.json: passed
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-CzFnB5Zrz6SwQuIVASKMEP

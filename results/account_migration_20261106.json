@@ -1,0 +1,53 @@
+{
+  "schema": "scartissue.account-migration/1",
+  "updated_on": "2026-11-06",
+  "status": "replacement_modal_connected_hf_secret_created_rotation_required",
+  "modal": {
+    "profile": "scartissue-replacement",
+    "default_profile_verified": true,
+    "account_selection_policy": "Use this replacement Modal account until the user explicitly requests switching to the previous account. Never automatically fall back to the old profile on failure.",
+    "workspace": "ayman-cool1971",
+    "workspace_id": "ac-BGtY6ZbZwodrnAloirHE7N",
+    "old_profile_preserved": "amugoodbad229",
+    "secret_name": "huggingface",
+    "secret_keys": [
+      "HF_TOKEN"
+    ],
+    "creation_verified_by_secret_listing": true,
+    "existing_volume_names": [],
+    "model_cache_restored": false
+  },
+  "huggingface": {
+    "authenticated_whoami_request_succeeded_before_secret_creation": true,
+    "username_not_recorded": true,
+    "local_login_changed": false,
+    "gated_model_access_checked": false,
+    "old_repositories_migrated": false
+  },
+  "security": {
+    "token_pasted_in_chat": true,
+    "rotation_required": true,
+    "token_value_in_project_files": false,
+    "token_value_in_command_output": false,
+    "token_value_in_process_arguments": false,
+    "rotation_instruction": "Revoke the exposed token and replace Modal secret huggingface/HF_TOKEN using the dashboard or a hidden local prompt. Never paste its replacement into chat."
+  },
+  "recording_issue": "Secret creation succeeded, but the first evidence write failed because Secret.objects.create returned None and the caller tried to read object_id. Creation was subsequently confirmed by secret list; it was not repeated.",
+  "compute": {
+    "jobs_launched_during_account_migration": false,
+    "replacement_workspace_capacity_verified": false,
+    "budget_file": "results/modal_budget_20261105.json"
+  },
+  "remaining": [
+    "Rotate the exposed Hugging Face token and update the Modal secret",
+    "Local Hugging Face login remains unchanged",
+    "Verify gated Cohere-model access for the replacement identity before model jobs",
+    "Recover remote-only artifacts from the old workspace if possible; they did not transfer",
+    "Run bounded Modal validation within the existing budget"
+  ],
+  "capacity_validation": {
+    "status": "passed_cpu_only",
+    "evidence": "results/modal_validation_20261105T155145197754Z.json",
+    "gpu_validated": false
+  }
+}

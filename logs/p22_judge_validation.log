@@ -1,0 +1,94 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-5Hc5bV1DAumenfumzuFSqs
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p22_judge_validation.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\eval_runtime.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\judge_protocols.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\LICENSE.md
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\src
+├── ✓ Created Function sample.
+└── ✓ Created Function score.
+
+[1AGenerating train split:   0%|          | 0/30007 [00:00<?, ? examples/s]
+[1AGenerating train split:  83%|████████▎ | 25007/30007 [00:00<00:00, 57856.31 examples/s]Generating train split: 100%|██████████| 30007/30007 [00:00<00:00, 59253.93 examples/s]
+
+[1AGenerating validation split:   0%|          | 0/1445 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 1445/1445 [00:00<00:00, 27045.54 examples/s]
+
+[1AGenerating test split:   0%|          | 0/1964 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1964/1964 [00:00<00:00, 46869.60 examples/s]
+
+[1AFilter:   0%|          | 0/30007 [00:00<?, ? examples/s]
+[1AFilter:  63%|██████▎   | 19000/30007 [00:00<00:00, 170500.53 examples/s]Filter: 100%|██████████| 30007/30007 [00:00<00:00, 172000.55 examples/s]
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 987, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 189, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 266, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/p22_judge_validation.py", line 61, in sample
+    raise ValueError(f"insufficient human labels: unsafe={len(unsafe)} safe={len(safe)}")
+ValueError: insufficient human labels: unsafe=0 safe=4682
+Stopping app - uncaught exception raised locally: ValueError('insufficient human labels: unsafe=0 safe=4682').
+┌───────────────────── Traceback (most recent call last) ─────────────────────┐
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime │
+│ nts/p22_judge_validation.py:154 in main                                     │
+│                                                                             │
+│   153 │   save()                                                            │
+│ > 154 │   sample_out = sample.remote()                                      │
+│   155 │   out["sample"] = {k: v for k, v in sample_out.items() if k != "row │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_object.py:49 in wrapped                              │
+│                                                                             │
+│    48 │   │   await self.hydrate()                                          │
+│ >  49 │   │   return await method(self, *args, **kwargs)                    │
+│    50                                                                       │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_functions.py:2081 in remote                          │
+│                                                                             │
+│   2080 │   │                                                                │
+│ > 2081 │   │   return await self._call_function(args, kwargs)               │
+│   2082                                                                      │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_functions.py:2018 in _call_function                  │
+│                                                                             │
+│   2017 │   │                                                                │
+│ > 2018 │   │   return await invocation.run_function()                       │
+│   2019                                                                      │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_functions.py:517 in run_function                     │
+│                                                                             │
+│    516 │   │   │   # No more retries left.                                  │
+│ >  517 │   │   │   return await _process_result(                            │
+│    518 │   │   │   │   await_response.output.result, await_response.output. │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_utils\function_utils.py:572 in _process_result       │
+│                                                                             │
+│   571 │   │   │                                                             │
+│ > 572 │   │   │   raise exc_with_hints(exc)                                 │
+│   573                                                                       │
+│                                                                             │
+│     ...Remote call to Modal Function (ta-01M6EKFEH6KRC5F457PXHBF86R)...     │
+│                                                                             │
+│ /root/p22_judge_validation.py:61 in sample                                  │
+│                                                                             │
+│ > 61 raise ValueError(f"insufficient human labels: unsafe={len(unsafe)} saf │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+ValueError: insufficient human labels: unsafe=0 safe=4682

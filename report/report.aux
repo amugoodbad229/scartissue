@@ -1,0 +1,40 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}The question, and why it is not the obvious one}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Setup}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Model.}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Data.}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Refusal direction.}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The drift.}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The repair.}{1}{equation.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces All four arms on the frozen evaluation set, generation budget 512 tokens. Refusal is Qwen3Guard's harmful-refusal diagnostic; over-refusal is its benign refusal field (40 prompts); harm-ASR is the majority of three judges on 120 harmful prompts; GSM8K is \texttt  {\small  lm-eval} exact match on 500 items. Sources: \texttt  {\small  results/p21\_length\_analysis\_20261103.json}, \texttt  {\small  results/p16\_capability\_analysis\_20261102.json}.}}{2}{table.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:arms}{{1}{2}{All four arms on the frozen evaluation set, generation budget 512 tokens. Refusal is Qwen3Guard's harmful-refusal diagnostic; over-refusal is its benign refusal field (40 prompts); harm-ASR is the majority of three judges on 120 harmful prompts; GSM8K is \code {lm-eval} exact match on 500 items. Sources: \code {results/p21\_length\_analysis\_20261103.json}, \code {results/p16\_capability\_analysis\_20261102.json}}{table.caption.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Supports.}{2}{equation.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Measurement contract.}{2}{equation.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}What the edit deletes}{2}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}The frontier}{2}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Why a 2\% support is not a compromise}{2}{section.5}\protected@file@percent }
+\newlabel{sec:mass}{{5}{2}{Why a 2\% support is not a compromise}{section.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The frontier. (a) Refusal recovered against benign over-refusal: the $2\,\%$ repair reaches the aligned model's refusal rate with 10 points less over-refusal than the global repair. (b) The same recovery against GSM8K: the $2\,\%$ repair keeps roughly half of the capability the global repair loses, and the paired interval on that difference excludes zero. Generated from the published tables by \texttt  {\small  report/make\_report\_data.py}.}}{3}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:frontier}{{1}{3}{The frontier. (a) Refusal recovered against benign over-refusal: the $2\,\%$ repair reaches the aligned model's refusal rate with 10 points less over-refusal than the global repair. (b) The same recovery against GSM8K: the $2\,\%$ repair keeps roughly half of the capability the global repair loses, and the paired interval on that difference excludes zero. Generated from the published tables by \code {report/make\_report\_data.py}}{figure.caption.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Panel accuracy on 500 human-labelled Aegis 1.0 rows, threshold $0.5$. Source: \texttt  {\small  results/p22\_judge\_validation\_20261103\_020927.json}.}}{3}{table.caption.4}\protected@file@percent }
+\newlabel{tab:cal}{{2}{3}{Panel accuracy on 500 human-labelled Aegis 1.0 rows, threshold $0.5$. Source: \code {results/p22\_judge\_validation\_20261103\_020927.json}}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Is the frontier an artefact?}{3}{section.6}\protected@file@percent }
+\newlabel{sec:robust}{{6}{3}{Is the frontier an artefact?}{section.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Generation budget.}{3}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Judge calibration.}{3}{figure.caption.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Paired change in majority-3 harm-ASR when the budget goes from 128 to 512 tokens, per arm (10k prompt bootstrap). A four-fold budget does not reorder the arms. Source: \texttt  {\small  results/p21\_length\_analysis\_20261103.json}.}}{4}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:length}{{2}{4}{Paired change in majority-3 harm-ASR when the budget goes from 128 to 512 tokens, per arm (10k prompt bootstrap). A four-fold budget does not reorder the arms. Source: \code {results/p21\_length\_analysis\_20261103.json}}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}What is still blocked}{4}{section.7}\protected@file@percent }
+\newlabel{sec:blocked}{{7}{4}{What is still blocked}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Limitations}{4}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Why these datasets, metrics and models}{4}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Datasets.}{4}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Metrics.}{4}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Models.}{5}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Reproducibility and licence}{5}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}Conclusion}{5}{section.11}\protected@file@percent }
+\gdef \@abspage@last{5}

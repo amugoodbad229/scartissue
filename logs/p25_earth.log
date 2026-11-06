@@ -1,0 +1,161 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-YmOluIOtYYCx29UOdtB7tM
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p25_model_safety.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus_split.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus.jsonl
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\safety_core.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\corpus_fit.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\generation_checks.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\eval_runtime.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s\load_patch.py
+└── ✓ Created Function generate_arm.
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:03<16:51,  3.50s/it]
+[1ALoading weights:   3%|▎         | 8/290 [00:03<01:33,  3.00it/s]
+[1ALoading weights:   4%|▍         | 12/290 [00:03<00:57,  4.86it/s]
+[1ALoading weights:   7%|▋         | 20/290 [00:04<00:33,  8.17it/s]
+[1ALoading weights:  10%|█         | 29/290 [00:04<00:18, 14.22it/s]
+[1ALoading weights:  12%|█▏        | 36/290 [00:04<00:13, 19.39it/s]
+[1ALoading weights:  17%|█▋        | 49/290 [00:04<00:07, 32.44it/s]
+[1ALoading weights:  22%|██▏       | 65/290 [00:04<00:04, 49.37it/s]
+[1ALoading weights:  28%|██▊       | 82/290 [00:04<00:03, 68.58it/s]
+[1ALoading weights:  33%|███▎      | 95/290 [00:04<00:02, 80.11it/s]
+[1ALoading weights:  37%|███▋      | 107/290 [00:04<00:02, 85.96it/s]
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:  41%|████      | 119/290 [00:05<00:01, 89.50it/s]
+[1ALoading weights:  46%|████▌     | 133/290 [00:05<00:01, 100.15it/s]
+[1ALoading weights:  50%|█████     | 145/290 [00:05<00:01, 102.80it/s]
+[1ALoading weights:  56%|█████▌    | 162/290 [00:05<00:01, 118.38it/s]
+[1ALoading weights:  61%|██████    | 177/290 [00:05<00:00, 117.86it/s]
+[1ALoading weights:  66%|██████▌   | 192/290 [00:05<00:00, 124.14it/s]
+[1ALoading weights:  71%|███████   | 206/290 [00:05<00:00, 126.60it/s]
+[1ALoading weights:  76%|███████▌  | 220/290 [00:05<00:00, 129.86it/s]
+[1ALoading weights:  81%|████████  | 234/290 [00:05<00:00, 127.38it/s]
+[1ALoading weights:  85%|████████▌ | 247/290 [00:06<00:00, 123.44it/s]
+[1ALoading weights:  90%|████████▉ | 260/290 [00:06<00:00, 122.26it/s]
+[1ALoading weights:  94%|█████████▍| 273/290 [00:06<00:00, 120.86it/s]Loading weights: 100%|██████████| 290/290 [00:06<00:00, 45.51it/s] 
+
+[1ALoading weights:   0%|          | 1/290 [00:03<15:47,  3.28s/it]
+[1ALoading weights:   4%|▍         | 13/290 [00:03<00:52,  5.30it/s]
+[1ALoading weights:   7%|▋         | 20/290 [00:03<00:30,  8.89it/s]
+[1ALoading weights:  13%|█▎        | 37/290 [00:03<00:12, 20.70it/s]
+[1ALoading weights:  18%|█▊        | 53/290 [00:03<00:07, 33.66it/s]
+[1ALoading weights:  22%|██▏       | 65/290 [00:03<00:05, 43.86it/s]
+[1ALoading weights:  27%|██▋       | 77/290 [00:03<00:03, 54.11it/s]
+[1ALoading weights:  32%|███▏      | 93/290 [00:04<00:02, 70.43it/s]
+[1ALoading weights:  38%|███▊      | 109/290 [00:04<00:02, 85.02it/s]
+[1ALoading weights:  43%|████▎     | 125/290 [00:04<00:01, 97.35it/s]
+[1ALoading weights:  48%|████▊     | 139/290 [00:04<00:01, 106.36it/s]
+[1ALoading weights:  53%|█████▎    | 153/290 [00:04<00:01, 110.08it/s]
+[1ALoading weights:  58%|█████▊    | 168/290 [00:04<00:01, 111.70it/s]
+[1ALoading weights:  62%|██████▏   | 181/290 [00:04<00:01, 101.65it/s]
+[1ALoading weights:  67%|██████▋   | 193/290 [00:04<00:00, 103.98it/s]
+[1ALoading weights:  72%|███████▏  | 210/290 [00:04<00:00, 118.54it/s]
+[1ALoading weights:  77%|███████▋  | 223/290 [00:05<00:00, 120.02it/s]
+[1ALoading weights:  81%|████████▏ | 236/290 [00:05<00:00, 121.03it/s]
+[1ALoading weights:  86%|████████▌ | 249/290 [00:05<00:00, 113.88it/s]
+[1ALoading weights:  91%|█████████ | 264/290 [00:05<00:00, 122.76it/s]
+[1ALoading weights:  96%|█████████▌| 277/290 [00:05<00:00, 120.21it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:05<00:00, 51.72it/s] 
+base: 4/160 answers retained
+base: 8/160 answers retained
+drift: 4/160 answers retained
+drift: 8/160 answers retained
+base: 12/160 answers retained
+base: 16/160 answers retained
+base: 20/160 answers retained
+drift: 12/160 answers retained
+base: 24/160 answers retained
+drift: 16/160 answers retained
+drift: 20/160 answers retained
+base: 28/160 answers retained
+drift: 24/160 answers retained
+base: 32/160 answers retained
+drift: 28/160 answers retained
+base: 36/160 answers retained
+drift: 32/160 answers retained
+base: 40/160 answers retained
+drift: 36/160 answers retained
+base: 44/160 answers retained
+drift: 40/160 answers retained
+drift: 44/160 answers retained
+base: 48/160 answers retained
+drift: 48/160 answers retained
+base: 52/160 answers retained
+base: 56/160 answers retained
+drift: 52/160 answers retained
+base: 60/160 answers retained
+base: 64/160 answers retained
+drift: 56/160 answers retained
+base: 68/160 answers retained
+drift: 60/160 answers retained
+base: 72/160 answers retained
+base: 76/160 answers retained
+drift: 64/160 answers retained
+base: 80/160 answers retained
+drift: 68/160 answers retained
+base: 84/160 answers retained
+base: 88/160 answers retained
+base: 92/160 answers retained
+drift: 72/160 answers retained
+base: 96/160 answers retained
+drift: 76/160 answers retained
+base: 100/160 answers retained
+drift: 80/160 answers retained
+base: 104/160 answers retained
+drift: 84/160 answers retained
+base: 108/160 answers retained
+drift: 88/160 answers retained
+drift: 92/160 answers retained
+base: 112/160 answers retained
+base: 116/160 answers retained
+drift: 96/160 answers retained
+base: 120/160 answers retained
+drift: 100/160 answers retained
+drift: 104/160 answers retained
+base: 124/160 answers retained
+drift: 108/160 answers retained
+base: 128/160 answers retained
+drift: 112/160 answers retained
+base: 132/160 answers retained
+drift: 116/160 answers retained
+base: 136/160 answers retained
+drift: 120/160 answers retained
+base: 140/160 answers retained
+drift: 124/160 answers retained
+base: 144/160 answers retained
+drift: 128/160 answers retained
+drift: 132/160 answers retained
+base: 148/160 answers retained
+drift: 136/160 answers retained
+base: 152/160 answers retained
+base: 156/160 answers retained
+drift: 140/160 answers retained
+base: 160/160 answers retained
+drift: 144/160 answers retained
+drift: 148/160 answers retained
+drift: 152/160 answers retained
+drift: 156/160 answers retained
+drift: 160/160 answers retained
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p25_tiny-aya-earth_20261103_023229.json: failed
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-YmOluIOtYYCx29UOdtB7tM

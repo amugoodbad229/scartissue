@@ -1,0 +1,358 @@
+{
+  "status": "exploratory diagnostics ONLY; not ASR, not validated capability, not a circuit result",
+  "interval": "Marginal 95% Wilson intervals, no multiple-comparison or selection correction; not paired equivalence tests",
+  "rows": [
+    {
+      "arm": "base",
+      "source": "results/p11_baseline.json",
+      "stage": "base",
+      "source_sha256": "0616ecfafff5244d473b70ae07d545385f22f26f90077d5789c148055e550c61",
+      "producer": "experiments/p11_baseline_completions.py",
+      "harmful_refusal_regex": {
+        "k": 91,
+        "n": 120,
+        "rate": 0.7583333333333333,
+        "wilson95": [
+          0.674498509525689,
+          0.8261415878246474
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 2,
+        "n": 40,
+        "rate": 0.05,
+        "wilson95": [
+          0.013820667386148344,
+          0.16503877369140962
+        ]
+      },
+      "gap_recovered_descriptive": 1.0,
+      "incremental_refusal_per_benign_refusal": 10.833333333333332,
+      "auc_diagnostic": 0.99875,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.11666666666666667,
+      "edited_scalars": null,
+      "descriptively_dominated_by_measured_repair": false
+    },
+    {
+      "arm": "drift",
+      "source": "results/p11_baseline.json",
+      "stage": "alpha=0",
+      "source_sha256": "0616ecfafff5244d473b70ae07d545385f22f26f90077d5789c148055e550c61",
+      "producer": "experiments/p11_baseline_completions.py",
+      "harmful_refusal_regex": {
+        "k": 26,
+        "n": 120,
+        "rate": 0.21666666666666667,
+        "wilson95": [
+          0.15236723564151497,
+          0.29854362532908374
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 0,
+        "n": 40,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.08762160119728664
+        ]
+      },
+      "gap_recovered_descriptive": 0.0,
+      "incremental_refusal_per_benign_refusal": null,
+      "auc_diagnostic": 0.830625,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.11666666666666667,
+      "edited_scalars": null,
+      "descriptively_dominated_by_measured_repair": false
+    },
+    {
+      "arm": "global@a4",
+      "source": "results/p3b_sweep.json",
+      "stage": "global@a4",
+      "source_sha256": "dadd20f2200032ec2e695b38c8b352a5a0912cc2124e4b456f2b8a0a209927a7",
+      "producer": "experiments/p3b_sweep.py",
+      "harmful_refusal_regex": {
+        "k": 89,
+        "n": 120,
+        "rate": 0.7416666666666667,
+        "wilson95": [
+          0.6567146994175665,
+          0.8116260368133936
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 20,
+        "n": 40,
+        "rate": 0.5,
+        "wilson95": [
+          0.35199526933465386,
+          0.6480047306653461
+        ]
+      },
+      "gap_recovered_descriptive": 0.9692307692307693,
+      "incremental_refusal_per_benign_refusal": 1.05,
+      "auc_diagnostic": 0.7885416666666667,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.21666666666666667,
+      "edited_scalars": 962592768,
+      "descriptively_dominated_by_measured_repair": false
+    },
+    {
+      "arm": "harm@2%@a4",
+      "source": "results/p3b_sweep.json",
+      "stage": "harm@2%@a4",
+      "source_sha256": "dadd20f2200032ec2e695b38c8b352a5a0912cc2124e4b456f2b8a0a209927a7",
+      "producer": "experiments/p3b_sweep.py",
+      "harmful_refusal_regex": {
+        "k": 61,
+        "n": 120,
+        "rate": 0.5083333333333333,
+        "wilson95": [
+          0.4200253978366605,
+          0.5961242827230276
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 8,
+        "n": 40,
+        "rate": 0.2,
+        "wilson95": [
+          0.10499989725437704,
+          0.347573063463995
+        ]
+      },
+      "gap_recovered_descriptive": 0.5384615384615384,
+      "incremental_refusal_per_benign_refusal": 1.458333333333333,
+      "auc_diagnostic": 0.795,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.3,
+      "edited_scalars": 19251200,
+      "descriptively_dominated_by_measured_repair": false
+    },
+    {
+      "arm": "harm@4%@a4",
+      "source": "results/p3b_sweep.json",
+      "stage": "harm@4%@a4",
+      "source_sha256": "dadd20f2200032ec2e695b38c8b352a5a0912cc2124e4b456f2b8a0a209927a7",
+      "producer": "experiments/p3b_sweep.py",
+      "harmful_refusal_regex": {
+        "k": 62,
+        "n": 120,
+        "rate": 0.5166666666666667,
+        "wilson95": [
+          0.4281358041299209,
+          0.6041635569894558
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 9,
+        "n": 40,
+        "rate": 0.225,
+        "wilson95": [
+          0.12316091323540743,
+          0.37503096742310027
+        ]
+      },
+      "gap_recovered_descriptive": 0.553846153846154,
+      "incremental_refusal_per_benign_refusal": 1.3333333333333335,
+      "auc_diagnostic": 0.795625,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.2833333333333333,
+      "edited_scalars": 38502400,
+      "descriptively_dominated_by_measured_repair": true
+    },
+    {
+      "arm": "harm@10%@a4",
+      "source": "results/p3b_sweep.json",
+      "stage": "harm@10%@a4",
+      "source_sha256": "dadd20f2200032ec2e695b38c8b352a5a0912cc2124e4b456f2b8a0a209927a7",
+      "producer": "experiments/p3b_sweep.py",
+      "harmful_refusal_regex": {
+        "k": 73,
+        "n": 120,
+        "rate": 0.6083333333333333,
+        "wilson95": [
+          0.5189378169992731,
+          0.6910080302766743
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 12,
+        "n": 40,
+        "rate": 0.3,
+        "wilson95": [
+          0.18074845229746528,
+          0.45430018818144935
+        ]
+      },
+      "gap_recovered_descriptive": 0.7230769230769231,
+      "incremental_refusal_per_benign_refusal": 1.3055555555555554,
+      "auc_diagnostic": 0.7897916666666667,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.26666666666666666,
+      "edited_scalars": 96258048,
+      "descriptively_dominated_by_measured_repair": false
+    },
+    {
+      "arm": "harm@25%@a4",
+      "source": "results/p3b_sweep.json",
+      "stage": "harm@25%@a4",
+      "source_sha256": "dadd20f2200032ec2e695b38c8b352a5a0912cc2124e4b456f2b8a0a209927a7",
+      "producer": "experiments/p3b_sweep.py",
+      "harmful_refusal_regex": {
+        "k": 85,
+        "n": 120,
+        "rate": 0.7083333333333334,
+        "wilson95": [
+          0.6215576502025923,
+          0.7821843637896146
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 16,
+        "n": 40,
+        "rate": 0.4,
+        "wilson95": [
+          0.2634832568429192,
+          0.5540410633965381
+        ]
+      },
+      "gap_recovered_descriptive": 0.9076923076923078,
+      "incremental_refusal_per_benign_refusal": 1.2291666666666667,
+      "auc_diagnostic": 0.8208333333333333,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.275,
+      "edited_scalars": 240648192,
+      "descriptively_dominated_by_measured_repair": false
+    },
+    {
+      "arm": "harm@10%@a2",
+      "source": "results/p3b_sweep.json",
+      "stage": "harm@10%@a2",
+      "source_sha256": "dadd20f2200032ec2e695b38c8b352a5a0912cc2124e4b456f2b8a0a209927a7",
+      "producer": "experiments/p3b_sweep.py",
+      "harmful_refusal_regex": {
+        "k": 44,
+        "n": 120,
+        "rate": 0.36666666666666664,
+        "wilson95": [
+          0.2858293519000576,
+          0.45577575914493
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 2,
+        "n": 40,
+        "rate": 0.05,
+        "wilson95": [
+          0.013820667386148344,
+          0.16503877369140962
+        ]
+      },
+      "gap_recovered_descriptive": 0.2769230769230769,
+      "incremental_refusal_per_benign_refusal": 2.999999999999999,
+      "auc_diagnostic": 0.814375,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.2,
+      "edited_scalars": 96258048,
+      "descriptively_dominated_by_measured_repair": false
+    },
+    {
+      "arm": "blind/random@2%@a4",
+      "source": "results/p3c_blind.json",
+      "stage": "blind/random@2%@a4",
+      "source_sha256": "83923097dfd34b439f7bd99b78b031804472b1fcfc5904935d112eda7d5c48d2",
+      "producer": "experiments/p3c_blind.py",
+      "harmful_refusal_regex": {
+        "k": 25,
+        "n": 120,
+        "rate": 0.20833333333333334,
+        "wilson95": [
+          0.14528439608109694,
+          0.2894767843298135
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 1,
+        "n": 40,
+        "rate": 0.025,
+        "wilson95": [
+          0.0044268315026814095,
+          0.1288136896347409
+        ]
+      },
+      "gap_recovered_descriptive": -0.015384615384615382,
+      "incremental_refusal_per_benign_refusal": -0.33333333333333326,
+      "auc_diagnostic": 0.8241666666666667,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.10833333333333334,
+      "edited_scalars": 19251200,
+      "descriptively_dominated_by_measured_repair": true
+    },
+    {
+      "arm": "blind/random@10%@a4",
+      "source": "results/p3c_blind.json",
+      "stage": "blind/random@10%@a4",
+      "source_sha256": "83923097dfd34b439f7bd99b78b031804472b1fcfc5904935d112eda7d5c48d2",
+      "producer": "experiments/p3c_blind.py",
+      "harmful_refusal_regex": {
+        "k": 25,
+        "n": 120,
+        "rate": 0.20833333333333334,
+        "wilson95": [
+          0.14528439608109694,
+          0.2894767843298135
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 0,
+        "n": 40,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.08762160119728664
+        ]
+      },
+      "gap_recovered_descriptive": -0.015384615384615382,
+      "incremental_refusal_per_benign_refusal": null,
+      "auc_diagnostic": 0.8610416666666667,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.125,
+      "edited_scalars": 96258048,
+      "descriptively_dominated_by_measured_repair": false
+    },
+    {
+      "arm": "blind/amp@10%@a4",
+      "source": "results/p3c_blind.json",
+      "stage": "blind/amp@10%@a4",
+      "source_sha256": "83923097dfd34b439f7bd99b78b031804472b1fcfc5904935d112eda7d5c48d2",
+      "producer": "experiments/p3c_blind.py",
+      "harmful_refusal_regex": {
+        "k": 63,
+        "n": 120,
+        "rate": 0.525,
+        "wilson95": [
+          0.43626995305824834,
+          0.6121790886208165
+        ]
+      },
+      "benign_refusal_regex": {
+        "k": 9,
+        "n": 40,
+        "rate": 0.225,
+        "wilson95": [
+          0.12316091323540743,
+          0.37503096742310027
+        ]
+      },
+      "gap_recovered_descriptive": 0.5692307692307693,
+      "incremental_refusal_per_benign_refusal": 1.3703703703703705,
+      "auc_diagnostic": 0.7795833333333333,
+      "capability_lm_eval": null,
+      "legacy_gsm8k_value_NOT_capability": 0.275,
+      "edited_scalars": 96258048,
+      "descriptively_dominated_by_measured_repair": false
+    }
+  ]
+}

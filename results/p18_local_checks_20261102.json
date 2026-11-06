@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "command": "uv run python -m pytest tests -q",
+  "output": "..................................................                       [100%]\n50 passed in 0.26s\n",
+  "scope": "CPU parsers and actual external AuditKIT native evaluator, not GPU judge validity",
+  "source_sha256": {
+    "experiments/judge_protocols.py": "70efe440f7f9a65f3af4776c3d276bbfe03b5546327b1dc280efb4cb80136fea",
+    "experiments/p18_judge.py": "41bb329d05fd8ea7f211ea8b19b59a5a3cc8c6c97a493370881fb65ec9980459",
+    "tests/test_judge_protocols.py": "61a55ddbaf2da9b5269458b66279e23e11a825062a3ce58a3c8125d1a02020ec"
+  }
+}

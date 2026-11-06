@@ -1,0 +1,19 @@
+{
+  "pid": 12792,
+  "command": [
+    "C:\\Users\\Ayman\\OneDrive\\Desktop\\Projects\\SAAS_Projects\\scaartissue\\.venv\\Scripts\\python.exe",
+    "-m",
+    "modal",
+    "run",
+    "--profile",
+    "scartissue-replacement",
+    "experiments/modal_validation.py",
+    "--reservation-id",
+    "replacement_cpu_baseline_20261106"
+  ],
+  "profile": "scartissue-replacement",
+  "log": "logs/modal_validation_replacement_baseline_20261106.log",
+  "reservation_id": "replacement_cpu_baseline_20261106",
+  "remote_test_result": "pending",
+  "created_at": "2026-11-05T15:51:09.488838+00:00"
+}

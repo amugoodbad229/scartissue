@@ -1,0 +1,54 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-fEiVuQP0U6TZIJuK6NxtYB
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\build_patches.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus_split.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus.jsonl
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\corpus_fit.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\patching.py
+├── ✓ Created Function build.
+└── ✓ Created Function model_shape.
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:02<14:17,  2.97s/it]
+[1ALoading weights:   6%|▌         | 16/290 [00:03<00:38,  7.13it/s]
+[1ALoading weights:  11%|█         | 32/290 [00:03<00:15, 16.27it/s]
+[1ALoading weights:  18%|█▊        | 52/290 [00:03<00:07, 30.27it/s]
+[1ALoading weights:  25%|██▍       | 72/290 [00:03<00:04, 47.01it/s]
+[1ALoading weights:  32%|███▏      | 93/290 [00:03<00:02, 66.80it/s]
+[1ALoading weights:  39%|███▊      | 112/290 [00:03<00:02, 83.21it/s]
+[1ALoading weights:  44%|████▍     | 129/290 [00:03<00:01, 96.42it/s]
+[1ALoading weights:  50%|█████     | 146/290 [00:03<00:01, 110.48it/s]
+[1ALoading weights:  57%|█████▋    | 164/290 [00:05<00:04, 28.18it/s] 
+[1ALoading weights:  62%|██████▏   | 181/290 [00:05<00:02, 37.16it/s]
+[1ALoading weights:  69%|██████▉   | 200/290 [00:05<00:01, 49.84it/s]
+[1ALoading weights:  76%|███████▌  | 220/290 [00:05<00:01, 65.65it/s]
+[1ALoading weights:  81%|████████▏ | 236/290 [00:05<00:00, 77.33it/s]
+[1ALoading weights:  88%|████████▊ | 255/290 [00:06<00:00, 92.32it/s]
+[1ALoading weights:  94%|█████████▍| 274/290 [00:06<00:00, 108.83it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:06<00:00, 46.18it/s] 
+{
+ "model": "CohereLabs/tiny-aya-water",
+ "dir": "/hf/artifacts/tiny-aya-water",
+ "patches": [
+  "abliteration",
+  "repair_global_a4",
+  "repair_harm2_a4",
+  "repair_harm10_a4"
+ ],
+ "cos": 0.00020391008174186834,
+ "manifest_sha256": "647c76e0211f6c48e5ba27c4689c869c2ca1c1aa6d64148521afa0685f038689"
+}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-fEiVuQP0U6TZIJuK6NxtYB

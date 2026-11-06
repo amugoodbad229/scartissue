@@ -1,0 +1,21 @@
+{
+  "job": "readiness_ledger_cpu_20261106",
+  "created_at": "2026-11-05T16:41:47.969426+00:00",
+  "log": "logs/modal_validation_readiness_ledger_20261106.log",
+  "pid": 25492,
+  "command": [
+    "uv",
+    "run",
+    "python",
+    "-m",
+    "modal",
+    "run",
+    "--profile",
+    "scartissue-replacement",
+    "experiments/modal_validation.py",
+    "--reservation-id",
+    "readiness_ledger_cpu_20261106"
+  ],
+  "reserved_total_usd": 7.0,
+  "actual_billing_usd": null
+}

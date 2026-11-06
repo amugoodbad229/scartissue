@@ -1,0 +1,53 @@
+{
+ "schema": "scartissue.novelty-check/1",
+ "checked_at": "2026-11-03",
+ "method": "TinyFish web search + direct fetch of the closest record; rapid positioning check, NOT a systematic review",
+ "queries": [
+  "abliteration refusal direction over-refusal repair",
+  "restoring refusal after abliteration over-refusal utility tradeoff weight edit"
+ ],
+ "closest_work": [
+  {
+   "id": "arXiv:2608.18093",
+   "title": "Abliteration Mitigation via Refusal Aliases (AMRA)",
+   "author": "Nathan Truong",
+   "date": "2026-06-07",
+   "venue": "also ICML 2026 listing; OpenReview sU9YS8QOwS",
+   "what_it_does": "Pre-emptive defence: rank-k updates to residual-stream writer matrices plus random refusal aliases, so the refusal direction is hard to EXTRACT; reports post-abliteration refusal +2.16 points (Llama-3-8B) / +14.70 (Gemma-2-9B) with MMLU cost",
+   "difference": "acts BEFORE abliteration and targets extractability. ScarTissue acts AFTER abliteration, treats the repair as a measured operation with a price, and reports the price as a function of the support of the edit (over-refusal + GSM8K), not as a single refusal delta. AMRA reports no over-refusal axis."
+  },
+  {
+   "id": "lesswrong/2024 refusal-single-direction",
+   "title": "Refusal in LLMs is mediated by a single direction (Arditi et al. line of work)",
+   "difference": "establishes the read-out; does not measure post-edit repair cost, and does not report that the re-extracted direction is orthogonal to the removed one (cos = 1.0e-3 here)."
+  },
+  {
+   "id": "habr2025/projected-abliteration",
+   "title": "Projected Abliteration (HF blog, 2025-10-25)",
+   "difference": "a drift variant (project so harmlessness is not pushed away); still a removal method, no repair frontier."
+  },
+  {
+   "id": "ant-research/Awesome-Refusal-Suppression",
+   "title": "Awesome-Refusal-Suppression (survey list)",
+   "difference": "umbrella list of removal/mitigation/boundary-editing work; no entry found that quantifies a repair-support frontier against over-refusal and capability."
+  }
+ ],
+ "claim_positioning": {
+  "novel_elements": [
+   "the repair is measured as a FRONTIER (refusal recovered vs over-refusal and GSM8K), not a single number",
+   "the support size of the repair is shown to set the price, with a mechanism (signed write mass concentration: 3.95 total, 3.95 in the top 2 % of columns)",
+   "measured orthogonality of the re-extracted direction (cos = 1.0e-3) which rules out 're-amplify the removed direction' repairs",
+   "harness-documented judge calibration on 500 human-labelled rows plus a 4x generation-budget robustness check"
+  ],
+  "not_claimed_novel": [
+   "that refusal is mediated by a low-dimensional direction (Arditi et al.)",
+   "that abliteration is cheap and weight-only (well documented)",
+   "that head-level circuit restriction fails here (our own negative control)"
+  ],
+  "risk": "a paper published between 2026-06 and now could report a similar support-size sweep; this check is a rapid search and must be repeated against arXiv/OpenReview listings before submission of a paper (not before the hackathon entry)."
+ },
+ "evidence": {
+  "fetched_abstract": ".scratch not stored for this check; abstract text quoted above from the fetch response",
+  "queries_run": 2
+ }
+}

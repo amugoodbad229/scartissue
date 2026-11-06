@@ -1,0 +1,8 @@
+{
+  "pid": 23748,
+  "log": "logs/modal_validation_workbench_claimfix_20261106.log",
+  "reservation_id": "workbench_cpu_claimfix_20261106",
+  "created_at": "2026-11-05T16:23:07.067482+00:00",
+  "previous_failed_result": "results/modal_validation_20261105T161907293974Z.json",
+  "status": "launched_not_validated"
+}

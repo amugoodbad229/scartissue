@@ -1,0 +1,10 @@
+{
+  "inputs": {
+    "results/diagnostic_frontier_v2.json": "aa04b6554ebc2ab8e7e1cd6c3dd65aed123bb2d5192e1028b19d6637df4c4767",
+    "results/audit_20261102.json": "397d5f73caa0d86ebc9c74ed244045749cf941e4077ec6cb359a7e4db7172095"
+  },
+  "python": "3.12.9 (main, Feb 12 2025, 14:52:31) [MSC v.1942 64 bit (AMD64)]",
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "source": "report/build_notes.py"
+}

@@ -1,0 +1,623 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-aNR1nmtBuYXCLhp9IbDgA3
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p10_publish_parquet.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p21_length_analysis_20261103.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p16_capability_analysis_20261102.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p16_full_20261102_230915.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p19_safety_judges_20261103_002850.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p19_safety_judges_20261102_235442.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p21_safety_length_full_20261103_001722.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p17_safety_full_20261102_234450.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\README.md
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s\manifest.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus_split.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\manifest.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus.jsonl
+└── ✓ Created Function build_and_push.
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A  /hf/parquet/corpus.parquet  : 100%|██████████| 48.5kB / 48.5kB            [A[A
+
+
+[1A
+[1A  /hf/parquet/corpus.parquet  : 100%|██████████| 48.5kB / 48.5kB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████| 48.5kB / 48.5kB, 4.79kB/s  
+
+[1A
+[1ANew Data Upload               : 100%|██████████| 48.5kB / 48.5kB, 4.79kB/s  [A
+
+
+[1A
+[1A  /hf/parquet/corpus.parquet  : 100%|██████████| 48.5kB / 48.5kB            [A[A
+
+
+[1A
+[1A  /hf/parquet/corpus.parquet  : 100%|██████████| 48.5kB / 48.5kB            [A[A
+
+
+
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A  /hf/parquet/corpus.parquet  : 100%|██████████| 48.5kB / 48.5kB            [A[A
+
+
+
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  /hf/parquet/corpus.parquet  : 100%|██████████| 48.5kB / 48.5kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  /hf/parquet/corpus.parquet  : 100%|██████████| 48.5kB / 48.5kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████| 48.5kB / 48.5kB, 4.59kB/s  
+
+[1ANew Data Upload               : 100%|██████████| 48.5kB / 48.5kB, 4.59kB/s  
+
+[1AValidating                    : ██████████| 100%            
+
+[1A  /hf/parquet/corpus.parquet  : 100%|██████████| 48.5kB / 48.5kB            
+[amugoodbad229/scartissue-tinyaya-safety-corpus] 7 files
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1A
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            [A[A
+
+
+[1A
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  372kB /  372kB, 36.8kB/s  
+
+[1A
+[1ANew Data Upload               : 100%|██████████|  372kB /  372kB, 36.8kB/s  [A
+
+
+[1A
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            [A[A
+
+
+[1A
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            [A[A
+
+
+[1A
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            [A[A
+
+
+[1A
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            [A[A
+
+
+[1A
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  372kB /  372kB, 34.3kB/s  
+
+[1ANew Data Upload               : 100%|██████████|  372kB /  372kB, 34.3kB/s  
+
+[1AValidating                    : ██████████| 100%            
+
+[1A  ...afety_generations.parquet: 100%|██████████|  372kB /  372kB            
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1A
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  470kB /  470kB, 46.4kB/s  
+
+[1A
+[1ANew Data Upload               : 100%|██████████|  470kB /  470kB, 46.4kB/s  [A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  470kB /  470kB, 42.1kB/s  
+
+[1ANew Data Upload               : 100%|██████████|  470kB /  470kB, 42.1kB/s  
+Validating                    : ██████████| 100%            
+
+[1A  ...et/judge_verdicts.parquet: 100%|██████████|  470kB /  470kB            
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1A
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A  ...arquet/capability.parquet: 100%|██████████|  427kB /  427kB            [A[A
+
+
+[1A
+[1A  ...arquet/capability.parquet: 100%|██████████|  427kB /  427kB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  427kB /  427kB, 42.2kB/s  
+
+[1A
+[1ANew Data Upload               : 100%|██████████|  427kB /  427kB, 42.2kB/s  [A
+
+
+[1A
+[1A  ...arquet/capability.parquet: 100%|██████████|  427kB /  427kB            [A[A
+
+
+[1A  ...arquet/capability.parquet: 100%|██████████|  427kB /  427kB            [A[A
+
+
+[1A
+[1A  ...arquet/capability.parquet: 100%|██████████|  427kB /  427kB            [A[A
+
+
+[1A
+[1A  ...arquet/capability.parquet: 100%|██████████|  427kB /  427kB            [A[A
+
+
+[1A
+[1A  ...arquet/capability.parquet: 100%|██████████|  427kB /  427kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  ...arquet/capability.parquet: 100%|██████████|  427kB /  427kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  ...arquet/capability.parquet: 100%|██████████|  427kB /  427kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████|  427kB /  427kB, 39.4kB/s  
+
+[1ANew Data Upload               : 100%|██████████|  427kB /  427kB, 39.4kB/s  
+
+[1AValidating                    : ██████████| 100%            
+
+[1A  ...arquet/capability.parquet: 100%|██████████|  427kB /  427kB            
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1A
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A
+[1A  /hf/parquet/frontier.parquet: 100%|██████████| 7.91kB / 7.91kB            [A[A
+
+
+[1A
+[1A  /hf/parquet/frontier.parquet: 100%|██████████| 7.91kB / 7.91kB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████| 7.91kB / 7.91kB,   781B/s  
+
+[1A
+[1ANew Data Upload               : 100%|██████████| 7.91kB / 7.91kB,   781B/s  [A
+
+
+[1A
+[1A  /hf/parquet/frontier.parquet: 100%|██████████| 7.91kB / 7.91kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  /hf/parquet/frontier.parquet: 100%|██████████| 7.91kB / 7.91kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  /hf/parquet/frontier.parquet: 100%|██████████| 7.91kB / 7.91kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████| 7.91kB / 7.91kB,   759B/s  
+
+[1ANew Data Upload               : 100%|██████████| 7.91kB / 7.91kB,   759B/s  
+
+[1AValidating                    : ██████████| 100%            
+
+[1A  /hf/parquet/frontier.parquet: 100%|██████████| 7.91kB / 7.91kB            
+
+[1AProcessing Files (0 / 0)      : |          |  0.00B /  0.00B            
+
+[1A
+[1ANew Data Upload               : |          |  0.00B /  0.00B            [A
+
+
+[1A
+[1A  /hf/parquet/patches.parquet : 100%|██████████| 18.6kB / 18.6kB            [A[A
+
+
+[1A
+[1A  /hf/parquet/patches.parquet : 100%|██████████| 18.6kB / 18.6kB            [A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████| 18.6kB / 18.6kB, 1.84kB/s  
+
+[1A
+[1ANew Data Upload               : 100%|██████████| 18.6kB / 18.6kB, 1.84kB/s  [A
+
+
+[1A
+[1A  /hf/parquet/patches.parquet : 100%|██████████| 18.6kB / 18.6kB            [A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+
+[1A
+[1AValidating                    :           |   0%            [A[A[A
+
+
+[1A
+[1A  /hf/parquet/patches.parquet : 100%|██████████| 18.6kB / 18.6kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+
+
+[1A
+[1A  /hf/parquet/patches.parquet : 100%|██████████| 18.6kB / 18.6kB            [A[A
+
+
+
+[1A
+[1AValidating                    : ██████████| 100%            [A[A[A
+[1AProcessing Files (1 / 1)      : 100%|██████████| 18.6kB / 18.6kB, 1.79kB/s  
+
+[1ANew Data Upload               : 100%|██████████| 18.6kB / 18.6kB, 1.79kB/s  
+
+[1AValidating                    : ██████████| 100%            
+
+[1A  /hf/parquet/patches.parquet : 100%|██████████| 18.6kB / 18.6kB            
+/.uv/.venv/lib/python3.12/site-packages/huggingface_hub/hf_api.py:11779: UserWarning: Warnings while validating metadata in README.md:
+- empty or missing yaml metadata in repo card
+  warnings.warn(f"Warnings while validating metadata in README.md:\n{message}")
+{
+ "tables": [
+  [
+   "corpus",
+   763,
+   48493
+  ],
+  [
+   "safety_generations",
+   1280,
+   372422
+  ],
+  [
+   "judge_verdicts",
+   3864,
+   469964
+  ],
+  [
+   "capability",
+   4000,
+   426940
+  ],
+  [
+   "patches",
+   5,
+   18627
+  ],
+  [
+   "frontier",
+   8,
+   7909
+  ]
+ ],
+ "frontier": [
+  {
+   "arm": "base",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.05,
+   "benign_refusal_qwen_recomputed": 0.075,
+   "gsm8k_strict_recomputed": 0.59,
+   "asr_majority3_stored": 0.05,
+   "benign_refusal_qwen_stored": 0.075,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "base",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.058333333333333334,
+   "benign_refusal_qwen_recomputed": 0.075,
+   "gsm8k_strict_recomputed": 0.59,
+   "asr_majority3_stored": 0.058333333333333334,
+   "benign_refusal_qwen_stored": 0.075,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "drift",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.25833333333333336,
+   "benign_refusal_qwen_recomputed": 0.05,
+   "gsm8k_strict_recomputed": 0.56,
+   "asr_majority3_stored": 0.25833333333333336,
+   "benign_refusal_qwen_stored": 0.05,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "drift",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.21666666666666667,
+   "benign_refusal_qwen_recomputed": 0.05,
+   "gsm8k_strict_recomputed": 0.56,
+   "asr_majority3_stored": 0.21666666666666667,
+   "benign_refusal_qwen_stored": 0.05,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "global_a4",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.05,
+   "benign_refusal_qwen_recomputed": 0.25,
+   "gsm8k_strict_recomputed": 0.438,
+   "asr_majority3_stored": 0.05,
+   "benign_refusal_qwen_stored": 0.25,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "global_a4",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.041666666666666664,
+   "benign_refusal_qwen_recomputed": 0.275,
+   "gsm8k_strict_recomputed": 0.438,
+   "asr_majority3_stored": 0.041666666666666664,
+   "benign_refusal_qwen_stored": 0.275,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "harm2_a4",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.058333333333333334,
+   "benign_refusal_qwen_recomputed": 0.175,
+   "gsm8k_strict_recomputed": 0.518,
+   "asr_majority3_stored": 0.058333333333333334,
+   "benign_refusal_qwen_stored": 0.175,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "harm2_a4",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.05,
+   "benign_refusal_qwen_recomputed": 0.175,
+   "gsm8k_strict_recomputed": 0.518,
+   "asr_majority3_stored": 0.05,
+   "benign_refusal_qwen_stored": 0.175,
+   "asr_residual_support_scalars": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  }
+ ],
+ "uploaded": {
+  "amugoodbad229/scartissue-tinyaya-safety-corpus": 7,
+  "amugoodbad229/scartissue-tinyaya-results": 8
+ }
+}
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\parquet_publish_manifest.json
+[amugoodbad229/scartissue-tinyaya-results] 8 files
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-aNR1nmtBuYXCLhp9IbDgA3

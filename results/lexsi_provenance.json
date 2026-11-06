@@ -1,0 +1,47 @@
+{
+ "schema": "scartissue.lexsi/1",
+ "track": "2a",
+ "hard_requirements": {
+  "track_repos_used_together": [
+   "CuratorKIT",
+   "CircuitKIT",
+   "AuditKIT"
+  ],
+  "cohere_dense_open_weights": true,
+  "hf_artifacts": true,
+  "hf_artifacts_format": "parquet (corpus + results), .npz (parameter patches)",
+  "public_deployment": "https://huggingface.co/spaces/amugoodbad229/scartissue",
+  "more_than_one_before_after_metric": true,
+  "writeup_rationale": "report/report.pdf, WRITE-UP.md \u00a79"
+ },
+ "before_after": {
+  "metric_1_refusal": {
+   "before": 0.842,
+   "drifted": 0.5,
+   "repaired_2pct": 0.883
+  },
+  "metric_2_over_refusal": {
+   "before": 0.075,
+   "drifted": 0.05,
+   "repaired_2pct": 0.175,
+   "repaired_global": 0.275
+  },
+  "metric_3_harm_asr": {
+   "before": 0.058,
+   "drifted": 0.217,
+   "repaired_2pct": 0.05
+  },
+  "metric_4_gsm8k": {
+   "before": 0.59,
+   "drifted": 0.56,
+   "repaired_2pct": 0.518,
+   "repaired_global": 0.438
+  }
+ },
+ "licence_compliance": {
+  "deploy_drifted_checkpoint": false,
+  "sells_or_hosts_model_as_product": false,
+  "organisation_acknowledgement": "not sent (individual entry)"
+ },
+ "provenance": "results/provenance_final.json"
+}

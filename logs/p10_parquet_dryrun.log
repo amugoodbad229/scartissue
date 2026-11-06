@@ -1,0 +1,177 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-SeE2TWZRYlQPPtuB4suWss
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p10_publish_parquet.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p21_length_analysis_20261103.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p16_capability_analysis_20261102.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p16_full_20261102_230915.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p19_safety_judges_20261103_002850.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p19_safety_judges_20261102_235442.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p21_safety_length_full_20261103_001722.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\
+│   p17_safety_full_20261102_234450.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s\manifest.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\manifest.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus_split.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus.jsonl
+└── ✓ Created Function build_and_push.
+{
+ "tables": [
+  [
+   "corpus",
+   763,
+   48493
+  ],
+  [
+   "safety_generations",
+   1280,
+   372422
+  ],
+  [
+   "judge_verdicts",
+   3864,
+   469964
+  ],
+  [
+   "capability",
+   4000,
+   426940
+  ],
+  [
+   "patches",
+   4,
+   20670
+  ],
+  [
+   "frontier",
+   8,
+   7000
+  ]
+ ],
+ "frontier": [
+  {
+   "arm": "base",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.05,
+   "benign_refusal_qwen_recomputed": 0.075,
+   "gsm8k_strict_recomputed": 0.59,
+   "asr_majority3_stored": null,
+   "benign_refusal_qwen_stored": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "base",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.058333333333333334,
+   "benign_refusal_qwen_recomputed": 0.075,
+   "gsm8k_strict_recomputed": 0.59,
+   "asr_majority3_stored": null,
+   "benign_refusal_qwen_stored": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "drift",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.25833333333333336,
+   "benign_refusal_qwen_recomputed": 0.05,
+   "gsm8k_strict_recomputed": 0.56,
+   "asr_majority3_stored": null,
+   "benign_refusal_qwen_stored": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "drift",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.21666666666666667,
+   "benign_refusal_qwen_recomputed": 0.05,
+   "gsm8k_strict_recomputed": 0.56,
+   "asr_majority3_stored": null,
+   "benign_refusal_qwen_stored": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "global_a4",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.05,
+   "benign_refusal_qwen_recomputed": 0.25,
+   "gsm8k_strict_recomputed": 0.438,
+   "asr_majority3_stored": null,
+   "benign_refusal_qwen_stored": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "global_a4",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.041666666666666664,
+   "benign_refusal_qwen_recomputed": 0.275,
+   "gsm8k_strict_recomputed": 0.438,
+   "asr_majority3_stored": null,
+   "benign_refusal_qwen_stored": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "harm2_a4",
+   "budget": 128,
+   "asr_majority3_recomputed": 0.058333333333333334,
+   "benign_refusal_qwen_recomputed": 0.175,
+   "gsm8k_strict_recomputed": 0.518,
+   "asr_majority3_stored": null,
+   "benign_refusal_qwen_stored": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  },
+  {
+   "arm": "harm2_a4",
+   "budget": 512,
+   "asr_majority3_recomputed": 0.05,
+   "benign_refusal_qwen_recomputed": 0.175,
+   "gsm8k_strict_recomputed": 0.518,
+   "asr_majority3_stored": null,
+   "benign_refusal_qwen_stored": null,
+   "n_harmful": 120,
+   "n_benign": 40,
+   "n_capability_docs": 500
+  }
+ ],
+ "uploaded": {}
+}
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\parquet_publish_manifest.json
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-SeE2TWZRYlQPPtuB4suWss

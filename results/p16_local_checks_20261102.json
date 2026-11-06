@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-11-02T18:06:48+0900",
+  "command": "uv run python -m pytest tests -q",
+  "exit_code": 0,
+  "stdout": "....................                                                     [100%]\n20 passed in 0.19s\n",
+  "stderr": "",
+  "scope": "CPU validation/factor tests only; remote bf16 and real-model smoke not yet complete",
+  "source_sha256": {
+    "experiments\\p16_lm_eval.py": "6226dc173f9f84b5e79ce01150eb78fa4fca4d225a82dd7581db1f7b929072e4",
+    "experiments\\eval_runtime.py": "153ccbd08550694d3e0f2523005faebc7162a6eafd0e302f90c4618ae01e560a",
+    "artifacts\\load_patch.py": "c48e0b12201cdd9403d107eb411d74521eb00fa533c8c4d17218af86a1b6d94e",
+    "experiments\\runtime\\pyproject.toml": "9c2bf9d520cdf321c0758cd784df21b0ad7ef60c1de7c20936ac4480c7496fb2",
+    "experiments\\runtime\\uv.lock": "ef8c6314c8470fc6d5a05fc5be12149b53804d0127dae65318318eb8d7f2e50e"
+  }
+}

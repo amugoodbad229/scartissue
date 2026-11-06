@@ -1,0 +1,141 @@
+✓ Initialized. View run at 
+https://modal.com/apps/ayman-cool1971/main/ap-pJqbqmekG9ybtZue48immt
+Building image im-bGM0OUITnZy5Jf3FiAZsJA
+
+=> Step 0: FROM base
+
+=> Step 1: COPY --from=ghcr.io/astral-sh/uv:0.12.23 /uv /.uv/uv
+Getting image source signatures
+Copying blob sha256:dcd00f4c468462b2a68c19a552a5b67c3fd23b41967f8622f7f1620cad1d105d
+Copying blob sha256:f3f7502ac07c10bd911c63b27afb9b3f5902b8554ccbe381bde627178ad1915b
+Copying config sha256:2832daefdfaee215fd647b8bc850821ece2a4c4f7703a11895c6d4631ef0858e
+Writing manifest to image destination
+Unpacking OCI image
+   • unpacking rootfs ...     
+   • ... done                 
+   • unpacked image rootfs: /tmp/task-data/ta-01M6P6GF4TA9YEZYGK26ERW2EB/registry-unpackSPtmlQ
+
+=> Step 2: COPY /.pyproject.toml /.uv/pyproject.toml
+
+=> Step 3: COPY /.uv.lock /.uv/uv.lock
+
+=> Step 4: RUN /.uv/uv sync --project=/.uv --no-install-workspace --compile-bytecode --frozen
+Using CPython 3.12.16 interpreter at: /usr/local/bin/python3
+Creating virtual environment at: /.uv/.venv
+Downloading aiohttp (1.8MiB)
+Downloading pygments (1.2MiB)
+Downloading matplotlib (9.4MiB)
+Downloading numpy (16.0MiB)
+Downloading fonttools (5.2MiB)
+Downloading modal (1.1MiB)
+Downloading pymupdf (65.7MiB)
+Downloading networkx (2.0MiB)
+Downloading onnxruntime (22.7MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading pillow (6.8MiB)
+ Downloaded modal
+ Downloaded pygments
+ Downloaded kiwisolver
+ Downloaded aiohttp
+ Downloaded networkx
+ Downloaded fonttools
+ Downloaded pillow
+ Downloaded matplotlib
+ Downloaded numpy
+ Downloaded onnxruntime
+ Downloaded pymupdf
+Prepared 52 packages in 1.02s
+Installed 52 packages in 280ms
+Bytecode compiled 3388 files in 1.23s
+ + aiohappyeyeballs==2.7.1
+ + aiohttp==3.14.5
+ + aiosignal==1.4.0
+ + anyio==4.15.1
+ + attrs==26.1.0
+ + cbor2==6.1.5
+ + certifi==2026.10.23
+ + click==8.5.0
+ + contourpy==1.4.0
+ + cycler==0.12.1
+ + flatbuffers==25.12.19
+ + fonttools==4.68.0
+ + frozenlist==1.8.0
+ + grpclib==0.4.9
+ + h2==4.4.1
+ + hpack==4.2.0
+ + hyperframe==6.1.0
+ + idna==3.20
+ + iniconfig==2.3.1
+ + kiwisolver==1.5.1
+ + markdown-it-py==4.2.0
+ + matplotlib==3.11.2
+ + mdurl==0.1.2
+ + modal==1.6.3
+ + multidict==7.2.1
+ + networkx==3.7
+ + numpy==2.5.4
+ + onnxruntime==1.31.1
+ + packaging==26.3
+ + pillow==13.0.0
+ + pluggy==1.7.0
+ + propcache==0.5.4
+ + protobuf==7.36.2
+ + psutil==7.2.2
+ + pygments==2.21.0
+ + pymupdf==2.0
+ + pymupdf-layout==2.0
+ + pymupdf4llm==2.0
+ + pyparsing==3.3.3
+ + pytest==9.2.0
+ + python-dateutil==4.0.0
+ + pyyaml==6.0.3
+ + rich==15.0.0
+ + synchronicity==0.12.7
+ + tabulate==0.10.0
+ + toml==0.10.2
+ + types-certifi==2021.10.8.3
+ + types-toml==0.10.8.20260518
+ + typing-extensions==4.16.0
+ + tzdata==2026.6
+ + watchfiles==1.3.0
+ + yarl==1.25.1
+
+=> Step 5: ENV PATH=/.uv/.venv/bin:$PATH
+Saving image...
+Image saved, took 1.40s
+
+Built image im-bGM0OUITnZy5Jf3FiAZsJA in 5.83s
+
+
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\modal_validation.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\uv.lock
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\pyprojec
+│   t.toml
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\LICENSE.md
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\tests
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\src
+└── ✓ Created Function validate.
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\modal_validation_20261105T155145197754Z.json: passed
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/ayman-cool1971/main/ap-pJqbqmekG9ybtZue48immt

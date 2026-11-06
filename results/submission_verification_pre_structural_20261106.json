@@ -1,0 +1,158 @@
+{
+ "checked_at": "2026-11-03",
+ "n_checks": 30,
+ "n_failed": 0,
+ "status": "passed",
+ "checks": [
+  {
+   "check": "at_512 numbers base",
+   "passed": true,
+   "detail": "asr=0.058333333333333334 benign=0.075 gsm8k=0.59"
+  },
+  {
+   "check": "at_512 numbers drift",
+   "passed": true,
+   "detail": "asr=0.21666666666666667 benign=0.05 gsm8k=0.56"
+  },
+  {
+   "check": "at_512 numbers harm2_a4",
+   "passed": true,
+   "detail": "asr=0.05 benign=0.175 gsm8k=0.518"
+  },
+  {
+   "check": "at_512 numbers global_a4",
+   "passed": true,
+   "detail": "asr=0.041666666666666664 benign=0.275 gsm8k=0.438"
+  },
+  {
+   "check": "published refusal = Qwen harmful Refusal field (0.842 / 0.500 / 0.883 / 0.883)",
+   "passed": true,
+   "detail": "{'base': 0.8417, 'drift': 0.5, 'harm2_a4': 0.8833, 'global_a4': 0.8833}"
+  },
+  {
+   "check": "regex marker disagrees with the judge (documented, never used as a claim)",
+   "passed": true,
+   "detail": "{'base': 0.6833, 'drift': 0.175, 'harm2_a4': 0.45, 'global_a4': 0.5833}"
+  },
+  {
+   "check": "gsm8k gap harm2 - global = +0.080 CI [0.038, 0.122]",
+   "passed": true,
+   "detail": "0.0800 [0.038, 0.122]"
+  },
+  {
+   "check": "paired comparisons keep improved/worsened naming for capability (safety renames them)",
+   "passed": true,
+   "detail": "['ci95', 'difference', 'improved_documents', 'paired_interval_excludes_zero', 'unchanged_documents', 'worsened_documents']"
+  },
+  {
+   "check": "judge validation covers 500 Aegis rows per family",
+   "passed": true,
+   "detail": "{'harmbench': 500, 'qwen3guard': 500, 'granite': 500}"
+  },
+  {
+   "check": "judge harmbench: accuracy 0.626 sens 0.356 spec 0.896",
+   "passed": true,
+   "detail": "n=500"
+  },
+  {
+   "check": "judge qwen3guard: accuracy 0.796 sens 0.608 spec 0.984",
+   "passed": true,
+   "detail": "n=500"
+  },
+  {
+   "check": "judge granite: accuracy 0.818 sens 0.696 spec 0.940",
+   "passed": true,
+   "detail": "n=500"
+  },
+  {
+   "check": "signed mass concentrated (global ~= harm2 ~= 3.949)",
+   "passed": true,
+   "detail": "{'global': 3.949227124452591, 'harm2': 3.949227124452591, 'harm10': 3.949227124452591, 'circuit': 9.06874081492424}"
+  },
+  {
+   "check": "circuit patch is recorded with a sha256 and an allowed set",
+   "passed": true,
+   "detail": "modules=36 scalars=150994944 local_body=on Volume only (Modal blocked)"
+  },
+  {
+   "check": "manifest does not claim the unjudged circuit arm as evidence",
+   "passed": true,
+   "detail": "results/manifest.json"
+  },
+  {
+   "check": "manifest has 17 keys",
+   "passed": true,
+   "detail": "17"
+  },
+  {
+   "check": "three track repos used together",
+   "passed": true,
+   "detail": "['CuratorKIT', 'CircuitKIT', 'AuditKIT']"
+  },
+  {
+   "check": "corpus rows = 763",
+   "passed": true,
+   "detail": "763"
+  },
+  {
+   "check": "every corpus row has an id and a provenance chain",
+   "passed": true,
+   "detail": "763"
+  },
+  {
+   "check": "no missing provenance inputs",
+   "passed": true,
+   "detail": "[]"
+  },
+  {
+   "check": "report.pdf is the verified build",
+   "passed": true,
+   "detail": "dff972a69c33db1a 399019 B"
+  },
+  {
+   "check": "live: space index",
+   "passed": true,
+   "detail": "200 6529"
+  },
+  {
+   "check": "live: space report.pdf",
+   "passed": true,
+   "detail": "200 399019"
+  },
+  {
+   "check": "live: space frontier.csv",
+   "passed": true,
+   "detail": "200 413"
+  },
+  {
+   "check": "live: dataset report.pdf",
+   "passed": true,
+   "detail": "200 399019"
+  },
+  {
+   "check": "live: dataset manifest",
+   "passed": true,
+   "detail": "200 2997"
+  },
+  {
+   "check": "live: corpus parquet",
+   "passed": true,
+   "detail": "200 48493"
+  },
+  {
+   "check": "live: results parquet",
+   "passed": true,
+   "detail": "200 372422"
+  },
+  {
+   "check": "live: judge parquet",
+   "passed": true,
+   "detail": "200 469964"
+  },
+  {
+   "check": "live: frontier parquet",
+   "passed": true,
+   "detail": "200 7909"
+  }
+ ]
+}

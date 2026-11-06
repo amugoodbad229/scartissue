@@ -1,0 +1,7 @@
+{
+  "pid": 28564,
+  "log": "logs/modal_validation_baseline_portable_20261106.log",
+  "launched_at": "2026-11-05T15:37:10.102198+00:00",
+  "command": "uv run python -m modal run experiments/modal_validation.py",
+  "purpose": "bounded Modal CPU baseline with portable remote paths"
+}

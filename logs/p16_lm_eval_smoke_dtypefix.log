@@ -1,0 +1,101 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-m6KbZlXgSHHwoOhWdTSJzN
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p16_lm_eval.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\eval_runtime.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s
+├── ✓ Created Function preflight.
+└── ✓ Created Function run_arms.
+[preflight] locked runtime, dataset revision, patch manifest, actual bf16 state tests
+[spawned] [['base', 'drift', 'harm2_a4', 'global_a4']], n=2; single local writer -> C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p16_smoke_20261102_230519.json
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<02:56,  1.64it/s]
+[1ALoading weights:   4%|▍         | 13/290 [00:00<00:12, 22.79it/s]
+[1ALoading weights:   7%|▋         | 20/290 [00:00<00:09, 29.94it/s]
+[1ALoading weights:  12%|█▏        | 34/290 [00:00<00:04, 51.58it/s]
+[1ALoading weights:  16%|█▌        | 45/290 [00:01<00:03, 63.07it/s]
+[1ALoading weights:  19%|█▉        | 56/290 [00:01<00:03, 74.12it/s]
+[1ALoading weights:  23%|██▎       | 66/290 [00:01<00:02, 76.29it/s]
+[1ALoading weights:  28%|██▊       | 81/290 [00:01<00:02, 93.62it/s]
+[1ALoading weights:  32%|███▏      | 93/290 [00:01<00:02, 95.02it/s]
+[1ALoading weights:  36%|███▌      | 104/290 [00:01<00:01, 93.77it/s]
+[1ALoading weights:  40%|████      | 116/290 [00:01<00:01, 100.00it/s]
+[1ALoading weights:  44%|████▍     | 127/290 [00:01<00:01, 93.37it/s] 
+[1ALoading weights:  49%|████▊     | 141/290 [00:02<00:01, 100.70it/s]
+[1ALoading weights:  52%|█████▏    | 152/290 [00:02<00:01, 102.42it/s]
+[1ALoading weights:  57%|█████▋    | 165/290 [00:02<00:01, 108.42it/s]
+[1ALoading weights:  61%|██████    | 177/290 [00:02<00:01, 106.25it/s]
+[1ALoading weights:  65%|██████▍   | 188/290 [00:02<00:01, 99.06it/s] 
+[1ALoading weights:  70%|██████▉   | 202/290 [00:02<00:00, 109.90it/s]
+[1ALoading weights:  74%|███████▍  | 214/290 [00:02<00:00, 103.49it/s]
+[1ALoading weights:  78%|███████▊  | 225/290 [00:02<00:00, 97.66it/s] 
+[1ALoading weights:  81%|████████▏ | 236/290 [00:02<00:00, 100.73it/s]
+[1ALoading weights:  85%|████████▌ | 247/290 [00:03<00:00, 101.03it/s]
+[1ALoading weights:  89%|████████▉ | 258/290 [00:03<00:00, 96.48it/s] 
+[1ALoading weights:  92%|█████████▏| 268/290 [00:03<00:00, 95.79it/s]
+[1ALoading weights:  96%|█████████▌| 279/290 [00:03<00:00, 99.31it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 83.93it/s]
+[arm] base: validated state e2c0641f7e4f9d53e0c289fcd349da70bbcfe2c2f074b29f61eae05d112e564d, selected scalars={'drift': 0, 'repair': 0}
+`pretrained` model kwarg is not of type `str`. Many other model arguments may be ignored. Please do not launch via accelerate or use `parallelize=True` if passing an existing model this way.
+Passed an already-initialized model through `pretrained`, assuming single-process call to evaluate() or custom distributed integration
+generation_kwargs: {'max_gen_toks': 256, 'do_sample': False} specified through cli, these settings will update set parameters in yaml tasks. Ensure 'do_sample=True' for non-greedy decoding!
+Overwriting default num_fewshot of gsm8k from 5 to 5
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 102.72it/s]
+
+[1ARunning generate_until requests:   0%|          | 0/2 [00:00<?, ?it/s]
+[1ARunning generate_until requests:  50%|█████     | 1/2 [00:04<00:04,  4.26s/it]
+[1ARunning generate_until requests: 100%|██████████| 2/2 [00:04<00:00,  2.13s/it]
+[done] base: {'gsm8k': {'name': 'gsm8k', 'alias': 'gsm8k', 'sample_len': 2, 'exact_match,strict-match': np.float64(1.0), 'exact_match_stderr,strict-match': 0.0, 'exact_match,flexible-extract': np.float64(1.0), 'exact_match_stderr,flexible-extract': 0.0}}
+[arm] drift: validated state d729257b72e19c4b506833dbc74046f2ae80d7af31eb4712c51214863f172cb6, selected scalars={'drift': 962592768, 'repair': 0}
+`pretrained` model kwarg is not of type `str`. Many other model arguments may be ignored. Please do not launch via accelerate or use `parallelize=True` if passing an existing model this way.
+Passed an already-initialized model through `pretrained`, assuming single-process call to evaluate() or custom distributed integration
+generation_kwargs: {'max_gen_toks': 256, 'do_sample': False} specified through cli, these settings will update set parameters in yaml tasks. Ensure 'do_sample=True' for non-greedy decoding!
+Overwriting default num_fewshot of gsm8k from 5 to 5
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 197.36it/s]
+
+[1ARunning generate_until requests:   0%|          | 0/2 [00:00<?, ?it/s]
+[1ARunning generate_until requests:  50%|█████     | 1/2 [00:03<00:03,  3.68s/it]
+[1ARunning generate_until requests: 100%|██████████| 2/2 [00:03<00:00,  1.84s/it]
+[done] drift: {'gsm8k': {'name': 'gsm8k', 'alias': 'gsm8k', 'sample_len': 2, 'exact_match,strict-match': np.float64(0.5), 'exact_match_stderr,strict-match': 0.5, 'exact_match,flexible-extract': np.float64(0.5), 'exact_match_stderr,flexible-extract': 0.5}}
+[arm] harm2_a4: validated state 6e8eece355caf8b17d5eb80ba19f135ca35755be9af84317292626ca9c945ba5, selected scalars={'drift': 962592768, 'repair': 19251200}
+`pretrained` model kwarg is not of type `str`. Many other model arguments may be ignored. Please do not launch via accelerate or use `parallelize=True` if passing an existing model this way.
+Passed an already-initialized model through `pretrained`, assuming single-process call to evaluate() or custom distributed integration
+generation_kwargs: {'max_gen_toks': 256, 'do_sample': False} specified through cli, these settings will update set parameters in yaml tasks. Ensure 'do_sample=True' for non-greedy decoding!
+Overwriting default num_fewshot of gsm8k from 5 to 5
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 200.92it/s]
+
+[1ARunning generate_until requests:   0%|          | 0/2 [00:00<?, ?it/s]
+[1ARunning generate_until requests:  50%|█████     | 1/2 [00:03<00:03,  3.86s/it]
+[1ARunning generate_until requests: 100%|██████████| 2/2 [00:03<00:00,  1.93s/it]
+[done] harm2_a4: {'gsm8k': {'name': 'gsm8k', 'alias': 'gsm8k', 'sample_len': 2, 'exact_match,strict-match': np.float64(0.5), 'exact_match_stderr,strict-match': 0.5, 'exact_match,flexible-extract': np.float64(0.5), 'exact_match_stderr,flexible-extract': 0.5}}
+[arm] global_a4: validated state b2244a1b631fc447640023a3c04421a332945a8ccf6e1c7f6d53cc996708ae05, selected scalars={'drift': 962592768, 'repair': 962592768}
+`pretrained` model kwarg is not of type `str`. Many other model arguments may be ignored. Please do not launch via accelerate or use `parallelize=True` if passing an existing model this way.
+Passed an already-initialized model through `pretrained`, assuming single-process call to evaluate() or custom distributed integration
+generation_kwargs: {'max_gen_toks': 256, 'do_sample': False} specified through cli, these settings will update set parameters in yaml tasks. Ensure 'do_sample=True' for non-greedy decoding!
+Overwriting default num_fewshot of gsm8k from 5 to 5
+
+[1A  0%|          | 0/2 [00:00<?, ?it/s]
+[1A100%|██████████| 2/2 [00:00<00:00, 202.60it/s]
+
+[1ARunning generate_until requests:   0%|          | 0/2 [00:00<?, ?it/s]
+[1ARunning generate_until requests:  50%|█████     | 1/2 [00:04<00:04,  4.29s/it]
+[1ARunning generate_until requests: 100%|██████████| 2/2 [00:04<00:00,  2.15s/it]
+[done] global_a4: {'gsm8k': {'name': 'gsm8k', 'alias': 'gsm8k', 'sample_len': 2, 'exact_match,strict-match': np.float64(1.0), 'exact_match_stderr,strict-match': 0.0, 'exact_match,flexible-extract': np.float64(1.0), 'exact_match_stderr,flexible-extract': 0.0}}
+[result] C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p16_smoke_20261102_230519.json status=passed
+Stopping app - local entrypoint completed.
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-m6KbZlXgSHHwoOhWdTSJzN

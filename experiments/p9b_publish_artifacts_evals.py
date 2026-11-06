@@ -76,7 +76,7 @@ def push_patches() -> dict:
         "`alpha = -1`, and for each of the 72 write matrices (`o_proj`, `down_proj`) the projection of `d`\n"
         "onto the edited columns. Rebuild with `load_patch.py`:\n\n"
         "```python\ndelta = load_patch.delta_block(patch, module_name)   # (out_features, n_cols)\n"
-        "load_patch.apply(model, patch, module_names)\n```\n\n"
+        "load_patch.apply(patch, model)\n```\n\n"
         "**No drifted checkpoint is published.** The weight licence (LSAL 1.2/1.1 §4) forbids deploying a\n"
         "drifted checkpoint, so this repository carries the edit and a script, and the model stays clean on\n"
         "the Hub. Patches are float64; `d` is bit-exact round-tripped (see `artifacts/load_patch.py`).\n\n"

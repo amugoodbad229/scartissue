@@ -35,5 +35,6 @@
     ],
     "output_split": null,
     "pipeline_config_hash": "8b7420bc2f0946da"
-  }
+  },
+  "composite": true
 }

@@ -1,0 +1,21 @@
+{
+  "job": "verifier_cpu_20261106",
+  "pid": 30656,
+  "created_at": "2026-11-05T16:29:01.584096+00:00",
+  "command": [
+    "uv",
+    "run",
+    "python",
+    "-m",
+    "modal",
+    "run",
+    "--profile",
+    "scartissue-replacement",
+    "experiments/modal_validation.py",
+    "--reservation-id",
+    "verifier_cpu_20261106"
+  ],
+  "log": "logs/modal_validation_verifier_20261106.log",
+  "reserved_usd": 1.0,
+  "actual_charge_usd": null
+}

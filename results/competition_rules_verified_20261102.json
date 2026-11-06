@@ -1,0 +1,40 @@
+{
+  "schema": "scartissue.competition-source-check/1",
+  "checked_at": "2026-11-02T18:28:42.449996+09:00",
+  "official_homepage": "https://hackathon.lexsi.ai/",
+  "multiple_tracks": {
+    "quote": "We strongly recommend focusing on one preferred track, but you are permitted to submit more than one. In case more than one gets submitted, the final submission prior to submission deadline will be the only one that will be considered.",
+    "source_url": "https://hackathon.lexsi.ai/",
+    "method": "TinyFish fetched official homepage",
+    "interpretation": "Multiple submissions are allowed, but only the final submission is considered; not two independently judged entries."
+  },
+  "track_statements": {
+    "method": "TinyFish browser extraction; direct text extraction of the client-side /tracks route returned page_not_found",
+    "source_url": "https://hackathon.lexsi.ai/tracks",
+    "track_2a_title": "AI Safety and Red Teaming",
+    "track_2a_problem_statements": [
+      "Red-teaming and robustness evaluation: Attack a hardened model with jailbreaks, prompt injection, encoding tricks, best-of-N sampling and weight-space attacks such as abliteration, and report robustness alongside over-refusal.",
+      "Adversarial and safety evaluation sets: Build an adversarial or safety benchmark for a specific domain, language or risk area, with clear labels and scoring, and use it to measure how current open models hold up. The deliverable can be the dataset and a report.",
+      "Multi-turn audits: Audit a model or agent across long, multi-turn conversations for attacks a single prompt would not catch, such as prompt injection hidden in tools or documents, gradual jailbreaks and requests for cyber-attack help. Report what broke and in which turn, with reproducible transcripts.",
+      "Multilingual and code-mixed safety: Test whether safety holds across languages and mixed-language prompts, then close the gaps you find."
+    ],
+    "track_2b_title": "AI Safety and Correction",
+    "track_2b_problem_statements": [
+      "Safety-preserving fine-tuning: Fine-tune a model for a useful domain task with a safety-hardening method, and show safety holds compared with plain fine-tuning.",
+      "Repairing safety drift without retraining: Take a model whose safety degraded after fine-tuning and restore it with weight-space methods (safety patching, merging, projection) while keeping task performance.",
+      "Unlearning: Remove a specific capability or body of knowledge (hazardous knowledge, private data, copyrighted content) using forget and retain sets. Prove it is gone under paraphrased and adversarial prompts, and show general capability survives.",
+      "Inference-time safety steering: Block harmful requests with activation steering (refusal directions, contrastive or conditional steering) or safety-aware decoding, with no retraining, while keeping over-refusal of harmless requests low.",
+      "Locating where safety lives: Find the circuits, neurons or directions responsible for refusal or for a harmful behaviour, and use them to make a targeted fix.",
+      "Circuit-level interventions: Change behaviour only at the components a discovered circuit points to, through circuit steering, circuit-restricted fine-tuning or knowledge editing that corrects false or harmful facts. Verify nothing else broke.",
+      "Safety-aware compression: Compress a model with circuit-aware mixed-precision quantization or pruning, and show its safety behaviour survives the compression.",
+      "Tamper resistance: Make safety survive later harmful fine-tuning by someone else, and demonstrate it with attack fine-tunes.",
+      "Hallucination detection and abstention: Train probes on the model's internal activations to flag likely hallucinations, and wire them in so the model abstains or triggers retrieval when a probe fires. Show fewer wrong answers while it still answers most questions."
+    ]
+  },
+  "source_sha256": {
+    ".scratch/lexsi-live.json": "24298d44ee54d047684e99fd1a0d0a2915ec2e4c411a565d41bf21a3d74bfc23",
+    ".scratch/lexsi_problem_statements_agent_result.json": "5df528fc5af0a9acd74cd0f209f2c832b1b77228f20c43c1113ee18ca18290d9",
+    ".scratch/lexsi_dedicated_pages.json": "b19f323cb6d8cb4da3e1e94e6f220348231932887e6d689c07e9b09cf1e5ab20"
+  },
+  "recommendation": "One Track 2a-led submission: weight-space robustness and over-refusal audit, with repair as an additional experiment. Track 2b also includes direction/circuit fixes, not only post-fine-tuning repair; current work has not established targeted repair superiority."
+}

@@ -1,0 +1,295 @@
+{
+  "schema": "scartissue.capability-analysis/1",
+  "n": 500,
+  "metric": "lm-eval GSM8K exact_match",
+  "filters": [
+    "strict-match",
+    "flexible-extract"
+  ],
+  "bootstrap": {
+    "repeats": 10000,
+    "seed": 0,
+    "unit": "paired test document",
+    "ci": "percentile 95%"
+  },
+  "checks": {
+    "full_completions_per_filter": true,
+    "aggregates_reproduced": true,
+    "cross_arm_prompt_document_target_hashes_identical": true,
+    "same_base_write_weight_hash": true,
+    "exact_state_reset": true
+  },
+  "write_weights_sha256": {
+    "base": "e2c0641f7e4f9d53e0c289fcd349da70bbcfe2c2f074b29f61eae05d112e564d",
+    "drift": "d729257b72e19c4b506833dbc74046f2ae80d7af31eb4712c51214863f172cb6",
+    "harm2_a4": "6e8eece355caf8b17d5eb80ba19f135ca35755be9af84317292626ca9c945ba5",
+    "global_a4": "b2244a1b631fc447640023a3c04421a332945a8ccf6e1c7f6d53cc996708ae05"
+  },
+  "hardware": {
+    "base": {
+      "gpu": "NVIDIA A100-SXM4-40GB",
+      "vram_bytes": 42429251584
+    },
+    "drift": {
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "vram_bytes": 85118156800
+    },
+    "harm2_a4": {
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "vram_bytes": 85118156800
+    },
+    "global_a4": {
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "vram_bytes": 85118156800
+    }
+  },
+  "timings": {
+    "base": {
+      "worker_wall_s": 745.65675732,
+      "generation_and_scoring_s": 721.759518439
+    },
+    "drift": {
+      "worker_wall_s": 806.8235034070001,
+      "generation_and_scoring_s": 781.0194614870001
+    },
+    "harm2_a4": {
+      "worker_wall_s": 491.360780108,
+      "generation_and_scoring_s": 421.311226906
+    },
+    "global_a4": {
+      "worker_wall_s": 724.3784595860001,
+      "generation_and_scoring_s": 689.7468356439999
+    }
+  },
+  "declared_task_override": {
+    "generation_kwargs.max_gen_toks": 256
+  },
+  "worker_reference_note": "lm-eval updates the shared task config with the declared p16 generation override; all other reference fields must match.",
+  "results": {
+    "strict-match": {
+      "base": {
+        "correct": 295,
+        "n": 500,
+        "rate": 0.59,
+        "ci95_bootstrap": [
+          0.548,
+          0.632
+        ]
+      },
+      "drift": {
+        "correct": 280,
+        "n": 500,
+        "rate": 0.56,
+        "ci95_bootstrap": [
+          0.516,
+          0.604
+        ]
+      },
+      "harm2_a4": {
+        "correct": 259,
+        "n": 500,
+        "rate": 0.518,
+        "ci95_bootstrap": [
+          0.474,
+          0.562
+        ]
+      },
+      "global_a4": {
+        "correct": 219,
+        "n": 500,
+        "rate": 0.438,
+        "ci95_bootstrap": [
+          0.394,
+          0.482
+        ]
+      }
+    },
+    "flexible-extract": {
+      "base": {
+        "correct": 297,
+        "n": 500,
+        "rate": 0.594,
+        "ci95_bootstrap": [
+          0.552,
+          0.636
+        ]
+      },
+      "drift": {
+        "correct": 281,
+        "n": 500,
+        "rate": 0.562,
+        "ci95_bootstrap": [
+          0.518,
+          0.606
+        ]
+      },
+      "harm2_a4": {
+        "correct": 263,
+        "n": 500,
+        "rate": 0.526,
+        "ci95_bootstrap": [
+          0.482,
+          0.57
+        ]
+      },
+      "global_a4": {
+        "correct": 220,
+        "n": 500,
+        "rate": 0.44,
+        "ci95_bootstrap": [
+          0.396,
+          0.484
+        ]
+      }
+    }
+  },
+  "paired_comparisons": {
+    "strict-match": {
+      "drift_minus_base": {
+        "difference": -0.03,
+        "ci95": [
+          -0.066,
+          0.006
+        ],
+        "improved_documents": 34,
+        "worsened_documents": 49,
+        "unchanged_documents": 417,
+        "paired_interval_excludes_zero": false
+      },
+      "harm2_a4_minus_base": {
+        "difference": -0.072,
+        "ci95": [
+          -0.12,
+          -0.026
+        ],
+        "improved_documents": 54,
+        "worsened_documents": 90,
+        "unchanged_documents": 356,
+        "paired_interval_excludes_zero": true
+      },
+      "global_a4_minus_base": {
+        "difference": -0.152,
+        "ci95": [
+          -0.2,
+          -0.106
+        ],
+        "improved_documents": 38,
+        "worsened_documents": 114,
+        "unchanged_documents": 348,
+        "paired_interval_excludes_zero": true
+      },
+      "harm2_a4_minus_drift": {
+        "difference": -0.042,
+        "ci95": [
+          -0.086,
+          0.002
+        ],
+        "improved_documents": 52,
+        "worsened_documents": 73,
+        "unchanged_documents": 375,
+        "paired_interval_excludes_zero": false
+      },
+      "global_a4_minus_drift": {
+        "difference": -0.122,
+        "ci95": [
+          -0.164,
+          -0.08
+        ],
+        "improved_documents": 33,
+        "worsened_documents": 94,
+        "unchanged_documents": 373,
+        "paired_interval_excludes_zero": true
+      },
+      "harm2_a4_minus_global_a4": {
+        "difference": 0.08,
+        "ci95": [
+          0.038,
+          0.122
+        ],
+        "improved_documents": 80,
+        "worsened_documents": 40,
+        "unchanged_documents": 380,
+        "paired_interval_excludes_zero": true
+      }
+    },
+    "flexible-extract": {
+      "drift_minus_base": {
+        "difference": -0.032,
+        "ci95": [
+          -0.068,
+          0.004
+        ],
+        "improved_documents": 33,
+        "worsened_documents": 49,
+        "unchanged_documents": 418,
+        "paired_interval_excludes_zero": false
+      },
+      "harm2_a4_minus_base": {
+        "difference": -0.068,
+        "ci95": [
+          -0.114,
+          -0.022
+        ],
+        "improved_documents": 54,
+        "worsened_documents": 88,
+        "unchanged_documents": 358,
+        "paired_interval_excludes_zero": true
+      },
+      "global_a4_minus_base": {
+        "difference": -0.154,
+        "ci95": [
+          -0.202,
+          -0.108
+        ],
+        "improved_documents": 39,
+        "worsened_documents": 116,
+        "unchanged_documents": 345,
+        "paired_interval_excludes_zero": true
+      },
+      "harm2_a4_minus_drift": {
+        "difference": -0.036,
+        "ci95": [
+          -0.08,
+          0.006
+        ],
+        "improved_documents": 52,
+        "worsened_documents": 70,
+        "unchanged_documents": 378,
+        "paired_interval_excludes_zero": false
+      },
+      "global_a4_minus_drift": {
+        "difference": -0.122,
+        "ci95": [
+          -0.166,
+          -0.08
+        ],
+        "improved_documents": 34,
+        "worsened_documents": 95,
+        "unchanged_documents": 371,
+        "paired_interval_excludes_zero": true
+      },
+      "harm2_a4_minus_global_a4": {
+        "difference": 0.086,
+        "ci95": [
+          0.044,
+          0.128
+        ],
+        "improved_documents": 80,
+        "worsened_documents": 37,
+        "unchanged_documents": 383,
+        "paired_interval_excludes_zero": true
+      }
+    }
+  },
+  "limitations": [
+    "One model, one arithmetic task, one greedy generation run; not general capability preservation.",
+    "First test documents, not a randomly selected new holdout or seed replication.",
+    "Paired bootstrap intervals are not multiplicity-adjusted or proof of equivalence.",
+    "Historical safety completions require operator/state parity before joining this capability frontier."
+  ],
+  "input": {
+    "path": "results\\p16_full_20261102_230915.json",
+    "sha256": "11ebac74ca13b300764a813ff7285673f5ad0e739bfbe30d96fcfa35ef4fafde"
+  },
+  "analysis_source_sha256": "f234cbb34bf147fc3811184f9e52da148d6fd231f0a53b123ddb39c002913719"
+}

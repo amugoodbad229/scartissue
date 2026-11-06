@@ -1,7 +1,7 @@
-"""The published patch files must reconstruct the producer's edit EXACTLY, and be reversible.
+"""Test float64 factor reconstruction, not live-model reproducibility.
 
-Both properties are what makes the artifact scientifically useful: a reader can apply the drift, the repair,
-or neither, and get the same numbers we report. Tested without torch or a GPU.
+These NumPy tests do not prove exact bf16 application or reversibility. The remote
+runtime separately tests actual torch application and immutable state restoration.
 """
 
 from __future__ import annotations
@@ -67,7 +67,7 @@ def test_roundtrip_is_bit_exact(tmp_path: Path, alpha: float) -> None:
     assert total == produced_edited
 
 
-def test_removal_undoes_the_edit() -> None:
+def test_algebraic_inverse_in_float64_only() -> None:
     weights = _weights()
     rng = np.random.default_rng(2)
     d = rng.normal(size=32)

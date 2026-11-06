@@ -1,0 +1,11 @@
+{
+  "command": "uv run python -m pytest tests -q",
+  "exit_code": 0,
+  "stdout": ".............................                                            [100%]\n29 passed in 0.19s\n",
+  "scope": "29 CPU tests, not remote smoke evidence",
+  "source_sha256": {
+    "experiments/p16_lm_eval.py": "5fdba46eee9ae83121b06cf0f800bd94cb9487d93532d3f45fd9aa47c1752a50",
+    "experiments/eval_runtime.py": "febbb1ba4184793a8ec35b5220a300e64cedb5a6addae72f24a57cdcb532cc68",
+    "tests/test_eval_runtime.py": "c664414afe36ff80e46cbde1f53a4d03bf4b53fd65e51bf00e9b10c903673e10"
+  }
+}

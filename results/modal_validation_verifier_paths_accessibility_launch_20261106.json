@@ -1,0 +1,20 @@
+{
+  "job": "verifier_paths_and_accessibility_cpu_20261106",
+  "pid": 30696,
+  "created_at": "2026-11-05T16:35:02.122547+00:00",
+  "command": [
+    "uv",
+    "run",
+    "python",
+    "-m",
+    "modal",
+    "run",
+    "--profile",
+    "scartissue-replacement",
+    "experiments/modal_validation.py",
+    "--reservation-id",
+    "verifier_paths_and_accessibility_cpu_20261106"
+  ],
+  "log": "logs/modal_validation_verifier_paths_accessibility_20261106.log",
+  "actual_charge_usd": null
+}

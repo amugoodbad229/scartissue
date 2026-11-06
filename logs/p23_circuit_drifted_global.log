@@ -1,0 +1,153 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-o6mLh5jXsub16PkuSNOOlg
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p23_circuit.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus_split.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus.jsonl
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\corpus_fit.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\patching.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Cir
+│   cuitKIT
+└── ✓ Created Function run.
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<01:50,  2.61it/s]
+[1ALoading weights:   5%|▌         | 15/290 [00:00<00:07, 38.85it/s]
+[1ALoading weights:  10%|█         | 29/290 [00:00<00:03, 65.32it/s]
+[1ALoading weights:  15%|█▌        | 44/290 [00:00<00:02, 82.62it/s]
+[1ALoading weights:  21%|██        | 61/290 [00:00<00:02, 104.24it/s]
+[1ALoading weights:  26%|██▌       | 76/290 [00:00<00:01, 115.84it/s]
+[1ALoading weights:  31%|███       | 90/290 [00:01<00:01, 120.28it/s]
+[1ALoading weights:  36%|███▌      | 105/290 [00:01<00:01, 126.05it/s]
+[1ALoading weights:  41%|████▏     | 120/290 [00:01<00:01, 130.64it/s]
+[1ALoading weights:  47%|████▋     | 136/290 [00:01<00:01, 129.34it/s]
+[1ALoading weights:  52%|█████▏    | 152/290 [00:01<00:01, 134.25it/s]
+[1ALoading weights:  57%|█████▋    | 166/290 [00:01<00:00, 134.70it/s]
+[1ALoading weights:  62%|██████▏   | 180/290 [00:01<00:00, 135.78it/s]
+[1ALoading weights:  68%|██████▊   | 197/290 [00:01<00:00, 143.20it/s]
+[1ALoading weights:  74%|███████▍  | 216/290 [00:01<00:00, 152.59it/s]
+[1ALoading weights:  80%|████████  | 232/290 [00:02<00:00, 147.09it/s]
+[1ALoading weights:  86%|████████▌ | 248/290 [00:02<00:00, 148.33it/s]
+[1ALoading weights:  92%|█████████▏| 268/290 [00:02<00:00, 160.94it/s]
+[1ALoading weights:  98%|█████████▊| 285/290 [00:02<00:00, 155.25it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:02<00:00, 122.83it/s]
+[drift] 962592768 scalars, cos(d,d')=+1.027e-03
+[mass] {"global": 3.949, "harm2": 3.949, "harm10": 3.949}
+[pairs] 16 fit-only pairs, |len diff| max=31 mean=13.00
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<01:35,  3.03it/s]
+[1ALoading weights:  13%|█▎        | 37/290 [00:00<00:02, 108.13it/s]
+[1ALoading weights:  21%|██        | 60/290 [00:00<00:01, 141.96it/s]
+[1ALoading weights:  29%|██▉       | 85/290 [00:00<00:01, 169.78it/s]
+[1ALoading weights:  38%|███▊      | 109/290 [00:00<00:00, 185.36it/s]
+[1ALoading weights:  46%|████▌     | 133/290 [00:00<00:00, 197.58it/s]
+[1ALoading weights:  54%|█████▍    | 156/290 [00:00<00:00, 203.99it/s]
+[1ALoading weights:  62%|██████▏   | 179/290 [00:01<00:00, 207.54it/s]
+[1ALoading weights:  70%|███████   | 203/290 [00:01<00:00, 207.63it/s]
+[1ALoading weights:  78%|███████▊  | 227/290 [00:01<00:00, 213.85it/s]
+[1ALoading weights:  87%|████████▋ | 251/290 [00:01<00:00, 216.38it/s]
+[1ALoading weights:  95%|█████████▍| 275/290 [00:01<00:00, 217.65it/s]Loading weights: 100%|██████████| 290/290 [00:01<00:00, 184.29it/s]
+Loaded pretrained model CohereLabs/tiny-aya-global into HookedTransformer
+17:14:28 • ==================================================
+17:14:28 • Starting: Circuit Discovery
+17:14:28 • ==================================================
+17:14:28 • [1/4] Loading and validating configuration
+17:14:28 ⚙ Configuration validated successfully.
+17:14:28 ⚙ Config: EAP-IG on custom:refusal_pairs task, node level, 30% sparsity
+17:14:28 • [2/4] Setting up model (model=CohereLabs/tiny-aya-global)
+17:14:28 • template dataset: 16/16 records kept after alignment (strategy='none', dropped_nondiscriminative=0, dropped_misaligned=0, dropped_pad_failed=0, recommended_metric='kl_divergence')
+17:14:28 • Custom task 'custom:refusal_fit_pairs' registered (16 records, 16 paired)
+/root/CircuitKIT/src/circuitkit/api.py:1291: RuntimeWarning: Discovery algorithm 'eap-ig' may need about 432.0 GB for qkv-flag activations (batch=4, seq=8192, heads=16, d_model=2048, layers=36, dtype=torch.float32), while 45.5 GB is currently free. This estimate is advisory only; CircuitKIT will continue and let the allocator determine whether the run fits. Set CIRCUITKIT_SKIP_MEM_GUARD=1 to silence this warning.
+  _check_qkv_flag_memory_headroom(
+17:14:28 🔧 Model: CohereLabs/tiny-aya-global (3.9B params, cuda device)
+17:14:28 • [3/4] Running discovery algorithm (algorithm=eap-ig)
+17:14:28 • Starting EAP-IG discovery algorithm
+17:14:28 • Wrote EAP CSV: cache/normalized/custom_refusal_fit_pairs_16_none_seed42.csv (16 rows)
+
+17:14:35 • tokenize_batch_pair: 4 of 4 contrastive pair(s) have unequal clean/corrupt token counts (clean max=3, corrupt max=4; 4 misaligned pair(s) across 1 batch(es) so far this process). EAP aligns by end-padding (pair_padding_side='left'), which preserves per-position correspondence ONLY when the length difference is at that end. Mid-sequence length-changing corruptions will misalign and the attribution for those pairs is unreliable — prefer minimal, token-length-preserving contrastive pairs. (Warning repeats every 100th misaligned batch.)
+[1A  0%|          | 0/4 [00:00<?, ?it/s]
+[1A 25%|██▌       | 1/4 [00:01<00:03,  1.00s/it]
+[1A 50%|█████     | 2/4 [00:01<00:01,  1.14it/s]
+[1A 75%|███████▌  | 3/4 [00:02<00:00,  1.20it/s]
+[1A100%|██████████| 4/4 [00:03<00:00,  1.23it/s]
+[1A100%|██████████| 4/4 [00:03<00:00,  1.19it/s]
+17:14:38 • Converted 612 node scores from EAP-IG graph to CircuitKIT format.
+17:14:38 • Saved unified CircuitScores → /tmp/ck/circuit_scores.json
+17:14:38 • Saved 'scores' → /tmp/ck/circuit_scores.pt
+17:14:38 • [4/4] Identifying nodes to prune
+17:14:38 • 
+--- Running Categorized Node Pruning (Scope: BOTH) ---
+17:14:38 • Found 576 Attention Heads and 36 MLP layers to consider for pruning.
+17:14:38 • Pruning 10 out of 36 MLP layers (30%).
+17:14:38 • Targeting to prune 172 out of 576 total Attention Heads (30%).
+17:14:38 • Actually pruned 172 Attention Heads.
+17:14:38 •   - Layer 0: Pruned 4/16 heads.
+17:14:38 •   - Layer 1: Pruned 1/16 heads.
+17:14:38 •   - Layer 3: Pruned 5/16 heads.
+17:14:38 •   - Layer 4: Pruned 2/16 heads.
+17:14:38 •   - Layer 5: Pruned 3/16 heads.
+17:14:38 •   - Layer 6: Pruned 4/16 heads.
+17:14:38 •   - Layer 7: Pruned 8/16 heads.
+17:14:38 •   - Layer 8: Pruned 3/16 heads.
+17:14:38 •   - Layer 9: Pruned 5/16 heads.
+17:14:38 •   - Layer 10: Pruned 4/16 heads.
+17:14:38 •   - Layer 11: Pruned 7/16 heads.
+17:14:38 •   - Layer 12: Pruned 6/16 heads.
+17:14:38 •   - Layer 13: Pruned 4/16 heads.
+17:14:38 •   - Layer 14: Pruned 5/16 heads.
+17:14:38 •   - Layer 15: Pruned 8/16 heads.
+17:14:38 •   - Layer 16: Pruned 4/16 heads.
+17:14:38 •   - Layer 17: Pruned 5/16 heads.
+17:14:38 •   - Layer 18: Pruned 6/16 heads.
+17:14:38 •   - Layer 19: Pruned 8/16 heads.
+17:14:38 •   - Layer 20: Pruned 2/16 heads.
+17:14:38 •   - Layer 21: Pruned 4/16 heads.
+17:14:38 •   - Layer 22: Pruned 1/16 heads.
+17:14:38 •   - Layer 23: Pruned 6/16 heads.
+17:14:38 •   - Layer 24: Pruned 4/16 heads.
+17:14:38 •   - Layer 25: Pruned 2/16 heads.
+17:14:38 •   - Layer 26: Pruned 6/16 heads.
+17:14:38 •   - Layer 27: Pruned 8/16 heads.
+17:14:38 •   - Layer 28: Pruned 8/16 heads.
+17:14:38 •   - Layer 29: Pruned 6/16 heads.
+17:14:38 •   - Layer 30: Pruned 3/16 heads.
+17:14:38 •   - Layer 31: Pruned 7/16 heads.
+17:14:38 •   - Layer 32: Pruned 5/16 heads.
+17:14:38 •   - Layer 33: Pruned 3/16 heads.
+17:14:38 •   - Layer 34: Pruned 7/16 heads.
+17:14:38 •   - Layer 35: Pruned 8/16 heads.
+17:14:38 • --- Categorized Pruning Finished ---
+17:14:38 •   Pruned 182 nodes out of 612 candidates
+17:14:38 • Pruned node list saved to /tmp/ck/circuit.pt
+17:14:38 • ==================================================
+17:14:38 ✓ Completed: Circuit Discovery in 10.3s
+17:14:38 • Summary: nodes_pruned=182
+17:14:38 • ==================================================
+[discovery] {"type": "list", "pruned_returned": 182, "scores_side_car": true, "n_signed_scores": 612, "score_examples": ["A0.0", "A0.1"], "pruned_examples": ["MLP 11", "MLP 18"]}
+[map] unmapped=612 examples=['A0.0', 'A0.1', 'A0.2']
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 987, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 189, in run_input_sync
+    values = io_context.call_function_sync()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/pkg/modal/_runtime/container_io_manager.py", line 266, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/p23_circuit.py", line 257, in run
+    raise SystemExit("discovery produced no mappable attention nodes")
+SystemExit: discovery produced no mappable attention nodes
+Stopping app - uncaught exception raised in remote container: SystemExit('discovery produced no mappable attention nodes').
+discovery produced no mappable attention nodes

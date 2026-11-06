@@ -11,5 +11,26 @@ dependencies = [
     "modal>=1.6.3",
 ]
 
+[tool.pytest.ini_options]
+pythonpath = [".", "experiments"]
+
 [tool.uv]
 package = false
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "playwright>=1.64.1",
+    "pymupdf>=2.0",
+    "pytest>=9.2.0",
+    "torch>=2.15.0",
+]

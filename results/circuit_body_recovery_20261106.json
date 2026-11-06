@@ -1,0 +1,46 @@
+{
+  "schema": "scartissue.circuit-body-recovery/1",
+  "checked_at": "2026-11-05T18:56:34+00:00",
+  "source": {
+    "volume": "scartissue-hf",
+    "workspace": "amugoodbad229 (historical, spend-blocked)",
+    "remote_path": "hf/artifacts/tiny-aya-global/repair_circuit_a4.npz",
+    "recovery_command": "uv run python -m modal volume get scartissue-hf artifacts/tiny-aya-global/repair_circuit_a4.npz artifacts/tiny-aya-global/ --profile amugoodbad229",
+    "compute_used": "none (volume read only)"
+  },
+  "local_path": "artifacts/tiny-aya-global/repair_circuit_a4.npz",
+  "bytes": 471102,
+  "sha256": "96c659a056648c3cf1c076e880ad426f10b2a9dd07d5d6912233cd00f0ff3a82",
+  "recorded_sha256": "96c659a056648c3cf1c076e880ad426f10b2a9dd07d5d6912233cd00f0ff3a82",
+  "sha256_matches_recorded": true,
+  "structure": {
+    "n_modules": 36,
+    "modules_match_recorded": true,
+    "n_columns": 73728,
+    "columns_per_module_constant": true,
+    "alpha": 4.0,
+    "direction_unit_norm": 1.000000000412,
+    "proj_shapes": [
+      [
+        2048
+      ]
+    ],
+    "edited_scalars": 150994944,
+    "recorded_edited_scalars": 150994944,
+    "basis": "per_head",
+    "module_space": "o_proj only"
+  },
+  "loader_checks": "load_patch.load(expected_sha256=...) + validate() passed: unit direction, finite factors, sorted unique in-range columns, module/projection shape agreement",
+  "verified": [
+    "artifact bytes are retrievable outside the spend-blocked workspace's functions",
+    "they hash to the recorded value",
+    "they pass the hardened loader's structural preflight",
+    "recorded edited-scalar count equals columns x rows"
+  ],
+  "not_verified": [
+    "that this patch was produced by the recorded discovery run (hashes identify bytes, not authorship)",
+    "that the volume-side manifest matches these bytes",
+    "any safety, over-refusal or capability effect: no generation, judging or lm-eval has been run on this arm"
+  ],
+  "evaluation_status": "pending"
+}

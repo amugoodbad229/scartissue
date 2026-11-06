@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-03T00:20:43.873313",
+  "command": "uv run python -m pytest tests -q",
+  "output": "75 passed in 1.03s",
+  "scope": "CPU regression checks only; not GPU measurement or independent judge validation",
+  "source_sha256": {
+    "experiments/p21_safety_length.py": "c52ef35dfd212cb063d7147bf6a83316dc25f33d52b660b991834468595fbe28",
+    "experiments/generation_checks.py": "3b3afe9440146235aaa5876761c41e1e739d7be05a35fd240bd620611c1af7d5",
+    "experiments/analyse_length.py": "4e46c6ff8b6e445cdcfd95362906bff58ef1e5766401952f96b30a197c34825e",
+    "experiments/length_followup.py": "038d20e4e421f46f501a517846b8375584ec89adb665749b0bdb6e2376861b9e",
+    "tests/test_generation_checks.py": "5461b398814c14a167bf3e3cb9b894e2e6022023d2669d663bd2d556598b1810",
+    "tests/test_length_analysis.py": "536148caab537f1e4c3cfc3e4a795d69c20b791204410af5e0f8ecae77428c05",
+    "tests/test_length_followup.py": "4653c77afed59fdfadcae2339ba92e424afd5603e1b3c3511bbbb1507ac9a6b3"
+  }
+}

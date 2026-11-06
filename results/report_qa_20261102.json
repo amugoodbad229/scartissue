@@ -1,0 +1,22 @@
+{
+  "pdf": "report/report.pdf",
+  "pages": 7,
+  "bytes": 345114,
+  "sha256": "b78be8eb2bf3cf8df63a4d656641df0f3434af0d5cdf8fbe03f4ec7e276985f4",
+  "rendered_pages": 7,
+  "outside_page_text_blocks": [],
+  "undefined_reference_warning": false,
+  "overfull_warning": false,
+  "underfull_warning": true,
+  "epstopdf_shell_escape_warning": true,
+  "tests_log": "..........                                                               [100%]\n10 passed in 0.17s\n",
+  "source_sha256": {
+    "report\\report.tex": "1cac45683721eac453ed48f1ea8b675520f59a2a9e2415e544b7f975e903707b",
+    "report\\build_notes.py": "5427b1fee56f27478b8812daffd846417c124e91106c36d0d8dc2e5b0f68617c",
+    "results\\diagnostic_frontier_v2.json": "aa04b6554ebc2ab8e7e1cd6c3dd65aed123bb2d5192e1028b19d6637df4c4767",
+    "results\\audit_20261102.json": "397d5f73caa0d86ebc9c74ed244045749cf941e4077ec6cb359a7e4db7172095",
+    "_research\\PROTOCOL.md": "05c4cae224de8f23a5e80dec887e17b896051e97cb573512716a10602bb94727"
+  },
+  "compiler_log": "report/build.log",
+  "visual_check": "All seven pages inspected in a rendered contact sheet; frontier also inspected at high resolution. No clipped page blocks, overflowing boxes or unresolved references. One underfull table paragraph and the harmless epstopdf shell-escape warning remain."
+}

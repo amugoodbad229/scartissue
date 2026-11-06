@@ -1,0 +1,11 @@
+{
+  "command": "uv run python -m pytest tests -q",
+  "exit_code": 0,
+  "stdout": "..............................                                           [100%]\n30 passed in 0.18s\n",
+  "scope": "30 CPU tests, not remote smoke evidence; transport fix after dtype TypeError",
+  "source_sha256": {
+    "experiments/p16_lm_eval.py": "9afd86e5bf67f537c836d54b6da986567f9dcac9473624b7d3ad09c3b8690d38",
+    "experiments/eval_runtime.py": "7e38f523a2e94594dcb60c94eb9651bb57b808bc8a970f6dc26ffe2b785b84f0",
+    "tests/test_eval_runtime.py": "5015b3e708be76c99b125d445de8c36a9b783f58625ce2b5b5fdec4f778d0f93"
+  }
+}

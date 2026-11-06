@@ -1,0 +1,35 @@
+┌───────────────────── Traceback (most recent call last) ─────────────────────┐
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\cli\import_refs.py:132 in import_file_or_module       │
+│                                                                             │
+│   131 │   │   │   with execution_context._import_context():                 │
+│ > 132 │   │   │   │   spec.loader.exec_module(module)                       │
+│   133 │   │   except Exception as exc:                                      │
+│ <frozen importlib._bootstrap_external>:999 in exec_module                   │
+│                                                                             │
+│ <frozen importlib._bootstrap>:488 in _call_with_frames_removed              │
+│                                                                             │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime │
+│ nts/modal_validation.py:24 in <module>                                      │
+│                                                                             │
+│    23 │   │    .uv_sync(str(ROOT), frozen=True, uv_version="0.12.23")       │
+│ >  24 │   │    .add_local_dir(str(ROOT / "experiments"), str(REMOTE / "expe │
+│    25 │   │   │   │   │   │   ignore=["__pycache__", "*.pyc"])              │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_image.py:561 in wrapper                              │
+│                                                                             │
+│    560 │   │   │   )                                                        │
+│ >  561 │   │   return method(self, *args, **kwargs)                         │
+│    562                                                                      │
+│                                                                             │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\.venv\Li │
+│ b\site-packages\modal\_image.py:1021 in add_local_dir                       │
+│                                                                             │
+│   1020 │   │   │   #  + make default remote_path="./"                       │
+│ > 1021 │   │   │   raise InvalidError("image.add_local_dir() currently only │
+│   1022                                                                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+InvalidError: image.add_local_dir() currently only supports absolute 
+remote_path values

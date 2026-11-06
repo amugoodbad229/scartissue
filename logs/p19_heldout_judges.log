@@ -1,0 +1,674 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-CrWXIRt1YCJSW5ZTXh565j
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p19_score_safety.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\eval_runtime.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\judge_protocols.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\LICENSE.md
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Aud
+│   itKIT\src
+├── ✓ Created Function candidate_stop_metadata.
+└── ✓ Created Function score.
+
+[1ALoading weights:   0%|          | 0/291 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/291 [00:00<00:47,  6.16it/s]
+[1ALoading weights:   1%|          | 2/291 [00:00<00:50,  5.71it/s]
+[1ALoading weights:   2%|▏         | 5/291 [00:00<00:29,  9.58it/s]
+[1ALoading weights:   4%|▍         | 11/291 [00:00<00:14, 18.68it/s]
+[1ALoading weights:   5%|▌         | 15/291 [00:00<00:12, 21.44it/s]
+[1ALoading weights:   7%|▋         | 21/291 [00:01<00:10, 25.57it/s]
+[1ALoading weights:   8%|▊         | 24/291 [00:01<00:10, 25.19it/s]
+[1ALoading weights:  10%|█         | 30/291 [00:01<00:08, 32.27it/s]
+[1ALoading weights:  12%|█▏        | 34/291 [00:01<00:09, 26.45it/s]
+[1ALoading weights:  13%|█▎        | 38/291 [00:01<00:10, 25.04it/s]
+[1ALoading weights:  16%|█▌        | 47/291 [00:01<00:06, 36.81it/s]
+[1ALoading weights:  18%|█▊        | 52/291 [00:02<00:07, 32.06it/s]
+[1ALoading weights:  20%|██        | 59/291 [00:02<00:07, 32.25it/s]
+[1ALoading weights:  23%|██▎       | 66/291 [00:02<00:05, 39.00it/s]
+[1ALoading weights:  24%|██▍       | 71/291 [00:02<00:06, 34.29it/s]
+[1ALoading weights:  27%|██▋       | 78/291 [00:02<00:05, 38.75it/s]
+[1ALoading weights:  30%|██▉       | 86/291 [00:02<00:04, 42.97it/s]
+[1ALoading weights:  31%|███▏      | 91/291 [00:03<00:05, 37.22it/s]
+[1ALoading weights:  34%|███▍      | 99/291 [00:03<00:04, 44.93it/s]
+[1ALoading weights:  36%|███▌      | 104/291 [00:03<00:05, 37.10it/s]
+[1ALoading weights:  39%|███▉      | 113/291 [00:03<00:04, 42.71it/s]
+[1ALoading weights:  41%|████      | 118/291 [00:03<00:04, 36.50it/s]
+[1ALoading weights:  43%|████▎     | 124/291 [00:03<00:04, 39.50it/s]
+[1ALoading weights:  44%|████▍     | 129/291 [00:03<00:04, 40.24it/s]
+[1ALoading weights:  46%|████▌     | 134/291 [00:04<00:03, 40.59it/s]
+[1ALoading weights:  48%|████▊     | 140/291 [00:04<00:03, 42.21it/s]
+[1ALoading weights:  50%|████▉     | 145/291 [00:04<00:03, 42.41it/s]
+[1ALoading weights:  52%|█████▏    | 150/291 [00:04<00:03, 36.89it/s]
+[1ALoading weights:  54%|█████▍    | 158/291 [00:04<00:03, 34.37it/s]
+[1ALoading weights:  57%|█████▋    | 167/291 [00:04<00:02, 42.89it/s]
+[1ALoading weights:  59%|█████▉    | 172/291 [00:05<00:02, 41.13it/s]
+[1ALoading weights:  61%|██████    | 177/291 [00:05<00:02, 38.94it/s]
+[1ALoading weights:  63%|██████▎   | 182/291 [00:05<00:02, 39.71it/s]
+[1ALoading weights:  64%|██████▍   | 187/291 [00:05<00:02, 41.03it/s]
+[1ALoading weights:  66%|██████▋   | 193/291 [00:05<00:02, 40.46it/s]
+[1ALoading weights:  68%|██████▊   | 199/291 [00:05<00:02, 38.34it/s]
+[1ALoading weights:  70%|███████   | 204/291 [00:05<00:02, 40.49it/s]
+[1ALoading weights:  73%|███████▎  | 212/291 [00:06<00:02, 39.01it/s]
+[1ALoading weights:  75%|███████▍  | 217/291 [00:06<00:01, 39.11it/s]
+[1ALoading weights:  76%|███████▋  | 222/291 [00:06<00:01, 41.44it/s]
+[1ALoading weights:  78%|███████▊  | 227/291 [00:06<00:01, 42.71it/s]
+[1ALoading weights:   0%|          | 0/399 [00:00<?, ?it/s]
+[1ALoading weights:  80%|███████▉  | 232/291 [00:06<00:01, 41.25it/s]
+[1ALoading weights:  82%|████████▏ | 238/291 [00:06<00:01, 45.40it/s]
+[1ALoading weights:  84%|████████▎ | 243/291 [00:06<00:01, 39.88it/s]
+[1ALoading weights:  85%|████████▌ | 248/291 [00:06<00:01, 39.85it/s]
+[1ALoading weights:  87%|████████▋ | 253/291 [00:07<00:00, 39.30it/s]
+[1ALoading weights:  89%|████████▊ | 258/291 [00:07<00:00, 37.25it/s]
+[1ALoading weights:  90%|█████████ | 263/291 [00:07<00:00, 29.28it/s]
+[1ALoading weights:  95%|█████████▍| 275/291 [00:07<00:00, 38.04it/s]
+[1ALoading weights:  97%|█████████▋| 281/291 [00:07<00:00, 41.58it/s]
+[1ALoading weights:  98%|█████████▊| 286/291 [00:07<00:00, 41.43it/s]
+[1ALoading weights: 100%|██████████| 291/291 [00:07<00:00, 36.75it/s]
+
+[1ALoading weights:   0%|          | 0/254 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/254 [00:00<01:03,  3.98it/s]
+[1ALoading weights:   2%|▏         | 4/254 [00:00<00:19, 12.57it/s]
+[1ALoading weights:   2%|▏         | 6/254 [00:00<00:17, 14.39it/s]
+[1ALoading weights:   5%|▌         | 13/254 [00:00<00:08, 27.07it/s]
+[1ALoading weights:   6%|▋         | 16/254 [00:00<00:08, 27.01it/s]
+[1ALoading weights:   8%|▊         | 20/254 [00:00<00:07, 29.72it/s]
+[1ALoading weights:   9%|▉         | 24/254 [00:01<00:07, 29.20it/s]
+[1ALoading weights:  11%|█▏        | 29/254 [00:01<00:06, 34.09it/s]
+harmbench: 4/644 verdicts retained
+[1ALoading weights:  13%|█▎        | 33/254 [00:01<00:06, 33.33it/s]
+harmbench: 8/644 verdicts retained
+[1ALoading weights:  15%|█▍        | 37/254 [00:01<00:07, 30.93it/s]
+[1ALoading weights:  18%|█▊        | 45/254 [00:01<00:05, 36.64it/s]
+[1ALoading weights:   0%|          | 1/399 [00:03<24:05,  3.63s/it]
+harmbench: 12/644 verdicts retained
+[1ALoading weights:  19%|█▉        | 49/254 [00:01<00:06, 32.60it/s]
+[1ALoading weights:   1%|▏         | 5/399 [00:03<03:46,  1.74it/s]
+[1ALoading weights:  23%|██▎       | 58/254 [00:01<00:04, 41.10it/s]
+[1ALoading weights:   3%|▎         | 13/399 [00:03<01:08,  5.62it/s]
+harmbench: 16/644 verdicts retained
+[1ALoading weights:  25%|██▍       | 63/254 [00:02<00:04, 39.71it/s]
+[1ALoading weights:   4%|▍         | 17/399 [00:04<00:48,  7.88it/s]
+[1ALoading weights:  26%|██▋       | 67/254 [00:02<00:04, 39.31it/s]
+harmbench: 20/644 verdicts retained
+[1ALoading weights:   7%|▋         | 26/399 [00:04<00:25, 14.47it/s]
+[1ALoading weights:  28%|██▊       | 71/254 [00:02<00:05, 36.26it/s]
+harmbench: 24/644 verdicts retained
+[1ALoading weights:   8%|▊         | 31/399 [00:04<00:20, 17.68it/s]
+[1ALoading weights:  30%|██▉       | 75/254 [00:02<00:05, 32.54it/s]
+harmbench: 28/644 verdicts retained
+[1ALoading weights:  10%|▉         | 38/399 [00:04<00:16, 21.53it/s]
+[1ALoading weights:  31%|███       | 79/254 [00:02<00:05, 33.40it/s]
+harmbench: 32/644 verdicts retained
+[1ALoading weights:  12%|█▏        | 49/399 [00:04<00:11, 31.81it/s]
+[1ALoading weights:  33%|███▎      | 85/254 [00:02<00:05, 28.84it/s]
+[1ALoading weights:  14%|█▍        | 56/399 [00:04<00:09, 36.35it/s]
+harmbench: 36/644 verdicts retained
+[1ALoading weights:  36%|███▌      | 92/254 [00:02<00:04, 35.75it/s]
+[1ALoading weights:  16%|█▌        | 62/399 [00:04<00:09, 36.77it/s]
+[1ALoading weights:  38%|███▊      | 96/254 [00:03<00:04, 34.20it/s]
+harmbench: 40/644 verdicts retained
+[1ALoading weights:  17%|█▋        | 69/399 [00:05<00:07, 42.72it/s]
+[1ALoading weights:  40%|████      | 102/254 [00:03<00:03, 39.91it/s]
+harmbench: 44/644 verdicts retained
+[1ALoading weights:  19%|█▉        | 75/399 [00:05<00:07, 43.09it/s]
+[1ALoading weights:  42%|████▏     | 107/254 [00:03<00:04, 36.06it/s]
+[1ALoading weights:  20%|██        | 81/399 [00:05<00:07, 41.97it/s]
+[1ALoading weights:  44%|████▍     | 112/254 [00:03<00:04, 33.92it/s]
+[1ALoading weights:  22%|██▏       | 87/399 [00:05<00:07, 43.84it/s]
+[1ALoading weights:  24%|██▎       | 94/399 [00:05<00:07, 43.47it/s]
+harmbench: 48/644 verdicts retained
+[1ALoading weights:  46%|████▋     | 118/254 [00:03<00:04, 33.89it/s]
+harmbench: 52/644 verdicts retained
+[1ALoading weights:  26%|██▌       | 102/399 [00:05<00:05, 51.53it/s]
+[1ALoading weights:  49%|████▉     | 124/254 [00:03<00:03, 39.09it/s]
+[1ALoading weights:  27%|██▋       | 108/399 [00:05<00:06, 47.96it/s]
+[1ALoading weights:  51%|█████     | 129/254 [00:03<00:03, 40.87it/s]
+harmbench: 56/644 verdicts retained
+[1ALoading weights:  29%|██▊       | 114/399 [00:05<00:05, 50.04it/s]
+[1ALoading weights:  53%|█████▎    | 134/254 [00:03<00:02, 40.20it/s]
+harmbench: 60/644 verdicts retained
+[1ALoading weights:  30%|███       | 120/399 [00:06<00:06, 44.56it/s]
+[1ALoading weights:  55%|█████▍    | 139/254 [00:04<00:03, 36.70it/s]
+[1ALoading weights:  32%|███▏      | 126/399 [00:06<00:05, 48.03it/s]
+[1ALoading weights:  57%|█████▋    | 144/254 [00:04<00:02, 38.94it/s]
+harmbench: 64/644 verdicts retained
+[1ALoading weights:  33%|███▎      | 132/399 [00:06<00:05, 46.22it/s]
+[1ALoading weights:  59%|█████▊    | 149/254 [00:04<00:03, 34.61it/s]
+harmbench: 68/644 verdicts retained
+[1ALoading weights:  35%|███▍      | 138/399 [00:06<00:05, 44.87it/s]
+[1ALoading weights:  36%|███▋      | 145/399 [00:06<00:05, 50.16it/s]
+[1ALoading weights:  38%|███▊      | 151/399 [00:06<00:04, 51.52it/s]
+harmbench: 72/644 verdicts retained
+[1ALoading weights:  61%|██████▏   | 156/254 [00:04<00:03, 28.08it/s]
+[1ALoading weights:  39%|███▉      | 157/399 [00:06<00:04, 52.30it/s]
+[1ALoading weights:  65%|██████▌   | 166/254 [00:04<00:02, 33.88it/s]
+harmbench: 76/644 verdicts retained
+[1ALoading weights:  41%|████      | 163/399 [00:06<00:04, 48.61it/s]
+harmbench: 80/644 verdicts retained
+[1ALoading weights:  42%|████▏     | 168/399 [00:07<00:04, 46.93it/s]
+[1ALoading weights:  69%|██████▉   | 175/254 [00:05<00:02, 33.96it/s]
+[1ALoading weights:  44%|████▍     | 176/399 [00:07<00:04, 46.22it/s]
+harmbench: 84/644 verdicts retained
+[1ALoading weights:  71%|███████▏  | 181/254 [00:05<00:02, 34.74it/s]
+[1ALoading weights:  46%|████▌     | 182/399 [00:07<00:04, 45.86it/s]
+[1ALoading weights:  74%|███████▎  | 187/254 [00:05<00:01, 38.75it/s]
+harmbench: 88/644 verdicts retained
+[1ALoading weights:  48%|████▊     | 191/399 [00:07<00:03, 55.40it/s]
+[1ALoading weights:  76%|███████▌  | 193/254 [00:05<00:01, 39.58it/s]
+harmbench: 92/644 verdicts retained
+[1ALoading weights:  50%|████▉     | 199/399 [00:07<00:03, 55.65it/s]
+[1ALoading weights:  51%|█████▏    | 205/399 [00:07<00:03, 48.91it/s]
+[1ALoading weights:  78%|███████▊  | 198/254 [00:05<00:01, 33.09it/s]
+[1ALoading weights:  53%|█████▎    | 213/399 [00:07<00:03, 51.20it/s]
+[1ALoading weights:  80%|███████▉  | 203/254 [00:05<00:01, 36.02it/s]
+[1ALoading weights:  82%|████████▏ | 209/254 [00:06<00:01, 41.08it/s]
+harmbench: 96/644 verdicts retained
+[1ALoading weights:  55%|█████▍    | 219/399 [00:08<00:03, 48.52it/s]
+[1ALoading weights:  84%|████████▍ | 214/254 [00:06<00:00, 40.60it/s]
+[1ALoading weights:  56%|█████▌    | 224/399 [00:08<00:03, 46.05it/s]
+[1ALoading weights:  87%|████████▋ | 220/254 [00:06<00:00, 40.14it/s]
+harmbench: 100/644 verdicts retained
+[1ALoading weights:  57%|█████▋    | 229/399 [00:08<00:04, 42.38it/s]
+[1ALoading weights:  89%|████████▊ | 225/254 [00:06<00:00, 41.68it/s]
+[1ALoading weights:  59%|█████▉    | 236/399 [00:08<00:03, 46.20it/s]
+[1ALoading weights:  61%|██████    | 242/399 [00:08<00:03, 49.02it/s]
+harmbench: 104/644 verdicts retained
+[1ALoading weights:  91%|█████████ | 230/254 [00:06<00:00, 34.54it/s]
+[1ALoading weights:  93%|█████████▎| 235/254 [00:06<00:00, 35.48it/s]
+harmbench: 108/644 verdicts retained
+[1ALoading weights:  62%|██████▏   | 248/399 [00:08<00:03, 43.31it/s]
+[1ALoading weights:  95%|█████████▍| 241/254 [00:06<00:00, 38.55it/s]
+harmbench: 112/644 verdicts retained
+[1ALoading weights:  64%|██████▍   | 255/399 [00:08<00:03, 42.10it/s]
+[1ALoading weights:  97%|█████████▋| 246/254 [00:07<00:00, 33.64it/s]
+[1ALoading weights:  66%|██████▌   | 264/399 [00:09<00:03, 44.92it/s]Loading weights: 100%|██████████| 254/254 [00:07<00:00, 35.47it/s]
+harmbench: 116/644 verdicts retained
+
+harmbench: 120/644 verdicts retained
+[1ALoading weights:  67%|██████▋   | 269/399 [00:09<00:03, 42.89it/s]
+[1ALoading weights:  70%|██████▉   | 279/399 [00:09<00:02, 46.85it/s]
+[1ALoading weights:  71%|███████▏  | 285/399 [00:09<00:02, 49.42it/s]
+harmbench: 124/644 verdicts retained
+[1ALoading weights:  73%|███████▎  | 291/399 [00:09<00:02, 50.09it/s]
+[1ALoading weights:  75%|███████▍  | 298/399 [00:09<00:01, 53.54it/s]
+harmbench: 128/644 verdicts retained
+[1ALoading weights:  76%|███████▌  | 304/399 [00:09<00:02, 44.47it/s]
+[1ALoading weights:  78%|███████▊  | 313/399 [00:10<00:01, 53.23it/s]
+harmbench: 132/644 verdicts retained
+[1ALoading weights:  80%|███████▉  | 319/399 [00:10<00:01, 52.97it/s]
+[1ALoading weights:  81%|████████▏ | 325/399 [00:10<00:01, 46.64it/s]
+[1ALoading weights:  84%|████████▎ | 334/399 [00:10<00:01, 55.32it/s]
+harmbench: 136/644 verdicts retained
+[1ALoading weights:  85%|████████▌ | 340/399 [00:10<00:01, 52.73it/s]
+harmbench: 140/644 verdicts retained
+[1ALoading weights:  87%|████████▋ | 346/399 [00:10<00:01, 40.97it/s]
+[1ALoading weights:  89%|████████▉ | 357/399 [00:10<00:00, 51.51it/s]
+harmbench: 144/644 verdicts retained
+[1ALoading weights:  91%|█████████ | 363/399 [00:11<00:00, 49.24it/s]
+[1ALoading weights:  92%|█████████▏| 369/399 [00:11<00:00, 46.05it/s][transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+
+granite: 4/644 verdicts retained
+harmbench: 148/644 verdicts retained
+[1ALoading weights:  95%|█████████▍| 379/399 [00:11<00:00, 53.98it/s]
+[1ALoading weights:  96%|█████████▋| 385/399 [00:11<00:00, 53.95it/s]
+[1ALoading weights:  98%|█████████▊| 391/399 [00:11<00:00, 46.27it/s]
+[1ALoading weights: 100%|██████████| 399/399 [00:11<00:00, 34.00it/s]
+harmbench: 152/644 verdicts retained
+granite: 8/644 verdicts retainedharmbench: 156/644 verdicts retained
+
+harmbench: 160/644 verdicts retained
+harmbench: 164/644 verdicts retained
+granite: 12/644 verdicts retained
+harmbench: 168/644 verdicts retained
+harmbench: 172/644 verdicts retained
+harmbench: 176/644 verdicts retained
+harmbench: 180/644 verdicts retained
+harmbench: 184/644 verdicts retained
+qwen3guard: 4/644 verdicts retained
+harmbench: 188/644 verdicts retained
+harmbench: 192/644 verdicts retained
+granite: 16/644 verdicts retained
+qwen3guard: 8/644 verdicts retained
+harmbench: 196/644 verdicts retained
+harmbench: 200/644 verdicts retained
+granite: 20/644 verdicts retained
+harmbench: 204/644 verdicts retained
+qwen3guard: 12/644 verdicts retained
+harmbench: 208/644 verdicts retained
+granite: 24/644 verdicts retained
+harmbench: 212/644 verdicts retained
+harmbench: 216/644 verdicts retained
+granite: 28/644 verdicts retained
+qwen3guard: 16/644 verdicts retainedharmbench: 220/644 verdicts retained
+
+harmbench: 224/644 verdicts retained
+granite: 32/644 verdicts retained
+harmbench: 228/644 verdicts retained
+qwen3guard: 20/644 verdicts retained
+harmbench: 232/644 verdicts retained
+harmbench: 236/644 verdicts retained
+granite: 36/644 verdicts retained
+harmbench: 240/644 verdicts retained
+qwen3guard: 24/644 verdicts retained
+harmbench: 244/644 verdicts retained
+granite: 40/644 verdicts retained
+harmbench: 248/644 verdicts retained
+qwen3guard: 28/644 verdicts retained
+harmbench: 252/644 verdicts retained
+granite: 44/644 verdicts retained
+harmbench: 256/644 verdicts retained
+harmbench: 260/644 verdicts retained
+qwen3guard: 32/644 verdicts retained
+harmbench: 264/644 verdicts retained
+harmbench: 268/644 verdicts retained
+harmbench: 272/644 verdicts retained
+qwen3guard: 36/644 verdicts retained
+harmbench: 276/644 verdicts retained
+granite: 48/644 verdicts retained
+harmbench: 280/644 verdicts retained
+qwen3guard: 40/644 verdicts retained
+harmbench: 284/644 verdicts retained
+granite: 52/644 verdicts retainedharmbench: 288/644 verdicts retained
+
+harmbench: 292/644 verdicts retained
+harmbench: 296/644 verdicts retained
+qwen3guard: 44/644 verdicts retained
+harmbench: 300/644 verdicts retainedgranite: 56/644 verdicts retained
+
+harmbench: 304/644 verdicts retained
+harmbench: 308/644 verdicts retained
+granite: 60/644 verdicts retained
+harmbench: 312/644 verdicts retained
+qwen3guard: 48/644 verdicts retained
+harmbench: 316/644 verdicts retained
+harmbench: 320/644 verdicts retained
+granite: 64/644 verdicts retained
+harmbench: 324/644 verdicts retained
+qwen3guard: 52/644 verdicts retained
+harmbench: 328/644 verdicts retained
+harmbench: 332/644 verdicts retained
+granite: 68/644 verdicts retainedharmbench: 336/644 verdicts retained
+
+harmbench: 340/644 verdicts retained
+qwen3guard: 56/644 verdicts retained
+harmbench: 344/644 verdicts retained
+harmbench: 348/644 verdicts retained
+harmbench: 352/644 verdicts retained
+harmbench: 356/644 verdicts retained
+qwen3guard: 60/644 verdicts retainedharmbench: 360/644 verdicts retainedgranite: 72/644 verdicts retained
+
+
+harmbench: 364/644 verdicts retained
+harmbench: 368/644 verdicts retained
+harmbench: 372/644 verdicts retained
+harmbench: 376/644 verdicts retained
+qwen3guard: 64/644 verdicts retained
+granite: 76/644 verdicts retained
+harmbench: 380/644 verdicts retained
+harmbench: 384/644 verdicts retained
+harmbench: 388/644 verdicts retained
+harmbench: 392/644 verdicts retained
+granite: 80/644 verdicts retained
+qwen3guard: 68/644 verdicts retained
+harmbench: 396/644 verdicts retained
+harmbench: 400/644 verdicts retained
+harmbench: 404/644 verdicts retained
+harmbench: 408/644 verdicts retained
+harmbench: 412/644 verdicts retained
+granite: 84/644 verdicts retained
+qwen3guard: 72/644 verdicts retained
+harmbench: 416/644 verdicts retained
+harmbench: 420/644 verdicts retained
+harmbench: 424/644 verdicts retained
+granite: 88/644 verdicts retained
+harmbench: 428/644 verdicts retained
+qwen3guard: 76/644 verdicts retained
+harmbench: 432/644 verdicts retained
+harmbench: 436/644 verdicts retained
+harmbench: 440/644 verdicts retained
+granite: 92/644 verdicts retained
+harmbench: 444/644 verdicts retained
+harmbench: 448/644 verdicts retained
+qwen3guard: 80/644 verdicts retained
+harmbench: 452/644 verdicts retained
+harmbench: 456/644 verdicts retained
+harmbench: 460/644 verdicts retained
+harmbench: 464/644 verdicts retained
+harmbench: 468/644 verdicts retained
+qwen3guard: 84/644 verdicts retained
+harmbench: 472/644 verdicts retained
+harmbench: 476/644 verdicts retained
+granite: 96/644 verdicts retained
+harmbench: 480/644 verdicts retained
+harmbench: 484/644 verdicts retained
+harmbench: 488/644 verdicts retainedqwen3guard: 88/644 verdicts retained
+
+harmbench: 492/644 verdicts retained
+harmbench: 496/644 verdicts retained
+harmbench: 500/644 verdicts retained
+harmbench: 504/644 verdicts retained
+qwen3guard: 92/644 verdicts retained
+harmbench: 508/644 verdicts retained
+harmbench: 512/644 verdicts retained
+granite: 100/644 verdicts retainedharmbench: 516/644 verdicts retained
+
+harmbench: 520/644 verdicts retained
+harmbench: 524/644 verdicts retained
+qwen3guard: 96/644 verdicts retained
+harmbench: 528/644 verdicts retained
+harmbench: 532/644 verdicts retained
+harmbench: 536/644 verdicts retained
+granite: 104/644 verdicts retained
+harmbench: 540/644 verdicts retained
+harmbench: 544/644 verdicts retained
+qwen3guard: 100/644 verdicts retained
+harmbench: 548/644 verdicts retained
+granite: 108/644 verdicts retainedharmbench: 552/644 verdicts retained
+
+harmbench: 556/644 verdicts retained
+harmbench: 560/644 verdicts retained
+harmbench: 564/644 verdicts retained
+qwen3guard: 104/644 verdicts retained
+granite: 112/644 verdicts retainedharmbench: 568/644 verdicts retained
+
+harmbench: 572/644 verdicts retained
+harmbench: 576/644 verdicts retained
+harmbench: 580/644 verdicts retainedgranite: 116/644 verdicts retained
+qwen3guard: 108/644 verdicts retained
+
+harmbench: 584/644 verdicts retained
+harmbench: 588/644 verdicts retained
+harmbench: 592/644 verdicts retained
+granite: 120/644 verdicts retained
+harmbench: 596/644 verdicts retained
+harmbench: 600/644 verdicts retainedqwen3guard: 112/644 verdicts retained
+
+harmbench: 604/644 verdicts retained
+harmbench: 608/644 verdicts retained
+harmbench: 612/644 verdicts retained
+qwen3guard: 116/644 verdicts retained
+harmbench: 616/644 verdicts retained
+harmbench: 620/644 verdicts retained
+harmbench: 624/644 verdicts retained
+granite: 124/644 verdicts retainedharmbench: 628/644 verdicts retained
+
+harmbench: 632/644 verdicts retained
+qwen3guard: 120/644 verdicts retained
+harmbench: 636/644 verdicts retained
+harmbench: 640/644 verdicts retained
+harmbench: 644/644 verdicts retained
+qwen3guard: 124/644 verdicts retained
+granite: 128/644 verdicts retained
+qwen3guard: 128/644 verdicts retained
+qwen3guard: 132/644 verdicts retained
+granite: 132/644 verdicts retained
+qwen3guard: 136/644 verdicts retained
+qwen3guard: 140/644 verdicts retained
+granite: 136/644 verdicts retained
+qwen3guard: 144/644 verdicts retained
+granite: 140/644 verdicts retained
+qwen3guard: 148/644 verdicts retained
+granite: 144/644 verdicts retained
+qwen3guard: 152/644 verdicts retained
+qwen3guard: 156/644 verdicts retained
+granite: 148/644 verdicts retained
+qwen3guard: 160/644 verdicts retained
+qwen3guard: 164/644 verdicts retained
+granite: 152/644 verdicts retained
+qwen3guard: 168/644 verdicts retained
+qwen3guard: 172/644 verdicts retained
+granite: 156/644 verdicts retained
+qwen3guard: 176/644 verdicts retained
+granite: 160/644 verdicts retained
+qwen3guard: 180/644 verdicts retained
+granite: 164/644 verdicts retained
+qwen3guard: 184/644 verdicts retained
+granite: 168/644 verdicts retained
+qwen3guard: 188/644 verdicts retained
+granite: 172/644 verdicts retainedqwen3guard: 192/644 verdicts retained
+
+qwen3guard: 196/644 verdicts retained
+granite: 176/644 verdicts retained
+qwen3guard: 200/644 verdicts retained
+qwen3guard: 204/644 verdicts retained
+granite: 180/644 verdicts retained
+qwen3guard: 208/644 verdicts retained
+granite: 184/644 verdicts retained
+qwen3guard: 212/644 verdicts retained
+qwen3guard: 216/644 verdicts retained
+granite: 188/644 verdicts retained
+qwen3guard: 220/644 verdicts retained
+granite: 192/644 verdicts retained
+qwen3guard: 224/644 verdicts retained
+qwen3guard: 228/644 verdicts retainedgranite: 196/644 verdicts retained
+
+granite: 200/644 verdicts retained
+qwen3guard: 232/644 verdicts retained
+qwen3guard: 236/644 verdicts retainedgranite: 204/644 verdicts retained
+
+qwen3guard: 240/644 verdicts retained
+qwen3guard: 244/644 verdicts retained
+granite: 208/644 verdicts retained
+qwen3guard: 248/644 verdicts retained
+granite: 212/644 verdicts retained
+qwen3guard: 252/644 verdicts retained
+qwen3guard: 256/644 verdicts retained
+granite: 216/644 verdicts retained
+qwen3guard: 260/644 verdicts retained
+qwen3guard: 264/644 verdicts retained
+granite: 220/644 verdicts retained
+qwen3guard: 268/644 verdicts retained
+qwen3guard: 272/644 verdicts retained
+granite: 224/644 verdicts retained
+qwen3guard: 276/644 verdicts retained
+granite: 228/644 verdicts retained
+qwen3guard: 280/644 verdicts retained
+qwen3guard: 284/644 verdicts retained
+granite: 232/644 verdicts retained
+qwen3guard: 288/644 verdicts retained
+qwen3guard: 292/644 verdicts retained
+granite: 236/644 verdicts retained
+qwen3guard: 296/644 verdicts retained
+qwen3guard: 300/644 verdicts retained
+granite: 240/644 verdicts retained
+qwen3guard: 304/644 verdicts retained
+qwen3guard: 308/644 verdicts retained
+granite: 244/644 verdicts retained
+qwen3guard: 312/644 verdicts retained
+qwen3guard: 316/644 verdicts retained
+granite: 248/644 verdicts retained
+qwen3guard: 320/644 verdicts retained
+granite: 252/644 verdicts retained
+qwen3guard: 324/644 verdicts retained
+qwen3guard: 328/644 verdicts retained
+granite: 256/644 verdicts retained
+qwen3guard: 332/644 verdicts retained
+qwen3guard: 336/644 verdicts retained
+granite: 260/644 verdicts retainedqwen3guard: 340/644 verdicts retained
+
+qwen3guard: 344/644 verdicts retained
+granite: 264/644 verdicts retained
+qwen3guard: 348/644 verdicts retained
+qwen3guard: 352/644 verdicts retained
+granite: 268/644 verdicts retained
+qwen3guard: 356/644 verdicts retained
+qwen3guard: 360/644 verdicts retained
+granite: 272/644 verdicts retained
+qwen3guard: 364/644 verdicts retained
+qwen3guard: 368/644 verdicts retained
+granite: 276/644 verdicts retained
+qwen3guard: 372/644 verdicts retained
+qwen3guard: 376/644 verdicts retained
+qwen3guard: 380/644 verdicts retained
+granite: 280/644 verdicts retained
+qwen3guard: 384/644 verdicts retained
+qwen3guard: 388/644 verdicts retained
+granite: 284/644 verdicts retained
+qwen3guard: 392/644 verdicts retained
+qwen3guard: 396/644 verdicts retained
+granite: 288/644 verdicts retained
+qwen3guard: 400/644 verdicts retained
+qwen3guard: 404/644 verdicts retained
+granite: 292/644 verdicts retained
+qwen3guard: 408/644 verdicts retained
+granite: 296/644 verdicts retained
+qwen3guard: 412/644 verdicts retained
+granite: 300/644 verdicts retained
+qwen3guard: 416/644 verdicts retained
+granite: 304/644 verdicts retained
+qwen3guard: 420/644 verdicts retained
+qwen3guard: 424/644 verdicts retained
+qwen3guard: 428/644 verdicts retained
+granite: 308/644 verdicts retained
+qwen3guard: 432/644 verdicts retained
+qwen3guard: 436/644 verdicts retained
+granite: 312/644 verdicts retained
+qwen3guard: 440/644 verdicts retained
+qwen3guard: 444/644 verdicts retained
+granite: 316/644 verdicts retained
+qwen3guard: 448/644 verdicts retainedgranite: 320/644 verdicts retained
+
+qwen3guard: 452/644 verdicts retained
+granite: 324/644 verdicts retained
+qwen3guard: 456/644 verdicts retained
+qwen3guard: 460/644 verdicts retained
+qwen3guard: 464/644 verdicts retained
+granite: 328/644 verdicts retained
+qwen3guard: 468/644 verdicts retained
+granite: 332/644 verdicts retained
+qwen3guard: 472/644 verdicts retained
+granite: 336/644 verdicts retained
+qwen3guard: 476/644 verdicts retained
+granite: 340/644 verdicts retained
+qwen3guard: 480/644 verdicts retained
+granite: 344/644 verdicts retained
+qwen3guard: 484/644 verdicts retained
+granite: 348/644 verdicts retained
+qwen3guard: 488/644 verdicts retained
+qwen3guard: 492/644 verdicts retained
+granite: 352/644 verdicts retained
+qwen3guard: 496/644 verdicts retained
+granite: 356/644 verdicts retained
+qwen3guard: 500/644 verdicts retained
+granite: 360/644 verdicts retained
+qwen3guard: 504/644 verdicts retained
+granite: 364/644 verdicts retained
+qwen3guard: 508/644 verdicts retained
+granite: 368/644 verdicts retainedqwen3guard: 512/644 verdicts retained
+
+granite: 372/644 verdicts retained
+qwen3guard: 516/644 verdicts retained
+granite: 376/644 verdicts retained
+qwen3guard: 520/644 verdicts retained
+granite: 380/644 verdicts retained
+qwen3guard: 524/644 verdicts retained
+granite: 384/644 verdicts retained
+qwen3guard: 528/644 verdicts retained
+granite: 388/644 verdicts retained
+qwen3guard: 532/644 verdicts retained
+qwen3guard: 536/644 verdicts retained
+granite: 392/644 verdicts retained
+granite: 396/644 verdicts retained
+qwen3guard: 540/644 verdicts retained
+granite: 400/644 verdicts retained
+qwen3guard: 544/644 verdicts retained
+granite: 404/644 verdicts retained
+qwen3guard: 548/644 verdicts retained
+granite: 408/644 verdicts retained
+qwen3guard: 552/644 verdicts retained
+granite: 412/644 verdicts retained
+qwen3guard: 556/644 verdicts retained
+granite: 416/644 verdicts retained
+qwen3guard: 560/644 verdicts retained
+qwen3guard: 564/644 verdicts retained
+granite: 420/644 verdicts retained
+qwen3guard: 568/644 verdicts retained
+granite: 424/644 verdicts retained
+qwen3guard: 572/644 verdicts retained
+granite: 428/644 verdicts retained
+qwen3guard: 576/644 verdicts retained
+granite: 432/644 verdicts retained
+qwen3guard: 580/644 verdicts retained
+granite: 436/644 verdicts retained
+qwen3guard: 584/644 verdicts retained
+granite: 440/644 verdicts retained
+qwen3guard: 588/644 verdicts retained
+granite: 444/644 verdicts retained
+qwen3guard: 592/644 verdicts retained
+qwen3guard: 596/644 verdicts retained
+granite: 448/644 verdicts retained
+granite: 452/644 verdicts retained
+qwen3guard: 600/644 verdicts retained
+granite: 456/644 verdicts retained
+qwen3guard: 604/644 verdicts retained
+granite: 460/644 verdicts retained
+qwen3guard: 608/644 verdicts retained
+granite: 464/644 verdicts retained
+qwen3guard: 612/644 verdicts retained
+granite: 468/644 verdicts retained
+qwen3guard: 616/644 verdicts retained
+qwen3guard: 620/644 verdicts retained
+granite: 472/644 verdicts retained
+qwen3guard: 624/644 verdicts retained
+granite: 476/644 verdicts retained
+granite: 480/644 verdicts retained
+qwen3guard: 628/644 verdicts retained
+granite: 484/644 verdicts retained
+granite: 488/644 verdicts retained
+qwen3guard: 632/644 verdicts retained
+granite: 492/644 verdicts retained
+qwen3guard: 636/644 verdicts retained
+qwen3guard: 640/644 verdicts retained
+granite: 496/644 verdicts retained
+qwen3guard: 644/644 verdicts retained
+granite: 500/644 verdicts retained
+granite: 504/644 verdicts retained
+granite: 508/644 verdicts retained
+granite: 512/644 verdicts retained
+granite: 516/644 verdicts retained
+granite: 520/644 verdicts retained
+granite: 524/644 verdicts retained
+granite: 528/644 verdicts retained
+granite: 532/644 verdicts retained
+granite: 536/644 verdicts retained
+granite: 540/644 verdicts retained
+granite: 544/644 verdicts retained
+granite: 548/644 verdicts retained
+granite: 552/644 verdicts retained
+granite: 556/644 verdicts retained
+granite: 560/644 verdicts retained
+granite: 564/644 verdicts retained
+granite: 568/644 verdicts retained
+granite: 572/644 verdicts retained
+granite: 576/644 verdicts retained
+granite: 580/644 verdicts retained
+granite: 584/644 verdicts retained
+granite: 588/644 verdicts retained
+granite: 592/644 verdicts retained
+granite: 596/644 verdicts retained
+granite: 600/644 verdicts retained
+granite: 604/644 verdicts retained
+granite: 608/644 verdicts retained
+granite: 612/644 verdicts retained
+granite: 616/644 verdicts retained
+granite: 620/644 verdicts retained
+granite: 624/644 verdicts retained
+granite: 628/644 verdicts retained
+granite: 632/644 verdicts retained
+granite: 636/644 verdicts retained
+granite: 640/644 verdicts retained
+granite: 644/644 verdicts retained
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p19_safety_judges_20261103_023754.json: passed; calibration remains failed
+Stopping app - local entrypoint completed.
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-CrWXIRt1YCJSW5ZTXh565j

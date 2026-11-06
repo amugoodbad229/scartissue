@@ -175,6 +175,9 @@ def circuit() -> dict:
 
     # ---- discovery ------------------------------------------------------------------------
     cfg = build_discovery_config(tl_model, task="custom:refusal_pairs", algorithm="eap-ig", level="node")
+    # the alignment pass tokenises with the task tokenizer; without this it is not the Cohere one, which is
+    # why every pair was dropped as misaligned even at equal length.
+    cfg.setdefault("model", {})["tokenizer"] = MODEL
     cfg["data"] = {"type": "template", "path": csv_path, "align_strategy": "none",
                    "template": {"clean_prompt": "clean_prompt", "corrupt_prompt": "corrupt_prompt",
                                 "clean_answer": "clean_answer", "corrupt_answer": "corrupt_answer"},

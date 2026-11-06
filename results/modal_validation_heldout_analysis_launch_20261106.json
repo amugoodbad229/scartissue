@@ -1,0 +1,14 @@
+{
+  "schema": "scartissue.modal-launch/1",
+  "job": "heldout_analysis_cpu_20261106",
+  "log": "logs/modal_validation_heldout_analysis_20261106.log",
+  "profile": "scartissue-replacement",
+  "utility": "experiments/modal_validation.py",
+  "reservation_id": "heldout_analysis_cpu_20261106",
+  "reserved_usd": 1.0,
+  "gpu": false,
+  "automatic_retries": 0,
+  "launched_at_utc": "2026-11-05T17:21:33+00:00",
+  "purpose": "Validate experiments/analyse_heldout.py and tests/test_heldout_analysis.py on Modal, regenerate the readiness ledger with the held-out claim evaluated, and refresh the workbench bundle/screenshots.",
+  "note": "Reserve is conservative bookkeeping, not actual billing. Source files must not change while the job runs."
+}

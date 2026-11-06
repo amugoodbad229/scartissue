@@ -1,0 +1,21 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "python",
+    "-m",
+    "pytest",
+    "tests",
+    "-q"
+  ],
+  "exit_code": 0,
+  "stdout": "............................                                             [100%]\n28 passed in 0.25s\n",
+  "stderr": "",
+  "scope": "CPU regression tests only; GPU smoke remains required",
+  "source_sha256": {
+    "experiments/p16_lm_eval.py": "586ea96a48f4eadbaf1d3b5ce5df26a90a973fc14a4b5e54374f7156242352d1",
+    "experiments/eval_runtime.py": "f32cd830badc6f22e5fa1f3235cce7c867cf752956e23b3f70a6bdb52d75163b",
+    "tests/test_eval_runtime.py": "95688ef642912cb0d6d439d08f9b8ea36b0973fb2dda73d05bbc8c14cb621e17",
+    "artifacts/load_patch.py": "c48e0b12201cdd9403d107eb411d74521eb00fa533c8c4d17218af86a1b6d94e"
+  }
+}

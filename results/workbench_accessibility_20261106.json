@@ -1,0 +1,76 @@
+{
+  "execution": "Modal Chromium computed-style checks",
+  "contrast_checks": [
+    {
+      "selector": "body",
+      "kind": "text",
+      "ratio": 15.643483050114252,
+      "minimum": 4.5
+    },
+    {
+      "selector": ".note",
+      "kind": "text",
+      "ratio": 7.214409157828484,
+      "minimum": 4.5
+    },
+    {
+      "selector": ".warning",
+      "kind": "text",
+      "ratio": 15.109517012619387,
+      "minimum": 4.5
+    },
+    {
+      "selector": ".tag",
+      "kind": "text",
+      "ratio": 4.979278232280779,
+      "minimum": 4.5
+    },
+    {
+      "selector": "#max-harm",
+      "kind": "text",
+      "ratio": 16.31832264981189,
+      "minimum": 4.5
+    },
+    {
+      "selector": "#preset",
+      "kind": "text",
+      "ratio": 16.31832264981189,
+      "minimum": 4.5
+    },
+    {
+      "selector": "button[type=submit]",
+      "kind": "text",
+      "ratio": 5.419829074091685,
+      "minimum": 4.5
+    },
+    {
+      "selector": "#max-harm",
+      "kind": "control boundary",
+      "ratio": 4.0151333310752575,
+      "minimum": 3
+    },
+    {
+      "selector": "#preset",
+      "kind": "control boundary",
+      "ratio": 4.0151333310752575,
+      "minimum": 3
+    },
+    {
+      "selector": "#export",
+      "kind": "control boundary",
+      "ratio": 4.0151333310752575,
+      "minimum": 3
+    },
+    {
+      "kind": "keyboard focus",
+      "ratio": 5.419829074091685,
+      "minimum": 3
+    }
+  ],
+  "scope": "Selected text, control boundaries and focus; keyboard, reflow and errors tested separately",
+  "not_checked": [
+    "Screen-reader traversal",
+    "Every browser/OS",
+    "Full WCAG conformance"
+  ]
+}

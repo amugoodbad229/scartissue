@@ -1,0 +1,669 @@
+{
+  "schema": "scartissue.readiness-reset/1",
+  "updated_on": "2026-11-06",
+  "status": "not_submission_ready",
+  "strategy_status": "frozen_for_execution",
+  "primary_track": "2a",
+  "scope": "Evidence-backed safety-repair comparison workbench, research use; not a production-safety certification or hosted drifted model.",
+  "new_task_count": 31,
+  "open_task_count": 11,
+  "evidence": [
+    "results/competition_rules_verified_20261105.json",
+    "results/readiness_baseline_20261105.json",
+    "results/readiness_module_baseline_20261105.json",
+    "results/p21_length_analysis_20261103.json",
+    "results/p16_capability_analysis_20261102.json"
+  ],
+  "non_goals": [
+    "Rewrite the experiment harness",
+    "Cover every problem statement",
+    "Build auth, billing, hosted inference, multi-tenant jobs or an agent wrapper",
+    "Launch paid compute without an approved ceiling",
+    "Claim circuit superiority before actual judged/capability controls",
+    "Promise a hackathon win"
+  ],
+  "fallback": "If new compute or circuit evidence fails, submit a rigorously scoped Track 2a audit and useful comparison workflow, with failed and inconclusive results visible. Do not relabel it as validated Track 2b repair.",
+  "tasks": [
+    {
+      "id": 1,
+      "subject": "Assess the project and hackathon readiness",
+      "status": "completed",
+      "priority": "P0",
+      "phase": "Assessment",
+      "description": "Completed source/demo/evidence audit; deficiencies are reflected in this backlog.",
+      "blockedBy": []
+    },
+    {
+      "id": 2,
+      "subject": "Validate the baseline on Modal",
+      "status": "completed",
+      "priority": "P0",
+      "phase": "Trust",
+      "description": "Modal-only sign-off; local pytest outputs are diagnostic. Intended tests and real toolkit integrations must pass in the pinned remote environment.",
+      "blockedBy": [
+        3,
+        4,
+        36
+      ],
+      "validation_evidence": "results/modal_validation_20261105T155145197754Z.json"
+    },
+    {
+      "id": 3,
+      "subject": "Fix test invocation portability",
+      "status": "completed",
+      "priority": "P0",
+      "phase": "Trust",
+      "description": "Make documented uv test invocations resolve local experiments modules consistently; do not hide integration tests.",
+      "blockedBy": [],
+      "validation_evidence": "results/modal_validation_20261105T155145197754Z.json"
+    },
+    {
+      "id": 4,
+      "subject": "Restore the native AuditKIT test setup",
+      "status": "completed",
+      "priority": "P0",
+      "phase": "Trust",
+      "description": "Reproducible pinned read-only upstream setup and paths; no mock replacement for real integration tests.",
+      "blockedBy": [],
+      "validation_evidence": "results/modal_validation_20261105T155145197754Z.json"
+    },
+    {
+      "id": 5,
+      "subject": "Build the hackathon reset roadmap",
+      "status": "completed",
+      "priority": "P0",
+      "phase": "Assessment",
+      "description": "Prioritized dependency-backed roadmap with acceptance criteria; implementation is not complete.",
+      "blockedBy": []
+    },
+    {
+      "key": "scope",
+      "priority": "P0",
+      "phase": "Scope",
+      "subject": "Freeze the track and useful decision workflow",
+      "description": "Recommend Track 2a robustness/over-refusal as the primary entry. Compare Track 1 domain-task training and Track 3 agent post-training without sunk-cost reasoning. Define the user as a model maintainer comparing candidate safety repairs, the decision as accept/reject/insufficient evidence, and the demo as precomputed evidence replay. Track 2b is conditional on actual targeted intervention evidence. Acceptance: a concise scope and explicit non-goals; no automatic claim of deployment safety.",
+      "deps": [],
+      "id": 6,
+      "blockedBy": [],
+      "status": "completed"
+    },
+    {
+      "key": "snapshot",
+      "priority": "P0",
+      "phase": "Trust",
+      "subject": "Preserve and inventory the existing work",
+      "description": "Archive the historical TODO without changing frozen PROTOCOL.md; inventory current dirty files, run IDs, artifacts and remote-only dependencies. Review secrets and licenses before any publication. Acceptance: reproducible source/artifact snapshot with unresolved items named, no reset or deletion of inherited work.",
+      "deps": [],
+      "id": 7,
+      "blockedBy": [],
+      "status": "completed"
+    },
+    {
+      "key": "claims",
+      "priority": "P0",
+      "phase": "Trust",
+      "subject": "Correct unsupported public claims",
+      "description": "Audit README.md, WRITE-UP.md, SUBMISSION.md, report sources and space-static. Remove claims that ASR stayed flat, near-orthogonal refusal directions prove all harm discrimination vanished, unjudged held-out data confirm the result, or nonsignificance proves equivalence. Acceptance: claim-to-evidence map and consistent limitations everywhere; regex explicitly diagnostic. README and WRITE-UP corrections drafted; submission/report/demo/manifest remain pending. No rebuild or deployment claimed.",
+      "deps": [],
+      "id": 8,
+      "blockedBy": [],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T163509617700Z.json"
+    },
+    {
+      "key": "contract",
+      "priority": "P0",
+      "phase": "Trust",
+      "subject": "Define a shared evidence bundle contract",
+      "description": "Reuse results/manifest.json and current safety records. Specify model revision, patch identity, prompt IDs/roles, provenance, full completions, generation settings, judge verdicts/errors, lm-eval outputs, uncertainty and evidence status. Acceptance: stable IDs and explicit missing/invalid/unjudged states; no silent conversion to safe or zero.",
+      "deps": [],
+      "id": 9,
+      "blockedBy": [],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T163509617700Z.json"
+    },
+    {
+      "key": "verify",
+      "priority": "P0",
+      "phase": "Trust",
+      "subject": "Replace brittle submission verification",
+      "description": "Replace hardcoded expected performance, manifest key counts and fixed report hashes with schema, artifact existence, actual hashes, provenance and current-source checks. Availability checks must not imply validity. Acceptance: corrupted/missing/stale fixtures fail for the right reason; valid changed metrics do not fail for differing from the old result.",
+      "deps": [
+        "contract"
+      ],
+      "id": 10,
+      "blockedBy": [
+        9,
+        2
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T163509617700Z.json"
+    },
+    {
+      "key": "loader",
+      "priority": "P0",
+      "phase": "Trust",
+      "subject": "Harden patch loading before model mutation",
+      "description": "Audit all callers of artifacts/load_patch.py; preflight base revision, hashes, tensor shapes, dtypes, finite factors and column bounds before applying any update. Preserve factorized export. Preflight now validates the whole patch sequence before mutation, hashes the same decoded bytes, and gates the loaded model commit hash; tests cover malformed later patches and overlapping updates. Modal pass pending.",
+      "deps": [],
+      "id": 11,
+      "blockedBy": [],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T171352694340Z.json; tests/test_load_patch_torch.py"
+    },
+    {
+      "key": "truth",
+      "priority": "P0",
+      "phase": "Trust",
+      "subject": "Generate one truthful readiness ledger",
+      "description": "Link each claimed result and artifact to valid/evaluated/pending/invalid status, flag remote-only circuit patches and analysis-pending held-out judgments. Demo, verifier and write-up cannot describe a pending experiment as validated; historical files intact.",
+      "deps": [
+        "contract",
+        "verify"
+      ],
+      "id": 12,
+      "blockedBy": [
+        9,
+        10
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T164431691063Z.json"
+    },
+    {
+      "key": "decision",
+      "priority": "P1",
+      "phase": "Workbench",
+      "subject": "Implement transparent candidate admission rules",
+      "description": "Let the user set required harm-ASR, benign over-refusal and lm-eval capability constraints, plus support budget if relevant. Policies are user decisions, not learned from the test set. Acceptance: accept/reject/insufficient evidence with per-constraint reasons; missing evidence never passes; abstaining when nothing qualifies is supported and tested. Label statistical uncertainty and lack of production certification.",
+      "deps": [
+        "scope",
+        "contract"
+      ],
+      "id": 13,
+      "blockedBy": [
+        6,
+        9
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T163509617700Z.json"
+    },
+    {
+      "key": "frontier",
+      "priority": "P1",
+      "phase": "Workbench",
+      "subject": "Build a real multi-metric repair comparison",
+      "description": "Reuse the static app. Show harm-ASR, over-refusal, capability and edited support with intervals and evidence status; compute nondominance rather than connecting points sorted by refusal. Acceptance: a maintainer can see the trade-off and dominance direction; tests cover ties, missing metrics and dominated arms.",
+      "deps": [
+        "contract",
+        "decision"
+      ],
+      "id": 14,
+      "blockedBy": [
+        9,
+        13
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T163509617700Z.json"
+    },
+    {
+      "key": "replay",
+      "priority": "P1",
+      "phase": "Workbench",
+      "subject": "Make completion replay explain the verdict",
+      "description": "Show per-prompt base/drift/repair completions with each judge verdict, majority, disagreement, truncation and unknown state. Add safe summaries and click-to-reveal warnings for harmful text; mark regex refusal as diagnostic. Acceptance: every visible conclusion traces to its prompt and run without exposing harmful content by default.",
+      "deps": [
+        "contract"
+      ],
+      "id": 15,
+      "blockedBy": [
+        9
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T164431691063Z.json"
+    },
+    {
+      "key": "import",
+      "priority": "P1",
+      "phase": "Workbench",
+      "subject": "Support a local evidence-bundle import",
+      "description": "Add browser-local import for the same documented bundle used by the sample, with size/schema checks and clear errors. No hosted uploads, server storage or model execution. Acceptance: a valid exported bundle reproduces the sample decision; invalid input is rejected without breaking the UI.",
+      "deps": [
+        "contract",
+        "decision"
+      ],
+      "id": 16,
+      "blockedBy": [
+        9,
+        13
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T164431691063Z.json"
+    },
+    {
+      "key": "export",
+      "priority": "P1",
+      "phase": "Workbench",
+      "subject": "Export an auditable comparison report",
+      "description": "Export the selected policy, candidate outcomes, uncertainty, limitations and source hashes as JSON plus a readable summary. Reuse one decision implementation; avoid a separate backend/PDF service. Acceptance: exported decisions match the screen and unknowns are retained.",
+      "deps": [
+        "decision",
+        "frontier"
+      ],
+      "id": 17,
+      "blockedBy": [
+        13,
+        14
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T164431691063Z.json"
+    },
+    {
+      "key": "walkthrough",
+      "priority": "P1",
+      "phase": "Workbench",
+      "subject": "Ship a guided judge walkthrough",
+      "description": "Create a default scenario: inspect drift, compare sparse/global repairs, tighten a policy, see rejection or insufficient evidence, inspect disagreement and export the report. State clearly that results are precomputed. Guided step list and browser test are written; a fresh Modal pass is required before this is marked complete.",
+      "deps": [
+        "frontier",
+        "replay",
+        "export"
+      ],
+      "id": 18,
+      "blockedBy": [
+        14,
+        15,
+        17
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T172136029469Z.json; tests/test_workbench_browser.py::test_guided_walkthrough_links_and_policy_outcome"
+    },
+    {
+      "key": "ui",
+      "priority": "P1",
+      "phase": "Workbench",
+      "subject": "Test accessibility and offline failure states",
+      "description": "Verify keyboard/focus, labels, computed contrast, responsive layout, content warnings, loading/errors and invalid imports; test the guided workflow and export. Functional checks documented in _research/WORKBENCH-QA-20261106.md are not a full WCAG or screen-reader certification.",
+      "deps": [
+        "walkthrough",
+        "import"
+      ],
+      "id": 19,
+      "blockedBy": [
+        18,
+        16
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T172136029469Z.json; results/workbench_accessibility_20261106.json; _research/WORKBENCH-QA-20261106.md"
+    },
+    {
+      "key": "budget",
+      "priority": "P0",
+      "phase": "Compute gate",
+      "subject": "Approve a bounded compute and judge budget",
+      "description": "The recorded Modal spend-limit error is historical, not a fresh quota check. Check current availability non-destructively; obtain a spending ceiling and stop conditions before paid work. Name logs before launch, preserve returns, use a single local results writer and never parallel Volume commits. Acceptance: explicit budget, estimated workload and resumable launch plan; no surprise spending.",
+      "deps": [
+        "scope"
+      ],
+      "id": 20,
+      "blockedBy": [
+        6
+      ],
+      "status": "completed"
+    },
+    {
+      "key": "heldout",
+      "priority": "P1",
+      "phase": "Evidence",
+      "subject": "Finish judging the existing held-out generations",
+      "description": "Audited the already-judged held-out generations with experiments/analyse_heldout.py: split disjointness (160 prompts, all 'unused', zero overlap with fit/eval), source hash identity, state-check provenance, paired bootstrap. Exploratory only: judge calibration failed, arms chosen on the earlier set, no multiplicity adjustment, headline ineligible.",
+      "deps": [
+        "budget",
+        "truth"
+      ],
+      "id": 21,
+      "blockedBy": [
+        20,
+        12
+      ],
+      "status": "completed",
+      "validation_evidence": "results/heldout_analysis_20261106.json; results/modal_validation_20261105T172136029469Z.json (125 passed both invocations); readiness_ledger heldout-comparison evaluated"
+    },
+    {
+      "key": "human",
+      "priority": "P1",
+      "phase": "Evidence",
+      "subject": "Audit judges on the project distribution",
+      "description": "Choose an arm-blinded, stratified completion set including disagreements and refusals for human annotation and adjudication. Define the label rubric and record provenance; do not invent human judgments. Acceptance: errors/uncertainty reported on project completions, or prominently remain pending; no unsupported lower-bound interpretation of ASR.",
+      "deps": [
+        "contract",
+        "budget"
+      ],
+      "id": 22,
+      "blockedBy": [
+        9,
+        20
+      ],
+      "status": "pending"
+    },
+    {
+      "key": "lock",
+      "priority": "P1",
+      "phase": "Evidence",
+      "subject": "Lock the confirmatory comparison before running",
+      "description": "Frozen dated amendment (PROTOCOL.md untouched) with seed-20261106 prompt selection, four Holm contrasts, matched-budget control, judge/state/hash gates and stopping rules. Records that the held-out set is spent and only 57 harmful/154 benign untouched prompts remain, so the confirmatory size is 57. Not executed.",
+      "deps": [
+        "scope",
+        "truth",
+        "budget"
+      ],
+      "id": 23,
+      "blockedBy": [
+        6,
+        12,
+        20
+      ],
+      "status": "completed",
+      "validation_evidence": "results/confirmatory_spec_20261106.json (self hash 67e4fed8...); _research/AMENDMENT-01-20261106.md; experiments/freeze_confirmatory.py"
+    },
+    {
+      "key": "circuit",
+      "priority": "P1",
+      "phase": "Evidence",
+      "subject": "Validate the actual circuit-restricted patch",
+      "description": "Circuit patch body recovered from the historical volume via 'modal volume get' (read only, no compute), 471,102 bytes, sha256 equals the recorded value, and it passes the hardened loader preflight (36 o_proj modules, 73,728 columns, 150,994,944 edited scalars). No generation/judging/capability run, so the intervention claim stays pending.",
+      "deps": [
+        "lock",
+        "loader"
+      ],
+      "id": 24,
+      "blockedBy": [
+        23,
+        11
+      ],
+      "status": "completed",
+      "validation_evidence": "results/circuit_body_recovery_20261106.json; artifacts/tiny-aya-global/repair_circuit_a4.npz (sha256 96c659a0...); evaluation pending by design"
+    },
+    {
+      "key": "controls",
+      "priority": "P1",
+      "phase": "Evidence",
+      "subject": "Compare targeted and matched-budget controls",
+      "description": "Use base, drifted, current sparse/global repairs, actual circuit-restricted repair and random/magnitude support controls where protocol and budget permit. Match edited support and generation conditions; repeat selection seeds as predeclared. Acceptance: targeted advantage tested against plausible controls, with null/negative outcomes retained.",
+      "deps": [
+        "lock",
+        "circuit"
+      ],
+      "id": 25,
+      "blockedBy": [
+        23,
+        24
+      ],
+      "status": "pending"
+    },
+    {
+      "key": "capability",
+      "priority": "P1",
+      "phase": "Evidence",
+      "subject": "Measure retained utility beyond the existing task",
+      "description": "Reuse the pinned lm-eval harness and select an additional relevant task in the locked protocol. Record versions, revisions, templates, full outputs and uncertainty. Acceptance: a task-specific retention claim, not general capability inferred from one benchmark; disallow regex/logit substitutes.",
+      "deps": [
+        "lock",
+        "budget"
+      ],
+      "id": 26,
+      "blockedBy": [
+        23,
+        20
+      ],
+      "status": "pending"
+    },
+    {
+      "key": "cohort",
+      "priority": "P2",
+      "phase": "Evidence stretch",
+      "subject": "Complete one replication before expanding models",
+      "description": "Audit existing earth/water generations and choose the least-cost valid replication; score complete arms, generate only missing data, run capability before claiming a frontier. Aya Expanse is deferred until the core result is judged and the budget supports it. Acceptance: independently complete comparison, not a list of unjudged runs.",
+      "deps": [
+        "heldout",
+        "controls",
+        "capability"
+      ],
+      "id": 27,
+      "blockedBy": [
+        21,
+        25,
+        26
+      ],
+      "status": "pending"
+    },
+    {
+      "key": "multilingual",
+      "priority": "P2",
+      "phase": "Evidence stretch",
+      "subject": "Replace invalid multilingual results only if justified",
+      "description": "Old projection runs are invalid and remain withdrawn. Use the existing behavioral harness with reviewed prompts and language-appropriate scoring. Scope languages to the actual use case and approved budget. Acceptance: finite, complete, judged per-language results or omit the multilingual claim entirely.",
+      "deps": [
+        "heldout",
+        "budget"
+      ],
+      "id": 28,
+      "blockedBy": [
+        21,
+        20
+      ],
+      "status": "pending"
+    },
+    {
+      "key": "interpret",
+      "priority": "P1",
+      "phase": "Evidence",
+      "subject": "Reconcile the scientific story with the results",
+      "description": "Reconciled story with existing evidence: held-out replication, recovered circuit body, confirmatory size constraint (57 untouched harmful prompts), Track 2b not justified. Revisit after #22/#25/#26.",
+      "deps": [
+        "heldout",
+        "human",
+        "controls",
+        "capability"
+      ],
+      "id": 29,
+      "blockedBy": [
+        21,
+        22,
+        25,
+        26
+      ],
+      "status": "completed",
+      "validation_evidence": "_research/FINDINGS-01.md (2026-11-06 entries); _research/CLAIM-EVIDENCE-20261106.md; results/readiness_ledger.json"
+    },
+    {
+      "key": "repro",
+      "priority": "P1",
+      "phase": "Delivery",
+      "subject": "Document a clean reproduction path",
+      "description": "REPRODUCE.md: three tiers (browser-only workbench; offline evidence chain; paid GPU regeneration) with exact commands, non-reproducible items (historical volume, CircuitKIT/EAP-IG, historical PDF) and artifact hashes.",
+      "deps": [
+        "snapshot",
+        "verify",
+        "ui"
+      ],
+      "id": 30,
+      "blockedBy": [
+        7,
+        10,
+        19,
+        2,
+        4
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T190714562351Z.json (129 tests, 21/21 integrity checks)"
+    },
+    {
+      "key": "publish",
+      "priority": "P1",
+      "phase": "Delivery",
+      "subject": "Publish a license-compliant evidence release",
+      "description": "Publish parameter patches plus loader, corpus/evaluation artifacts, full logs and provenance to the required public collections. Check dataset licenses, credentials and harmful-content handling. Never publish or host a drifted checkpoint in violation of the model license. Acceptance: downloadable, hash-verified artifacts and a working static replay; missing artifacts block a complete claim.",
+      "deps": [
+        "repro",
+        "interpret"
+      ],
+      "id": 31,
+      "blockedBy": [
+        30,
+        29
+      ],
+      "status": "pending"
+    },
+    {
+      "key": "story",
+      "priority": "P1",
+      "phase": "Delivery",
+      "subject": "Rewrite the submission around user value",
+      "description": "SUBMISSION.md rewritten around the maintainer ship/repair/reject decision, measured outcome stated plainly (all four arms insufficient evidence), historical artifacts labelled, limits listed. Revisit after #29.",
+      "deps": [
+        "scope",
+        "interpret",
+        "walkthrough"
+      ],
+      "id": 32,
+      "blockedBy": [
+        6,
+        29,
+        18
+      ],
+      "status": "completed",
+      "validation_evidence": "results/modal_validation_20261105T190714562351Z.json (129 tests, 21/21 integrity checks)"
+    },
+    {
+      "key": "demo",
+      "priority": "P1",
+      "phase": "Delivery",
+      "subject": "Rehearse and record the end-to-end demo",
+      "description": "Show the guided workflow and evidence export, including a no-acceptable-candidate outcome and limitations. Keep a local replay fallback. Acceptance: recording and cold-start rehearsal demonstrate the same public release; no dependence on a paid GPU being available live.",
+      "deps": [
+        "publish",
+        "story",
+        "ui"
+      ],
+      "id": 33,
+      "blockedBy": [
+        31,
+        32,
+        19
+      ],
+      "status": "pending"
+    },
+    {
+      "key": "submission",
+      "priority": "P1",
+      "phase": "Delivery",
+      "subject": "Run final checks and submit before the real deadline",
+      "description": "Verify the current official form, public collections/repo/article links, model/repo requirements, artifact hashes and complete metrics. The latest official check records November 14 AoE, not the end of the finalist refinement window. User performs account-bound approval/submission as necessary. Acceptance: final release checks and submission receipt recorded; do not mark complete on HTTP availability alone.",
+      "deps": [
+        "demo",
+        "publish",
+        "story"
+      ],
+      "id": 34,
+      "blockedBy": [
+        33,
+        31,
+        32
+      ],
+      "status": "pending"
+    },
+    {
+      "key": "finalist",
+      "priority": "P2",
+      "phase": "Finalist only",
+      "subject": "Spend finalist time on unresolved evidence",
+      "description": "Only if shortlisted and additional budget exists: extend replication, multilingual testing or targeted intervention controls that reviewers actually request. Do not start unrelated features. Acceptance: each additional experiment answers an identified uncertainty and updates the claim map.",
+      "deps": [
+        "submission"
+      ],
+      "id": 35,
+      "blockedBy": [
+        34
+      ],
+      "status": "pending"
+    },
+    {
+      "id": 36,
+      "key": "modal_validation",
+      "priority": "P0",
+      "phase": "Trust",
+      "subject": "Run testing and validation on Modal",
+      "status": "completed",
+      "blockedBy": [
+        20,
+        37
+      ],
+      "description": "Use a bounded CPU test runner with pinned source/toolkits, separate GPU evaluations, named logs, full remote run output and single local results writer. Accept only an actual passing Modal run, not a local test or availability probe. Budget authorization in results/modal_budget_20261105.json. Fresh quota availability is checked by bounded execution, not the authenticated app listing.",
+      "validation_evidence": "results/modal_validation_20261105T155145197754Z.json"
+    },
+    {
+      "id": 37,
+      "subject": "Restore Modal workspace capacity within the approved budget",
+      "status": "completed",
+      "priority": "P0",
+      "phase": "Trust",
+      "blockedBy": [],
+      "description": "Old workspace rejected execution for spend limit. Replacement workspace authenticated; bounded execution capacity unverified. No automatic fallback or provider limit increase.",
+      "validation_evidence": "results/modal_validation_20261105T155145197754Z.json"
+    },
+    {
+      "id": 38,
+      "subject": "Connect replacement Modal account and add the Hugging Face secret",
+      "status": "completed",
+      "priority": "P0",
+      "phase": "Trust",
+      "blockedBy": [],
+      "description": "Verified ayman-cool1971, activated scartissue-replacement, and confirmed huggingface/HF_TOKEN secret. Old profile preserved. No compute launched during migration. See results/account_migration_20261106.json."
+    },
+    {
+      "id": 39,
+      "subject": "Rotate the exposed Hugging Face token",
+      "status": "pending",
+      "priority": "P0",
+      "phase": "Trust",
+      "blockedBy": [],
+      "description": "Revoke chat-exposed token and update Modal secret through a hidden local prompt or dashboard. Never paste replacement into chat."
+    },
+    {
+      "id": 40,
+      "subject": "Check Hugging Face hosted inference credit and compatibility",
+      "status": "pending",
+      "priority": "P1",
+      "phase": "Compute gate",
+      "description": "Possible credit is unverified, not spending authorization. Weight edits still require exact weights; hosted judge changes require protocol review.",
+      "blockedBy": []
+    },
+    {
+      "id": 42,
+      "key": "ledger_bootstrap",
+      "priority": "P0",
+      "phase": "Trust",
+      "subject": "Fix readiness-ledger validation bootstrap",
+      "status": "completed",
+      "blockedBy": [],
+      "description": "Generate the ledger before remote documentation-link tests without bypassing missing-file checks. Prior failing run retained.",
+      "validation_evidence": "results/modal_validation_20261105T164431691063Z.json"
+    }
+  ],
+  "validation_policy": {
+    "execution": "Modal for tests and validation; local orchestration and result inspection only",
+    "local_baselines": "diagnostics_not_signoff",
+    "requested_on": "2026-11-05",
+    "gpu_jobs": "budget_gated",
+    "entrypoint": "@app.local_entrypoint + spawn()/remote()",
+    "single_writer": "local results writer; containers return; no parallel Volume commits",
+    "logs": "Name logs/<job>_<what>.log before each launch",
+    "modal_account": {
+      "profile": "scartissue-replacement",
+      "workspace": "ayman-cool1971",
+      "switch_only_on_explicit_user_request": true,
+      "automatic_fallback": false,
+      "evidence": "results/account_migration_20261106.json"
+    }
+  }
+}

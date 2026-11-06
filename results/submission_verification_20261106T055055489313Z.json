@@ -1,0 +1,274 @@
+{
+  "schema": "scartissue.verification/2",
+  "checked_at": "2026-11-06T05:51:05.810235+00:00",
+  "execution": "offline; no network or model inference",
+  "n_checks": 26,
+  "n_failed": 0,
+  "status": "passed",
+  "submission_ready": false,
+  "scientific_blockers": [
+    "Judge calibration has not passed",
+    "Evidence is not headline eligible",
+    "Project-distribution human audit is pending",
+    "In-domain judge calibration has not been measured on human labels",
+    "Comparison is exploratory, not confirmatory",
+    "Circuit-body evaluation, report rebuild and publication require separate sign-off"
+  ],
+  "checks": [
+    {
+      "check": "manifest schema",
+      "passed": true,
+      "detail": "Required schema, model and evidence map; additional keys are allowed"
+    },
+    {
+      "check": "manifest artifact: corpus",
+      "passed": true,
+      "detail": "1-curate/corpus/corpus.jsonl"
+    },
+    {
+      "check": "manifest artifact: split",
+      "passed": true,
+      "detail": "1-curate/corpus/corpus_split.json"
+    },
+    {
+      "check": "manifest artifact: patches",
+      "passed": true,
+      "detail": "results/patch_checksums.json"
+    },
+    {
+      "check": "manifest artifact: capability",
+      "passed": true,
+      "detail": "results/p16_capability_analysis_20261102.json"
+    },
+    {
+      "check": "manifest artifact: safety_generations",
+      "passed": true,
+      "detail": "results/p21_safety_length_full_20261103_001722.json"
+    },
+    {
+      "check": "manifest artifact: judge_verdicts",
+      "passed": true,
+      "detail": "results/p19_safety_judges_20261103_002850.json"
+    },
+    {
+      "check": "manifest artifact: safety_analysis",
+      "passed": true,
+      "detail": "results/p21_length_analysis_20261103.json"
+    },
+    {
+      "check": "manifest artifact: judge_validation",
+      "passed": true,
+      "detail": "results/p22_judge_validation_20261103_020927.json"
+    },
+    {
+      "check": "manifest artifact: circuit",
+      "passed": true,
+      "detail": "results/p23_circuit_20261103_022433.json"
+    },
+    {
+      "check": "manifest artifact: toolkits",
+      "passed": true,
+      "detail": "results/toolkit_provenance.json"
+    },
+    {
+      "check": "manifest artifact: parquet",
+      "passed": true,
+      "detail": "results/parquet_publish_manifest.json"
+    },
+    {
+      "check": "manifest artifact: heldout_generations",
+      "passed": true,
+      "detail": "results/p24_heldout_20261103_021508.json"
+    },
+    {
+      "check": "manifest artifact: heldout_judges",
+      "passed": true,
+      "detail": "results/p19_safety_judges_20261103_023754.json"
+    },
+    {
+      "check": "manifest artifact: heldout_analysis",
+      "passed": true,
+      "detail": "results/heldout_analysis_20261106.json"
+    },
+    {
+      "check": "manifest artifact: circuit_body_recovery",
+      "passed": true,
+      "detail": "results/circuit_body_recovery_20261106.json"
+    },
+    {
+      "check": "manifest artifact: confirmatory_spec",
+      "passed": true,
+      "detail": "results/confirmatory_spec_20261106.json"
+    },
+    {
+      "check": "manifest source coverage",
+      "passed": true,
+      "detail": "Generation, judgments, safety analysis and lm-eval capability must be linked"
+    },
+    {
+      "check": "bundle matches current evidence",
+      "passed": true,
+      "detail": "All content and declared source hashes must match; creation time is not scientific evidence"
+    },
+    {
+      "check": "shared bundle schema",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "bundle source hash: results/p21_safety_length_full_20261103_001722.json",
+      "passed": true,
+      "detail": "results/p21_safety_length_full_20261103_001722.json"
+    },
+    {
+      "check": "bundle source hash: results/p19_safety_judges_20261103_002850.json",
+      "passed": true,
+      "detail": "results/p19_safety_judges_20261103_002850.json"
+    },
+    {
+      "check": "bundle source hash: results/p21_length_analysis_20261103.json",
+      "passed": true,
+      "detail": "results/p21_length_analysis_20261103.json"
+    },
+    {
+      "check": "bundle source hash: results/p16_capability_analysis_20261102.json",
+      "passed": true,
+      "detail": "results/p16_capability_analysis_20261102.json"
+    },
+    {
+      "check": "materialized bundle current: space-static/data/evidence.json",
+      "passed": true,
+      "detail": "space-static/data/evidence.json"
+    },
+    {
+      "check": "manifest eligibility agrees with sources",
+      "passed": true,
+      "detail": {
+        "headline_eligible": false,
+        "calibration_status": "failed",
+        "scope": "exploratory",
+        "human_project_audit": "pending",
+        "errors": []
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "corpus",
+      "path": "1-curate/corpus/corpus.jsonl",
+      "sha256": "529bd20395810ae9ec6225a41f2795200de08bb159ac0a16b853c3a083f05d29",
+      "bytes": 785621,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "split",
+      "path": "1-curate/corpus/corpus_split.json",
+      "sha256": "fe0014e4c3963e053b7985b8951164b1c91ebda37abb50e75646152fc645f736",
+      "bytes": 26647,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "patches",
+      "path": "results/patch_checksums.json",
+      "sha256": "935d9e3d3f9a70047a22fa2d92123fe235dbbd5386bed70253bb29a418711c25",
+      "bytes": 1973,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "capability",
+      "path": "results/p16_capability_analysis_20261102.json",
+      "sha256": "a38e8c0754f87b9ce4c130f9f6e0b792a7205e006068d9f2e2b6502c6587f056",
+      "bytes": 7806,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "safety_generations",
+      "path": "results/p21_safety_length_full_20261103_001722.json",
+      "sha256": "db249ab4ceddf23a08d7703600a795c6a1537b7e7b2b81a6660a7029c6ddca18",
+      "bytes": 12774540,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "judge_verdicts",
+      "path": "results/p19_safety_judges_20261103_002850.json",
+      "sha256": "781d5dfd140ed54dbd20889080f29a8c8fdd9fa93d81de517ac59dbfd552b6d6",
+      "bytes": 35101339,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "safety_analysis",
+      "path": "results/p21_length_analysis_20261103.json",
+      "sha256": "4c14d886a35ef1eeb24f390c3bc9deccfb1f7fc77a5fa4457c8c08abce1981c7",
+      "bytes": 584683,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "judge_validation",
+      "path": "results/p22_judge_validation_20261103_020927.json",
+      "sha256": "4b626822a3f7fa1b1fd79dc0a99f54665f23871d6c397fef2f45ba6ddb769699",
+      "bytes": 5867206,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "circuit",
+      "path": "results/p23_circuit_20261103_022433.json",
+      "sha256": "a974b092e9dff2efa0de00829e2c72fe5862ee1679d1db416e1613979717df06",
+      "bytes": 26851,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "toolkits",
+      "path": "results/toolkit_provenance.json",
+      "sha256": "b43958b1d177d6b173302737fada5b871da6026b5311dd6ac46ecbfa761dfe7a",
+      "bytes": 6956,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "parquet",
+      "path": "results/parquet_publish_manifest.json",
+      "sha256": "85b6a781a54c7df9e1d427a3e7bc61673ba2706251a65fc98ab7dcbcc3b840df",
+      "bytes": 7588,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "heldout_generations",
+      "path": "results/p24_heldout_20261103_021508.json",
+      "sha256": "7fd67ab5ea7c09612488336fdde1971f16606fb3c0e0fb83f2848ae604593227",
+      "bytes": 11065343,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "heldout_judges",
+      "path": "results/p19_safety_judges_20261103_023754.json",
+      "sha256": "3721f75adcf03baa0778d5419a9f8d46ccb19465ace2f39f7e97be54352304cf",
+      "bytes": 29792650,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "heldout_analysis",
+      "path": "results/heldout_analysis_20261106.json",
+      "sha256": "c2211f4747e5b83c82b0d9ccbf1b80d9a13c55d6666dec45b3350635573a18e8",
+      "bytes": 22570,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "circuit_body_recovery",
+      "path": "results/circuit_body_recovery_20261106.json",
+      "sha256": "f542780f23b5a596ae3639882326ec7fdd8794bc6b85e3c14f74c874c7257679",
+      "bytes": 2010,
+      "status": "present_not_independently_validated"
+    },
+    {
+      "name": "confirmatory_spec",
+      "path": "results/confirmatory_spec_20261106.json",
+      "sha256": "7cf5b1c44eb5636a4993a47431a9ae58c6818ad3032b34a26713ec1a30418df5",
+      "bytes": 7293,
+      "status": "present_not_independently_validated"
+    }
+  ],
+  "limitations": [
+    "Hashes establish internal consistency, not authenticity or scientific validity.",
+    "A passing integrity check cannot certify safety or submission readiness.",
+    "Historical PDF and public endpoints are not validated by this check."
+  ]
+}

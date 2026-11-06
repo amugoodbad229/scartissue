@@ -1,0 +1,210 @@
+{
+ "schema": "scartissue.toolkit-provenance/1",
+ "repos": {
+  "CuratorKIT": {
+   "path": "C:\\Users\\Ayman\\OneDrive\\Desktop\\Projects\\SAAS_Projects\\ScarTissue\\repos\\CuratorKIT",
+   "role": "corpus construction with row-level provenance (763 rows)",
+   "package": "src/curatorkit",
+   "imported_by_this_repo": [
+    {
+     "file": ".scratch/probe2.py",
+     "line": 3,
+     "code": "from curatorkit import Curator, CuratorConfig"
+    },
+    {
+     "file": ".scratch/probe3.py",
+     "line": 3,
+     "code": "from curatorkit import Curator, CuratorConfig"
+    },
+    {
+     "file": ".scratch/probe4.py",
+     "line": 3,
+     "code": "from curatorkit import Curator, CuratorConfig"
+    },
+    {
+     "file": ".scratch/probe5.py",
+     "line": 2,
+     "code": "from curatorkit import Curator, CuratorConfig"
+    },
+    {
+     "file": "experiments/p8_corpus.py",
+     "line": 95,
+     "code": "from curatorkit.exporters import EXPORTERS"
+    },
+    {
+     "file": "experiments/p8_corpus.py",
+     "line": 96,
+     "code": "from curatorkit.exporters.corpus import _FORMAT, CorpusExporter, is_compatible"
+    },
+    {
+     "file": "experiments/p8_corpus.py",
+     "line": 356,
+     "code": "from curatorkit import Curator, CuratorConfig"
+    }
+   ],
+   "verified_runtime": [
+    {
+     "evidence": "results/corpus_provenance_20261102.json",
+     "exporter": null
+    }
+   ],
+   "git_head": "dd9e835301fcddc74a37501d9e207a5a060d209f",
+   "git_head_date": "2026-10-12",
+   "git_dirty": false,
+   "licence": {
+    "file": "LICENSE.md",
+    "sha256": "78c2c71382cc580af04652503b0f47c1f6080b290238aff48eb9505b8586e1c1",
+    "first_heading": "# Lexsi Labs Source Available License (LSAL) \u2013 Version 1.1 (CuratorKIT)"
+   },
+   "vendored": false,
+   "installed_into_env": false
+  },
+  "CircuitKIT": {
+   "path": "C:\\Users\\Ayman\\OneDrive\\Desktop\\Projects\\SAAS_Projects\\ScarTissue\\repos\\CircuitKIT",
+   "role": "EAP-IG circuit discovery on the drifted model",
+   "package": "src/circuitkit",
+   "imported_by_this_repo": [
+    {
+     "file": "experiments/p23_circuit.py",
+     "line": 172,
+     "code": "import circuitkit  # noqa: F401  installs the cohere2 port before transformer_lens loads"
+    },
+    {
+     "file": "experiments/p23_circuit.py",
+     "line": 173,
+     "code": "from circuitkit.api import discover_circuit"
+    },
+    {
+     "file": "experiments/p23_circuit.py",
+     "line": 174,
+     "code": "from circuitkit.quick import build_discovery_config"
+    },
+    {
+     "file": "experiments/p6_circuit.py",
+     "line": 67,
+     "code": "import circuitkit  # noqa: F401  \u2014 installs the cohere2 port before any TL load"
+    },
+    {
+     "file": "experiments/p6_circuit.py",
+     "line": 68,
+     "code": "from circuitkit.api import discover_circuit"
+    },
+    {
+     "file": "experiments/p6_circuit.py",
+     "line": 69,
+     "code": "from circuitkit.quick import build_discovery_config"
+    }
+   ],
+   "verified_runtime": [
+    {
+     "evidence": "results/p23_circuit_20261103_022433.json",
+     "result_shape": {
+      "type": "list",
+      "pruned_returned": 182,
+      "scores_side_car": true,
+      "n_signed_scores": 612,
+      "score_examples": [
+       "A0.0",
+       "A0.1"
+      ],
+      "pruned_examples": [
+       "MLP 11",
+       "MLP 18"
+      ]
+     },
+     "node_naming": [
+      "ara_head",
+      "ara_mlp"
+     ],
+     "signed_nodes": 612
+    }
+   ],
+   "git_head": "e71d5e17fe6e2abfde47ec9a7fbaf31649601b78",
+   "git_head_date": "2026-10-08",
+   "git_dirty": false,
+   "licence": {
+    "file": "LICENSE.md",
+    "sha256": "f13df08f267a7544816214b17bd6ad4baafd59b2650ffd22c9825cbdadc28485",
+    "first_heading": "# Lexsi Labs Source Available License (LSAL), Version 1.2 (CircuitKIT)"
+   },
+   "package_tree_sha256": "71f6d605e0e559997a1c985175df63946afb6a6fbe9bedf678137bd99a87901a",
+   "package_py_files": 359,
+   "vendored": false,
+   "installed_into_env": false
+  },
+  "AuditKIT": {
+   "path": "C:\\Users\\Ayman\\OneDrive\\Desktop\\Projects\\SAAS_Projects\\ScarTissue\\repos\\AuditKIT",
+   "role": "native evaluation of stored answers against a strict harm metric",
+   "package": "src/auditkit",
+   "imported_by_this_repo": [
+    {
+     "file": "experiments/judge_protocols.py",
+     "line": 104,
+     "code": "from auditkit import evaluate"
+    },
+    {
+     "file": "experiments/judge_protocols.py",
+     "line": 105,
+     "code": "from auditkit.metric import Metric"
+    },
+    {
+     "file": "experiments/judge_protocols.py",
+     "line": 106,
+     "code": "from auditkit.sample import Sample"
+    },
+    {
+     "file": "experiments/judge_protocols.py",
+     "line": 107,
+     "code": "from auditkit.score import Score, Direction, ScoreKind"
+    }
+   ],
+   "verified_runtime": {
+    "evidence": "results/p19_safety_judges_20261103_002850.json",
+    "commit": "71316da345784ff220d5ed59337441a59ab31526",
+    "python_tree_sha256": "ef470f7d5a8533d7ca97f8a9d1da13f25460d4f09c995105809b012f78731398",
+    "native_counts": {
+     "harmbench": 644,
+     "qwen3guard": 644,
+     "granite": 644
+    }
+   },
+   "git_head": "71316da345784ff220d5ed59337441a59ab31526",
+   "git_head_date": "2026-10-07",
+   "git_dirty": false,
+   "licence": {
+    "file": "LICENSE.md",
+    "sha256": "5218c07f3597624ed646665f4dba45c013dac31ca03c77a5458d34d41b723815",
+    "first_heading": "# Lexsi Labs Source Available License (LSAL), Version 1.2 (AuditKit)"
+   },
+   "package_tree_sha256": "2ccb2a3cb2bd2527990538bf36bb15112e4536dfd3f8890ab34307509309c75d",
+   "package_py_files": 90,
+   "vendored": false,
+   "installed_into_env": false
+  },
+  "SafeTune": {
+   "path": "C:\\Users\\Ayman\\OneDrive\\Desktop\\Projects\\SAAS_Projects\\ScarTissue\\repos\\SafeTune",
+   "role": "NOT imported: the drift and the repair run through our own audited rank-one operator instead (see results/p1_grid.json)",
+   "package": "src/safetune",
+   "imported_by_this_repo": [],
+   "verified_runtime": null,
+   "git_head": "26f59e6d1bdcacafe5f2be3b8d982fb214369659",
+   "git_head_date": "2026-10-21",
+   "git_dirty": false,
+   "licence": {
+    "file": "LICENSE.md",
+    "sha256": "fedcd2e0c2640c09e6810743126b2c82898d5e74a8b2cc7cc477f3ddfe3cd3be",
+    "first_heading": "# Lexsi Labs Source Available License (LSAL), Version 1.2 (SafeTune)"
+   },
+   "package_tree_sha256": "455ff53401d8947cf3f9482646d29c760975d4854f2ffb5e11c2da08e90cd36f",
+   "package_py_files": 331,
+   "vendored": false,
+   "installed_into_env": false
+  }
+ },
+ "track_repos_used_together": [
+  "CuratorKIT",
+  "CircuitKIT",
+  "AuditKIT"
+ ],
+ "note": "CircuitKIT and AuditKIT are imported from the archive via PYTHONPATH inside the Modal image; CuratorKIT likewise for the corpus run. Nothing is vendored or pip-installed, and the LSAL licences stay with their repositories."
+}

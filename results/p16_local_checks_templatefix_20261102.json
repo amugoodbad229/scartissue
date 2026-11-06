@@ -1,0 +1,12 @@
+{
+  "scope": "CPU unit tests only; actual model/torch checks run on Modal",
+  "command": "uv run python -m pytest tests -q",
+  "exit_code": 0,
+  "stdout": ".....................                                                    [100%]\n21 passed in 0.19s\n",
+  "stderr": "",
+  "source_sha256": {
+    "experiments/p16_lm_eval.py": "35418fb2a711ae106076ef1ac145b587e2d657f06955b4a1947d162c4f057e00",
+    "experiments/eval_runtime.py": "29f31d00d04177c1768ee1e61e69f59f320ff6e17c7ef7113601652fb142b5f4",
+    "tests/test_eval_runtime.py": "5ccb3b4d0a42e9d606efe95a72c314e14b4c889e3c4f040f5766167bea2a087a"
+  }
+}

@@ -1,0 +1,286 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-dzKTD111tLNKmFarXIoWW3
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p17_safety.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\eval_runtime.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\artifact
+│   s
+└── ✓ Created Function generate.
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<03:04,  1.57it/s]
+[1ALoading weights:   3%|▎         | 9/290 [00:00<00:17, 15.66it/s]
+[1ALoading weights:   6%|▌         | 18/290 [00:00<00:09, 29.97it/s]
+[1ALoading weights:  10%|█         | 29/290 [00:00<00:05, 45.55it/s]
+[1ALoading weights:  14%|█▍        | 40/290 [00:01<00:04, 58.89it/s]
+[1ALoading weights:  17%|█▋        | 49/290 [00:01<00:03, 65.18it/s]
+[1ALoading weights:  21%|██        | 60/290 [00:01<00:03, 75.83it/s]
+[1ALoading weights:  24%|██▍       | 69/290 [00:01<00:02, 78.15it/s]
+[1ALoading weights:  28%|██▊       | 81/290 [00:01<00:02, 88.35it/s]
+[1ALoading weights:  31%|███▏      | 91/290 [00:01<00:02, 89.53it/s]
+[1ALoading weights:  35%|███▍      | 101/290 [00:01<00:02, 91.59it/s]
+[1ALoading weights:  39%|███▉      | 113/290 [00:01<00:01, 95.22it/s]
+[1ALoading weights:  42%|████▏     | 123/290 [00:01<00:01, 94.84it/s]
+[1ALoading weights:  46%|████▌     | 134/290 [00:02<00:01, 94.59it/s]
+[1ALoading weights:  50%|█████     | 145/290 [00:02<00:01, 95.61it/s]
+[1ALoading weights:  54%|█████▍    | 157/290 [00:02<00:01, 97.54it/s]
+[1ALoading weights:  58%|█████▊    | 167/290 [00:02<00:01, 90.50it/s]
+[1ALoading weights:  62%|██████▏   | 180/290 [00:02<00:01, 93.50it/s]
+[1ALoading weights:  66%|██████▌   | 190/290 [00:02<00:01, 95.16it/s]
+[1ALoading weights:  70%|███████   | 203/290 [00:02<00:00, 101.47it/s]
+[1ALoading weights:  74%|███████▍  | 214/290 [00:02<00:00, 100.12it/s]
+[1ALoading weights:  78%|███████▊  | 225/290 [00:03<00:00, 97.34it/s] 
+[1ALoading weights:  82%|████████▏ | 238/290 [00:03<00:00, 102.93it/s]
+[1ALoading weights:  86%|████████▌ | 249/290 [00:03<00:00, 99.05it/s] 
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:  90%|█████████ | 261/290 [00:03<00:00, 100.29it/s]
+[1ALoading weights:  94%|█████████▍| 273/290 [00:03<00:00, 102.73it/s]
+[1ALoading weights:  98%|█████████▊| 284/290 [00:03<00:00, 99.13it/s] 
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 80.43it/s]
+
+[1ALoading weights:   0%|          | 1/290 [00:00<01:47,  2.69it/s]
+[1ALoading weights:   6%|▌         | 18/290 [00:00<00:05, 47.54it/s]
+[1ALoading weights:  11%|█▏        | 33/290 [00:00<00:03, 74.69it/s]
+[1ALoading weights:  17%|█▋        | 49/290 [00:00<00:02, 97.78it/s]
+[1ALoading weights:  23%|██▎       | 68/290 [00:00<00:01, 117.73it/s]
+[1ALoading weights:  31%|███       | 89/290 [00:00<00:01, 138.02it/s]
+[1ALoading weights:  38%|███▊      | 109/290 [00:01<00:01, 151.47it/s]
+[1ALoading weights:  43%|████▎     | 126/290 [00:01<00:01, 155.30it/s]
+[1ALoading weights:  49%|████▉     | 143/290 [00:01<00:00, 157.61it/s]
+[1ALoading weights:  56%|█████▌    | 161/290 [00:01<00:00, 163.67it/s]
+[1ALoading weights:  62%|██████▏   | 181/290 [00:01<00:00, 165.71it/s]
+[1ALoading weights:  69%|██████▉   | 200/290 [00:01<00:00, 167.50it/s]
+[1ALoading weights:  76%|███████▌  | 221/290 [00:01<00:00, 175.32it/s]
+[1ALoading weights:  82%|████████▏ | 239/290 [00:01<00:00, 175.83it/s]
+[1ALoading weights:  89%|████████▊ | 257/290 [00:01<00:00, 164.64it/s]
+[1ALoading weights:  96%|█████████▌| 277/290 [00:02<00:00, 169.02it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:02<00:00, 140.65it/s]
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<02:58,  1.62it/s]
+[1ALoading weights:   2%|▏         | 5/290 [00:00<00:32,  8.77it/s]
+[1ALoading weights:   5%|▍         | 14/290 [00:00<00:10, 25.42it/s]
+[1ALoading weights:   8%|▊         | 24/290 [00:00<00:07, 37.77it/s]
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:  12%|█▏        | 36/290 [00:01<00:04, 51.30it/s]
+[1ALoading weights:  17%|█▋        | 49/290 [00:01<00:03, 64.94it/s]
+[1ALoading weights:  21%|██        | 60/290 [00:01<00:03, 74.88it/s]
+[1ALoading weights:  24%|██▍       | 69/290 [00:01<00:02, 76.46it/s]
+[1ALoading weights:  28%|██▊       | 81/290 [00:01<00:02, 85.17it/s]
+[1ALoading weights:  32%|███▏      | 93/290 [00:01<00:02, 90.55it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<03:03,  1.57it/s]
+[1ALoading weights:  36%|███▌      | 104/290 [00:01<00:02, 87.32it/s]
+[1ALoading weights:   4%|▍         | 12/290 [00:00<00:13, 20.74it/s]
+[1ALoading weights:  40%|████      | 117/290 [00:01<00:01, 96.44it/s]
+[1ALoading weights:   7%|▋         | 20/290 [00:00<00:09, 29.64it/s]
+[1ALoading weights:  44%|████▍     | 129/290 [00:02<00:01, 100.37it/s]
+[1ALoading weights:  11%|█         | 31/290 [00:01<00:05, 45.50it/s]
+[1ALoading weights:  48%|████▊     | 140/290 [00:02<00:01, 101.77it/s]
+[1ALoading weights:  15%|█▍        | 43/290 [00:01<00:04, 57.44it/s]
+[1ALoading weights:  52%|█████▏    | 151/290 [00:02<00:01, 97.58it/s] 
+[1ALoading weights:  19%|█▉        | 55/290 [00:01<00:03, 70.80it/s]
+[1ALoading weights:  56%|█████▌    | 161/290 [00:02<00:01, 98.13it/s]
+[1ALoading weights:  22%|██▏       | 65/290 [00:01<00:03, 73.30it/s]
+[1ALoading weights:  27%|██▋       | 79/290 [00:01<00:02, 89.42it/s]
+[1ALoading weights:  60%|█████▉    | 173/290 [00:02<00:01, 103.40it/s]
+[1ALoading weights:  64%|██████▍   | 185/290 [00:02<00:01, 99.94it/s] 
+[1ALoading weights:  31%|███       | 90/290 [00:01<00:02, 90.09it/s]
+[1ALoading weights:  68%|██████▊   | 196/290 [00:02<00:00, 100.85it/s]
+[1ALoading weights:  35%|███▍      | 101/290 [00:01<00:02, 92.83it/s]
+[1ALoading weights:  71%|███████▏  | 207/290 [00:02<00:00, 98.38it/s] 
+[1ALoading weights:  39%|███▊      | 112/290 [00:01<00:01, 96.94it/s]
+[1ALoading weights:  75%|███████▌  | 218/290 [00:02<00:00, 94.83it/s]
+[1ALoading weights:  42%|████▏     | 123/290 [00:01<00:01, 95.81it/s]
+[1ALoading weights:  79%|███████▉  | 229/290 [00:03<00:00, 93.39it/s]
+[1ALoading weights:  46%|████▌     | 133/290 [00:02<00:01, 88.58it/s]
+[1ALoading weights:  50%|█████     | 145/290 [00:02<00:01, 93.29it/s]
+[1ALoading weights:  82%|████████▏ | 239/290 [00:03<00:00, 94.78it/s]
+[1ALoading weights:  86%|████████▌ | 249/290 [00:03<00:00, 92.17it/s]
+[1ALoading weights:  54%|█████▍    | 156/290 [00:02<00:01, 96.87it/s]
+[1ALoading weights:  89%|████████▉ | 259/290 [00:03<00:00, 87.89it/s]
+[1ALoading weights:  58%|█████▊    | 168/290 [00:02<00:01, 102.56it/s]
+[1ALoading weights:  93%|█████████▎| 269/290 [00:03<00:00, 87.41it/s]
+[1ALoading weights:  62%|██████▏   | 179/290 [00:02<00:01, 99.78it/s] 
+[1ALoading weights:  97%|█████████▋| 280/290 [00:03<00:00, 91.39it/s]
+[1ALoading weights:  66%|██████▌   | 190/290 [00:02<00:01, 97.66it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 77.81it/s]
+
+[1ALoading weights:  69%|██████▉   | 201/290 [00:02<00:00, 98.03it/s]
+[1ALoading weights:  73%|███████▎  | 212/290 [00:02<00:00, 94.19it/s]
+[1ALoading weights:  77%|███████▋  | 223/290 [00:02<00:00, 97.14it/s]
+[1ALoading weights:  80%|████████  | 233/290 [00:03<00:00, 93.11it/s]
+[1ALoading weights:  84%|████████▍ | 245/290 [00:03<00:00, 95.74it/s]
+[1ALoading weights:  88%|████████▊ | 255/290 [00:03<00:00, 94.31it/s]
+[1ALoading weights:  91%|█████████▏| 265/290 [00:03<00:00, 89.63it/s]
+[1ALoading weights:  96%|█████████▌| 277/290 [00:03<00:00, 90.65it/s]
+[1ALoading weights:  99%|█████████▉| 287/290 [00:03<00:00, 91.88it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 78.80it/s]
+drift: 4/160 answers retained
+base: 4/160 answers retained
+drift: 8/160 answers retained
+drift: 12/160 answers retained
+base: 8/160 answers retained
+drift: 16/160 answers retained
+drift: 20/160 answers retained
+base: 12/160 answers retained
+drift: 24/160 answers retained
+base: 16/160 answers retained
+drift: 28/160 answers retained
+base: 20/160 answers retained
+drift: 32/160 answers retained
+base: 24/160 answers retaineddrift: 36/160 answers retained
+
+harm2_a4: 4/160 answers retained
+drift: 40/160 answers retained
+base: 28/160 answers retained
+drift: 44/160 answers retained
+harm2_a4: 8/160 answers retained
+drift: 48/160 answers retained
+base: 32/160 answers retained
+drift: 52/160 answers retained
+harm2_a4: 12/160 answers retained
+global_a4: 4/160 answers retained
+drift: 56/160 answers retained
+drift: 60/160 answers retained
+base: 36/160 answers retained
+harm2_a4: 16/160 answers retained
+global_a4: 8/160 answers retained
+drift: 64/160 answers retained
+global_a4: 12/160 answers retained
+base: 40/160 answers retained
+drift: 68/160 answers retained
+harm2_a4: 20/160 answers retained
+drift: 72/160 answers retained
+global_a4: 16/160 answers retained
+base: 44/160 answers retained
+drift: 76/160 answers retained
+harm2_a4: 24/160 answers retained
+drift: 80/160 answers retained
+global_a4: 20/160 answers retained
+base: 48/160 answers retained
+drift: 84/160 answers retained
+harm2_a4: 28/160 answers retained
+drift: 88/160 answers retained
+global_a4: 24/160 answers retained
+base: 52/160 answers retained
+harm2_a4: 32/160 answers retained
+drift: 92/160 answers retained
+base: 56/160 answers retained
+drift: 96/160 answers retained
+global_a4: 28/160 answers retained
+harm2_a4: 36/160 answers retained
+drift: 100/160 answers retained
+base: 60/160 answers retained
+drift: 104/160 answers retained
+global_a4: 32/160 answers retained
+base: 64/160 answers retained
+harm2_a4: 40/160 answers retained
+drift: 108/160 answers retained
+global_a4: 36/160 answers retained
+drift: 112/160 answers retained
+base: 68/160 answers retained
+harm2_a4: 44/160 answers retained
+drift: 116/160 answers retained
+global_a4: 40/160 answers retained
+drift: 120/160 answers retained
+base: 72/160 answers retained
+harm2_a4: 48/160 answers retained
+drift: 124/160 answers retained
+global_a4: 44/160 answers retained
+drift: 128/160 answers retained
+base: 76/160 answers retained
+harm2_a4: 52/160 answers retained
+drift: 132/160 answers retained
+base: 80/160 answers retained
+global_a4: 48/160 answers retained
+drift: 136/160 answers retained
+harm2_a4: 56/160 answers retained
+base: 84/160 answers retained
+drift: 140/160 answers retained
+global_a4: 52/160 answers retained
+harm2_a4: 60/160 answers retained
+drift: 144/160 answers retained
+base: 88/160 answers retained
+drift: 148/160 answers retained
+global_a4: 56/160 answers retained
+base: 92/160 answers retained
+harm2_a4: 64/160 answers retained
+drift: 152/160 answers retained
+drift: 156/160 answers retained
+global_a4: 60/160 answers retained
+base: 96/160 answers retained
+drift: 160/160 answers retained
+harm2_a4: 68/160 answers retained
+global_a4: 64/160 answers retained
+base: 100/160 answers retained
+harm2_a4: 72/160 answers retained
+global_a4: 68/160 answers retained
+base: 104/160 answers retained
+harm2_a4: 76/160 answers retained
+global_a4: 72/160 answers retained
+base: 108/160 answers retained
+harm2_a4: 80/160 answers retained
+global_a4: 76/160 answers retained
+harm2_a4: 84/160 answers retained
+base: 112/160 answers retained
+global_a4: 80/160 answers retained
+harm2_a4: 88/160 answers retained
+global_a4: 84/160 answers retained
+base: 116/160 answers retained
+harm2_a4: 92/160 answers retained
+global_a4: 88/160 answers retained
+base: 120/160 answers retained
+harm2_a4: 96/160 answers retained
+global_a4: 92/160 answers retained
+base: 124/160 answers retained
+harm2_a4: 100/160 answers retained
+base: 128/160 answers retained
+global_a4: 96/160 answers retained
+harm2_a4: 104/160 answers retained
+base: 132/160 answers retained
+global_a4: 100/160 answers retained
+harm2_a4: 108/160 answers retained
+global_a4: 104/160 answers retained
+base: 136/160 answers retained
+harm2_a4: 112/160 answers retained
+global_a4: 108/160 answers retained
+base: 140/160 answers retained
+harm2_a4: 116/160 answers retained
+global_a4: 112/160 answers retained
+base: 144/160 answers retained
+harm2_a4: 120/160 answers retained
+global_a4: 116/160 answers retained
+base: 148/160 answers retained
+harm2_a4: 124/160 answers retained
+global_a4: 120/160 answers retained
+base: 152/160 answers retained
+harm2_a4: 128/160 answers retained
+global_a4: 124/160 answers retained
+base: 156/160 answers retained
+harm2_a4: 132/160 answers retained
+global_a4: 128/160 answers retained
+base: 160/160 answers retained
+harm2_a4: 136/160 answers retained
+global_a4: 132/160 answers retained
+harm2_a4: 140/160 answers retained
+global_a4: 136/160 answers retained
+harm2_a4: 144/160 answers retained
+global_a4: 140/160 answers retained
+harm2_a4: 148/160 answers retained
+global_a4: 144/160 answers retained
+harm2_a4: 152/160 answers retained
+global_a4: 148/160 answers retained
+harm2_a4: 156/160 answers retained
+global_a4: 152/160 answers retained
+harm2_a4: 160/160 answers retained
+global_a4: 156/160 answers retained
+global_a4: 160/160 answers retained
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p17_safety_full_20261102_234450.json: passed
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-dzKTD111tLNKmFarXIoWW3

@@ -1,0 +1,300 @@
+✓ Initialized. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-y3MiFtdlRjEG7av7fPTH5L
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\p23_circuit.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus_split.json
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\1-curate
+│   \corpus\corpus.jsonl
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\corpus_fit.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\patching.py
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\ScarTissue\repos\Cir
+│   cuitKIT
+└── ✓ Created Function run.
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<03:13,  1.49it/s]
+[1ALoading weights:   3%|▎         | 10/290 [00:00<00:16, 16.73it/s]
+[1ALoading weights:   6%|▌         | 17/290 [00:00<00:10, 27.17it/s]
+[1ALoading weights:   8%|▊         | 23/290 [00:00<00:07, 33.84it/s]
+[1ALoading weights:  13%|█▎        | 37/290 [00:01<00:04, 55.61it/s]
+[1ALoading weights:  17%|█▋        | 48/290 [00:01<00:03, 64.27it/s]
+[1ALoading weights:  19%|█▉        | 56/290 [00:01<00:03, 64.77it/s]
+[1ALoading weights:  24%|██▍       | 69/290 [00:01<00:02, 78.90it/s]
+[1ALoading weights:  28%|██▊       | 81/290 [00:01<00:02, 86.39it/s]
+[1ALoading weights:  32%|███▏      | 93/290 [00:01<00:02, 90.30it/s]
+[1ALoading weights:  36%|███▌      | 104/290 [00:01<00:02, 91.59it/s]
+[1ALoading weights:  40%|████      | 117/290 [00:01<00:01, 94.32it/s]
+[1ALoading weights:  44%|████▍     | 128/290 [00:02<00:01, 91.48it/s]
+[1ALoading weights:  49%|████▊     | 141/290 [00:02<00:01, 100.24it/s]
+[1ALoading weights:  53%|█████▎    | 153/290 [00:02<00:01, 103.33it/s]
+[1ALoading weights:  57%|█████▋    | 166/290 [00:02<00:01, 108.79it/s]
+[1ALoading weights:  61%|██████▏   | 178/290 [00:02<00:01, 106.22it/s]
+[1ALoading weights:  65%|██████▌   | 189/290 [00:02<00:00, 101.11it/s]
+[1ALoading weights:  70%|███████   | 203/290 [00:02<00:00, 104.29it/s]
+[1ALoading weights:  74%|███████▍  | 214/290 [00:02<00:00, 102.30it/s]
+[1ALoading weights:  78%|███████▊  | 225/290 [00:03<00:00, 93.92it/s] 
+[1ALoading weights:  81%|████████▏ | 236/290 [00:03<00:00, 95.59it/s]
+[1ALoading weights:  86%|████████▌ | 248/290 [00:03<00:00, 99.14it/s]
+[1ALoading weights:  89%|████████▉ | 259/290 [00:03<00:00, 95.12it/s]
+[1ALoading weights:  93%|█████████▎| 269/290 [00:03<00:00, 92.05it/s]
+[1ALoading weights:  97%|█████████▋| 280/290 [00:03<00:00, 90.22it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:03<00:00, 79.52it/s]
+[drift] 962592768 scalars, cos(d,d')=+1.027e-03
+[mass] {"global": 3.949, "harm2": 3.949, "harm10": 3.949}
+[pairs] 16 fit-only pairs, |len diff| max=31 mean=13.00
+
+[1ALoading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+[1ALoading weights:   0%|          | 1/290 [00:00<01:21,  3.56it/s]
+[1ALoading weights:  14%|█▍        | 40/290 [00:00<00:01, 133.05it/s]
+[1ALoading weights:  22%|██▏       | 63/290 [00:00<00:01, 159.91it/s]
+[1ALoading weights:  29%|██▉       | 85/290 [00:00<00:01, 173.63it/s]
+[1ALoading weights:  37%|███▋      | 108/290 [00:00<00:00, 189.05it/s]
+[1ALoading weights:  45%|████▌     | 131/290 [00:00<00:00, 191.80it/s]
+[1ALoading weights:  53%|█████▎    | 155/290 [00:00<00:00, 197.44it/s]
+[1ALoading weights:  62%|██████▏   | 179/290 [00:01<00:00, 195.62it/s]
+[1ALoading weights:  70%|███████   | 203/290 [00:01<00:00, 205.90it/s]
+[1ALoading weights:  78%|███████▊  | 227/290 [00:01<00:00, 210.82it/s]
+[1ALoading weights:  87%|████████▋ | 251/290 [00:01<00:00, 211.90it/s]
+[1ALoading weights:  95%|█████████▍| 275/290 [00:01<00:00, 213.78it/s]
+[1ALoading weights: 100%|██████████| 290/290 [00:01<00:00, 187.22it/s]
+Loaded pretrained model CohereLabs/tiny-aya-global into HookedTransformer
+17:24:03 • ==================================================
+17:24:03 • Starting: Circuit Discovery
+17:24:03 • ==================================================
+17:24:03 • [1/4] Loading and validating configuration
+17:24:03 ⚙ Configuration validated successfully.
+17:24:03 ⚙ Config: EAP-IG on custom:refusal_pairs task, node level, 30% sparsity
+17:24:03 • [2/4] Setting up model (model=CohereLabs/tiny-aya-global)
+17:24:03 • template dataset: 16/16 records kept after alignment (strategy='none', dropped_nondiscriminative=0, dropped_misaligned=0, dropped_pad_failed=0, recommended_metric='kl_divergence')
+17:24:03 • Custom task 'custom:refusal_fit_pairs' registered (16 records, 16 paired)
+/root/CircuitKIT/src/circuitkit/api.py:1291: RuntimeWarning: Discovery algorithm 'eap-ig' may need about 432.0 GB for qkv-flag activations (batch=4, seq=8192, heads=16, d_model=2048, layers=36, dtype=torch.float32), while 45.5 GB is currently free. This estimate is advisory only; CircuitKIT will continue and let the allocator determine whether the run fits. Set CIRCUITKIT_SKIP_MEM_GUARD=1 to silence this warning.
+  _check_qkv_flag_memory_headroom(
+17:24:03 🔧 Model: CohereLabs/tiny-aya-global (3.9B params, cuda device)
+17:24:03 • [3/4] Running discovery algorithm (algorithm=eap-ig)
+17:24:03 • Starting EAP-IG discovery algorithm
+17:24:03 • Wrote EAP CSV: cache/normalized/custom_refusal_fit_pairs_16_none_seed42.csv (16 rows)
+
+17:24:14 • tokenize_batch_pair: 4 of 4 contrastive pair(s) have unequal clean/corrupt token counts (clean max=3, corrupt max=4; 4 misaligned pair(s) across 1 batch(es) so far this process). EAP aligns by end-padding (pair_padding_side='left'), which preserves per-position correspondence ONLY when the length difference is at that end. Mid-sequence length-changing corruptions will misalign and the attribution for those pairs is unreliable — prefer minimal, token-length-preserving contrastive pairs. (Warning repeats every 100th misaligned batch.)
+[1A  0%|          | 0/4 [00:00<?, ?it/s]
+[1A 25%|██▌       | 1/4 [00:01<00:03,  1.30s/it]
+[1A 50%|█████     | 2/4 [00:02<00:02,  1.10s/it]
+[1A 75%|███████▌  | 3/4 [00:03<00:01,  1.04s/it]
+[1A100%|██████████| 4/4 [00:04<00:00,  1.02s/it]
+[1A100%|██████████| 4/4 [00:04<00:00,  1.05s/it]
+17:24:18 • Converted 612 node scores from EAP-IG graph to CircuitKIT format.
+17:24:18 • Saved unified CircuitScores → /tmp/ck/circuit_scores.json
+17:24:18 • Saved 'scores' → /tmp/ck/circuit_scores.pt
+17:24:18 • [4/4] Identifying nodes to prune
+17:24:18 • 
+--- Running Categorized Node Pruning (Scope: BOTH) ---
+17:24:18 • Found 576 Attention Heads and 36 MLP layers to consider for pruning.
+17:24:18 • Pruning 10 out of 36 MLP layers (30%).
+17:24:18 • Targeting to prune 172 out of 576 total Attention Heads (30%).
+17:24:18 • Actually pruned 172 Attention Heads.
+17:24:18 •   - Layer 0: Pruned 4/16 heads.
+17:24:18 •   - Layer 1: Pruned 1/16 heads.
+17:24:18 •   - Layer 3: Pruned 5/16 heads.
+17:24:18 •   - Layer 4: Pruned 2/16 heads.
+17:24:18 •   - Layer 5: Pruned 3/16 heads.
+17:24:18 •   - Layer 6: Pruned 4/16 heads.
+17:24:18 •   - Layer 7: Pruned 8/16 heads.
+17:24:18 •   - Layer 8: Pruned 3/16 heads.
+17:24:18 •   - Layer 9: Pruned 5/16 heads.
+17:24:18 •   - Layer 10: Pruned 4/16 heads.
+17:24:18 •   - Layer 11: Pruned 7/16 heads.
+17:24:18 •   - Layer 12: Pruned 6/16 heads.
+17:24:18 •   - Layer 13: Pruned 4/16 heads.
+17:24:18 •   - Layer 14: Pruned 5/16 heads.
+17:24:18 •   - Layer 15: Pruned 8/16 heads.
+17:24:18 •   - Layer 16: Pruned 4/16 heads.
+17:24:18 •   - Layer 17: Pruned 5/16 heads.
+17:24:18 •   - Layer 18: Pruned 6/16 heads.
+17:24:18 •   - Layer 19: Pruned 8/16 heads.
+17:24:18 •   - Layer 20: Pruned 2/16 heads.
+17:24:18 •   - Layer 21: Pruned 4/16 heads.
+17:24:18 •   - Layer 22: Pruned 1/16 heads.
+17:24:18 •   - Layer 23: Pruned 6/16 heads.
+17:24:18 •   - Layer 24: Pruned 4/16 heads.
+17:24:18 •   - Layer 25: Pruned 2/16 heads.
+17:24:18 •   - Layer 26: Pruned 6/16 heads.
+17:24:18 •   - Layer 27: Pruned 8/16 heads.
+17:24:18 •   - Layer 28: Pruned 8/16 heads.
+17:24:18 •   - Layer 29: Pruned 6/16 heads.
+17:24:18 •   - Layer 30: Pruned 3/16 heads.
+17:24:18 •   - Layer 31: Pruned 7/16 heads.
+17:24:18 •   - Layer 32: Pruned 5/16 heads.
+17:24:18 •   - Layer 33: Pruned 3/16 heads.
+17:24:18 •   - Layer 34: Pruned 7/16 heads.
+17:24:18 •   - Layer 35: Pruned 8/16 heads.
+17:24:18 • --- Categorized Pruning Finished ---
+17:24:18 •   Pruned 182 nodes out of 612 candidates
+17:24:18 • Pruned node list saved to /tmp/ck/circuit.pt
+17:24:18 • ==================================================
+17:24:18 ✓ Completed: Circuit Discovery in 15.1s
+17:24:18 • Summary: nodes_pruned=182
+17:24:18 • ==================================================
+[discovery] {"type": "list", "pruned_returned": 182, "scores_side_car": true, "n_signed_scores": 612, "score_examples": ["A0.0", "A0.1"], "pruned_examples": ["MLP 11", "MLP 18"]}
+[map] naming=['ara_head', 'ara_mlp'] unmapped=0 examples=[]
+{
+ "result_shape": {
+  "type": "list",
+  "pruned_returned": 182,
+  "scores_side_car": true,
+  "n_signed_scores": 612,
+  "score_examples": [
+   "A0.0",
+   "A0.1"
+  ],
+  "pruned_examples": [
+   "MLP 11",
+   "MLP 18"
+  ]
+ },
+ "supports": {
+  "global": {
+   "scalars": 470016,
+   "frac_of_global": 0.000488,
+   "signed_mass": 3.949227124452591,
+   "abs_mass": 10863.737743377686,
+   "modules": 2048
+  },
+  "harm2": {
+   "scalars": 470016,
+   "frac_of_global": 0.000488,
+   "signed_mass": 3.949227124452591,
+   "abs_mass": 10863.737743377686,
+   "modules": 2048
+  },
+  "harm10": {
+   "scalars": 470016,
+   "frac_of_global": 0.000488,
+   "signed_mass": 3.949227124452591,
+   "abs_mass": 10863.737743377686,
+   "modules": 2048
+  },
+  "circuit": {
+   "scalars": 73728,
+   "frac_of_global": 7.7e-05,
+   "signed_mass": 9.06874081492424,
+   "abs_mass": 1767.3211784362793,
+   "modules": 2048
+  }
+ },
+ "circuit_patch": {
+  "file": "/hf/artifacts/tiny-aya-global/repair_circuit_a4.npz",
+  "sha256": "96c659a056648c3cf1c076e880ad426f10b2a9dd07d5d6912233cd00f0ff3a82",
+  "edited_scalars": 150994944,
+  "basis": "per_head",
+  "modules": [
+   "model.layers.0.self_attn.o_proj.weight",
+   "model.layers.1.self_attn.o_proj.weight",
+   "model.layers.10.self_attn.o_proj.weight",
+   "model.layers.11.self_attn.o_proj.weight",
+   "model.layers.12.self_attn.o_proj.weight",
+   "model.layers.13.self_attn.o_proj.weight",
+   "model.layers.14.self_attn.o_proj.weight",
+   "model.layers.15.self_attn.o_proj.weight",
+   "model.layers.16.self_attn.o_proj.weight",
+   "model.layers.17.self_attn.o_proj.weight",
+   "model.layers.18.self_attn.o_proj.weight",
+   "model.layers.19.self_attn.o_proj.weight",
+   "model.layers.2.self_attn.o_proj.weight",
+   "model.layers.20.self_attn.o_proj.weight",
+   "model.layers.21.self_attn.o_proj.weight",
+   "model.layers.22.self_attn.o_proj.weight",
+   "model.layers.23.self_attn.o_proj.weight",
+   "model.layers.24.self_attn.o_proj.weight",
+   "model.layers.25.self_attn.o_proj.weight",
+   "model.layers.26.self_attn.o_proj.weight",
+   "model.layers.27.self_attn.o_proj.weight",
+   "model.layers.28.self_attn.o_proj.weight",
+   "model.layers.29.self_attn.o_proj.weight",
+   "model.layers.3.self_attn.o_proj.weight",
+   "model.layers.30.self_attn.o_proj.weight",
+   "model.layers.31.self_attn.o_proj.weight",
+   "model.layers.32.self_attn.o_proj.weight",
+   "model.layers.33.self_attn.o_proj.weight",
+   "model.layers.34.self_attn.o_proj.weight",
+   "model.layers.35.self_attn.o_proj.weight",
+   "model.layers.4.self_attn.o_proj.weight",
+   "model.layers.5.self_attn.o_proj.weight",
+   "model.layers.6.self_attn.o_proj.weight",
+   "model.layers.7.self_attn.o_proj.weight",
+   "model.layers.8.self_attn.o_proj.weight",
+   "model.layers.9.self_attn.o_proj.weight"
+  ],
+  "layers": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35
+  ],
+  "heads": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15
+  ]
+ },
+ "cos_d_dprime": 0.0010268893092870712,
+ "wall_s": 80.0
+}
+C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\results\p23_circuit_20261103_022433.json
+Stopping app - local entrypoint completed.
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/amugoodbad229/main/ap-y3MiFtdlRjEG7av7fPTH5L
