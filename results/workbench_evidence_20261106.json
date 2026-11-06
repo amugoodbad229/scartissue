@@ -1,6 +1,6 @@
 {
   "schema": "scartissue.evidence/1",
-  "created_at": "2026-11-06T08:39:05.864035+00:00",
+  "created_at": "2026-11-06T10:19:05.578546+00:00",
   "model": "CohereLabs/tiny-aya-global",
   "model_revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
   "split_sha256": "10e3775cb626e47577a10a8831c15a29acbfee1acff410cf0f1231261e184900",

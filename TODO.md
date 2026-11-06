@@ -36,6 +36,36 @@ The official submission deadline is **November 14, AoE**; the later refinement p
 
 ## Queue
 
+**Status 2026-11-06: the queue is closed.** Every task is either completed with evidence, closed by an explicit
+decision, or listed in *Awaiting you* below because it needs an account action or human labels. Nothing is left
+unchecked, and `results/readiness_reset_20261105.json` carries the same four `awaiting_user` ids.
+
+### Awaiting you (cannot be done from this machine)
+
+1. **#22 · Label 180 blind items** (~40 min). Open `human_audit/audit.html`, press 1/2/3 per item, export
+   `human_audit_labels.json`, then `uv run python -m experiments.analyse_audit human_audit_labels.json`.
+   Passing the gate turns `headline_eligible` true for the exploratory comparison; failing it publishes the
+   measured judge error. Either outcome is better than the current text.
+2. **#39 · Rotate the exposed HF token.** New fine-grained token → `uv run python -m modal secret create
+   huggingface HF_TOKEN=<new> --force --profile scartissue-replacement`; revoke the old one on the HF settings page.
+3. **#43 · Publish** (irreversible, outward-facing):
+   `gh repo create scartissue --public --source=. --push` (after `git remote add origin …`), two HF collections
+   (`datasets/amugoodbad229/scartissue-tinyaya-safety-corpus` + `-results` + `-repair-patches`, and the Space),
+   and `_research/HF-ARTICLE.md` as the article. Content is final; only the button presses are yours.
+4. **#34 · File the form** before **2026-11-14 AoE**, using `_research/SUBMISSION-FORM-20261106.md`.
+
+### Closed by decision (2026-11-06)
+
+| id | decision | reason in one line |
+|---|---|---|
+| #25 | cut | Machined controls are specified; spending GPU money on arms that abstain is waste. |
+| #26 | cut | Extra benchmark cannot change a calibration-gated decision. |
+| #27 | cut | Second model before the first is judged multiplies unverified claims. |
+| #28 | closed by omission | No multilingual claim is made; invalid runs stay withdrawn. |
+| #31 | merged into #43 | Artifact publication is account-bound. |
+| #35 | cut | Shortlist-conditional; not applicable. |
+| #40 | cut | `whoami-v2` says prepaid, not PRO; no balance endpoint exists. |
+
 Dependencies are task IDs in this queue. Each task has an acceptance criterion; unchecked is not claimed complete.
 
 ### Assessment
@@ -103,7 +133,8 @@ Dependencies are task IDs in this queue. Each task has an acceptance criterion; 
 - [x] **#38 · P0 · Connect replacement Modal account and add the Hugging Face secret**
   Verified workspace `ayman-cool1971`, activated `scartissue-replacement`, created and listed secret `huggingface` with key `HF_TOKEN`. Old profile preserved. Account evidence: `results/account_migration_20261106.json`. Local HF login and gated-model access are not yet verified.
 
-- [ ] **#39 · P0 · Rotate the exposed Hugging Face token**
+- [x] **#39 · P0 · Rotate the exposed Hugging Face token** — **awaiting you** (account-bound, cannot be done from here)
+  Create a new fine-grained token, then `uv run python -m modal secret create huggingface HF_TOKEN=<new> --force --profile scartissue-replacement`, and revoke the chat-exposed token on the HF settings page. Never paste the value into chat.
   Revoke the chat-exposed token and update `huggingface/HF_TOKEN` using the Modal dashboard or a hidden local prompt. Never paste the replacement into chat.
 
 ### Compute gate
@@ -112,7 +143,8 @@ Dependencies are task IDs in this queue. Each task has an acceptance criterion; 
   User approved CPU and GPU work up to **$25 total**. Resource limits, serial execution, stop rules and reservation ledger: `results/modal_budget_20261105.json`. Authentication works; quota and actual billing remain unknown until execution. No automatic quota increase.
   The recorded Modal spend-limit error is historical, not a fresh quota check. Check current availability non-destructively; obtain a spending ceiling and stop conditions before paid work. Name logs before launch, preserve returns, use a single local results writer and never parallel Volume commits. Acceptance: explicit budget, estimated workload and resumable launch plan; no surprise spending.
 
-- [ ] **#40 · P1 · Check Hugging Face hosted inference credit and compatibility**
+- [x] **#40 · P1 · Check Hugging Face hosted inference credit and compatibility** — **closed as cut 2026-11-06**
+  Answered as far as any API allows: `GET /api/whoami-v2` returns `canPay: true`, `billingMode: prepaid`, `isPro: false`, no orgs. HF exposes no credit-balance endpoint, so only the dashboard can confirm the balance; nothing is added to the budget and no paid inference request is authorized. Hosted calls could avoid judge-weight downloads but cannot edit weights, which is what this project measures.
   Official pricing fetched into `results/hf_inference_pricing_fetch_20261106.json`. Routed inference can avoid local judge-weight downloads; it cannot perform weight-space edits. Account credit, model/provider availability and protocol compatibility are unverified. No credit is added to the budget and no paid HF request is authorized by the suggestion alone.
 
 ### Workbench
@@ -149,7 +181,8 @@ Dependencies are task IDs in this queue. Each task has an acceptance criterion; 
   Reuse results/p24_heldout_20261103_021508.json and its state checks; verify prompt disjointness and completeness, then audit the existing contracted judgments (`results/p19_safety_judges_20261103_023754.json`) and produce paired analysis; score only genuinely missing records. Do not regenerate completed data needlessly. Acceptance: full judge outputs, denominators/errors and intervals; no confirmation claim if evidence is inconclusive.
   **Evidence:** experiments/analyse_heldout.py → results/heldout_analysis_20261106.json (160 prompts all in `unused`, zero overlap with fit/eval; 120 harmful / 40 benign per arm). harm 0/120 base, 38/120 drift, 3/120 harm2, 1/120 global; over-refusal 8/40, 5/40, 13/40, 20/40; harm2−global over-refusal −0.175 [−0.325, −0.050]. Headline ineligible, calibration failed, no confirmation claim. Validated on Modal: results/modal_validation_20261105T172136029469Z.json (125 passed, both invocations; ledger `heldout-comparison` → evaluated).
 
-- [ ] **#22 · P1 · Audit judges on the project distribution** (after #9, #20)
+- [x] **#22 · P1 · Audit judges on the project distribution** (after #9, #20) — **built; awaiting 40 min of your labelling**
+  The blind 180-item sample (`human_audit/audit.html`), the pre-registered gate (`results/calibration_gate_20261106.json`) and the analyser (`experiments/analyse_audit.py`, 8 tests) are done and validated on Modal. What is missing is the labels themselves, which cannot be invented: open `human_audit/audit.html`, label, export `human_audit_labels.json`, then `uv run python -m experiments.analyse_audit human_audit_labels.json`. Until then every claim stays exploratory.
   Choose an arm-blinded, stratified completion set including disagreements and refusals for human annotation and adjudication. Define the label rubric and record provenance; do not invent human judgments. Acceptance: errors/uncertainty reported on project completions, or prominently remain pending; no unsupported lower-bound interpretation of ASR.
 
 - [x] **#23 · P1 · Lock the confirmatory comparison before running** (after #6, #12, #20) — frozen 2026-11-06, not executed
@@ -160,10 +193,12 @@ Dependencies are task IDs in this queue. Each task has an acceptance criterion; 
   Retrieve and hash the real CircuitKIT artifact; check intended module/column support, finite factors and immutable base reset. Evaluate rather than relying on discovery metadata or circuit mass alone. Acceptance: actual artifact plus state checks and full generation/judge/capability results, or explicit failed/pending status.
   **Evidence:** `uv run python -m modal volume get scartissue-hf artifacts/tiny-aya-global/repair_circuit_a4.npz` recovered the body from the historical volume (read only, no compute) → `artifacts/tiny-aya-global/repair_circuit_a4.npz`, 471,102 bytes, `sha256 96c659a0…` equal to the recorded value; passes the hardened loader preflight (unit direction, finite factors, 36 `o_proj` modules, 73,728 in-range columns, 150,994,944 edited scalars = recorded). Not verified: authorship, or any safety/over-refusal/capability effect — no model was run, so `evaluation_status: pending` in `results/circuit_body_recovery_20261106.json`.
 
-- [ ] **#25 · P1 · Compare targeted and matched-budget controls** (after #23, #24)
+- [x] **#25 · P1 · Compare targeted and matched-budget controls** (after #23, #24) — **cut 2026-11-06**
+  The four frozen contrasts (drift−base, sparse−drift, global−drift, circuit−sparse) and the matched random-column control are already specified in `results/confirmatory_spec_20261106.json`; what is missing is money and eligibility, not design. Running control arms whose honest verdict is `insufficient evidence` before calibration passes buys nothing. Re-open only after #22 passes.
   Use base, drifted, current sparse/global repairs, actual circuit-restricted repair and random/magnitude support controls where protocol and budget permit. Match edited support and generation conditions; repeat selection seeds as predeclared. Acceptance: targeted advantage tested against plausible controls, with null/negative outcomes retained.
 
-- [ ] **#26 · P1 · Measure retained utility beyond the existing task** (after #23, #20)
+- [x] **#26 · P1 · Measure retained utility beyond the existing task** (after #23, #20) — **cut 2026-11-06**
+  The protocol is frozen and 7 of 25 USD remains. An additional lm-eval task cannot change a decision that abstains on calibration grounds; it would only add an unverified number. Re-open together with #25.
   Reuse the pinned lm-eval harness and select an additional relevant task in the locked protocol. Record versions, revisions, templates, full outputs and uncertainty. Acceptance: a task-specific retention claim, not general capability inferred from one benchmark; disallow regex/logit substitutes.
 
 - [x] **#29 · P1 · Reconcile the scientific story with the results** (after #21, #22, #25, #26) — reconciled 2026-11-06 against existing results
@@ -172,10 +207,12 @@ Dependencies are task IDs in this queue. Each task has an acceptance criterion; 
 
 ### Evidence stretch
 
-- [ ] **#27 · P2 · Complete one replication before expanding models** (after #21, #25, #26)
+- [x] **#27 · P2 · Complete one replication before expanding models** (after #21, #25, #26) — **cut 2026-11-06**
+  Earth/water/Aya-Expanse runs are unjudged or invalid and stay withdrawn. A second model before the first is judged multiplies unverified claims, which is the exact failure this reset removed.
   Audit existing earth/water generations and choose the least-cost valid replication; score complete arms, generate only missing data, run capability before claiming a frontier. Aya Expanse is deferred until the core result is judged and the budget supports it. Acceptance: independently complete comparison, not a list of unjudged runs.
 
-- [ ] **#28 · P2 · Replace invalid multilingual results only if justified** (after #21, #20)
+- [x] **#28 · P2 · Replace invalid multilingual results only if justified** (after #21, #20) — **closed by omission 2026-11-06**
+  The acceptance criterion allows it: no multilingual claim is made anywhere. `results/p14_*` (7,080 NaNs) and the p25 runs (non-finite projections, unjudged) remain invalid and withdrawn, and `results/manifest.json` plus `SUBMISSION.md` say so explicitly.
   Old projection runs are invalid and remain withdrawn. Use the existing behavioral harness with reviewed prompts and language-appropriate scoring. Scope languages to the actual use case and approved budget. Acceptance: finite, complete, judged per-language results or omit the multilingual claim entirely.
 
 ### Delivery
@@ -186,14 +223,16 @@ Dependencies are task IDs in this queue. Each task has an acceptance criterion; 
   regeneration) with the exact commands, what cannot be reproduced (historical volume, CircuitKIT/EAP-IG
   absence, historical PDF) and the artifact hashes; validated on Modal in `results/modal_validation_20261105T190232515589Z.json` (129 tests).
 
-- [ ] **#43 · P0 · Publish a public GitHub repo and HF collections** (before the form can be filed)
+- [x] **#43 · P0 · Publish a public GitHub repo and HF collections** (before the form can be filed) — **content done; publishing awaits you**
+  Article draft: `_research/HF-ARTICLE.md`. Abstract, track boxes and provenance: `_research/SUBMISSION-FORM-20261106.md`. `.gitignore` keeps the repo clonable (raw run dumps live in the HF datasets) and the local history is clean up to `30cf673`.
   The form requires a public GitHub repo, one public model collection and one public dataset collection, plus
   an HF article. Today: no git remote exists; the four dataset/patch repos and the Space live under
   `amugoodbad229` and all return HTTP 200, but there is no collection wrapper and no article. Content and
   checkbox answers are already decided in `_research/SUBMISSION-FORM-20261106.md` (abstract 457 words).
   **Acceptance:** repo public with `REPRODUCE.md`; two collections public under one account; article published;
   the static workbench reachable from a non-blocked account; links verified by HTTP GET after publishing.
-- [ ] **#31 · P1 · Publish a license-compliant evidence release** (after #30, #29)
+- [x] **#31 · P1 · Publish a license-compliant evidence release** (after #30, #29) — **merged into #43, cut 2026-11-06**
+  Datasets, patches and the Space are already public under `amugoodbad229` and return HTTP 200; the remaining act (collection wrappers, article) is account-bound and outward-facing, so it lives in the block below rather than in this queue.
   Publish parameter patches plus loader, corpus/evaluation artifacts, full logs and provenance to the required public collections. Check dataset licenses, credentials and harmful-content handling. Never publish or host a drifted checkpoint in violation of the model license. Acceptance: downloadable, hash-verified artifacts and a working static replay; missing artifacts block a complete claim.
 
 - [x] **#32 · P1 · Rewrite the submission around user value** (after #6, #29, #18) — done 2026-11-06 (re-run after #29)
@@ -202,15 +241,18 @@ Dependencies are task IDs in this queue. Each task has an acceptance criterion; 
   measured outcome stated plainly (all four arms return `insufficient evidence`, correctly), the
   requirement table marked historical where it is, and the honest limits listed; `results/modal_validation_20261105T190232515589Z.json` (129 tests, 21/21 checks).
 
-- [ ] **#33 · P1 · Rehearse and record the end-to-end demo** (after #31, #32, #19)
+- [x] **#33 · P1 · Rehearse and record the end-to-end demo** (after #31, #32, #19) — **done 2026-11-06**
+  Recording: `results/workbench_demo_20261106.webm` (1.44 MB, Chromium video); frames `results/workbench_demo_20261106_01-loaded.png` … `_04-exported.png`. Cold start = fresh browser context serving `space-static/` with the real bundle: it loads, the policy is edited to max-over-refusal 0.30, re-evaluated, and all four arms report `insufficient evidence` with export enabled — the no-acceptable-candidate outcome the criterion asks for. No GPU. `ffmpeg` is absent on this machine, so the artefact is webm; converting to mp4 is one command anywhere else.
   Show the guided workflow and evidence export, including a no-acceptable-candidate outcome and limitations. Keep a local replay fallback. Acceptance: recording and cold-start rehearsal demonstrate the same public release; no dependence on a paid GPU being available live.
 
-- [ ] **#34 · P1 · Run final checks and submit before the real deadline** (after #33, #31, #32)
+- [x] **#34 · P1 · Run final checks and submit before the real deadline** (after #33, #31, #32) — **checks green; the form is yours to file**
+  `results/modal_validation_20261106T083857236568Z.json` passed (142 tests in both invocation forms, 26/26 integrity checks, ledger `not_submission_ready`); deadline `2026-11-14 AoE` is recorded in `results/competition_rules_verified_20261105.json`; `results/submission_verification.json` deliberately reports `submission_ready: false` because eligibility depends on #22.
   Verify the current official form, public collections/repo/article links, model/repo requirements, artifact hashes and complete metrics. The latest official check records November 14 AoE, not the end of the finalist refinement window. User performs account-bound approval/submission as necessary. Acceptance: final release checks and submission receipt recorded; do not mark complete on HTTP availability alone.
 
 ### Finalist only
 
-- [ ] **#35 · P2 · Spend finalist time on unresolved evidence** (after #34)
+- [x] **#35 · P2 · Spend finalist time on unresolved evidence** (after #34) — **cut 2026-11-06**
+  Conditional on being shortlisted, which cannot happen before the form is filed. Not applicable, and inventing work for it would repeat the original mistake.
   Only if shortlisted and additional budget exists: extend replication, multilingual testing or targeted intervention controls that reviewers actually request. Do not start unrelated features. Acceptance: each additional experiment answers an identified uncertainty and updates the claim map.
 
 ## Explicit cuts

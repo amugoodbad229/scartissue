@@ -190,6 +190,13 @@
    "gpu": null,
    "reserved_at": "2026-11-06T08:38:48+00:00",
    "purpose": "Validate the corrected narrative layer and updated sources"
+  },
+  {
+   "job": "queue_close_cpu_20261106",
+   "reserved_usd": 1.0,
+   "gpu": null,
+   "reserved_at": "2026-11-06T10:18:44+00:00",
+   "purpose": "Validate the closed queue, demo artifacts and article draft"
   }
  ],
  "realized_provider_charge_usd": null
