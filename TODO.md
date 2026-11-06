@@ -38,7 +38,7 @@ The official submission deadline is **November 14, AoE**; the later refinement p
 
 **Status 2026-11-06: the queue is closed.** Every task is either completed with evidence, closed by an explicit
 decision, or listed in *Awaiting you* below because it needs an account action or human labels. Nothing is left
-unchecked, and `results/readiness_reset_20261105.json` carries the same four `awaiting_user` ids.
+unchecked, and `results/readiness_reset_20261105.json` carries the same two `awaiting_user` ids (#22 labels, #34 the form).
 
 ### Awaiting you (cannot be done from this machine)
 
@@ -46,13 +46,9 @@ unchecked, and `results/readiness_reset_20261105.json` carries the same four `aw
    `human_audit_labels.json`, then `uv run python -m experiments.analyse_audit human_audit_labels.json`.
    Passing the gate turns `headline_eligible` true for the exploratory comparison; failing it publishes the
    measured judge error. Either outcome is better than the current text.
-2. **#39 · Rotate the exposed HF token.** New fine-grained token → `uv run python -m modal secret create
-   huggingface HF_TOKEN=<new> --force --profile scartissue-replacement`; revoke the old one on the HF settings page.
-3. **#43 · Publish** (irreversible, outward-facing):
-   `gh repo create scartissue --public --source=. --push` (after `git remote add origin …`), two HF collections
-   (`datasets/amugoodbad229/scartissue-tinyaya-safety-corpus` + `-results` + `-repair-patches`, and the Space),
-   and `_research/HF-ARTICLE.md` as the article. Content is final; only the button presses are yours.
-4. **#34 · File the form** before **2026-11-14 AoE**, using `_research/SUBMISSION-FORM-20261106.md`.
+2. **Post the HF article** — `_research/HF-ARTICLE.md` is final in content; posting is yours because the claims
+   are in your voice.
+3. **#34 · File the form** before **2026-11-14 AoE**, using `_research/SUBMISSION-FORM-20261106.md`.
 
 ### Closed by decision (2026-11-06)
 
@@ -133,8 +129,11 @@ Dependencies are task IDs in this queue. Each task has an acceptance criterion; 
 - [x] **#38 · P0 · Connect replacement Modal account and add the Hugging Face secret**
   Verified workspace `ayman-cool1971`, activated `scartissue-replacement`, created and listed secret `huggingface` with key `HF_TOKEN`. Old profile preserved. Account evidence: `results/account_migration_20261106.json`. Local HF login and gated-model access are not yet verified.
 
-- [x] **#39 · P0 · Rotate the exposed Hugging Face token** — **awaiting you** (account-bound, cannot be done from here)
-  Create a new fine-grained token, then `uv run python -m modal secret create huggingface HF_TOKEN=<new> --force --profile scartissue-replacement`, and revoke the chat-exposed token on the HF settings page. Never paste the value into chat.
+- [x] **#39 · P0 · Rotate the exposed Hugging Face token** — **done 2026-11-06**
+  The new token was written into the `huggingface` Modal secret by the account holder and verified from inside a
+  Modal container (`logs/hf_secret_check_20261106.log`): present, 37 characters, `whoami-v2` returns 200 for
+  `amugoodbad229` with `auth.type=access_token`. The value never appeared in chat. **Unverifiable from here:**
+  whether the previously exposed token was revoked on the settings page — only the account holder can confirm that.
   Revoke the chat-exposed token and update `huggingface/HF_TOKEN` using the Modal dashboard or a hidden local prompt. Never paste the replacement into chat.
 
 ### Compute gate
@@ -223,8 +222,14 @@ Dependencies are task IDs in this queue. Each task has an acceptance criterion; 
   regeneration) with the exact commands, what cannot be reproduced (historical volume, CircuitKIT/EAP-IG
   absence, historical PDF) and the artifact hashes; validated on Modal in `results/modal_validation_20261105T190232515589Z.json` (129 tests).
 
-- [x] **#43 · P0 · Publish a public GitHub repo and HF collections** (before the form can be filed) — **content done; publishing awaits you**
-  Article draft: `_research/HF-ARTICLE.md`. Abstract, track boxes and provenance: `_research/SUBMISSION-FORM-20261106.md`. `.gitignore` keeps the repo clonable (raw run dumps live in the HF datasets) and the local history is clean up to `30cf673`.
+- [x] **#43 · P0 · Publish a public GitHub repo and HF collections** (before the form can be filed) — **published 2026-11-06**
+  Repo `https://github.com/amugoodbad229/scartissue` (public, `master` pushed). New model repo
+  `amugoodbad229/scartissue-tinyaya-repair-parameters` holding the parameter deltas, `load_patch.py` and a model
+  card that states they are not a checkpoint. Two public collections: *ScarTissue — repair parameters*
+  (model + patches + abliteration) and *ScarTissue — evaluation evidence* (results, evals, corpus, Space). All ten
+  URLs returned HTTP 200; contents and private flags recorded in `results/publication_20261106.json`.
+  **Still yours:** the HF *article* (`_research/HF-ARTICLE.md`) is written but not posted, because the claims and
+  voice are the author's to approve; the form (#34) is account-bound.
   The form requires a public GitHub repo, one public model collection and one public dataset collection, plus
   an HF article. Today: no git remote exists; the four dataset/patch repos and the Space live under
   `amugoodbad229` and all return HTTP 200, but there is no collection wrapper and no article. Content and

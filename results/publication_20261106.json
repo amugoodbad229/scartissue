@@ -1,0 +1,95 @@
+{
+ "schema": "scartissue.publication/1",
+ "verified_at": "2026-11-06T10:57:33+00:00",
+ "urls": {
+  "github_repo": {
+   "url": "https://github.com/amugoodbad229/scartissue",
+   "http": 200
+  },
+  "model_repo": {
+   "url": "https://huggingface.co/amugoodbad229/scartissue-tinyaya-repair-parameters",
+   "http": 200
+  },
+  "model_collection": {
+   "url": "https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0",
+   "http": 200
+  },
+  "dataset_collection": {
+   "url": "https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46",
+   "http": 200
+  },
+  "space": {
+   "url": "https://huggingface.co/spaces/amugoodbad229/scartissue",
+   "http": 200
+  },
+  "dataset_results": {
+   "url": "https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-results",
+   "http": 200
+  },
+  "dataset_evals": {
+   "url": "https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-evals",
+   "http": 200
+  },
+  "dataset_corpus": {
+   "url": "https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-safety-corpus",
+   "http": 200
+  },
+  "dataset_patches": {
+   "url": "https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-repair-patches",
+   "http": 200
+  },
+  "dataset_abliteration": {
+   "url": "https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-abliteration-patches",
+   "http": 200
+  }
+ },
+ "model_collection_items": [
+  [
+   "model",
+   "amugoodbad229/scartissue-tinyaya-repair-parameters"
+  ],
+  [
+   "dataset",
+   "amugoodbad229/scartissue-tinyaya-repair-patches"
+  ],
+  [
+   "dataset",
+   "amugoodbad229/scartissue-tinyaya-abliteration-patches"
+  ]
+ ],
+ "dataset_collection_items": [
+  [
+   "dataset",
+   "amugoodbad229/scartissue-tinyaya-results"
+  ],
+  [
+   "dataset",
+   "amugoodbad229/scartissue-tinyaya-evals"
+  ],
+  [
+   "dataset",
+   "amugoodbad229/scartissue-tinyaya-safety-corpus"
+  ],
+  [
+   "space",
+   "amugoodbad229/scartissue"
+  ]
+ ],
+ "model_repo_contents": [
+  "README.md",
+  "manifest.json",
+  "load_patch.py",
+  "abliteration_tiny-aya-global_layer15.npz",
+  "repair_global_a4.npz",
+  "repair_harm10_a4.npz",
+  "repair_harm4_a4.npz",
+  "repair_harm2_a4.npz"
+ ],
+ "model_repo_private": false,
+ "published_by": "agent, on the account holder's instruction ('go on'), after the parameter file set, model card and collection contents were written locally",
+ "not_published": [
+  "HF article (draft at _research/HF-ARTICLE.md; voice and claims are the author's to approve)",
+  "submission form"
+ ],
+ "note": "HTTP 200 means the pages resolve; it is not a scientific or licence check. The model repo holds parameter deltas only, never a drifted checkpoint."
+}

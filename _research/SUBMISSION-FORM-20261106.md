@@ -109,10 +109,10 @@ method is SafeTune-*style* weight-space repair. Also not AlignTune or AgentTune.
 
 | Slot | Content | Status today |
 |---|---|---|
-| HF model collection | Parameter patches (`.npz`) + loader: abliteration, `repair_harm2_a4`, `repair_global_a4`, `repair_circuit_a4` | Repos live and public (`amugoodbad229/scartissue-tinyaya-abliteration-patches`, `…-repair-patches`, HTTP 200 verified 2026-11-06); needs a **collection** wrapper and ideally a copy under the new account |
-| HF dataset collection | Corpus (Parquet), split, results, judge verdicts, generations | Public (`…/scartissue-tinyaya-safety-corpus`, `…/scartissue-tinyaya-results`, HTTP 200); needs a collection wrapper |
+| HF model collection | **https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0** — model repo `scartissue-tinyaya-repair-parameters` (all four repairs + abliteration deltas, `load_patch.py`, model card), plus the two patch datasets. Public, HTTP 200, contents recorded in `results/publication_20261106.json` |
+| HF dataset collection | **https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46** — results, evals, corpus and the Space. Public, HTTP 200 |
 | HF article | Written account of the finding | **Missing** — must be written |
-| GitHub repo | Code, notebooks, `REPRODUCE.md` | **Missing** — this tree has no remote. Publishing it is a precondition of the deadline |
+| GitHub repo | **https://github.com/amugoodbad229/scartissue** (public, `master`; `REPRODUCE.md` at root, raw run dumps excluded because the HF datasets carry them) |
 | Deployment | Static decision workbench | Space `amugoodbad229/scartissue` returns 200; it is on the spend-blocked old account, so re-host before relying on it |
 
 Licence posture (LSAL §2/§4): parameters are published, no drifted checkpoint is hosted or deployed,

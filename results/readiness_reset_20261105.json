@@ -6,7 +6,7 @@
  "primary_track": "2a",
  "scope": "Evidence-backed safety-repair comparison workbench, research use; not a production-safety certification or hosted drifted model.",
  "new_task_count": 31,
- "open_task_count": 4,
+ "open_task_count": 2,
  "evidence": [
   "results/competition_rules_verified_20261105.json",
   "results/readiness_baseline_20261105.json",
@@ -632,12 +632,12 @@
   {
    "id": 39,
    "subject": "Rotate the exposed Hugging Face token",
-   "status": "awaiting_user",
+   "status": "completed",
    "priority": "P0",
    "phase": "Trust",
    "blockedBy": [],
    "description": "Revoke chat-exposed token and update Modal secret through a hidden local prompt or dashboard. Never paste replacement into chat.",
-   "outcome": "Rotation needs the account holder: create a new fine-grained token, then `uv run python -m modal secret create huggingface HF_TOKEN=<new> --force --profile scartissue-replacement`, and revoke the chat-exposed token on the HF settings page. Never paste the value into chat."
+   "outcome": "New token installed in the Modal secret by the account holder and verified from a container (logs/hf_secret_check_20261106.log: present, 37 chars, whoami-v2 200 for amugoodbad229, auth access_token). Old-token revocation is only confirmable on the settings page by the account holder."
   },
   {
    "id": 40,
@@ -663,12 +663,12 @@
   {
    "id": 43,
    "subject": "Publish a public GitHub repo and HF collections",
-   "status": "awaiting_user",
+   "status": "completed",
    "priority": "P0",
    "phase": "Delivery",
    "description": "",
    "blockedBy": [],
-   "outcome": "All content is written: _research/SUBMISSION-FORM-20261106.md (abstract 457 words, track and problem-statement boxes, provenance) and _research/HF-ARTICLE.md (article draft). Three irreversible, account-bound acts remain: create the public repo, create the two HF collections, publish the article. Commands are in the 'Awaiting you' section of TODO.md."
+   "outcome": "Published 2026-11-06: github.com/amugoodbad229/scartissue (public), model repo amugoodbad229/scartissue-tinyaya-repair-parameters (parameter deltas + loader + model card), and two public collections (repair parameters; evaluation evidence). Ten URLs HTTP 200, recorded with contents in results/publication_20261106.json. The HF article remains unposted by choice (author's voice); the form is account-bound."
   }
  ],
  "validation_policy": {
@@ -689,9 +689,7 @@
  },
  "awaiting_user": [
   22,
-  34,
-  39,
-  43
+  34
  ],
  "cut": [
   25,
