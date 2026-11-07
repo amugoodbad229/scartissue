@@ -10,8 +10,6 @@ AuditKIT.
 [Model artifacts](https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters) ·
 [Evaluation evidence](https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence)
 
-![The workbench abstains when calibration evidence is insufficient](results/workbench_overview.png)
-
 ## What the demo does
 
 1. Loads a complete evidence bundle with model, revision, split and source hashes.

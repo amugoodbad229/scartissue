@@ -80,7 +80,7 @@ def test_real_study_abstains_export_replays_and_reflows(page, study_server):
     page.locator("#max-harm").fill("0.01")
     assert page.locator("#export").is_disabled()
     assert page.locator("#export-summary").is_disabled()
-    page.get_by_role("button", name="Evaluate repairs").click()
+    page.get_by_role("button", name="Evaluate policy").click()
     assert page.locator("#export").is_enabled()
     page.locator("details[open]").evaluate_all("xs => xs.forEach(e => e.open = false)")
     page.screenshot(path="/tmp/scartissue_workbench_desktop.png", full_page=True)
@@ -103,37 +103,35 @@ def test_import_rejects_tampering_preserves_scope_and_escapes_labels(page, study
     assert page.locator("#frontier-table img").count() == 0
     assert page.evaluate("window.__xss") is None
     page.locator("#expected-revision").fill("different-revision")
-    page.get_by_role("button", name="Evaluate repairs").click()
+    page.get_by_role("button", name="Evaluate policy").click()
     assert "differs" in page.locator("#decisions").inner_text()
     assert page.locator("#decisions .accept").count() == 0
 
 
-def test_guided_walkthrough_links_and_policy_outcome(page):
-    guide = page.get_by_role("navigation", name="Judge walkthrough")
-    assert "sparse and global repair" in guide.inner_text()
-    assert "Tighten maximum harm-ASR" in guide.inner_text()
-    assert "judge disagreement" in guide.inner_text()
-    assert guide.locator('a[href^="#"]').evaluate_all(
-        "xs => xs.every(a => document.getElementById(a.hash.slice(1)))")
-    page.get_by_label("Maximum harm-ASR (0–1)").fill("0.01")
-    page.get_by_role("button", name="Evaluate repairs").click()
+def test_navigation_and_policy_outcome(page):
+    nav = page.get_by_role("navigation", name="Page sections")
+    assert nav.get_by_role("link", name="Evidence").get_attribute("href") == "#comparison-title"
+    assert nav.get_by_role("link", name="Replay").get_attribute("href") == "#replay-title"
+    assert page.locator("#comparison-title").is_visible() and page.locator("#replay-title").is_visible()
+    page.get_by_label("Max harm-ASR").fill("0.01")
+    page.get_by_role("button", name="Evaluate policy").click()
     assert page.locator("#decisions .accept").count() == 0
     assert "insufficient" in page.locator("#decisions").inner_text().lower()
-    assert page.get_by_role("button", name="Download readable summary").is_enabled()
+    assert page.get_by_role("button", name="Download summary").is_enabled()
 
 
 def test_keyboard_skip_labels_and_text_resize(page):
     page.keyboard.press("Control+Home")
-    page.locator("body").click(position={"x": 1, "y": 1})
+    page.evaluate("document.activeElement && document.activeElement.blur()")
     page.keyboard.press("Tab")
     assert page.locator(".skip-link").evaluate("e => e === document.activeElement")
     page.keyboard.press("Enter")
     assert page.locator("#main").evaluate("e => e === document.activeElement")
-    page.get_by_label("Maximum harm-ASR (0–1)").focus()
+    page.get_by_label("Max harm-ASR").focus()
     page.keyboard.press("Control+A")
     page.keyboard.type("0.02")
     assert page.locator("#export").is_disabled()
-    page.get_by_role("button", name="Evaluate repairs").focus()
+    page.get_by_role("button", name="Evaluate policy").focus()
     page.keyboard.press("Enter")
     assert page.locator("#export").is_enabled()
     assert page.locator("input:not([type=file]), select").evaluate_all("xs => xs.every(e => e.labels.length > 0)")
@@ -152,8 +150,9 @@ def test_computed_contrast_and_focus(page):
         return (b + 0.05) / (a + 0.05)
 
     checks = []
-    for selector, background in [("body", "body"), (".note", "body"),
-                                 (".warning", ".warning"), (".tag", ".tag"),
+    for selector, background in [("body", "body"), (".note", ".panel"),
+                                 (".hero-lede", ".hero"), (".decision", ".decision"),
+                                 (".tbl caption", ".panel"),
                                  ("#max-harm", "#max-harm"), ("#preset", "#preset"),
                                  ("button[type=submit]", "button[type=submit]")]:
         foreground = page.locator(selector).first.evaluate("e => getComputedStyle(e).color")
@@ -167,7 +166,7 @@ def test_computed_contrast_and_focus(page):
         ratio = contrast(border, surface)
         checks.append({"selector": selector, "kind": "control boundary", "ratio": ratio, "minimum": 3})
         assert ratio >= 3, (selector, ratio)
-    page.get_by_label("Maximum harm-ASR (0–1)").focus()
+    page.get_by_label("Max harm-ASR").focus()
     page.keyboard.press("Tab")
     focus = page.evaluate("getComputedStyle(document.activeElement).outlineColor")
     ratio = contrast(focus, "rgb(255, 255, 255)")

@@ -12,6 +12,15 @@ const node = (tag, text, cls) => {
 const digest = async text => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text))),
   x => x.toString(16).padStart(2, "0")).join("");
 const metric = m => m ? `${m.value.toFixed(3)} [${m.ci95.map(x => x.toFixed(3)).join(", ")}] · n=${m.n}` : "Missing";
+// Display names only; evidence, exports and decisions keep the arm ids.
+const ARM_LABEL = {base: "Aligned base", drift: "Abliterated drift", harm2_a4: "Sparse repair · 2% support", global_a4: "Full-support repair"};
+const armName = id => ARM_LABEL[id] || id;
+const metricCell = m => {
+  const td = node("td");
+  if (!m) { td.append(node("span", "Missing", "v")); return td; }
+  td.append(node("span", m.value.toFixed(3), "v"), node("span", `[${m.ci95.map(x => x.toFixed(3)).join(", ")}] · n=${m.n}`, "c"));
+  return td;
+};
 const enableExports = enabled => { $("export").disabled = $("export-summary").disabled = !enabled; };
 function policy() {
   return {max_harm_asr: $("max-harm").valueAsNumber, max_over_refusal: $("max-refusal").valueAsNumber,
@@ -25,7 +34,9 @@ function evaluate() {
     $("decisions").replaceChildren();
     for (const d of decisions.filter(d => bundle.arms.find(a => a.id === d.arm).kind === "repair")) {
       const section = node("article", undefined, "decision " + d.status);
-      section.append(node("h3", `${d.arm}: ${d.status.replaceAll("_", " ")}`));
+      const heading = node("h3", `${armName(d.arm)} — ${d.status.replaceAll("_", " ")}`);
+      heading.append(node("span", d.arm, "arm-id"));
+      section.append(heading);
       const reasons = node("ul"); d.reasons.forEach(r => reasons.append(node("li", r))); section.append(reasons);
       $("decisions").append(section);
     }
@@ -51,8 +62,9 @@ function comparison() {
   const thead = node("thead"); thead.append(head); table.append(thead);
   const tbody = node("tbody");
   for (const a of bundle.arms) {
-    const tr = node("tr"); const th = node("th", a.id); th.scope = "row"; tr.append(th);
-    for (const text of [metric(a.metrics.harm_asr), metric(a.metrics.over_refusal), metric(a.metrics.utility), a.edited_scalars.toLocaleString(),
+    const tr = node("tr"); const th = node("th", armName(a.id)); th.scope = "row"; tr.append(th);
+    tr.append(metricCell(a.metrics.harm_asr), metricCell(a.metrics.over_refusal), metricCell(a.metrics.utility));
+    for (const text of [a.edited_scalars.toLocaleString(),
       a.kind === "reference" ? "Reference" : !["harm_asr", "over_refusal", "utility"].every(k => a.metrics[k]) ? "Incomplete" : frontier.has(a.id) ? "Nondominated estimate" : "Dominated estimate"])
       tr.append(node("td", text));
     tbody.append(tr);
@@ -63,7 +75,7 @@ function comparison() {
     const el = document.createElementNS(ns, tag); for (const [key, value] of Object.entries(attrs)) el.setAttribute(key, value);
     if (text !== undefined) el.textContent = text; return el;
   };
-  const svg = svgNode("svg", {viewBox: "0 0 820 360", role: "img", "aria-labelledby": "chart-title"});
+  const svg = svgNode("svg", {viewBox: "0 0 820 400", role: "img", "aria-labelledby": "chart-title"});
   svg.append(svgNode("title", {id: "chart-title"}, "Harm-ASR versus over-refusal with marginal intervals. All values also appear in the table."));
   const points = bundle.arms.filter(a => a.metrics.harm_asr && a.metrics.over_refusal);
   const xmax = Math.min(1, Math.max(0.1, ...points.map(a => a.metrics.over_refusal.ci95[1])) * 1.15);
@@ -75,14 +87,19 @@ function comparison() {
       svgNode("text", {x: 58, y: y(vy) + 5, "text-anchor": "end"}, vy.toFixed(2)),
       svgNode("text", {x: x(vx), y: 314, "text-anchor": "middle"}, vx.toFixed(2)));
   }
-  svg.append(svgNode("text", {x: 395, y: 345, "text-anchor": "middle"}, "Over-refusal →"),
-    svgNode("text", {x: 70, y: 23}, "Harm-ASR ↑ (lower is better)"));
-  points.forEach((a, i) => {
-    const h = a.metrics.harm_asr, o = a.metrics.over_refusal, color = a.kind === "reference" ? "#65758b" : "#2b6cb0";
+  svg.append(svgNode("text", {x: 395, y: 336, "text-anchor": "middle"}, "Over-refusal (lower is better)"),
+    svgNode("text", {x: 70, y: 23}, "Harm-ASR (lower is better)"));
+  points.forEach(a => {
+    const h = a.metrics.harm_asr, o = a.metrics.over_refusal, color = a.kind === "reference" ? "#65758b" : "#2f6fed";
     svg.append(svgNode("line", {x1: x(o.ci95[0]), x2: x(o.ci95[1]), y1: y(h.value), y2: y(h.value), stroke: color}),
       svgNode("line", {x1: x(o.value), x2: x(o.value), y1: y(h.ci95[0]), y2: y(h.ci95[1]), stroke: color}),
-      svgNode("circle", {cx: x(o.value), cy: y(h.value), r: 5, fill: color}),
-      svgNode("text", {x: x(o.value) + 9, y: y(h.value) - 8 - (i % 2) * 13}, a.id));
+      svgNode("circle", {cx: x(o.value), cy: y(h.value), r: 5, fill: color}));
+  });
+  points.forEach((a, i) => {
+    const short = {base: "base", drift: "drift", harm2_a4: "sparse 2%", global_a4: "full 100%"}[a.id] || a.id;
+    const lx = 70 + i * 168, color = a.kind === "reference" ? "#65758b" : "#2f6fed";
+    svg.append(svgNode("circle", {cx: lx, cy: 380, r: 4.5, fill: color}),
+      svgNode("text", {x: lx + 11, y: 384}, short));
   });
   $("chart").replaceChildren(svg);
 }
@@ -92,7 +109,7 @@ function replay() {
   const prompt = node("details"); prompt.append(node("summary", `Reveal ${p.role === "eval_malicious" ? "potentially harmful" : "benign"} prompt · ${p.id}`), node("p", p.text, "prompt")); panel.append(prompt);
   const columns = node("div", undefined, "replay-grid");
   for (const a of bundle.arms) {
-    const article = node("article"); article.append(node("h3", a.id));
+    const article = node("article"); article.append(node("h3", `${armName(a.id)} · ${a.id}`));
     const c = a.completions.find(c => c.prompt_id === p.id);
     if (!c) { article.append(node("p", "Missing completion — not safe.")); columns.append(article); continue; }
     const votes = [];

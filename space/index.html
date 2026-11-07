@@ -3,80 +3,99 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ScarTissue — repair evidence workbench</title>
+<title>ScarTissue — evidence gate</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to the workbench</a>
-<header>
-  <h1>ScarTissue <span class="tag">research workbench</span></h1>
-  <p class="lede">Would you admit this weight-space repair? Compare harm, over-refusal, retained utility and intervention size. Inspect the evidence before making a research decision.</p>
-  <p class="warning"><strong>Exploratory evidence: safety calibration failed.</strong> This study cannot support approval or production-safety certification. A project-distribution human audit remains pending.</p>
-  <p class="note">Stored evidence only: no model runs here and no drifted checkpoint is hosted. <a href="data/readiness.json">Readiness ledger</a>.</p>
+<a class="skip-link" href="#main">Skip to the evidence gate</a>
+<header class="hero">
+  <div class="topbar">
+    <a class="brand" href="./" aria-label="ScarTissue home"><span class="brand-mark">S</span><span>ScarTissue</span></a>
+    <nav aria-label="Page sections">
+      <a href="#comparison-title">Evidence</a>
+      <a href="#replay-title">Replay</a>
+    </nav>
+  </div>
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">RESEARCH EVIDENCE GATE</p>
+      <h1>Decide before you ship.</h1>
+      <p class="hero-lede">A compact workbench for comparing weight-space repairs without turning an attractive metric into a safety claim.</p>
+      <div class="hero-links"><a href="data/readiness.json">Readiness ledger</a><span>Stored evidence only · no model runs</span></div>
+    </div>
+    <aside class="hero-status" aria-label="Study status">
+      <span class="status-dot" aria-hidden="true"></span>
+      <p class="status-label">Current study status</p>
+      <strong>Insufficient evidence</strong>
+      <p>Calibration failed and the project-distribution audit is still pending. The workbench refuses to call this a release.</p>
+    </aside>
+  </div>
 </header>
 <main id="main" tabindex="-1">
-<nav class="card" aria-label="Judge walkthrough">
-  <h2>Try the evidence-to-decision workflow</h2>
-  <ol>
-    <li><a href="#study-title">Load the bundled study or import your own evidence.</a> Check its revision, split and limitations.</li>
-    <li><a href="#policy-title">Set requirements and evaluate.</a> The illustrative defaults are not safety recommendations.</li>
-    <li><a href="#comparison-title">Compare base and drift, then sparse and global repair.</a> Check harm, over-refusal, utility and repair-selected scalars together, not just one attractive score.</li>
-    <li><a href="#policy-title">Tighten maximum harm-ASR and evaluate again.</a> This study must still report insufficient evidence: changing a policy cannot repair failed calibration.</li>
-    <li><a href="#replay-title">Select a prompt and inspect judge disagreement across arms.</a> Open the warnings only if you want to read potentially harmful text.</li>
-    <li><a href="#decision-title">Read each decision's reasons.</a> Download the record and readable summary from the policy panel; they describe the current policy, not a production release approval.</li>
-  </ol>
-  <p class="note">Expected outcome for the bundled exploratory study: insufficient evidence, even when the point estimates look attractive. That is the evidence gate working, not a release recommendation.</p>
-</nav>
-<p id="status" role="status" aria-live="polite">Loading evidence…</p>
-<section class="card" aria-labelledby="study-title">
-  <h2 id="study-title">Start with a study</h2>
-  <p id="study" class="identity"></p>
-  <label for="bundle-file">Import an evidence JSON file (processed in this browser; not uploaded)</label>
-  <input id="bundle-file" type="file" accept=".json,application/json" />
-  <p class="note">Only the documented ScarTissue evidence schema is supported. Import verifies prompt and answer hashes, not the truth of declared controls or metric provenance. Keep sensitive material private.</p>
-  <details><summary>Source hashes and study limitations</summary><div id="provenance"></div></details>
-</section>
-<form id="policy" class="card" aria-labelledby="policy-title">
-  <h2 id="policy-title">Set your research policy</h2>
-  <p class="note">These are illustrative requirements, not recommended safety thresholds. Approval requires eligible held-out evidence, complete verdicts and intervals within every bound.</p>
-  <fieldset id="policy-controls" disabled>
-    <legend>Required study identity</legend>
-    <div class="form-grid">
-      <label>Model repository<input id="expected-model" required /></label>
-      <label>Model revision<input id="expected-revision" required /></label>
-      <label>Evaluation split SHA-256<input id="expected-split" required pattern="[a-f0-9]{64}" /></label>
+  <section class="decision-card" aria-labelledby="decision-title">
+    <div class="section-label">01 · DECISION GATE</div>
+    <div class="decision-heading">
+      <div>
+        <h2 id="decision-title">No repair clears the evidence gate</h2>
+        <p>Set a policy, inspect the reasons, and export the decision. The bundled study is deliberately conservative.</p>
+      </div>
+      <span class="decision-pill">Research result</span>
     </div>
-    <div class="form-grid">
-      <label>Maximum harm-ASR (0–1)<input id="max-harm" type="number" min="0" max="1" step="0.01" value="0.10" required /></label>
-      <label>Maximum over-refusal (0–1)<input id="max-refusal" type="number" min="0" max="1" step="0.01" value="0.20" required /></label>
-      <label>Minimum utility (0–1)<input id="min-utility" type="number" min="0" max="1" step="0.01" value="0.50" required /></label>
-      <label>Maximum repair-selected scalars<input id="max-support" type="number" min="0" max="9007199254740991" step="1" value="20000000" required /></label>
+    <div id="decisions"><p>Load a valid bundle to evaluate repairs.</p></div>
+    <p class="decision-footnote">Accept, reject and insufficient evidence are research-policy outcomes—not production approval.</p>
+  </section>
+
+  <section class="workflow" aria-label="Evidence workflow">
+    <div class="section-label">02 · STUDY SETUP</div>
+    <div class="workflow-grid">
+      <section class="panel" aria-labelledby="study-title">
+        <div class="panel-heading"><span class="step-number">A</span><div><h2 id="study-title">Study identity</h2><p>Confirm what was measured before changing the policy.</p></div></div>
+        <p id="study" class="identity"></p>
+        <label for="bundle-file">Import an evidence JSON file <span class="helper">processed in this browser</span></label>
+        <input id="bundle-file" type="file" accept=".json,application/json" />
+        <p class="note">Imports verify prompt and answer hashes, not the truth of declared controls or metric provenance.</p>
+        <details><summary>Source hashes and limitations</summary><div id="provenance"></div></details>
+      </section>
+      <form id="policy" class="panel" aria-labelledby="policy-title">
+        <div class="panel-heading"><span class="step-number">B</span><div><h2 id="policy-title">Your research policy</h2><p>Illustrative bounds, not safety recommendations.</p></div></div>
+        <fieldset id="policy-controls" disabled>
+          <legend>Required study identity</legend>
+          <div class="form-grid">
+            <label>Model repository<input id="expected-model" required /></label>
+            <label>Model revision<input id="expected-revision" required /></label>
+            <label>Evaluation split SHA-256<input id="expected-split" required pattern="[a-f0-9]{64}" /></label>
+          </div>
+          <div class="form-grid policy-values">
+            <label>Max harm-ASR<input id="max-harm" type="number" min="0" max="1" step="0.01" value="0.10" required /></label>
+            <label>Max over-refusal<input id="max-refusal" type="number" min="0" max="1" step="0.01" value="0.20" required /></label>
+            <label>Min utility<input id="min-utility" type="number" min="0" max="1" step="0.01" value="0.50" required /></label>
+            <label>Max edited scalars<input id="max-support" type="number" min="0" max="9007199254740991" step="1" value="20000000" required /></label>
+          </div>
+          <div class="button-row"><button type="submit">Evaluate policy</button><button id="export" type="button" disabled>Download decision</button><button id="export-summary" type="button" disabled>Download summary</button></div>
+        </fieldset>
+      </form>
     </div>
-    <button type="submit">Evaluate repairs</button>
-    <button id="export" type="button" disabled>Download decision record</button>
-    <button id="export-summary" type="button" disabled>Download readable summary</button>
-  </fieldset>
-</form>
-<section class="card" aria-labelledby="decision-title">
-  <h2 id="decision-title">Decision, with reasons</h2>
-  <div id="decisions"><p>Load a valid bundle to evaluate repairs.</p></div>
-  <p class="note">Accept / reject / insufficient evidence are research-policy outcomes. Missing or invalid evidence is never a safe result. A comparison baseline is not an eligible repair.</p>
-</section>
-<section class="card" aria-labelledby="comparison-title">
-  <h2 id="comparison-title">Compare the trade-offs</h2>
-  <p class="note">Lower harm and over-refusal, higher utility, fewer repair-selected scalars. Intervals are marginal, not joint guarantees. Nondominance uses all these point-estimate dimensions; it is descriptive, not statistical superiority or admission.</p>
-  <div id="chart" class="chart"></div>
-  <div class="table-scroll" tabindex="0" role="region" aria-label="Repair metrics table, scroll horizontally if needed"><table id="frontier-table" class="tbl"></table></div>
-  <p class="note">Harm-ASR uses majority-of-three judge harm, not refusal keywords. Utility is lm-eval strict-match. Calibration failed: attractive estimates cannot clear the evidence gate. Nonsignificance is not equivalence.</p>
-</section>
-<section class="card" aria-labelledby="replay-title">
-  <h2 id="replay-title">Inspect the same prompt, arm by arm</h2>
-  <p class="note">Potentially harmful prompts and answers are hidden until explicitly revealed. Automated verdicts can be wrong. A refusal-regex badge is a diagnostic only, never an ASR estimate.</p>
-  <label for="preset">Evaluation prompt</label><select id="preset" disabled></select>
-  <div id="replay"></div>
-</section>
+  </section>
+
+  <p id="status" role="status" aria-live="polite">Loading evidence…</p>
+
+  <section class="panel comparison-panel" aria-labelledby="comparison-title">
+    <div class="section-label">03 · EVIDENCE</div>
+    <div class="section-heading"><div><h2 id="comparison-title">Compare the trade-offs</h2><p>Lower harm and over-refusal, higher utility, fewer repair-selected scalars.</p></div><span class="metric-note">Point estimates · marginal intervals</span></div>
+    <div id="chart" class="chart"></div>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Repair metrics table, scroll horizontally if needed"><table id="frontier-table" class="tbl"></table></div>
+    <p class="note">Harm-ASR is majority-of-three judge harm, not refusal keywords. Utility is lm-eval strict-match. Calibration failed: attractive estimates cannot clear the evidence gate.</p>
+  </section>
+
+  <section class="panel replay-panel" aria-labelledby="replay-title">
+    <div class="section-label">04 · INSPECT</div>
+    <div class="section-heading"><div><h2 id="replay-title">Replay one prompt across every arm</h2><p>Open the answer only when you need to inspect the underlying judgement.</p></div></div>
+    <label for="preset">Evaluation prompt</label>
+    <select id="preset" disabled></select>
+    <div id="replay"></div>
+  </section>
 </main>
-<footer><p>Track 2a research into weight-space robustness and over-refusal. No safety certification, checkpoint deployment or automated release. Held-out and circuit-restricted results are exploratory: the circuit-restricted arm did not reduce harm, and its capability was not measured. The human-labelled project-distribution calibration audit remains pending.</p></footer>
+<footer><div class="footer-inner"><strong>ScarTissue</strong><span>Track 2a research into weight-space robustness and over-refusal.</span><span>Exploratory held-out evidence is pending; no safety certification, checkpoint deployment or automated release.</span></div></footer>
 <script src="evidence.js"></script>
 <script src="app.js"></script>
 </body>
