@@ -1,7 +1,7 @@
 """Frontier figure for report/report.tex.
 
-Source: evals/frontier.csv (written by experiments/p10_evals_bundle.py; byte-identical copies in
-space/ and space-static/). One extra point, harm@10%@alpha=2, is not in the CSV and is read from
+Source: evals/frontier.csv (written by experiments/p10_evals_bundle.py).
+One extra point, harm@10%@alpha=2, is not in the CSV and is read from
 results/p3b_sweep.json so the cheap end of the curve is visible.
 
     uv run --with matplotlib --with numpy python report/fig_frontier.py

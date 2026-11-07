@@ -31,8 +31,8 @@ configs:
 # ScarTissue — results, parquet tables, and the submission package
 
 Track 2a entry for the Lexsi AI Safety & Alignment Hackathon. Every number here is generated from
-stored runs; nothing is hand-typed. The report is `report.pdf`; the method and caveats are in
-`WRITE-UP.md`; the requirement-by-requirement entry is `SUBMISSION.md`.
+stored runs; nothing is hand-typed. The report is `report.pdf`. The current method, caveats and
+submission draft are maintained in the [source repository](https://github.com/amugoodbad229/scartissue).
 
 ## Files
 

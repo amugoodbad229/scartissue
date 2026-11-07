@@ -8,8 +8,7 @@ stored runs; nothing is hand-typed.
 | file | what it is |
 |---|---|
 | `report.pdf` | the 5-page report (claim, frontier, mechanism, calibration, blocked work, limitations) |
-| `WRITE-UP.md` | the submission write-up in markdown |
-| `SUBMISSION.md` | the entry itself: requirement-by-requirement map, claim, numbers, disclaimers |
+| `README.md` | this dataset guide; current submission drafts live in the source repository |
 | `manifest.json` | 17-key manifest: claim, model revision, track repos, datasets, deployment, metrics, headline numbers, evidence paths, limitations, licence |
 | `lexsi_provenance.json` | requirement map + before/after table + licence compliance |
 | `provenance_final.json` | corpus roles/labels, model and judge revisions, patch hashes, toolkit commits, sha256 of every input |

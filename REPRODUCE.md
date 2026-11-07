@@ -18,13 +18,13 @@ static Space includes `.static.hf.space`; live content is checked in
    ```
 
    ```bash
-   cd space-static && python3 -m http.server 8000                            # any Python 3
+   cd space && python3 -m http.server 8000                                 # any Python 3
    ```
 
    ```text
-   or just open space-static/index.html directly (the bundle is a same-origin file, so file:// works)
+   or just open space/index.html directly (the bundle is a same-origin file, so file:// works)
    ```
-2. Leave the default bundle in place, or import your own copy of `space-static/data/evidence.json`.
+2. Leave the default bundle in place, or import your own copy of `space/data/evidence.json`.
    Imports are verified against the SHA-256 of every prompt and answer before anything is committed to
    the page; a mismatch leaves the previous study loaded and says why.
 3. Change a policy bound and the export buttons invalidate — an export always describes the decision
@@ -113,7 +113,7 @@ spend-blocked.
 | held-out analysis | see `results/heldout_analysis_20261106.json` `sources` | that file |
 
 One quirk to expect: `evidence_bundle_sha256` in a run record hashes the remote serialization, so it
-differs from `sha256sum space-static/data/evidence.json` even though the content is identical. The
+differs from `sha256sum space/data/evidence.json` even though the content is identical. The
 verifier compares content with `created_at` excluded, which is why both are consistent; the bundle's
 per-run hash is therefore recorded in `results/modal_validation_*.json` rather than quoted here.
 
