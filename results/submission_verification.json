@@ -1,6 +1,6 @@
 {
   "schema": "scartissue.verification/2",
-  "checked_at": "2026-11-07T14:36:22.065420+00:00",
+  "checked_at": "2026-11-07T16:43:49.408719+00:00",
   "execution": "offline; no network or model inference",
   "n_checks": 31,
   "n_failed": 0,
@@ -161,9 +161,9 @@
       "detail": "results/p16_capability_analysis_20261102.json"
     },
     {
-      "check": "materialized bundle current: space-static/data/evidence.json",
+      "check": "materialized bundle current: space/data/evidence.json",
       "passed": true,
-      "detail": "space-static/data/evidence.json"
+      "detail": "space/data/evidence.json"
     },
     {
       "check": "manifest eligibility agrees with sources",

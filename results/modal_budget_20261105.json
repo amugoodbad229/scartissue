@@ -253,6 +253,15 @@
       "gpu": null,
       "reserved_at": "2026-11-07T14:35:12Z",
       "purpose": "Validate corrected release copy, form choices and deployable static workbench; reservation only, not actual provider billing"
+    },
+    {
+      "job": "cleanup_cpu_20261108",
+      "reserved_usd": 1,
+      "gpu": false,
+      "reserved_at": "2026-11-07T16:40:04.971Z",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_cleanup_20261108.log",
+      "purpose": "Validate consolidated Space, artifact paths, tests and browser workflow; reservation only, not provider billing"
     }
   ],
   "realized_provider_charge_usd": null
