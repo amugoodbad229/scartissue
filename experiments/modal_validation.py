@@ -29,13 +29,11 @@ image = (modal.Image.debian_slim(python_version="3.12")
                         ignore=["__pycache__", "*.pyc"])
          .add_local_dir(str(ROOT / "results"), f"{REMOTE}/results")
          .add_local_dir(str(ROOT / "1-curate"), f"{REMOTE}/1-curate")
-         .add_local_dir(str(ROOT / "space-static"), f"{REMOTE}/space-static")
+         .add_local_dir(str(ROOT / "space"), f"{REMOTE}/space")
          .add_local_dir(str(ROOT / "_research"), f"{REMOTE}/_research")
          .add_local_dir(str(ROOT / "report"), f"{REMOTE}/report",
                         ignore=["*.pdf", "*.png", "__pycache__", "*.pyc"])
          .add_local_file(str(ROOT / "README.md"), f"{REMOTE}/README.md")
-         .add_local_file(str(ROOT / "WRITE-UP.md"), f"{REMOTE}/WRITE-UP.md")
-         .add_local_file(str(ROOT / "SUBMISSION.md"), f"{REMOTE}/SUBMISSION.md")
          .add_local_file(str(ROOT / "REPRODUCE.md"), f"{REMOTE}/REPRODUCE.md")
          .add_local_dir(str(ROOT / "human_audit"), f"{REMOTE}/human_audit", ignore=["__pycache__"])
          .add_local_dir(str(UPSTREAM / "src"), "/work/ScarTissue/repos/AuditKIT/src",
@@ -48,11 +46,11 @@ app = modal.App("scartissue-validation")
 
 def source_hashes(root: Path) -> dict[str, str]:
     paths = [root / "pyproject.toml", root / "uv.lock"]
-    for folder in ("experiments", "tests", "artifacts", "space-static", "_research", "report", "human_audit"):
+    for folder in ("experiments", "tests", "artifacts", "space", "_research", "report", "human_audit"):
         paths.extend(p for p in (root / folder).rglob("*")
                      if p.suffix in {".py", ".js", ".cjs", ".html", ".css", ".md", ".tex"}
                      and "__pycache__" not in p.parts)
-    paths.extend(p for name in ("README.md", "WRITE-UP.md", "SUBMISSION.md", "REPRODUCE.md")
+    paths.extend(p for name in ("README.md", "REPRODUCE.md")
                  if (p := root / name).exists())
     return {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in sorted(paths)}
@@ -170,7 +168,7 @@ def main(reservation_id: str):
             ledger_path = ROOT / f"results/readiness_ledger_{stamp}.json"
             ledger_path.write_text(content, encoding="utf8")
             (ROOT / "results/readiness_ledger.json").write_text(content, encoding="utf8")
-            static_ledger = ROOT / "space-static/data/readiness.json"
+            static_ledger = ROOT / "space/data/readiness.json"
             static_ledger.parent.mkdir(parents=True, exist_ok=True)
             static_ledger.write_text(content, encoding="utf8")
             result["readiness_ledger_path"] = ledger_path.relative_to(ROOT).as_posix()
@@ -179,7 +177,7 @@ def main(reservation_id: str):
             content = json.dumps(bundle, ensure_ascii=False, indent=2) + "\n"
             bundle_path = ROOT / "results/workbench_evidence_20261106.json"
             bundle_path.write_text(content, encoding="utf8")
-            static_path = ROOT / "space-static/data/evidence.json"
+            static_path = ROOT / "space/data/evidence.json"
             static_path.parent.mkdir(parents=True, exist_ok=True)
             static_path.write_text(content, encoding="utf8")
             result["evidence_bundle_path"] = bundle_path.relative_to(ROOT).as_posix()

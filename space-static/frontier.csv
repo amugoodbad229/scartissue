@@ -1,5 +1,0 @@
-arm,label,frac_of_global,refusal,over_refusal,gsm8k,asr_majority3,gap_recovered,refusal_per_over_refusal
-base,BASE — aligned checkpoint,,0.8417,0.075,0.59,0.0583,1.0,11.22
-drift,DRIFTED — abliterated,,0.5,0.05,0.56,0.2167,0.0,10.0
-harm2_a4,"REPAIRED — harm support 2 %, alpha 4",0.02,0.8833,0.175,0.518,0.05,-1.4,5.05
-global_a4,"REPAIRED — global, alpha 4",1.0,0.8833,0.275,0.438,0.0417,-4.0667,3.21

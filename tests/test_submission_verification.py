@@ -12,7 +12,7 @@ from experiments.verify_submission import artifact_path, verify, build_readiness
 
 @pytest.fixture
 def evidence_root(tmp_path):
-    for relative in [*INPUTS.values(), "space-static/evidence.js"]:
+    for relative in [*INPUTS.values(), "space/evidence.js"]:
         target = tmp_path / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / relative, target)
@@ -62,7 +62,7 @@ def test_changed_valid_metrics_pass_but_stale_bundle_fails(evidence_root):
     stale = verify(evidence_root, old)
     assert stale["status"] == "failed"
     assert any(not c["passed"] and c["check"] == "bundle matches current evidence" for c in stale["checks"])
-    exported = evidence_root / "space-static/data/evidence.json"
+    exported = evidence_root / "space/data/evidence.json"
     exported.parent.mkdir(parents=True)
     exported.write_text(json.dumps(old), encoding="utf8")
     assert verify(evidence_root, current)["status"] == "failed"

@@ -19,7 +19,7 @@ RESULTS = ROOT / "results"
 FILES = {
     "corpus": CORPUS,
     "split": SPLIT,
-    "patches": ROOT / "artifacts_hf_local" / "manifest.json",
+    "patches": ROOT / "artifacts" / "manifest.json",
     "capability": RESULTS / "p16_capability_analysis_20261102.json",
     "safety_generations": RESULTS / "p21_safety_length_full_20261103_001722.json",
     "judge_verdicts": RESULTS / "p19_safety_judges_20261103_002850.json",
@@ -140,8 +140,8 @@ def main() -> None:
         "limitations": [
             "one model, one seed, one capability task carry the headline",
             "harm-ASR absolute level is a lower bound (panel specificity 0.984, sensitivity 0.580)",
-            "circuit arm exported but not yet evaluated (compute blocked)",
-            "held-out and multilingual runs generated/queued, not judged",
+            "the circuit-restricted arm did not reduce harm and has no capability measurement",
+            "the held-out panel is exploratory because calibration failed; no multilingual claim",
         ],
         "licence": "Cohere LSAL 1.2/1.1, research use; parameters published, no drifted checkpoint",
         "provenance": "results/provenance_final.json",
@@ -160,7 +160,7 @@ def main() -> None:
             "hf_artifacts_format": "parquet (corpus + results), .npz (parameter patches)",
             "public_deployment": "https://huggingface.co/spaces/amugoodbad229/scartissue",
             "more_than_one_before_after_metric": True,
-            "writeup_rationale": "report/report.pdf, WRITE-UP.md §9",
+            "writeup_rationale": "README.md and report/report.pdf",
         },
         "before_after": {
             "metric_1_refusal": {"before": 0.842, "drifted": 0.500, "repaired_2pct": 0.883},

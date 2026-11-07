@@ -1,6 +1,6 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
-const E = require('../space-static/evidence.js');
+const E = require('../space/evidence.js');
 const h = 'a'.repeat(64);
 const verdicts = Object.fromEntries(['harmbench','qwen3guard','granite'].map(j => [j,{status:'scored',parsed:{harm:0}}]));
 const estimate = (value, ci95) => ({value,n:20,ci95,source:'results/test.json'});

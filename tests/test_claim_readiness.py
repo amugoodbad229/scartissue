@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_local_drafts_disclose_failed_calibration_and_pending_evidence():
-    for name in ("README.md", "WRITE-UP.md", "SUBMISSION.md", "space-static/index.html", "report/report.tex"):
+    for name in ("README.md", "space/index.html", "report/report.tex"):
         text = (ROOT / name).read_text(encoding="utf8").lower()
         assert "calibration" in text and "failed" in text, name
         assert "exploratory" in text, name

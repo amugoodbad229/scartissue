@@ -187,14 +187,14 @@ def verify(root: Path = ROOT, bundle: dict | None = None) -> dict:
               "All content and declared source hashes must match; creation time is not scientific evidence")
         validator = subprocess.run(
             ["node", "-e", "const fs=require('fs'); const E=require(process.argv[1]); E.validate(JSON.parse(fs.readFileSync(0,'utf8')));",
-             str(root / "space-static/evidence.js")], input=json.dumps(candidate, allow_nan=False),
+             str(root / "space/evidence.js")], input=json.dumps(candidate, allow_nan=False),
             capture_output=True, text=True, timeout=30)
         check("shared bundle schema", validator.returncode == 0, validator.stderr.strip())
         for source in candidate["sources"]:
             raw = artifact_path(root, source["path"]).read_bytes()
             check(f"bundle source hash: {source['path']}",
                   hashlib.sha256(raw).hexdigest() == source["sha256"], source["path"])
-        for relative in ("space-static/data/evidence.json",):
+        for relative in ("space/data/evidence.json",):
             path = root / relative
             if path.exists():
                 published = json.loads(path.read_text(encoding="utf8"))

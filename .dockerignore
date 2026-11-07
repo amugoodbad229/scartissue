@@ -1,4 +1,4 @@
 # The image only needs the static workbench; everything else stays out of the build context.
 *
-!space-static/
-!space-static/**
+!space/
+!space/**

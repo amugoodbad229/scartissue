@@ -1,43 +1,44 @@
 ---
-title: scartissue — abliteration and repair
-emoji: 🧪
+title: ScarTissue — is this repair good enough to ship?
+emoji: 🩹
 colorFrom: indigo
-colorTo: gray
-sdk: gradio
-sdk_version: 5.49.1
-app_file: app.py
+colorTo: purple
+sdk: static
 pinned: false
 license: other
-short_description: What abliteration removes, and what a repair puts back
+short_description: A repair-decision workbench that will not over-claim
 ---
 
-# scartissue
+# ScarTissue — repair-decision workbench
 
-An abliterated 3.35 B Cohere model, three columns, real measured completions.
+A model maintainer holding an abliterated Cohere checkpoint has four candidate weight-space repairs and
+must decide whether any is good enough to ship. Set your own bounds — harm, benign over-refusal, utility,
+repair support — and this page answers **accept**, **reject** or **insufficient evidence**, with the
+intervals, the reasons, and a full per-judge replay behind every card.
 
-Abliteration deletes a refusal **read-out**. This page shows the three measured questions behind that
-claim on `CohereLabs/tiny-aya-global`:
+## What you are looking at
 
-1. **Does the read-out survive?** Yes — the refusal direction re-extracted *after* the edit is orthogonal
-   to the abliterated one (`cos = +1.9e-04`), so amplifying the old direction is a no-op by construction.
-2. **Can it be amplified back?** Yes — weight-only, no training data, no gradients.
-3. **What does that cost?** **Over-refusal.** At 100 % of the edit the refusal rate returns to 97 % of the
-   base rate but over-refusal goes from 0.050 to **0.500**. At 2 % of the edit — ranked by harm-weighted
-   write amplitude — refusal recovers 54 % of the gap for **0.200** over-refusal: 2.54 units of refusal per
-   unit of over-refusal against the global edit's 1.48.
+Four arms measured under identical conditions: the aligned base model, the drifted one, a 2 %-support
+repair and a full-support repair (support matched to the drift, so it is not assumed).
 
-That is the frontier the project reports instead of a single number. The discrimination the model had
-before the edit does **not** come back at any budget (AUC of the surviving direction stays 0.79–0.82
-against the base model's 0.999) — the refusal is bought back, the separation is not.
+| | harm ASR | over-refusal | GSM8K |
+|---|---|---|---|
+| base | 0.058 | 0.075 | 0.590 |
+| drifted | 0.217 | 0.050 | 0.560 |
+| sparse repair | 0.050 | 0.175 | 0.518 |
+| full repair | 0.042 | 0.275 | 0.438 |
 
-## What is and is not claimed
+On 160 held-out prompts no arm ever trained on: harm 0/120 → 38/120 → 3/120 → 1/120, over-refusal
+8/40 → 5/40 → 13/40 → 20/40. The trade-off replicates; the repairs are not free.
 
-- **Not** a safety win. At 3.35 B the ASR axis is weak (non-refusals are hedging, not harm), three judges
-  scored identical completions 0.417 / 0.583 / 1.000, and the refusal tag in the UI is a **regex
-  diagnostic**, not a judge verdict.
-- **Not** a hosted drifted checkpoint — the licence forbids deploying one. Every number here comes from
-  parameter patches that are published as parameters.
-- The blind control (random columns at the same budget) is the arm that decides whether *restriction*
-  matters or only *size* does; it is reported on the same page as the other arms.
+**All four cards say `insufficient evidence`, and that is the correct answer.** The three-judge panel
+failed its calibration audit (sensitivity 0.580, specificity 0.984 on 500 Aegis rows — that run also
+rendered the HarmBench behaviour slot empty), so no harm figure here is confirmatory. The workbench
+builds that refusal into the decision instead of hiding it, and a pre-registered audit gate on 180 blind
+project-distribution items is the route to clearing it.
 
-Full runs, protocols and the frozen pre-registration: the `scartissue` repository.
+Everything is static: no model is run, no GPU, no API key, no data leaves your browser. Download the
+decision record (JSON) or a readable summary — both exclude raw completions.
+
+Code and evidence: <https://github.com/amugoodbad229/scartissue> ·
+Datasets: <https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46>

@@ -39,10 +39,10 @@ PUBLISHED = {
 }
 
 LOCAL = {
-    "abliteration_tiny-aya-global_layer15": ROOT / "artifacts_hf_local" / "abliteration_tiny-aya-global_layer15.npz",
-    "repair_global_a4": ROOT / "artifacts_hf_local" / "repair_global_a4.npz",
-    "repair_harm10_a4": ROOT / "artifacts_hf_local" / "repair_harm10_a4.npz",
-    "repair_harm2_a4": ROOT / "artifacts_hf_local" / "repair_harm2_a4.npz",
+    "abliteration_tiny-aya-global_layer15": ROOT / "artifacts" / "abliteration_tiny-aya-global_layer15.npz",
+    "repair_global_a4": ROOT / "artifacts" / "repair_global_a4.npz",
+    "repair_harm10_a4": ROOT / "artifacts" / "repair_harm10_a4.npz",
+    "repair_harm2_a4": ROOT / "artifacts" / "repair_harm2_a4.npz",
 }
 
 
