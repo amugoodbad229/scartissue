@@ -1,12 +1,12 @@
 # ScarTissue — hackathon reset roadmap
 
-Updated 2026-11-06. Mirrors the on-screen task queue; machine-readable plan: `results/readiness_reset_20261105.json`.
+Updated 2026-11-07. Mirrors the on-screen task queue; machine-readable plan: `results/readiness_reset_20261105.json`.
 
 ## Verdict and direction
 
-**Not submission-ready.** The existing experiments are a useful starting point, not a completed competitive entry. Keep the valid research and rebuild the user workflow, evidence gates and story; do not discard the working tree or rewrite the whole harness.
+**The scientific ledger remains `not_submission_ready`; the demo itself is working and deployable.** The software and public artifacts are validated separately from evidence eligibility. Do not convert passing tests into a safety or calibration claim.
 
-**Frozen execution scope following the instruction to proceed:** stay in Track 2, with **Track 2a red-teaming/robustness evaluation** as the defensible primary fit. Track 2b locating/correcting circuits is an earned extension only after the actual intervention and matched controls pass a valid evaluation. Compare alternatives in `_research/TRACK-DECISION-20261105.md`.
+**Frozen execution scope following the instruction to proceed:** stay in Track 2, with **Track 2a red-teaming/robustness evaluation** as the defensible primary fit. Track 2b is an extension only with the negative circuit/localisation results disclosed, never as a working circuit repair. Compare alternatives in `_research/TRACK-DECISION-20261105.md`.
 
 **User:** a model maintainer reviewing candidate repairs. **Useful outcome:** understand harm, over-refusal and retained task utility, then accept/reject/abstain under an explicit policy and export the evidence. A replayable research decision aid, not a claim that a model is safe for production.
 
@@ -26,9 +26,9 @@ The official submission deadline is **November 14, AoE**; the later refinement p
 - The bundle/browser workflow passed both test invocations on Modal; see `results/modal_validation_20261105T162314579344Z.json`. No new model evaluation or safety-calibration clearance is claimed.
 - Pending judgments, missing/remote-only patch bodies, invalid multilingual outputs and misleading public copy must not be described as confirmed results.
 - The old Modal workspace hit its spend limit during the baseline launch. The replacement workspace `ayman-cool1971` is authenticated and selected as the default through profile `scartissue-replacement`; use it until the user explicitly asks to switch back, with no automatic fallback. CPU execution capacity is verified by the saved Modal baseline; GPU execution is not yet verified. See `results/account_migration_20261106.json`.
-- Interpretation pass 2026-11-06: the earlier narrative layer was reviewed against its own data and corrected (`_research/APPRAISAL-20261106.md`). The "97 % refusal recovered" headline is a refusal-marker diagnostic, not an ASR result; the Aegis 0.580 sensitivity is not a lower bound (and traces to an empty `[BEHAVIOR]` slot in the calibration render); orthogonality does not imply harm representation survives; the circuit arm is unevaluated. `_research/FINDINGS-01.md` keeps its original text with these items marked superseded.
+- Interpretation pass 2026-11-06: the earlier narrative layer was reviewed against its own data and corrected (`_research/APPRAISAL-20261106.md`). The "97 % refusal recovered" headline is a refusal-marker diagnostic, not an ASR result; the Aegis 0.580 sensitivity is not a lower bound (and traces to an empty `[BEHAVIOR]` slot in the calibration render); orthogonality does not imply harm representation survives; the later circuit arm is measured and negative, as recorded above. `_research/FINDINGS-01.md` keeps its original text with these items marked superseded.
 - Judge calibration is the binding blocker and now has a registered route: `results/calibration_gate_20261106.json` (sensitivity ≥ 0.80 / Wilson lower ≥ 0.70; specificity ≥ 0.85 / Wilson lower ≥ 0.75; ≥ 150 labels) applied to a blind 180-item sample of this project's own generations (`human_audit/audit.html`, `experiments/analyse_audit.py`). Until it passes, `headline_eligible` stays false and the workbench returns `insufficient evidence`.
-- Latest full validation: `results/modal_validation_20261106T055055489313Z.json` — 142 tests passed in both invocation forms, 26/26 integrity checks, ledger `not_submission_ready`. That run also caught a missing image mount for `human_audit/`, which the source-snapshot guard blocked.
+- Latest full release validation: `results/modal_validation_20261107T143612137007Z.json` — 158 tests passed in both invocation forms, integrity checks passed, ledger `not_submission_ready`. Desktop/mobile screenshots were inspected. The corrected workbench was deployed at Space revision `6013e70e526cf087333dd5fb9b61364688052097`; its live HTML and evidence bundle were checked in `results/live_demo_verification_20261107.json`. Direct host: `https://amugoodbad229-scartissue.static.hf.space/`.
 - The replacement workspace has the `huggingface` secret (`HF_TOKEN`) but no existing model-cache volume. Gated-model access and remote-only artifact recovery remain unchecked. The chat-exposed token requires rotation; local Hugging Face login is unchanged.
 
 ## Priorities and cut line
@@ -40,9 +40,10 @@ The official submission deadline is **November 14, AoE**; the later refinement p
 
 ## Queue
 
-**Status 2026-11-06: the queue is closed.** Every task is either completed with evidence, closed by an explicit
-decision, or listed in *Awaiting you* below because it needs an account action or human labels. Nothing is left
-unchecked, and `results/readiness_reset_20261105.json` carries the same two `awaiting_user` ids (#22 labels, #34 the form).
+**Status 2026-11-07: release-copy verification is complete.** The corrected demo is deployed and its
+submission draft is ready for the remaining account fields. Scientific calibration and the form/article
+remain account- or human-dependent; `results/readiness_reset_20261105.json` carries the same two
+`awaiting_user` ids (#22 labels, #34 the form).
 
 ### Awaiting you (cannot be done from this machine)
 

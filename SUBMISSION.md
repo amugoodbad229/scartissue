@@ -2,16 +2,18 @@
 
 **Track 2a, problem statements 1 and 2** (red-teaming and robustness evaluation; adversarial and
 safety evaluation sets) and **Track 2b, problem statement 6** (repairing safety drift without
-retraining), Lexsi AI Safety & Alignment Hackathon. The circuit leg (2b #9) is published
-unevaluated and is not claimed. Form-ready answers: `_research/SUBMISSION-FORM-20261106.md`.
+retraining), Lexsi AI Safety & Alignment Hackathon. The circuit-restricted intervention is a
+published **negative, exploratory** result, not a working repair. Form-ready answers:
+`_research/SUBMISSION-FORM-20261106.md`.
 Deadline **14 November 2026, AoE** (`results/competition_rules_verified_20261105.json`).
 
 **Status in three lines.** The decision workbench works, is tested in a pinned remote environment
-(`results/modal_validation_20261105T190714562351Z.json`: 129 tests in both invocations, 21/21 integrity
-checks) and, given the evidence it ships with, answers **insufficient evidence** — correctly.
+(`results/modal_validation_20261107T143612137007Z.json`: 158 tests in both invocations, integrity
+checks passed) and, given the evidence it ships with, answers **insufficient evidence** — correctly.
 Its scientific gate is open: the three-judge panel `failed` calibration, so `headline_eligible=false`
-and every arm-level rate is `exploratory`. The public Space, datasets and PDF are **historical**: they
-predate the corrections in this tree and have not been re-published.
+and every arm-level rate is `exploratory`. The public Space and collections are live; the hosted
+workbench's evidence matches the local bundle apart from `created_at`
+(`results/live_demo_verification_20261107.json`). The PDF remains historical and has not been rebuilt.
 
 ## Who this is for, and what decision it changes
 
@@ -81,20 +83,21 @@ non-significance between the two repairs does **not** show they are equally safe
 |---|---|---|
 | ≥ 2 track repos, 3+ preferred | **3 chained**: CuratorKIT (corpus + row provenance) → CircuitKIT (discovery on the drifted model) → AuditKIT (native re-scoring, read-only at commit `71316da…`) | met; circuit **discovery** cannot be re-run here (CircuitKIT/EAP-IG not installed) |
 | a Cohere dense open-weights model | `CohereLabs/tiny-aya-global` (3.35 B, `cohere2`), revision `af89d219…`; earth/water secondary | met |
-| artifacts on the Hub, parquet preferred | corpus + results as parquet with declared viewer configs; patches as parameter `.npz` with per-file sha256 | **historical release** — not re-published after the corrections |
-| a public deployment | static Space with the frontier chart and per-prompt viewer | **historical**: the claim-corrected workbench is local (`space-static/`), not deployed |
+| artifacts on the Hub, parquet preferred | corpus + results as parquet with declared viewer configs; patches as parameter `.npz` with per-file sha256 | public collections verified; consult repository cards for file-level versions |
+| a public deployment | static Space with policy decisions, comparison chart and per-prompt judge replay | **live and verified** (`results/live_demo_verification_20261107.json`) |
 | more than one before/after metric | four: refusal, benign over-refusal, harm-ASR, GSM8K strict-match | met |
 | write-up on why these metrics/datasets/models | `WRITE-UP.md`, `report/report.tex`, `_research/EVIDENCE-BUNDLE.md`, `REPRODUCE.md` | met; the PDF is historical and has not been rebuilt |
-| validation | `results/modal_validation_20261105T190714562351Z.json` (129 tests ×2, 21/21 integrity checks, source + toolkit hashes) | software passes; **science does not** — calibration failed |
+| validation | `results/modal_validation_20261107T143612137007Z.json` (158 tests ×2, integrity checks, source + toolkit hashes) | software passes; **science does not** — calibration failed |
 
 ## Deliberately not claimed
 
-- **Nothing is submission-certified.** `results/readiness_ledger.json` is `not_submission_ready` with
-  calibration, headline, human-audit, circuit and publication blockers; the project-distribution human
-  audit (`#22`) remains pending, along with the matched-control and circuit-arm work.
-- **No circuit-arm result.** The body is recovered and hash-verified
-  (`results/circuit_body_recovery_20261106.json`, 150,994,944 scalars, `sha256 96c659a0…`) but no
-  generation, judging or capability run exists for it.
+- **Nothing is submission-certified.** `results/readiness_ledger.json` is `not_submission_ready`;
+  calibration and headline eligibility remain closed, the project-distribution human audit (`#22`)
+  remains pending, and publication must be rechecked after edits.
+- **The circuit-restricted intervention did not reduce harm.** In the exploratory judge analysis,
+  harm-ASR is 0.283 versus 0.217 for drift (paired +0.067 [0.008, 0.125]); over-refusal is 0.125
+  versus 0.050 (`results/circuit_arm_analysis_20261106.json`). No capability run exists for this arm,
+  and this negative result does not rule out other circuits or interventions.
 - **No confirmed held-out number**, for the reason above; and the confirmatory run is frozen but
   unexecuted (`results/confirmatory_spec_20261106.json`), with only 57 untouched harmful prompts left
   in the corpus — recorded before, not after, seeing it.
@@ -105,8 +108,8 @@ non-significance between the two repairs does **not** show they are equally safe
   different one, and the failed original controls stay failed.
 - **One model, one seed, one capability task** carry the headline; the paired interval covers prompt
   sampling only.
-- **Costs are reservations, not bills.** Twelve CPU jobs were reserved against a $25 ceiling; no GPU job
-  was run and `realized_provider_charge_usd` is `null`.
+- **Costs are reservations, not bills.** Current reservations and limits are in
+  `results/modal_budget_20261105.json`; `realized_provider_charge_usd` is `null`.
 
 ## Licence
 
@@ -117,7 +120,8 @@ answers. Individual entry, not an organisation.
 
 ## Links and reproduction
 
-- Demo (historical): `https://huggingface.co/spaces/amugoodbad229/scartissue`
+- Demo: `https://huggingface.co/spaces/amugoodbad229/scartissue`
+- Direct static app: `https://amugoodbad229-scartissue.static.hf.space/`
 - Report (historical): `https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-results/blob/main/report.pdf`
 - Corpus: `https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-safety-corpus`
 - Results: `https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-results`

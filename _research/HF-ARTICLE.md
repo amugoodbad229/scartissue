@@ -1,8 +1,8 @@
 # Would you ship this repair? A decision workbench for weight-space safety edits
 
 **Track 2a (#1 red-teaming / robustness, #2 adversarial and safety evaluation sets) and Track 2b (#6 repairing
-safety drift without retraining, #9 locating where safety lives, #10 circuit-level interventions, #12 tamper
-resistance).**
+safety drift without retraining, #9 locating where safety lives).** Circuit intervention and tamper results
+support those statements; they are not extra boxes beyond the form's two-per-track limit.
 
 Abliteration removes the direction a refusal is written along. It does not remove refusals: re-extracting the
 direction on the edited model and amplifying it brings the refusal marker back within a percent of the aligned
@@ -71,4 +71,10 @@ discovered circuit does not remove harm — the matched-budget repairs do (0.050
 #12) is a measured weakness, not a protection: one direction removes 0.542 of the refusal marker at no measured
 GSM8K cost, and detection needs the direction.
 
-Nothing here is production-safety certification, and no drifted checkpoint is hosted.
+Nothing here is production-safety certification, and no drifted checkpoint is hosted. The human-labelled
+project-distribution audit is still pending.
+
+- [Open the workbench](https://amugoodbad229-scartissue.static.hf.space/)
+- [Code and reproduction](https://github.com/amugoodbad229/scartissue)
+- [Repair-parameter collection](https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters)
+- [Evaluation-evidence collection](https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence)

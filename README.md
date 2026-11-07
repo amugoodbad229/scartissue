@@ -5,7 +5,7 @@ produces a number, or gets submitted lives here. The research archive next door 
 holds the frozen protocol, the source reads, the licence analysis and the audit trail; it is cited,
 never edited.
 
-**The user and the decision.** A model maintainer preparing to release a fine-tune of an abliterated
+**The user and the decision.** A model maintainer preparing to release a safety-edited
 Cohere checkpoint has to decide whether a candidate repair is good enough to ship. `space-static/`
 answers that as a reviewable decision: load an evidence bundle, set your own harm / over-refusal /
 utility / support bounds, and get **accept**, **reject** or **insufficient evidence** with the
@@ -35,7 +35,10 @@ containers as root, so the image's `USER judge` line is the one thing that build
 cd space-static && python3 -m http.server 8000   # then open http://localhost:8000
 ```
 
-**Hosted:** <https://huggingface.co/spaces/amugoodbad229/scartissue>
+**Hosted:** <https://huggingface.co/spaces/amugoodbad229/scartissue> ·
+[open the app directly](https://amugoodbad229-scartissue.static.hf.space/). Static Spaces use
+`.static.hf.space`; the non-`.static` app URL returns 404. Live files and their agreement with the
+local evidence bundle are checked in `results/live_demo_verification_20261107.json`.
 
 ### What you do once it is open
 
@@ -75,8 +78,9 @@ What exists today:
 
 ## Which track, and which boxes to tick
 
-**Tick Track 2a **and** Track 2b.** One track is enough for eligibility; both are honest here because the work
-is a robustness measurement (2a) *and* a retraining-free repair (2b).
+**Tick Track 2a and Track 2b, with at most two problem statements per track.** Track 2a is the
+primary fit; Track 2b covers the retraining-free repair and localisation measurements. Lead with the
+stronger robustness work, not a claim of successful circuit repair.
 
 | box | tick? | why, in one line |
 |---|---|---|
@@ -88,8 +92,8 @@ is a robustness measurement (2a) *and* a retraining-free repair (2b).
 | 2b #7 — unlearning | no | Not what this does. |
 | 2b #8 — inference-time steering | no | Steering vectors were used to *find* directions, not deployed as a guard. |
 | **2b #9 — locating where safety lives** | **yes, with a negative half** | Direction level is measured: AUC 0.9988 → 0.8306 after removing one direction at layer 15. Node level fails its own test: the discovered circuit's 36 output matrices change the refusal marker by **0.000** relative to two blind controls editing the same scalars. Both halves are in `results/localisation_analysis_20261106.json`. |
-| **2b #10 — circuit-level interventions** | **yes, as a negative result** | CircuitKIT located the heads carrying the refusal write; a repair restricted to their write columns (150,994,944 scalars) was generated and judged under the same protocol. Harm **0.283 vs drift 0.217** (paired +0.067 [0.008, 0.125]) and over-refusal 0.125 vs 0.050: restricting the edit to the discovered circuit made things slightly worse, not better. `results/circuit_arm_analysis_20261106.json`. |
-| **2b #12 — tamper resistance** | **yes, measured as weak** | One direction cuts the refusal marker by 0.542 at no measured GSM8K cost. Detection needs the direction: aligned tampering at 10 % support is visible (+0.317), a blind edit of the same size moves nothing. `results/tamper_analysis_20261106.json`. |
+| 2b #10 — circuit-level interventions | **no: two-box limit** | Report the negative arm under #9 instead: harm **0.283 vs drift 0.217** (paired +0.067 [0.008, 0.125]) and over-refusal 0.125 vs 0.050; no capability run. `results/circuit_arm_analysis_20261106.json`. |
+| 2b #12 — tamper resistance | **no: two-box limit** | The measured weakness can support #6, but is not a protection or a third selected statement. `results/tamper_analysis_20261106.json`. |
 | 2b #11 | no | Not attempted. |
 
 Claimed outcome, stated so it cannot be misread: the repairs restore the refusal marker at a support-dependent
@@ -107,7 +111,8 @@ judge panel failed its calibration audit. That is the finding so far.
 - Circuit-node selection is **not** shown to localise anything: at a matched edit budget it is indistinguishable
   from random module choice. The localisation claim is about the direction, not the circuit.
 - "Tamper resistance" is a measured **weakness** of the model, not a protection we built.
-- No circuit-arm effect, no multilingual result, no claim that a repair "restores safety".
+- No successful circuit-restricted repair (the measured result is negative), no multilingual result,
+  and no claim that a repair "restores safety".
 
 | artifact | where |
 |---|---|
@@ -147,9 +152,10 @@ Read the columns for what they are: **refusal** is Qwen3Guard's `Refusal:` field
 majority of three harm judges at a strict `> 0.5` threshold, and **GSM8K** is lm-eval exact match —
 capability is never scored by a judge. A plain regex refusal marker on the same answers reads
 0.683 / 0.175 / 0.450 / 0.583, so it is stored as a diagnostic and never used as a claim.
-`results/submission_verification.json` records historical consistency/availability checks, not a
-fresh validation or submission-readiness verdict. The verifier still needs replacement; do not treat
-HTTP success or agreement with hardcoded metrics as evidence validity.
+`results/submission_verification.json` is refreshed by the pinned Modal verifier; it is a
+software-integrity check, not a submission-readiness verdict. The fresh signed run is
+`results/modal_validation_20261107T143612137007Z.json`. Do not treat HTTP success or passing tests
+as evidence validity: `results/readiness_ledger.json` remains `not_submission_ready`.
 
 Three findings, in the order they matter:
 
@@ -166,9 +172,11 @@ Three findings, in the order they matter:
    is 0.050 versus 0.042 in the exploratory judge analysis. Lack of a detected difference does not
    establish equivalent safety. This is a measured trade-off, not yet a validated admission rule.
 
-Reported honestly: the discovered-circuit arm was generated but **not** judged (Modal workspace spend
-limit), so no circuit number appears in any claim; the held-out, multilingual and second-model
-confirmations are listed as blocked, not implied.
+Reported honestly: the discovered-circuit arm **was judged** in
+`results/circuit_arm_analysis_20261106.json`. Its exploratory harm-ASR is 0.283 versus 0.217 for
+drift (paired difference +0.067 [0.008, 0.125]); over-refusal is 0.125 versus 0.050. Restricting the
+edit to that circuit did not reduce harm. No capability run exists for this arm, the judge panel
+failed calibration, and no multilingual or second-model headline is implied.
 
 ## How the chain is built
 
@@ -202,9 +210,11 @@ attack result does not depend on the tools being correct.
 ## Reproduce
 
 Do not launch the research sequence below as a batch. It needs the read-only pinned toolkit
-checkouts, model access and an explicit compute reservation. All testing/validation must run on
-Modal; the current workspace is blocked. The bounded CPU runner is
-`experiments/modal_validation.py` (not yet remotely validated). No automatic quota increase is authorized.
+checkouts, model access and an explicit compute reservation. Testing/validation runs on Modal with
+`MODAL_PROFILE=scartissue-replacement`; the bounded CPU runner is `experiments/modal_validation.py`.
+The fresh signed run is `results/modal_validation_20261107T143612137007Z.json` (158 tests in each
+invocation). Reservations and their limits are in `results/modal_budget_20261105.json`; they are not
+provider bills. No automatic quota increase is authorized.
 
 ```bash
 uv sync                                    # experiments/runtime, locked; Python 3.12

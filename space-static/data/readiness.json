@@ -1,6 +1,6 @@
 {
   "schema": "scartissue.readiness/1",
-  "checked_at": "2026-11-06T14:55:01.031742+00:00",
+  "checked_at": "2026-11-07T14:36:22.065420+00:00",
   "status": "not_submission_ready",
   "submission_ready": false,
   "integrity_status": "passed",

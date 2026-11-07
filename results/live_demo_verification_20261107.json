@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-11-07T14:40:23.167Z",
+  "space": "amugoodbad229/scartissue",
+  "space_revision": "6013e70e526cf087333dd5fb9b61364688052097",
+  "space_stage": "RUNNING",
+  "canonical_page": "https://huggingface.co/spaces/amugoodbad229/scartissue",
+  "direct_host": "https://amugoodbad229-scartissue.static.hf.space",
+  "checks": [
+    {
+      "url": "https://amugoodbad229-scartissue.static.hf.space/",
+      "status": 200,
+      "bytes": 7711,
+      "sha256": "c62ec11603e07046ab86aedf70b09c9cb850f8ba1840d5a3fd766d08f1925deb"
+    },
+    {
+      "url": "https://amugoodbad229-scartissue.static.hf.space/index.html",
+      "status": 200,
+      "bytes": 7711,
+      "sha256": "c62ec11603e07046ab86aedf70b09c9cb850f8ba1840d5a3fd766d08f1925deb",
+      "hasNegativeCircuitDisclosure": true,
+      "hasPendingHumanAuditDisclosure": true
+    },
+    {
+      "url": "https://amugoodbad229-scartissue.static.hf.space/app.js",
+      "status": 200,
+      "bytes": 11557,
+      "sha256": "675e9263e0fa4f9fc4ed071a75a8062e222ff1ba08424e5de99bdef9c16cb952"
+    },
+    {
+      "url": "https://amugoodbad229-scartissue.static.hf.space/data/evidence.json",
+      "status": 200,
+      "bytes": 1609492,
+      "sha256": "2d6393f975025e89758e7c64e93e9283480ff86eeb563926ac1ee7f1b4b286a9"
+    },
+    {
+      "url": "https://amugoodbad229-scartissue.static.hf.space/data/readiness.json",
+      "status": 200,
+      "bytes": 16504,
+      "sha256": "f08655b8c3be58ede1674aceedd66566fef6cf15cc0a8df9fccf468764d3c5f5"
+    }
+  ],
+  "remote_local_evidence_equal_excluding_created_at": true,
+  "ordinary_hf_space_root_status": 404,
+  "note": "Static Spaces use .static.hf.space. Evidence content was compared after deleting top-level created_at, matching the pinned runner's comparison rule."
+}

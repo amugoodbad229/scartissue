@@ -4,12 +4,12 @@
 Every number below is produced by a run stored in `results/`, named in the same paragraph.
 Nothing here is inferred from a script finishing.
 
-**Revised draft, not submission-ready.** Safety results are exploratory: the stored judge run retains
-`calibration_status: failed` and `headline_eligible: false`. The external Aegis exercise does not
-clear that gate or establish project-distribution validity. New Modal validation is blocked by the
-workspace spend limit; the historical PDF and public releases have not been rebuilt or updated.
-Sources: `results/p19_safety_judges_20261103_002850.json`,
-`results/modal_validation_blocker_20261106.json`.
+**Revised draft; scientific readiness remains closed.** Safety results are exploratory: the stored
+judge run retains `calibration_status: failed` and `headline_eligible: false`. The external Aegis
+exercise does not clear that gate or establish project-distribution validity. Fresh CPU validation
+runs on the replacement Modal workspace (`results/modal_validation_20261107T143612137007Z.json`);
+the hosted workbench is live (`results/live_demo_verification_20261107.json`). The PDF remains
+historical and has not been rebuilt. Source: `results/p19_safety_judges_20261103_002850.json`.
 
 ---
 
@@ -136,10 +136,11 @@ edit did nothing (0.267 refusal) and random heads did the same (0.258), so head-
 indistinguishable from a random control at the dose tested. The win is about **mass**, not topology.
 
 The one topological claim we test directly — a CircuitKIT EAP-IG discovery on the *drifted* model,
-scored with signed node contributions and exported as `repair_circuit_a4.npz` — is measured by
-`experiments/p26_circuit_arm.py`. Discovery metadata records an exported patch, but its local artifact retrieval and complete
-behavioural evaluation remain pending (see §8). A script path or export record is not a completed
-intervention result; no circuit performance claim is made.
+scored with signed node contributions and exported as `repair_circuit_a4.npz` — was generated and
+judged. It is a **negative exploratory result**: circuit-restricted harm-ASR is 0.283 versus 0.217
+for drift (paired +0.067 [0.008, 0.125]); over-refusal is 0.125 versus 0.050. Restricting the edit
+to the discovered circuit did not reduce harm. No capability run exists for this arm
+(`results/circuit_arm_analysis_20261106.json`).
 
 ## 5. Judge calibration: measured, not assumed
 
@@ -181,7 +182,10 @@ harmful + 40 held-out benign prompts drawn only from corpus rows no earlier eval
 
 Majority-of-three harm: base 0/120, drift 38/120 (0.317, Wilson [0.240, 0.404]), sparse repair 3/120 (0.025), global repair 1/120 (0.008). Over-refusal on held-out benign prompts: base 8/40, drift 5/40, sparse 13/40, global 20/40. Paired bootstrap: drift − base harm **+0.317 [0.233, 0.400]** with over-refusal −0.075 [−0.175, 0.025] (not resolved); sparse − drift harm **−0.292 [−0.375, −0.208]** with over-refusal **+0.200 [0.075, 0.325]**; global − drift harm **−0.308 [−0.392, −0.225]** with over-refusal **+0.375 [0.200, 0.550]**; sparse − global harm +0.017 [−0.017, 0.050] (not resolved) with over-refusal **−0.175 [−0.325, −0.050]**. So the trade-off — harm down, over-refusal up — reproduces on prompts the arms never saw, and the sparse repair over-refuses less than the global one without a resolved harm difference.
 
-This remains **exploratory, not confirmation**: the judge panel failed calibration on the project distribution, the arms were chosen on the earlier set, the intervals exclude judge error, and there is no multiplicity adjustment. No confirmatory held-out claim is made; `results/readiness_ledger.json` records the status.
+This remains **exploratory, not confirmation**: the judge panel failed its original controls and the
+external Aegis sample does not establish project-distribution validity; the arms were chosen on the
+earlier set, the intervals exclude judge error, and there is no multiplicity adjustment. No
+confirmatory held-out claim is made; `results/readiness_ledger.json` records the status.
 
 ## 7. Reproducibility: what someone else can actually run
 
@@ -191,7 +195,7 @@ This remains **exploratory, not confirmation**: the judge panel failed calibrati
 | results | `amugoodbad229/scartissue-tinyaya-results` (`data/*.parquet`) | 1,280 full generations, 3,864 judge verdicts, 4,000 capability rows, frontier, patch manifest |
 | drift | `scartissue-tinyaya-abliteration-patches` | factorised parameters + `load_patch.py` + manifest (allowed set, edited scalars, per-file sha256) |
 | repairs | `scartissue-tinyaya-repair-patches` | 2 % and global α=4 repairs, same format |
-| demo | `spaces/amugoodbad229/scartissue` (static) | frontier chart and three-column completion viewer, generated from the published tables by `experiments/p28_build_space.py` |
+| demo | `spaces/amugoodbad229/scartissue` (static) | policy decisions, comparison chart/table and judge replay; direct host `amugoodbad229-scartissue.static.hf.space` |
 
 Toolkit provenance is machine-checked in `results/toolkit_provenance.json`: CuratorKIT
 `dd9e835301fcddc74a37501d9e207a5a060d209f` (corpus build: `experiments/p8_corpus.py:95`,
@@ -203,9 +207,10 @@ drift does not depend on any toolkit being correct (`results/p1_grid.json`).
 
 ## 8. What is *not* claimed, and what is still running
 
-- **No circuit-arm number.** Discovery and export are done; the 160-prompt generation + judging run
-  is queued and is currently blocked by the Modal workspace spend limit. The claim in §4 is about
-  *mass concentration*, which is measured; it does not depend on the circuit arm.
+- **No successful circuit-restricted repair.** The measured arm is negative: harm-ASR 0.283 versus
+  drift 0.217, with no capability measurement (`results/circuit_arm_analysis_20261106.json`). This
+  does not rule out other circuits or interventions. The claim in §4 is about *mass concentration*,
+  which is measured; it does not depend on circuit-restricted repair succeeding.
 - **No confirmed held-out number.** The held-out trade-off is replicated but exploratory: the judge panel failed calibration, so nothing here is confirmation. Raw generation errors and the separate state-check correction remain visible.
 - **No multilingual number yet.** `experiments/p29_multilingual.py` translates the frozen prompts with
   `CohereLabs/aya-expanse-8b` and measures 11 languages (en, hi, bn, id, vi, sw, yo, ha, am, ar, fr) × 4

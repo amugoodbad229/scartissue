@@ -8,48 +8,41 @@ Status of each artifact is stated as it is today, not as it should be.
 
 ## Abstract (target: under 500 words)
 
-Fine-tuning a model for a useful task quietly removes its safety behaviour: one refusal direction is
-enough to take `CohereLabs/tiny-aya-global` from 5.8% to 21.7% harm-ASR while its GSM8K score barely
-moves (0.590 → 0.560). The standard repair — push the refusal direction back into the weights — works,
-and we measured what it costs.
+Before releasing a safety-edited checkpoint, a maintainer needs to know whether a repair is good
+enough under their own policy—not merely whether its average harm score improved. **ScarTissue** turns
+that into a reviewable decision: import an evidence bundle, set harm, over-refusal, capability and
+edit-support bounds, and receive **accept**, **reject**, or **insufficient evidence**, with intervals,
+source hashes and per-prompt judge replay.
 
-We abliterate the drift, then compare two weight-space repairs on the same drifted model: a sparse
-patch that edits 19,251,200 scalars (2% of the model) and a global patch that edits 962,592,768
-(100%). Both restore refusal to 0.883 and cut harm-ASR below the pre-drift model (0.050 and 0.042).
-They are not equivalent. Over-refusal of harmless requests rises from 0.050 to 0.175 (sparse) and
-0.275 (global), and GSM8K falls to 0.518 and 0.438 — the sparse patch keeps 8.0 percentage points more
-task accuracy, a paired bootstrap interval of [3.8, 12.2] points that excludes zero.
+We demonstrate the workbench on `CohereLabs/tiny-aya-global` using controlled weight-space
+abliteration, not a claim that task fine-tuning caused drift. We compare the aligned model, the
+drifted model, a sparse rank-one repair and a support-matched global repair. In the stored run,
+exploratory harm-ASR is 0.058, 0.217, 0.050 and 0.042 respectively. The sparse repair retains more
+GSM8K strict-match accuracy than the global repair (0.518 versus 0.438; paired difference +0.080,
+95% CI [0.038, 0.122]), while benign over-refusal is lower (0.175 versus 0.275). A disjoint
+160-prompt held-out evaluation shows the same directional trade-off. These are observations from
+this study, not safety guarantees.
 
-We then tested whether that ordering survives on prompts no arm selection ever touched: 160 held-out
-prompts, 120 of them harmful, judged majority-of-three by a frozen panel. Drift appears (0 → 38 of
-120), both repairs reduce it (3 and 1 of 120), and the sparse repair over-refuses 17.5 points less
-than the global one while their harm rates are statistically indistinguishable. The trade-off is real
-and it replicates; it is not a claim that safety was restored.
+The judge panel failed calibration, so all harm results remain exploratory and the project-distribution
+human-labelled audit is still pending. The workbench enforces that limitation instead of hiding it:
+on the supplied evidence, every candidate returns **insufficient evidence**. Imports verify prompt
+and answer hashes; exports omit raw completions; decisions run entirely offline.
 
-That distinction is the deliverable. Our judge panel **failed calibration** on the project
-distribution (sensitivity 0.58, specificity 0.984 on 500 external human-labelled rows), so the
-held-out numbers are exploratory and we do not headline them. Instead of publishing a reassuring
-score, we ship the decision a model maintainer actually has to make as an offline tool: load a release
-candidate's evidence bundle, and get *accept*, *reject*, or *insufficient evidence* with the reason
-attached. Run on our own four arms, it returns **insufficient evidence** for every one — correctly.
-The bundle carries per-metric confidence intervals, judge agreement, completion-state checks and an
-explicit quality gate; a private import re-hashes every prompt and answer before anything is shown,
-and the export never contains raw completions.
+A second negative result matters scientifically: restricting the repair to the discovered circuit did
+not reduce harm relative to drift (exploratory harm-ASR 0.283 versus 0.217), and this arm has no
+capability measurement. We therefore do not claim circuit-level repair, restored safety or a
+production-ready checkpoint.
 
-Alongside it we publish the audited pipeline: a 763-row safety corpus with a published fit/eval split
-(CuratorKIT), abliteration and rank-one projection patches as parameters with a loader (SafeTune-style
-operator, implemented and tested here), an EAP-IG circuit discovery run on the drifted model
-(CircuitKIT), and native scoring with a strict harm metric (AuditKIT). 129 automated checks and a
-21-check structural verifier run on Modal over a hash-verified snapshot.
-
-What we do not claim: that safety is restored, that a smaller patch is safe, that any of these arms is
-production-ready, or that a restricted circuit edit was validated — its recovered parameters are
-published, unevaluated, and the tool says so.
+The reproducible chain uses CuratorKIT for the 763-row corpus and frozen splits, CircuitKIT for
+discovery, and AuditKIT for native scoring; the rank-one intervention is our own operator. Parameters,
+corpus, evaluation records, code and the static demo are public. A fresh pinned Modal run passed 158
+tests in both invocation forms and all structural integrity checks.
 
 ---
 
 ## Team account details (fill in yourself)
 
+- **Team name:** *(your public team name)*
 - **Registered email:** *(the address you registered with)*
 - **Discord username:** *(yours)*
 
@@ -82,20 +75,17 @@ Do **not** tick multi-turn audits or multilingual safety — we measured neither
    measured (AUC 0.9988 → 0.8306 after removing one direction at layer 15). Node level was tested and
    **failed**: at a matched edit budget the discovered circuit's 36 output matrices change the refusal
    marker by 0.000 against two blind controls. `results/localisation_analysis_20261106.json`.
-3. **Tamper resistance** ← tick it as a measured weakness, not a protection. One direction removes 0.542
-   of the refusal marker at no measured GSM8K cost; detection needs the direction (aligned tampering at
-   10 % support +0.317, blind edit of the same size ±0.000). `results/tamper_analysis_20261106.json`.
 
-4. **Circuit-level interventions** ← tick it as a negative result. The repaired arm is restricted to the
-   write columns of the heads CircuitKIT identified (36 `o_proj` matrices, 150,994,944 scalars) and was
-   generated and judged under the same frozen protocol: harm 0.283 vs drift 0.217 (paired +0.067
-   [0.008, 0.125]), over-refusal 0.125 vs 0.050. Restricting the edit to the discovered circuit did not
-   remove harm — the matched-budget repairs did (0.050, 0.042). Exploratory: panel uncalibrated, no
-   capability run for this arm. `results/circuit_arm_analysis_20261106.json`.
+**Stop at two.** Do not also tick tamper resistance or circuit-level interventions. Their measurements
+can support the two selected statements in the abstract and demo, but the form allows at most two.
+The circuit arm was generated and judged: harm 0.283 vs drift 0.217 (paired +0.067 [0.008, 0.125]),
+over-refusal 0.125 vs 0.050. Restricting the edit to the discovered circuit did not remove harm.
+This is exploratory, and no capability run exists for this arm
+(`results/circuit_arm_analysis_20261106.json`). The measured tamper weakness is not a protection
+(`results/tamper_analysis_20261106.json`).
 
 Do **not** tick safety-preserving fine-tuning, unlearning, inference-time steering, compression, or
-hallucination detection. Keep a note for the panel: #10's answer is "we tried it and it does not work",
-which is a measurement, not a claim of a working intervention.
+hallucination detection.
 
 ## Repos used — tick three
 
@@ -110,20 +100,23 @@ which is a measurement, not a claim of a working intervention.
 (`artifacts/load_patch.py`), not SafeTune code. Ticking it would be a false claim — say instead that the
 method is SafeTune-*style* weight-space repair. Also not AlignTune or AgentTune.
 
-## Models used — tick two
+## Models used — tick one for the submitted study
 
-- **Tiny Aya Global** — the model under test (headline arm, abliterated, repaired).
-- **Tiny Aya Base** — the undrifted reference (`base` arm of every comparison).
+- **Tiny Aya Global** — the model under test; its undrifted weights are also the `base` arm.
+
+Do **not** tick Tiny Aya Base: that is a different model, not the name of our baseline arm. Earth and
+Water appeared in incomplete secondary exploration, not this submitted comparison; do not add them
+to make the entry look broader.
 
 ## Artifacts — what exists, and what is still missing
 
 | Slot | Content | Status today |
 |---|---|---|
-| HF model collection | **https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0** — model repo `scartissue-tinyaya-repair-parameters` (all four repairs + abliteration deltas, `load_patch.py`, model card), plus the two patch datasets. Public, HTTP 200, contents recorded in `results/publication_20261106.json` |
-| HF dataset collection | **https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46** — results, evals, corpus and the Space. Public, HTTP 200 |
-| HF article | Written account of the finding | **Missing** — must be written |
-| GitHub repo | **https://github.com/amugoodbad229/scartissue** (public, `master`; `REPRODUCE.md` at root, raw run dumps excluded because the HF datasets carry them) |
-| Deployment | Static decision workbench | Space `amugoodbad229/scartissue` returns 200; it is on the spend-blocked old account, so re-host before relying on it |
+| HF model collection | **https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters** — model repo `scartissue-tinyaya-repair-parameters`, plus patch datasets. Public; canonical URL verified |
+| HF dataset collection | **https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence** — results, evals, corpus and the Space. Public; canonical URL verified |
+| HF article | Written account of the finding | **Missing** — must be published before submission |
+| GitHub repo | **https://github.com/amugoodbad229/scartissue** (public, `master`; `REPRODUCE.md` at root; full run dumps are in the HF datasets) |
+| Deployment | Static decision workbench | **Live and verified.** Direct app: **https://amugoodbad229-scartissue.static.hf.space/**; evidence agrees with the local bundle except `created_at` (`results/live_demo_verification_20261107.json`) |
 
 Licence posture (LSAL §2/§4): parameters are published, no drifted checkpoint is hosted or deployed,
 nothing is sold, and the Tiny Aya repository is never vendored — it is added with `PYTHONPATH`.
@@ -139,5 +132,6 @@ nothing is sold, and the Tiny Aya repository is never vendored — it is added w
 | 8.0 pp GSM8K gap, CI [0.038, 0.122] | `results/p16_capability_analysis_20261102.json` |
 | held-out 0, 38, 3, 1 of 120; sparse over-refuses 17.5 pp less | `results/heldout_analysis_20261106.json` |
 | judge sensitivity 0.58 / specificity 0.984, n = 500 | `results/p18_judge_smoke_20261102_233759.json`, `results/manifest.json` |
-| 129 tests, 21 integrity checks | `results/modal_validation_20261105T190714562351Z.json` |
+| 158 tests in both invocations, structural integrity checks passed | `results/modal_validation_20261107T143612137007Z.json` |
+| circuit-restricted arm did not reduce harm; capability not measured | `results/circuit_arm_analysis_20261106.json` |
 | circuit 182 pruned nodes, 612 signed scores; body sha256 `96c659a0…` | `results/p23_circuit_20261103_022433.json`, `results/circuit_body_recovery_20261106.json` |

@@ -2,7 +2,7 @@
   "status": "approved",
   "authorization": "$29 of prepaid credit on the replacement workspace (user statement, 2026-11-06); the earlier $25 figure was a self-imposed cap, not the account balance",
   "currency": "USD",
-  "total_ceiling": 29.0,
+  "total_ceiling": 29,
   "scope": [
     "bounded Modal CPU test and browser validation",
     "prioritize scoring existing held-out generations if affordable"
@@ -37,7 +37,7 @@
   "reservations": [
     {
       "job": "replacement_cpu_baseline_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T15:51:09.479468+00:00",
       "profile": "scartissue-replacement",
@@ -46,7 +46,7 @@
     },
     {
       "job": "workbench_cpu_validation_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T16:13:27.703178+00:00",
       "profile": "scartissue-replacement",
@@ -55,7 +55,7 @@
     },
     {
       "job": "workbench_cpu_fixed_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T16:18:59.868960+00:00",
       "profile": "scartissue-replacement",
@@ -64,7 +64,7 @@
     },
     {
       "job": "workbench_cpu_claimfix_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T16:23:07.067482+00:00",
       "profile": "scartissue-replacement",
@@ -73,7 +73,7 @@
     },
     {
       "job": "verifier_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T16:29:01.584096+00:00",
       "profile": "scartissue-replacement",
@@ -82,7 +82,7 @@
     },
     {
       "job": "verifier_paths_and_accessibility_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T16:35:02.122547+00:00",
       "profile": "scartissue-replacement",
@@ -91,7 +91,7 @@
     },
     {
       "job": "readiness_ledger_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T16:41:47.969426+00:00",
       "profile": "scartissue-replacement",
@@ -100,7 +100,7 @@
     },
     {
       "job": "readiness_ledger_bootstrap_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T16:44:23.890783+00:00",
       "profile": "scartissue-replacement",
@@ -109,7 +109,7 @@
     },
     {
       "job": "loader_hardening_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T16:51:00+00:00",
       "profile": "scartissue-replacement",
@@ -118,7 +118,7 @@
     },
     {
       "job": "loader_hardening_fix_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T17:10:00+00:00",
       "profile": "scartissue-replacement",
@@ -127,7 +127,7 @@
     },
     {
       "job": "loader_hardening_fix2_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T17:15:00+00:00",
       "profile": "scartissue-replacement",
@@ -136,7 +136,7 @@
     },
     {
       "job": "heldout_analysis_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T17:21:25+00:00",
       "profile": "scartissue-replacement",
@@ -145,7 +145,7 @@
     },
     {
       "job": "submission_story_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T18:59:35+00:00",
       "profile": "scartissue-replacement",
@@ -154,7 +154,7 @@
     },
     {
       "job": "submission_story_fix_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T19:02:24+00:00",
       "profile": "scartissue-replacement",
@@ -163,7 +163,7 @@
     },
     {
       "job": "final_story_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": false,
       "created_at": "2026-11-05T19:07:06+00:00",
       "profile": "scartissue-replacement",
@@ -172,73 +172,87 @@
     },
     {
       "job": "audit_page_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": null,
       "reserved_at": "2026-11-06T05:50:26+00:00",
       "purpose": "Full suite incl. blind-audit page and analyser in the clean pinned image"
     },
     {
       "job": "audit_page_mount_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": null,
       "reserved_at": "2026-11-06T05:50:49+00:00",
       "purpose": "Retry after mounting human_audit/ into the image"
     },
     {
       "job": "appraisal_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": null,
       "reserved_at": "2026-11-06T08:38:48+00:00",
       "purpose": "Validate the corrected narrative layer and updated sources"
     },
     {
       "job": "queue_close_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": null,
       "reserved_at": "2026-11-06T10:18:44+00:00",
       "purpose": "Validate the closed queue, demo artifacts and article draft"
     },
     {
       "job": "publication_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": null,
       "reserved_at": "2026-11-06T10:58:05+00:00",
       "purpose": "Validate the publication record and updated queue/form"
     },
     {
       "job": "judge_quickstart_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": null,
       "reserved_at": "2026-11-06T11:17:19+00:00",
       "purpose": "Validate the judge-facing Dockerfile, README run instructions and updated Space card"
     },
     {
       "job": "dockerfile_build_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": null,
       "reserved_at": "2026-11-06T11:19:47+00:00",
       "purpose": "Build the judge-facing Dockerfile on Modal and probe the served workbench"
     },
     {
       "job": "localisation_tamper_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": null,
       "reserved_at": "2026-11-06T11:44:21+00:00",
       "purpose": "Validate the localisation and tamper analyses and regenerate the claim ledger"
     },
     {
       "job": "p30_circuit_arm_gpu_20261106",
-      "reserved_usd": 2.0,
+      "reserved_usd": 2,
       "gpu": "A10G",
       "reserved_at": "2026-11-06T13:32:01+00:00",
       "purpose": "Generate and judge the recovered circuit arm (2b #10): one generation pass + three judges"
     },
     {
       "job": "circuit_arm_validation_cpu_20261106",
-      "reserved_usd": 1.0,
+      "reserved_usd": 1,
       "gpu": null,
       "reserved_at": "2026-11-06T14:49:07+00:00",
       "purpose": "CPU validation after the revision-gate fix and the circuit-arm claims"
+    },
+    {
+      "job": "demo_recheck_cpu_20261107",
+      "reserved_usd": 1,
+      "gpu": null,
+      "reserved_at": "2026-11-07T14:13:22.343Z",
+      "purpose": "Revalidate current demo and browser workflow for imminent submission; reserve only, not actual provider billing"
+    },
+    {
+      "job": "demo_release_cpu_20261107",
+      "reserved_usd": 1,
+      "gpu": null,
+      "reserved_at": "2026-11-07T14:35:12Z",
+      "purpose": "Validate corrected release copy, form choices and deployable static workbench; reservation only, not actual provider billing"
     }
   ],
   "realized_provider_charge_usd": null

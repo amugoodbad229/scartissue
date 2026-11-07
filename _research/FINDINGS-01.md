@@ -590,11 +590,28 @@ repair's 962,592,768, so comparing it to an unrestricted global repair would cre
 what budget bought), the judge-calibration / state-check / prompt-hash gates, and the stopping rules.
 `_research/AMENDMENT-01-20261106.md` explains it; `PROTOCOL.md` is untouched.
 
-**Decision on Track 2b.** Not justified. The circuit arm has a verified body and no measured effect;
-the confirmatory spec that would have to be executed first cannot run until the judge panel passes
-calibration on external human labels, which it has not. A circuit claim therefore remains out of the
-write-up, and the workbench continues to answer `insufficient evidence` for all four arms.
+**Decision on Track 2b.** A successful circuit-repair claim is not justified. The measured
+circuit-restricted arm is negative: harm-ASR 0.283 versus drift 0.217 and over-refusal 0.125 versus
+0.050 (`results/circuit_arm_analysis_20261106.json`). It is disclosed under the localisation/repair
+measurements, not presented as a working correction. The confirmatory spec remains blocked by judge
+calibration, and the workbench continues to answer `insufficient evidence` for all four arms.
 
 **A defect found while wiring the ledger.** `heldout-comparison` was marked `evaluated` from a declared
 status rather than from file availability, so a tree missing those files still claimed an evaluation.
 Claims now downgrade to `pending` when any of their sources is absent.
+
+## 2026-11-07 release verification
+
+The release copy was reconciled with the measured circuit result, the controlled-abliteration design,
+the replacement Modal profile and the current live deployment. The final pinned CPU run
+`results/modal_validation_20261107T143612137007Z.json` passed 158 tests in both invocation forms and
+all integrity checks. The workbench was deployed as Space revision
+`6013e70e526cf087333dd5fb9b61364688052097`; `results/live_demo_verification_20261107.json` verifies
+HTTP 200 for the app and evidence, the negative-circuit and pending-audit disclosures, and equality of
+live/local evidence apart from `created_at`.
+
+The form draft now selects only Tiny Aya Global and at most two problem statements per track. Track 2a
+is primary; Track 2b is limited to repairing drift without retraining and locating where safety lives.
+The abstract is exploratory and does not claim task fine-tuning caused the drift. The article draft
+is `_research/HF-ARTICLE.md`. None of these release fixes changes `headline_eligible: false`, the
+pending 180-item human audit, or the ledger's `not_submission_ready` scientific status.

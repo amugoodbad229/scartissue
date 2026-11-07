@@ -6,6 +6,10 @@ remembered.
 ## Tier 0 — the workbench, no Python and no GPU (30 seconds)
 
 The decision workbench is static HTML/JS with a precomputed evidence bundle. No build step.
+Open the [hosted app](https://amugoodbad229-scartissue.static.hf.space/) directly, or use its
+[Space page](https://huggingface.co/spaces/amugoodbad229/scartissue). The direct host for this
+static Space includes `.static.hf.space`; live content is checked in
+`results/live_demo_verification_20261107.json`.
 
 1. Run it however you like — all three need no Python packages, no GPU and no key:
 
@@ -77,12 +81,13 @@ time. These are the jobs that produced the current numbers, in order:
 | circuit arm | `experiments/p26_circuit_arm.py` | `results/p26_circuit_arm_*.json` | needs the recovered patch (below) |
 | analyses | `experiments/analyse_{safety,capability,length,heldout}.py` | the analysis JSONs | deterministic, CPU |
 
-Costs: **not measured**. The budget file records conservative $1-per-job CPU reservations purely as
-bookkeeping; `realized_provider_charge_usd` is `null` because provider billing was never read. Twelve CPU
-reservations were spent ($12 of a $25 ceiling) and **no GPU job has been run** in this work. Existing
-scripts request `L40S` / 7200 s, which is above the A10G/1800 s rule in
-`results/modal_budget_20261105.json`; reproducing them as written therefore needs explicit approval, not
-just a bigger reserve.
+Costs: **not measured**. `results/modal_budget_20261105.json` records conservative CPU
+reservations purely as bookkeeping; `realized_provider_charge_usd` is `null` because provider
+billing was never read. Consult that file for the current reservation count, limit and job flags
+rather than a copied total. Existing research scripts request `L40S` / 7200 s, which is above the
+A10G/1800 s rule in the budget; reproducing them as written therefore needs explicit approval, not
+just a bigger reserve. CPU validation runs on `scartissue-replacement`; the old workspace remains
+spend-blocked.
 
 ## What cannot be reproduced from this tree
 
@@ -90,8 +95,9 @@ just a bigger reserve.
   volume access still worked, and that is how the circuit patch body was recovered:
   `uv run python -m modal volume get scartissue-hf artifacts/tiny-aya-global/repair_circuit_a4.npz artifacts/tiny-aya-global/ --profile amugoodbad229`.
   Everything else on that volume (Hub caches, intermediate parquet) is not in git.
-- **The published PDF and public endpoints.** `report/report.pdf` and the Space/records predate the
-  corrections in this tree; they are labelled historical, not rebuilt.
+- **The published PDF.** `report/report.pdf` is historical and has not been rebuilt. The hosted
+  workbench is not historical: its live evidence matches the local bundle apart from `created_at`
+  (`results/live_demo_verification_20261107.json`).
 - **Upstream toolkits.** AuditKIT is used read-only from `../ScarTissue/repos/AuditKIT`
   (commit `71316da345784ff220d5ed59337441a59ab31526`) — do not vendor or mock it. CircuitKIT and EAP-IG
   are not installed, which is why circuit *discovery* cannot be repeated.
