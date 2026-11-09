@@ -127,3 +127,24 @@ footer { padding: 26px max(22px, calc((100% - 1120px) / 2)); color: #afbdd1; bac
   h1 { font-size: 46px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+
+/* Article page: same paper-on-navy system, prose measure capped for reading. */
+/* main is pulled up over the hero on the gate page; the article starts below it. */
+.article-main { margin-top: 0; padding-top: 46px; }
+.prose { max-width: 760px; margin: 0 auto; padding: 0 22px; }
+.prose h2 { margin: 40px 0 12px; font-size: clamp(22px, 3vw, 30px); letter-spacing: -.03em; }
+.prose h3 { margin: 28px 0 10px; font-size: 18px; }
+.prose p, .prose li { font-size: 16.5px; line-height: 1.68; }
+.prose p { margin: 0 0 16px; }
+.prose ul, .prose ol { margin: 0 0 18px; padding-inline-start: 22px; }
+.prose li { margin-bottom: 8px; }
+.table-scroll { overflow-x: auto; margin: 22px 0 24px; }
+.prose table { width: 100%; margin: 22px 0 24px; border-collapse: collapse; font-size: 15px; }
+.prose caption { caption-side: top; text-align: start; color: var(--muted); font-size: 13px; padding-bottom: 8px; }
+.prose th, .prose td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: start; }
+.prose thead th { background: var(--blue-soft); border-bottom: 1px solid #c8d8f6; }
+.prose code { padding: 1px 5px; background: #eef2f8; border-radius: 5px; font-size: 14px; }
+.prose a { text-underline-offset: 3px; }
+.prose hr { margin: 32px 0; border: 0; border-top: 1px solid var(--line); }
+.article-note { max-width: 760px; margin: 34px auto 60px; padding: 14px 16px; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; font-size: 13px; }
+@media (max-width: 640px) { .prose p, .prose li { font-size: 16px; } .prose table { font-size: 13.5px; } }

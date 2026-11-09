@@ -69,5 +69,26 @@
     }
   },
   "files_deleted": false,
-  "dataset_split_explanation": "Dataset collection holds three datasets only: evidence tables, raw recorded outputs, and the curated corpus. The demo Space is not a dataset and is linked from the README and cards instead."
+  "dataset_split_explanation": "Dataset collection holds three datasets only: evidence tables, raw recorded outputs, and the curated corpus. The demo Space is not a dataset and is linked from the README and cards instead.",
+  "article": {
+    "url": "https://amugoodbad229-scartissue.static.hf.space/article.html",
+    "kind": "static page on the project's Hugging Face Space, not a /blog/ article",
+    "source": "_research/HF-ARTICLE.md",
+    "builder": "experiments/build_space_article.py",
+    "http": 200,
+    "rendered_checks": [
+      "h1 in hero, no duplicated title",
+      "results table present",
+      "labelled as not a blog article",
+      "no horizontal overlap at 1200 and 390 px"
+    ],
+    "screenshots": [
+      "results/space_article_desktop.png",
+      "results/space_article_mobile.png",
+      "results/space_article_top.png"
+    ],
+    "blog_url": null,
+    "blog_blocker": "personal namespace needs a confirmed email plus PRO or a Team/Enterprise membership; account is is_pro=false with no orgs",
+    "checked_at": "2026-11-09T17:31:10.661565+00:00"
+  }
 }

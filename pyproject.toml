@@ -27,6 +27,7 @@ explicit = true
 
 [dependency-groups]
 dev = [
+    "markdown>=3.11.3",
     "matplotlib>=3.11.2",
     "numpy>=2.5.4",
     "playwright>=1.64.1",

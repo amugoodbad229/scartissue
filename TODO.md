@@ -32,6 +32,13 @@ Updated 2026-11-10. Mirrors the on-screen task queue; machine-readable scientifi
   Duplication proof: `results/hub_patch_duplication_20261110.json`.
 - [x] Unlist the demo Space from the dataset collection too: it is a demo, not evaluation data. The
   collection now holds three datasets; the Space stays public and is linked from the README and cards.
+- [x] Publish the article as a static page on the project's Space and link it from the README, so the
+  submission has a real, public written account: `experiments/build_space_article.py` renders
+  `_research/HF-ARTICLE.md` into `space/article.html`; live at
+  https://amugoodbad229-scartissue.static.hf.space/article.html (checked 200, desktop/390/320 px, no
+  overflow). It is labelled as a Space page, not a Hugging Face blog article; the `/blog/` URL is still
+  blocked by account eligibility (`results/hf_article_publishing_account_20261110.json`).
+  Evidence: `results/hub_presentation_20261110.json`.
 
 ### Responsive audit follow-up
 

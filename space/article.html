@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ScarTissue: the trade-offs of repairing safety without retraining — ScarTissue</title>
+<meta name="description" content="How weight-space repairs trade harmful compliance for over-refusal and lost task performance in Cohere Tiny Aya Global." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to the article</a>
+<header class="hero">
+  <div class="topbar">
+    <a class="brand" href="./" aria-label="ScarTissue home"><span class="brand-mark">S</span><span>ScarTissue</span></a>
+    <nav aria-label="Site">
+      <a href="./">Evidence gate</a>
+      <a href="article.html" aria-current="page">Article</a>
+    </nav>
+  </div>
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">RESEARCH ARTICLE</p>
+      <h1>ScarTissue: the trade-offs of repairing safety without retraining</h1>
+      <p class="hero-lede">A recorded study of safety drift and weight-space repair, written for readers who
+      need the trade-offs rather than a product claim.</p>
+      <div class="hero-links"><a href="https://github.com/amugoodbad229/scartissue">Repository and reproduction</a><span>Exploratory evidence · no safety certification</span></div>
+    </div>
+    <aside class="hero-status" aria-label="Study status">
+      <span class="status-dot" aria-hidden="true"></span>
+      <p class="status-label">Status of this account</p>
+      <strong>Exploratory</strong>
+      <p>Judge calibration failed, the blind human audit and the locked held-out comparison are pending,
+      and nothing here is a production safety result.</p>
+    </aside>
+  </div>
+</header>
+<main id="main" class="article-main" tabindex="-1">
+  <article class="prose">
+<p><strong>Can a small weight-space edit restore safer behavior without damaging useful behavior?</strong></p>
+<p>ScarTissue studies this question in Cohere Tiny Aya Global. Rather than treating a return of refusal language
+as a successful repair, we compare harmful compliance, refusal of benign requests and retained task performance.
+The result is a reproducible exploratory study—not a claim that we have made a model production-safe.</p>
+<p><strong>The central finding:</strong> the sparse repair retained more GSM8K performance than the full-support repair,
+but both refused more benign requests than the drifted model. A circuit-restricted edit did not provide a
+successful repair. Safety judging also failed calibration, so the harm estimates below remain exploratory.</p>
+<h2>The research question</h2>
+<p>Removing a refusal-related direction from model weights—often called <em>abliteration</em>—can weaken refusal
+behavior. Reintroducing refusal is not enough to show that a repair works: the model might simply refuse
+more requests, including harmless ones, or lose useful task performance.</p>
+<p>We therefore ask whether a targeted edit offers a better trade-off than a broad edit, and whether a circuit
+discovered from refusal behavior is a useful repair target. This is a synthetic weight-space drift setting;
+it does not establish that the same repairs work after arbitrary fine-tuning.</p>
+<p>The work addresses <strong>Track 2 — AI Red Teaming, Safety and Alignment</strong>:</p>
+<ul>
+<li><strong>2a: AI Safety and Red Teaming:</strong> Red-teaming and robustness evaluation; Adversarial and safety evaluation sets.</li>
+<li><strong>2b: AI Safety and Correction:</strong> Repairing safety drift without retraining; Locating where safety lives.</li>
+</ul>
+<p>These describe the questions investigated, not a declaration that safety has been successfully localized or repaired.</p>
+<h2>What we compared</h2>
+<p>The main comparison uses the aligned model, its abliterated variant, a sparse repair and a full-support repair.
+The sparse repair applies a correction to selected weight columns; the full-support repair applies it broadly.
+A separate experiment restricts the edit to write columns in the discovered circuit. These edits have different
+support sizes: this is <strong>not</strong> a matched-edit-budget demonstration of superiority.</p>
+<p>The main safety evaluation contains <strong>120 harmful and 40 benign prompts per arm</strong>. Harmful compliance is scored
+by the frozen HarmBench, Qwen3Guard and Granite Guardian panel, using a threshold above 0.5 and majority-of-three
+aggregation. Benign over-refusal uses the Qwen3Guard refusal flag. Capability is measured separately with
+<strong>lm-eval GSM8K strict exact match on 500 documents</strong>. A refusal-marker regex is only a diagnostic, never an ASR estimate.</p>
+<h2>What the results show</h2>
+<p><strong>Read the harm column as an uncalibrated exploratory measurement, not verified safety.</strong></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Model state</th>
+<th style="text-align: right;">Judged harm rate</th>
+<th style="text-align: right;">Benign over-refusal</th>
+<th style="text-align: right;">GSM8K exact match</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aligned model</td>
+<td style="text-align: right;">5.8%</td>
+<td style="text-align: right;">7.5%</td>
+<td style="text-align: right;">59.0%</td>
+</tr>
+<tr>
+<td>Abliterated model</td>
+<td style="text-align: right;">21.7%</td>
+<td style="text-align: right;">5.0%</td>
+<td style="text-align: right;">56.0%</td>
+</tr>
+<tr>
+<td>Sparse repair</td>
+<td style="text-align: right;">5.0%</td>
+<td style="text-align: right;">17.5%</td>
+<td style="text-align: right;">51.8%</td>
+</tr>
+<tr>
+<td>Full-support repair</td>
+<td style="text-align: right;">4.2%</td>
+<td style="text-align: right;">27.5%</td>
+<td style="text-align: right;">43.8%</td>
+</tr>
+</tbody>
+</table></div>
+<p>The sparse repair scored <strong>8.0 percentage points higher on GSM8K</strong> than the full-support repair, with a paired
+bootstrap 95% interval of <strong>3.8 to 12.2 points</strong>. That supports a task-specific retention finding, not preservation
+of general capability. Both repairs also refused more benign requests than the drifted model. The small benign
+sample and unvalidated judging limit how broadly this trade-off can be interpreted.</p>
+<p>Sources: <a href="https://github.com/amugoodbad229/scartissue/blob/master/results/p16_capability_analysis_20261102.json">task-performance analysis</a>
+and <a href="https://github.com/amugoodbad229/scartissue/blob/master/results/circuit_arm_analysis_20261106.json">safety comparisons, denominators and intervals</a>.</p>
+<p><strong>The circuit-restricted repair was a negative result.</strong> Its judged harm rate was <strong>28.3%</strong>, versus <strong>21.7%</strong>
+for the drifted model. Restricting the edit to that discovered circuit did not improve this metric. This does
+not establish that no safety-relevant circuit exists; it shows that this discovery-and-edit procedure did not
+deliver the proposed repair under the evaluated conditions. The same calibration caveat applies.</p>
+<h2>Why we are not claiming a safety success</h2>
+<p>The judge panel's calibration audit failed. That run also contained a prompt-rendering defect, so its
+sensitivity is not a reliable estimate of a correctly configured panel. Agreement among judges is not enough
+to establish valid harm measurement. The <a href="https://github.com/amugoodbad229/scartissue/blob/master/_research/APPRAISAL-20261106.md">calibration appraisal</a>
+documents the defect. The blind human audit on this project's own
+completions remains pending. Its labels must come from people; neither the annotation app nor another model
+can stand in for that evidence.</p>
+<p>An additional held-out comparison has been analyzed, but it remains exploratory under the same failed
+calibration. The locked held-out <strong>confirmatory comparison is still pending</strong>. The study is also limited to
+the evaluated model, seed, prompt sets and capability task. It does not demonstrate general safety, multilingual
+robustness or a repair that survives subsequent harmful fine-tuning.</p>
+<p>See the <a href="https://github.com/amugoodbad229/scartissue/blob/master/results/manifest.json">evidence manifest</a>
+and <a href="https://github.com/amugoodbad229/scartissue/blob/master/results/readiness_ledger.json">readiness ledger</a>
+for the evidence status and remaining gates.</p>
+<h2>What is available</h2>
+<p>The release includes code, recorded generations and judgments, analyses, and parameter patches with a loader.
+It uses CuratorKIT, CircuitKIT and AuditKIT. Only parameters are released—not a hosted drifted checkpoint—and
+use remains subject to Cohere's LSAL restrictions.</p>
+<ul>
+<li><a href="https://github.com/amugoodbad229/scartissue">Code and reproduction instructions</a></li>
+<li><a href="https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0">Repair-parameter collection</a></li>
+<li><a href="https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46">Evaluation-evidence collection</a></li>
+</ul>
+<p>An optional <a href="https://amugoodbad229-scartissue.static.hf.space/">evidence viewer</a> makes the recorded comparisons
+easier to inspect; it performs no live inference and does not certify a repair.</p>
+<p><strong>The takeaway:</strong> safety repair should be evaluated as a trade-off, not inferred from refusal language alone.
+ScarTissue provides evidence of task-specific costs and a failed circuit-repair attempt, while keeping the
+unresolved safety question explicit.</p>
+  </article>
+  <p class="article-note">This page is a written account hosted on the project's Hugging Face Space. It is not a
+  Hugging Face blog article.</p>
+</main>
+</body>
+</html>

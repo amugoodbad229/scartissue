@@ -7,7 +7,7 @@ abliterated variant, the study compares sparse, full-support and circuit-restric
 It examines harmful compliance, refusal of benign requests and retained task performance together, rather
 than treating restored refusal as proof of safety.
 
-[Reproduction guide](REPRODUCE.md) · [Evidence manifest](results/manifest.json)
+[Research article](https://amugoodbad229-scartissue.static.hf.space/article.html) · [Reproduction guide](REPRODUCE.md) · [Evidence manifest](results/manifest.json)
 
 ## Track and selected goals
 
@@ -43,8 +43,9 @@ interchangeable with reduced harm, and benchmark retention is not general capabi
 
 - **Model collection:** [Repair parameters and model artifacts](https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0)
 - **Dataset collection:** [Evaluation evidence and curated data](https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46)
-- **Article:** not yet published on Hugging Face. The blog article is written, but the account is not
-  currently eligible to publish it, so there is no public article URL yet.
+- **Article:** [written account on the project's Hugging Face Space](https://amugoodbad229-scartissue.static.hf.space/article.html)
+  — not yet published on Hugging Face as a blog article, so there is no `/blog/` URL yet. The Space page
+  is a static article built from the same text; it is labelled as a Space page, not a blog post.
 
 Why the data is split across repositories: the parameter download is one repository (the patch-only
 repositories duplicate it and are kept only for existing links), while the evidence is separated by
