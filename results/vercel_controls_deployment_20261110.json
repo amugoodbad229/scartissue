@@ -1,0 +1,38 @@
+{
+  "id": "dpl_36bAFvjqiuvNEs9CQLnT1Ruh5Kgu",
+  "name": "scartissue-audit",
+  "url": "scartissue-audit-2fl8o3jks-amugoodbad229.vercel.app",
+  "target": "production",
+  "readyState": "ERROR",
+  "createdAt": 1794238288767,
+  "duration": {
+    "startTime": 1794238289679,
+    "timeToReady": 118
+  },
+  "buildMachine": {
+    "cores": 2,
+    "memory": 8192,
+    "machine": "basic",
+    "selectionType": "fixed",
+    "selectionSource": "plan-default"
+  },
+  "aliases": [
+    "scartissue-audit-amugoodbad229.vercel.app"
+  ],
+  "builds": [
+    {
+      "id": "bld_372vqryv5",
+      "deploymentId": "dpl_36bAFvjqiuvNEs9CQLnT1Ruh5Kgu",
+      "entrypoint": ".",
+      "readyState": "READY",
+      "readyStateAt": 1794238288682,
+      "createdAt": 1794238288682,
+      "createdIn": "sfo1",
+      "use": "@vercel/vc-build",
+      "config": {},
+      "output": [],
+      "fingerprint": null
+    }
+  ],
+  "contextName": "amugoodbad229"
+}

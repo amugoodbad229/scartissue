@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-11-09T15:07:59.769375+00:00",
+  "url": "https://scartissue-audit.vercel.app",
+  "execution": "Modal CPU",
+  "authenticated": false,
+  "status": "passed",
+  "checks": [
+    {
+      "viewport": [
+        1200,
+        900
+      ],
+      "http_status": 200,
+      "public_without_login": true,
+      "recorded_text_matches": true,
+      "no_horizontal_overflow": true,
+      "persistence_and_export": true,
+      "page_errors": []
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "http_status": 200,
+      "public_without_login": true,
+      "recorded_text_matches": true,
+      "no_horizontal_overflow": true,
+      "persistence_and_export": true,
+      "page_errors": []
+    }
+  ],
+  "assets": {
+    "assets/index-BeRHeB1h.css": "61a111efd547e6bd69140978cce4d42c45e4838dec6ea1921738f3096c3352b7",
+    "assets/index-Bxc_lpbL.js": "d20cd89426eeb1a2e94a3374386356476fd6932c6f67a0269b88e412d58ca23e"
+  }
+}

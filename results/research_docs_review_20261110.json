@@ -1,0 +1,67 @@
+{
+  "status": "editorial_review_and_regression_validation_complete_github_draft_published",
+  "files": [
+    "README.md",
+    "_research/HF-ARTICLE.md"
+  ],
+  "publication": "Markdown source prepared; not posted as a Hugging Face blog article",
+  "outline": [
+    "Research question and bounded finding",
+    "Exact selected hackathon goals",
+    "Model states and measurement definitions",
+    "Observed trade-offs and negative circuit repair",
+    "Failed calibration and pending human/confirmatory evidence",
+    "Reproduction, parameter-only release and optional evidence viewer"
+  ],
+  "paragraph_roles": {
+    "opening": "State the research question and the narrow central finding, not the website pitch.",
+    "challenge": "Refusal restoration may coexist with over-refusal and task-performance loss.",
+    "method": "Define compared model states, distinguish edit supports and separate measurement paths.",
+    "evidence": "Show the recorded comparison and paired task-performance interval.",
+    "limitation": "Keep uncalibrated harm estimates, pending human labels and unexecuted confirmation explicit.",
+    "release": "Link public evidence and reproduction without exposing the private submission form."
+  },
+  "claim_evidence_map": [
+    {
+      "claim": "Sparse repair retains more GSM8K strict-match performance than the full-support repair under the evaluated conditions.",
+      "evidence": "results/p16_capability_analysis_20261102.json: results.strict-match and paired_comparisons.strict-match.harm2_a4_minus_global_a4",
+      "status": "supported_task_specific"
+    },
+    {
+      "claim": "Both compared repairs have higher recorded benign over-refusal than the drifted model.",
+      "evidence": "results/circuit_arm_analysis_20261106.json: arms.*.over_refusal (Qwen3Guard refusal flag)",
+      "status": "supported_exploratory"
+    },
+    {
+      "claim": "The evaluated circuit-restricted edit does not improve judged harm rate over drift.",
+      "evidence": "results/circuit_arm_analysis_20261106.json: arms.circuit_a4.harm and arms.drift.harm",
+      "status": "supported_exploratory_negative_result"
+    },
+    {
+      "claim": "Harm estimates are not verified safety results; human calibration and confirmatory work remain pending.",
+      "evidence": "results/manifest.json; results/readiness_ledger.json",
+      "status": "supported_limitation"
+    },
+    {
+      "claim": "Successful production safety repair, general capability preservation or superior matched-budget circuit targeting.",
+      "evidence": "Not established by the current evidence",
+      "status": "needs_evidence_not_claimed"
+    }
+  ],
+  "self_review": {
+    "contribution": "pass_for_exploratory_study: claim is measured trade-offs and a negative targeted-repair outcome, not a novel guaranteed safety mechanism",
+    "writing_clarity": "pass: research-first framing, defined metrics, compact comparison, optional viewer near the end",
+    "experimental_strength": "needs_new_experiments_for_generalization: no broad capability or multi-model claim",
+    "evaluation_completeness": "needs_human_labels_and_confirmatory_run: explicitly pending, not hidden by software checks",
+    "method_design": "pass_for_scoped_claims: synthetic drift and unequal edit support are disclosed; no matched-budget superiority claim"
+  },
+  "removed_unsupported_framing": [
+    "Every unit of refusal recovery is necessarily paid in over-refusal",
+    "All repair arms are matched in edited-parameter budget",
+    "The website is the main research contribution",
+    "Negative circuit evidence proves that safety cannot be localized"
+  ],
+  "regression_validation": "results/modal_validation_20261109T162150401703Z.json",
+  "release": "results/research_docs_release_20261110.json",
+  "hf_article_published": false
+}

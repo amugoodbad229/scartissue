@@ -1,0 +1,8 @@
+Vercel CLI 65.12.1
+2026-11-09T15:31:29.358Z  Running build in Washington, D.C., USA (East) – iad1
+2026-11-09T15:31:29.359Z  Build machine configuration: 2 cores, 8 GB
+2026-11-09T15:31:29.374Z  Retrieving list of deployment files...
+2026-11-09T15:31:29.496Z  Previous build caches not available.
+2026-11-09T15:31:29.697Z  Downloading 0 deployment files...
+2026-11-09T15:31:29.718Z  The specified Root Directory "human_audit/app" does not exist. Please update your Project Settings.
+status	● Error

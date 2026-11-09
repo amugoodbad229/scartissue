@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "authorization_update": "User clarified the current remaining balance on ayman-cool1971 and authorized continuing. Budget period reset rather than subtracting historical reservations from the new balance. Fresh job reserved as audit_react_corrected_cpu_20261109.",
+  "previous_validation": "results/modal_validation_20261109T141510143150Z.json",
+  "failing_test": "tests/test_audit_app.py::test_blind_payload_matches_frozen_sample",
+  "failing_assertion": "assert '\"role\":' not in bundle",
+  "observed_bundle": "human_audit/app/dist/assets/index-Bxc_lpbL.js",
+  "observed_context": "case\"dir\":case\"role\":case\"viewBox\":case\"width\":case\"height\":To(e,a,n);break;",
+  "diagnosis": "The generic substring matches React DOM's role attribute dispatch, not dataset metadata. The strict source-sample whitelist and remaining metadata leak checks passed in the recorded run.",
+  "fix": "Removed only the generic role substring prohibition; retained exact frozen-sample whitelist equality, answer-hash presence, and dataset-specific bundle leak checks.",
+  "rerun_performed": true,
+  "validation": "results/modal_validation_20261109T143256559002Z.json",
+  "test_results": {
+    "pytest_q": "170 passed",
+    "python_m_pytest_q": "170 passed"
+  },
+  "superseded_budget_request": {
+    "source": "results/modal_budget_20261105.json",
+    "total_ceiling_usd": 30,
+    "reserved_usd": 30,
+    "unreserved_usd": 0,
+    "requested_additional_reserve_usd": 1,
+    "requested_total_ceiling_usd": 31,
+    "actual_provider_charge_usd": null
+  },
+  "generated_artifact_review": {
+    "readiness_ledger": "Only checked_at changed; scientific status remains not_submission_ready.",
+    "submission_verification": "Only checked_at changed; integrity passed independently of failed test suite.",
+    "workbench_screenshots_and_accessibility": "Refreshed by the existing runner; not evidence of safety or human calibration."
+  },
+  "deployment": "Blocked by missing Vercel credentials; see results/audit_app_vercel_20261109.json.",
+  "scientific_status": "Human audit remains pending; no synthetic test labels were used as human evidence."
+}

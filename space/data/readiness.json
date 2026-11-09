@@ -1,6 +1,6 @@
 {
   "schema": "scartissue.readiness/1",
-  "checked_at": "2026-11-07T16:43:49.408719+00:00",
+  "checked_at": "2026-11-09T16:21:59.153823+00:00",
   "status": "not_submission_ready",
   "submission_ready": false,
   "integrity_status": "passed",
@@ -207,8 +207,8 @@
       "path": "results/manifest.json",
       "status": "pending",
       "evaluation": "not independently validated",
-      "sha256": "1be5bd85e54bdeff3ddf503f4c24a0c0dc0cb2077f5d4f17b510674191c49979",
-      "bytes": 5038,
+      "sha256": "f79a356946ead65647517e08c461530cb5cff22c42724f323730f6bdcf14b80f",
+      "bytes": 4975,
       "available": true,
       "recorded": {
         "calibration_status": "failed",

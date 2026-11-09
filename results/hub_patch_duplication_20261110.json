@@ -1,0 +1,30 @@
+{
+  "patch_identity_checks": [
+    {
+      "repository": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "file": "repair_global_a4.npz",
+      "identical_to_model_repo": true
+    },
+    {
+      "repository": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "file": "repair_harm10_a4.npz",
+      "identical_to_model_repo": true
+    },
+    {
+      "repository": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "file": "repair_harm2_a4.npz",
+      "identical_to_model_repo": true
+    },
+    {
+      "repository": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "file": "repair_harm4_a4.npz",
+      "identical_to_model_repo": true
+    },
+    {
+      "repository": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+      "file": "abliteration_tiny-aya-global_layer15.npz",
+      "identical_to_model_repo": true
+    }
+  ],
+  "all_duplicates": true
+}

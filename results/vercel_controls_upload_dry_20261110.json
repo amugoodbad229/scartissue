@@ -1,0 +1,187 @@
+{
+  "framework": {
+    "name": "Vite",
+    "slug": "vite"
+  },
+  "basePath": "C:\\Users\\Ayman\\OneDrive\\Desktop\\Projects\\SAAS_Projects\\scaartissue",
+  "fileCount": 11,
+  "totalSize": 347176,
+  "ignoredCount": 38,
+  "ignored": [
+    ".dockerignore",
+    ".env.local",
+    ".git",
+    ".gitignore",
+    ".pytest_cache",
+    ".python-version",
+    ".scratch",
+    ".venv",
+    ".vercel",
+    ".vercelignore",
+    "1-curate",
+    "2-drift",
+    "3-circuit",
+    "4-audit",
+    "AGENTS.md",
+    "Dockerfile",
+    "README.md",
+    "REPRODUCE.md",
+    "TODO.md",
+    "_research",
+    "artifacts",
+    "chain",
+    "docs",
+    "evals",
+    "experiments",
+    "human_audit\\app\\.env.local",
+    "human_audit\\app\\.vercel",
+    "human_audit\\app\\dist",
+    "human_audit\\app\\node_modules",
+    "human_audit\\audit.html",
+    "logs",
+    "p14",
+    "pyproject.toml",
+    "report",
+    "results",
+    "space",
+    "tests",
+    "uv.lock"
+  ],
+  "directories": [
+    {
+      "path": "human_audit",
+      "fileCount": 11,
+      "size": 347176
+    }
+  ],
+  "largestFiles": [
+    {
+      "path": "human_audit/app/src/sample.json",
+      "size": 261704,
+      "mode": 33206,
+      "sha": "8494b611f1451ce443e91e9f0486776ad6f5c7f4"
+    },
+    {
+      "path": "human_audit/app/package-lock.json",
+      "size": 60111,
+      "mode": 33206,
+      "sha": "17543fcf6e72824c1ede8b459a1e39edabc2c623"
+    },
+    {
+      "path": "human_audit/app/src/App.jsx",
+      "size": 16226,
+      "mode": 33206,
+      "sha": "73981505a0cd2478903bff499332beb8ae007db8"
+    },
+    {
+      "path": "human_audit/app/src/styles.css",
+      "size": 6246,
+      "mode": 33206,
+      "sha": "90a07117e7fc3b1d8001120a860eabbe31ce507f"
+    },
+    {
+      "path": "human_audit/app/prepare-sample.mjs",
+      "size": 1661,
+      "mode": 33206,
+      "sha": "d7cedba3118f1c34ea92a507d85a282b9130ca79"
+    },
+    {
+      "path": "human_audit/app/package.json",
+      "size": 400,
+      "mode": 33206,
+      "sha": "f86ffbb876efc0a910dddc7882eb6b273340beab"
+    },
+    {
+      "path": "human_audit/app/index.html",
+      "size": 312,
+      "mode": 33206,
+      "sha": "dd1b426b0d337346690011684a5136a666544f8a"
+    },
+    {
+      "path": "human_audit/app/src/main.jsx",
+      "size": 234,
+      "mode": 33206,
+      "sha": "452a0d324c1802f9f667f8d4b4368787a25178b7"
+    },
+    {
+      "path": "human_audit/app/vite.config.js",
+      "size": 145,
+      "mode": 33206,
+      "sha": "37c6e53e3f731aeafd5b807a173e78e126ad132a"
+    },
+    {
+      "path": "human_audit/app/vercel.json",
+      "size": 90,
+      "mode": 33206,
+      "sha": "afb5ce837c2faa63d3d23209db40a2145c997c25"
+    }
+  ],
+  "files": [
+    {
+      "path": "human_audit/app/.gitignore",
+      "size": 47,
+      "mode": 33206,
+      "sha": "324cfe0e9811744111ef421ff83d187269ec6b7e"
+    },
+    {
+      "path": "human_audit/app/index.html",
+      "size": 312,
+      "mode": 33206,
+      "sha": "dd1b426b0d337346690011684a5136a666544f8a"
+    },
+    {
+      "path": "human_audit/app/package-lock.json",
+      "size": 60111,
+      "mode": 33206,
+      "sha": "17543fcf6e72824c1ede8b459a1e39edabc2c623"
+    },
+    {
+      "path": "human_audit/app/package.json",
+      "size": 400,
+      "mode": 33206,
+      "sha": "f86ffbb876efc0a910dddc7882eb6b273340beab"
+    },
+    {
+      "path": "human_audit/app/prepare-sample.mjs",
+      "size": 1661,
+      "mode": 33206,
+      "sha": "d7cedba3118f1c34ea92a507d85a282b9130ca79"
+    },
+    {
+      "path": "human_audit/app/src/App.jsx",
+      "size": 16226,
+      "mode": 33206,
+      "sha": "73981505a0cd2478903bff499332beb8ae007db8"
+    },
+    {
+      "path": "human_audit/app/src/main.jsx",
+      "size": 234,
+      "mode": 33206,
+      "sha": "452a0d324c1802f9f667f8d4b4368787a25178b7"
+    },
+    {
+      "path": "human_audit/app/src/sample.json",
+      "size": 261704,
+      "mode": 33206,
+      "sha": "8494b611f1451ce443e91e9f0486776ad6f5c7f4"
+    },
+    {
+      "path": "human_audit/app/src/styles.css",
+      "size": 6246,
+      "mode": 33206,
+      "sha": "90a07117e7fc3b1d8001120a860eabbe31ce507f"
+    },
+    {
+      "path": "human_audit/app/vercel.json",
+      "size": 90,
+      "mode": 33206,
+      "sha": "afb5ce837c2faa63d3d23209db40a2145c997c25"
+    },
+    {
+      "path": "human_audit/app/vite.config.js",
+      "size": 145,
+      "mode": 33206,
+      "sha": "37c6e53e3f731aeafd5b807a173e78e126ad132a"
+    }
+  ]
+}

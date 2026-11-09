@@ -1,0 +1,157 @@
+{
+  "collections": [
+    {
+      "kind": "model_collection",
+      "slug": "amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0",
+      "title": "ScarTissue \u2014 repair parameters",
+      "description": null,
+      "private": false,
+      "items": [
+        {
+          "id": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+          "type": "model",
+          "object_id": "6aedb26162128f4b57b9e677",
+          "note": "Parameter deltas + loader"
+        },
+        {
+          "id": "amugoodbad229/scartissue-tinyaya-repair-patches",
+          "type": "dataset",
+          "object_id": "6aedb2627ddc557f93e5d552",
+          "note": "Per-arm factors and checksums"
+        },
+        {
+          "id": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+          "type": "dataset",
+          "object_id": "6aedb264bf6f77de2b17810c",
+          "note": "The abliteration operator"
+        }
+      ]
+    },
+    {
+      "kind": "dataset_collection",
+      "slug": "amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46",
+      "title": "ScarTissue \u2014 evaluation evidence",
+      "description": null,
+      "private": false,
+      "items": [
+        {
+          "id": "amugoodbad229/scartissue-tinyaya-results",
+          "type": "dataset",
+          "object_id": "6aedb26f5184039f554d67bc",
+          "note": "Write-up, evidence ledger, artifact checksums, per-run JSON"
+        },
+        {
+          "id": "amugoodbad229/scartissue-tinyaya-evals",
+          "type": "dataset",
+          "object_id": "6aedb27082435aff5f062c70",
+          "note": "Frozen prompts, completions, frontier table"
+        },
+        {
+          "id": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+          "type": "dataset",
+          "object_id": "6aedb2715184039f554d67fc",
+          "note": "Curated corpus and published split"
+        },
+        {
+          "id": "amugoodbad229/scartissue",
+          "type": "space",
+          "object_id": "6aedb272402045ad04924f88",
+          "note": "Static decision workbench"
+        }
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "id": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "type": "model",
+      "card": ".scratch/hub_presentation_before/scartissue-tinyaya-repair-parameters.md",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "abliteration_tiny-aya-global_layer15.npz",
+        "load_patch.py",
+        "manifest.json",
+        "repair_global_a4.npz",
+        "repair_harm10_a4.npz",
+        "repair_harm2_a4.npz",
+        "repair_harm4_a4.npz"
+      ]
+    },
+    {
+      "id": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "type": "dataset",
+      "card": ".scratch/hub_presentation_before/scartissue-tinyaya-repair-patches.md",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "manifest.json",
+        "repair_global_a4.npz",
+        "repair_harm10_a4.npz",
+        "repair_harm2_a4.npz",
+        "repair_harm4_a4.npz"
+      ]
+    },
+    {
+      "id": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+      "type": "dataset",
+      "card": ".scratch/hub_presentation_before/scartissue-tinyaya-abliteration-patches.md",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "abliteration_tiny-aya-global_layer15.npz",
+        "load_patch.py",
+        "manifest.json"
+      ]
+    },
+    {
+      "id": "amugoodbad229/scartissue-tinyaya-results",
+      "type": "dataset",
+      "card": ".scratch/hub_presentation_before/scartissue-tinyaya-results.md",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "SUBMISSION.md",
+        "WRITE-UP.md",
+        "data/capability.parquet",
+        "data/frontier.parquet",
+        "data/judge_verdicts.parquet",
+        "data/patches.parquet",
+        "data/safety_generations.parquet",
+        "lexsi_provenance.json",
+        "manifest.json",
+        "patch_checksums.json",
+        "provenance_final.json",
+        "report.pdf",
+        "submission_verification.json"
+      ]
+    },
+    {
+      "id": "amugoodbad229/scartissue-tinyaya-evals",
+      "type": "dataset",
+      "card": ".scratch/hub_presentation_before/scartissue-tinyaya-evals.md",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "completions.json",
+        "evals_manifest.json",
+        "frontier.csv",
+        "prompts.json"
+      ]
+    },
+    {
+      "id": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+      "type": "dataset",
+      "card": ".scratch/hub_presentation_before/scartissue-tinyaya-safety-corpus.md",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "corpus.jsonl",
+        "corpus_split.json",
+        "data/corpus.parquet",
+        "lexsi_provenance.json",
+        "manifest.json"
+      ]
+    }
+  ]
+}

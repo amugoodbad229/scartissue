@@ -1,0 +1,42 @@
+Vercel CLI 65.12.1
+  Inspect         https://vercel.com/amugoodbad229/scartissue-audit/6RX9avvN5FYM9mfAwkMSBBjQqLxH
+▲ Production      https://scartissue-audit-detepw2fs-amugoodbad229.vercel.app
+{
+  "status": "ok",
+  "deployment": {
+    "id": "dpl_6RX9avvN5FYM9mfAwkMSBBjQqLxH",
+    "url": "https://scartissue-audit-detepw2fs-amugoodbad229.vercel.app",
+    "productionUrl": null,
+    "inspectorUrl": "https://vercel.com/amugoodbad229/scartissue-audit/6RX9avvN5FYM9mfAwkMSBBjQqLxH",
+    "readyState": "INITIALIZING",
+    "target": "production",
+    "environment": "production",
+    "deploymentApiUrl": "https://api.vercel.com/v13/deployments/dpl_6RX9avvN5FYM9mfAwkMSBBjQqLxH",
+    "buildMachine": {
+      "cores": 2,
+      "memory": 8192,
+      "machine": "basic",
+      "selectionType": "fixed",
+      "selectionSource": "plan-default"
+    },
+    "deploymentProtection": [
+      "vercel_authentication"
+    ]
+  },
+  "message": "Deployment scartissue-audit-detepw2fs-amugoodbad229.vercel.app ready.",
+  "hint": "This is the project’s first deployment, so it was assigned to production. Future deployments will be preview deployments unless you use --prod.",
+  "next": [
+    {
+      "command": "vercel curl https://scartissue-audit-detepw2fs-amugoodbad229.vercel.app",
+      "when": "Verify deployment, including when Deployment Protection is enabled"
+    },
+    {
+      "command": "vercel inspect scartissue-audit-detepw2fs-amugoodbad229.vercel.app --cwd human_audit/app",
+      "when": "Inspect deployment"
+    },
+    {
+      "command": "vercel remove dpl_6RX9avvN5FYM9mfAwkMSBBjQqLxH --yes --cwd human_audit/app",
+      "when": "Only after the user approves: delete this deployment and its production alias"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+Vercel CLI 65.12.1
+
+  Directory       ~\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue
+
+
+✓ Linked          amugoodbad229/scartissue-audit
+
+> Downloading a fresh `VERCEL_OIDC_TOKEN` for scartissue-audit
+
+✓ Created         .env.local file and added it to .gitignore

@@ -1,0 +1,19 @@
+Vercel CLI 65.12.1
+
+  Directory       ~\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\human_audit\app
+
+  Local settings detected in vercel.json:
+  Build Command: npm run build
+  Framework: vite
+  Output Directory: dist
+  Merging default Project Settings for Vite. Previously listed overrides are prioritized.
+
+  Detected Vite (Build Command: vite build, Output Directory: dist)
+
+✓ Created         amugoodbad229/scartissue-audit
+> Connecting GitHub repository: https://github.com/amugoodbad229/scartissue
+> Connected
+
+> Downloading a fresh `VERCEL_OIDC_TOKEN` for scartissue-audit
+
+✓ Created         .env.local file and added it to .gitignore

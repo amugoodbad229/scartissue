@@ -1,0 +1,41 @@
+Vercel CLI 65.12.1
+  Inspect         https://vercel.com/amugoodbad229/scartissue-audit/36bAFvjqiuvNEs9CQLnT1Ruh5Kgu
+▲ Production      https://scartissue-audit-2fl8o3jks-amugoodbad229.vercel.app
+{
+  "status": "ok",
+  "deployment": {
+    "id": "dpl_36bAFvjqiuvNEs9CQLnT1Ruh5Kgu",
+    "url": "https://scartissue-audit-2fl8o3jks-amugoodbad229.vercel.app",
+    "productionUrl": null,
+    "inspectorUrl": "https://vercel.com/amugoodbad229/scartissue-audit/36bAFvjqiuvNEs9CQLnT1Ruh5Kgu",
+    "readyState": "INITIALIZING",
+    "target": "production",
+    "environment": "production",
+    "deploymentApiUrl": "https://api.vercel.com/v13/deployments/dpl_36bAFvjqiuvNEs9CQLnT1Ruh5Kgu",
+    "buildMachine": {
+      "cores": 2,
+      "memory": 8192,
+      "machine": "basic",
+      "selectionType": "fixed",
+      "selectionSource": "plan-default"
+    },
+    "deploymentProtection": [
+      "vercel_authentication"
+    ]
+  },
+  "message": "Deployment scartissue-audit-2fl8o3jks-amugoodbad229.vercel.app ready.",
+  "next": [
+    {
+      "command": "vercel curl https://scartissue-audit-2fl8o3jks-amugoodbad229.vercel.app",
+      "when": "Verify deployment, including when Deployment Protection is enabled"
+    },
+    {
+      "command": "vercel inspect scartissue-audit-2fl8o3jks-amugoodbad229.vercel.app",
+      "when": "Inspect deployment"
+    },
+    {
+      "command": "vercel deploy --prod",
+      "when": "Promote to production"
+    }
+  ]
+}

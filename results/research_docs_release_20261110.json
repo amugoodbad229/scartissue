@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-09T16:26:36.447816+00:00",
+  "commit": "944d0b071857b54ba26dedcd5b146fe04f08e630",
+  "remote_head": "944d0b071857b54ba26dedcd5b146fe04f08e630",
+  "published": true,
+  "public_readme": "https://github.com/amugoodbad229/scartissue/blob/master/README.md",
+  "article_draft": "https://github.com/amugoodbad229/scartissue/blob/master/_research/HF-ARTICLE.md",
+  "hf_article_published": false,
+  "hf_publishing_blocker": "results/hf_article_publishing_account_20261110.json",
+  "private_form_current_branch_absent": true,
+  "private_form_check": "gh: Not Found (HTTP 404)",
+  "validation": "results/modal_validation_20261109T162150401703Z.json",
+  "published_paths": [
+    "README.md",
+    "_research/HF-ARTICLE.md",
+    "experiments/modal_validation.py",
+    "tests/test_modal_validation.py",
+    "tests/test_claim_readiness.py"
+  ],
+  "unrelated_pending_app_changes_published": false,
+  "history_rewritten": false
+}

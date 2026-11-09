@@ -1,0 +1,74 @@
+{
+  "checked_at": "2026-11-09T15:09:33.557Z",
+  "status": "deployed_and_live_verified",
+  "deployed": true,
+  "url": "https://scartissue-audit.vercel.app",
+  "project": {
+    "id": "prj_2dwYmmH3cr9vP6Hg0ozI3bk2gdLo",
+    "name": "scartissue-audit",
+    "owner": {
+      "name": "amugoodbad229",
+      "slug": "amugoodbad229"
+    },
+    "rootDirectory": "human_audit/app",
+    "framework": "vite",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist"
+  },
+  "deployment": {
+    "id": "dpl_6RX9avvN5FYM9mfAwkMSBBjQqLxH",
+    "state": "READY",
+    "target": "production",
+    "url": "https://scartissue-audit-detepw2fs-amugoodbad229.vercel.app"
+  },
+  "setup": {
+    "guide": "https://vercel.com/get-started.md",
+    "guide_evidence": "results/vercel_get_started_20261109.json",
+    "cli_version": "65.12.1",
+    "authenticated_account": "amugoodbad229",
+    "skills_source": "vercel-labs/agent-skills",
+    "skills_install": "global Pi standalone fallback; Pi not listed as an official plugin client",
+    "mcp_endpoint": "https://mcp.vercel.com",
+    "mcp_oauth": "authenticated",
+    "mcp_readonly_checks": {
+      "list_teams": true,
+      "search_vercel_documentation": true
+    },
+    "mcp_evidence": "results/vercel_mcp_readonly_20261109.json",
+    "running_session_action": "Use /reload in Pi to load new tools and skills; SDK read-only checks have already succeeded.",
+    "permissions": "No automatic approval or permissions bypass configured."
+  },
+  "validation": "results/modal_validation_20261109T143256559002Z.json",
+  "live_validation": "results/vercel_live_20261109.json",
+  "live_validation_status": "passed",
+  "git": {
+    "connected": true,
+    "committed_or_pushed": false,
+    "note": "Initial deployment uploaded local files; Git builds need app files committed and pushed separately."
+  },
+  "secrets": {
+    "printed_or_committed": false,
+    "note": "CLI-generated .env.local and .vercel are ignored; Modal validation excludes .env*."
+  },
+  "historical_auth_blocker": {
+    "checked_at": "2026-11-09T14:17:56.127Z",
+    "command": "vercel whoami",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Vercel CLI 50.8.1\nError: No existing credentials found. Please run `vercel login` or pass \"--token\"\nLearn More: https://err.sh/vercel/no-credentials-found\n╭──────────────────────────────────────────────────────────╮\n│                                                          │\n│           Update available! v50.8.1 ≫ v65.12.1           │\n│   Changelog: https://github.com/vercel/vercel/releases   │\n│         Run `npm i -g vercel@latest` to update.          │\n│                                                          │\n│   The latest update may fix any errors that occurred.    │\n│                                                          │\n╰──────────────────────────────────────────────────────────╯\n",
+    "deployed": false,
+    "login_attempt": {
+      "command": "vercel login",
+      "status": "device_flow_timed_out_process_killed",
+      "timeout_seconds": 60,
+      "next_action": "Account holder must run vercel login in their own terminal; do not rely on the expired tool process or paste credentials into chat."
+    },
+    "deployment_configuration": {
+      "root": "human_audit/app",
+      "framework": "vite",
+      "build_command": "npm run build",
+      "output_directory": "dist"
+    },
+    "validation": "results/modal_validation_20261109T143256559002Z.json"
+  }
+}

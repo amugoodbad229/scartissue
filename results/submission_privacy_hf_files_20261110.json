@@ -1,0 +1,305 @@
+[
+  {
+    "path": "data",
+    "tree_id": "15266536af2c7f031815479c183eef6e6c2c57d8",
+    "last_commit": {
+      "oid": "1ada6afe92eddac08f023d632b3e98959123ee87",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-07T17:11:16+00:00"
+    }
+  },
+  {
+    "path": ".gitattributes",
+    "size": 1566,
+    "blob_id": "5c122c619c9377e914fa558c32ad44683b97ffeb",
+    "last_commit": {
+      "oid": "e182089554706c9261122fa7a90f27b96a8dccbf",
+      "title": "Upload report.pdf with huggingface_hub",
+      "date": "2026-11-02T18:45:44+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "README.md",
+    "size": 2152,
+    "blob_id": "844ad2ef1f72aedd536204a48a607ec06ecea66d",
+    "last_commit": {
+      "oid": "f9e5155c5546a2544b334cc3211ee117cc68ea16",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-06T11:15:06+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "app.js",
+    "size": 12519,
+    "blob_id": "64430d0490e686961a1191ebd244177f7b5003b5",
+    "last_commit": {
+      "oid": "1ada6afe92eddac08f023d632b3e98959123ee87",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-07T17:11:16+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "completions.json",
+    "size": 712701,
+    "blob_id": "35fcb6f6c0680d4114c42d097757d4862ddc25f8",
+    "last_commit": {
+      "oid": "f882b56601077644febc5d1e3f50ff2cfbf2e603",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-06T14:59:58+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "",
+        "version": "1.5.4/28172"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "data/evidence.json",
+    "size": 1609492,
+    "blob_id": "d516fea8c5fc17af23b662ceafe224db9dbaa44d",
+    "last_commit": {
+      "oid": "1ada6afe92eddac08f023d632b3e98959123ee87",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-07T17:11:16+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "data/readiness.json",
+    "size": 16504,
+    "blob_id": "6b673aa4c6d1bf3cfdc7b8a4e3d2cd144f250cc2",
+    "last_commit": {
+      "oid": "1ada6afe92eddac08f023d632b3e98959123ee87",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-07T17:11:16+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "evidence.js",
+    "size": 7610,
+    "blob_id": "4459f0def8e21160169083fbdc58832888c2c614",
+    "last_commit": {
+      "oid": "f9e5155c5546a2544b334cc3211ee117cc68ea16",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-06T11:15:06+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "frontier.csv",
+    "size": 413,
+    "blob_id": "d08971f63a43394081a365d9ba29388772a7c256",
+    "last_commit": {
+      "oid": "f882b56601077644febc5d1e3f50ff2cfbf2e603",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-06T14:59:58+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "index.html",
+    "size": 6287,
+    "blob_id": "22e84431b93ed515e49ef37a1c749358231c9079",
+    "last_commit": {
+      "oid": "1ada6afe92eddac08f023d632b3e98959123ee87",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-07T17:11:16+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "prompts.json",
+    "size": 38138,
+    "blob_id": "8e8024558bfc7a89cd36846888196fef437591af",
+    "last_commit": {
+      "oid": "f882b56601077644febc5d1e3f50ff2cfbf2e603",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-06T14:59:58+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "",
+        "version": "1.5.4/28172"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "report.pdf",
+    "size": 399019,
+    "blob_id": "3d658eaab78844d5fa9d4e88218baefec05a92fd",
+    "lfs": {
+      "size": 399019,
+      "sha256": "dff972a69c33db1a763dce2b9e7a7e0a8d13e82f296ba7e6cfadbfd7f2708f32",
+      "pointer_size": 131
+    },
+    "xet_hash": "ff41f1a8e088176fb12fc0156c370bace0bf8d69ae021cf52e5ed0d974cd7d4d",
+    "last_commit": {
+      "oid": "e182089554706c9261122fa7a90f27b96a8dccbf",
+      "title": "Upload report.pdf with huggingface_hub",
+      "date": "2026-11-02T18:45:44+00:00"
+    },
+    "security": {
+      "safe": false,
+      "status": "queued",
+      "av_scan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  },
+  {
+    "path": "style.css",
+    "size": 10047,
+    "blob_id": "648a33993c0ac92c326b309d6552739a310a98ee",
+    "last_commit": {
+      "oid": "1ada6afe92eddac08f023d632b3e98959123ee87",
+      "title": "Upload folder using huggingface_hub",
+      "date": "2026-11-07T17:11:16+00:00"
+    },
+    "security": {
+      "safe": true,
+      "status": "safe",
+      "av_scan": {
+        "status": "safe",
+        "message": "No security issues detected",
+        "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+      },
+      "pickle_import_scan": {
+        "status": "unscanned",
+        "pickleImports": [],
+        "version": "0.0.0"
+      }
+    }
+  }
+]

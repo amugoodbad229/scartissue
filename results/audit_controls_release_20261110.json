@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-11-09T15:38:09.386Z",
+  "status": "deployed_and_live_verified",
+  "url": "https://scartissue-audit.vercel.app",
+  "changes": [
+    "Labelling question and choices above prompt and answer",
+    "Sticky controls during scrolling; static on very short viewports to avoid obscuring reading",
+    "Bold spans rendered as escaped React strong elements; no HTML interpretation or new dependencies"
+  ],
+  "data_integrity": {
+    "frozen_sample_unchanged": true,
+    "storage_key_unchanged": true,
+    "export_schema_and_answer_hashes_unchanged": true
+  },
+  "validation": {
+    "artifact": "results/modal_validation_20261109T152709161234Z.json",
+    "runs": [
+      {
+        "exit_code": 0,
+        "summary": "174 passed in 67.59s (0:01:07)"
+      },
+      {
+        "exit_code": 0,
+        "summary": "174 passed in 65.14s (0:01:05)"
+      }
+    ]
+  },
+  "live_validation": "results/vercel_controls_live_20261110.json",
+  "deployment": {
+    "artifact": "results/vercel_controls_corrected_deployment_20261110.json",
+    "id": "dpl_G2LiNVPuGRgfxQuTSmqVYLaQ9fe9",
+    "state": "READY",
+    "target": "production",
+    "url": "scartissue-audit-n4uneplkz-amugoodbad229.vercel.app"
+  },
+  "upload": {
+    "artifact": "results/vercel_controls_upload_dry_20261110.json",
+    "file_count": 11,
+    "total_bytes": 347176,
+    "app_only": true,
+    "secrets_excluded": true
+  },
+  "historical_failed_deployment": {
+    "artifact": "results/vercel_controls_deployment_20261110.json",
+    "build_log": "logs/vercel_controls_build_failure_20261110.log",
+    "error": "The specified Root Directory \"human_audit/app\" does not exist. Please update your Project Settings.",
+    "cause": "Trailing-slash directory negations did not match the native CLI directory walker; zero files uploaded.",
+    "fix": "Use directory negations without trailing slashes and verify with vercel deploy --dry --json."
+  },
+  "git": {
+    "committed_or_pushed": false
+  },
+  "limitations": [
+    "Bold spans only, not full Markdown",
+    "No real human labels supplied by browser tests",
+    "Chromium desktop/mobile only; other browser engines not checked"
+  ]
+}

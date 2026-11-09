@@ -4,66 +4,72 @@
     {
       "selector": "body",
       "kind": "text",
-      "ratio": 15.643483050114252,
+      "ratio": 14.848385589829089,
       "minimum": 4.5
     },
     {
       "selector": ".note",
       "kind": "text",
-      "ratio": 7.214409157828484,
+      "ratio": 5.02242351231575,
       "minimum": 4.5
     },
     {
-      "selector": ".warning",
+      "selector": ".hero-lede",
       "kind": "text",
-      "ratio": 15.109517012619387,
+      "ratio": 11.059332520868091,
       "minimum": 4.5
     },
     {
-      "selector": ".tag",
+      "selector": ".decision",
       "kind": "text",
-      "ratio": 4.979278232280779,
+      "ratio": 14.86430947223531,
+      "minimum": 4.5
+    },
+    {
+      "selector": ".tbl caption",
+      "kind": "text",
+      "ratio": 5.02242351231575,
       "minimum": 4.5
     },
     {
       "selector": "#max-harm",
       "kind": "text",
-      "ratio": 16.31832264981189,
+      "ratio": 15.935630636067266,
       "minimum": 4.5
     },
     {
       "selector": "#preset",
       "kind": "text",
-      "ratio": 16.31832264981189,
+      "ratio": 15.935630636067266,
       "minimum": 4.5
     },
     {
       "selector": "button[type=submit]",
       "kind": "text",
-      "ratio": 5.419829074091685,
+      "ratio": 4.547887713632394,
       "minimum": 4.5
     },
     {
       "selector": "#max-harm",
       "kind": "control boundary",
-      "ratio": 4.0151333310752575,
+      "ratio": 4.380849458854828,
       "minimum": 3
     },
     {
       "selector": "#preset",
       "kind": "control boundary",
-      "ratio": 4.0151333310752575,
+      "ratio": 4.380849458854828,
       "minimum": 3
     },
     {
       "selector": "#export",
       "kind": "control boundary",
-      "ratio": 4.0151333310752575,
+      "ratio": 4.380849458854828,
       "minimum": 3
     },
     {
       "kind": "keyboard focus",
-      "ratio": 5.419829074091685,
+      "ratio": 7.349399734761126,
       "minimum": 3
     }
   ],

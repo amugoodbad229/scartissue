@@ -1,0 +1,9 @@
+# Only the public audit app belongs in this deployment.
+*
+!human_audit
+!human_audit/app
+!human_audit/app/**
+human_audit/app/node_modules
+human_audit/app/dist
+human_audit/app/.vercel
+**/.env*

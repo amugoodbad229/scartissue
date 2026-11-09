@@ -1,0 +1,19 @@
+{
+  "id": "prj_2dwYmmH3cr9vP6Hg0ozI3bk2gdLo",
+  "name": "scartissue-audit",
+  "owner": {
+    "name": "amugoodbad229",
+    "slug": "amugoodbad229"
+  },
+  "createdAt": 1794236498220,
+  "rootDirectory": "human_audit/app",
+  "nodeVersion": "26.x",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": null,
+  "sandbox": {
+    "region": "iad1",
+    "failoverRegions": []
+  }
+}

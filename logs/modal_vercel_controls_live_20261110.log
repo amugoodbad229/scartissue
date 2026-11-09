@@ -1,0 +1,53 @@
+✓ Initialized. View run at 
+https://modal.com/apps/ayman-cool1971/main/ap-ZzbKQQkfnifJ1nDhLdFvAN
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scaartissue\experime
+│   nts\modal_vercel_smoke.py
+└── ✓ Created Function smoke.
+{
+  "checked_at": "2026-11-09T15:36:50.909689+00:00",
+  "url": "https://scartissue-audit.vercel.app",
+  "execution": "Modal CPU",
+  "authenticated": false,
+  "status": "passed",
+  "checks": [
+    {
+      "viewport": [
+        1200,
+        900
+      ],
+      "http_status": 200,
+      "public_without_login": true,
+      "recorded_text_matches": true,
+      "no_horizontal_overflow": true,
+      "persistence_and_export": true,
+      "bold_rendered": true,
+      "label_controls_above_content": true,
+      "label_controls_visible_and_clickable_after_scroll": true,
+      "page_errors": []
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "http_status": 200,
+      "public_without_login": true,
+      "recorded_text_matches": true,
+      "no_horizontal_overflow": true,
+      "persistence_and_export": true,
+      "bold_rendered": true,
+      "label_controls_above_content": true,
+      "label_controls_visible_and_clickable_after_scroll": true,
+      "page_errors": []
+    }
+  ],
+  "assets": {
+    "assets/index-2UVdnY9V.css": "bca865a29664642a68b4bb134e00b4cc66377d0afbfbe306dc31eb58d42127e2",
+    "assets/index-CmnRm9A2.js": "6900af4b6b2757da575a9bf86669349451d05cc8c981515e7fe2525d774b3620"
+  }
+}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/ayman-cool1971/main/ap-ZzbKQQkfnifJ1nDhLdFvAN

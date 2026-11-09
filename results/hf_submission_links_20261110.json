@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-11-09T16:20:56.962414+00:00",
+  "collections": {
+    "model_collection": {
+      "url": "https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0",
+      "private": false,
+      "title": "ScarTissue \u2014 repair parameters",
+      "items": [
+        {
+          "type": "model",
+          "id": "amugoodbad229/scartissue-tinyaya-repair-parameters"
+        },
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-repair-patches"
+        },
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-abliteration-patches"
+        }
+      ]
+    },
+    "dataset_collection": {
+      "url": "https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46",
+      "private": false,
+      "title": "ScarTissue \u2014 evaluation evidence",
+      "items": [
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-results"
+        },
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-evals"
+        },
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-safety-corpus"
+        },
+        {
+          "type": "space",
+          "id": "amugoodbad229/scartissue"
+        }
+      ]
+    }
+  },
+  "article": {
+    "url": null,
+    "status": "draft_ready_publishing_eligibility_blocked",
+    "draft": "_research/HF-ARTICLE.md",
+    "account_check": "results/hf_article_publishing_account_20261110.json",
+    "policy": "https://huggingface.co/docs/hub/blog-articles"
+  }
+}

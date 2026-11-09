@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-09T16:25:31.939032+00:00",
+  "hugging_face_space": {
+    "listing": "results/submission_privacy_hf_files_20261110.json",
+    "paths": [
+      "data",
+      ".gitattributes",
+      "README.md",
+      "app.js",
+      "completions.json",
+      "data/evidence.json",
+      "data/readiness.json",
+      "evidence.js",
+      "frontier.csv",
+      "index.html",
+      "prompts.json",
+      "report.pdf",
+      "style.css"
+    ],
+    "private_submission_form_paths": [],
+    "form_absent": true
+  },
+  "modal": {
+    "result": "results/modal_validation_20261109T162150401703Z.json",
+    "private_form_absent": true
+  },
+  "scope": "Checks the named submission form, not every possible personal detail or historic artifact.",
+  "history": "Current-branch removal does not erase old Git commits or prior copies."
+}

@@ -1,8 +1,11 @@
 {
   "status": "approved",
-  "authorization": "$29 of prepaid credit on the replacement workspace (user statement, 2026-11-06); the earlier $25 figure was a self-imposed cap, not the account balance",
+  "authorization": "User clarified on 2026-11-09 that $28 is currently available on workspace ayman-cool1971 and authorized continuing, including A100/H100 GPU hardware if actually needed. This is a fresh remaining-work budget, not $28 less all historical reservations. Provider balance and past realized charges remain independently unverified.",
   "currency": "USD",
-  "total_ceiling": 29,
+  "total_ceiling": 28,
+  "budget_basis": "Remaining balance reported by the account holder on 2026-11-09. Only reservations below belong to this period; reservation_history is excluded from this period's ceiling.",
+  "user_reported_available_usd": 28,
+  "user_reported_workspace": "ayman-cool1971",
   "scope": [
     "bounded Modal CPU test and browser validation",
     "prioritize scoring existing held-out generations if affordable"
@@ -17,7 +20,8 @@
     "cpu_timeout_seconds": 600,
     "gpu_timeout_seconds": 1800,
     "max_cpu_memory_mib": 4096,
-    "max_gpu_model": "A10G",
+    "max_gpu_model": "H100",
+    "gpu_selection_policy": "Use appropriate hardware, including A100/H100 when needed; no GPU allocation for browser-only validation.",
     "max_gpu_invocations_before_review": 3,
     "automatic_retries": 0
   },
@@ -35,6 +39,53 @@
     "billing": "No billing amount inferred from elapsed time. Record conservative reserve before launch; actual billing remains provider-side."
   },
   "reservations": [
+    {
+      "job": "audit_react_corrected_cpu_20261109",
+      "reserved_usd": 1,
+      "gpu": false,
+      "reserved_at": "2026-11-09",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_audit_react_corrected_20261109.log",
+      "purpose": "Fresh validation after correcting the React DOM role false positive; authorized by the user's balance clarification. CPU/browser only, no model calls or automatic retries. Reservation is not actual provider billing."
+    },
+    {
+      "job": "vercel_live_cpu_20261109",
+      "reserved_usd": 1,
+      "gpu": false,
+      "reserved_at": "2026-11-09T15:06:50.745Z",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_vercel_live_20261109.log",
+      "purpose": "Bounded unauthenticated browser smoke of user-requested Vercel deployment; within current remaining-work ceiling; no model calls, no automatic retries."
+    },
+    {
+      "job": "audit_controls_cpu_20261110",
+      "reserved_usd": 1,
+      "gpu": false,
+      "reserved_at": "2026-11-10",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_audit_controls_20261110.log",
+      "purpose": "Validate top sticky labelling controls, safe bold rendering and existing audit workflows; no model calls or automatic retries. Reserve is not billing."
+    },
+    {
+      "job": "vercel_controls_live_cpu_20261110",
+      "reserved_usd": 1,
+      "gpu": false,
+      "reserved_at": "2026-11-10",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_vercel_controls_live_20261110.log",
+      "purpose": "Verify updated public audit assets, sticky controls, bold rendering and unchanged label export after deployment; no model calls or automatic retries."
+    },
+    {
+      "job": "privacy_docs_cpu_20261110",
+      "reserved_usd": 1,
+      "gpu": false,
+      "reserved_at": "2026-11-10",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_privacy_docs_20261110.log",
+      "purpose": "Validate private-form upload exclusion, actual Modal mount, required public collection links and existing workflows after research-first documentation edits. CPU only, no model calls or automatic retries; reserve is not billing."
+    }
+  ],
+  "reservation_history": [
     {
       "job": "replacement_cpu_baseline_20261106",
       "reserved_usd": 1,
@@ -262,6 +313,15 @@
       "profile": "scartissue-replacement",
       "log": "logs/modal_validation_cleanup_20261108.log",
       "purpose": "Validate consolidated Space, artifact paths, tests and browser workflow; reservation only, not provider billing"
+    },
+    {
+      "job": "audit_react_cpu_20261109",
+      "reserved_usd": 1,
+      "gpu": false,
+      "reserved_at": "2026-11-09T23:14:00Z",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_audit_react_20261109.log",
+      "purpose": "User-authorized bounded CPU/browser validation of the responsive audit; no GPU, model calls, automatic retries, or fallback profile. Reservation only, not actual billing."
     }
   ],
   "realized_provider_charge_usd": null

@@ -1,0 +1,61 @@
+{
+  "id": "dpl_6RX9avvN5FYM9mfAwkMSBBjQqLxH",
+  "name": "scartissue-audit",
+  "url": "scartissue-audit-detepw2fs-amugoodbad229.vercel.app",
+  "target": "production",
+  "readyState": "READY",
+  "createdAt": 1794236545220,
+  "duration": {
+    "startTime": 1794236546087,
+    "timeToReady": 6276
+  },
+  "buildMachine": {
+    "cores": 2,
+    "memory": 8192,
+    "machine": "basic",
+    "selectionType": "fixed",
+    "selectionSource": "plan-default"
+  },
+  "buildCacheSummary": {
+    "save": {
+      "saved": true,
+      "compressedSizeBytes": 11149312,
+      "cacheLimitBytes": 1610612736,
+      "fileCount": 2278
+    }
+  },
+  "aliases": [
+    "scartissue-audit.vercel.app",
+    "scartissue-audit-amugoodbad229.vercel.app"
+  ],
+  "builds": [
+    {
+      "id": "bld_mvk6x36xc",
+      "deploymentId": "dpl_6RX9avvN5FYM9mfAwkMSBBjQqLxH",
+      "entrypoint": ".",
+      "readyState": "READY",
+      "readyStateAt": 1794236544793,
+      "createdAt": 1794236544793,
+      "createdIn": "sfo1",
+      "use": "@vercel/vc-build",
+      "config": {
+        "framework": "vite",
+        "buildCommand": "npm run build",
+        "outputDirectory": "dist",
+        "nodeVersion": "26.x",
+        "projectCreatedAt": 1794236498220,
+        "vercelConfig": {
+          "framework": "vite",
+          "buildCommand": "npm run build",
+          "outputDirectory": "dist",
+          "name": "scartissue-audit",
+          "version": 2
+        }
+      },
+      "middleware": [],
+      "output": [],
+      "fingerprint": null
+    }
+  ],
+  "contextName": "amugoodbad229"
+}
