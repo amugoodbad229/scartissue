@@ -1,6 +1,65 @@
 # ScarTissue — hackathon reset roadmap
 
-Updated 2026-11-07. Mirrors the on-screen task queue; machine-readable plan: `results/readiness_reset_20261105.json`.
+Updated 2026-11-10. Mirrors the on-screen task queue; machine-readable scientific plan: `results/readiness_reset_20261105.json`.
+
+### Research documentation and privacy follow-up
+
+- [x] Remove the personal submission form from the current public GitHub branch; retain the ignored local copy.
+  Historical commits were not rewritten, so past exposure is not erased.
+- [x] Rewrite the README around the research question, exact selected track/goals, bounded findings and limitations;
+  keep the website optional and emphasize the required Hugging Face collection links.
+- [x] Prepare `_research/HF-ARTICLE.md` as a clear research article, including unequal edit support,
+  task-specific capability findings, the negative circuit result and the calibration-rendering defect.
+- [ ] Publish the Hugging Face article and replace the draft link with its actual blog URL. Blocked by current
+  account publishing eligibility, not by missing prose: `results/hf_article_publishing_account_20261110.json`.
+  Verified collection links and current contents: `results/hf_submission_links_20261110.json`.
+- [x] Validate private-form exclusions and documentation guardrails on Modal: both invocation forms passed,
+  including the actual upload mount check. Evidence: `results/modal_validation_20261109T162150401703Z.json`;
+  named log: `logs/modal_validation_privacy_docs_20261110.log`.
+- [x] Publish only the rewritten README/article and privacy regression guards; leave unrelated pending app work untouched.
+  Remote verification: `results/research_docs_release_20261110.json`. The GitHub article remains a draft,
+  not a published Hugging Face blog article.
+- [x] Stop presenting `_research/HF-ARTICLE.md` as the article. The README now links the reproduction
+  guide and evidence manifest, states plainly that the blog article is **not yet published on Hugging Face**
+  and why, and `tests/test_claim_readiness.py` fails if the repository draft path reappears in the README.
+  The Markdown file stays as working notes until a real blog URL exists.
+
+### Responsive audit follow-up
+
+- [x] Move the labelling question and choices above the prompt, keep them sticky while reading,
+  and render answer bold spans without modifying frozen text, hashes or saved labels.
+- [x] Validate the controls/formatting change on Modal: both invocation forms passed,
+  including sticky control hit-testing, bold spans and unchanged exported answer hashes.
+  Evidence: `results/modal_validation_20261109T152709161234Z.json`;
+  log: `logs/modal_validation_audit_controls_20261110.log`.
+- [x] Redeploy the updated audit and verify live controls/formatting, persistence, export and asset
+  hashes on Modal. Evidence: `results/vercel_controls_live_20261110.json`;
+  release: `results/audit_controls_release_20261110.json`;
+  log: `logs/modal_vercel_controls_live_20261110.log`.
+- [x] Correct the Vercel upload filter after the initial missing-root error. The dry run includes only
+  app sources and no secrets; corrected production deployment is ready.
+  Evidence: `results/vercel_controls_upload_dry_20261110.json`,
+  `results/vercel_controls_corrected_deployment_20261110.json`.
+
+- [x] Finish the React/Vite audit with reviewer/annotator explanations, honest completion hand-off,
+  keyboard labelling, browser persistence, undo, and validated backup restore.
+- [x] Validate the production audit in the bounded Modal CPU/browser run. Corrected run:
+  `results/modal_validation_20261109T143256559002Z.json` — 170 passed in each invocation form,
+  including source integrity and responsive browser workflows. The earlier failed run is retained:
+  its generic `role` leak assertion matched React DOM attribute handling, not dataset metadata.
+  Diagnosis and corrected result: `results/audit_app_validation_followup_20261109.json`.
+- [x] Deploy to Vercel: https://scartissue-audit.vercel.app/ . CLI and global MCP authenticated;
+  standalone official skills installed for Pi. Git root configured as `human_audit/app`.
+  Setup: `results/audit_app_vercel_20261109.json`; initial local deployment has not been committed/pushed.
+- [x] Verify the public deployment in logged-out desktop/mobile browsers on Modal: HTTP 200,
+  matching validated asset hashes, browser persistence and backup export, no page errors or horizontal
+  overflow. Evidence: `results/vercel_live_20261109.json`; log: `logs/modal_vercel_live_20261109.log`.
+- [x] User approved the additional bounded validation reserve in `results/modal_budget_20261105.json`.
+  Original log: `logs/modal_validation_audit_react_20261109.log`. Corrected-run log named before
+  launch: `logs/modal_validation_audit_react_corrected_20261109.log`. Historical reserves are not billing;
+  the current remaining-work budget uses the account holder's latest balance statement.
+
+These software tasks do not complete the human audit or change scientific eligibility.
 
 ## Verdict and direction
 
@@ -47,10 +106,12 @@ remain account- or human-dependent; `results/readiness_reset_20261105.json` carr
 
 ### Awaiting you (cannot be done from this machine)
 
-1. **#22 · Label 180 blind items** (~40 min). Open `human_audit/audit.html`, press 1/2/3 per item, export
-   `human_audit_labels.json`, then `uv run python -m experiments.analyse_audit human_audit_labels.json`.
-   Passing the gate turns `headline_eligible` true for the exploratory comparison; failing it publishes the
-   measured judge error. Either outcome is better than the current text.
+1. **#22 · Label the blind sample**. Use the responsive app in `human_audit/app/` (or the legacy
+   `human_audit/audit.html`), label every recorded answer, and export `human_audit_labels.json`.
+   Run `uv run python -m experiments.analyse_audit human_audit_labels.json` separately.
+   A pass supports judge calibration on this distribution and makes claims eligible for review only;
+   it does not automatically update `headline_eligible`, clear other blockers, or prove repair safety.
+   A fail leaves claims exploratory; insufficient usable/class coverage produces no score.
 2. **Post the HF article** — `_research/HF-ARTICLE.md` is final in content; posting is yours because the claims
    are in your voice.
 3. **#34 · File the form** before **2026-11-14 AoE**, using `_research/SUBMISSION-FORM-20261106.md`.

@@ -1,0 +1,97 @@
+{
+  "created_at": "2026-11-09T17:19:51.401858+00:00",
+  "cards_uploaded": {
+    "amugoodbad229/scartissue-tinyaya-repair-parameters": "747826b2b68aba5249d58abd8893eff18fde756ca9c55e801dc538e2f733382c",
+    "amugoodbad229/scartissue-tinyaya-results": "4cb0b135a71cce92c74db9d43459883b06c7821bf0e70f3b77a98e058b00436f",
+    "amugoodbad229/scartissue-tinyaya-evals": "b137ebe2ca168ccf2822dedc74b53fdcaff743f339f1a58043a5ad79daf27b7b",
+    "amugoodbad229/scartissue-tinyaya-repair-patches": "8bd0644b376b229f5d198b91c786ebba13a7ade8fd08d3e47857f908b4860cab",
+    "amugoodbad229/scartissue-tinyaya-abliteration-patches": "bef22741aa71d0746963864e1b65af201b51b4b7debe123a77f7755004330c5a"
+  },
+  "card_readback": {
+    "amugoodbad229/scartissue-tinyaya-repair-parameters": {
+      "expected_sha256": "747826b2b68aba5249d58abd8893eff18fde756ca9c55e801dc538e2f733382c",
+      "remote_sha256": "747826b2b68aba5249d58abd8893eff18fde756ca9c55e801dc538e2f733382c",
+      "match": true
+    },
+    "amugoodbad229/scartissue-tinyaya-results": {
+      "expected_sha256": "4cb0b135a71cce92c74db9d43459883b06c7821bf0e70f3b77a98e058b00436f",
+      "remote_sha256": "4cb0b135a71cce92c74db9d43459883b06c7821bf0e70f3b77a98e058b00436f",
+      "match": true
+    },
+    "amugoodbad229/scartissue-tinyaya-evals": {
+      "expected_sha256": "b137ebe2ca168ccf2822dedc74b53fdcaff743f339f1a58043a5ad79daf27b7b",
+      "remote_sha256": "b137ebe2ca168ccf2822dedc74b53fdcaff743f339f1a58043a5ad79daf27b7b",
+      "match": true
+    },
+    "amugoodbad229/scartissue-tinyaya-repair-patches": {
+      "expected_sha256": "8bd0644b376b229f5d198b91c786ebba13a7ade8fd08d3e47857f908b4860cab",
+      "remote_sha256": "8bd0644b376b229f5d198b91c786ebba13a7ade8fd08d3e47857f908b4860cab",
+      "match": true
+    },
+    "amugoodbad229/scartissue-tinyaya-abliteration-patches": {
+      "expected_sha256": "bef22741aa71d0746963864e1b65af201b51b4b7debe123a77f7755004330c5a",
+      "remote_sha256": "bef22741aa71d0746963864e1b65af201b51b4b7debe123a77f7755004330c5a",
+      "match": true
+    }
+  },
+  "collections": {
+    "amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0": {
+      "title": "ScarTissue \u2014 safety drift and repair parameters",
+      "description": "Abliteration drift and repair patches for Cohere Tiny Aya Global, with a loader. Research deltas, not a checkpoint; calibration failed.",
+      "items": [
+        {
+          "type": "model",
+          "id": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+          "note": "Parameter deltas + loader"
+        }
+      ]
+    },
+    "amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46": {
+      "title": "ScarTissue \u2014 evaluation data and research results",
+      "description": "Recorded generations, frozen judge verdicts, task measurements and the safety corpus. Exploratory; human audit pending.",
+      "items": [
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-results",
+          "note": "Write-up, evidence ledger, artifact checksums, per-run JSON"
+        },
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-evals",
+          "note": "Frozen prompts, completions, frontier table"
+        },
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+          "note": "Curated corpus and published split"
+        },
+        {
+          "type": "space",
+          "id": "amugoodbad229/scartissue",
+          "note": "Static decision workbench"
+        }
+      ]
+    }
+  },
+  "files_deleted": false,
+  "live_pages": {
+    "model_collection": {
+      "url": "https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0",
+      "http": 200,
+      "title_visible": true
+    },
+    "dataset_collection": {
+      "url": "https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46",
+      "http": 200,
+      "description_visible": true
+    },
+    "model_card": {
+      "url": "https://huggingface.co/amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "http": 200,
+      "title_visible": true
+    }
+  },
+  "dataset_split_explanation": "One parameter repository plus evidence separated by kind (generations, result tables, curated corpus); patch-only datasets are byte-identical mirrors kept for old links.",
+  "collection_duplicate_entries_unlisted": true,
+  "verified_at": "2026-11-09T17:20:30.516090+00:00"
+}

@@ -7,7 +7,7 @@ abliterated variant, the study compares sparse, full-support and circuit-restric
 It examines harmful compliance, refusal of benign requests and retained task performance together, rather
 than treating restored refusal as proof of safety.
 
-[Research article](_research/HF-ARTICLE.md) · [Reproduction guide](REPRODUCE.md) · [Evidence manifest](results/manifest.json)
+[Reproduction guide](REPRODUCE.md) · [Evidence manifest](results/manifest.json)
 
 ## Track and selected goals
 
@@ -43,7 +43,13 @@ interchangeable with reduced harm, and benchmark retention is not general capabi
 
 - **Model collection:** [Repair parameters and model artifacts](https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0)
 - **Dataset collection:** [Evaluation evidence and curated data](https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46)
-- **Article:** [Prepared draft](_research/HF-ARTICLE.md) — not yet published on Hugging Face.
+- **Article:** not yet published on Hugging Face. The blog article is written, but the account is not
+  currently eligible to publish it, so there is no public article URL yet.
+
+Why the data is split across repositories: the parameter download is one repository (the patch-only
+repositories duplicate it and are kept only for existing links), while the evidence is separated by
+kind — recorded generations, structured result tables, and the curated corpus. Together they are one
+recorded run, not several studies.
 
 ## Reproduce and inspect
 

@@ -23,6 +23,7 @@ def test_readme_keeps_required_collections_and_private_form_off_public_surfaces(
     for key in ("model_collection", "dataset_collection"):
         assert publication["urls"][key]["url"] in readme
     assert "SUBMISSION-FORM" not in readme
+    assert "_research/HF-ARTICLE.md" not in readme, "the repository draft is not a published article"
     manifest = json.loads((ROOT / "results/manifest.json").read_text(encoding="utf8"))
     assert "submission_form" not in manifest
     assert "not yet published on Hugging Face" in readme or "https://huggingface.co/blog/" in readme
