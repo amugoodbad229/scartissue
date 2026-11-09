@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 UPSTREAM = ROOT.parent / "ScarTissue/repos/AuditKIT"
 AUDITKIT_COMMIT = "71316da345784ff220d5ed59337441a59ab31526"
 REMOTE = "/work/scaartissue"
+PRIVATE_RESEARCH = "SUBMISSION-FORM*.md"
 image = (modal.Image.debian_slim(python_version="3.12")
          .apt_install("nodejs", "chromium")
          .uv_sync(str(ROOT), frozen=True, uv_version="0.12.23")
@@ -30,12 +31,14 @@ image = (modal.Image.debian_slim(python_version="3.12")
          .add_local_dir(str(ROOT / "results"), f"{REMOTE}/results")
          .add_local_dir(str(ROOT / "1-curate"), f"{REMOTE}/1-curate")
          .add_local_dir(str(ROOT / "space"), f"{REMOTE}/space")
-         .add_local_dir(str(ROOT / "_research"), f"{REMOTE}/_research")
+         .add_local_dir(str(ROOT / "_research"), f"{REMOTE}/_research",
+                        ignore=[PRIVATE_RESEARCH])
          .add_local_dir(str(ROOT / "report"), f"{REMOTE}/report",
                         ignore=["*.pdf", "*.png", "__pycache__", "*.pyc"])
          .add_local_file(str(ROOT / "README.md"), f"{REMOTE}/README.md")
          .add_local_file(str(ROOT / "REPRODUCE.md"), f"{REMOTE}/REPRODUCE.md")
-         .add_local_dir(str(ROOT / "human_audit"), f"{REMOTE}/human_audit", ignore=["__pycache__"])
+         .add_local_dir(str(ROOT / "human_audit"), f"{REMOTE}/human_audit",
+                        ignore=["__pycache__", "node_modules", ".vercel", ".env*"])
          .add_local_dir(str(UPSTREAM / "src"), "/work/ScarTissue/repos/AuditKIT/src",
                         ignore=["__pycache__", "*.pyc"])
          .add_local_file(str(UPSTREAM / "LICENSE.md"), "/work/ScarTissue/repos/AuditKIT/LICENSE.md")
@@ -48,8 +51,9 @@ def source_hashes(root: Path) -> dict[str, str]:
     paths = [root / "pyproject.toml", root / "uv.lock"]
     for folder in ("experiments", "tests", "artifacts", "space", "_research", "report", "human_audit"):
         paths.extend(p for p in (root / folder).rglob("*")
-                     if p.suffix in {".py", ".js", ".cjs", ".html", ".css", ".md", ".tex"}
-                     and "__pycache__" not in p.parts)
+                     if p.suffix in {".py", ".js", ".jsx", ".mjs", ".cjs", ".json", ".html", ".css", ".md", ".tex"}
+                     and not {"__pycache__", "node_modules", ".vercel"}.intersection(p.parts)
+                     and not (folder == "_research" and p.match(PRIVATE_RESEARCH)))
     paths.extend(p for name in ("README.md", "REPRODUCE.md")
                  if (p := root / name).exists())
     return {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
@@ -70,6 +74,8 @@ def validate(expected: dict[str, str], auditkit_hashes: dict[str, str]) -> dict:
     import platform
 
     remote_root = Path(REMOTE)
+    if any((remote_root / "_research").rglob(PRIVATE_RESEARCH)):
+        raise ValueError("Private submission forms must not be present in the validation snapshot")
     verify_snapshot(remote_root, expected)
     upstream = remote_root.parent / "ScarTissue/repos/AuditKIT"
     actual = {p.relative_to(upstream).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
@@ -79,6 +85,7 @@ def validate(expected: dict[str, str], auditkit_hashes: dict[str, str]) -> dict:
         raise ValueError("AuditKIT source/license snapshot mismatch")
     started = time.monotonic()
     output = {"status": "running", "execution": "Modal CPU", "source_sha256": expected,
+              "private_submission_forms_absent": True,
               "auditkit_commit": AUDITKIT_COMMIT, "auditkit_source_sha256": actual,
               "environment": {"python": platform.python_version(), "platform": platform.platform(),
                               "packages": {k: importlib.metadata.version(k) for k in ("pytest", "numpy", "modal")}},
@@ -112,6 +119,7 @@ def validate(expected: dict[str, str], auditkit_hashes: dict[str, str]) -> dict:
     if output["submission_verification"]["status"] != "passed":
         output["status"] = "failed"
     output["browser_screenshots"] = {p.name: p.read_bytes() for p in Path("/tmp").glob("scartissue_workbench_*.png")}
+    output["browser_screenshots"].update({p.name: p.read_bytes() for p in Path("/tmp").glob("scartissue_audit_*.png")})
     audit = Path("/tmp/scartissue_workbench_accessibility.json")
     if audit.exists():
         output["browser_accessibility"] = json.loads(audit.read_text())

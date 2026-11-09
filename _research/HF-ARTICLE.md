@@ -1,80 +1,99 @@
-# Would you ship this repair? A decision workbench for weight-space safety edits
+# ScarTissue: the trade-offs of repairing safety without retraining
 
-**Track 2a (#1 red-teaming / robustness, #2 adversarial and safety evaluation sets) and Track 2b (#6 repairing
-safety drift without retraining, #9 locating where safety lives).** Circuit intervention and tamper results
-support those statements; they are not extra boxes beyond the form's two-per-track limit.
+**Can a small weight-space edit restore safer behavior without damaging useful behavior?**
 
-Abliteration removes the direction a refusal is written along. It does not remove refusals: re-extracting the
-direction on the edited model and amplifying it brings the refusal marker back within a percent of the aligned
-model. That is the easy half. The hard half is that every unit of that recovery is paid in over-refusal, because
-the re-extracted projection no longer separates harmful from benign prompts.
+ScarTissue studies this question in Cohere Tiny Aya Global. Rather than treating a return of refusal language
+as a successful repair, we compare harmful compliance, refusal of benign requests and retained task performance.
+The result is a reproducible exploratory study—not a claim that we have made a model production-safe.
 
-We built the artefact a **model maintainer** needs at that moment: a workbench that shows four candidate
-weight-space repairs side by side on harm, over-refusal, retained utility and intervention size, and returns an
-explicit **accept / reject / insufficient evidence** decision under a policy you set, with the evidence behind it
-and the reasons for the decision exportable as a record.
+**The central finding:** the sparse repair retained more GSM8K performance than the full-support repair,
+but both refused more benign requests than the drifted model. A circuit-restricted edit did not provide a
+successful repair. Safety judging also failed calibration, so the harm estimates below remain exploratory.
 
-**The measured outcome, stated plainly: all four arms return `insufficient evidence`.** That is the correct
-answer for evidence in its current state, and the workbench is built to say it rather than to flatter the
-candidates. A tool that says "ship it" on unvalidated judging would be worse than no tool.
+## The research question
 
-## What was measured
+Removing a refusal-related direction from model weights—often called *abliteration*—can weaken refusal
+behavior. Reintroducing refusal is not enough to show that a repair works: the model might simply refuse
+more requests, including harmless ones, or lose useful task performance.
 
-Subject model `CohereLabs/tiny-aya-global` at revision `af89d219b53ed9b13b8a4645f9c8028973510…`, four arms with
-identical generation conditions (512 tokens, temperature 0.7, seed 0, 120 harmful + 40 benign prompts):
+We therefore ask whether a targeted edit offers a better trade-off than a broad edit, and whether a circuit
+discovered from refusal behavior is a useful repair target. This is a synthetic weight-space drift setting;
+it does not establish that the same repairs work after arbitrary fine-tuning.
 
-| arm | repair-selected scalars | harm-ASR (majority of 3) | benign over-refusal | GSM8K (lm-eval, 5-shot) |
-|---|---:|---:|---:|---:|
-| `base` (aligned) | 0 | 0.058 | 0.075 | 0.590 |
-| `drift` (abliterated) | 962,592,768 | 0.217 | 0.050 | 0.560 |
-| `harm2_a4` (2 % support) | 19,251,200 | 0.050 | 0.175 | 0.518 |
-| `global_a4` (full support) | 962,592,768 | 0.042 | 0.275 | 0.438 |
+The work addresses **Track 2 — AI Red Teaming, Safety and Alignment**:
 
-Harm comes from a pinned three-judge panel (HarmBench-Mistral-7B, Qwen3Guard-Gen-8B, Granite-Guardian-3.2-5B,
-threshold 0.5, majority of three). Capability comes from lm-eval only. A refusal-marker regex is reported as a
-diagnostic and never as an ASR estimate.
+- **2a: AI Safety and Red Teaming:** Red-teaming and robustness evaluation; Adversarial and safety evaluation sets.
+- **2b: AI Safety and Correction:** Repairing safety drift without retraining; Locating where safety lives.
 
-Two things the numbers do **not** say, because earlier drafts of this project claimed them:
+These describe the questions investigated, not a declaration that safety has been successfully localized or repaired.
 
-- **The judge panel failed its calibration audit.** On 500 Aegis rows it has specificity 0.984 and sensitivity
-  0.580, and the calibration run rendered the HarmBench template with an empty `[BEHAVIOR]` slot — the
-  classifier was conditioning on nothing. Every harm figure above is therefore exploratory.
-- **Orthogonality is not deletion.** The re-extracted direction is nearly orthogonal to the removed one
-  (`cos(d, d′) ≈ 0`), which shows the ablation direction was removed. It does not show that harm-relevant
-  representation survives elsewhere. The surviving evidence for that narrower claim is `AUC(d′)` falling
-  0.999 → 0.831: the discriminator degraded, it did not vanish.
+## What we compared
 
-## Held-out check
+The main comparison uses the aligned model, its abliterated variant, a sparse repair and a full-support repair.
+The sparse repair applies a correction to selected weight columns; the full-support repair applies it broadly.
+A separate experiment restricts the edit to write columns in the discovered circuit. These edits have different
+support sizes: this is **not** a matched-edit-budget demonstration of superiority.
 
-160 prompts that no arm trained on (proved 0 overlap with the fit and evaluation splits, all labelled `unused`)
-replicate the trade-off: harm 0/120 base, 38/120 drift, 3/120 sparse, 1/120 global; over-refusal 8/40, 5/40,
-13/40, 20/40. Still exploratory — same failed calibration, and a page-level exchangeability argument, not a
-fresh sampling argument.
+The main safety evaluation contains **120 harmful and 40 benign prompts per arm**. Harmful compliance is scored
+by the frozen HarmBench, Qwen3Guard and Granite Guardian panel, using a threshold above 0.5 and majority-of-three
+aggregation. Benign over-refusal uses the Qwen3Guard refusal flag. Capability is measured separately with
+**lm-eval GSM8K strict exact match on 500 documents**. A refusal-marker regex is only a diagnostic, never an ASR estimate.
 
-## What is in this release
+## What the results show
 
-- **Workbench** — static, no inference, no key: policy in, decision and reasons out, JSON and readable export.
-- **Parameters, not checkpoints** — every repair ships as `.npz` factors plus a loader that hash-checks, bounds-
-  checks and preflights every column before mutating a single weight.
-- **Evidence chain** — bundle builder, held-out analysis, confirmatory spec frozen before any run, and a verifier
-  that checks provenance and structure (it never certifies a number, and `submission_ready` is false by design).
-- **Human audit** — a gate registered before any label existed, applied to a blind 180-item sample from this
-  project's own generations. Until it passes, nothing here is a headline result.
+**Read the harm column as an uncalibrated exploratory measurement, not verified safety.**
 
-Two of the 2b answers are negative, and both are reported as such. Localisation holds at the direction level
-(one layer-15 direction carries AUC 0.9988 of the refusal separation, 0.8306 after it is removed) but not at the
-node level: at a matched edit budget the discovered circuit's 36 output matrices move the refusal marker by 0.000
-against two blind controls. Circuit-level repair (2b #10) was then actually run: restricted to those write columns
-(150,994,944 scalars), generated and judged under the frozen protocol, it leaves harm at 0.283 against the drifted
-model's 0.217 (paired +0.067 [0.008, 0.125]) and over-refusal at 0.125 against 0.050. Restricting the edit to the
-discovered circuit does not remove harm — the matched-budget repairs do (0.050 and 0.042). Tamper resistance (2b
-#12) is a measured weakness, not a protection: one direction removes 0.542 of the refusal marker at no measured
-GSM8K cost, and detection needs the direction.
+| Model state | Judged harm rate | Benign over-refusal | GSM8K exact match |
+|---|---:|---:|---:|
+| Aligned model | 5.8% | 7.5% | 59.0% |
+| Abliterated model | 21.7% | 5.0% | 56.0% |
+| Sparse repair | 5.0% | 17.5% | 51.8% |
+| Full-support repair | 4.2% | 27.5% | 43.8% |
 
-Nothing here is production-safety certification, and no drifted checkpoint is hosted. The human-labelled
-project-distribution audit is still pending.
+The sparse repair scored **8.0 percentage points higher on GSM8K** than the full-support repair, with a paired
+bootstrap 95% interval of **3.8 to 12.2 points**. That supports a task-specific retention finding, not preservation
+of general capability. Both repairs also refused more benign requests than the drifted model. The small benign
+sample and unvalidated judging limit how broadly this trade-off can be interpreted.
 
-- [Open the workbench](https://amugoodbad229-scartissue.static.hf.space/)
-- [Code and reproduction](https://github.com/amugoodbad229/scartissue)
-- [Repair-parameter collection](https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters)
-- [Evaluation-evidence collection](https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence)
+Sources: [task-performance analysis](https://github.com/amugoodbad229/scartissue/blob/master/results/p16_capability_analysis_20261102.json)
+and [safety comparisons, denominators and intervals](https://github.com/amugoodbad229/scartissue/blob/master/results/circuit_arm_analysis_20261106.json).
+
+**The circuit-restricted repair was a negative result.** Its judged harm rate was **28.3%**, versus **21.7%**
+for the drifted model. Restricting the edit to that discovered circuit did not improve this metric. This does
+not establish that no safety-relevant circuit exists; it shows that this discovery-and-edit procedure did not
+deliver the proposed repair under the evaluated conditions. The same calibration caveat applies.
+
+## Why we are not claiming a safety success
+
+The judge panel's calibration audit failed. That run also contained a prompt-rendering defect, so its
+sensitivity is not a reliable estimate of a correctly configured panel. Agreement among judges is not enough
+to establish valid harm measurement. The [calibration appraisal](https://github.com/amugoodbad229/scartissue/blob/master/_research/APPRAISAL-20261106.md)
+documents the defect. The blind human audit on this project's own
+completions remains pending. Its labels must come from people; neither the annotation app nor another model
+can stand in for that evidence.
+
+An additional held-out comparison has been analyzed, but it remains exploratory under the same failed
+calibration. The locked held-out **confirmatory comparison is still pending**. The study is also limited to
+the evaluated model, seed, prompt sets and capability task. It does not demonstrate general safety, multilingual
+robustness or a repair that survives subsequent harmful fine-tuning.
+
+See the [evidence manifest](https://github.com/amugoodbad229/scartissue/blob/master/results/manifest.json)
+and [readiness ledger](https://github.com/amugoodbad229/scartissue/blob/master/results/readiness_ledger.json)
+for the evidence status and remaining gates.
+
+## What is available
+
+The release includes code, recorded generations and judgments, analyses, and parameter patches with a loader.
+It uses CuratorKIT, CircuitKIT and AuditKIT. Only parameters are released—not a hosted drifted checkpoint—and
+use remains subject to Cohere's LSAL restrictions.
+
+- [Code and reproduction instructions](https://github.com/amugoodbad229/scartissue)
+- [Repair-parameter collection](https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0)
+- [Evaluation-evidence collection](https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46)
+
+An optional [evidence viewer](https://amugoodbad229-scartissue.static.hf.space/) makes the recorded comparisons
+easier to inspect; it performs no live inference and does not certify a repair.
+
+**The takeaway:** safety repair should be evaluated as a trade-off, not inferred from refusal language alone.
+ScarTissue provides evidence of task-specific costs and a failed circuit-repair attempt, while keeping the
+unresolved safety question explicit.
