@@ -7,7 +7,8 @@ abliterated variant, the study compares sparse, full-support and circuit-restric
 It examines harmful compliance, refusal of benign requests and retained task performance together, rather
 than treating restored refusal as proof of safety.
 
-[Research article](https://amugoodbad229-scartissue.static.hf.space/article.html) · [Reproduction guide](REPRODUCE.md) · [Evidence manifest](results/manifest.json)
+**Read the article:** [ScarTissue: the trade-offs of repairing safety without retraining](https://amugoodbad229-scartissue.static.hf.space/article.html)
+· [Reproduction guide](REPRODUCE.md) · [Evidence manifest](results/manifest.json)
 
 ## Track and selected goals
 
@@ -39,13 +40,14 @@ These are the research goals addressed, not claims that every goal was achieved.
 The study is limited to the evaluated model, settings and capability task. Restored refusal is not
 interchangeable with reduced harm, and benchmark retention is not general capability preservation.
 
-## Hugging Face Collections and Article 
+## Hugging Face Collections and Article
 
 - **Model collection:** [Repair parameters and model artifacts](https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0)
 - **Dataset collection:** [Evaluation evidence and curated data](https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46)
-- **Article:** [written account on the project's Hugging Face Space](https://amugoodbad229-scartissue.static.hf.space/article.html)
-  — not yet published on Hugging Face as a blog article, so there is no `/blog/` URL yet. The Space page
-  is a static article built from the same text; it is labelled as a Space page, not a blog post.
+- **Article:** https://amugoodbad229-scartissue.static.hf.space/article.html — the full written account,
+  hosted on the project's Hugging Face Space ([Space page](https://huggingface.co/spaces/amugoodbad229/scartissue)).
+  It is a static page, not a `/blog/` article: publishing there needs a PRO or Team/Enterprise account,
+  which this account does not have, so the article is **not yet published on Hugging Face** as a blog post.
 
 Why the data is split across repositories: the parameter download is one repository (the patch-only
 repositories duplicate it and are kept only for existing links), while the evidence is separated by
