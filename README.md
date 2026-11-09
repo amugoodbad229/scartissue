@@ -39,7 +39,7 @@ These are the research goals addressed, not claims that every goal was achieved.
 The study is limited to the evaluated model, settings and capability task. Restored refusal is not
 interchangeable with reduced harm, and benchmark retention is not general capability preservation.
 
-## Hugging Face submission links
+## Hugging Face Collections and Article 
 
 - **Model collection:** [Repair parameters and model artifacts](https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0)
 - **Dataset collection:** [Evaluation evidence and curated data](https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46)
