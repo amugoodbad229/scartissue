@@ -83,6 +83,15 @@
       "profile": "scartissue-replacement",
       "log": "logs/modal_validation_privacy_docs_20261110.log",
       "purpose": "Validate private-form upload exclusion, actual Modal mount, required public collection links and existing workflows after research-first documentation edits. CPU only, no model calls or automatic retries; reserve is not billing."
+    },
+    {
+      "job": "readme_cards_cpu_20261110",
+      "reserved_usd": 1,
+      "gpu": false,
+      "reserved_at": "2026-11-10T02:45:00Z",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_readme_cards_20261110.log",
+      "purpose": "Re-validate after the README/card/Hub-presentation rewrite and the codebase check-in, so the passing suite matches the current source snapshot. CPU only, no model calls, no automatic retries; reserve is not billing."
     }
   ],
   "reservation_history": [

@@ -1,0 +1,447 @@
+{
+  "schema": "scartissue.readiness/1",
+  "checked_at": "2026-11-09T17:41:04.278049+00:00",
+  "status": "not_submission_ready",
+  "submission_ready": false,
+  "integrity_status": "passed",
+  "study_quality": {
+    "headline_eligible": false,
+    "calibration_status": "failed",
+    "scope": "exploratory",
+    "human_project_audit": "pending",
+    "errors": []
+  },
+  "claims": [
+    {
+      "id": "judge-calibration",
+      "status": "pending",
+      "sources": [
+        "results/calibration_gate_20261106.json",
+        "results/human_audit_sample_20261106.json"
+      ],
+      "reason": "Blind 180-item sample and a gate registered before labelling exist; labels not collected."
+    },
+    {
+      "id": "exploratory-comparison",
+      "status": "evaluated",
+      "sources": [
+        "results/p21_safety_length_full_20261103_001722.json",
+        "results/p19_safety_judges_20261103_002850.json",
+        "results/p21_length_analysis_20261103.json",
+        "results/p16_capability_analysis_20261102.json"
+      ],
+      "reason": "Full generations and judgments are replayable; failed calibration prevents confirmation or admission."
+    },
+    {
+      "id": "safety-repair-confirmation",
+      "status": "invalid",
+      "sources": [
+        "results/p21_safety_length_full_20261103_001722.json",
+        "results/p19_safety_judges_20261103_002850.json",
+        "results/p21_length_analysis_20261103.json",
+        "results/p16_capability_analysis_20261102.json"
+      ],
+      "reason": "The bundled exploratory comparison is not evidence of production safety or repair equivalence."
+    },
+    {
+      "id": "heldout-comparison",
+      "status": "evaluated",
+      "sources": [
+        "results/p24_heldout_20261103_021508.json",
+        "results/p19_safety_judges_20261103_023754.json",
+        "results/p24_heldout_20261103_021508_state_checks.json",
+        "results/heldout_analysis_20261106.json"
+      ],
+      "reason": "Untouched prompts, already-judged completions, split disjointness and paired estimates are recorded in experiments/analyse_heldout.py. Still exploratory: the judge panel failed calibration, so this cannot confirm a repair claim."
+    },
+    {
+      "id": "circuit-intervention",
+      "status": "evaluated",
+      "sources": [
+        "results/circuit_body_recovery_20261106.json",
+        "results/p23_circuit_20261103_022433.json",
+        "results/p30_circuit_arm_eval_20261106_232321.json",
+        "results/circuit_arm_analysis_20261106.json"
+      ],
+      "reason": "The recovered circuit patch was generated and judged under the same protocol: harm 0.283 vs drift 0.217 (paired +0.067 [0.008, 0.125]) and over-refusal 0.125 vs 0.050, so restricting the repair to the discovered circuit did NOT remove harm — it did slightly worse than the unrestricted drift arm and far worse than the matched-budget repairs. Exploratory (panel uncalibrated); no capability run for this arm."
+    },
+    {
+      "id": "localisation-result",
+      "status": "evaluated",
+      "sources": [
+        "results/localisation_analysis_20261106.json",
+        "results/p23_circuit_20261103_022433.json",
+        "results/p1_grid.json",
+        "results/p2_dose.json"
+      ],
+      "reason": "Direction-level localisation is measured (AUC 0.9988 to 0.8306 after ablation); the same analysis reports that circuit-node selection is NOT selective at a matched edit budget (0.000 difference against both blind controls). Exploratory re-analysis, reported as such."
+    },
+    {
+      "id": "tamper-result",
+      "status": "evaluated",
+      "sources": [
+        "results/tamper_analysis_20261106.json",
+        "results/p2_dose.json",
+        "results/p3b_sweep.json",
+        "results/p3c_blind.json"
+      ],
+      "reason": "Removal and detection are measured on stored runs: a single direction cuts the refusal marker by 0.542 at no measured GSM8K cost, direction-aligned tampering at 10 % support is visible (+0.317 over its blind control) while blind tampering of the same size is not. Exploratory: refusal marker, uncalibrated panel."
+    },
+    {
+      "id": "multilingual-confirmation",
+      "status": "invalid",
+      "sources": [
+        "results/p29_multilingual_20261103_025940.json"
+      ],
+      "reason": "Legacy non-finite projection results remain withdrawn; unfinished replacement output is not a result."
+    },
+    {
+      "id": "project-human-audit",
+      "status": "pending",
+      "sources": [
+        "results/p21_safety_length_full_20261103_001722.json",
+        "results/p19_safety_judges_20261103_002850.json",
+        "results/p21_length_analysis_20261103.json",
+        "results/p16_capability_analysis_20261102.json"
+      ],
+      "reason": "Human annotation and adjudication on project completions have not been recorded."
+    },
+    {
+      "id": "publication",
+      "status": "pending",
+      "sources": [
+        "results/manifest.json"
+      ],
+      "reason": "Local software does not establish public release, rebuilt report or license/security sign-off."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "1-curate/corpus/corpus.jsonl",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "529bd20395810ae9ec6225a41f2795200de08bb159ac0a16b853c3a083f05d29",
+      "bytes": 785621,
+      "available": true
+    },
+    {
+      "path": "1-curate/corpus/corpus_split.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "fe0014e4c3963e053b7985b8951164b1c91ebda37abb50e75646152fc645f736",
+      "bytes": 26647,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/calibration_gate_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "79f0d5ca710d76fe7a7cfe755fa5575920da951c170c02383f43457846389fd1",
+      "bytes": 1873,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/circuit_arm_analysis_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "cda0b4c49f3eec4fcf84d94fa09bc568936cc797fd0b99741e6b9b7ee77dd6f0",
+      "bytes": 5589,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/circuit_body_recovery_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "f542780f23b5a596ae3639882326ec7fdd8794bc6b85e3c14f74c874c7257679",
+      "bytes": 2010,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/confirmatory_spec_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "7cf5b1c44eb5636a4993a47431a9ae58c6818ad3032b34a26713ec1a30418df5",
+      "bytes": 7293,
+      "available": true,
+      "recorded": {
+        "status": "frozen; not yet executed"
+      }
+    },
+    {
+      "path": "results/heldout_analysis_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "c2211f4747e5b83c82b0d9ccbf1b80d9a13c55d6666dec45b3350635573a18e8",
+      "bytes": 22570,
+      "available": true,
+      "recorded": {
+        "calibration_status": "failed",
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/human_audit_sample_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "d86d92019e46228767f83527db5318830c655751db960c58c15de99d8e363464",
+      "bytes": 291848,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/localisation_analysis_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "7a6a1197da9418c339de3bf7b307ddd44827f542007f2e963aacb23098e1e5a2",
+      "bytes": 4025,
+      "available": true,
+      "recorded": {
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/manifest.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "f79a356946ead65647517e08c461530cb5cff22c42724f323730f6bdcf14b80f",
+      "bytes": 4975,
+      "available": true,
+      "recorded": {
+        "calibration_status": "failed",
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/p16_capability_analysis_20261102.json",
+      "status": "evaluated",
+      "evaluation": "Rebuilt and hash-linked; scientific eligibility remains separate",
+      "sha256": "a38e8c0754f87b9ce4c130f9f6e0b792a7205e006068d9f2e2b6502c6587f056",
+      "bytes": 7806,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/p19_safety_judges_20261103_002850.json",
+      "status": "evaluated",
+      "evaluation": "Rebuilt and hash-linked; scientific eligibility remains separate",
+      "sha256": "781d5dfd140ed54dbd20889080f29a8c8fdd9fa93d81de517ac59dbfd552b6d6",
+      "bytes": 35101339,
+      "available": true,
+      "recorded": {
+        "status": "passed",
+        "calibration_status": "failed",
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/p19_safety_judges_20261103_023754.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "3721f75adcf03baa0778d5419a9f8d46ccb19465ace2f39f7e97be54352304cf",
+      "bytes": 29792650,
+      "available": true,
+      "recorded": {
+        "status": "passed",
+        "calibration_status": "failed",
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/p1_grid.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "167d8750ab5bc233fc616edf10629642e0b2314551489cd3c879891c1d279ed7",
+      "bytes": 101681,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/p21_length_analysis_20261103.json",
+      "status": "evaluated",
+      "evaluation": "Rebuilt and hash-linked; scientific eligibility remains separate",
+      "sha256": "4c14d886a35ef1eeb24f390c3bc9deccfb1f7fc77a5fa4457c8c08abce1981c7",
+      "bytes": 584683,
+      "available": true,
+      "recorded": {
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/p21_safety_length_full_20261103_001722.json",
+      "status": "evaluated",
+      "evaluation": "Rebuilt and hash-linked; scientific eligibility remains separate",
+      "sha256": "db249ab4ceddf23a08d7703600a795c6a1537b7e7b2b81a6660a7029c6ddca18",
+      "bytes": 12774540,
+      "available": true,
+      "recorded": {
+        "status": "passed",
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/p22_judge_validation_20261103_020927.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "4b626822a3f7fa1b1fd79dc0a99f54665f23871d6c397fef2f45ba6ddb769699",
+      "bytes": 5867206,
+      "available": true,
+      "recorded": {
+        "status": "passed"
+      }
+    },
+    {
+      "path": "results/p23_circuit_20261103_022433.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "a974b092e9dff2efa0de00829e2c72fe5862ee1679d1db416e1613979717df06",
+      "bytes": 26851,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/p24_heldout_20261103_021508.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "7fd67ab5ea7c09612488336fdde1971f16606fb3c0e0fb83f2848ae604593227",
+      "bytes": 11065343,
+      "available": true,
+      "recorded": {
+        "status": "failed",
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/p24_heldout_20261103_021508_state_checks.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "102e5557cf35b7191b3cb259009f0d7a9947d05b0a397945a3d3674c699c53b8",
+      "bytes": 897,
+      "available": true,
+      "recorded": {
+        "passed": true
+      }
+    },
+    {
+      "path": "results/p29_multilingual_20261103_025940.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "18bc13d88a098d7416356f43b0f85dab5866072d7b2da1962ef34b1fe1972f36",
+      "bytes": 33391,
+      "available": true,
+      "recorded": {
+        "status": "running",
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/p2_dose.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "2e5aa04a94f8f05be5ca8bdf7541cda090d7a68a62b205bf13d64372f7d4ff67",
+      "bytes": 14495,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/p30_circuit_arm_eval_20261106_232321.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "c80fd10ae8f3b0e30d4cc5d0d96bc5d6dc2dc8bb915dbac64415b2be02900994",
+      "bytes": 8682278,
+      "available": true,
+      "recorded": {
+        "status": "passed",
+        "calibration_status": "failed",
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/p30_circuit_arm_eval_note_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "3abc8be8fecccd3106f3765dca7a6aa3c1723292b775194c0d0db120c07c3079",
+      "bytes": 2089,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/p3b_sweep.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "dadd20f2200032ec2e695b38c8b352a5a0912cc2124e4b456f2b8a0a209927a7",
+      "bytes": 431206,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/p3c_blind.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "83923097dfd34b439f7bd99b78b031804472b1fcfc5904935d112eda7d5c48d2",
+      "bytes": 286148,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/parquet_publish_manifest.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "85b6a781a54c7df9e1d427a3e7bc61673ba2706251a65fc98ab7dcbcc3b840df",
+      "bytes": 7588,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/patch_checksums.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "935d9e3d3f9a70047a22fa2d92123fe235dbbd5386bed70253bb29a418711c25",
+      "bytes": 1973,
+      "available": true,
+      "recorded": {}
+    },
+    {
+      "path": "results/tamper_analysis_20261106.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "71f3b40b858e5e91f1d8d7ebca099f7ca043cc633c9fe32df12652da9e82773f",
+      "bytes": 7514,
+      "available": true,
+      "recorded": {
+        "headline_eligible": false
+      }
+    },
+    {
+      "path": "results/toolkit_provenance.json",
+      "status": "pending",
+      "evaluation": "not independently validated",
+      "sha256": "b43958b1d177d6b173302737fada5b871da6026b5311dd6ac46ecbfa761dfe7a",
+      "bytes": 6956,
+      "available": true,
+      "recorded": {}
+    }
+  ],
+  "blockers": [
+    "Judge calibration has not passed",
+    "Evidence is not headline eligible",
+    "Project-distribution human audit is pending",
+    "In-domain judge calibration has not been measured on human labels",
+    "Comparison is exploratory, not confirmatory",
+    "Report rebuild and publication require separate sign-off"
+  ],
+  "status_definitions": {
+    "valid": "Explicitly scoped sign-off, never inferred from a file existing",
+    "evaluated": "An evaluation exists; it may be exploratory or have failed calibration",
+    "pending": "Audit, execution or release sign-off remains incomplete",
+    "invalid": "This claim cannot be made from the current evidence"
+  },
+  "limitations": [
+    "Hashes establish internal consistency, not authenticity or scientific validity.",
+    "A passing integrity check cannot certify safety or submission readiness.",
+    "Historical PDF and public endpoints are not validated by this check."
+  ]
+}
