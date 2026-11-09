@@ -105,6 +105,5 @@
   ],
   "licence": "Cohere LSAL 1.2/1.1, research use; parameters published, no drifted checkpoint",
   "provenance": "results/provenance_final.json",
-  "report": "report/report.pdf",
-  "submission_form": "_research/SUBMISSION-FORM-20261106.md"
+  "report": "report/report.pdf"
 }
