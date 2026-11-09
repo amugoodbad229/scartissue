@@ -17,3 +17,9 @@ results/p24_heldout_2*.json
 results/p25_*.json
 results/p26_circuit_arm_*.json
 .scratch/
+
+# Personal submission drafts stay on this machine, not in Git.
+/_research/SUBMISSION-FORM*.md
+
+.vercel
+.env*
