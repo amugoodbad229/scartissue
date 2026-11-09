@@ -16,6 +16,12 @@ Updated 2026-11-10. Mirrors the on-screen task queue; machine-readable scientifi
 - [x] Validate private-form exclusions and documentation guardrails on Modal: both invocation forms passed,
   including the actual upload mount check. Evidence: `results/modal_validation_20261109T162150401703Z.json`;
   named log: `logs/modal_validation_privacy_docs_20261110.log`.
+- [x] Keep the public repository self-contained: the React audit app, its blind-sample generator, the
+  Modal live smoke and the browser tests are tracked, and build output, secrets and personal drafts stay ignored.
+- [x] Rewrite the README short and research-first (question, compared states, findings, limits, track/goals,
+  Hugging Face links, reproduction); the article URL appears in the lead line and in plain text.
+- [x] Re-validate on Modal after the documentation and Hub-card rewrite: 180 passed in both invocation forms
+  (`results/modal_validation_20261109T174055559336Z.json`, log `logs/modal_validation_readme_cards_20261110.log`).
 - [x] Publish only the rewritten README/article and privacy regression guards; leave unrelated pending app work untouched.
   Remote verification: `results/research_docs_release_20261110.json`. The GitHub article remains a draft,
   not a published Hugging Face blog article.
