@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-11-09T17:19:51.401858+00:00",
+  "created_at": "2026-11-09T17:25:57.270085+00:00",
   "cards_uploaded": {
     "amugoodbad229/scartissue-tinyaya-repair-parameters": "747826b2b68aba5249d58abd8893eff18fde756ca9c55e801dc538e2f733382c",
     "amugoodbad229/scartissue-tinyaya-results": "4cb0b135a71cce92c74db9d43459883b06c7821bf0e70f3b77a98e058b00436f",
@@ -64,34 +64,10 @@
           "type": "dataset",
           "id": "amugoodbad229/scartissue-tinyaya-safety-corpus",
           "note": "Curated corpus and published split"
-        },
-        {
-          "type": "space",
-          "id": "amugoodbad229/scartissue",
-          "note": "Static decision workbench"
         }
       ]
     }
   },
   "files_deleted": false,
-  "live_pages": {
-    "model_collection": {
-      "url": "https://huggingface.co/collections/amugoodbad229/scartissue-repair-parameters-6aedb25709af05c05784a9e0",
-      "http": 200,
-      "title_visible": true
-    },
-    "dataset_collection": {
-      "url": "https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-evidence-6aedb2693a8dd1f844817b46",
-      "http": 200,
-      "description_visible": true
-    },
-    "model_card": {
-      "url": "https://huggingface.co/amugoodbad229/scartissue-tinyaya-repair-parameters",
-      "http": 200,
-      "title_visible": true
-    }
-  },
-  "dataset_split_explanation": "One parameter repository plus evidence separated by kind (generations, result tables, curated corpus); patch-only datasets are byte-identical mirrors kept for old links.",
-  "collection_duplicate_entries_unlisted": true,
-  "verified_at": "2026-11-09T17:20:30.516090+00:00"
+  "dataset_split_explanation": "Dataset collection holds three datasets only: evidence tables, raw recorded outputs, and the curated corpus. The demo Space is not a dataset and is linked from the README and cards instead."
 }

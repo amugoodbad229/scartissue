@@ -23,6 +23,15 @@ Updated 2026-11-10. Mirrors the on-screen task queue; machine-readable scientifi
   guide and evidence manifest, states plainly that the blog article is **not yet published on Hugging Face**
   and why, and `tests/test_claim_readiness.py` fails if the repository draft path reappears in the README.
   The Markdown file stays as working notes until a real blog URL exists.
+- [x] Rewrite the five published Hub cards in plain language and rename both submission collections.
+  All five remote READMEs match the local bytes; collection titles and one-line descriptions are live.
+  Evidence: `results/hub_presentation_20261110.json`; publisher:
+  `experiments/publish_hub_cards.py`; guards: `tests/test_hub_cards.py`.
+- [x] Unlist the two byte-identical patch datasets from the model collection (repositories and files kept)
+  and explain the data split in the README, so the collection reads as one study rather than four datasets.
+  Duplication proof: `results/hub_patch_duplication_20261110.json`.
+- [x] Unlist the demo Space from the dataset collection too: it is a demo, not evaluation data. The
+  collection now holds three datasets; the Space stays public and is linked from the README and cards.
 
 ### Responsive audit follow-up
 

@@ -47,6 +47,13 @@ TITLES = {
 
 DUPLICATE_DATASETS = ("amugoodbad229/scartissue-tinyaya-repair-patches",
                      "amugoodbad229/scartissue-tinyaya-abliteration-patches")
+# The Space is a demo, not evaluation data; it is linked from the README and the cards instead.
+DEMO_SPACE = "amugoodbad229/scartissue"
+
+
+def unlisted(slug: str, item_id: str) -> bool:
+    return (slug == MODEL_COLLECTION and item_id in DUPLICATE_DATASETS) or \
+           (slug == DATA_COLLECTION and item_id == DEMO_SPACE)
 
 
 def repo_type_of(repo: str) -> str:
@@ -78,10 +85,11 @@ def main() -> None:
     for slug, (title, description) in TITLES.items():
         assert len(description) <= 150 and len(title) <= 150, slug
         api.update_collection_metadata(slug, title=title, description=description)
-        # The two patch datasets are byte-identical mirrors of files in the model repo
-        # (results/hub_patch_duplication_20261110.json). Unlist them; the repos stay public.
+        # Patch datasets are byte-identical mirrors of files in the model repo
+        # (results/hub_patch_duplication_20261110.json); the Space is not a dataset.
+        # Unlist them; the repositories stay public.
         for item in api.get_collection(slug).items:
-            if slug == MODEL_COLLECTION and item.item_id in DUPLICATE_DATASETS:
+            if unlisted(slug, item.item_id):
                 api.delete_collection_item(slug, item.item_object_id, missing_ok=True)
                 continue
             api.update_collection_item(slug, item.item_object_id,
