@@ -1,0 +1,15 @@
+- Initializing...✓ Initialized. View run at 
+https://modal.com/apps/ayman-cool1971/main/ap-2GD5LALmvTgmQI4IoTk7lr
+- Initializing...- Initializing...
+- Creating objects...\ Creating objects...| Creating objects...
+├── -
+├── -
+├── -
+├── -
+└── -
+Stopping app - uncaught exception raised locally: FileNotFoundError('local file C:\\Users\\Ayman\\OneDrive\\Desktop\\Projects\\SAAS_Projects\\scartissue\\repos\\AuditKIT\\LICENSE.md does not exist').
+┌─ Error ─────────────────────────────────────────────────────────────────────┐
+│ local file                                                                  │
+│ C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue\repos\Aud │
+│ itKIT\LICENSE.md does not exist                                             │
+└─────────────────────────────────────────────────────────────────────────────┘

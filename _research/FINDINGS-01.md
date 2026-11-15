@@ -44,6 +44,27 @@
 > These corrections supersede conflicting conclusions below without rewriting raw results
 > or the frozen protocol. Pending validation is listed in `../TODO.md`.
 
+## Public demonstrator completion — 2026-11-15
+
+The public Space now provides a guided comparison, recorded-answer replay, downloadable
+research evidence, local policy decisions and links to the report, article, code and collections.
+This is a completed evidence demonstrator, not completed safety validation or a deployed model.
+No scientific endpoint, calibration gate or confirmatory result was changed.
+
+`results/modal_validation_20261115T060929935567Z.json` records 181 passing tests under each
+pytest invocation. `results/public_demo_live_20261115.json` records anonymous live desktop/mobile
+checks of navigation, replay, evidence download/re-import, policy invalidation and exports,
+with no page errors or horizontal overflow. Independent screenshot critique is retained in
+`results/public_demo_visual_review_20261115.md`; minor orientation and terminology friction
+remains. `results/public_demo_publication_20261115.json` pins the published Space revision.
+
+The live integrity checker initially rejected the hosting service's injected HTML metadata and
+then treated Hub configuration as a served asset. Those failed attempts remain in
+`results/public_demo_live_attempt1_20261115.json` and `results/public_demo_live_attempt2_20261115.json`.
+The corrected check pins the exact observed hosted HTML, documented in
+`results/public_demo_html_transport_20261115.json`; it does not ignore arbitrary differences.
+Hub configuration is independently byte-verified through the publication record.
+
 ## Checkpoint-matched safety answers and stop audit — 2026-11-02
 
 `experiments/p17_safety.py` completed all four arms on the frozen 120 harmful +

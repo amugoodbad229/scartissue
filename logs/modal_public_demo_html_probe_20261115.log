@@ -1,0 +1,127 @@
+- Initializing...✓ Initialized. View run at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D
+- Initializing...- Initializing...
+- Creating objects...| Creating objects...- Creating objects...
+└── -| Creating objects...
+└── |- Creating objects...
+└── - Creating mount 
+    C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue\.scratch\
+    modal_live_html_probe.py: Uploaded 0/1 missing files| Creating objects...
+└── | Creating mount 
+    C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue\.scratch\
+    modal_live_html_probe.py: Uploaded 0/1 missing files- Creating objects...
+└── - Creating mount 
+    C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue\.scratch\
+    modal_live_html_probe.py: Finalizing index of 1 files| Creating objects...
+└── | Creating mount 
+    C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue\.scratch\
+    modal_live_html_probe.py: Finalizing index of 1 files- Creating objects...
+└── - Creating mount 
+    C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue\.scratch\
+    modal_live_html_probe.py: Finalizing index of 1 files| Creating objects...
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue\.scratch\
+│   modal_live_html_probe.py
+└── - Creating Function probe...- Creating objects...
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue\.scratch\
+│   modal_live_html_probe.py
+└── | Creating Function probe...- Creating objects...
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue\.scratch\
+│   modal_live_html_probe.py
+└── ✓ Created Function probe.
+✓ Created objects.
+├── ✓ Uploaded 
+│   C:\Users\Ayman\OneDrive\Desktop\Projects\SAAS_Projects\scartissue\.scratch\
+│   modal_live_html_probe.py
+└── ✓ Created Function probe.
+- Running app...| Running app...- Running app...| Running app...- Running app...| Running app...- Running app...| Running app...- Running app...| Running app...- Running... View app at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D| Loading images (1 containers initializing)... View app at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D- Loading images (1 containers initializing)... View app at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D| Loading images (1 containers initializing)... View app at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D- Loading images (1 containers initializing)... View app at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D| Running (1/1 containers active)... View app at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D{
+  "index.html": {
+    "http_status": 200,
+    "source_sha256": 
+"e113d8cf71c9a5bc73ea244430e7fb9bec749b52b2497337d32c3e7acf69fc18",
+    "served_sha256": 
+"b52bde393756b5061f657b2252a8641dc8119c0529f82cf2b07df45373d8fc97",
+    "diff": [
+      "--- \n",
+      "+++ \n",
+      "@@ -1,5 +1,5 @@\n",
+      " <!doctype html>",
+      " <html lang=\"en\">",
+      "-<head>",
+      "+<head><script>window.huggingface={variables:{\"SPACE_CREATOR_USER_ID\":
+\"63e417ea789dcaae43c63ded\"}};</script>",
+      " <meta charset=\"utf-8\" />",
+      " <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"
+/>",
+      "@@ -7,5 +7,5 @@\n",
+      " <meta name=\"description\" content=\"Explore recorded safety-repair 
+trade-offs, inspect model answers and export an evidence-based research 
+decision. No login or model download required.\" />",
+      " <link rel=\"stylesheet\" href=\"style.css\" />",
+      "-</head>",
+      "+<meta property=\"og:title\" content=\"ScarTissue \u2014 is this repair 
+good enough to ship?\"><meta property=\"og:description\" content=\"A 
+repair-decision workbench that will not over-claim\"><meta 
+property=\"og:image\" 
+content=\"https://cdn-thumbnails.huggingface.co/social-thumbnails/spaces/amugoo
+dbad229/scartissue.png\"><meta name=\"twitter:card\" 
+content=\"summary_large_image\"><meta name=\"twitter:image\" 
+content=\"https://cdn-thumbnails.huggingface.co/social-thumbnails/spaces/amugoo
+dbad229/scartissue.png\"></head>",
+      " <body>",
+      " <a class=\"skip-link\" href=\"#main\">Skip to the evidence gate</a>"
+    ]
+  },
+  "article.html": {
+    "http_status": 200,
+    "source_sha256": 
+"c89cf25e0b913ebc0ff4e49da950a7d282e098af4e016fcee039493d72f13358",
+    "served_sha256": 
+"acdb1ac2f7efd8cca2bb64cd6af4d43ba30bc23e8b89e523c2fa888caa6ded59",
+    "diff": [
+      "--- \n",
+      "+++ \n",
+      "@@ -1,5 +1,5 @@\n",
+      " <!doctype html>",
+      " <html lang=\"en\">",
+      "-<head>",
+      "+<head><script>window.huggingface={variables:{\"SPACE_CREATOR_USER_ID\":
+\"63e417ea789dcaae43c63ded\"}};</script>",
+      " <meta charset=\"utf-8\" />",
+      " <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"
+/>",
+      "@@ -7,5 +7,5 @@\n",
+      " <meta name=\"description\" content=\"How weight-space repairs trade 
+harmful compliance for over-refusal and lost task performance in Cohere Tiny 
+Aya Global.\" />",
+      " <link rel=\"stylesheet\" href=\"style.css\" />",
+      "-</head>",
+      "+<meta property=\"og:title\" content=\"ScarTissue \u2014 is this repair 
+good enough to ship?\"><meta property=\"og:description\" content=\"A 
+repair-decision workbench that will not over-claim\"><meta 
+property=\"og:image\" 
+content=\"https://cdn-thumbnails.huggingface.co/social-thumbnails/spaces/amugoo
+dbad229/scartissue.png\"><meta name=\"twitter:card\" 
+content=\"summary_large_image\"><meta name=\"twitter:image\" 
+content=\"https://cdn-thumbnails.huggingface.co/social-thumbnails/spaces/amugoo
+dbad229/scartissue.png\"></head>",
+      " <body>",
+      " <a class=\"skip-link\" href=\"#main\">Skip to the article</a>"
+    ]
+  }
+/ Running (1/1 containers active)... View app at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D}
+/ Running (1/1 containers active)... View app at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D/ Running (1/1 containers active)... View app at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/ayman-cool1971/main/ap-p312waLQwYVVb0H6DYCY1D

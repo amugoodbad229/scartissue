@@ -1,6 +1,22 @@
 # ScarTissue — hackathon reset roadmap
 
-Updated 2026-11-10. Mirrors the on-screen task queue; machine-readable scientific plan: `results/readiness_reset_20261105.json`.
+Updated 2026-11-15. Mirrors the on-screen task queue; machine-readable scientific plan: `results/readiness_reset_20261105.json`.
+
+### Public release and finished demonstrator
+
+- [x] Audit the submission links and intended public-release scope.
+  Evidence: `results/public_release_audit_20261115.json`.
+- [x] Verify anonymous repository, collection and artifact-download access; inspect account inventory for private project repositories.
+  Evidence: `results/public_release_downloads_20261115.json`. Personal drafts, credentials and restricted checkpoints remain excluded.
+- [x] Restore the validation dependency path using the existing clean, pinned AuditKIT checkout via
+  `SCARTISSUE_AUDITKIT_ROOT`. Evidence: `results/public_demo_dependency_20261115.json`.
+- [x] Finish the public demonstrator: guided walkthrough, downloadable evidence, report/source/collection links,
+  corrected validation-status wording, Modal browser checks and public deployment. No new safety claim or model run.
+  Evidence: `results/modal_validation_20261115T060929935567Z.json`, `results/public_demo_publication_20261115.json`,
+  `results/public_demo_visual_review_20261115.md` and `results/public_demo_live_20261115.json`.
+  Live HTML includes hosting metadata pinned by `results/public_demo_html_transport_20261115.json`;
+  the initial failed integrity checks are retained, not erased.
+- [ ] Record final public-release verification and report the accessible demo and remaining scientific limitations.
 
 ### Research documentation and privacy follow-up
 

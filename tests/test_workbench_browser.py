@@ -28,7 +28,7 @@ def study_server():
             else:
                 super().do_GET()
 
-        def log_message(self, *args):
+        def log_message(self, format, *args):
             pass
 
     server = ThreadingHTTPServer(("127.0.0.1", 0), functools.partial(Handler, directory=str(ROOT / "space")))
@@ -87,6 +87,25 @@ def test_real_study_abstains_export_replays_and_reflows(page, study_server):
     page.set_viewport_size({"width": 320, "height": 740})
     assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth"), "Horizontal page overflow at narrow width"
     page.screenshot(path="/tmp/scartissue_workbench_mobile.png", full_page=True)
+
+
+def test_guided_demo_download_can_be_reimported(page, study_server):
+    for link in page.locator("section[aria-labelledby='walkthrough-title'] a").all():
+        link.click()
+        target = page.locator(link.get_attribute("href"))
+        assert target.is_visible()
+        assert page.evaluate("location.hash") == link.get_attribute("href")
+    with page.expect_download() as info:
+        page.locator("#download-evidence").click()
+    downloaded = json.loads(Path(info.value.path()).read_text())
+    assert downloaded == study_server[1]
+    page.locator("#bundle-file").set_input_files(str(info.value.path()))
+    page.wait_for_function("document.getElementById('export').disabled === false")
+    with page.expect_download() as decision:
+        page.locator("#export").click()
+    packet = json.loads(Path(decision.value.path()).read_text())
+    assert packet["study"]["split_sha256"] == downloaded["split_sha256"]
+    assert all(d["status"] != "accept" for d in packet["decisions"])
 
 
 def test_import_rejects_tampering_preserves_scope_and_escapes_labels(page, study_server):

@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-11-15T06:18:07.893534+00:00",
+  "url": "https://amugoodbad229-scartissue.static.hf.space/",
+  "execution": "Modal CPU, fresh Chromium contexts, no authentication",
+  "status": "failed",
+  "assets": {
+    "app.js": "d1d0291ee74648fd4a4f6339212274724fa7c57f8a115be00a58335118111fe6"
+  },
+  "viewports": [],
+  "error": "AssertionError: Live asset differs: article.html",
+  "screenshots": [],
+  "checker_sha256": "56fe252a86a8c2a8948c272525f9d1e918a04f1594cbf8c5d654e53c70732154"
+}

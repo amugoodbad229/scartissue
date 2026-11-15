@@ -1,0 +1,239 @@
+{
+  "checked_at": "2026-11-15T05:59:21.904771+00:00",
+  "authentication": "disabled for all public checks",
+  "scope": "GitHub source, all intended Hugging Face repositories and collections; demo behavior checked separately",
+  "repos": [
+    {
+      "repo_id": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "type": "model",
+      "anonymous_access": true,
+      "private": false,
+      "gated": false,
+      "sha": "6641a1902a68a73eb770b38cb465aac62204aa3d",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "abliteration_tiny-aya-global_layer15.npz",
+        "load_patch.py",
+        "manifest.json",
+        "repair_global_a4.npz",
+        "repair_harm10_a4.npz",
+        "repair_harm2_a4.npz",
+        "repair_harm4_a4.npz"
+      ],
+      "runtime": null
+    },
+    {
+      "repo_id": "amugoodbad229/scartissue-tinyaya-results",
+      "type": "dataset",
+      "anonymous_access": true,
+      "private": false,
+      "gated": false,
+      "sha": "7b216ab487306a3f81972f26163646ce245f04c9",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "SUBMISSION.md",
+        "WRITE-UP.md",
+        "data/capability.parquet",
+        "data/frontier.parquet",
+        "data/judge_verdicts.parquet",
+        "data/patches.parquet",
+        "data/safety_generations.parquet",
+        "lexsi_provenance.json",
+        "manifest.json",
+        "patch_checksums.json",
+        "provenance_final.json",
+        "report.pdf",
+        "submission_verification.json"
+      ],
+      "runtime": null
+    },
+    {
+      "repo_id": "amugoodbad229/scartissue-tinyaya-evals",
+      "type": "dataset",
+      "anonymous_access": true,
+      "private": false,
+      "gated": false,
+      "sha": "e0ba6d48584588e78ed1e52e9f7301ada494e292",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "completions.json",
+        "evals_manifest.json",
+        "frontier.csv",
+        "prompts.json"
+      ],
+      "runtime": null
+    },
+    {
+      "repo_id": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+      "type": "dataset",
+      "anonymous_access": true,
+      "private": false,
+      "gated": false,
+      "sha": "45501f117d75af4cdba1fcbee92122fa3d39400c",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "corpus.jsonl",
+        "corpus_split.json",
+        "data/corpus.parquet",
+        "lexsi_provenance.json",
+        "manifest.json"
+      ],
+      "runtime": null
+    },
+    {
+      "repo_id": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "type": "dataset",
+      "anonymous_access": true,
+      "private": false,
+      "gated": false,
+      "sha": "2de682f162eb2409860d57f7453ab02f53b1e01b",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "manifest.json",
+        "repair_global_a4.npz",
+        "repair_harm10_a4.npz",
+        "repair_harm2_a4.npz",
+        "repair_harm4_a4.npz"
+      ],
+      "runtime": null
+    },
+    {
+      "repo_id": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+      "type": "dataset",
+      "anonymous_access": true,
+      "private": false,
+      "gated": false,
+      "sha": "18b8f9390cfab9ba85ffc159ef0da5d841f74473",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "abliteration_tiny-aya-global_layer15.npz",
+        "load_patch.py",
+        "manifest.json"
+      ],
+      "runtime": null
+    },
+    {
+      "repo_id": "amugoodbad229/scartissue",
+      "type": "space",
+      "anonymous_access": true,
+      "private": false,
+      "gated": false,
+      "sha": "766a79a9983aea80fba311f70aeb4530171575e5",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.js",
+        "article.html",
+        "completions.json",
+        "data/evidence.json",
+        "data/readiness.json",
+        "evidence.js",
+        "frontier.csv",
+        "index.html",
+        "prompts.json",
+        "report.pdf",
+        "style.css"
+      ],
+      "runtime": "SpaceRuntime(stage='RUNNING', hardware=None, requested_hardware=None, sleep_time=None, storage=None, dev_mode=False, hot_reloading=None, volumes=None, raw={'stage': 'RUNNING', 'hardware': {'current': None, 'requested': None}, 'replicas': {'requested': 1, 'current': 1}})"
+    }
+  ],
+  "collections": [
+    {
+      "url": "https://huggingface.co/collections/amugoodbad229/scartissue-safety-drift-and-repair-parameters-6aedb25709af05c05784a9e0",
+      "private": false,
+      "anonymous_access": true,
+      "items": [
+        {
+          "type": "model",
+          "id": "amugoodbad229/scartissue-tinyaya-repair-parameters"
+        }
+      ]
+    },
+    {
+      "url": "https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-data-and-research-results-6aedb2693a8dd1f844817b46",
+      "private": false,
+      "anonymous_access": true,
+      "items": [
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-results"
+        },
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-evals"
+        },
+        {
+          "type": "dataset",
+          "id": "amugoodbad229/scartissue-tinyaya-safety-corpus"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "url": "https://github.com/amugoodbad229/scartissue",
+    "private": false,
+    "anonymous_access": true,
+    "default_branch": "master",
+    "remote_head": "9966afe77164ddf33e9a123c26e3a7d8c57320e1",
+    "local_head": "9966afe77164ddf33e9a123c26e3a7d8c57320e1",
+    "head_matches": true
+  },
+  "space_source_parity": [
+    {
+      "path": "app.js",
+      "matches": true,
+      "local_sha256": "d1d0291ee74648fd4a4f6339212274724fa7c57f8a115be00a58335118111fe6",
+      "remote_sha256": "d1d0291ee74648fd4a4f6339212274724fa7c57f8a115be00a58335118111fe6"
+    },
+    {
+      "path": "article.html",
+      "matches": true,
+      "local_sha256": "c89cf25e0b913ebc0ff4e49da950a7d282e098af4e016fcee039493d72f13358",
+      "remote_sha256": "c89cf25e0b913ebc0ff4e49da950a7d282e098af4e016fcee039493d72f13358"
+    },
+    {
+      "path": "evidence.js",
+      "matches": true,
+      "local_sha256": "76ec12f21b02a7144aa87eab027b91cb26c14d74e58df0f20e7aec61444f7b21",
+      "remote_sha256": "76ec12f21b02a7144aa87eab027b91cb26c14d74e58df0f20e7aec61444f7b21"
+    },
+    {
+      "path": "index.html",
+      "matches": true,
+      "local_sha256": "7408ef0706ddd865960ee25e8813b357234a568ff84b2b28fbe8e7502927ac5f",
+      "remote_sha256": "7408ef0706ddd865960ee25e8813b357234a568ff84b2b28fbe8e7502927ac5f"
+    },
+    {
+      "path": "README.md",
+      "matches": true,
+      "local_sha256": "0e24839bc409967b2e0d9a013217404fd8cade6cc17cbd4d6aa94bb8f6a12911",
+      "remote_sha256": "0e24839bc409967b2e0d9a013217404fd8cade6cc17cbd4d6aa94bb8f6a12911"
+    },
+    {
+      "path": "style.css",
+      "matches": true,
+      "local_sha256": "b33929c83b66b5b1e48db07a7111e28be895ec206659ead8f45da500175c6c92",
+      "remote_sha256": "b33929c83b66b5b1e48db07a7111e28be895ec206659ead8f45da500175c6c92"
+    },
+    {
+      "path": "data/evidence.json",
+      "matches": false,
+      "local_sha256": "5cacc9c89d89f0f4354243341ec2509a191c5750a6bbb7313916e0e361e701cf",
+      "remote_sha256": "73a46c2589ac30fae4eac27cacf12d3c98d9ed0c41c29c92449793af55a3265e"
+    },
+    {
+      "path": "data/readiness.json",
+      "matches": false,
+      "local_sha256": "cc156af01d9c4ece83d3e48111ac71f4d7029d66e8c74bece479e0890abab0f1",
+      "remote_sha256": "3178d20e130033977f08096d9ae72023ce975b0ed152c8c43be5207548f32d9b"
+    }
+  ],
+  "public_repos_ok": true,
+  "public_collections_ok": true
+}

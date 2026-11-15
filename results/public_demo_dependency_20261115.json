@@ -1,0 +1,9 @@
+{
+  "checkout": "C:\\Users\\Ayman\\tools\\lexsi\\AuditKIT",
+  "head": "71316da345784ff220d5ed59337441a59ab31526",
+  "matches_pin": true,
+  "clean": true,
+  "license_exists": true,
+  "initial_failure_log": "logs/modal_validation_public_demonstrator_20261115.log",
+  "resolution": "SCARTISSUE_AUDITKIT_ROOT selects existing read-only checkout; default path and remote mount unchanged."
+}

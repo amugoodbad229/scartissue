@@ -1,0 +1,461 @@
+{
+  "checked_at": "2026-11-15T06:01:13.286051+00:00",
+  "download_checks": [
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "path": "README.md",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "path": "abliteration_tiny-aya-global_layer15.npz",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "path": "load_patch.py",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "path": "manifest.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "path": "repair_global_a4.npz",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "path": "repair_harm10_a4.npz",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "path": "repair_harm2_a4.npz",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "path": "repair_harm4_a4.npz",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "README.md",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "SUBMISSION.md",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "WRITE-UP.md",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "data/capability.parquet",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "data/frontier.parquet",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "data/judge_verdicts.parquet",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "data/patches.parquet",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "data/safety_generations.parquet",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "lexsi_provenance.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "manifest.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "patch_checksums.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "provenance_final.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "report.pdf",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "path": "submission_verification.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-evals",
+      "path": "README.md",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-evals",
+      "path": "completions.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-evals",
+      "path": "evals_manifest.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-evals",
+      "path": "frontier.csv",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-evals",
+      "path": "prompts.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+      "path": "README.md",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+      "path": "corpus.jsonl",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+      "path": "corpus_split.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+      "path": "data/corpus.parquet",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+      "path": "lexsi_provenance.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+      "path": "manifest.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "path": "README.md",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "path": "manifest.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "path": "repair_global_a4.npz",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "path": "repair_harm10_a4.npz",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "path": "repair_harm2_a4.npz",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "path": "repair_harm4_a4.npz",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+      "path": "README.md",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+      "path": "abliteration_tiny-aya-global_layer15.npz",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+      "path": "load_patch.py",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+      "path": "manifest.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "README.md",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "app.js",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "article.html",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "completions.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "data/evidence.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "data/readiness.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "evidence.js",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "frontier.csv",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "index.html",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "prompts.json",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "report.pdf",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "path": "style.css",
+      "status": 206,
+      "sample_bytes": 64,
+      "accessible": true
+    }
+  ],
+  "all_accessible": true,
+  "space_differences": [
+    {
+      "path": "data/evidence.json",
+      "differences": [
+        {
+          "path": "/created_at",
+          "local": "2026-11-09T17:41:02.364846+00:00",
+          "remote": "2026-11-07T16:43:47.919959+00:00"
+        }
+      ]
+    },
+    {
+      "path": "data/readiness.json",
+      "differences": [
+        {
+          "path": "/checked_at",
+          "local": "2026-11-09T17:41:04.278049+00:00",
+          "remote": "2026-11-07T16:43:49.408719+00:00"
+        },
+        {
+          "path": "/artifacts/9/sha256",
+          "local": "f79a356946ead65647517e08c461530cb5cff22c42724f323730f6bdcf14b80f",
+          "remote": "1be5bd85e54bdeff3ddf503f4c24a0c0dc0cb2077f5d4f17b510674191c49979"
+        },
+        {
+          "path": "/artifacts/9/bytes",
+          "local": "4975",
+          "remote": "5038"
+        }
+      ]
+    }
+  ],
+  "account_project_inventory": [
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-parameters",
+      "type": "model",
+      "private": false
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-safety-corpus",
+      "type": "dataset",
+      "private": false
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-abliteration-patches",
+      "type": "dataset",
+      "private": false
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-repair-patches",
+      "type": "dataset",
+      "private": false
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-evals",
+      "type": "dataset",
+      "private": false
+    },
+    {
+      "repo": "amugoodbad229/scartissue-tinyaya-results",
+      "type": "dataset",
+      "private": false
+    },
+    {
+      "repo": "amugoodbad229/scartissue",
+      "type": "space",
+      "private": false
+    }
+  ],
+  "scope": "Anonymous range GET verifies each published file is downloadable; not a full-content or scientific-validity audit."
+}

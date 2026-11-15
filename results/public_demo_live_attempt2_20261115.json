@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-15T06:22:57.601492+00:00",
+  "url": "https://amugoodbad229-scartissue.static.hf.space/",
+  "execution": "Modal CPU, fresh Chromium contexts, no authentication",
+  "status": "failed",
+  "assets": {
+    "app.js": "d1d0291ee74648fd4a4f6339212274724fa7c57f8a115be00a58335118111fe6",
+    "article.html": "acdb1ac2f7efd8cca2bb64cd6af4d43ba30bc23e8b89e523c2fa888caa6ded59",
+    "evidence.js": "76ec12f21b02a7144aa87eab027b91cb26c14d74e58df0f20e7aec61444f7b21",
+    "index.html": "b52bde393756b5061f657b2252a8641dc8119c0529f82cf2b07df45373d8fc97"
+  },
+  "viewports": [],
+  "error": "AssertionError: Live asset differs: README.md",
+  "source_assets": {
+    "app.js": "d1d0291ee74648fd4a4f6339212274724fa7c57f8a115be00a58335118111fe6",
+    "article.html": "c89cf25e0b913ebc0ff4e49da950a7d282e098af4e016fcee039493d72f13358",
+    "evidence.js": "76ec12f21b02a7144aa87eab027b91cb26c14d74e58df0f20e7aec61444f7b21",
+    "index.html": "e113d8cf71c9a5bc73ea244430e7fb9bec749b52b2497337d32c3e7acf69fc18",
+    "README.md": "0e24839bc409967b2e0d9a013217404fd8cade6cc17cbd4d6aa94bb8f6a12911",
+    "style.css": "b33929c83b66b5b1e48db07a7111e28be895ec206659ead8f45da500175c6c92",
+    "data/evidence.json": "7b34b9e41777e48c8b0f09aa6ddb3fe7af173008aa4453d16ceef1eca9cc6d8f",
+    "data/readiness.json": "0aaeeff9bb33a73969b498fcb995e5b834ad9538ac0d26fb8d8c57f9e6cb4493"
+  },
+  "html_transport_probe": "results/public_demo_html_transport_20261115.json",
+  "screenshots": [],
+  "checker_sha256": "c558469d6c1fa9a422efa54fda8aee485b8c637e837092d672a95530598a0732"
+}

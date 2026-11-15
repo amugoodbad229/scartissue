@@ -1,0 +1,8 @@
+{
+  "diff_check_exit": 0,
+  "diff_check": "warning: in the working copy of 'space/index.html', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'tests/test_workbench_browser.py', LF will be replaced by CRLF the next time Git touches it\n",
+  "sensitive_pattern_matches": [],
+  "excluded_private_files_in_changes": [],
+  "frozen_protocol_changed": false,
+  "scope": "Pattern scan of changed text artifacts only; not a history-wide secret audit."
+}

@@ -1,0 +1,53 @@
+{
+  "published_at": "2026-11-15T06:17:16.701918+00:00",
+  "url": "https://amugoodbad229-scartissue.static.hf.space/",
+  "space": "https://huggingface.co/spaces/amugoodbad229/scartissue",
+  "revision": "00e5d57c63a5c6ac8ad9d0a92008b26d51519a07",
+  "commit_url": "https://huggingface.co/spaces/amugoodbad229/scartissue/commit/00e5d57c63a5c6ac8ad9d0a92008b26d51519a07",
+  "private": false,
+  "files": [
+    {
+      "path": "app.js",
+      "sha256": "d1d0291ee74648fd4a4f6339212274724fa7c57f8a115be00a58335118111fe6",
+      "anonymous_readback_matches": true
+    },
+    {
+      "path": "article.html",
+      "sha256": "c89cf25e0b913ebc0ff4e49da950a7d282e098af4e016fcee039493d72f13358",
+      "anonymous_readback_matches": true
+    },
+    {
+      "path": "evidence.js",
+      "sha256": "76ec12f21b02a7144aa87eab027b91cb26c14d74e58df0f20e7aec61444f7b21",
+      "anonymous_readback_matches": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "e113d8cf71c9a5bc73ea244430e7fb9bec749b52b2497337d32c3e7acf69fc18",
+      "anonymous_readback_matches": true
+    },
+    {
+      "path": "README.md",
+      "sha256": "0e24839bc409967b2e0d9a013217404fd8cade6cc17cbd4d6aa94bb8f6a12911",
+      "anonymous_readback_matches": true
+    },
+    {
+      "path": "style.css",
+      "sha256": "b33929c83b66b5b1e48db07a7111e28be895ec206659ead8f45da500175c6c92",
+      "anonymous_readback_matches": true
+    },
+    {
+      "path": "data/evidence.json",
+      "sha256": "7b34b9e41777e48c8b0f09aa6ddb3fe7af173008aa4453d16ceef1eca9cc6d8f",
+      "anonymous_readback_matches": true
+    },
+    {
+      "path": "data/readiness.json",
+      "sha256": "0aaeeff9bb33a73969b498fcb995e5b834ad9538ac0d26fb8d8c57f9e6cb4493",
+      "anonymous_readback_matches": true
+    }
+  ],
+  "validation": "results/modal_validation_20261115T060929935567Z.json",
+  "deleted_files": false,
+  "scope": "Static demonstration only. Safety evidence remains exploratory; no checkpoint deployed."
+}

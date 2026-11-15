@@ -40,6 +40,25 @@
   },
   "reservations": [
     {
+      "job": "public_demonstrator_live_cpu_20261115",
+      "reserved_usd": 1,
+      "gpu": false,
+      "reserved_at": "2026-11-15",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_public_demo_live_20261115.log",
+      "purpose": "Anonymous desktop/mobile browser verification of the validated public Space: asset hashes, walkthrough, replay, downloads and policy decisions. Bounded CPU only, no models, no automatic retries; reserve is not actual billing."
+    },
+    {
+      "job": "public_demonstrator_cpu_20261115",
+      "reserved_usd": 1,
+      "gpu": false,
+      "reserved_at": "2026-11-15",
+      "profile": "scartissue-replacement",
+      "log": "logs/modal_validation_public_demonstrator_checkout_20261115.log",
+      "initial_mount_failure_log": "logs/modal_validation_public_demonstrator_20261115.log",
+      "purpose": "Validate the public demonstrator walkthrough, evidence download/re-import, existing decision workflows and privacy guards. Bounded CPU only, no model calls or automatic retries. Reserve is not actual provider billing."
+    },
+    {
       "job": "audit_react_corrected_cpu_20261109",
       "reserved_usd": 1,
       "gpu": false,

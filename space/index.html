@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ScarTissue — evidence gate</title>
+<title>ScarTissue — safety repair demonstrator</title>
+<meta name="description" content="Explore recorded safety-repair trade-offs, inspect model answers and export an evidence-based research decision. No login or model download required." />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,19 +21,29 @@
   <div class="hero-grid">
     <div>
       <p class="eyebrow">RESEARCH EVIDENCE GATE</p>
-      <h1>Decide before you ship.</h1>
-      <p class="hero-lede">A compact workbench for comparing weight-space repairs without turning an attractive metric into a safety claim.</p>
+      <h1>Explore safety repair.<br>See the trade-offs.</h1>
+      <p class="hero-lede">Compare an aligned model, safety drift and weight-space repairs. Inspect recorded answers, change a research policy and export the decision—without running a model.</p>
       <div class="hero-links"><a href="data/readiness.json">Readiness ledger</a><a href="article.html">Research article</a><span>Stored evidence only · no model runs</span></div>
     </div>
     <aside class="hero-status" aria-label="Study status">
       <span class="status-dot" aria-hidden="true"></span>
       <p class="status-label">Current study status</p>
       <strong>Insufficient evidence</strong>
-      <p>Calibration failed and the project-distribution audit is still pending. The workbench refuses to call this a release.</p>
+      <p>The demonstrator is ready to explore; safety validation is not complete. Judge calibration failed and the independent human audit is still pending.</p>
     </aside>
   </div>
 </header>
 <main id="main" tabindex="-1">
+  <section class="panel" aria-labelledby="walkthrough-title">
+    <h2 id="walkthrough-title">Start with the bundled study</h2>
+    <p>No account, model download or file upload is required. Everything below uses stored research outputs, not live inference.</p>
+    <ol>
+      <li><a href="#comparison-title">Compare the trade-offs.</a> Look at judged harm, refusal of benign requests and GSM8K task performance together.</li>
+      <li><a href="#replay-title">Inspect a recorded answer.</a> Select a prompt, then reveal the answers and raw judge verdicts. Potentially harmful text stays collapsed until you open it.</li>
+      <li><a href="#policy-title">Change the research policy.</a> Evaluate your bounds and download the decision or summary. Looser bounds cannot override failed calibration.</li>
+    </ol>
+    <p class="note">The demonstration shows why an attractive harm score is not enough to approve a repair. It does not certify any model as safe.</p>
+  </section>
   <section class="decision-card" aria-labelledby="decision-title">
     <div class="section-label">01 · DECISION GATE</div>
     <div class="decision-heading">
@@ -95,8 +106,21 @@
     <select id="preset" disabled></select>
     <div id="replay"></div>
   </section>
+  <section class="panel" aria-labelledby="resources-title">
+    <h2 id="resources-title">Take the evidence with you</h2>
+    <p>Download the study behind this demonstration, read the report or inspect the public release.</p>
+    <ul>
+      <li><a id="download-evidence" href="data/evidence.json" download="scartissue-evidence.json">Download the evidence bundle (JSON)</a> — includes recorded prompts and answers that may contain harmful material; for controlled research use. You can re-import it above.</li>
+      <li><a href="data/readiness.json">Read the readiness ledger (JSON)</a> — completed checks, failed controls and remaining validation gates.</li>
+      <li><a href="https://huggingface.co/datasets/amugoodbad229/scartissue-tinyaya-results/resolve/main/report.pdf">Read the research report (PDF)</a> or <a href="article.html">read the research article</a>.</li>
+      <li><a href="https://github.com/amugoodbad229/scartissue">Source code and reproduction instructions</a>.</li>
+      <li><a href="https://huggingface.co/collections/amugoodbad229/scartissue-safety-drift-and-repair-parameters-6aedb25709af05c05784a9e0">Repair parameters and loader</a> — research patches, not a hosted model checkpoint.</li>
+      <li><a href="https://huggingface.co/collections/amugoodbad229/scartissue-evaluation-data-and-research-results-6aedb2693a8dd1f844817b46">Evaluation datasets and recorded outputs</a>.</li>
+      <li><a href="https://scartissue-audit.vercel.app/">Contribute independent human labels</a> — optional audit, separate from exploring this demonstration.</li>
+    </ul>
+  </section>
 </main>
-<footer><div class="footer-inner"><strong>ScarTissue</strong><span>Track 2a research into weight-space robustness and over-refusal.</span><span>Exploratory held-out evidence is pending; no safety certification, checkpoint deployment or automated release.</span></div></footer>
+<footer><div class="footer-inner"><strong>ScarTissue</strong><span>Track 2a research into weight-space robustness and over-refusal.</span><span>Exploratory held-out analysis is available. Human validation and the confirmatory comparison remain pending; no safety certification, checkpoint deployment or automated release.</span></div></footer>
 <script src="evidence.js"></script>
 <script src="app.js"></script>
 </body>

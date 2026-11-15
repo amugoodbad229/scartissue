@@ -1,0 +1,58 @@
+[
+  {
+    "source": "results\\scartissue_workbench_desktop.png",
+    "size": [
+      1280,
+      4022
+    ],
+    "crop": "results\\public_demo_desktop_intro_crop_20261115.png",
+    "box": [
+      0,
+      0,
+      1280,
+      1300
+    ]
+  },
+  {
+    "source": "results\\scartissue_workbench_desktop.png",
+    "size": [
+      1280,
+      4022
+    ],
+    "crop": "results\\public_demo_desktop_resources_crop_20261115.png",
+    "box": [
+      0,
+      2722,
+      1280,
+      4022
+    ]
+  },
+  {
+    "source": "results\\scartissue_workbench_mobile.png",
+    "size": [
+      320,
+      7317
+    ],
+    "crop": "results\\public_demo_mobile_intro_crop_20261115.png",
+    "box": [
+      0,
+      0,
+      320,
+      1900
+    ]
+  },
+  {
+    "source": "results\\scartissue_workbench_mobile.png",
+    "size": [
+      320,
+      7317
+    ],
+    "crop": "results\\public_demo_mobile_resources_crop_20261115.png",
+    "box": [
+      0,
+      5417,
+      320,
+      7317
+    ]
+  }
+]

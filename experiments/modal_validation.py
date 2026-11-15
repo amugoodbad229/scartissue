@@ -8,6 +8,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -16,7 +17,7 @@ import time
 import modal
 
 ROOT = Path(__file__).resolve().parents[1]
-UPSTREAM = ROOT.parent / "ScarTissue/repos/AuditKIT"
+UPSTREAM = Path(os.environ.get("SCARTISSUE_AUDITKIT_ROOT", ROOT.parent / "ScarTissue/repos/AuditKIT"))
 AUDITKIT_COMMIT = "71316da345784ff220d5ed59337441a59ab31526"
 REMOTE = "/work/scaartissue"
 PRIVATE_RESEARCH = "SUBMISSION-FORM*.md"

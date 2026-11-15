@@ -21,9 +21,8 @@ static Space includes `.static.hf.space`; live content is checked in
    cd space && python3 -m http.server 8000                                 # any Python 3
    ```
 
-   ```text
-   or just open space/index.html directly (the bundle is a same-origin file, so file:// works)
-   ```
+   Open `http://localhost:8000/` after starting the server. Do not open `index.html` with
+   `file://`: browsers can block the bundled evidence fetch. The hosted app requires no setup.
 2. Leave the default bundle in place, or import your own copy of `space/data/evidence.json`.
    Imports are verified against the SHA-256 of every prompt and answer before anything is committed to
    the page; a mismatch leaves the previous study loaded and says why.
@@ -56,6 +55,7 @@ pinned Modal image, where the environment itself is hashed:
 
 ```bash
 # reserve first (see results/modal_budget_20261105.json), then:
+# If AuditKIT is elsewhere, set SCARTISSUE_AUDITKIT_ROOT to its checkout directory.
 uv run python -m modal run --profile scartissue-replacement experiments/modal_validation.py \
   --reservation-id <reservation-id>
 ```
@@ -98,8 +98,9 @@ spend-blocked.
 - **The published PDF.** `report/report.pdf` is historical and has not been rebuilt. The hosted
   workbench is not historical: its live evidence matches the local bundle apart from `created_at`
   (`results/live_demo_verification_20261107.json`).
-- **Upstream toolkits.** AuditKIT is used read-only from `../ScarTissue/repos/AuditKIT`
-  (commit `71316da345784ff220d5ed59337441a59ab31526`) — do not vendor or mock it. CircuitKIT and EAP-IG
+- **Upstream toolkits.** AuditKIT is used read-only from `../ScarTissue/repos/AuditKIT`, or from
+  `SCARTISSUE_AUDITKIT_ROOT` when the checkout is stored elsewhere. Its pinned commit is
+  `71316da345784ff220d5ed59337441a59ab31526` — do not vendor or mock it. CircuitKIT and EAP-IG
   are not installed, which is why circuit *discovery* cannot be repeated.
 - **The confirmatory run.** `results/confirmatory_spec_20261106.json` is frozen but unexecuted; the
   judge panel must first pass calibration on external human labels, which it has not.

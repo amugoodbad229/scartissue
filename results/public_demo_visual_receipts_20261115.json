@@ -1,0 +1,7 @@
+{
+  "review": "results\\public_demo_visual_review_20261115.md",
+  "exit_code": 0,
+  "stdout": "receipts: ok \u00e2\u20ac\u201d every quantity is attributed and every file is there (0 receipts found)\n",
+  "stderr": "",
+  "acceptance": "No confirmed visible usability blocker; retain documented minor orientation/terminology issues. Interaction coverage comes separately from Modal browser tests."
+}
