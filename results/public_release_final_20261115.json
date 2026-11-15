@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-11-15T06:29:36.722037+00:00",
+  "status": "passed",
+  "scope": "Public submission artifacts and completed research demonstrator; not scientific safety validation.",
+  "github": {
+    "url": "https://github.com/amugoodbad229/scartissue",
+    "anonymous_access": true,
+    "verified_source_commit": "d642a2f9ec65a6e536846f058baf1a147b2983c8",
+    "anonymous_raw_checks": [
+      {
+        "path": "space/index.html",
+        "http_status": 200,
+        "matches_committed_bytes": true,
+        "sha256": "e113d8cf71c9a5bc73ea244430e7fb9bec749b52b2497337d32c3e7acf69fc18"
+      },
+      {
+        "path": "results/public_demo_live_20261115.json",
+        "http_status": 200,
+        "matches_committed_bytes": true,
+        "sha256": "24fc084c173b648dc28933ea9308859af4ae119400fac0a4044d9e8a285388b7"
+      },
+      {
+        "path": "results/modal_validation_20261115T060929935567Z.json",
+        "http_status": 200,
+        "matches_committed_bytes": true,
+        "sha256": "5d89bfe80e1dbec606f2f3594aa7a5d0bec16d0ac38802cd11566c0e972e5571"
+      }
+    ]
+  },
+  "huggingface": {
+    "repository_count": 7,
+    "all_public_ungated": true,
+    "collection_count": 2,
+    "all_collections_public": true,
+    "all_local_space_files_match_public_hub": true,
+    "published_space_revision": "00e5d57c63a5c6ac8ad9d0a92008b26d51519a07",
+    "audit": "results/public_release_audit_20261115.json",
+    "publication": "results/public_demo_publication_20261115.json"
+  },
+  "downloads": {
+    "checked_file_count": 55,
+    "all_accessible": true,
+    "evidence": "results/public_release_downloads_20261115.json",
+    "scope": "Anonymous range GET verifies each published file is downloadable; not a full-content or scientific-validity audit."
+  },
+  "demonstrator": {
+    "url": "https://amugoodbad229-scartissue.static.hf.space/",
+    "status": "passed",
+    "live_evidence": "results/public_demo_live_20261115.json",
+    "test_evidence": "results/modal_validation_20261115T060929935567Z.json",
+    "visual_review": "results/public_demo_visual_review_20261115.md",
+    "viewports": [
+      {
+        "viewport": [
+          1280,
+          900
+        ],
+        "public_http_status": 200,
+        "walkthrough_anchors": true,
+        "download_and_reimport": true,
+        "recorded_replay": true,
+        "policy_invalidation_and_exports": true,
+        "failed_calibration_blocks_acceptance": true,
+        "no_horizontal_overflow": true,
+        "page_errors": []
+      },
+      {
+        "viewport": [
+          320,
+          740
+        ],
+        "public_http_status": 200,
+        "walkthrough_anchors": true,
+        "download_and_reimport": true,
+        "recorded_replay": true,
+        "policy_invalidation_and_exports": true,
+        "failed_calibration_blocks_acceptance": true,
+        "no_horizontal_overflow": true,
+        "page_errors": []
+      }
+    ],
+    "no_new_model_inference": true
+  },
+  "not_claimed": [
+    "Validated safety repair",
+    "Successful judge calibration",
+    "Completed independent human audit",
+    "Completed confirmatory experiment",
+    "Current public PDF rebuilt",
+    "Exhaustive accessibility or history-wide secret audit"
+  ],
+  "intentionally_excluded": [
+    "Credentials and environment files",
+    "Private submission and audit material",
+    "Restricted drifted model checkpoints"
+  ],
+  "remaining_minor_polish": [
+    "Mobile start action could be higher",
+    "Research decision terminology could be simpler",
+    "Prompt identifiers could be more descriptive"
+  ]
+}

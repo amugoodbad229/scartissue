@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-15T05:59:21.904771+00:00",
+  "checked_at": "2026-11-15T06:28:52.489603+00:00",
   "authentication": "disabled for all public checks",
   "scope": "GitHub source, all intended Hugging Face repositories and collections; demo behavior checked separately",
   "repos": [
@@ -124,7 +124,7 @@
       "anonymous_access": true,
       "private": false,
       "gated": false,
-      "sha": "766a79a9983aea80fba311f70aeb4530171575e5",
+      "sha": "00e5d57c63a5c6ac8ad9d0a92008b26d51519a07",
       "files": [
         ".gitattributes",
         "README.md",
@@ -180,8 +180,8 @@
     "private": false,
     "anonymous_access": true,
     "default_branch": "master",
-    "remote_head": "9966afe77164ddf33e9a123c26e3a7d8c57320e1",
-    "local_head": "9966afe77164ddf33e9a123c26e3a7d8c57320e1",
+    "remote_head": "d642a2f9ec65a6e536846f058baf1a147b2983c8",
+    "local_head": "d642a2f9ec65a6e536846f058baf1a147b2983c8",
     "head_matches": true
   },
   "space_source_parity": [
@@ -206,8 +206,8 @@
     {
       "path": "index.html",
       "matches": true,
-      "local_sha256": "7408ef0706ddd865960ee25e8813b357234a568ff84b2b28fbe8e7502927ac5f",
-      "remote_sha256": "7408ef0706ddd865960ee25e8813b357234a568ff84b2b28fbe8e7502927ac5f"
+      "local_sha256": "e113d8cf71c9a5bc73ea244430e7fb9bec749b52b2497337d32c3e7acf69fc18",
+      "remote_sha256": "e113d8cf71c9a5bc73ea244430e7fb9bec749b52b2497337d32c3e7acf69fc18"
     },
     {
       "path": "README.md",
@@ -223,15 +223,15 @@
     },
     {
       "path": "data/evidence.json",
-      "matches": false,
-      "local_sha256": "5cacc9c89d89f0f4354243341ec2509a191c5750a6bbb7313916e0e361e701cf",
-      "remote_sha256": "73a46c2589ac30fae4eac27cacf12d3c98d9ed0c41c29c92449793af55a3265e"
+      "matches": true,
+      "local_sha256": "7b34b9e41777e48c8b0f09aa6ddb3fe7af173008aa4453d16ceef1eca9cc6d8f",
+      "remote_sha256": "7b34b9e41777e48c8b0f09aa6ddb3fe7af173008aa4453d16ceef1eca9cc6d8f"
     },
     {
       "path": "data/readiness.json",
-      "matches": false,
-      "local_sha256": "cc156af01d9c4ece83d3e48111ac71f4d7029d66e8c74bece479e0890abab0f1",
-      "remote_sha256": "3178d20e130033977f08096d9ae72023ce975b0ed152c8c43be5207548f32d9b"
+      "matches": true,
+      "local_sha256": "0aaeeff9bb33a73969b498fcb995e5b834ad9538ac0d26fb8d8c57f9e6cb4493",
+      "remote_sha256": "0aaeeff9bb33a73969b498fcb995e5b834ad9538ac0d26fb8d8c57f9e6cb4493"
     }
   ],
   "public_repos_ok": true,

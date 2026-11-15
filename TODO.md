@@ -16,7 +16,10 @@ Updated 2026-11-15. Mirrors the on-screen task queue; machine-readable scientifi
   `results/public_demo_visual_review_20261115.md` and `results/public_demo_live_20261115.json`.
   Live HTML includes hosting metadata pinned by `results/public_demo_html_transport_20261115.json`;
   the initial failed integrity checks are retained, not erased.
-- [ ] Record final public-release verification and report the accessible demo and remaining scientific limitations.
+- [x] Record final public-release verification and publish the accessible demo with its scientific limitations.
+  Final record: `results/public_release_final_20261115.json`. Intended Hub repositories/collections are public,
+  local Space files match their anonymous Hub copies, and the committed demonstrator and validation records
+  were anonymously downloaded from GitHub. Credentials, private material and restricted checkpoints remain excluded.
 
 ### Research documentation and privacy follow-up
 
